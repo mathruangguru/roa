@@ -112,6 +112,373 @@
                 <div class="item-container"><p><strong>19.</strong> The number $8765A3B$ is divisible by 72. Find the value of $2A+B$.</p></div>
                 <div class="item-container"><p><strong>20.</strong> A positive integer $n$ leaves a remainder of 7 when divided by 9. What is the remainder when $4n + 3$ is divided by 9?</p></div>
             </section>
+
+            <!-- Solutions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions: Detailed Explanations</h2>
+                
+                <div class="item-container">
+                    <p><strong>1. Solution: (Corrected)</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> For a number to be divisible by 88, it must be divisible by its co-prime factors, 8 and 11.
+                    <br><strong>Rule for 8:</strong> A number is divisible by 8 if its last three digits form a number divisible by 8.
+                    <br><strong>Rule for 11:</strong> A number is divisible by 11 if the alternating sum of its digits is a multiple of 11.</p></div>
+                    <p class="solution-p"><strong>Step 1 (Divisibility by 8):</strong> The number is `472AB8`. The last three digits are `AB8`. A number `100A + 10B + 8` must be divisible by 8. Since `100A` is `96A + 4A` and `10B` is `8B + 2B`, and `96A`, `8B`, `8` are all divisible by 8, the condition simplifies to `4A + 2B` must be divisible by 8. Dividing by 2, we find that <strong>`2A + B` must be a multiple of 4</strong>.
+                    </p>
+                    <p class="solution-p"><strong>Step 2 (Divisibility by 11):</strong> We calculate the alternating sum of the digits of `472AB8`. Start from the right: $(8) - (B) + (A) - (2) + (7) - (4) = A - B + 9$. This sum must be a multiple of 11.
+                    </p>
+                    <p class="solution-p"><strong>Step 3 (Combine Rules and Find A and B):</strong>
+                    From Step 2, $A - B + 9$ could be 0, 11, -11, etc.
+                    <br>- If $A - B + 9 = 0 \implies B - A = 9$. The only digits that satisfy this are $B=9, A=0$. Let's test this pair with our rule from Step 1: `2A + B = 2(0) + 9 = 9`. Is 9 a multiple of 4? No. This case is invalid.
+                    <br>- If $A - B + 9 = 11 \implies A - B = 2$. This is a strong possibility. Let's call this Equation (i).
+                    <br>- If $A - B + 9 = 22 \implies A - B = 13$. Impossible for single digits.
+                    So we must have <strong>`A - B = 2`</strong>, which means `A = B + 2`.
+                    </p>
+                    <p class="solution-p"><strong>Step 4 (Substitute and Solve):</strong>
+                    Now substitute `A = B + 2` into our rule from Step 1 (`2A + B` must be a multiple of 4).
+                    <br>`2(B + 2) + B = 4k` (where k is an integer)
+                    <br>`2B + 4 + B = 4k`
+                    <br>`3B + 4 = 4k`
+                    Since 4 is a multiple of 4, for `3B + 4` to be a multiple of 4, `3B` must also be a multiple of 4. As 3 and 4 share no common factors, <strong>B itself must be a multiple of 4</strong>.
+                    </p>
+                    <p class="solution-p"><strong>Step 5 (Check Possible Values for B):</strong>
+                    <br>- If B=0, then A = 0 + 2 = 2. Pair: (A,B)=(2,0). $A-B = 2$.
+                    <br>- If B=4, then A = 4 + 2 = 6. Pair: (A,B)=(6,4). $A-B = 2$.
+                    <br>- If B=8, then A = 8 + 2 = 10. (Not a single digit).
+                    Both valid solutions give the same result for A-B.
+                    </p>
+                    <p class="final-answer">Final Answer: 2</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>2. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Consistent Shortfall & LCM):</strong> When a number leaves remainders that are consistently less than the divisors by the same amount, we can simplify the problem using the Least Common Multiple (LCM).
+                    <br>Let N be the number.
+                    <br>$N \div 5$ leaves remainder 3 (which is $5-2$).
+                    <br>$N \div 7$ leaves remainder 5 (which is $7-2$).
+                    <br>$N \div 9$ leaves remainder 7 (which is $9-2$).</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> Observe that in each case, the number N is 2 less than a multiple of the divisor. This means that if we add 2 to N, the new number (N+2) will be perfectly divisible by 5, 7, and 9.
+                    </p>
+                    <p class="solution-p"><strong>Step 2:</strong> We need to find a number that is a multiple of 5, 7, and 9. The smallest such positive number is the LCM(5, 7, 9). Since 5, 7, and 9 are co-prime, their LCM is their product: $5 \times 7 \times 9 = 315$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> So, $N+2$ must be a multiple of 315. The general form is $N+2 = 315k$ for some integer k. This means $N = 315k - 2$.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> We are looking for the smallest four-digit number N.
+                    <br>- For k=1, $N = 315(1) - 2 = 313$ (3-digit).
+                    <br>- For k=2, $N = 315(2) - 2 = 630 - 2 = 628$ (3-digit).
+                    <br>- For k=3, $N = 315(3) - 2 = 945 - 2 = 943$ (3-digit).
+                    <br>- For k=4, $N = 315(4) - 2 = 1260 - 2 = 1258$ (4-digit).
+                    Since this is the first 4-digit number we found, it must be the smallest.</p>
+                    <p class="final-answer">Final Answer: 1258</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>3. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Cyclicity of Units Digits):</strong> The units digit of powers of a number repeats in a cycle. We only need to look at the units digit of the base.</p></div>
+                    <p class="solution-p"><strong>Step 1 (For $13^{2023}$):</strong> We only need the units digit of $3^{2023}$.
+                    <br>The cycle for powers of 3 is: $3^1=3, 3^2=9, 3^3=27 \to 7, 3^4=81 \to 1, 3^5 \to 3$. The cycle is (3, 9, 7, 1) and has a length of 4.
+                    <br>To find the position in the cycle, we find the remainder of the exponent when divided by 4: $2023 \div 4 = 505$ R 3. The units digit is the 3rd in the cycle, which is 7.</p>
+                    <p class="solution-p"><strong>Step 2 (For $17^{2024}$):</strong> We only need the units digit of $7^{2024}$.
+                    <br>The cycle for powers of 7 is: $7^1=7, 7^2=49 \to 9, 7^3 \to 3, 7^4 \to 1$. The cycle is (7, 9, 3, 1) and has a length of 4.
+                    <br>Find the remainder of the exponent: $2024 \div 4 = 506$ R 0. A remainder of 0 means it's the last digit in the cycle, which is 1.</p>
+                    <p class="solution-p"><strong>Step 3 (For $19^{2025}$):</strong> We only need the units digit of $9^{2025}$.
+                    <br>The cycle for powers of 9 is: $9^1=9, 9^2=81 \to 1$. The cycle is (9, 1).
+                    <br>If the exponent is odd, the units digit is 9. If even, it's 1. Since 2025 is odd, the units digit is 9.</p>
+                    <p class="solution-p"><strong>Step 4 (Sum the units digits):</strong> Add the units digits we found: $7 + 1 + 9 = 17$.</p>
+                    <p class="solution-p"><strong>Step 5:</strong> The units digit of the sum 17 is 7.</p>
+                    <p class="final-answer">Final Answer: 7</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>4. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Divisibility by 9):</strong> A number is divisible by 9 if the sum of its digits is a multiple of 9.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> The number is `7A52A`. Sum its digits: $7 + A + 5 + 2 + A = 14 + 2A$.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> The sum, $14 + 2A$, must be a multiple of 9. Let's find the multiples of 9 that are close to 14.
+                    <br>- The next multiple of 9 after 14 is 18. Let's set $14 + 2A = 18$.
+                    <br>- $2A = 18 - 14 = 4$.
+                    <br>- $A = 2$. This is a valid single digit.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> Let's check the next multiple of 9, which is 27.
+                    <br>- Set $14 + 2A = 27$.
+                    <br>- $2A = 27 - 14 = 13$.
+                    <br>- $A = 6.5$. This is not a digit, so it's not a valid solution.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> The next multiple of 9, 36, would give an even larger value for A. So, the only possible value for A is 2.</p>
+                    <p class="final-answer">Final Answer: 2</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>5. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Modular Arithmetic & Fermat's Little Theorem):</strong> We can find the remainder by looking for a pattern in the remainders of powers. A shortcut is Fermat's Little Theorem, which states that if p is a prime number, then for any integer a, $a^p \equiv a \pmod{p}$. A common corollary is if a is not divisible by p, then $a^{p-1} \equiv 1 \pmod{p}$.</p></div>
+                    <p class="solution-p"><strong>Method 1: Finding a pattern</strong>
+                    <br><strong>Step 1:</strong> Find the remainders of powers of 2 when divided by 7:
+                    <br>$2^1 \div 7$ leaves remainder 2.
+                    <br>$2^2 = 4 \div 7$ leaves remainder 4.
+                    <br>$2^3 = 8 \div 7$ leaves remainder 1.
+                    <br><strong>Step 2:</strong> We found a cycle. The remainder becomes 1 at $2^3$. This means every group of $2^3$ contributes a remainder of 1.
+                    <br><strong>Step 3:</strong> We need to see how many cycles of 3 are in the exponent 100. $100 \div 3 = 33$ with a remainder of 1.
+                    <br><strong>Step 4:</strong> We can rewrite $2^{100}$ as $2^{3 \times 33 + 1} = (2^3)^{33} \times 2^1$.
+                    <br><strong>Step 5:</strong> The remainder of $(2^3)^{33}$ is the same as $1^{33}$, which is 1. The remainder of $2^1$ is 2.
+                    <br><strong>Step 6:</strong> The final remainder is $1 \times 2 = 2$.</p>
+                    <p class="solution-p"><strong>Method 2: Using Fermat's Little Theorem</strong>
+                    <br><strong>Step 1:</strong> The divisor is 7, which is a prime number. The base is 2, which is not divisible by 7.
+                    <br><strong>Step 2:</strong> According to the theorem, $2^{7-1} \equiv 1 \pmod{7}$, so $2^6 \equiv 1 \pmod{7}$.
+                    <br><strong>Step 3:</strong> Rewrite the exponent 100 in terms of 6. $100 \div 6 = 16$ with a remainder of 4.
+                    <br><strong>Step 4:</strong> So, $2^{100} = 2^{6 \times 16 + 4} = (2^6)^{16} \times 2^4$.
+                    <br><strong>Step 5:</strong> The remainder of $(2^6)^{16}$ is $1^{16} = 1$. The remainder of $2^4 = 16$ when divided by 7 is 2.
+                    <br><strong>Step 6:</strong> The final remainder is $1 \times 2 = 2$.</p>
+                    <p class="final-answer">Final Answer: 2</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>6. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Divisibility by 8):</strong> A number is divisible by 8 if the number formed by its last three digits is divisible by 8.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> The number is `1234x`. The last three digits form the number `34x`.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> We need to find a digit `x` (from 0 to 9) such that `34x` is divisible by 8. We can test values or think about multiples of 8.
+                    <br>Multiples of 8 near 340: $8 \times 40 = 320$, $8 \times 41 = 328$, $8 \times 42 = 336$, $8 \times 43 = 344$, $8 \times 44 = 352$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> From the list above, the only number that starts with `34` is 344.
+                    <br>Therefore, the number must be 344, which means `x` must be 4.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> The question asks for the value of `x`. There is only one possible value.</p>
+                    <p class="final-answer">Final Answer: 4</p>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>7. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Consistent Shortfall & LCM):</strong> This is another problem where the remainder is consistently one less than the divisor.
+                    <br>Let N be the number.
+                    <br>$N \div 2$ leaves R 1 (which is $2-1$).
+                    <br>$N \div 3$ leaves R 2 (which is $3-1$).
+                    <br>$N \div 4$ leaves R 3 (which is $4-1$).</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> The number N is 1 less than a multiple of 2, 3, and 4. This means $N+1$ is perfectly divisible by 2, 3, and 4.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> Find the LCM(2, 3, 4). The multiples of 4 are 4, 8, 12, ... The first one divisible by 3 is 12. 12 is also divisible by 2. So, LCM(2, 3, 4) = 12.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> $N+1$ must be a multiple of 12. We are looking for the smallest positive integer N, so we should use the smallest positive multiple of 12, which is 12 itself.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> Set $N+1 = 12$. Solving for N gives $N = 11$.</p>
+                    <p class="final-answer">Final Answer: 11</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>8. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The number must be divisible by both 8 and 9.</p></div>
+                    <p class="solution-p"><strong>Step 1 (Divisibility by 9):</strong> Sum the digits of `123456AB`: $1+2+3+4+5+6+A+B = 21+A+B$. This must be a multiple of 9.
+                    <br>- Next multiple of 9 after 21 is 27. So, $21+A+B = 27 \implies A+B=6$.
+                    <br>- The next is 36. So, $21+A+B = 36 \implies A+B=15$.
+                    <br>- The next is 45, which would make $A+B=24$ (impossible for two single digits).
+                    So, the possible sums for $A+B$ are 6 or 15.</p>
+                    <p class="solution-p"><strong>Step 2 (Divisibility by 8):</strong> The last three digits `6AB` must form a number divisible by 8.</p>
+                    <p class="solution-p"><strong>Step 3 (Combine Rules and Test Cases):</strong>
+                    <br>- <strong>Case 1: A+B = 6.</strong> We need to find pairs (A,B) that sum to 6 and check if `6AB` is divisible by 8. Pairs: (0,6), (1,5), (2,4), (3,3), (4,2), (5,1), (6,0).
+                    <br>  Testing the numbers `606`, `615`, `624`, `633`, `642`, `651`, `660`. Only `624` is divisible by 8 ($624 \div 8 = 78$). So, $A+B=6$ is a valid possibility.
+                    <br>- <strong>Case 2: A+B = 15.</strong> Pairs: (6,9), (7,8), (8,7), (9,6).
+                    <br>  Testing the numbers `669`, `678`, `687`, `696`. Only `696` is divisible by 8 ($696 \div 8 = 87$). So, $A+B=15$ is a valid possibility.</p>
+                    <p class="solution-p">Both sums are possible under different values of A and B.</p>
+                    <p class="final-answer">Final Answer: 6 or 15</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>9. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The units digit of a product is determined only by the units digits of the numbers being multiplied. We use the cyclicity of units digits.</p></div>
+                    <p class="solution-p"><strong>Step 1 (For $2022^{2023}$):</strong> We only care about the units digit of $2^{2023}$.
+                    <br>The cycle for powers of 2 is (2, 4, 8, 6), with length 4.
+                    <br>Find the remainder of the exponent: $2023 \div 4$ gives R 3. The units digit is the 3rd in the cycle, which is 8.</p>
+                    <p class="solution-p"><strong>Step 2 (For $2023^{2024}$):</strong> We only care about the units digit of $3^{2024}$.
+                    <br>The cycle for powers of 3 is (3, 9, 7, 1), with length 4.
+                    <br>Find the remainder of the exponent: $2024 \div 4$ gives R 0. The units digit is the 4th (last) in the cycle, which is 1.</p>
+                    <p class="solution-p"><strong>Step 3 (Multiply the units digits):</strong> The units digit of the final product is the units digit of $8 \times 1 = 8$.</p>
+                    <p class="final-answer">Final Answer: 8</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>10. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Consistent Shortfall & LCM):</strong> This is the same pattern as questions 2 and 7.
+                    <br>$N \div 10$ leaves R 9 ($10-1$).
+                    <br>$N \div 9$ leaves R 8 ($9-1$).
+                    <br>...
+                    <br>$N \div 2$ leaves R 1 ($2-1$).</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> The number N is 1 less than a multiple of 10, 9, 8, ..., and 2. This means $N+1$ is a multiple of all these numbers.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> We need to find the LCM(10, 9, 8, 7, 6, 5, 4, 3, 2).
+                    <br>To find the LCM, we take the highest power of each prime factor present in these numbers.
+                    <br>Primes: 2, 3, 5, 7.
+                    <br>Highest power of 2: $8 = 2^3$.
+                    <br>Highest power of 3: $9 = 3^2$.
+                    <br>Highest power of 5: $5 = 5^1$.
+                    <br>Highest power of 7: $7 = 7^1$.
+                    <br>LCM = $2^3 \times 3^2 \times 5 \times 7 = 8 \times 9 \times 5 \times 7 = 72 \times 35 = 2520$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> So, $N+1$ must be a multiple of 2520. We want the smallest positive N, so we take the smallest positive multiple, 2520.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> $N+1 = 2520 \implies N = 2519$.</p>
+                    <p class="final-answer">Final Answer: 2519</p>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>11. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Divisibility by 72 means divisible by 8 and 9.</p></div>
+                    <p class="solution-p"><strong>Step 1 (Divisibility by 8):</strong> The last three digits `6B2` must be divisible by 8.
+                    <br>Let's test values for B: `602` (no), `612` (no), `622` (no), `632` (yes, $632 \div 8 = 79$), `642` (no), `652` (no), `662` (no), `672` (yes, $672 \div 8 = 84$), `682` (no), `692` (no).
+                    <br>So, B can be 3 or 7.</p>
+                    <p class="solution-p"><strong>Step 2 (Divisibility by 9):</strong> The sum of digits `7+A+6+B+2 = 15+A+B` must be a multiple of 9.</p>
+                    <p class="solution-p"><strong>Step 3 (Combine and Test Cases):</strong>
+                    <br>- <strong>Case 1: B = 3.</strong> The sum is $15+A+3 = 18+A$. For this to be a multiple of 9, A could be 0 or 9.
+                    <br>  - If A=0, B=3, then $A+B=3$.
+                    <br>  - If A=9, B=3, then $A+B=12$.
+                    <br>- <strong>Case 2: B = 7.</strong> The sum is $15+A+7 = 22+A$. For this to be a multiple of 9, $22+A$ must be 27. This means A must be 5.
+                    <br>  - If A=5, B=7, then $A+B=12$.
+                    </p>
+                    <p class="solution-p"><strong>Step 4:</strong> The possible values for the sum $A+B$ are 3 and 12. The question asks for the sum of these possible values: $3 + 12 = 15$.</p>
+                    <p class="final-answer">Final Answer: 15</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>12. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Factorials and Remainders):</strong> For larger factorials, they will contain the factors of the divisor, making their remainder 0.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> We need to find the remainder of the sum when divided by 15. Let's calculate the first few factorials and their remainders modulo 15.
+                    <br>$1! = 1 \equiv 1 \pmod{15}$.
+                    <br>$2! = 2 \equiv 2 \pmod{15}$.
+                    <br>$3! = 6 \equiv 6 \pmod{15}$.
+                    <br>$4! = 24 \equiv 9 \pmod{15}$.
+                    <br>$5! = 120$. Since $120 = 15 \times 8$, $5! \equiv 0 \pmod{15}$.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> For any factorial greater than or equal to 5! (like 6!, 7!, etc.), it will contain the factors 3 and 5, which means it will be a multiple of 15. Therefore, the remainder for 5!, 6!, ..., 50! will all be 0.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> We only need to sum the remainders of the terms before 5!: $1 + 2 + 6 + 9 = 18$.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> Find the remainder of this sum when divided by 15. $18 \div 15$ leaves a remainder of 3.</p>
+                    <p class="final-answer">Final Answer: 3</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>13. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Euler's Totient Function):</strong> A simplified proper fraction with denominator n has a numerator that is less than n and co-prime to n. The number of such numerators is given by Euler's totient function, $\phi(n)$.
+                    <br>Formula: If $n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}$, then $\phi(n) = n(1 - \frac{1}{p_1})(1 - \frac{1}{p_2})\dots(1 - \frac{1}{p_r})$.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> Find the prime factorization of the denominator, 120.
+                    <br>$120 = 12 \times 10 = (2^2 \times 3) \times (2 \times 5) = 2^3 \times 3^1 \times 5^1$.
+                    <br>The distinct prime factors are 2, 3, and 5.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> Apply Euler's totient function formula.
+                    <br>$\phi(120) = 120 \times (1 - \frac{1}{2}) \times (1 - \frac{1}{3}) \times (1 - \frac{1}{5})$
+                    <br>$\phi(120) = 120 \times (\frac{1}{2}) \times (\frac{2}{3}) \times (\frac{4}{5})$</p>
+                    <p class="solution-p"><strong>Step 3:</strong> Calculate the result.
+                    <br>$\phi(120) = 60 \times (\frac{2}{3}) \times (\frac{4}{5}) = 40 \times (\frac{4}{5}) = 32$.</p>
+                    <p class="final-answer">Final Answer: 32</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>14. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Units Digits of Factorials):</strong> For factorials of 5 or greater, the units digit will always be 0 because they include factors of 2 and 5.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> Calculate the units digits of the first few odd-numbered factorials.
+                    <br>Units digit of $1! = 1$.
+                    <br>Units digit of $3! = 6$.
+                    <br>Units digit of $5! = 120 \to 0$.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> For any odd number $n \ge 5$, $n!$ will be a multiple of 10 (since it includes factors of 2 and 5). This means the units digit of 5!, 7!, 9!, ..., 99! will all be 0.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> Therefore, we only need to sum the units digits of the terms that are not 0: $1!$ and $3!$.
+                    <br>Sum of units digits = $1 + 6 = 7$.</p>
+                    <p class="final-answer">Final Answer: 7</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>15. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Consistent Remainder & LCM):</strong> When a number leaves the same remainder when divided by several different numbers, it must be of the form $N = k \times \text{LCM} + \text{remainder}$.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> Let N be the number. The problem states:
+                    <br>$N = 5a + 2$
+                    <br>$N = 7b + 2$
+                    <br>$N = 11c + 2$
+                    This means if we subtract 2 from N, the result (N-2) is perfectly divisible by 5, 7, and 11.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> Find the LCM(5, 7, 11). Since they are all prime numbers, their LCM is their product: $5 \times 7 \times 11 = 385$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> So, $N-2$ must be a multiple of 385. The general form is $N-2 = 385k$, or $N = 385k + 2$.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> We want the smallest 4-digit number. Let's test values of k.
+                    <br>- k=1: $N = 385(1) + 2 = 387$ (3-digit).
+                    <br>- k=2: $N = 385(2) + 2 = 770 + 2 = 772$ (3-digit).
+                    <br>- k=3: $N = 385(3) + 2 = 1155 + 2 = 1157$ (4-digit).
+                    This is the first 4-digit number we found, so it is the smallest.</p>
+                    <p class="final-answer">Final Answer: 1157</p>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>16. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Divisibility by 99 means the number is divisible by 9 and 11.</p></div>
+                    <p class="solution-p"><strong>Step 1 (Divisibility by 9):</strong> Sum of digits `5+A+8+3+B = 16+A+B` must be a multiple of 9.
+                    <br>- The next multiple of 9 after 16 is 18. So, $16+A+B = 18 \implies A+B=2$.
+                    <br>- The next is 27. So, $16+A+B = 27 \implies A+B=11$.
+                    <br>- The next is 36, making $A+B=20$ (impossible).</p>
+                    <p class="solution-p"><strong>Step 2 (Divisibility by 11):</strong> Alternating sum of digits `B-3+8-A+5 = B-A+10` must be a multiple of 11.
+                    <br>- If $B-A+10=11 \implies B-A=1$.
+                    <br>- If $B-A+10=0 \implies B-A=-10$ (impossible).
+                    <br>- If $B-A+10=22 \implies B-A=12$ (impossible).
+                    So we must have $B-A=1$.</p>
+                    <p class="solution-p"><strong>Step 3 (Solve the System of Equations):</strong>
+                    We have two systems to check:
+                    <br>1) $A+B=2$ and $B-A=1$. Adding the two equations gives $2B=3$, so $B=1.5$ (not a digit). This case is invalid.
+                    <br>2) $A+B=11$ and $B-A=1$. Adding the two equations gives $2B=12$, so $B=6$. If $B=6$, then $A=5$. This is a valid solution.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> The question asks for the value of $B-A$. From our valid solution, $B-A = 6-5 = 1$.</p>
+                    <p class="final-answer">Final Answer: 1</p>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>17. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Divisibility by 9):</strong> The remainder of a number when divided by 9 is the same as the remainder of the sum of its digits when divided by 9.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> The number consists of the digit 7 repeated 2023 times.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> Find the sum of its digits. The sum is $7 \times 2023$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> We need to find the remainder of this sum when divided by 9. We can use modular arithmetic.
+                    <br>Remainder of 7 when divided by 9 is 7 (or -2).
+                    <br>Remainder of 2023 when divided by 9: Sum of digits of 2023 is $2+0+2+3=7$. So the remainder of 2023 is 7.
+                    </p>
+                    <p class="solution-p"><strong>Step 4:</strong> The remainder of the product is the product of the remainders.
+                    <br>Remainder of $(7 \times 2023)$ is the same as the remainder of $(7 \times 7) = 49$.</p>
+                    <p class="solution-p"><strong>Step 5:</strong> Find the remainder of 49 when divided by 9.
+                    <br>$49 = 9 \times 5 + 4$. The remainder is 4.</p>
+                    <p class="final-answer">Final Answer: 4</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>18. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Cyclicity of Units Digits):</strong> This is a nested exponent problem. We solve from the top down to find the relevant part of the cycle.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> We need the units digit of $7^{(\text{some large number})}$. The cycle of units digits for powers of 7 is (7, 9, 3, 1), which has a length of 4.
+                    <br>The units digit is determined by the remainder of the exponent when divided by 4.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> The exponent is $7^7$. We need to find the remainder of $7^7$ when divided by 4.
+                    <br>Let's look at powers of 7 modulo 4.
+                    <br>$7 \equiv 3 \pmod{4}$ or $7 \equiv -1 \pmod{4}$. Using -1 is easier.
+                    <br>$7^7 \equiv (-1)^7 \pmod{4}$.
+                    <br>$(-1)^7 = -1$.
+                    <br>So, $7^7 \equiv -1 \pmod{4}$, which is the same as a remainder of 3.
+                    </p>
+                    <p class="solution-p"><strong>Step 3:</strong> The remainder of the exponent ($7^7$) when divided by 4 is 3. This means we need the 3rd digit in the cycle of 7s.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> The cycle is (7, 9, 3, 1). The 3rd digit is 3.</p>
+                    <p class="final-answer">Final Answer: 3</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>19. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Divisibility by 72 means divisible by 8 and 9.</p></div>
+                    <p class="solution-p"><strong>Step 1 (Divisibility by 8):</strong> The last three digits, `A3B`, must form a number divisible by 8. We can test values.
+                    <br>Let's consider `A30`. $8 \times 16 = 128$, $8 \times 29=232$, $8 \times 41=328$, $8 \times 54=432$, etc.
+                    <br>Let's list the possibilities for `A3B`:
+                    <br>- If A=0, `032`=32 works. B=2.
+                    <br>- If A=1, `136` works. B=6.
+                    <br>- If A=2, `232` works. B=2.
+                    <br>- If A=3, `336` works. B=6.
+                    ...and so on. The pattern for B is (2, 6, 2, 6, ...). If A is even, B=2. If A is odd, B=6.</p>
+                    <p class="solution-p"><strong>Step 2 (Divisibility by 9):</strong> Sum of digits `8+7+6+5+A+3+B = 29+A+B` must be a multiple of 9.
+                    <br>- If $29+A+B=36 \implies A+B=7$.
+                    <br>- If $29+A+B=45 \implies A+B=16$.
+                    </p>
+                    <p class="solution-p"><strong>Step 3 (Combine Rules and Test Cases):</strong>
+                    <br>- <strong>Case 1: A+B = 7.</strong>
+                    <br>  - If A is even, B must be 2. Then $A+2=7 \implies A=5$. But A must be even, so this is a contradiction.
+                    <br>  - If A is odd, B must be 6. Then $A+6=7 \implies A=1$. A=1 is odd. This works! So (A,B)=(1,6) is a solution.
+                    <br>- <strong>Case 2: A+B = 16.</strong>
+                    <br>  - If A is even, B must be 2. Then $A+2=16 \implies A=14$. Not a digit.
+                    <br>  - If A is odd, B must be 6. Then $A+6=16 \implies A=10$. Not a digit.
+                    The only valid solution is (A,B) = (1,6).
+                    </p>
+                    <p class="solution-p"><strong>Step 4:</strong> The question asks for $2A+B$. Using our solution (1,6):
+                    $2(1) + 6 = 2 + 6 = 8$.</p>
+                    <p class="final-answer">Final Answer: 8</p>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>20. Solution:</strong></p>
+                    <div class="concept"><p><strong>Concept (Modular Arithmetic):</strong> We can represent the information using modular notation and substitute it into the expression.</p></div>
+                    <p class="solution-p"><strong>Step 1:</strong> "A positive integer n leaves a remainder of 7 when divided by 9" can be written as $n \equiv 7 \pmod{9}$.</p>
+                    <p class="solution-p"><strong>Step 2:</strong> We need to find the remainder of $4n + 3$ when divided by 9. We can substitute the equivalence from Step 1 into the expression.
+                    <br>$4n + 3 \equiv 4(7) + 3 \pmod{9}$.</p>
+                    <p class="solution-p"><strong>Step 3:</strong> Calculate the value.
+                    <br>$4(7) + 3 = 28 + 3 = 31$.</p>
+                    <p class="solution-p"><strong>Step 4:</strong> Find the remainder of 31 when divided by 9.
+                    <br>$31 = 9 \times 3 + 4$. The remainder is 4.</p>
+                    <p class="final-answer">Final Answer: 4</p>
+                </div>
+
+            </section>
+
         </main>
     </div>
 
