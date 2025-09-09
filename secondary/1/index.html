@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Olimpiade Matematika: FPB, KPK, & Algoritma Euclid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 1</h1>
+            <p class="text-gray-600 mt-2">Grade 7 - 9 | GCD, LCM, and Euclidean Algorithm</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Soal-Soal / Questions</h2>
+                <!-- Soal 1-10: FPB & KPK Bilangan Besar -->
+                <div class="item-container"><p><strong>1.</strong> Find the GCD (Greatest Common Divisor) and LCM (Least Common Multiple) of 1386 and 3276.<br/><br/>Tentukan FPB (Faktor Persekutuan Terbesar) dan KPK (Kelipatan Persekutuan Terkecil) dari 1386 dan 3276.</p></div>
+                <div class="item-container"><p><strong>2.</strong> Three bells toll at intervals of 12, 15, and 18 minutes respectively. If they start tolling together, after what time will they next toll together?<br/><br/>Tiga lonceng berdentang masing-masing setiap 12, 15, dan 18 menit. Jika mereka mulai berdentang bersamaan, setelah berapa lama mereka akan berdentang bersamaan lagi?</p></div>
+                <div class="item-container"><p><strong>3.</strong> The product of two numbers is 20736 and their GCD is 36. Find their LCM.<br/><br/>Hasil kali dua bilangan adalah 20736 dan FPB-nya adalah 36. Tentukan KPK-nya.</p></div>
+                <div class="item-container"><p><strong>4.</strong> Find the largest number that divides 285 and 1249, leaving remainders 9 and 7 respectively.<br/><br/>Tentukan bilangan terbesar yang dapat membagi 285 dan 1249, dengan sisa berturut-turut 9 dan 7.</p></div>
+                <div class="item-container"><p><strong>5.</strong> A rectangular courtyard 3.78 meters long and 5.25 meters wide is to be paved exactly with square tiles of the same size. What is the largest size of the tile which could be used for the purpose?<br/><br/>Sebuah halaman persegi panjang berukuran panjang 3,78 meter dan lebar 5,25 meter akan ditutup dengan ubin persegi berukuran sama. Berapakah ukuran ubin terbesar yang dapat digunakan untuk tujuan tersebut?</p></div>
+                <div class="item-container"><p><strong>6.</strong> Find the least number which when divided by 6, 15, and 18 leaves a remainder of 5 in each case.<br/><br/>Tentukan bilangan terkecil yang jika dibagi oleh 6, 15, dan 18 akan selalu menyisakan 5.</p></div>
+                <div class="item-container"><p><strong>7.</strong> The LCM of two numbers is 14 times their GCD. The sum of the LCM and GCD is 600. If one number is 280, find the other number.<br/><br/>KPK dari dua bilangan adalah 14 kali FPB-nya. Jumlah dari KPK dan FPB adalah 600. Jika salah satu bilangannya adalah 280, tentukan bilangan yang lainnya.</p></div>
+                <div class="item-container"><p><strong>8.</strong> Find the GCD of $2^3 \times 3^2 \times 5 \times 7^4$ and $2^2 \times 3^5 \times 5^2 \times 7^3$.<br/><br/>Tentukan FPB dari $2^3 \times 3^2 \times 5 \times 7^4$ dan $2^2 \times 3^5 \times 5^2 \times 7^3$.</p></div>
+                <div class="item-container"><p><strong>9.</strong> Find the LCM of $3^4 \times 5^2 \times 11$ and $3^2 \times 5^3 \times 7^2$.<br/><br/>Tentukan KPK dari $3^4 \times 5^2 \times 11$ dan $3^2 \times 5^3 \times 7^2$.</p></div>
+                <div class="item-container"><p><strong>10.</strong> Four runners start running simultaneously from a point on a circular track. They take 200, 300, 360, and 450 seconds to complete one round. After how much time do they meet at the starting point for the first time?<br/><br/>Empat pelari mulai berlari secara bersamaan dari sebuah titik di lintasan melingkar. Mereka membutuhkan 200, 300, 360, dan 450 detik untuk menyelesaikan satu putaran. Setelah berapa lama mereka akan bertemu di titik awal untuk pertama kalinya?</p></div>
+                
+                <!-- Soal 11-20: Algoritma Euclid -->
+                <div class="item-container"><p><strong>11.</strong> Use the Euclidean Algorithm to find the GCD of 4052 and 12576.<br/><br/>Gunakan Algoritma Euclid untuk mencari FPB dari 4052 dan 12576.</p></div>
+                <div class="item-container"><p><strong>12.</strong> Find the GCD of 10224 and 9648 using the Euclidean Algorithm.<br/><br/>Tentukan FPB dari 10224 dan 9648 menggunakan Algoritma Euclid.</p></div>
+                <div class="item-container"><p><strong>13.</strong> How many steps does the Euclidean Algorithm take to find the GCD of 1131 and 789?<br/><br/>Berapa banyak langkah yang dibutuhkan Algoritma Euclid untuk menemukan FPB dari 1131 dan 789?</p></div>
+                <div class="item-container"><p><strong>14.</strong> The last non-zero remainder in the Euclidean Algorithm for two numbers 'a' and 'b' is 17. What is GCD(a, b)?<br/><br/>Sisa tak-nol terakhir dalam proses Algoritma Euclid untuk dua bilangan 'a' dan 'b' adalah 17. Berapakah FPB(a, b)?</p></div>
+                <div class="item-container"><p><strong>15.</strong> If you apply the Euclidean Algorithm to 506 and 1155, what is the second remainder obtained?<br/><br/>Jika Anda menerapkan Algoritma Euclid pada 506 dan 1155, berapakah sisa kedua yang diperoleh?</p></div>
+                <div class="item-container"><p><strong>16.</strong> Find the GCD of three numbers 136, 170, and 255 using the Euclidean Algorithm.<br/><br/>Tentukan FPB dari tiga bilangan 136, 170, dan 255 menggunakan Algoritma Euclid.</p></div>
+                <div class="item-container"><p><strong>17.</strong> Two numbers are in the ratio 15:11. If their GCD is 13, what are the numbers?<br/><br/>Dua bilangan memiliki perbandingan 15:11. Jika FPB-nya adalah 13, berapakah kedua bilangan tersebut?</p></div>
+                <div class="item-container"><p><strong>18.</strong> Using the Euclidean Algorithm, find the GCD of 7344 and 2520.<br/><br/>Dengan menggunakan Algoritma Euclid, tentukan FPB dari 7344 dan 2520.</p></div>
+                <div class="item-container"><p><strong>19.</strong> Let $a = 111...1$ (20 digits) and $b = 111...1$ (12 digits). Find GCD(a, b) using properties related to the Euclidean Algorithm.<br/><br/>Misalkan $a = 111...1$ (20 angka) dan $b = 111...1$ (12 angka). Tentukan FPB(a, b) menggunakan sifat yang terkait dengan Algoritma Euclid.</p></div>
+                <div class="item-container"><p><strong>20.</strong> The GCD of two numbers is 23. The other two factors in their prime factorization are 13 and 17. Find the numbers.<br/><br/>FPB dari dua bilangan adalah 23. Dua faktor lain dalam faktorisasi prima mereka adalah 13 dan 17. Temukan kedua bilangan tersebut.</p></div>
+
+                <!-- Soal 21-30: Aplikasi & Soal Lanjutan -->
+                <div class="item-container"><p><strong>21.</strong> Find the smallest 4-digit number which is exactly divisible by 12, 15, 20 and 35.<br/><br/>Tentukan bilangan 4-angka terkecil yang habis dibagi oleh 12, 15, 20, dan 35.</p></div>
+                <div class="item-container"><p><strong>22.</strong> A number when divided by 10 leaves a remainder of 9, when divided by 9 leaves a remainder of 8, and when divided by 8 leaves a remainder of 7. Find the number.<br/><br/>Sebuah bilangan jika dibagi 10 bersisa 9, jika dibagi 9 bersisa 8, dan jika dibagi 8 bersisa 7. Tentukan bilangan tersebut.</p></div>
+                <div class="item-container"><p><strong>23.</strong> Let $a$ and $b$ be positive integers such that $GCD(a, b) = 8$ and $LCM(a, b) = 560$. How many pairs of $(a, b)$ are possible?<br/><br/>Misalkan $a$ dan $b$ adalah bilangan bulat positif sehingga $FPB(a, b) = 8$ dan $KPK(a, b) = 560$. Berapa banyak pasangan $(a, b)$ yang mungkin?</p></div>
+                <div class="item-container"><p><strong>24.</strong> What is the greatest number of 4 digits which when divided by 10, 15, 21, and 28 leaves remainders 4, 9, 15, and 22 respectively?<br/><br/>Berapakah bilangan 4-angka terbesar yang jika dibagi 10, 15, 21, dan 28 akan menyisakan 4, 9, 15, dan 22 secara berurutan?</p></div>
+                <div class="item-container"><p><strong>25.</strong> The traffic lights at three different road crossings change after every 48 sec, 72 sec and 108 sec respectively. If they all change simultaneously at 7:00:00 AM, at what time will they again change simultaneously?<br/><br/>Lampu lalu lintas di tiga persimpangan jalan yang berbeda berubah setiap 48 detik, 72 detik, dan 108 detik. Jika semua lampu berubah serentak pada pukul 07:00:00, pada pukul berapa mereka akan berubah serentak lagi?</p></div>
+                <div class="item-container"><p><strong>26.</strong> A farmer wants to buy a field which has dimensions 1320 m by 945 m. For fencing, he needs to place poles at an equal distance apart, with a pole in each corner. What is the maximum distance between two consecutive poles?<br/><br/>Seorang petani ingin membeli ladang berukuran 1320 m x 945 m. Untuk memagari, ia perlu menempatkan tiang dengan jarak yang sama, dengan satu tiang di setiap sudut. Berapa jarak maksimum antara dua tiang yang berurutan?</p></div>
+                <div class="item-container"><p><strong>27.</strong> Find the GCD of 20! and 300.<br/><br/>Tentukan FPB dari 20! dan 300.</p></div>
+                <div class="item-container"><p><strong>28.</strong> The GCD of two numbers $a$ and $b$ is 1. What is the GCD of $a+b$ and $a-b$? ($a > b$)<br/><br/>FPB dari dua bilangan $a$ dan $b$ adalah 1. Berapakah FPB dari $a+b$ dan $a-b$? ($a > b$)</p></div>
+                <div class="item-container"><p><strong>29.</strong> What is the smallest number which when increased by 5 is divisible by both 54 and 72?<br/><br/>Berapakah bilangan terkecil yang jika ditambah 5 akan habis dibagi oleh 54 dan 72?</p></div>
+                <div class="item-container"><p><strong>30.</strong> Find the sum of two numbers which are greater than 29 and have GCD 29 and LCM 4147.<br/><br/>Tentukan jumlah dari dua bilangan yang keduanya lebih besar dari 29, memiliki FPB 29, dan KPK 4147.</p></div>
+            </section>
+            
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Pembahasan / Solutions</h2>
+                
+                <div class="item-container">
+                    <p><strong>1. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>To find the GCD and LCM of large numbers, we use prime factorization. GCD is the product of the lowest powers of common prime factors. LCM is the product of the highest powers of all prime factors present in the numbers.<br/><br/><strong>Konsep</strong><br/>Untuk mencari FPB dan KPK dari bilangan besar, kita gunakan faktorisasi prima. FPB adalah hasil kali pangkat terendah dari faktor prima yang sama. KPK adalah hasil kali pangkat tertinggi dari semua faktor prima yang ada.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Prime factorize both numbers.<br/>Lakukan faktorisasi prima untuk kedua bilangan.<br/>$1386 = 2 \times 3^2 \times 7 \times 11$<br/>$3276 = 2^2 \times 3^2 \times 7 \times 13$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the GCD by taking the lowest power of common primes (2, 3, 7).<br/>Cari FPB dengan mengambil pangkat terendah dari faktor prima yang sama (2, 3, 7).<br/>$GCD = 2^1 \times 3^2 \times 7^1 = 2 \times 9 \times 7 = 126$</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>Find the LCM by taking the highest power of all primes (2, 3, 7, 11, 13).<br/>Cari KPK dengan mengambil pangkat tertinggi dari semua faktor prima (2, 3, 7, 11, 13).<br/>$LCM = 2^2 \times 3^2 \times 7^1 \times 11^1 \times 13^1 = 4 \times 9 \times 7 \times 11 \times 13 = 36036$</p>
+                    <div class="final-answer">Final Answer: GCD = 126, LCM = 36036.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>2. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>The time when they will toll together again is the LCM of their individual time intervals.<br/><br/><strong>Konsep</strong><br/>Waktu ketika mereka akan berdentang bersamaan lagi adalah KPK dari interval waktu masing-masing.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 12, 15, and 18.<br/>Cari KPK dari 12, 15, dan 18.<br/>$12 = 2^2 \times 3$<br/>$15 = 3 \times 5$<br/>$18 = 2 \times 3^2$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>LCM is the product of the highest powers of all prime factors (2, 3, 5).<br/>KPK adalah hasil kali pangkat tertinggi dari semua faktor prima (2, 3, 5).<br/>$LCM = 2^2 \times 3^2 \times 5^1 = 4 \times 9 \times 5 = 180$</p>
+                    <div class="final-answer">Final Answer: 180 minutes or 3 hours. / 180 menit atau 3 jam.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>3. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>For any two positive integers a and b, the product of the numbers is equal to the product of their GCD and LCM. Formula: $a \times b = GCD(a, b) \times LCM(a, b)$.<br/><br/><strong>Konsep</strong><br/>Untuk dua bilangan bulat positif a dan b, berlaku bahwa hasil kali kedua bilangan sama dengan hasil kali FPB dan KPK-nya. Rumus: $a \times b = FPB(a, b) \times KPK(a, b)$.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Use the formula. We are given $a \times b = 20736$ and $GCD(a,b) = 36$.<br/>Gunakan rumus. Diketahui $a \times b = 20736$ dan $FPB(a,b) = 36$.<br/>$20736 = 36 \times LCM(a, b)$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Solve for LCM.<br/>Selesaikan untuk mencari KPK.<br/>$LCM(a, b) = 20736 \div 36 = 576$</p>
+                    <div class="final-answer">Final Answer: 576.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>4. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>If a number divides N with a remainder R, it means the number divides (N-R) exactly. We need to find the GCD of the resulting numbers.<br/><br/><strong>Konsep</strong><br/>Jika suatu bilangan membagi N dengan sisa R, artinya bilangan tersebut membagi habis (N-R). Kita perlu mencari FPB dari bilangan-bilangan hasil pengurangan tersebut.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Subtract the remainders from the numbers.<br/>Kurangi bilangan dengan sisanya.<br/>$285 - 9 = 276$<br/>$1249 - 7 = 1242$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the GCD of 276 and 1242 using the Euclidean Algorithm.<br/>Cari FPB dari 276 dan 1242 menggunakan Algoritma Euclid.<br/>$1242 = 4 \times 276 + 138$<br/>$276 = 2 \times 138 + 0$</p>
+                     <p class="solution-step">The last non-zero remainder is the GCD.<br/>Sisa tak-nol terakhir adalah FPB-nya.</p>
+                    <div class="final-answer">Final Answer: 138.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>5. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>To avoid decimals, it's better to convert the dimensions to the smallest unit (cm). The largest size of the square tile will be the GCD of the length and width in cm.<br/><br/><strong>Konsep</strong><br/>Untuk menghindari desimal, lebih baik ubah dimensi ke unit terkecil (cm). Ukuran ubin persegi terbesar adalah FPB dari panjang dan lebar dalam cm.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Convert dimensions to centimeters.<br/>Ubah dimensi ke sentimeter.<br/>Length = 3.78 m = 378 cm<br/>Width = 5.25 m = 525 cm</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the GCD of 378 and 525 using the Euclidean Algorithm.<br/>Cari FPB dari 378 dan 525 menggunakan Algoritma Euclid.<br/>$525 = 1 \times 378 + 147$<br/>$378 = 2 \times 147 + 84$<br/>$147 = 1 \times 84 + 63$<br/>$84 = 1 \times 63 + 21$<br/>$63 = 3 \times 21 + 0$</p>
+                    <p class="solution-step">The GCD is 21. The largest tile size is 21 cm.<br/>FPB-nya adalah 21. Jadi ukuran ubin terbesar adalah 21 cm.</p>
+                    <div class="final-answer">Final Answer: 21 cm.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>6. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>The required number is of the form $k \times \text{LCM}(\text{divisors}) + \text{remainder}$. For the least number, k=1.<br/><br/><strong>Konsep</strong><br/>Bilangan yang dicari memiliki bentuk $k \times \text{KPK}(\text{pembagi}) + \text{sisa}$. Untuk bilangan terkecil, k=1.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 6, 15, and 18.<br/>Cari KPK dari 6, 15, dan 18.<br/>$LCM(6, 15, 18) = 90$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>The number is the LCM plus the remainder.<br/>Bilangan yang dicari adalah KPK ditambah sisa.<br/>Required number = $90 + 5 = 95$</p>
+                     <div class="final-answer">Final Answer: 95.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>7. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>Use the given relationship between LCM and GCD to find their values first, then use the property $N_1 \times N_2 = GCD \times LCM$.<br/><br/><strong>Konsep</strong><br/>Gunakan hubungan yang diberikan antara KPK dan FPB untuk mencari nilainya terlebih dahulu, lalu gunakan sifat $N_1 \times N_2 = FPB \times KPK$.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Set up equations. Let GCD = G, LCM = L.<br/>Buat persamaan. Misal FPB = G, KPK = L.<br/>$L = 14G$<br/>$L + G = 600$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Solve the equations.<br/>Selesaikan persamaan.<br/>$14G + G = 600 \Rightarrow 15G = 600 \Rightarrow G = 40$<br/>$L = 14 \times 40 = 560$</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>Find the other number (N2).<br/>Cari bilangan lainnya (N2).<br/>$280 \times N_2 = 40 \times 560$<br/>$N_2 = (40 \times 560) / 280 = 80$</p>
+                     <div class="final-answer">Final Answer: 80.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>8. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>The GCD of numbers in prime-factored form is the product of the lowest powers of their common prime factors.<br/><br/><strong>Konsep</strong><br/>FPB dari bilangan dalam bentuk faktorisasi prima adalah hasil kali pangkat terendah dari faktor-faktor prima yang sama.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Identify common prime factors and their lowest powers.<br/>Identifikasi faktor prima yang sama dan pangkat terendahnya.<br/>Common primes: 2, 3, 5, 7<br/>Lowest power of 2: $2^2$<br/>Lowest power of 3: $3^2$<br/>Lowest power of 5: $5^1$<br/>Lowest power of 7: $7^3$</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>Multiply them together.<br/>Kalikan semuanya.<br/>$GCD = 2^2 \times 3^2 \times 5 \times 7^3$</p>
+                     <div class="final-answer">Final Answer: $2^2 \times 3^2 \times 5 \times 7^3$.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>9. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>The LCM of numbers in prime-factored form is the product of the highest powers of all prime factors present.<br/><br/><strong>Konsep</strong><br/>KPK dari bilangan dalam bentuk faktorisasi prima adalah hasil kali pangkat tertinggi dari semua faktor prima yang ada.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Identify all prime factors and their highest powers.<br/>Identifikasi semua faktor prima dan pangkat tertingginya.<br/>All primes: 3, 5, 7, 11<br/>Highest power of 3: $3^4$<br/>Highest power of 5: $5^3$<br/>Highest power of 7: $7^2$<br/>Highest power of 11: $11^1$</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>Multiply them together.<br/>Kalikan semuanya.<br/>$LCM = 3^4 \times 5^3 \times 7^2 \times 11$</p>
+                     <div class="final-answer">Final Answer: $3^4 \times 5^3 \times 7^2 \times 11$.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>10. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>The time they meet again at the starting point is the LCM of their individual times.<br/><br/><strong>Konsep</strong><br/>Waktu mereka bertemu lagi di titik awal adalah KPK dari waktu masing-masing individu.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 200, 300, 360, and 450.<br/>Cari KPK dari 200, 300, 360, dan 450.<br/>$200 = 2^3 \times 5^2$<br/>$300 = 2^2 \times 3 \times 5^2$<br/>$360 = 2^3 \times 3^2 \times 5$<br/>$450 = 2 \times 3^2 \times 5^2$</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>Take the highest power of each prime factor.<br/>Ambil pangkat tertinggi dari setiap faktor prima.<br/>$LCM = 2^3 \times 3^2 \times 5^2 = 8 \times 9 \times 25 = 1800$</p>
+                     <div class="final-answer">Final Answer: 1800 seconds. / 1800 detik.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>11. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>The Euclidean Algorithm uses the principle that $GCD(a, b) = GCD(b, a \pmod b)$.<br/><br/><strong>Konsep</strong><br/>Algoritma Euclid menggunakan prinsip bahwa $FPB(a, b) = FPB(b, a \pmod b)$.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Divide 12576 by 4052.<br/>Bagi 12576 dengan 4052.<br/>$12576 = 3 \times 4052 + 420$</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Repeat the process.<br/>Ulangi prosesnya.<br/>$4052 = 9 \times 420 + 272$<br/>$420 = 1 \times 272 + 148$<br/>$272 = 1 \times 148 + 124$<br/>$148 = 1 \times 124 + 24$<br/>$124 = 5 \times 24 + 4$<br/>$24 = 6 \times 4 + 0$</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>The last non-zero remainder is the GCD.<br/>Sisa tak-nol terakhir adalah FPB-nya.</p>
+                    <div class="final-answer">Final Answer: 4.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>12. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">$10224 = 1 \times 9648 + 576$<br/>$9648 = 16 \times 576 + 432$<br/>$576 = 1 \times 432 + 144$<br/>$432 = 3 \times 144 + 0$</p>
+                    <div class="final-answer">Final Answer: 144.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>13. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">$1131 = 1 \times 789 + 342$ (Step 1)<br/>$789 = 2 \times 342 + 105$ (Step 2)<br/>$342 = 3 \times 105 + 27$ (Step 3)<br/>$105 = 3 \times 27 + 24$ (Step 4)<br/>$27 = 1 \times 24 + 3$ (Step 5)<br/>$24 = 8 \times 3 + 0$ (Step 6)</p>
+                    <div class="final-answer">Final Answer: 6 steps. / 6 langkah.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>14. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>By definition, the GCD of two numbers found via the Euclidean Algorithm is the last non-zero remainder obtained in the process.<br/><br/><strong>Konsep</strong><br/>Sesuai definisi, FPB dari dua bilangan yang dicari dengan Algoritma Euclid adalah sisa tak-nol terakhir yang didapat dari proses tersebut.</p></div>
+                    <div class="final-answer">Final Answer: 17.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>15. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Divide 1155 by 506.<br/>Bagi 1155 dengan 506.<br/>$1155 = 2 \times 506 + 143$ (First remainder is 143 / Sisa pertama adalah 143)</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Divide 506 by 143.<br/>Bagi 506 dengan 143.<br/>$506 = 3 \times 143 + 77$ (Second remainder is 77 / Sisa kedua adalah 77)</p>
+                    <div class="final-answer">Final Answer: 77.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>16. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>$GCD(a, b, c) = GCD(GCD(a, b), c)$.<br/><br/><strong>Konsep</strong><br/>$FPB(a, b, c) = FPB(FPB(a, b), c)$.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find GCD(136, 170).<br/>Cari FPB(136, 170).<br/>$170 = 1 \times 136 + 34$<br/>$136 = 4 \times 34 + 0 \implies GCD(136, 170) = 34$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find GCD(34, 255).<br/>Cari FPB(34, 255).<br/>$255 = 7 \times 34 + 17$<br/>$34 = 2 \times 17 + 0 \implies GCD(34, 255) = 17$.</p>
+                    <div class="final-answer">Final Answer: 17.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>17. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>If two numbers are in the ratio a:b, they can be written as $ak$ and $bk$ for some integer k. Since a and b are coprime, their GCD will be k.<br/><br/><strong>Konsep</strong><br/>Jika dua bilangan memiliki perbandingan a:b, mereka dapat ditulis sebagai $ak$ dan $bk$ untuk suatu bilangan bulat k. Karena a dan b koprima, FPB-nya adalah k.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>The numbers are 15k and 11k. Their GCD is k.<br/>Bilangannya adalah 15k dan 11k. FPB-nya adalah k.<br/>Given GCD is 13, so $k=13$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the numbers.<br/>Tentukan bilangannya.<br/>First number = $15 \times 13 = 195$<br/>Second number = $11 \times 13 = 143$</p>
+                    <div class="final-answer">Final Answer: 195 and 143.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>18. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">$7344 = 2 \times 2520 + 2304$<br/>$2520 = 1 \times 2304 + 216$<br/>$2304 = 10 \times 216 + 144$<br/>$216 = 1 \times 144 + 72$<br/>$144 = 2 \times 72 + 0$</p>
+                    <div class="final-answer">Final Answer: 72.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>19. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>For numbers of the form $R_n = 11...1$ (n ones), we have the property $GCD(R_m, R_n) = R_{GCD(m, n)}$.<br/><br/><strong>Konsep</strong><br/>Untuk bilangan berbentuk $R_n = 11...1$ (n angka satu), berlaku sifat $FPB(R_m, R_n) = R_{FPB(m, n)}$.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the GCD of the number of digits: GCD(20, 12).<br/>Cari FPB dari banyaknya digit: FPB(20, 12).<br/>$GCD(20, 12) = 4$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>The GCD of the numbers is a number with GCD(20, 12) = 4 digits of 1.<br/>FPB dari bilangan tersebut adalah bilangan dengan FPB(20, 12) = 4 digit angka 1.</p>
+                    <div class="final-answer">Final Answer: 1111.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>20. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>Any number can be written as a product of its GCD and some other factors. Let the numbers be $GCD \times a$ and $GCD \times b$, where a and b are coprime.<br/><br/><strong>Konsep</strong><br/>Setiap bilangan bisa ditulis sebagai hasil kali FPB-nya dengan faktor-faktor lain. Misal bilangannya adalah $FPB \times a$ dan $FPB \times b$, dimana a dan b koprima.</p></div>
+                     <p class="solution-step"><strong>Step 1</strong><br/>The numbers must be of the form $23 \times a$ and $23 \times b$. The other factors are 13 and 17. Since 13 and 17 are prime, they are coprime. So we can set $a=13$ and $b=17$.<br/>Bilangannya pasti berbentuk $23 \times a$ dan $23 \times b$. Faktor lainnya adalah 13 dan 17. Karena 13 dan 17 adalah bilangan prima, mereka koprima. Jadi kita bisa tetapkan $a=13$ dan $b=17$.<br/>First number = $23 \times 13 = 299$<br/>Second number = $23 \times 17 = 391$</p>
+                    <div class="final-answer">Final Answer: 299 and 391.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>21. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 12, 15, 20, 35.<br/>Cari KPK dari 12, 15, 20, 35.<br/>$LCM = 420$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the smallest multiple of the LCM that is a 4-digit number. The smallest 4-digit number is 1000.<br/>Cari kelipatan terkecil dari KPK yang merupakan bilangan 4-angka. Bilangan 4-angka terkecil adalah 1000.<br/>$1000 \div 420 \approx 2.38$. We need the next integer multiple, which is 3.<br/>$420 \times 3 = 1260$.</p>
+                    <div class="final-answer">Final Answer: 1260.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>22. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>Notice that the difference between the divisor and the remainder is constant: $10-9=1$, $9-8=1$, $8-7=1$. This means the number is 1 less than a common multiple of the divisors.<br/><br/><strong>Konsep</strong><br/>Perhatikan bahwa selisih antara pembagi dan sisa selalu konstan: $10-9=1$, $9-8=1$, $8-7=1$. Ini berarti bilangan tersebut adalah 1 kurangnya dari kelipatan persekutuan para pembagi.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 10, 9, 8.<br/>Cari KPK dari 10, 9, dan 8.<br/>$LCM(10, 9, 8) = 360$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>The number is $LCM - 1$.<br/>Bilangan yang dicari adalah $KPK - 1$.<br/>Number = $360 - 1 = 359$.</p>
+                    <div class="final-answer">Final Answer: 359.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>23. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Let the numbers be $8x$ and $8y$ where $x, y$ are coprime.<br/>Misalkan bilangannya adalah $8x$ dan $8y$ dimana $x, y$ koprima.<br/>$GCD \times LCM = a \times b \Rightarrow 8 \times 560 = (8x)(8y) \Rightarrow 4480 = 64xy \Rightarrow xy = 70$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find coprime pairs $(x,y)$ with product 70.<br/>Cari pasangan koprima $(x,y)$ yang hasil kalinya 70.<br/>Pairs are (1, 70), (2, 35), (5, 14), (7, 10).</p>
+                    <div class="final-answer">Final Answer: 4 pairs. / 4 pasang.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>24. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>The difference between divisor and remainder is constant: $10-4=6, 15-9=6$, etc. The number is 6 less than a multiple of the LCM.<br/><br/><strong>Konsep</strong><br/>Selisih antara pembagi dan sisa konstan: $10-4=6, 15-9=6$, dst. Bilangan yang dicari adalah 6 kurangnya dari kelipatan KPK.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find LCM of 10, 15, 21, 28.<br/>Cari KPK dari 10, 15, 21, 28.<br/>$LCM = 420$.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find the largest multiple of 420 that is less than 9999.<br/>Cari kelipatan 420 terbesar yang kurang dari 9999.<br/>$9999 \div 420 \approx 23.8$. Take $k=23$.<br/>$420 \times 23 = 9660$.</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>The number is $LCM \times k - 6$.<br/>Bilangannya adalah $KPK \times k - 6$.<br/>$9660 - 6 = 9654$.</p>
+                    <div class="final-answer">Final Answer: 9654.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>25. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Find the LCM of 48, 72, 108.<br/>Cari KPK dari 48, 72, 108.<br/>$LCM = 432$ seconds.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Convert seconds to minutes.<br/>Ubah detik ke menit.<br/>$432 \text{ sec} = 7 \text{ minutes } 12 \text{ seconds}$.</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>Add to the start time.<br/>Tambahkan ke waktu mulai.<br/>7:00:00 AM + 7 min 12 sec = 7:07:12 AM.</p>
+                    <div class="final-answer">Final Answer: 7:07:12 AM.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>26. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>The maximum distance is the GCD of the dimensions.<br/>Jarak maksimum adalah FPB dari dimensi-dimensinya.<br/>Find GCD(1320, 945).</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Use Euclidean Algorithm.<br/>Gunakan Algoritma Euclid.<br/>$1320 = 1 \times 945 + 375$<br/>$945 = 2 \times 375 + 195$<br/>$375 = 1 \times 195 + 180$<br/>$195 = 1 \times 180 + 15$<br/>$180 = 12 \times 15 + 0$</p>
+                    <div class="final-answer">Final Answer: 15 m.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>27. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept</strong><br/>$GCD(a, b)$ must be a divisor of both a and b. To check if 300 is a factor of 20!, we check if all prime factors of 300 are contained in the prime factorization of 20! with sufficient powers.<br/><br/><strong>Konsep</strong><br/>$FPB(a, b)$ harus merupakan pembagi dari a dan b. Untuk memeriksa apakah 300 adalah faktor dari 20!, kita periksa apakah semua faktor prima dari 300 terkandung dalam faktorisasi prima 20! dengan pangkat yang cukup.</p></div>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Prime factorize 300.<br/>Faktorkan 300.<br/>$300 = 3 \times 100 = 2^2 \times 3^1 \times 5^2$.</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>Check if 20! is divisible by $2^2, 3^1,$ and $5^2$.<br/>Periksa apakah 20! habis dibagi oleh $2^2, 3^1,$ dan $5^2$.<br/>- The numbers 2, 4, 6,...20 are in 20!, so it's clearly divisible by $2^2=4$.<br/>- The number 3 is in 20!, so it's divisible by $3^1=3$.<br/>- The numbers 5, 10, 15, 20 are in 20!. This product is $5 \times (2 \times 5) \times (3 \times 5) \times (4 \times 5)$, which contains $5^4$. So 20! is divisible by $5^2=25$.<br/>Since 20! is divisible by all prime powers in 300, it is divisible by 300.</p>
+                     <p class="solution-step"><strong>Step 3</strong><br/>If a number 'x' is a factor of 'y', then GCD(x, y) = x. Since 300 is a factor of 20!, their GCD is 300.<br/>Jika bilangan 'x' adalah faktor dari 'y', maka FPB(x, y) = x. Karena 300 adalah faktor dari 20!, maka FPB-nya adalah 300.</p>
+                    <div class="final-answer">Final Answer: 300.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>28. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept</strong><br/>Let $d = GCD(a+b, a-b)$. Then $d$ must divide their sum, $(a+b)+(a-b)=2a$, and their difference, $(a+b)-(a-b)=2b$. So $d$ must divide $GCD(2a, 2b) = 2 \times GCD(a,b)$.<br/><br/><strong>Konsep</strong><br/>Misalkan $d = FPB(a+b, a-b)$. Maka $d$ harus membagi jumlahnya, $(a+b)+(a-b)=2a$, dan selisihnya, $(a+b)-(a-b)=2b$. Jadi $d$ harus membagi $FPB(2a, 2b) = 2 \times FPB(a,b)$.</p></div>
+                     <p class="solution-step"><strong>Step 1</strong><br/>Since $GCD(a,b)=1$, $d$ must divide $2 \times 1=2$. So $d$ can be 1 or 2.<br/>Karena $FPB(a,b)=1$, maka $d$ harus membagi $2 \times 1=2$. Jadi $d$ bisa 1 atau 2.</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>If one of a, b is even and the other is odd, then $a+b$ and $a-b$ are both odd, so their GCD must be odd. Thus d=1.<br/>Jika salah satu dari a, b genap dan yang lain ganjil, maka $a+b$ dan $a-b$ keduanya ganjil, sehingga FPB-nya harus ganjil. Jadi d=1.</p>
+                     <p class="solution-step"><strong>Step 3</strong><br/>If a and b are both odd (they cannot both be even since their GCD is 1), then $a+b$ and $a-b$ are both even, so their GCD is at least 2. Thus d=2.<br/>Jika a dan b keduanya ganjil (tidak mungkin keduanya genap karena FPB-nya 1), maka $a+b$ dan $a-b$ keduanya genap, sehingga FPB-nya minimal 2. Jadi d=2.</p>
+                    <div class="final-answer">Final Answer: 1 or 2.</div>
+                </div>
+                
+                 <div class="item-container">
+                    <p><strong>29. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Let the number be N. We are looking for N such that N+5 is the LCM of 54 and 72.<br/>Misalkan bilangannya N. Kita mencari N sehingga N+5 adalah KPK dari 54 dan 72.</p>
+                    <p class="solution-step"><strong>Step 2</strong><br/>Find LCM(54, 72).<br/>Cari KPK(54, 72).<br/>$54 = 2 \times 3^3$<br/>$72 = 2^3 \times 3^2$<br/>$LCM = 2^3 \times 3^3 = 8 \times 27 = 216$.</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>Solve for N.<br/>Cari nilai N.<br/>$N+5 = 216 \implies N = 211$.</p>
+                    <div class="final-answer">Final Answer: 211.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>30. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step"><strong>Step 1</strong><br/>Let the numbers be $29a$ and $29b$, where a and b are coprime.<br/>Misalkan bilangannya $29a$ dan $29b$, dimana a dan b koprima.<br/>$a \times b = LCM / GCD = 4147 / 29 = 143$.</p>
+                     <p class="solution-step"><strong>Step 2</strong><br/>Find coprime pairs (a,b) with product 143.<br/>Cari pasangan koprima (a,b) yang hasil kalinya 143.<br/>$143 = 11 \times 13$. The coprime pairs are (1, 143) and (11, 13).</p>
+                    <p class="solution-step"><strong>Step 3</strong><br/>The numbers must be greater than 29. <br/>Bilangannya harus lebih besar dari 29.<br/>If $(a,b) = (1, 143)$, numbers are $29\times1=29$ and $29\times143=4147$. This pair is not valid because one number is not greater than 29. <br/>If $(a,b) = (11, 13)$, numbers are $29\times11=319$ and $29\times13=377$. This pair is valid.</p>
+                    <p class="solution-step"><strong>Step 4</strong><br/>Find the sum.<br/>Cari jumlahnya.<br/>$319 + 377 = 696$.</p>
+                    <div class="final-answer">Final Answer: 696.</div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
