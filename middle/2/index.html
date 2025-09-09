@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Olympiad Worksheet (Bar Model)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax Configuration for LaTeX rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        .bar-model-container {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+        }
+        .bar {
+            background-color: #93c5fd; /* blue-300 */
+            border: 2px solid #3b82f6; /* blue-500 */
+            color: #1e3a8a; /* blue-900 */
+            text-align: center;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .bar-diff {
+            background-color: #fca5a5; /* red-300 */
+            border: 2px dotted #ef4444; /* red-500 */
+            color: #991b1b; /* red-900 */
+            text-align: center;
+            font-weight: 600;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet</h1>
+            <p class="text-gray-600 mt-2">Grade 3 - 4 | Problem Solving with Comparison Bar Models</p>
+        </header>
+
+        <main>
+            <!-- Questions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Questions / Soal-Soal</h2>
+                <!-- All 30 questions remain the same -->
+                <div class="item-container"><p><strong>1.</strong> The total of two numbers is 80. One number is 20 more than the other. What are the two numbers?<br/><strong>(ID)</strong> Jumlah dua bilangan adalah 80. Salah satu bilangan 20 lebih besar dari bilangan lainnya. Berapakah kedua bilangan tersebut?</p></div>
+                <div class="item-container"><p><strong>2.</strong> A farm has 120 chickens and ducks in total. There are 30 more chickens than ducks. How many chickens are there?<br/><strong>(ID)</strong> Sebuah peternakan memiliki total 120 ayam dan bebek. Jumlah ayam 30 ekor lebih banyak dari bebek. Berapa banyak ayam di sana?</p></div>
+                <div class="item-container"><p><strong>3.</strong> Sarah has 45 stamps. She has 15 fewer stamps than her brother, Tom. How many stamps do they have altogether?<br/><strong>(ID)</strong> Sarah memiliki 45 prangko. Dia memiliki 15 prangko lebih sedikit dari kakaknya, Tom. Berapa jumlah total prangko mereka?</p></div>
+                <div class="item-container"><p><strong>4.</strong> A ribbon is 150 cm long. It is cut into two pieces. One piece is 4 times as long as the other. What is the length of the shorter piece?<br/><strong>(ID)</strong> Sebuah pita panjangnya 150 cm. Pita itu dipotong menjadi dua bagian. Satu bagian 4 kali lebih panjang dari yang lain. Berapa panjang potongan yang lebih pendek?</p></div>
+                <div class="item-container"><p><strong>5.</strong> Alex has 3 times as much money as Ben. Together, they have \$200. How much more money does Alex have than Ben?<br/><strong>(ID)</strong> Alex memiliki uang 3 kali lebih banyak dari Ben. Bersama-sama, mereka memiliki \$200. Berapa selisih uang yang dimiliki Alex dibandingkan Ben?</p></div>
+                <div class="item-container"><p><strong>6.</strong> There are 96 students in Grade 3. The number of boys is twice the number of girls. How many boys are there?<br/><strong>(ID)</strong> Ada 96 siswa di Kelas 3. Jumlah siswa laki-laki adalah dua kali jumlah siswa perempuan. Ada berapa banyak siswa laki-laki?</p></div>
+                <div class="item-container"><p><strong>7.</strong> A bakery sold 240 cupcakes on Saturday. They sold 60 fewer cupcakes on Sunday than on Saturday. How many cupcakes did they sell in total on both days?<br/><strong>(ID)</strong> Sebuah toko roti menjual 240 cupcake pada hari Sabtu. Mereka menjual 60 cupcake lebih sedikit pada hari Minggu dibandingkan hari Sabtu. Berapa total cupcake yang mereka jual pada kedua hari tersebut?</p></div>
+                <div class="item-container"><p><strong>8.</strong> David and Emily collected 180 seashells. David collected 3 times as many seashells as Emily. How many seashells did David collect?<br/><strong>(ID)</strong> David dan Emily mengumpulkan 180 kerang. David mengumpulkan kerang 3 kali lebih banyak dari Emily. Berapa banyak kerang yang dikumpulkan David?</p></div>
+                <div class="item-container"><p><strong>9.</strong> The sum of the ages of a mother and her daughter is 42 years. The mother is 24 years older than her daughter. How old is the mother?<br/><strong>(ID)</strong> Jumlah umur seorang ibu dan putrinya adalah 42 tahun. Sang ibu 24 tahun lebih tua dari putrinya. Berapa umur sang ibu?</p></div>
+                <div class="item-container"><p><strong>10.</strong> A bookshelf has 5 times as many storybooks as comic books. If there are 80 more storybooks than comic books, how many books are on the bookshelf in total?<br/><strong>(ID)</strong> Sebuah rak buku memiliki buku cerita 5 kali lebih banyak dari buku komik. Jika ada 80 buku cerita lebih banyak dari buku komik, berapa jumlah total buku di rak tersebut?</p></div>
+                <div class="item-container"><p><strong>11.</strong> A rope of length 200m is cut into two pieces. One piece is 50m longer than the other. Find the length of the longer piece.<br/><strong>(ID)</strong> Seutas tali sepanjang 200m dipotong menjadi dua bagian. Satu bagian 50m lebih panjang dari yang lain. Temukan panjang potongan yang lebih panjang.</p></div>
+                <div class="item-container"><p><strong>12.</strong> Bag A contains 4 times as much flour as Bag B. The total mass of flour in both bags is 25 kg. How much flour is in Bag A?<br/><strong>(ID)</strong> Tas A berisi tepung 4 kali lebih banyak dari Tas B. Total massa tepung di kedua tas adalah 25 kg. Berapa banyak tepung di Tas A?</p></div>
+                <div class="item-container"><p><strong>13.</strong> John and Peter have a total of 135 marbles. John has 25 more marbles than Peter. How many marbles does John have?<br/><strong>(ID)</strong> John dan Peter memiliki total 135 kelereng. John memiliki 25 kelereng lebih banyak dari Peter. Berapa banyak kelereng yang dimiliki John?</p></div>
+                <div class="item-container"><p><strong>14.</strong> The difference between two numbers is 60. The larger number is 4 times the smaller number. What is the larger number?<br/><strong>(ID)</strong> Selisih antara dua bilangan adalah 60. Bilangan yang lebih besar adalah 4 kali bilangan yang lebih kecil. Berapakah bilangan yang lebih besar?</p></div>
+                <div class="item-container"><p><strong>15.</strong> In a school, there are 450 students. The number of girls is 50 fewer than the number of boys. How many girls are there in the school?<br/><strong>(ID)</strong> Di sebuah sekolah, ada 450 siswa. Jumlah siswa perempuan 50 lebih sedikit dari jumlah siswa laki-laki. Ada berapa banyak siswa perempuan di sekolah itu?</p></div>
+                <div class="item-container"><p><strong>16.</strong> A farmer has chickens and goats. There are 3 times as many chickens as goats. If there are 48 more chickens than goats, how many animals are there in total?<br/><strong>(ID)</strong> Seorang petani memiliki ayam dan kambing. Jumlah ayam 3 kali lebih banyak dari kambing. Jika jumlah ayam 48 ekor lebih banyak dari kambing, berapa jumlah total hewan?</p></div>
+                <div class="item-container"><p><strong>17.</strong> The sum of three consecutive odd numbers is 99. What is the largest number?<br/><strong>(ID)</strong> Jumlah tiga bilangan ganjil berurutan adalah 99. Berapakah bilangan terbesar?</p></div>
+                <div class="item-container"><p><strong>18.</strong> A red box is 3 kg heavier than a blue box. The total weight of both boxes is 17 kg. What is the weight of the red box?<br/><strong>(ID)</strong> Kotak merah 3 kg lebih berat dari kotak biru. Berat total kedua kotak adalah 17 kg. Berapa berat kotak merah?</p></div>
+                <div class="item-container"><p><strong>19.</strong> A pen costs 4 times as much as a pencil. If the pen costs \$1.20 more than the pencil, what is the total cost of one pen and one pencil?<br/><strong>(ID)</strong> Harga pulpen 4 kali lipat harga pensil. Jika harga pulpen \$1.20 lebih mahal dari pensil, berapa total harga satu pulpen dan satu pensil?</p></div>
+                <div class="item-container"><p><strong>20.</strong> Lisa read 210 pages of a book over the weekend. She read 40 more pages on Saturday than on Sunday. How many pages did she read on Saturday?<br/><strong>(ID)</strong> Lisa membaca 210 halaman buku selama akhir pekan. Dia membaca 40 halaman lebih banyak pada hari Sabtu daripada hari Minggu. Berapa halaman yang dia baca pada hari Sabtu?</p></div>
+                <div class="item-container"><p><strong>21.</strong> There are 60 red and blue marbles in a jar. The number of red marbles is one-third the number of blue marbles. How many blue marbles are there?<br/><strong>(ID)</strong> Ada 60 kelereng merah dan biru di dalam toples. Jumlah kelereng merah adalah sepertiga dari jumlah kelereng biru. Berapa banyak kelereng biru?</p></div>
+                <div class="item-container"><p><strong>22.</strong> The total cost of a shirt and a pair of trousers is \$95. The trousers cost \$25 more than the shirt. What is the cost of the trousers?<br/><strong>(ID)</strong> Total harga kemeja dan celana panjang adalah \$95. Celana panjang berharga \$25 lebih mahal dari kemeja. Berapa harga celana panjang?</p></div>
+                <div class="item-container"><p><strong>23.</strong> At a party, there were twice as many children as adults. If there were 150 people in total, how many children were at the party?<br/><strong>(ID)</strong> Di sebuah pesta, jumlah anak-anak dua kali lipat jumlah orang dewasa. Jika total ada 150 orang, berapa banyak anak-anak di pesta itu?</p></div>
+                <div class="item-container"><p><strong>24.</strong> A rectangular field has a perimeter of 240 m. Its length is 20 m longer than its width. Find the length of the field.<br/><strong>(ID)</strong> Sebuah lapangan persegi panjang memiliki keliling 240 m. Panjangnya 20 m lebih panjang dari lebarnya. Tentukan panjang lapangan tersebut.</p></div>
+                <div class="item-container"><p><strong>25.</strong> The sum of two numbers is 300. One number is 5 times the other. Find the difference between the two numbers.<br/><strong>(ID)</strong> Jumlah dua bilangan adalah 300. Satu bilangan 5 kali lipat dari bilangan lainnya. Tentukan selisih antara kedua bilangan tersebut.</p></div>
+                <div class="item-container"><p><strong>26.</strong> A laptop and a printer cost \$1200 altogether. The laptop costs 3 times as much as the printer. How much does the laptop cost?<br/><strong>(ID)</strong> Sebuah laptop dan sebuah printer berharga total \$1200. Harga laptop 3 kali lipat harga printer. Berapa harga laptop tersebut?</p></div>
+                <div class="item-container"><p><strong>27.</strong> Team A scored 18 more points than Team B in a basketball game. If the total points scored by both teams was 140, how many points did Team A score?<br/><strong>(ID)</strong> Tim A mencetak 18 poin lebih banyak dari Tim B dalam pertandingan bola basket. Jika total poin yang dicetak oleh kedua tim adalah 140, berapa poin yang dicetak Tim A?</p></div>
+                <div class="item-container"><p><strong>28.</strong> A tank has 4 times as much water as a pail. If the tank has 36 liters more water than the pail, how much water do they have in total?<br/><strong>(ID)</strong> Sebuah tangki berisi air 4 kali lebih banyak dari ember. Jika tangki berisi 36 liter air lebih banyak dari ember, berapa total air yang mereka miliki?</p></div>
+                <div class="item-container"><p><strong>29.</strong> Three sisters, Anna, Bella, and Clara, have a total of 150 stickers. Bella has 10 more stickers than Anna. Clara has 20 more stickers than Anna. How many stickers does Anna have?<br/><strong>(ID)</strong> Tiga bersaudari, Anna, Bella, dan Clara, memiliki total 150 stiker. Bella memiliki 10 stiker lebih banyak dari Anna. Clara memiliki 20 stiker lebih banyak dari Anna. Berapa banyak stiker yang dimiliki Anna?</p></div>
+                <div class="item-container"><p><strong>30.</strong> Mark spent \$180 on a watch and a wallet. The watch cost 5 times as much as the wallet. How much did the watch cost?<br/><strong>(ID)</strong> Mark menghabiskan \$180 untuk sebuah jam tangan dan dompet. Harga jam tangan 5 kali lipat harga dompet. Berapa harga jam tangan tersebut?</p></div>
+            </section>
+            
+            <!-- Solutions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions / Pembahasan</h2>
+                
+                <!-- Solution 1 -->
+                <div class="item-container">
+                    <p><strong>1. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This is a 'Sum and Difference' problem. To solve it, we first make the parts equal by subtracting the difference from the total, and then divide to find the value of one part.<br/><strong>(ID) Konsep:</strong> Soal ini memberikan <strong>Total</strong> dan <strong>Selisih</strong>. Untuk menyelesaikannya, kita buat semua bagian sama besar dengan cara mengurangi total dengan selisihnya, lalu bagi rata.</p></div>
+                    <div class="bar-model-container">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                            <div class="text-right font-medium">Larger:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">1 unit</div>
+                                <div class="bar-diff w-1/4 ml-1">+20</div>
+                            </div>
+                            <div class="text-right font-medium">Smaller:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">1 unit</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 font-bold">Total = 80</div>
+                    </div>
+                    <p class="solution-step"><strong>Step 1:</strong> Remove the difference from the total to make both parts equal.<br/><strong>(ID) Langkah 1:</strong> Hilangkan selisih dari total untuk membuat kedua bagian sama: $80 - 20 = 60$.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> This new total (60) represents 2 equal units. So, find the value of one unit. This will be the smaller number.<br/><strong>(ID) Langkah 2:</strong> Angka 60 ini adalah nilai dari 2 unit yang sama besar. Maka, 1 unit (yang merupakan bilangan lebih kecil) adalah: $60 \div 2 = 30$.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> To find the larger number, add the difference back to the value of one unit.<br/><strong>(ID) Langkah 3:</strong> Untuk mencari bilangan yang lebih besar, tambahkan kembali selisihnya ke nilai satu unit: $30 + 20 = 50$.</p>
+                    <div class="final-answer">Final Answer: 30 and 50. / Jawabannya: 30 dan 50.</div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="item-container">
+                    <p><strong>2. Solution / Pembahasan:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> This is another 'Sum and Difference' problem. We find the value of the smaller part (ducks) first.<br/><strong>(ID) Konsep:</strong> Ini adalah contoh lain dari soal <strong>Total dan Selisih</strong>. Kita cari nilai bagian yang lebih kecil (bebek) terlebih dahulu.</p></div>
+                    <div class="bar-model-container">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                            <div class="text-right font-medium">Chickens:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">1 unit</div>
+                                <div class="bar-diff w-1/4 ml-1">+30</div>
+                            </div>
+                            <div class="text-right font-medium">Ducks:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">1 unit</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 font-bold">Total = 120</div>
+                    </div>
+                    <p class="solution-step"><strong>Step 1:</strong> Subtract the difference from the total: $120 - 30 = 90$.<br/><strong>(ID) Langkah 1:</strong> Kurangi selisih dari total: $120 - 30 = 90$.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> This result (90) is the value of 2 equal units (twice the number of ducks). So, 1 unit (the number of ducks) is: $90 \div 2 = 45$.<br/><strong>(ID) Langkah 2:</strong> Hasilnya (90) adalah nilai dari 2 unit yang sama (dua kali jumlah bebek). Jadi, 1 unit (jumlah bebek) adalah: $90 \div 2 = 45$.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> The number of chickens is 1 unit plus the difference: $45 + 30 = 75$.<br/><strong>(ID) Langkah 3:</strong> Jumlah ayam adalah 1 unit ditambah selisihnya: $45 + 30 = 75$.</p>
+                    <div class="final-answer">Final Answer: 75 chickens. / Jawabannya: 75 ayam.</div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="item-container">
+                    <p><strong>3. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This is a simple multi-step problem. First, we need to understand what "fewer than" means to find Tom's amount, then we add them together.<br/><strong>(ID) Konsep:</strong> Ini adalah soal cerita multi-langkah sederhana. Pertama, kita perlu memahami arti "lebih sedikit dari" untuk menemukan jumlah prangko Tom, baru kemudian kita jumlahkan keduanya.</p></div>
+                    <div class="bar-model-container">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                            <div class="text-right font-medium">Tom:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">45</div>
+                                <div class="bar-diff w-1/4 ml-1">+15</div>
+                            </div>
+                            <div class="text-right font-medium">Sarah:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-3/4">45</div>
+                            </div>
+                        </div>
+                    </div>
+                     <p class="solution-step"><strong>Step 1:</strong> "Sarah has 15 fewer stamps than Tom" means Tom has 15 more stamps than Sarah. So, Tom's stamps = $45 + 15 = 60$.<br/><strong>(ID) Langkah 1:</strong> "Sarah memiliki 15 prangko lebih sedikit dari Tom" berarti Tom memiliki 15 prangko lebih banyak dari Sarah. Jadi, prangko Tom = $45 + 15 = 60$.</p>
+                     <p class="solution-step"><strong>Step 2:</strong> Find the total by adding Sarah's and Tom's stamps: $45 + 60 = 105$.<br/><strong>(ID) Langkah 2:</strong> Cari jumlah total dengan menambahkan prangko Sarah dan Tom: $45 + 60 = 105$.</p>
+                    <div class="final-answer">Final Answer: 105 stamps. / Jawabannya: 105 prangko.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>4. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This is a 'Times as many' problem where the total is known. We find the total number of equal units and divide the total by it.<br/><strong>(ID) Konsep:</strong> Soal ini adalah tipe <strong>Perkalian (Kali lebih banyak)</strong> dimana totalnya diketahui. Kita jumlahkan semua unit yang setara lalu bagi totalnya dengan jumlah unit tersebut.</p></div>
+                     <div class="bar-model-container">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                            <div class="text-right font-medium">Longer:</div>
+                            <div class="flex h-12 gap-1">
+                                <div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div>
+                            </div>
+                            <div class="text-right font-medium">Shorter:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-1/4">1 unit</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 font-bold">Total = 150 cm</div>
+                    </div>
+                    <p class="solution-step"><strong>Step 1:</strong> Calculate the total number of units. The shorter piece is 1 unit, the longer is 4 units. Total units = $1 + 4 = 5$ units.<br/><strong>(ID) Langkah 1:</strong> Hitung jumlah total unit. Potongan pendek adalah 1 unit, potongan panjang adalah 4 unit. Total unit = $1 + 4 = 5$ unit.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> The total value of these 5 units is 150 cm. So, find the value of 1 unit: $150 \div 5 = 30$ cm.<br/><strong>(ID) Langkah 2:</strong> Nilai total dari 5 unit ini adalah 150 cm. Maka, nilai 1 unit adalah: $150 \div 5 = 30$ cm.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> The shorter piece is equal to 1 unit, so its length is 30 cm.<br/><strong>(ID) Langkah 3:</strong> Potongan yang lebih pendek sama dengan 1 unit, jadi panjangnya adalah 30 cm.</p>
+                    <div class="final-answer">Final Answer: 30 cm. / Jawabannya: 30 cm.</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>5. Solution / Pembahasan:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A 'Times as many' problem with a known total. After finding the value of 1 unit, calculate the difference between the number of units.<br/><strong>(ID) Konsep:</strong> Tipe <strong>Perkalian (Kali lebih banyak)</strong> dengan total diketahui. Setelah menemukan nilai 1 unit, hitung selisih antar jumlah unit.</p></div>
+                    <div class="bar-model-container">
+                        <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                            <div class="text-right font-medium">Alex:</div>
+                            <div class="flex h-12 gap-1">
+                                <div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div>
+                            </div>
+                            <div class="text-right font-medium">Ben:</div>
+                            <div class="flex h-12">
+                                <div class="bar w-1/3">1 unit</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3 font-bold">Total = \$200</div>
+                    </div>
+                    <p class="solution-step"><strong>Step 1:</strong> Total units = 1 unit (Ben) + 3 units (Alex) = 4 units.<br/><strong>(ID) Langkah 1:</strong> Total unit = 1 unit (Ben) + 3 unit (Alex) = 4 unit.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> 4 units = \$200. The value of 1 unit is: $200 \div 4 = \$50$. This is Ben's money.<br/><strong>(ID) Langkah 2:</strong> 4 unit = \$200. Nilai dari 1 unit adalah: $200 \div 4 = \$50$. Ini adalah uang Ben.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> The difference in units between Alex and Ben is $3 - 1 = 2$ units.<br/><strong>(ID) Langkah 3:</strong> Selisih unit antara Alex dan Ben adalah $3 - 1 = 2$ unit.</p>
+                    <p class="solution-step"><strong>Step 4:</strong> The value of this difference is $2 \times \$50 = \$100$.<br/><strong>(ID) Langkah 4:</strong> Nilai dari selisih tersebut adalah $2 \times \$50 = \$100$.</p>
+                    <div class="final-answer">Final Answer: \$100.</div>
+                </div>
+
+                 <div class="item-container"><p><strong>6. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Boys:</div><div class="flex h-12 gap-1"><div class="bar w-1/2">1 unit</div><div class="bar w-1/2">1 unit</div></div><div class="text-right font-medium">Girls:</div><div class="flex h-12"><div class="bar w-1/2">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 96</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = 1 unit (Girls) + 2 units (Boys) = 3 units.<br/><strong>(ID) Langkah 1:</strong> Total unit = 1 unit (Perempuan) + 2 unit (Laki-laki) = 3 unit.</p><p class="solution-step"><strong>Step 2:</strong> 3 units = 96 students. Value of 1 unit (Girls) = $96 \div 3 = 32$.<br/><strong>(ID) Langkah 2:</strong> 3 unit = 96 siswa. Nilai 1 unit (Perempuan) = $96 \div 3 = 32$.</p><p class="solution-step"><strong>Step 3:</strong> Number of boys = 2 units = $2 \times 32 = 64$.<br/><strong>(ID) Langkah 3:</strong> Jumlah laki-laki = 2 unit = $2 \times 32 = 64$.</p><div class="final-answer">Final Answer: 64 boys.</div></p></div>
+                <div class="item-container"><p><strong>7. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Saturday:</div><div class="flex h-12"><div class="bar w-full">240</div></div><div class="text-right font-medium">Sunday:</div><div class="flex h-12"><div class="bar w-3/4">?</div><div class="flex items-center justify-start w-1/4 ml-1"><div class="w-full text-center">Difference: 60</div></div></div></div></div><p class="solution-step"><strong>Step 1:</strong> Find the number of cupcakes sold on Sunday. It was 60 fewer than Saturday.<br/><strong>(ID) Langkah 1:</strong> Cari jumlah cupcake yang terjual pada hari Minggu. Jumlahnya 60 lebih sedikit dari hari Sabtu: $240 - 60 = 180$.</p><p class="solution-step"><strong>Step 2:</strong> Find the total for both days by adding Saturday's and Sunday's sales.<br/><strong>(ID) Langkah 2:</strong> Cari jumlah total untuk kedua hari dengan menjumlahkan penjualan Sabtu dan Minggu: $240 + 180 = 420$.</p><div class="final-answer">Final Answer: 420 cupcakes.</div></p></div>
+                <div class="item-container"><p><strong>8. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">David:</div><div class="flex h-12 gap-1"><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div></div><div class="text-right font-medium">Emily:</div><div class="flex h-12"><div class="bar w-1/3">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 180</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = 1 unit (Emily) + 3 units (David) = 4 units.<br/><strong>(ID) Langkah 1:</strong> Total unit = 1 unit (Emily) + 3 unit (David) = 4 unit.</p><p class="solution-step"><strong>Step 2:</strong> 4 units = 180. So, 1 unit (Emily's seashells) = $180 \div 4 = 45$.<br/><strong>(ID) Langkah 2:</strong> 4 unit = 180. Jadi, 1 unit (kerang Emily) = $180 \div 4 = 45$.</p><p class="solution-step"><strong>Step 3:</strong> David's seashells = 3 units = $3 \times 45 = 135$.<br/><strong>(ID) Langkah 3:</strong> Kerang David = 3 unit = $3 \times 45 = 135$.</p><div class="final-answer">Final Answer: 135 seashells.</div></p></div>
+                <div class="item-container"><p><strong>9. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Mother:</div><div class="flex h-12"><div class="bar w-2/5">1 unit</div><div class="bar-diff w-3/5 ml-1">+24</div></div><div class="text-right font-medium">Daughter:</div><div class="flex h-12"><div class="bar w-2/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 42</div></div><p class="solution-step"><strong>Step 1:</strong> Subtract the difference from the total: $42 - 24 = 18$.<br/><strong>(ID) Langkah 1:</strong> Kurangi selisih dari total: $42 - 24 = 18$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 18. So, 1 unit (Daughter's age) = $18 \div 2 = 9$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 18. Jadi, 1 unit (Umur anak) = $18 \div 2 = 9$.</p><p class="solution-step"><strong>Step 3:</strong> Mother's age = $9 + 24 = 33$.<br/><strong>(ID) Langkah 3:</strong> Umur Ibu = $9 + 24 = 33$.</p><div class="final-answer">Final Answer: 33 years.</div></p></div>
+                <div class="item-container"><p><strong>10. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> This is a 'Times as many' problem where the <strong>Difference</strong> is known.<br/><strong>(ID) Konsep:</strong> Ini adalah soal tipe <strong>Perkalian (Kali lebih banyak)</strong> dimana <strong>Selisihnya</strong> yang diketahui.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Storybooks:</div><div class="flex h-12 gap-1"><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div></div><div class="text-right font-medium">Comic books:</div><div class="flex h-12"><div class="bar w-1/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Difference = 4 units = 80</div></div><p class="solution-step"><strong>Step 1:</strong> Find the difference in units: $5 - 1 = 4$ units.<br/><strong>(ID) Langkah 1:</strong> Cari selisih dalam unit: $5 - 1 = 4$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 4 units = 80 books. So, 1 unit (Comic books) = $80 \div 4 = 20$.<br/><strong>(ID) Langkah 2:</strong> 4 unit = 80 buku. Jadi, 1 unit (Buku komik) = $80 \div 4 = 20$.</p><p class="solution-step"><strong>Step 3:</strong> Total units = $1+5=6$ units. Total books = $6 \times 20 = 120$.<br/><strong>(ID) Langkah 3:</strong> Total unit = $1+5=6$ unit. Total buku = $6 \times 20 = 120$.</p><div class="final-answer">Final Answer: 120 books.</div></p></div>
+                <div class="item-container"><p><strong>11. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Longer:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+50</div></div><div class="text-right font-medium">Shorter:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 200m</div></div><p class="solution-step"><strong>Step 1:</strong> $200 - 50 = 150$ m.<br/><strong>(ID) Langkah 1:</strong> $200 - 50 = 150$ m.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 150m. So, 1 unit (Shorter) = $150 \div 2 = 75$ m.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 150m. Jadi, 1 unit (Potongan pendek) = $150 \div 2 = 75$ m.</p><p class="solution-step"><strong>Step 3:</strong> Longer piece = $75 + 50 = 125$ m.<br/><strong>(ID) Langkah 3:</strong> Potongan panjang = $75 + 50 = 125$ m.</p><div class="final-answer">Final Answer: 125 m.</div></p></div>
+                <div class="item-container"><p><strong>12. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Bag A:</div><div class="flex h-12 gap-1"><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div></div><div class="text-right font-medium">Bag B:</div><div class="flex h-12"><div class="bar w-1/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 25 kg</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = $1+4=5$ units.<br/><strong>(ID) Langkah 1:</strong> Total unit = $1+4=5$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 5 units = 25 kg. So, 1 unit (Bag B) = $25 \div 5 = 5$ kg.<br/><strong>(ID) Langkah 2:</strong> 5 unit = 25 kg. Jadi, 1 unit (Tas B) = $25 \div 5 = 5$ kg.</p><p class="solution-step"><strong>Step 3:</strong> Bag A = 4 units = $4 \times 5 = 20$ kg.<br/><strong>(ID) Langkah 3:</strong> Tas A = 4 unit = $4 \times 5 = 20$ kg.</p><div class="final-answer">Final Answer: 20 kg.</div></p></div>
+                <div class="item-container"><p><strong>13. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">John:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+25</div></div><div class="text-right font-medium">Peter:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 135</div></div><p class="solution-step"><strong>Step 1:</strong> $135 - 25 = 110$.<br/><strong>(ID) Langkah 1:</strong> $135 - 25 = 110$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 110. So, 1 unit (Peter) = $110 \div 2 = 55$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 110. Jadi, 1 unit (Peter) = $110 \div 2 = 55$.</p><p class="solution-step"><strong>Step 3:</strong> John = $55 + 25 = 80$.<br/><strong>(ID) Langkah 3:</strong> John = $55 + 25 = 80$.</p><div class="final-answer">Final Answer: 80 marbles.</div></p></div>
+                <div class="item-container"><p><strong>14. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Larger:</div><div class="flex h-12 gap-1"><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div></div><div class="text-right font-medium">Smaller:</div><div class="flex h-12"><div class="bar w-1/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Difference = 3 units = 60</div></div><p class="solution-step"><strong>Step 1:</strong> Difference in units = $4 - 1 = 3$ units.<br/><strong>(ID) Langkah 1:</strong> Selisih unit = $4 - 1 = 3$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 3 units = 60. So, 1 unit (Smaller) = $60 \div 3 = 20$.<br/><strong>(ID) Langkah 2:</strong> 3 unit = 60. Jadi, 1 unit (Bilangan kecil) = $60 \div 3 = 20$.</p><p class="solution-step"><strong>Step 3:</strong> Larger = 4 units = $4 \times 20 = 80$.<br/><strong>(ID) Langkah 3:</strong> Bilangan besar = 4 unit = $4 \times 20 = 80$.</p><div class="final-answer">Final Answer: 80.</div></p></div>
+                <div class="item-container"><p><strong>15. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> "50 fewer girls than boys" means there are 50 more boys than girls. This is a 'Sum and Difference' problem.<br/><strong>(ID) Konsep:</strong> Kalimat "perempuan 50 lebih sedikit dari laki-laki" sama artinya dengan "laki-laki 50 lebih banyak dari perempuan". Ini adalah soal <strong>Total dan Selisih</strong>.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Boys:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+50</div></div><div class="text-right font-medium">Girls:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 450</div></div><p class="solution-step"><strong>Step 1:</strong> $450 - 50 = 400$.<br/><strong>(ID) Langkah 1:</strong> $450 - 50 = 400$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 400. So, 1 unit (Girls) = $400 \div 2 = 200$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 400. Jadi, 1 unit (Perempuan) = $400 \div 2 = 200$.</p><div class="final-answer">Final Answer: 200 girls.</div></p></div>
+                <div class="item-container"><p><strong>16. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Chickens:</div><div class="flex h-12 gap-1"><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div></div><div class="text-right font-medium">Goats:</div><div class="flex h-12"><div class="bar w-1/3">1 unit</div></div></div><div class="text-center mt-3 font-bold">Difference = 2 units = 48</div></div><p class="solution-step"><strong>Step 1:</strong> Difference in units = $3 - 1 = 2$ units.<br/><strong>(ID) Langkah 1:</strong> Selisih unit = $3 - 1 = 2$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 48. So, 1 unit (Goats) = $48 \div 2 = 24$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 48. Jadi, 1 unit (Kambing) = $48 \div 2 = 24$.</p><p class="solution-step"><strong>Step 3:</strong> Total units = $1+3=4$ units. Total animals = $4 \times 24 = 96$.<br/><strong>(ID) Langkah 3:</strong> Total unit = $1+3=4$ unit. Total hewan = $4 \times 24 = 96$.</p><div class="final-answer">Final Answer: 96 animals.</div></p></div>
+                
+                <div class="item-container"><p><strong>17. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> For consecutive odd numbers, the difference between each is 2. We can model them as 1 unit, 1 unit + 2, and 1 unit + 4.<br/><strong>(ID) Konsep:</strong> Untuk bilangan ganjil berurutan, selisihnya selalu 2. Kita bisa menggambarkannya sebagai 1 unit, 1 unit + 2, dan 1 unit + 4.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Largest:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div><div class="bar-diff w-2/5 ml-1">+4</div></div><div class="text-right font-medium">Middle:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div><div class="bar-diff w-1/5 ml-1">+2</div></div><div class="text-right font-medium">Smallest:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 99</div></div>
+                <p class="solution-step"><strong>Step 1:</strong> From the model, we see 3 units and extra values of 2 and 4. To find the value of the 3 equal units, subtract the extras from the total.<br/><strong>(ID) Langkah 1:</strong> Dari model, kita melihat ada 3 unit dan nilai lebih yaitu 2 dan 4. Untuk mencari nilai dari 3 unit yang sama, kurangi total dengan nilai lebih tersebut: $99 - 4 - 2 = 93$.</p>
+                <p class="solution-step"><strong>Step 2:</strong> The value of 3 units is 93. So, 1 unit (the smallest number) is: $93 \div 3 = 31$.<br/><strong>(ID) Langkah 2:</strong> Nilai dari 3 unit adalah 93. Jadi, 1 unit (bilangan terkecil) adalah: $93 \div 3 = 31$.</p>
+                <p class="solution-step"><strong>Step 3:</strong> Find the other numbers. The numbers are 31, (31 + 2), and (31 + 4). So they are 31, 33, and 35. The largest is 35.<br/><strong>(ID) Langkah 3:</strong> Cari bilangan lainnya. Bilangan-bilangannya adalah 31, (31 + 2), dan (31 + 4). Jadi, bilangannya adalah 31, 33, dan 35. Yang terbesar adalah 35.</p>
+                <div class="final-answer">Final Answer: 35.</div></p></div>
+
+                <div class="item-container"><p><strong>18. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Red Box:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+3</div></div><div class="text-right font-medium">Blue Box:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 17 kg</div></div><p class="solution-step"><strong>Step 1:</strong> $17 - 3 = 14$ kg.<br/><strong>(ID) Langkah 1:</strong> $17 - 3 = 14$ kg.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 14 kg. So, 1 unit (Blue Box) = $14 \div 2 = 7$ kg.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 14 kg. Jadi, 1 unit (Kotak Biru) = $14 \div 2 = 7$ kg.</p><p class="solution-step"><strong>Step 3:</strong> Red Box = $7 + 3 = 10$ kg.<br/><strong>(ID) Langkah 3:</strong> Kotak Merah = $7 + 3 = 10$ kg.</p><div class="final-answer">Final Answer: 10 kg.</div></p></div>
+                <div class="item-container"><p><strong>19. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Pen:</div><div class="flex h-12 gap-1"><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div></div><div class="text-right font-medium">Pencil:</div><div class="flex h-12"><div class="bar w-1/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Difference = 3 units = \$1.20</div></div><p class="solution-step"><strong>Step 1:</strong> Difference in units = $4 - 1 = 3$ units.<br/><strong>(ID) Langkah 1:</strong> Selisih unit = $4 - 1 = 3$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 3 units = \$1.20. So, 1 unit (Pencil) = $\$1.20 \div 3 = \$0.40$.<br/><strong>(ID) Langkah 2:</strong> 3 unit = \$1.20. Jadi, 1 unit (Pensil) = $\$1.20 \div 3 = \$0.40$.</p><p class="solution-step"><strong>Step 3:</strong> Total units = $1+4=5$ units. Total cost = $5 \times \$0.40 = \$2.00$.<br/><strong>(ID) Langkah 3:</strong> Total unit = $1+4=5$ unit. Total harga = $5 \times \$0.40 = \$2.00$.</p><div class="final-answer">Final Answer: \$2.00.</div></p></div>
+                <div class="item-container"><p><strong>20. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Saturday:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+40</div></div><div class="text-right font-medium">Sunday:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 210</div></div><p class="solution-step"><strong>Step 1:</strong> $210 - 40 = 170$.<br/><strong>(ID) Langkah 1:</strong> $210 - 40 = 170$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 170. So, 1 unit (Sunday) = $170 \div 2 = 85$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 170. Jadi, 1 unit (Minggu) = $170 \div 2 = 85$.</p><p class="solution-step"><strong>Step 3:</strong> Saturday = $85 + 40 = 125$.<br/><strong>(ID) Langkah 3:</strong> Sabtu = $85 + 40 = 125$.</p><div class="final-answer">Final Answer: 125 pages.</div></p></div>
+                <div class="item-container"><p><strong>21. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> "Red is one-third of blue" means if Red is 1 unit, then Blue is 3 units.<br/><strong>(ID) Konsep:</strong> "Merah sepertiga biru" berarti jika Merah adalah 1 unit, maka Biru adalah 3 unit.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Blue:</div><div class="flex h-12 gap-1"><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div></div><div class="text-right font-medium">Red:</div><div class="flex h-12"><div class="bar w-1/3">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 60</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = $1+3=4$ units.<br/><strong>(ID) Langkah 1:</strong> Total unit = $1+3=4$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 4 units = 60. So, 1 unit (Red) = $60 \div 4 = 15$.<br/><strong>(ID) Langkah 2:</strong> 4 unit = 60. Jadi, 1 unit (Merah) = $60 \div 4 = 15$.</p><p class="solution-step"><strong>Step 3:</strong> Blue = 3 units = $3 \times 15 = 45$.<br/><strong>(ID) Langkah 3:</strong> Biru = 3 unit = $3 \times 15 = 45$.</p><div class="final-answer">Final Answer: 45 blue marbles.</div></p></div>
+                <div class="item-container"><p><strong>22. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Trousers:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+\$25</div></div><div class="text-right font-medium">Shirt:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = \$95</div></div><p class="solution-step"><strong>Step 1:</strong> $95 - 25 = 70$.<br/><strong>(ID) Langkah 1:</strong> $95 - 25 = 70$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = \$70. So, 1 unit (Shirt) = $\$70 \div 2 = \$35$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = \$70. Jadi, 1 unit (Kemeja) = $\$70 \div 2 = \$35$.</p><p class="solution-step"><strong>Step 3:</strong> Trousers = $\$35 + \$25 = \$60$.<br/><strong>(ID) Langkah 3:</strong> Celana = $\$35 + \$25 = \$60$.</p><div class="final-answer">Final Answer: \$60.</div></p></div>
+                <div class="item-container"><p><strong>23. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Children:</div><div class="flex h-12 gap-1"><div class="bar w-1/2">1 unit</div><div class="bar w-1/2">1 unit</div></div><div class="text-right font-medium">Adults:</div><div class="flex h-12"><div class="bar w-1/2">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 150</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = $1+2=3$ units.<br/><strong>(ID) Langkah 1:</strong> Total unit = $1+2=3$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 3 units = 150. So, 1 unit (Adults) = $150 \div 3 = 50$.<br/><strong>(ID) Langkah 2:</strong> 3 unit = 150. Jadi, 1 unit (Dewasa) = $150 \div 3 = 50$.</p><p class="solution-step"><strong>Step 3:</strong> Children = 2 units = $2 \times 50 = 100$.<br/><strong>(ID) Langkah 3:</strong> Anak-anak = 2 unit = $2 \times 50 = 100$.</p><div class="final-answer">Final Answer: 100 children.</div></p></div>
+                <div class="item-container"><p><strong>24. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> Perimeter = 2 x (Length + Width). So, the sum of Length + Width is half the perimeter. It then becomes a 'Sum and Difference' problem.<br/><strong>(ID) Konsep:</strong> Keliling = 2 x (Panjang + Lebar). Jadi, jumlah dari Panjang + Lebar adalah setengah dari keliling. Setelah itu, menjadi soal <strong>Total dan Selisih</strong>.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Length:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+20</div></div><div class="text-right font-medium">Width:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total (L+W) = 120m</div></div><p class="solution-step"><strong>Step 1:</strong> Length + Width = $240 \div 2 = 120$ m.<br/><strong>(ID) Langkah 1:</strong> Panjang + Lebar = $240 \div 2 = 120$ m.</p><p class="solution-step"><strong>Step 2:</strong> $120 - 20 = 100$ m.<br/><strong>(ID) Langkah 2:</strong> $120 - 20 = 100$ m.</p><p class="solution-step"><strong>Step 3:</strong> 2 units = 100m. So, 1 unit (Width) = $100 \div 2 = 50$ m.<br/><strong>(ID) Langkah 3:</strong> 2 unit = 100m. Jadi, 1 unit (Lebar) = $100 \div 2 = 50$ m.</p><p class="solution-step"><strong>Step 4:</strong> Length = $50 + 20 = 70$ m.<br/><strong>(ID) Langkah 4:</strong> Panjang = $50 + 20 = 70$ m.</p><div class="final-answer">Final Answer: 70 m.</div></p></div>
+                <div class="item-container"><p><strong>25. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Larger num:</div><div class="flex h-12 gap-1"><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div></div><div class="text-right font-medium">Smaller num:</div><div class="flex h-12"><div class="bar w-1/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 300</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = $1+5=6$ units.<br/><strong>(ID) Langkah 1:</strong> Total unit = $1+5=6$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 6 units = 300. So, 1 unit (Smaller) = $300 \div 6 = 50$.<br/><strong>(ID) Langkah 2:</strong> 6 unit = 300. Jadi, 1 unit (Kecil) = $300 \div 6 = 50$.</p><p class="solution-step"><strong>Step 3:</strong> Difference in units is $5-1=4$ units. The value is $4 \times 50 = 200$.<br/><strong>(ID) Langkah 3:</strong> Selisih unit adalah $5-1=4$ unit. Nilainya adalah $4 \times 50 = 200$.</p><div class="final-answer">Final Answer: 200.</div></p></div>
+                <div class="item-container"><p><strong>26. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Laptop:</div><div class="flex h-12 gap-1"><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div><div class="bar w-1/3">1 unit</div></div><div class="text-right font-medium">Printer:</div><div class="flex h-12"><div class="bar w-1/3">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = \$1200</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = $1+3=4$ units.<br/><strong>(ID) Langkah 1:</strong> Total unit = $1+3=4$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 4 units = \$1200. So, 1 unit (Printer) = $\$1200 \div 4 = \$300$.<br/><strong>(ID) Langkah 2:</strong> 4 unit = \$1200. Jadi, 1 unit (Printer) = $\$1200 \div 4 = \$300$.</p><p class="solution-step"><strong>Step 3:</strong> Laptop = 3 units = $3 \times \$300 = \$900$.<br/><strong>(ID) Langkah 3:</strong> Laptop = 3 unit = $3 \times \$300 = \$900$.</p><div class="final-answer">Final Answer: \$900.</div></p></div>
+                <div class="item-container"><p><strong>27. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Team A:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div><div class="bar-diff w-1/4 ml-1">+18</div></div><div class="text-right font-medium">Team B:</div><div class="flex h-12"><div class="bar w-3/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 140</div></div><p class="solution-step"><strong>Step 1:</strong> $140 - 18 = 122$.<br/><strong>(ID) Langkah 1:</strong> $140 - 18 = 122$.</p><p class="solution-step"><strong>Step 2:</strong> 2 units = 122. So, 1 unit (Team B) = $122 \div 2 = 61$.<br/><strong>(ID) Langkah 2:</strong> 2 unit = 122. Jadi, 1 unit (Tim B) = $122 \div 2 = 61$.</p><p class="solution-step"><strong>Step 3:</strong> Team A = $61 + 18 = 79$.<br/><strong>(ID) Langkah 3:</strong> Tim A = $61 + 18 = 79$.</p><div class="final-answer">Final Answer: 79 points.</div></p></div>
+                <div class="item-container"><p><strong>28. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Tank:</div><div class="flex h-12 gap-1"><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div><div class="bar w-1/4">1 unit</div></div><div class="text-right font-medium">Pail:</div><div class="flex h-12"><div class="bar w-1/4">1 unit</div></div></div><div class="text-center mt-3 font-bold">Difference = 3 units = 36 liters</div></div><p class="solution-step"><strong>Step 1:</strong> Difference in units = $4 - 1 = 3$ units.<br/><strong>(ID) Langkah 1:</strong> Selisih unit = $4 - 1 = 3$ unit.</p><p class="solution-step"><strong>Step 2:</strong> 3 units = 36 liters. So, 1 unit (Pail) = $36 \div 3 = 12$ liters.<br/><strong>(ID) Langkah 2:</strong> 3 unit = 36 liter. Jadi, 1 unit (Ember) = $36 \div 3 = 12$ liter.</p><p class="solution-step"><strong>Step 3:</strong> Total units = $1+4=5$ units. Total water = $5 \times 12 = 60$ liters.<br/><strong>(ID) Langkah 3:</strong> Total unit = $1+4=5$ unit. Total air = $5 \times 12 = 60$ liter.</p><div class="final-answer">Final Answer: 60 liters.</div></p></div>
+                <div class="item-container"><p><strong>29. Solution / Pembahasan:</strong><br><div class="concept"><p><strong>Concept:</strong> This is a more complex comparison problem. Make the smallest part (Anna) the base '1 unit', and model the others with their extra amounts.<br/><strong>(ID) Konsep:</strong> Ini adalah soal perbandingan kompleks. Jadikan yang paling kecil (Anna) sebagai dasar '1 unit', lalu gambar kelebihannya untuk yang lain.</p></div><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Clara:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div><div class="bar-diff w-2/5 ml-1">+20</div></div><div class="text-right font-medium">Bella:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div><div class="bar-diff w-1/5 ml-1">+10</div></div><div class="text-right font-medium">Anna:</div><div class="flex h-12"><div class="bar w-3/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = 150</div></div><p class="solution-step"><strong>Step 1:</strong> Remove all the extra amounts from the total: $150 - 10 - 20 = 120$.<br/><strong>(ID) Langkah 1:</strong> Hilangkan semua kelebihan dari total: $150 - 10 - 20 = 120$.</p><p class="solution-step"><strong>Step 2:</strong> This result (120) is the value of 3 equal units (Anna's amount, three times). So 1 unit (Anna) = $120 \div 3 = 40$.<br/><strong>(ID) Langkah 2:</strong> Angka 120 ini adalah nilai dari 3 unit yang sama besar. Maka 1 unit (stiker Anna) = $120 \div 3 = 40$.</p><div class="final-answer">Final Answer: 40 stickers.</div></p></div>
+                <div class="item-container"><p><strong>30. Solution / Pembahasan:</strong><br><div class="bar-model-container"><div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center"><div class="text-right font-medium">Watch:</div><div class="flex h-12 gap-1"><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div><div class="bar w-1/5">1 unit</div></div><div class="text-right font-medium">Wallet:</div><div class="flex h-12"><div class="bar w-1/5">1 unit</div></div></div><div class="text-center mt-3 font-bold">Total = \$180</div></div><p class="solution-step"><strong>Step 1:</strong> Total units = 1 unit (Wallet) + 5 units (Watch) = 6 units.<br/><strong>(ID) Langkah 1:</strong> Total unit = 1 unit (Dompet) + 5 unit (Jam) = 6 unit.</p><p class="solution-step"><strong>Step 2:</strong> 6 units = \$180. So, 1 unit (Wallet) = $\$180 \div 6 = \$30$.<br/><strong>(ID) Langkah 2:</strong> 6 unit = \$180. Jadi, 1 unit (Dompet) = $\$180 \div 6 = \$30$.</p><p class="solution-step"><strong>Step 3:</strong> Watch = 5 units = $5 \times \$30 = \$150$.<br/><strong>(ID) Langkah 3:</strong> Jam = 5 unit = $5 \times \$30 = \$150$.</p><div class="final-answer">Final Answer: \$150.</div></p></div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
