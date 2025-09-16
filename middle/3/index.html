@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice Worksheet 3 - LCM & GCD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 3</h1>
+            <p class="text-gray-600 mt-2">Grade 3 - 4 | Application of Number Theory: LCM & GCD</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Part 1: Application of LCM (Scheduling Problems)</h2>
+                
+                <div class="item-container"><p><strong>1.</strong> Two decorative lights blink periodically. The red light blinks every 4 seconds, and the green light blinks every 6 seconds. If both lights blink together at the start, every how many seconds will they blink together again?<br/><br/>Dua lampu hias berkedip secara berkala. Lampu merah berkedip setiap 4 detik, dan lampu hijau berkedip setiap 6 detik. Jika kedua lampu berkedip bersama pada awalnya, setiap berapa detik kedua lampu akan berkedip bersama lagi?</p></div>
+                <div class="item-container"><p><strong>2.</strong> Budi and Cita swim at the same swimming pool. Budi swims every 3 days, while Cita swims every 5 days. If they swim together on May 1st, on what date will they swim together again?<br/><br/>Budi dan Cita berenang di kolam renang yang sama. Budi berenang setiap 3 hari sekali, sedangkan Cita berenang setiap 5 hari sekali. Jika mereka berenang bersama pada tanggal 1 Mei, tanggal berapa mereka akan berenang bersama lagi?</p></div>
+                <div class="item-container"><p><strong>3.</strong> Three bells ring at different times. Bell A rings every 10 minutes, bell B every 15 minutes, and bell C every 20 minutes. If all three bells ring together at 08:00 AM, at what time will they ring together again?<br/><br/>Tiga buah bel berbunyi pada waktu yang berbeda. Bel A berbunyi setiap 10 menit, bel B setiap 15 menit, dan bel C setiap 20 menit. Jika ketiga bel berbunyi bersama pada pukul 08:00, pukul berapa ketiga bel akan berbunyi bersama lagi?</p></div>
+                <div class="item-container"><p><strong>4.</strong> A city bus route A departs from the terminal every 8 minutes. Bus route B departs from the same terminal every 12 minutes. If both buses depart together at 06:00 AM, at what time will they depart together for the second time?<br/><br/>Sebuah bus kota rute A berangkat dari terminal setiap 8 menit. Bus rute B berangkat dari terminal yang sama setiap 12 menit. Jika kedua bus berangkat bersama pada pukul 06:00, pada pukul berapa mereka akan berangkat bersama untuk kedua kalinya?</p></div>
+                <div class="item-container"><p><strong>5.</strong> Andi visits the library every 2 days, while Rina visits the library every 4 days. They met at the library on Monday. On what day will they meet again?<br/><br/>Andi mengunjungi perpustakaan setiap 2 hari sekali, sedangkan Rina mengunjungi perpustakaan setiap 4 hari sekali. Mereka bertemu di perpustakaan pada hari Senin. Pada hari apa mereka akan bertemu lagi?</p></div>
+                <div class="item-container"><p><strong>6.</strong> Two planets orbit a star. Planet X completes one orbit in 6 years, and Planet Y completes it in 9 years. If they are currently aligned, in how many years will they be aligned again?<br/><br/>Dua buah planet mengorbit sebuah bintang. Planet X menyelesaikan satu putaran dalam 6 tahun, dan Planet Y menyelesaikannya dalam 9 tahun. Jika saat ini mereka berada pada posisi sejajar, berapa tahun lagi mereka akan berada pada posisi sejajar kembali?</p></div>
+                <div class="item-container"><p><strong>7.</strong> One alarm clock is set to ring every 30 minutes, and another is set to ring every 45 minutes. If they both ring together at 07:00 AM, when will they ring together again?<br/><br/>Sebuah jam alarm disetel untuk berbunyi setiap 30 menit, dan jam alarm lain disetel untuk berbunyi setiap 45 menit. Jika keduanya berbunyi bersama pada pukul 07:00, kapan mereka akan berbunyi bersama lagi?</p></div>
+                <div class="item-container"><p><strong>8.</strong> Dad takes medicine A every 6 hours and medicine B every 8 hours. If he takes both medicines together at 12:00 PM, at what time will he take them together again?<br/><br/>Ayah minum obat A setiap 6 jam dan obat B setiap 8 jam. Jika Ayah minum kedua obat bersamaan pada pukul 12:00 siang, pada pukul berapa ia akan minum kedua obat bersamaan lagi?</p></div>
+                <div class="item-container"><p><strong>9.</strong> Two runners, Ali and Ben, run on the same track. Ali completes one lap in 4 minutes, while Ben completes it in 7 minutes. If they start at the same starting point at the same time, after how many minutes will they meet at the starting point again?<br/><br/>Dua pelari, Ali dan Ben, berlari di lintasan yang sama. Ali menyelesaikan satu putaran dalam 4 menit, sedangkan Ben menyelesaikannya dalam 7 menit. Jika mereka mulai dari titik start yang sama pada waktu yang sama, setelah berapa menit mereka akan bertemu di titik start lagi?</p></div>
+                <div class="item-container"><p><strong>10.</strong> Comet A appears in the sky every 5 years. Comet B appears every 12 years. If both comets were seen together in the year 2020, in what year will they be seen together again?<br/><br/>Komet A muncul di langit setiap 5 tahun sekali. Komet B muncul setiap 12 tahun sekali. Jika kedua komet terlihat bersama pada tahun 2020, pada tahun berapa mereka akan terlihat bersama lagi?</p></div>
+                <div class="item-container"><p><strong>11.</strong> Santi takes music lessons every 4 days and dance lessons every 9 days. If on April 2nd she attended both lessons, on what date will she attend both lessons again on the same day?<br/><br/>Santi mengikuti les musik setiap 4 hari dan les menari setiap 9 hari. Jika pada tanggal 2 April ia mengikuti kedua les tersebut, tanggal berapa ia akan mengikuti kedua les lagi di hari yang sama?</p></div>
+                <div class="item-container"><p><strong>12.</strong> Two gears are in contact. The first gear has 10 teeth and the second has 14 teeth. If point A on the first gear and point B on the second gear meet, how many rotations must the first gear make for the two points to meet again?<br/><br/>Dua buah roda gigi saling bersentuhan. Roda gigi pertama memiliki 10 gigi dan roda gigi kedua memiliki 14 gigi. Jika titik A pada roda gigi pertama dan titik B pada roda gigi kedua bertemu, berapa putaran yang harus dibuat roda gigi pertama agar kedua titik bertemu lagi?</p></div>
+                <div class="item-container"><p><strong>13.</strong> A local train stops at a station every 25 minutes. An express train stops at the same station every 40 minutes. If both stop together at 10:00 AM, at what time will they stop together again?<br/><br/>Sebuah kereta api lokal berhenti di stasiun setiap 25 menit. Kereta api ekspres berhenti di stasiun yang sama setiap 40 menit. Jika keduanya berhenti bersama pada pukul 10:00, pukul berapa mereka akan berhenti bersama lagi?</p></div>
+                <div class="item-container"><p><strong>14.</strong> Three night guards patrol around a building. Guard A completes a round in 12 minutes, Guard B in 18 minutes, and Guard C in 24 minutes. If they start from the security post at the same time, after how many minutes will they meet again at the security post?<br/><br/>Tiga orang penjaga malam berpatroli di sekitar sebuah gedung. Penjaga A menyelesaikan satu putaran dalam 12 menit, Penjaga B dalam 18 menit, dan Penjaga C dalam 24 menit. Jika mereka mulai dari pos keamanan pada saat yang sama, setelah berapa menit mereka akan bertemu kembali di pos keamanan?</p></div>
+                <div class="item-container"><p><strong>15.</strong> In a park, fountain A turns on every 7 minutes and fountain B turns on every 9 minutes. If they both turn on simultaneously at 09:00 AM, how many times will they turn on simultaneously between 09:01 AM and 12:00 PM?<br/><br/>Di sebuah taman, air mancur A menyala setiap 7 menit dan air mancur B menyala setiap 9 menit. Jika keduanya menyala bersamaan pada pukul 09:00 pagi, berapa kali keduanya akan menyala bersamaan antara pukul 09:01 dan 12:00 siang?</p></div>
+            </section>
+            
+            <section class="content-card">
+                <h2 class="section-title">Part 2: Application of GCD (Grouping Problems)</h2>
+                
+                <div class="item-container"><p><strong>16.</strong> A mother has 12 donuts and 18 sponge cakes. She wants to put these cakes into several boxes with the same number and type of cakes in each box. What is the greatest number of boxes the mother can prepare?<br/><br/>Ibu memiliki 12 kue donat dan 18 kue bolu. Ibu ingin memasukkan kue-kue tersebut ke dalam beberapa kotak dengan jumlah dan jenis yang sama di setiap kotak. Berapa jumlah kotak paling banyak yang bisa disiapkan Ibu?</p></div>
+                <div class="item-container"><p><strong>17.</strong> A teacher wants to divide 24 male students and 32 female students into several groups. Each group must have the same number of male students and the same number of female students. What is the greatest number of groups that can be formed?<br/><br/>Seorang guru ingin membagi 24 siswa laki-laki dan 32 siswa perempuan ke dalam beberapa kelompok. Setiap kelompok harus memiliki jumlah siswa laki-laki yang sama dan jumlah siswa perempuan yang sama. Berapa jumlah kelompok paling banyak yang dapat dibentuk?</p></div>
+                <div class="item-container"><p><strong>18.</strong> A farmer has 45 mango seedlings and 60 orange seedlings. He wants to plant these seedlings in several rows. Each row must contain the same number of mango seedlings and the same number of orange seedlings. What is the greatest number of rows that can be made?<br/><br/>Pak Tani memiliki 45 bibit mangga dan 60 bibit jeruk. Ia ingin menanam bibit-bibit tersebut dalam beberapa baris. Setiap baris harus berisi jumlah bibit mangga yang sama dan jumlah bibit jeruk yang sama. Berapa jumlah baris paling banyak yang dapat dibuat?</p></div>
+                <div class="item-container"><p><strong>19.</strong> For an event, the committee prepared 50 red balloons and 75 blue balloons. The balloons will be tied into several arrangements. Each arrangement must have the same number of red balloons and blue balloons. What is the greatest number of arrangements that can be made?<br/><br/>Untuk sebuah acara, panitia menyiapkan 50 balon merah dan 75 balon biru. Balon-balon tersebut akan diikat menjadi beberapa rangkaian. Setiap rangkaian harus memiliki jumlah balon merah yang sama dan balon biru yang sama. Berapa rangkaian paling banyak yang bisa dibuat?</p></div>
+                <div class="item-container"><p><strong>20.</strong> A flower shop has 20 roses and 30 lilies. The flowers will be made into several bouquets with the same composition. How many roses and lilies are in each bouquet if the shop wants to make the greatest number of bouquets possible?<br/><br/>Sebuah toko bunga memiliki 20 tangkai mawar dan 30 tangkai lili. Bunga-bunga tersebut akan dibuat menjadi beberapa buket dengan komposisi yang sama. Berapa jumlah mawar dan lili dalam setiap buket jika toko ingin membuat buket sebanyak mungkin?</p></div>
+                <div class="item-container"><p><strong>21.</strong> There are three ropes with lengths of 18 meters, 24 meters, and 36 meters. The ropes will be cut into several pieces of equal length. What is the longest possible length of each piece?<br/><br/>Ada tiga utas tali dengan panjang 18 meter, 24 meter, dan 36 meter. Tali-tali tersebut akan dipotong menjadi beberapa bagian yang sama panjang. Berapa panjang ukuran potongan terpanjang yang mungkin?</p></div>
+                <div class="item-container"><p><strong>22.</strong> A library receives a donation of 80 storybooks and 100 textbooks. The books will be placed on several shelves. Each shelf must be filled with the same number of storybooks and the same number of textbooks. What is the greatest number of shelves needed?<br/><br/>Sebuah perpustakaan menerima sumbangan 80 buku cerita dan 100 buku pelajaran. Buku-buku tersebut akan ditempatkan di beberapa rak. Setiap rak harus diisi dengan jumlah buku cerita yang sama dan jumlah buku pelajaran yang sama. Berapa rak paling banyak yang dibutuhkan?</p></div>
+                <div class="item-container"><p><strong>23.</strong> Dita has 48 chocolate candies, 72 strawberry candies, and 60 mint candies. She wants to make birthday goodie bags with the same candy contents in each bag. What is the greatest number of bags she can make?<br/><br/>Dita memiliki 48 permen cokelat, 72 permen stroberi, dan 60 permen mint. Ia ingin membuat bingkisan ulang tahun dengan isi permen yang sama di setiap kantong. Berapa jumlah kantong paling banyak yang bisa ia buat?</p></div>
+                <div class="item-container"><p><strong>24.</strong> Mr. Budi wants to make fruit parcels from 28 apples, 42 oranges, and 56 salaks. Each parcel contains the same number of each type of fruit. How many of each type of fruit are in one parcel if Mr. Budi wants to make the greatest number of parcels?<br/><br/>Pak Budi ingin membuat parsel buah dari 28 apel, 42 jeruk, dan 56 salak. Setiap parsel berisi jumlah buah yang sama untuk setiap jenisnya. Berapa banyak buah dari masing-masing jenis dalam satu parsel jika Pak Budi ingin membuat parsel sebanyak-banyaknya?</p></div>
+                <div class="item-container"><p><strong>25.</strong> Three wooden logs have lengths of 54 cm, 90 cm, and 108 cm. The logs will be cut into smaller pieces of equal length. How many pieces of wood will be produced?<br/><br/>Tiga batang kayu memiliki panjang 54 cm, 90 cm, dan 108 cm. Ketiga batang kayu tersebut akan dipotong menjadi potongan-potongan kecil dengan panjang yang sama. Berapa banyak potongan kayu yang akan dihasilkan?</p></div>
+                <div class="item-container"><p><strong>26.</strong> A tailor has fabrics of 35 meters and 49 meters. He wants to cut the fabrics into pieces of the same size with no remainder. What is the longest possible size for each piece of fabric?<br/><br/>Seorang penjahit memiliki kain sepanjang 35 meter dan 49 meter. Ia ingin memotong kain tersebut menjadi potongan-potongan berukuran sama tanpa sisa. Berapa ukuran terpanjang untuk setiap potongan kain?</p></div>
+                <div class="item-container"><p><strong>27.</strong> A teacher will distribute 60 pencils and 45 erasers to some students. Each student will receive the same number of pencils and erasers. What is the greatest number of students who can receive the gifts?<br/><br/>Ibu guru akan membagikan 60 pensil dan 45 penghapus kepada beberapa murid. Setiap murid akan menerima jumlah pensil dan penghapus yang sama. Berapa jumlah murid paling banyak yang bisa menerima hadiah tersebut?</p></div>
+                <div class="item-container"><p><strong>28.</strong> A floor measuring 400 cm x 600 cm will be tiled with square tiles of the same size. What is the largest size of tile that can be used to cover the entire floor without cutting any tiles?<br/><br/>Sebuah lantai berukuran 400 cm x 600 cm akan dipasangi ubin persegi berukuran sama. Berapa ukuran ubin terbesar yang dapat digunakan untuk menutupi seluruh lantai tanpa memotong ubin?</p></div>
+                <div class="item-container"><p><strong>29.</strong> For a charity event, 120 notebooks, 90 pencils, and 75 erasers were collected. These stationeries will be distributed to orphanage children. Each child receives a package with exactly the same contents. How many children will receive the packages?<br/><br/>Untuk kegiatan amal, terkumpul 120 buku tulis, 90 pensil, dan 75 penghapus. Alat tulis ini akan dibagikan kepada anak-anak panti asuhan. Setiap anak menerima paket dengan isi yang sama persis. Berapa banyak anak yang akan menerima paket tersebut?</p></div>
+                <div class="item-container"><p><strong>30.</strong> There are two oil tanks containing 144 liters and 180 liters. The oil will be packaged into several jerrycans of the same size until they are empty. What is the largest possible volume for each jerrycan?<br/><br/>Terdapat dua tangki minyak berisi 144 liter dan 180 liter. Minyak tersebut akan dikemas ke dalam beberapa jeriken berukuran sama hingga habis. Berapa volume terbesar yang mungkin untuk setiap jeriken?</p></div>
+            </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions / Pembahasan</h2>
+                
+                <h3 class="text-2xl font-bold text-indigo-600 mb-4">Part 1: Application of LCM</h3>
+                
+                <!-- Solusi 1 -->
+                <div class="item-container">
+                    <p><strong>1. Solution / Solusi:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This problem asks when two events with different time cycles will occur together again. The keyword "together again" indicates that we need to find the Least Common Multiple (LCM).<br/><br/><strong>Konsep:</strong> Soal ini menanyakan kapan dua kejadian dengan siklus waktu berbeda akan terjadi bersamaan lagi. Kata kunci "bersama lagi" menunjukkan kita harus mencari Kelipatan Persekutuan Terkecil (KPK).</p></div>
+                    <p class="solution-step"><strong>Step 1:</strong> Identify the numbers for which we need to find the LCM. The numbers are 4 (seconds) and 6 (seconds).<br/><strong>Langkah 1:</strong> Tentukan angka-angka yang akan dicari KPK-nya. Angka-angkanya adalah 4 (detik) dan 6 (detik).</p>
+                    <p class="solution-step"><strong>Step 2:</strong> Find the LCM of 4 and 6. We can use the prime factorization method.<br/>The prime factors of 4 are $2 \times 2 = 2^2$.<br/>The prime factors of 6 are $2 \times 3$.<br/>The LCM is taken from all prime factors with the highest power: $2^2 \times 3 = 4 \times 3 = 12$.<br/><strong>Langkah 2:</strong> Cari KPK dari 4 dan 6. Kita bisa menggunakan metode faktorisasi prima.<br/>Faktor prima dari 4 adalah $2 \times 2 = 2^2$.<br/>Faktor prima dari 6 adalah $2 \times 3$.<br/>KPK diambil dari semua faktor prima dengan pangkat tertinggi: $2^2 \times 3 = 4 \times 3 = 12$.</p>
+                    <div class="final-answer">Answer: The two lights will blink together again every 12 seconds. / Jawaban: Kedua lampu akan berkedip bersama lagi setiap 12 detik.</div>
+                </div>
+
+                <!-- Solusi 2 -->
+                <div class="item-container">
+                    <p><strong>2. Solution / Solusi:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Just like the previous problem, we are looking for when they will do an activity "together again". This is an LCM problem.<br/><br/><strong>Konsep:</strong> Sama seperti soal sebelumnya, kita mencari kapan mereka akan melakukan aktivitas "bersama lagi". Ini adalah masalah KPK.</p></div>
+                    <p class="solution-step"><strong>Step 1:</strong> The relevant numbers are 3 (days) and 5 (days).<br/><strong>Langkah 1:</strong> Angka-angka yang relevan adalah 3 (hari) dan 5 (hari).</p>
+                    <p class="solution-step"><strong>Step 2:</strong> Find the LCM of 3 and 5. Since 3 and 5 are prime numbers, their LCM is their product.<br/>LCM(3, 5) = $3 \times 5 = 15$.<br/>This means they will swim together again after 15 days.<br/><strong>Langkah 2:</strong> Cari KPK dari 3 dan 5. Karena 3 dan 5 adalah bilangan prima, KPK-nya adalah hasil perkalian keduanya.<br/>KPK(3, 5) = $3 \times 5 = 15$.<br/>Artinya, mereka akan berenang bersama lagi setelah 15 hari.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> Calculate the date. If they swam together on May 1st, then 15 days later is May $1 + 15 =$ May 16th.<br/><strong>Langkah 3:</strong> Hitung tanggalnya. Jika mereka berenang bersama pada 1 Mei, maka 15 hari setelahnya adalah $1 + 15 = 16$ Mei.</p>
+                    <div class="final-answer">Answer: They will swim together again on May 16th. / Jawaban: Mereka akan berenang bersama lagi pada tanggal 16 Mei.</div>
+                </div>
+                
+                <!-- Solusi 3 -->
+                <div class="item-container">
+                    <p><strong>3. Solution / Solusi:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Finding the "together again" time for three recurring events. Use LCM.<br/><br/><strong>Konsep:</strong> Mencari waktu "bersama lagi" dari tiga kejadian yang berulang. Gunakan KPK.</p></div>
+                    <p class="solution-step"><strong>Step 1:</strong> The numbers to find the LCM of are 10, 15, and 20.<br/><strong>Langkah 1:</strong> Angka yang akan dicari KPK-nya adalah 10, 15, dan 20.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> Find the LCM(10, 15, 20).<br/>$10 = 2 \times 5$<br/>$15 = 3 \times 5$<br/>$20 = 2^2 \times 5$<br/>LCM = $2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60$.<br/>The three bells will ring together every 60 minutes.<br/><strong>Langkah 2:</strong> Cari KPK(10, 15, 20).<br/>$10 = 2 \times 5$<br/>$15 = 3 \times 5$<br/>$20 = 2^2 \times 5$<br/>KPK = $2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60$.<br/>Ketiga bel akan berbunyi bersama setiap 60 menit.</p>
+                    <p class="solution-step"><strong>Step 3:</strong> 60 minutes is equal to 1 hour. If they rang together at 08:00 AM, they will ring together again 1 hour later, at 09:00 AM.<br/><strong>Langkah 3:</strong> 60 menit sama dengan 1 jam. Jika mereka berbunyi bersama pada pukul 08:00, maka mereka akan berbunyi bersama lagi 1 jam kemudian, yaitu pukul 09:00.</p>
+                    <div class="final-answer">Answer: 09:00 AM. / Jawaban: Pukul 09:00.</div>
+                </div>
+
+                <!-- Lanjutkan dengan solusi 4-15 dengan pola yang sama -->
+                <div class="item-container"><p><strong>4. Solution:</strong> LCM(8, 12) = 24. They depart together every 24 minutes. So, they will depart together again at 06:24 AM. / <strong>Solusi:</strong> KPK(8, 12) = 24. Mereka berangkat bersama setiap 24 menit. Jadi, mereka berangkat bersama lagi pada pukul 06:24.</p></div>
+                <div class="item-container"><p><strong>5. Solution:</strong> LCM(2, 4) = 4. They meet every 4 days. If they met on Monday, 4 days later is Friday. / <strong>Solusi:</strong> KPK(2, 4) = 4. Mereka bertemu setiap 4 hari. Jika bertemu hari Senin, 4 hari kemudian adalah hari Jumat.</p></div>
+                <div class="item-container"><p><strong>6. Solution:</strong> LCM(6, 9) = 18. They will be aligned again after 18 years. / <strong>Solusi:</strong> KPK(6, 9) = 18. Mereka akan sejajar lagi setelah 18 tahun.</p></div>
+                <div class="item-container"><p><strong>7. Solution:</strong> LCM(30, 45) = 90. They ring together every 90 minutes (1 hour 30 minutes). So, they will ring together again at 08:30 AM. / <strong>Solusi:</strong> KPK(30, 45) = 90. Mereka berbunyi bersama setiap 90 menit (1 jam 30 menit). Jadi, mereka berbunyi bersama lagi pada pukul 08:30.</p></div>
+                <div class="item-container"><p><strong>8. Solution:</strong> LCM(6, 8) = 24. Dad will take the medicines together every 24 hours. If he took them at 12:00 PM, he will take them together again 24 hours later, at 12:00 PM the next day. / <strong>Solusi:</strong> KPK(6, 8) = 24. Ayah akan minum obat bersama setiap 24 jam. Jika ia minum pada pukul 12:00 siang, ia akan minum bersama lagi 24 jam kemudian, yaitu pukul 12:00 siang hari berikutnya.</p></div>
+                <div class="item-container"><p><strong>9. Solution:</strong> LCM(4, 7) = 28. They will meet at the starting point again after 28 minutes. / <strong>Solusi:</strong> KPK(4, 7) = 28. Mereka akan bertemu di titik start lagi setelah 28 menit.</p></div>
+                <div class="item-container"><p><strong>10. Solution:</strong> LCM(5, 12) = 60. They will be seen together again after 60 years. The year 2020 + 60 = 2080. / <strong>Solusi:</strong> KPK(5, 12) = 60. Mereka akan terlihat bersama lagi setelah 60 tahun. Tahun 2020 + 60 = 2080.</p></div>
+                <div class="item-container"><p><strong>11. Solution:</strong> LCM(4, 9) = 36. She will attend both lessons together again 36 days after April 2nd. April has 30 days. Remaining days in April: 30 - 2 = 28 days. Remaining days to count: 36 - 28 = 8 days. So the date is May 8th. / <strong>Solusi:</strong> KPK(4, 9) = 36. Ia akan mengikuti kedua les bersama lagi 36 hari setelah 2 April. April memiliki 30 hari. Sisa hari di April: 30 - 2 = 28 hari. Sisa hari untuk dihitung: 36 - 28 = 8 hari. Jadi tanggalnya adalah 8 Mei.</p></div>
+                <div class="item-container"><p><strong>12. Solution:</strong> LCM(10, 14) = 70. The two points will meet again after 70 teeth have passed. The first gear must make $70 \div 10 = 7$ rotations. / <strong>Solusi:</strong> KPK(10, 14) = 70. Kedua titik bertemu lagi setelah 70 gigi terlewati. Roda gigi pertama harus berputar sebanyak $70 \div 10 = 7$ putaran.</p></div>
+                <div class="item-container"><p><strong>13. Solution:</strong> LCM(25, 40) = 200. They stop together every 200 minutes. 200 minutes = 3 hours 20 minutes. 10:00 AM + 3 hours 20 minutes = 01:20 PM. / <strong>Solusi:</strong> KPK(25, 40) = 200. Mereka berhenti bersama setiap 200 menit. 200 menit = 3 jam 20 menit. Pukul 10:00 + 3 jam 20 menit = 13:20.</p></div>
+                <div class="item-container"><p><strong>14. Solution:</strong> LCM(12, 18, 24) = 72. They will meet again at the post after 72 minutes. / <strong>Solusi:</strong> KPK(12, 18, 24) = 72. Mereka akan bertemu lagi di pos setelah 72 menit.</p></div>
+                <div class="item-container"><p><strong>15. Solution:</strong> LCM(7, 9) = 63. They turn on together every 63 minutes. The time range from 09:01 to 12:00 is 3 hours minus 1 minute, or 179 minutes. Times they turn on together: 09:00 + 63 mins = 10:03. 10:03 + 63 mins = 11:06. 11:06 + 63 mins = 12:09 (past the time). So, they turn on together 2 times. / <strong>Solusi:</strong> KPK(7, 9) = 63. Keduanya menyala bersama setiap 63 menit. Rentang waktu dari 09:01 hingga 12:00 adalah 3 jam kurang 1 menit, atau 179 menit. Waktu mereka menyala bersama: 09:00 + 63 menit = 10:03. 10:03 + 63 menit = 11:06. 11:06 + 63 menit = 12:09 (sudah lewat). Jadi, mereka menyala bersama 2 kali.</p></div>
+                
+
+                <h3 class="text-2xl font-bold text-indigo-600 my-4">Part 2: Application of GCD</h3>
+
+                <!-- Solusi 16 -->
+                <div class="item-container">
+                    <p><strong>16. Solution / Solusi:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This problem asks to divide different items into the "greatest number" of identical groups. The keywords "greatest number" and "divide" indicate that we need to find the Greatest Common Divisor (GCD).<br/><br/><strong>Konsep:</strong> Soal ini meminta untuk membagi beberapa benda berbeda ke dalam "jumlah paling banyak" kelompok yang identik. Kata kunci "paling banyak" dan "membagi" menunjukkan kita harus mencari Faktor Persekutuan Terbesar (FPB).</p></div>
+                    <p class="solution-step"><strong>Step 1:</strong> Identify the numbers for which we need to find the GCD. The numbers are 12 (donuts) and 18 (cakes).<br/><strong>Langkah 1:</strong> Tentukan angka-angka yang akan dicari FPB-nya. Angka-angkanya adalah 12 (donat) dan 18 (bolu).</p>
+                    <p class="solution-step"><strong>Step 2:</strong> Find the GCD of 12 and 18.<br/>Factors of 12: 1, 2, 3, 4, 6, 12.<br/>Factors of 18: 1, 2, 3, 6, 9, 18.<br/>The greatest common divisor (GCD) is 6.<br/><strong>Langkah 2:</strong> Cari FPB dari 12 dan 18.<br/>Faktor dari 12: 1, 2, 3, 4, 6, 12.<br/>Faktor dari 18: 1, 2, 3, 6, 9, 18.<br/>Faktor persekutuan terbesar (FPB) adalah 6.</p>
+                    <div class="final-answer">Answer: The greatest number of boxes that can be prepared is 6. / Jawaban: Jumlah kotak paling banyak yang bisa disiapkan adalah 6 kotak.</div>
+                </div>
+
+                <!-- Solusi 17 -->
+                <div class="item-container">
+                    <p><strong>17. Solution / Solusi:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Dividing two groups (males and females) into the "greatest number" of equal groups. This is a GCD problem.<br/><br/><strong>Konsep:</strong> Membagi dua kelompok (laki-laki dan perempuan) ke dalam jumlah kelompok "paling banyak" yang sama. Ini adalah masalah FPB.</p></div>
+                    <p class="solution-step"><strong>Step 1:</strong> The relevant numbers are 24 and 32.<br/><strong>Langkah 1:</strong> Angka yang relevan adalah 24 dan 32.</p>
+                    <p class="solution-step"><strong>Step 2:</strong> Find the GCD(24, 32).<br/>Prime factorization:<br/>$24 = 2^3 \times 3$<br/>$32 = 2^5$<br/>The GCD is taken from the common prime factors with the lowest power: $2^3 = 8$.<br/><strong>Langkah 2:</strong> Cari FPB(24, 32).<br/>Faktorisasi prima: <br/>$24 = 2^3 \times 3$<br/>$32 = 2^5$<br/>FPB diambil dari faktor prima yang sama dengan pangkat terkecil: $2^3 = 8$.</p>
+                    <div class="final-answer">Answer: The greatest number of groups that can be formed is 8. / Jawaban: Jumlah kelompok paling banyak yang dapat dibentuk adalah 8 kelompok.</div>
+                </div>
+
+                <!-- Lanjutkan dengan solusi 18-30 dengan pola yang sama -->
+                <div class="item-container"><p><strong>18. Solution:</strong> GCD(45, 60) = 15. The greatest number of rows is 15. / <strong>Solusi:</strong> FPB(45, 60) = 15. Jumlah baris paling banyak adalah 15 baris.</p></div>
+                <div class="item-container"><p><strong>19. Solution:</strong> GCD(50, 75) = 25. The greatest number of arrangements that can be made is 25. / <strong>Solusi:</strong> FPB(50, 75) = 25. Rangkaian paling banyak yang bisa dibuat adalah 25.</p></div>
+                <div class="item-container"><p><strong>20. Solution:</strong> GCD(20, 30) = 10. 10 bouquets can be made. Each bouquet contains $20 \div 10 = 2$ roses and $30 \div 10 = 3$ lilies. / <strong>Solusi:</strong> FPB(20, 30) = 10. Bisa dibuat 10 buket. Setiap buket berisi $20 \div 10 = 2$ mawar dan $30 \div 10 = 3$ lili.</p></div>
+                <div class="item-container"><p><strong>21. Solution:</strong> GCD(18, 24, 36) = 6. The longest possible length of each piece is 6 meters. / <strong>Solusi:</strong> FPB(18, 24, 36) = 6. Panjang potongan terpanjang adalah 6 meter.</p></div>
+                <div class="item-container"><p><strong>22. Solution:</strong> GCD(80, 100) = 20. The greatest number of shelves needed is 20. / <strong>Solusi:</strong> FPB(80, 100) = 20. Rak paling banyak yang dibutuhkan adalah 20.</p></div>
+                <div class="item-container"><p><strong>23. Solution:</strong> GCD(48, 72, 60) = 12. The greatest number of bags is 12. / <strong>Solusi:</strong> FPB(48, 72, 60) = 12. Jumlah kantong paling banyak adalah 12.</p></div>
+                <div class="item-container"><p><strong>24. Solution:</strong> GCD(28, 42, 56) = 14. 14 parcels can be made. Each parcel contains: Apples: $28 \div 14 = 2$. Oranges: $42 \div 14 = 3$. Salaks: $56 \div 14 = 4$. / <strong>Solusi:</strong> FPB(28, 42, 56) = 14. Bisa dibuat 14 parsel. Setiap parsel berisi: Apel: $28 \div 14 = 2$. Jeruk: $42 \div 14 = 3$. Salak: $56 \div 14 = 4$.</p></div>
+                <div class="item-container"><p><strong>25. Solution:</strong> GCD(54, 90, 108) = 18. The length of each small piece is 18 cm. Total pieces: $(54 \div 18) + (90 \div 18) + (108 \div 18) = 3 + 5 + 6 = 14$ pieces. / <strong>Solusi:</strong> FPB(54, 90, 108) = 18. Panjang setiap potongan kecil adalah 18 cm. Jumlah potongan: $(54 \div 18) + (90 \div 18) + (108 \div 18) = 3 + 5 + 6 = 14$ potongan.</p></div>
+                <div class="item-container"><p><strong>26. Solution:</strong> GCD(35, 49) = 7. The longest possible size is 7 meters. / <strong>Solusi:</strong> FPB(35, 49) = 7. Ukuran terpanjang adalah 7 meter.</p></div>
+                <div class="item-container"><p><strong>27. Solution:</strong> GCD(60, 45) = 15. The greatest number of students is 15. / <strong>Solusi:</strong> FPB(60, 45) = 15. Jumlah murid paling banyak adalah 15.</p></div>
+                <div class="item-container"><p><strong>28. Solution:</strong> GCD(400, 600) = 200. The largest tile size is 200 cm x 200 cm. / <strong>Solusi:</strong> FPB(400, 600) = 200. Ukuran ubin terbesar adalah 200 cm x 200 cm.</p></div>
+                <div class="item-container"><p><strong>29. Solution:</strong> GCD(120, 90, 75) = 15. There will be 15 children who receive the packages. / <strong>Solusi:</strong> FPB(120, 90, 75) = 15. Akan ada 15 anak yang menerima paket.</p></div>
+                <div class="item-container"><p><strong>30. Solution:</strong> GCD(144, 180) = 36. The largest possible volume for each jerrycan is 36 liters. / <strong>Solusi:</strong> FPB(144, 180) = 36. Volume terbesar yang mungkin untuk setiap jeriken adalah 36 liter.</p></div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
