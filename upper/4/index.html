@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Competition Practice - Speed, Distance, Time & Work Rate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+<h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 4</h1>
+            <p class="text-gray-600 mt-2">Grade 5 - 6 | Speed, Distance, Time & Work Rate</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                
+                <h3 class="topic-title">Part 1: Speed, Distance, Time</h3>
+                <div class="item-container"><p><strong>1.</strong> A car travels 120 km at 60 km/h and then another 120 km at 40 km/h. What is the average speed for the entire journey?<br/><br/>Sebuah mobil menempuh jarak 120 km dengan kecepatan 60 km/jam, lalu menempuh 120 km berikutnya dengan kecepatan 40 km/jam. Berapakah kecepatan rata-rata untuk seluruh perjalanan?</p></div>
+                <div class="item-container"><p><strong>2.</strong> Two cities, A and B, are 450 km apart. A train leaves A for B at 80 km/h. At the same time, another train leaves B for A at 70 km/h. How long will it take for them to meet?<br/><br/>Dua kota, A dan B, terpisah sejauh 450 km. Sebuah kereta berangkat dari A menuju B dengan kecepatan 80 km/jam. Pada saat yang sama, kereta lain berangkat dari B menuju A dengan kecepatan 70 km/jam. Berapa lama waktu yang dibutuhkan agar mereka berpapasan?</p></div>
+                <div class="item-container"><p><strong>3.</strong> Andi leaves school on his bike at 15 km/h. 30 minutes later, Budi leaves the same school by motorcycle at 30 km/h to catch up with Andi. How long will it take Budi to catch up with Andi?<br/><br/>Andi meninggalkan sekolah dengan sepedanya dengan kecepatan 15 km/jam. 30 menit kemudian, Budi meninggalkan sekolah yang sama dengan sepeda motor berkecepatan 30 km/jam untuk menyusul Andi. Berapa lama waktu yang dibutuhkan Budi untuk menyusul Andi?</p></div>
+                <div class="item-container"><p><strong>4.</strong> A boat's speed in still water is 10 km/h. The speed of the river current is 2 km/h. How long does it take the boat to travel 48 km downstream and then return 24 km upstream?<br/><br/>Kecepatan perahu di air tenang adalah 10 km/jam. Kecepatan arus sungai adalah 2 km/jam. Berapa lama waktu yang dibutuhkan perahu untuk menempuh 48 km searah arus dan kemudian kembali 24 km melawan arus?</p></div>
+                <div class="item-container"><p><strong>5.</strong> John drove from his house to the mall for 30 minutes at an average speed of 50 km/h. He drove back home along the same route for 50 minutes. What was his average speed for the entire trip?<br/><br/>John berkendara dari rumahnya ke mal selama 30 menit dengan kecepatan rata-rata 50 km/jam. Dia pulang ke rumah melalui rute yang sama selama 50 menit. Berapa kecepatan rata-ratanya untuk seluruh perjalanan pulang-pergi?</p></div>
+                <div class="item-container"><p><strong>6.</strong> A car and a bus are 560 km apart. They travel towards each other. The car's speed is 10 km/h faster than the bus. If they meet in 4 hours, what is the speed of the car?<br/><br/>Sebuah mobil dan bus terpisah sejauh 560 km. Mereka bergerak saling mendekat. Kecepatan mobil 10 km/jam lebih cepat dari bus. Jika mereka bertemu dalam 4 jam, berapakah kecepatan mobil?</p></div>
+                <div class="item-container"><p><strong>7.</strong> A thief steals a bicycle at 10:00 AM and rides away at 20 km/h. A policeman starts chasing him from the same spot at 10:30 AM on a motorcycle at 30 km/h. At what time will the policeman catch the thief?<br/><br/>Seorang pencuri mencuri sepeda pada pukul 10:00 dan melaju dengan kecepatan 20 km/jam. Seorang polisi mulai mengejarnya dari tempat yang sama pada pukul 10:30 dengan sepeda motor berkecepatan 30 km/jam. Pada pukul berapa polisi akan menangkap pencuri itu?</p></div>
+                <div class="item-container"><p><strong>8.</strong> A boat travels 60 km downstream in 3 hours. It takes 5 hours to return the same distance upstream. What is the speed of the boat in still water and the speed of the current?<br/><br/>Sebuah perahu menempuh 60 km searah arus dalam 3 jam. Dibutuhkan 5 jam untuk kembali menempuh jarak yang sama melawan arus. Berapakah kecepatan perahu di air tenang dan kecepatan arusnya?</p></div>
+                <div class="item-container"><p><strong>9.</strong> Two runners, P and Q, start at the same time from opposite ends of a 900 m track. P's speed is 5 m/s and Q's speed is 4 m/s. When they meet, how much further has P run than Q?<br/><br/>Dua pelari, P dan Q, mulai pada saat yang sama dari ujung berlawanan lintasan sejauh 900 m. Kecepatan P adalah 5 m/s dan kecepatan Q adalah 4 m/s. Saat mereka bertemu, berapa meter lebih jauh jarak yang ditempuh P dibandingkan Q?</p></div>
+                <div class="item-container"><p><strong>10.</strong> A man walks from his home to his office. If he walks at 5 km/h, he is 10 minutes late. If he walks at 6 km/h, he is 5 minutes early. What is the distance from his home to his office?<br/><br/>Seorang pria berjalan dari rumahnya ke kantor. Jika ia berjalan dengan kecepatan 5 km/jam, ia terlambat 10 menit. Jika ia berjalan dengan kecepatan 6 km/jam, ia 5 menit lebih awal. Berapakah jarak dari rumahnya ke kantor?</p></div>
+                <div class="item-container"><p><strong>11.</strong> A bus travels for 2 hours at 60 km/h and then for 3 hours at 50 km/h. What is the average speed of the bus for the whole journey?<br/><br/>Sebuah bus melakukan perjalanan selama 2 jam dengan kecepatan 60 km/jam dan kemudian selama 3 jam dengan kecepatan 50 km/jam. Berapa kecepatan rata-rata bus untuk seluruh perjalanan?</p></div>
+                <div class="item-container"><p><strong>12.</strong> Town X and Town Y are 385 km apart. A car leaves Town X for Town Y at 1 PM at a speed of 60 km/h. Another car leaves Town Y for Town X at 2 PM at a speed of 70 km/h. At what time will they cross each other?<br/><br/>Kota X dan Kota Y berjarak 385 km. Sebuah mobil meninggalkan Kota X menuju Kota Y pada pukul 13:00 dengan kecepatan 60 km/jam. Mobil lain meninggalkan Kota Y menuju Kota X pada pukul 14:00 dengan kecepatan 70 km/jam. Pukul berapa mereka akan berpapasan?</p></div>
+                <div class="item-container"><p><strong>13.</strong> Two friends, A and B, are running on a circular track of 400 m. They start at the same point and run in the same direction. A's speed is 8 m/s and B's speed is 6 m/s. When will A overtake B for the first time?<br/><br/>Dua teman, A dan B, berlari di lintasan melingkar sepanjang 400 m. Mereka mulai dari titik yang sama dan berlari ke arah yang sama. Kecepatan A adalah 8 m/s dan kecepatan B adalah 6 m/s. Kapan A akan menyusul B untuk pertama kalinya?</p></div>
+                <div class="item-container"><p><strong>14.</strong> A swimmer can swim downstream at 12 km/h and upstream at 4 km/h. How long will it take him to swim 8 km in still water?<br/><br/>Seorang perenang dapat berenang searah arus dengan kecepatan 12 km/jam dan melawan arus dengan kecepatan 4 km/jam. Berapa lama waktu yang dibutuhkannya untuk berenang sejauh 8 km di air tenang?</p></div>
+                <div class="item-container"><p><strong>15.</strong> A train travels 300 km. It travels the first 100 km at 50 km/h. It then stops for 30 minutes. It travels the remaining distance at 80 km/h. Find the total time taken for the journey.<br/><br/>Sebuah kereta menempuh jarak 300 km. Kereta itu menempuh 100 km pertama dengan kecepatan 50 km/jam. Kemudian berhenti selama 30 menit. Sisa jaraknya ditempuh dengan kecepatan 80 km/jam. Tentukan total waktu yang dibutuhkan untuk perjalanan tersebut.</p></div>
+                
+                <h3 class="topic-title">Part 2: Problem Solving: Work Rate</h3>
+                <div class="item-container"><p><strong>16.</strong> Pipe A can fill a tank in 4 hours. Pipe B can fill the same tank in 6 hours. If both pipes are opened together, how long will it take to fill the tank?<br/><br/>Pipa A dapat mengisi tangki dalam 4 jam. Pipa B dapat mengisi tangki yang sama dalam 6 jam. Jika kedua pipa dibuka bersamaan, berapa lama waktu yang dibutuhkan untuk mengisi tangki?</p></div>
+                <div class="item-container"><p><strong>17.</strong> Adi can paint a house in 8 days, Budi in 12 days, and Candra in 24 days. If they work together, how many days will they take to paint the house?<br/><br/>Adi dapat mengecat rumah dalam 8 hari, Budi dalam 12 hari, dan Candra dalam 24 hari. Jika mereka bekerja bersama, berapa hari yang akan mereka butuhkan untuk mengecat rumah?</p></div>
+                <div class="item-container"><p><strong>18.</strong> A tap can fill a pool in 5 hours. A drain can empty the pool in 7 hours. If the pool is empty and both the tap and the drain are opened, how long will it take to fill the pool?<br/><br/>Sebuah keran dapat mengisi kolam dalam 5 jam. Sebuah saluran pembuangan dapat mengosongkan kolam dalam 7 jam. Jika kolam kosong dan keran serta saluran pembuangan dibuka, berapa lama waktu yang dibutuhkan untuk mengisi kolam?</p></div>
+                <div class="item-container"><p><strong>19.</strong> Ali can complete a job in 10 days. He works for 4 days and then leaves. Budi finishes the remaining work in 9 days. How many days would Budi take to complete the entire job alone?<br/><br/>Ali dapat menyelesaikan pekerjaan dalam 10 hari. Ia bekerja selama 4 hari lalu pergi. Budi menyelesaikan sisa pekerjaan dalam 9 hari. Berapa hari yang dibutuhkan Budi untuk menyelesaikan seluruh pekerjaan sendirian?</p></div>
+                <div class="item-container"><p><strong>20.</strong> Machine A can print 1000 posters in 8 hours. Machine B can print the same number of posters in 12 hours. How long will it take for both machines working together to print 1000 posters?<br/><br/>Mesin A dapat mencetak 1000 poster dalam 8 jam. Mesin B dapat mencetak jumlah poster yang sama dalam 12 jam. Berapa lama waktu yang dibutuhkan kedua mesin yang bekerja bersama untuk mencetak 1000 poster?</p></div>
+                <div class="item-container"><p><strong>21.</strong> A and B can do a piece of work in 12 days. B and C can do it in 15 days. C and A can do it in 20 days. How long would each take to do the work alone?<br/><br/>A dan B dapat mengerjakan suatu pekerjaan dalam 12 hari. B dan C dapat mengerjakannya dalam 15 hari. C dan A dapat mengerjakannya dalam 20 hari. Berapa lama waktu yang dibutuhkan masing-masing untuk mengerjakan pekerjaan itu sendirian?</p></div>
+                <div class="item-container"><p><strong>22.</strong> Two pipes can fill a tank in 10 and 12 minutes respectively, while a third pipe can empty it in 20 minutes. If all three pipes are opened at the same time, in how many minutes will the tank be full?<br/><br/>Dua pipa dapat mengisi tangki masing-masing dalam 10 dan 12 menit, sedangkan pipa ketiga dapat mengosongkannya dalam 20 menit. Jika ketiga pipa dibuka pada saat yang sama, dalam berapa menit tangki akan penuh?</p></div>
+                <div class="item-container"><p><strong>23.</strong> P can complete a work in 15 days and Q in 20 days. They work for a day alternately, with P beginning. In how many days will the work be completed?<br/><br/>P dapat menyelesaikan pekerjaan dalam 15 hari dan Q dalam 20 hari. Mereka bekerja secara bergantian setiap hari, dimulai dari P. Dalam berapa hari pekerjaan akan selesai?</p></div>
+                <div class="item-container"><p><strong>24.</strong> Eka is twice as efficient as Feri. Together, they can finish a piece of work in 18 days. In how many days can Eka alone finish the work?<br/><br/>Eka dua kali lebih efisien dari Feri. Bersama-sama, mereka dapat menyelesaikan suatu pekerjaan dalam 18 hari. Dalam berapa hari Eka dapat menyelesaikan pekerjaan itu sendirian?</p></div>
+                <div class="item-container"><p><strong>25.</strong> 10 men can complete a construction project in 20 days. They all start working together, but after 8 days, 2 men leave. How many more days will it take for the remaining men to complete the project?<br/><br/>10 orang dapat menyelesaikan proyek konstruksi dalam 20 hari. Mereka semua mulai bekerja bersama, tetapi setelah 8 hari, 2 orang pergi. Berapa hari lagi yang dibutuhkan oleh orang-orang yang tersisa untuk menyelesaikan proyek tersebut?</p></div>
+                <div class="item-container"><p><strong>26.</strong> A farmer can plow a field in 6 hours. His son can do it in 8 hours. If they work together with two tractors, how long will it take them to plow the field?<br/><br/>Seorang petani dapat membajak ladang dalam 6 jam. Anaknya bisa melakukannya dalam 8 jam. Jika mereka bekerja sama dengan dua traktor, berapa lama waktu yang mereka butuhkan untuk membajak ladang?</p></div>
+                <div class="item-container"><p><strong>27.</strong> Tap A fills a tub in 12 minutes, Tap B fills it in 15 minutes. Tap C can empty it in 10 minutes. If all three are open when the tub is half full, how long will it take to fill the rest of the tub?<br/><br/>Keran A mengisi bak dalam 12 menit, Keran B mengisinya dalam 15 menit. Keran C dapat mengosongkannya dalam 10 menit. Jika ketiganya terbuka saat bak setengah penuh, berapa lama waktu yang dibutuhkan untuk mengisi sisa bak tersebut?</p></div>
+                <div class="item-container"><p><strong>28.</strong> Rina can type a manuscript in 30 hours. After working for 10 hours, she asks Sita to help her. They finish the remaining work together in 8 hours. How long would Sita take to type the entire manuscript alone?<br/><br/>Rina dapat mengetik naskah dalam 30 jam. Setelah bekerja selama 10 jam, dia meminta Sita untuk membantunya. Mereka menyelesaikan sisa pekerjaan bersama dalam 8 jam. Berapa lama waktu yang dibutuhkan Sita untuk mengetik seluruh naskah sendirian?</p></div>
+                <div class="item-container"><p><strong>29.</strong> Two carpenters, X and Y, are paid a total of \$550 for a job. X can do the job in 5 days alone, while Y can do it in 6 days alone. If they work together to finish the job, how much should Y get?<br/><br/>Dua tukang kayu, X dan Y, dibayar total \$550 untuk sebuah pekerjaan. X dapat melakukan pekerjaan itu dalam 5 hari sendirian, sedangkan Y dapat melakukannya dalam 6 hari sendirian. Jika mereka bekerja sama untuk menyelesaikan pekerjaan, berapa upah yang seharusnya diterima Y?</p></div>
+                <div class="item-container"><p><strong>30.</strong> A team of 5 skilled workers can complete a task in 10 days. A team of 12 apprentices can complete the same task in 10 days. How long will it take for a team of <strong>5 skilled workers and 12 apprentices</strong> to complete the task together?<br/><br/>Sebuah tim yang terdiri dari 5 pekerja terampil dapat menyelesaikan tugas dalam 10 hari. Sebuah tim yang terdiri dari 12 pekerja magang dapat menyelesaikan tugas yang sama dalam 10 hari. Berapa lama waktu yang dibutuhkan tim yang terdiri dari <strong>5 pekerja terampil dan 12 pekerja magang</strong> untuk menyelesaikan tugas bersama?</p></div>
+            </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions</h2>
+                
+                <h3 class="topic-title">Solutions for Part 1: Speed, Distance, Time</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Average speed is Total Distance / Total Time. It's not the average of the speeds. We must first find the time taken for each part of the journey.<br/><br/><strong>Konsep:</strong> Kecepatan rata-rata adalah Jarak Total / Waktu Total. Ini bukan rata-rata dari kecepatannya. Kita harus terlebih dahulu mencari waktu yang dibutuhkan untuk setiap bagian perjalanan.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Time for the first part: $T_1 = \frac{\text{Distance}}{\text{Speed}} = \frac{120 \text{ km}}{60 \text{ km/h}} = 2$ hours. Time for the second part: $T_2 = \frac{120 \text{ km}}{40 \text{ km/h}} = 3$ hours. Total Distance = $120 + 120 = 240$ km. Total Time = $2 + 3 = 5$ hours. Average Speed = $\frac{240 \text{ km}}{5 \text{ hours}} = 48$ km/h.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Waktu untuk bagian pertama: $W_1 = \frac{\text{Jarak}}{\text{Kecepatan}} = \frac{120 \text{ km}}{60 \text{ km/jam}} = 2$ jam. Waktu untuk bagian kedua: $W_2 = \frac{120 \text{ km}}{40 \text{ km/jam}} = 3$ jam. Jarak Total = $120 + 120 = 240$ km. Waktu Total = $2 + 3 = 5$ jam. Kecepatan Rata-rata = $\frac{240 \text{ km}}{5 \text{ jam}} = 48$ km/jam.</p>
+                    <div class="final-answer">Answer: 48 km/h. / Jawaban: 48 km/jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                    <div class="concept"><p><strong>Concept (Meeting):</strong> When two objects move towards each other, their speeds add up. This is called their relative speed. The time to meet is the total distance divided by their combined speed.<br/><br/><strong>Konsep (Berpapasan):</strong> Ketika dua benda bergerak saling mendekat, kecepatan mereka dijumlahkan. Ini disebut kecepatan relatif. Waktu untuk bertemu adalah jarak total dibagi dengan kecepatan gabungan mereka.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Combined speed = $80 \text{ km/h} + 70 \text{ km/h} = 150$ km/h. Distance = 450 km. Time to meet = $\frac{\text{Distance}}{\text{Combined Speed}} = \frac{450 \text{ km}}{150 \text{ km/h}} = 3$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan gabungan = $80 \text{ km/jam} + 70 \text{ km/jam} = 150$ km/jam. Jarak = 450 km. Waktu untuk bertemu = $\frac{\text{Jarak}}{\text{Kecepatan Gabungan}} = \frac{450 \text{ km}}{150 \text{ km/jam}} = 3$ jam.</p>
+                    <div class="final-answer">Answer: 3 hours. / Jawaban: 3 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 3:</strong></p>
+                    <div class="concept"><p><strong>Concept (Overtaking):</strong> When one object chases another, we use their relative speed, which is the difference between their speeds. First, we need to find the head start distance of the first person.<br/><br/><strong>Konsep (Menyusul):</strong> Ketika satu benda mengejar benda lain, kita menggunakan kecepatan relatifnya, yaitu selisih antara kecepatan mereka. Pertama, kita perlu mencari jarak awal orang pertama.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> In 30 minutes (0.5 hours), Andi has traveled a distance of $15 \text{ km/h} \times 0.5 \text{ h} = 7.5$ km. This is the head start distance. Budi's speed relative to Andi is $30 \text{ km/h} - 15 \text{ km/h} = 15$ km/h. Time for Budi to catch up = $\frac{\text{Head Start Distance}}{\text{Relative Speed}} = \frac{7.5 \text{ km}}{15 \text{ km/h}} = 0.5$ hours, or 30 minutes.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Dalam 30 menit (0,5 jam), Andi telah menempuh jarak $15 \text{ km/jam} \times 0,5 \text{ jam} = 7,5$ km. Ini adalah jarak awalnya. Kecepatan Budi relatif terhadap Andi adalah $30 \text{ km/jam} - 15 \text{ km/jam} = 15$ km/jam. Waktu bagi Budi untuk menyusul = $\frac{\text{Jarak Awal}}{\text{Kecepatan Relatif}} = \frac{7,5 \text{ km}}{15 \text{ km/jam}} = 0,5$ jam, atau 30 menit.</p>
+                    <div class="final-answer">Answer: 0.5 hours (30 minutes). / Jawaban: 0,5 jam (30 menit).</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 4:</strong></p>
+                    <div class="concept"><p><strong>Concept (Boat/Current):</strong> Downstream speed = Boat speed + Current speed. Upstream speed = Boat speed - Current speed.<br/><br/><strong>Konsep (Perahu/Arus):</strong> Kecepatan searah arus = Kecepatan perahu + Kecepatan arus. Kecepatan melawan arus = Kecepatan perahu - Kecepatan arus.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Downstream speed = $10 + 2 = 12$ km/h. Time to travel 48 km downstream = $\frac{48 \text{ km}}{12 \text{ km/h}} = 4$ hours. Upstream speed = $10 - 2 = 8$ km/h. Time to travel 24 km upstream = $\frac{24 \text{ km}}{8 \text{ km/h}} = 3$ hours. Total time = $4 \text{ hours} + 3 \text{ hours} = 7$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan searah arus = $10 + 2 = 12$ km/jam. Waktu tempuh 48 km searah arus = $\frac{48 \text{ km}}{12 \text{ km/jam}} = 4$ jam. Kecepatan melawan arus = $10 - 2 = 8$ km/jam. Waktu tempuh 24 km melawan arus = $\frac{24 \text{ km}}{8 \text{ km/jam}} = 3$ jam. Total waktu = $4 \text{ jam} + 3 \text{ jam} = 7$ jam.</p>
+                    <div class="final-answer">Answer: 7 hours. / Jawaban: 7 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 5:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> To find average speed, we need Total Distance and Total Time. We have the times for both parts of the trip, but only the speed for the first part.<br/><br/><strong>Konsep:</strong> Untuk mencari kecepatan rata-rata, kita butuh Jarak Total dan Waktu Total. Kita punya waktu untuk kedua bagian perjalanan, tapi hanya kecepatan untuk bagian pertama.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Convert times to hours: 30 min = 0.5 h; 50 min = 5/6 h. Distance to the mall = $50 \text{ km/h} \times 0.5 \text{ h} = 25$ km. Since he took the same route back, the total distance is $25 + 25 = 50$ km. Total time = $0.5 \text{ h} + \frac{5}{6} \text{ h} = \frac{3}{6} \text{ h} + \frac{5}{6} \text{ h} = \frac{8}{6} \text{ h} = \frac{4}{3}$ h. Average speed = $\frac{\text{Total Distance}}{\text{Total Time}} = \frac{50 \text{ km}}{4/3 \text{ h}} = 50 \times \frac{3}{4} = 37.5$ km/h.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Ubah waktu ke jam: 30 menit = 0,5 jam; 50 menit = 5/6 jam. Jarak ke mal = $50 \text{ km/jam} \times 0,5 \text{ jam} = 25$ km. Karena rutenya sama, jarak totalnya adalah $25 + 25 = 50$ km. Waktu total = $0,5 \text{ jam} + \frac{5}{6} \text{ jam} = \frac{3}{6} \text{ jam} + \frac{5}{6} \text{ jam} = \frac{8}{6} \text{ jam} = \frac{4}{3}$ jam. Kecepatan rata-rata = $\frac{\text{Jarak Total}}{\text{Waktu Total}} = \frac{50 \text{ km}}{4/3 \text{ jam}} = 50 \times \frac{3}{4} = 37,5$ km/jam.</p>
+                    <div class="final-answer">Answer: 37.5 km/h. / Jawaban: 37,5 km/jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 6:</strong></p>
+                    <div class="concept"><p><strong>Concept (Meeting):</strong> The combined speed of two objects moving towards each other is Distance / Time. We can set up an algebraic equation for their speeds.<br/><br/><strong>Konsep (Berpapasan):</strong> Kecepatan gabungan dua benda yang bergerak saling mendekat adalah Jarak / Waktu. Kita bisa membuat persamaan aljabar untuk kecepatan mereka.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Combined speed = $\frac{560 \text{ km}}{4 \text{ hours}} = 140$ km/h. Let the speed of the bus be $v$. Then the speed of the car is $v+10$. Their combined speed is $v + (v+10) = 140$. So, $2v+10 = 140 \implies 2v = 130 \implies v = 65$ km/h. The speed of the car is $v+10 = 65+10 = 75$ km/h.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan gabungan = $\frac{560 \text{ km}}{4 \text{ jam}} = 140$ km/jam. Misalkan kecepatan bus adalah $v$. Maka kecepatan mobil adalah $v+10$. Kecepatan gabungan mereka adalah $v + (v+10) = 140$. Jadi, $2v+10 = 140 \implies 2v = 130 \implies v = 65$ km/jam. Kecepatan mobil adalah $v+10 = 65+10 = 75$ km/jam.</p>
+                    <div class="final-answer">Answer: 75 km/h. / Jawaban: 75 km/jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 7:</strong></p>
+                    <div class="concept"><p><strong>Concept (Overtaking):</strong> This is similar to question 3. Find the head start distance and divide by the relative speed (difference in speeds).<br/><br/><strong>Konsep (Menyusul):</strong> Ini mirip dengan soal nomor 3. Cari jarak awal dan bagi dengan kecepatan relatif (selisih kecepatan).</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> The thief had a 30-minute (0.5 hour) head start. Distance covered by thief = $20 \text{ km/h} \times 0.5 \text{ h} = 10$ km. The policeman's relative speed is $30 \text{ km/h} - 20 \text{ km/h} = 10$ km/h. Time to catch the thief = $\frac{10 \text{ km}}{10 \text{ km/h}} = 1$ hour. The policeman started at 10:30 AM, so he will catch the thief 1 hour later, at 11:30 AM.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Pencuri punya waktu 30 menit (0,5 jam) lebih dulu. Jarak yang ditempuh pencuri = $20 \text{ km/jam} \times 0,5 \text{ jam} = 10$ km. Kecepatan relatif polisi adalah $30 \text{ km/jam} - 20 \text{ km/jam} = 10$ km/jam. Waktu untuk menangkap pencuri = $\frac{10 \text{ km}}{10 \text{ km/jam}} = 1$ jam. Polisi mulai pukul 10:30, jadi dia akan menangkap pencuri 1 jam kemudian, pada pukul 11:30.</p>
+                    <div class="final-answer">Answer: 11:30 AM. / Jawaban: 11:30.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 8:</strong></p>
+                    <div class="concept"><p><strong>Concept (Boat/Current):</strong> We can find downstream and upstream speeds. Speed in still water is the average of these two speeds. Current speed is half their difference.<br/><br/><strong>Konsep (Perahu/Arus):</strong> Kita bisa mencari kecepatan searah arus dan melawan arus. Kecepatan di air tenang adalah rata-rata dari kedua kecepatan ini. Kecepatan arus adalah setengah dari selisihnya.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Downstream speed = $\frac{60 \text{ km}}{3 \text{ h}} = 20$ km/h. Upstream speed = $\frac{60 \text{ km}}{5 \text{ h}} = 12$ km/h. Speed of boat in still water = $\frac{\text{Downstream Speed} + \text{Upstream Speed}}{2} = \frac{20+12}{2} = 16$ km/h. Speed of current = $\frac{\text{Downstream Speed} - \text{Upstream Speed}}{2} = \frac{20-12}{2} = 4$ km/h.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan searah arus = $\frac{60 \text{ km}}{3 \text{ jam}} = 20$ km/jam. Kecepatan melawan arus = $\frac{60 \text{ km}}{5 \text{ jam}} = 12$ km/jam. Kecepatan perahu di air tenang = $\frac{\text{Kecepatan Searah Arus} + \text{Kecepatan Lawan Arus}}{2} = \frac{20+12}{2} = 16$ km/jam. Kecepatan arus = $\frac{\text{Kecepatan Searah Arus} - \text{Kecepatan Lawan Arus}}{2} = \frac{20-12}{2} = 4$ km/jam.</p>
+                    <div class="final-answer">Answer: Boat speed 16 km/h, current speed 4 km/h. / Jawaban: Kecepatan perahu 16 km/jam, kecepatan arus 4 km/jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 9:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> First, find the time it takes for them to meet. Then, calculate the distance each has run in that time. The ratio of distances covered is the same as the ratio of their speeds.<br/><br/><strong>Konsep:</strong> Pertama, cari waktu yang dibutuhkan sampai mereka bertemu. Lalu, hitung jarak yang ditempuh masing-masing dalam waktu tersebut. Rasio jarak yang ditempuh sama dengan rasio kecepatan mereka.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Combined speed = $5 \text{ m/s} + 4 \text{ m/s} = 9$ m/s. Time to meet = $\frac{900 \text{ m}}{9 \text{ m/s}} = 100$ seconds. Distance run by P = $5 \text{ m/s} \times 100 \text{ s} = 500$ m. Distance run by Q = $4 \text{ m/s} \times 100 \text{ s} = 400$ m. The difference is $500 \text{ m} - 400 \text{ m} = 100$ m.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan gabungan = $5 \text{ m/s} + 4 \text{ m/s} = 9$ m/s. Waktu bertemu = $\frac{900 \text{ m}}{9 \text{ m/s}} = 100$ detik. Jarak ditempuh P = $5 \text{ m/s} \times 100 \text{ s} = 500$ m. Jarak ditempuh Q = $4 \text{ m/s} \times 100 \text{ s} = 400$ m. Selisihnya adalah $500 \text{ m} - 400 \text{ m} = 100$ m.</p>
+                    <div class="final-answer">Answer: 100 m. / Jawaban: 100 m.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 10:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The distance is the same in both scenarios. Let D be the distance. The difference in time taken for the two scenarios is the key.<br/><br/><strong>Konsep:</strong> Jaraknya sama dalam kedua skenario. Misalkan D adalah jaraknya. Perbedaan waktu tempuh antara kedua skenario adalah kuncinya.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Let the distance be D km. The difference in time taken is 10 minutes (late) + 5 minutes (early) = 15 minutes = $1/4$ hour. Time at 5 km/h is $D/5$. Time at 6 km/h is $D/6$. The equation is $\frac{D}{5} - \frac{D}{6} = \frac{15}{60} = \frac{1}{4}$. Find a common denominator for the left side (30): $\frac{6D - 5D}{30} = \frac{1}{4} \implies \frac{D}{30} = \frac{1}{4}$. So, $D = \frac{30}{4} = 7.5$ km.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Misalkan jaraknya D km. Perbedaan waktu tempuh adalah 10 menit (terlambat) + 5 menit (lebih awal) = 15 menit = $1/4$ jam. Waktu pada 5 km/jam adalah $D/5$. Waktu pada 6 km/jam adalah $D/6$. Persamaannya adalah $\frac{D}{5} - \frac{D}{6} = \frac{15}{60} = \frac{1}{4}$. Cari penyebut persekutuan untuk sisi kiri (30): $\frac{6D - 5D}{30} = \frac{1}{4} \implies \frac{D}{30} = \frac{1}{4}$. Jadi, $D = \frac{30}{4} = 7,5$ km.</p>
+                    <div class="final-answer">Answer: 7.5 km. / Jawaban: 7,5 km.</div>
+                </div>
+                 <div class="item-container">
+                    <p><strong>Solution Number 11:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Average speed is Total Distance / Total Time. We need to calculate the distance for each segment first.<br/><br/><strong>Konsep:</strong> Kecepatan rata-rata adalah Jarak Total / Waktu Total. Kita perlu menghitung jarak untuk setiap segmen terlebih dahulu.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Distance of first part: $D_1 = 60 \text{ km/h} \times 2 \text{ h} = 120$ km. Distance of second part: $D_2 = 50 \text{ km/h} \times 3 \text{ h} = 150$ km. Total Distance = $120 + 150 = 270$ km. Total Time = $2 + 3 = 5$ hours. Average Speed = $\frac{270 \text{ km}}{5 \text{ hours}} = 54$ km/h.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Jarak bagian pertama: $J_1 = 60 \text{ km/jam} \times 2 \text{ jam} = 120$ km. Jarak bagian kedua: $J_2 = 50 \text{ km/jam} \times 3 \text{ jam} = 150$ km. Jarak Total = $120 + 150 = 270$ km. Waktu Total = $2 + 3 = 5$ jam. Kecepatan Rata-rata = $\frac{270 \text{ km}}{5 \text{ jam}} = 54$ km/jam.</p>
+                    <div class="final-answer">Answer: 54 km/h. / Jawaban: 54 km/jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 12:</strong></p>
+                    <div class="concept"><p><strong>Concept (Meeting with delay):</strong> First, calculate the distance covered by the first car before the second car starts. Then, find the time to meet using the remaining distance and their combined speed.<br/><br/><strong>Konsep (Berpapasan dengan penundaan):</strong> Pertama, hitung jarak yang ditempuh mobil pertama sebelum mobil kedua mulai. Kemudian, cari waktu untuk bertemu menggunakan sisa jarak dan kecepatan gabungan mereka.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> The first car travels for 1 hour (from 1 PM to 2 PM) before the second car starts. Distance covered = $60 \text{ km/h} \times 1 \text{ h} = 60$ km. Remaining distance = $385 - 60 = 325$ km. From 2 PM, they travel towards each other. Combined speed = $60 + 70 = 130$ km/h. Time to meet = $\frac{325 \text{ km}}{130 \text{ km/h}} = 2.5$ hours. 2.5 hours is 2 hours and 30 minutes. They will meet 2 hours and 30 minutes after 2 PM, which is 4:30 PM.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Mobil pertama berjalan selama 1 jam (dari pukul 13:00 hingga 14:00) sebelum mobil kedua mulai. Jarak yang ditempuh = $60 \text{ km/jam} \times 1 \text{ jam} = 60$ km. Sisa jarak = $385 - 60 = 325$ km. Mulai pukul 14:00, mereka bergerak saling mendekat. Kecepatan gabungan = $60 + 70 = 130$ km/jam. Waktu untuk bertemu = $\frac{325 \text{ km}}{130 \text{ km/jam}} = 2,5$ jam. 2,5 jam adalah 2 jam 30 menit. Mereka akan bertemu 2 jam 30 menit setelah pukul 14:00, yaitu pukul 16:30.</p>
+                    <div class="final-answer">Answer: 4:30 PM. / Jawaban: 16:30.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 13:</strong></p>
+                    <div class="concept"><p><strong>Concept (Circular Overtake):</strong> To overtake on a circular track, the faster person must run one full lap (the track length) more than the slower person. We use the relative speed.<br/><br/><strong>Konsep (Menyusul di Lintasan Melingkar):</strong> Untuk menyusul di lintasan melingkar, orang yang lebih cepat harus berlari satu putaran penuh (panjang lintasan) lebih jauh dari orang yang lebih lambat. Kita gunakan kecepatan relatif.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> The relative speed of A with respect to B is $8 \text{ m/s} - 6 \text{ m/s} = 2$ m/s. The distance A needs to gain on B is one full lap, which is 400 m. Time to overtake = $\frac{\text{Distance to Gain}}{\text{Relative Speed}} = \frac{400 \text{ m}}{2 \text{ m/s}} = 200$ seconds.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan relatif A terhadap B adalah $8 \text{ m/s} - 6 \text{ m/s} = 2$ m/s. Jarak yang perlu A kejar dari B adalah satu putaran penuh, yaitu 400 m. Waktu untuk menyusul = $\frac{\text{Jarak yang Harus Dikejar}}{\text{Kecepatan Relatif}} = \frac{400 \text{ m}}{2 \text{ m/s}} = 200$ detik.</p>
+                    <div class="final-answer">Answer: 200 seconds. / Jawaban: 200 detik.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 14:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The speed in still water is the average of the downstream and upstream speeds. We need to find this speed first.<br/><br/><strong>Konsep:</strong> Kecepatan di air tenang adalah rata-rata dari kecepatan searah arus dan melawan arus. Kita perlu mencari kecepatan ini terlebih dahulu.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Speed in still water = $\frac{\text{Downstream Speed} + \text{Upstream Speed}}{2} = \frac{12 + 4}{2} = 8$ km/h. Time to swim 8 km in still water = $\frac{\text{Distance}}{\text{Speed}} = \frac{8 \text{ km}}{8 \text{ km/h}} = 1$ hour.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Kecepatan di air tenang = $\frac{\text{Kecepatan Searah Arus} + \text{Kecepatan Lawan Arus}}{2} = \frac{12 + 4}{2} = 8$ km/jam. Waktu untuk berenang 8 km di air tenang = $\frac{\text{Jarak}}{\text{Kecepatan}} = \frac{8 \text{ km}}{8 \text{ km/jam}} = 1$ jam.</p>
+                    <div class="final-answer">Answer: 1 hour. / Jawaban: 1 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 15:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The total time is the sum of the time for each travel segment and the stopping time.<br/><br/><strong>Konsep:</strong> Waktu total adalah jumlah waktu untuk setiap segmen perjalanan dan waktu berhenti.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Time for the first 100 km = $\frac{100 \text{ km}}{50 \text{ km/h}} = 2$ hours. Stopping time = 30 minutes = 0.5 hours. Remaining distance = $300 - 100 = 200$ km. Time for the remaining distance = $\frac{200 \text{ km}}{80 \text{ km/h}} = 2.5$ hours. Total time = $2 + 0.5 + 2.5 = 5$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Waktu untuk 100 km pertama = $\frac{100 \text{ km}}{50 \text{ km/jam}} = 2$ jam. Waktu berhenti = 30 menit = 0,5 jam. Sisa jarak = $300 - 100 = 200$ km. Waktu untuk sisa jarak = $\frac{200 \text{ km}}{80 \text{ km/jam}} = 2,5$ jam. Total waktu = $2 + 0,5 + 2,5 = 5$ jam.</p>
+                    <div class="final-answer">Answer: 5 hours. / Jawaban: 5 jam.</div>
+                </div>
+
+                <h3 class="topic-title">Solutions for Part 2: Problem Solving: Work Rate</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 16:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Work rate is the fraction of the job done per unit of time. The combined rate is the sum of individual rates.<br/><br/><strong>Konsep:</strong> Laju kerja adalah bagian pekerjaan yang diselesaikan per satuan waktu. Laju gabungan adalah jumlah dari laju individu.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Rate of Pipe A = $\frac{1}{4}$ tank/hour. Rate of Pipe B = $\frac{1}{6}$ tank/hour. Combined rate = $\frac{1}{4} + \frac{1}{6} = \frac{3}{12} + \frac{2}{12} = \frac{5}{12}$ tank/hour. Time to fill the tank = $\frac{1}{\text{Combined Rate}} = \frac{1}{5/12} = \frac{12}{5} = 2.4$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju Pipa A = $\frac{1}{4}$ tangki/jam. Laju Pipa B = $\frac{1}{6}$ tangki/jam. Laju gabungan = $\frac{1}{4} + \frac{1}{6} = \frac{3}{12} + \frac{2}{12} = \frac{5}{12}$ tangki/jam. Waktu untuk mengisi tangki = $\frac{1}{\text{Laju Gabungan}} = \frac{1}{5/12} = \frac{12}{5} = 2,4$ jam.</p>
+                    <div class="final-answer">Answer: 2.4 hours. / Jawaban: 2,4 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 17:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Similar to the pipe problem, find the individual rates and add them to get the combined rate.<br/><br/><strong>Konsep:</strong> Mirip dengan soal pipa, cari laju individu dan jumlahkan untuk mendapatkan laju gabungan.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Adi's rate = $\frac{1}{8}$ house/day. Budi's rate = $\frac{1}{12}$ house/day. Candra's rate = $\frac{1}{24}$ house/day. Combined rate = $\frac{1}{8} + \frac{1}{12} + \frac{1}{24} = \frac{3}{24} + \frac{2}{24} + \frac{1}{24} = \frac{6}{24} = \frac{1}{4}$ house/day. Time taken together = $\frac{1}{1/4} = 4$ days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju Adi = $\frac{1}{8}$ rumah/hari. Laju Budi = $\frac{1}{12}$ rumah/hari. Laju Candra = $\frac{1}{24}$ rumah/hari. Laju gabungan = $\frac{1}{8} + \frac{1}{12} + \frac{1}{24} = \frac{3}{24} + \frac{2}{24} + \frac{1}{24} = \frac{6}{24} = \frac{1}{4}$ rumah/hari. Waktu yang dibutuhkan bersama = $\frac{1}{1/4} = 4$ hari.</p>
+                    <div class="final-answer">Answer: 4 days. / Jawaban: 4 hari.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 18:</strong></p>
+                    <div class="concept"><p><strong>Concept (Negative Work):</strong> The rate of emptying is considered negative. The net rate is the filling rate minus the emptying rate.<br/><br/><strong>Konsep (Kerja Negatif):</strong> Laju pengosongan dianggap negatif. Laju bersih adalah laju pengisian dikurangi laju pengosongan.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Filling rate = $\frac{1}{5}$ pool/hour. Emptying rate = $\frac{1}{7}$ pool/hour. Net rate = $\frac{1}{5} - \frac{1}{7} = \frac{7}{35} - \frac{5}{35} = \frac{2}{35}$ pool/hour. Time to fill the pool = $\frac{1}{2/35} = \frac{35}{2} = 17.5$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju pengisian = $\frac{1}{5}$ kolam/jam. Laju pengosongan = $\frac{1}{7}$ kolam/jam. Laju bersih = $\frac{1}{5} - \frac{1}{7} = \frac{7}{35} - \frac{5}{35} = \frac{2}{35}$ kolam/jam. Waktu untuk mengisi kolam = $\frac{1}{2/35} = \frac{35}{2} = 17,5$ jam.</p>
+                    <div class="final-answer">Answer: 17.5 hours. / Jawaban: 17,5 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 19:</strong></p>
+                    <div class="concept"><p><strong>Concept (Sequential Work):</strong> Calculate the fraction of work done by the first person, find the remaining fraction, and then use that to find the second person's rate.<br/><br/><strong>Konsep (Kerja Berurutan):</strong> Hitung bagian pekerjaan yang dilakukan orang pertama, cari sisa bagiannya, lalu gunakan itu untuk mencari laju orang kedua.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Ali's rate is $\frac{1}{10}$ job/day. In 4 days, Ali completes $\frac{1}{10} \times 4 = \frac{4}{10} = \frac{2}{5}$ of the job. Remaining work = $1 - \frac{2}{5} = \frac{3}{5}$ of the job. Budi finishes this $\frac{3}{5}$ of the job in 9 days. So, Budi's rate = $\frac{\text{Work Done}}{\text{Time}} = \frac{3/5}{9} = \frac{3}{45} = \frac{1}{15}$ job/day. To complete the entire job alone, Budi would take $\frac{1}{1/15} = 15$ days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju Ali adalah $\frac{1}{10}$ pekerjaan/hari. Dalam 4 hari, Ali menyelesaikan $\frac{1}{10} \times 4 = \frac{4}{10} = \frac{2}{5}$ pekerjaan. Sisa pekerjaan = $1 - \frac{2}{5} = \frac{3}{5}$ pekerjaan. Budi menyelesaikan $\frac{3}{5}$ pekerjaan ini dalam 9 hari. Jadi, laju Budi = $\frac{\text{Pekerjaan Selesai}}{\text{Waktu}} = \frac{3/5}{9} = \frac{3}{45} = \frac{1}{15}$ pekerjaan/hari. Untuk menyelesaikan seluruh pekerjaan sendirian, Budi akan membutuhkan $\frac{1}{1/15} = 15$ hari.</p>
+                    <div class="final-answer">Answer: 15 days. / Jawaban: 15 hari.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 20:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This is a standard "working together" problem. The number of posters (1000) is the "job".<br/><br/><strong>Konsep:</strong> Ini adalah soal standar "bekerja bersama". Jumlah poster (1000) adalah "pekerjaan"-nya.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Rate of Machine A = $\frac{1}{8}$ job/hour. Rate of Machine B = $\frac{1}{12}$ job/hour. Combined rate = $\frac{1}{8} + \frac{1}{12} = \frac{3}{24} + \frac{2}{24} = \frac{5}{24}$ job/hour. Time to complete the job = $\frac{1}{5/24} = \frac{24}{5} = 4.8$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju Mesin A = $\frac{1}{8}$ pekerjaan/jam. Laju Mesin B = $\frac{1}{12}$ pekerjaan/jam. Laju gabungan = $\frac{1}{8} + \frac{1}{12} = \frac{3}{24} + \frac{2}{24} = \frac{5}{24}$ pekerjaan/jam. Waktu untuk menyelesaikan pekerjaan = $\frac{1}{5/24} = \frac{24}{5} = 4,8$ jam.</p>
+                    <div class="final-answer">Answer: 4.8 hours. / Jawaban: 4,8 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 21:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> We can form equations for the combined rates. By adding them, we can find the rate of (A+B+C) working together twice.<br/><br/><strong>Konsep:</strong> Kita bisa membentuk persamaan untuk laju gabungan. Dengan menjumlahkannya, kita bisa menemukan laju dari (A+B+C) yang bekerja bersama sebanyak dua kali.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Let rates be R_A, R_B, R_C. $R_A + R_B = 1/12$. $R_B + R_C = 1/15$. $R_C + R_A = 1/20$. Adding all three: $2(R_A + R_B + R_C) = \frac{1}{12} + \frac{1}{15} + \frac{1}{20} = \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5}$. So, $R_A + R_B + R_C = \frac{1}{10}$. Now find individual rates: $R_A = (R_A+R_B+R_C) - (R_B+R_C) = \frac{1}{10} - \frac{1}{15} = \frac{1}{30}$. So A takes 30 days. $R_B = (R_A+R_B+R_C) - (R_C+R_A) = \frac{1}{10} - \frac{1}{20} = \frac{1}{20}$. So B takes 20 days. $R_C = (R_A+R_B+R_C) - (R_A+R_B) = \frac{1}{10} - \frac{1}{12} = \frac{1}{60}$. So C takes 60 days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Misalkan laju kerja adalah R_A, R_B, R_C. $R_A + R_B = 1/12$. $R_B + R_C = 1/15$. $R_C + R_A = 1/20$. Menjumlahkan ketiganya: $2(R_A + R_B + R_C) = \frac{1}{12} + \frac{1}{15} + \frac{1}{20} = \frac{5+4+3}{60} = \frac{12}{60} = \frac{1}{5}$. Jadi, $R_A + R_B + R_C = \frac{1}{10}$. Sekarang cari laju individu: $R_A = (R_A+R_B+R_C) - (R_B+R_C) = \frac{1}{10} - \frac{1}{15} = \frac{1}{30}$. Jadi A butuh 30 hari. $R_B = (R_A+R_B+R_C) - (R_C+R_A) = \frac{1}{10} - \frac{1}{20} = \frac{1}{20}$. Jadi B butuh 20 hari. $R_C = (R_A+R_B+R_C) - (R_A+R_B) = \frac{1}{10} - \frac{1}{12} = \frac{1}{60}$. Jadi C butuh 60 hari.</p>
+                    <div class="final-answer">Answer: A=30 days, B=20 days, C=60 days. / Jawaban: A=30 hari, B=20 hari, C=60 hari.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 22:</strong></p>
+                    <div class="concept"><p><strong>Concept (Negative Work):</strong> The net rate is the sum of the filling rates minus the emptying rate.<br/><br/><strong>Konsep (Kerja Negatif):</strong> Laju bersih adalah jumlah laju pengisian dikurangi laju pengosongan.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Combined filling rate = $\frac{1}{10} + \frac{1}{12} = \frac{6+5}{60} = \frac{11}{60}$. Emptying rate = $\frac{1}{20} = \frac{3}{60}$. Net rate = $\frac{11}{60} - \frac{3}{60} = \frac{8}{60} = \frac{2}{15}$ tank/minute. Time to fill = $\frac{1}{2/15} = \frac{15}{2} = 7.5$ minutes.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju pengisian gabungan = $\frac{1}{10} + \frac{1}{12} = \frac{6+5}{60} = \frac{11}{60}$. Laju pengosongan = $\frac{1}{20} = \frac{3}{60}$. Laju bersih = $\frac{11}{60} - \frac{3}{60} = \frac{8}{60} = \frac{2}{15}$ tangki/menit. Waktu untuk mengisi = $\frac{1}{2/15} = \frac{15}{2} = 7,5$ menit.</p>
+                    <div class="final-answer">Answer: 7.5 minutes. / Jawaban: 7,5 menit.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 23:</strong></p>
+                    <div class="concept"><p><strong>Concept (Alternating Work):</strong> Calculate the work done in one cycle (one turn for each person). Then see how many cycles fit into the total work, and handle the remainder.<br/><br/><strong>Konsep (Kerja Bergantian):</strong> Hitung pekerjaan yang selesai dalam satu siklus (satu giliran untuk setiap orang). Lalu lihat berapa banyak siklus yang pas untuk seluruh pekerjaan, dan selesaikan sisanya.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> P's rate = 1/15, Q's rate = 1/20. Work done in one 2-day cycle (P then Q) = $\frac{1}{15} + \frac{1}{20} = \frac{4+3}{60} = \frac{7}{60}$. We need to complete a total work of $1 = \frac{60}{60}$. To see how many full 2-day cycles are needed, we divide 60 by 7: $60 \div 7 = 8$ with a remainder of 4. This means after 8 full cycles, $8 \times 7 = 56$ parts of the work are done. Work done in 8 cycles (16 days) = $8 \times \frac{7}{60} = \frac{56}{60}$. Remaining work = $1 - \frac{56}{60} = \frac{4}{60} = \frac{1}{15}$. On the 17th day, it is P's turn. P's rate is 1/15, which is exactly the remaining work. So P takes 1 full day. Total time = 16 days + 1 day = 17 days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju P = 1/15, Laju Q = 1/20. Pekerjaan selesai dalam 1 siklus 2 hari (P lalu Q) = $\frac{1}{15} + \frac{1}{20} = \frac{4+3}{60} = \frac{7}{60}$. Kita perlu menyelesaikan total pekerjaan $1 = \frac{60}{60}$. Untuk melihat berapa banyak siklus 2 hari penuh yang dibutuhkan, kita bagi 60 dengan 7: $60 \div 7 = 8$ dengan sisa 4. Ini berarti setelah 8 siklus penuh, $8 \times 7 = 56$ bagian pekerjaan selesai. Pekerjaan selesai dalam 8 siklus (16 hari) = $8 \times \frac{7}{60} = \frac{56}{60}$. Sisa pekerjaan = $1 - \frac{56}{60} = \frac{4}{60} = \frac{1}{15}$. Pada hari ke-17, giliran P. Laju P adalah 1/15, persis sama dengan sisa pekerjaan. Jadi P butuh 1 hari penuh. Total waktu = 16 hari + 1 hari = 17 hari.</p>
+                    <div class="final-answer">Answer: 17 days. / Jawaban: 17 hari.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 24:</strong></p>
+                    <div class="concept"><p><strong>Concept (Efficiency Ratio):</strong> If Eka is twice as efficient, she does twice the work in the same amount of time. Her rate is double Feri's rate.<br/><br/><strong>Konsep (Rasio Efisiensi):</strong> Jika Eka dua kali lebih efisien, dia melakukan dua kali pekerjaan dalam waktu yang sama. Lajunya dua kali lipat laju Feri.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Let Feri's rate be $R_F$. Eka's rate is $R_E = 2R_F$. Their combined rate is $R_E + R_F = 2R_F + R_F = 3R_F$. They finish in 18 days, so their combined rate is also $\frac{1}{18}$. Thus, $3R_F = \frac{1}{18} \implies R_F = \frac{1}{54}$. Eka's rate is $R_E = 2 \times \frac{1}{54} = \frac{1}{27}$. The time Eka takes alone is $\frac{1}{R_E} = 27$ days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Misalkan laju Feri adalah $R_F$. Laju Eka adalah $R_E = 2R_F$. Laju gabungan mereka adalah $R_E + R_F = 2R_F + R_F = 3R_F$. Mereka selesai dalam 18 hari, jadi laju gabungan mereka juga $\frac{1}{18}$. Dengan demikian, $3R_F = \frac{1}{18} \implies R_F = \frac{1}{54}$. Laju Eka adalah $R_E = 2 \times \frac{1}{54} = \frac{1}{27}$. Waktu yang dibutuhkan Eka sendirian adalah $\frac{1}{R_E} = 27$ hari.</p>
+                    <div class="final-answer">Answer: 27 days. / Jawaban: 27 hari.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 25:</strong></p>
+                    <div class="concept"><p><strong>Concept (Man-Days):</strong> The total work can be measured in "man-days". Find the total work, subtract the work done, and then calculate the time for the remaining workers.<br/><br/><strong>Konsep (Orang-Hari):</strong> Total pekerjaan dapat diukur dalam "orang-hari". Temukan total pekerjaan, kurangi pekerjaan yang sudah dilakukan, lalu hitung waktu untuk pekerja yang tersisa.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Total work = $10 \text{ men} \times 20 \text{ days} = 200$ man-days. Work done in the first 8 days = $10 \text{ men} \times 8 \text{ days} = 80$ man-days. Remaining work = $200 - 80 = 120$ man-days. After 2 men leave, there are $10 - 2 = 8$ men remaining. Time for them to finish = $\frac{\text{Remaining Work}}{\text{Number of Men}} = \frac{120 \text{ man-days}}{8 \text{ men}} = 15$ days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Total pekerjaan = $10 \text{ orang} \times 20 \text{ hari} = 200$ orang-hari. Pekerjaan yang selesai dalam 8 hari pertama = $10 \text{ orang} \times 8 \text{ hari} = 80$ orang-hari. Sisa pekerjaan = $200 - 80 = 120$ orang-hari. Setelah 2 orang pergi, tersisa $10 - 2 = 8$ orang. Waktu bagi mereka untuk menyelesaikan = $\frac{\text{Sisa Pekerjaan}}{\text{Jumlah Orang}} = \frac{120 \text{ orang-hari}}{8 \text{ orang}} = 15$ hari.</p>
+                    <div class="final-answer">Answer: 15 more days. / Jawaban: 15 hari lagi.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 26:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A straightforward "working together" problem.<br/><br/><strong>Konsep:</strong> Soal "bekerja bersama" yang sederhana.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Farmer's rate = $\frac{1}{6}$ field/hour. Son's rate = $\frac{1}{8}$ field/hour. Combined rate = $\frac{1}{6} + \frac{1}{8} = \frac{4}{24} + \frac{3}{24} = \frac{7}{24}$ field/hour. Time to plow the field = $\frac{1}{7/24} = \frac{24}{7}$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju petani = $\frac{1}{6}$ ladang/jam. Laju anak = $\frac{1}{8}$ ladang/jam. Laju gabungan = $\frac{1}{6} + \frac{1}{8} = \frac{4}{24} + \frac{3}{24} = \frac{7}{24}$ ladang/jam. Waktu untuk membajak ladang = $\frac{1}{7/24} = \frac{24}{7}$ jam.</p>
+                    <div class="final-answer">Answer: 24/7 hours (approx. 3.43 hours). / Jawaban: 24/7 jam (sekitar 3,43 jam).</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 27:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Find the net rate of all three taps. Since the net rate is positive (filling), calculate the time needed to fill the remaining half of the tub.<br/><br/><strong>Konsep:</strong> Cari laju bersih dari ketiga keran. Karena laju bersihnya positif (mengisi), hitung waktu yang dibutuhkan untuk mengisi sisa setengah bak.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Rate A = 1/12, Rate B = 1/15, Rate C (empty) = -1/10. Net rate = $\frac{1}{12} + \frac{1}{15} - \frac{1}{10} = \frac{5+4-6}{60} = \frac{3}{60} = \frac{1}{20}$ tub/min. Since the rate is positive, the tub is filling. The work to be done is to fill the remaining half, which is $1/2$ of the tub. Time = $\frac{\text{Work to be Done}}{\text{Net Rate}} = \frac{1/2}{1/20} = \frac{1}{2} \times 20 = 10$ minutes.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju A = 1/12, Laju B = 1/15, Laju C (kosong) = -1/10. Laju bersih = $\frac{1}{12} + \frac{1}{15} - \frac{1}{10} = \frac{5+4-6}{60} = \frac{3}{60} = \frac{1}{20}$ bak/menit. Karena lajunya positif, bak tersebut terisi. Pekerjaan yang harus diselesaikan adalah mengisi sisa setengah bak, yaitu $1/2$ bak. Waktu = $\frac{\text{Pekerjaan yang Harus Dilakukan}}{\text{Laju Bersih}} = \frac{1/2}{1/20} = \frac{1}{2} \times 20 = 10$ menit.</p>
+                    <div class="final-answer">Answer: 10 minutes. / Jawaban: 10 menit.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 28:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Find work done by Rina, then find the remaining work. Use the combined work time to find Sita's rate.<br/><br/><strong>Konsep:</strong> Cari pekerjaan yang dilakukan Rina, lalu cari sisa pekerjaan. Gunakan waktu kerja gabungan untuk mencari laju Sita.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Rina's rate = 1/30. Work done by Rina in 10 hours = $10 \times \frac{1}{30} = \frac{1}{3}$. Remaining work = $1 - \frac{1}{3} = \frac{2}{3}$. This remaining work is done by Rina and Sita together in 8 hours. Their combined rate = Work/Time = $(\frac{2}{3}) / 8 = \frac{2}{24} = \frac{1}{12}$. We know Rina's rate is 1/30, so Sita's rate = $\frac{1}{12} - \frac{1}{30} = \frac{5-2}{60} = \frac{3}{60} = \frac{1}{20}$. Time for Sita alone = $1 / (1/20) = 20$ hours.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju Rina = 1/30. Pekerjaan yang dilakukan Rina dalam 10 jam = $10 \times \frac{1}{30} = \frac{1}{3}$. Sisa pekerjaan = $1 - \frac{1}{3} = \frac{2}{3}$. Sisa pekerjaan ini dikerjakan Rina dan Sita bersama dalam 8 jam. Laju gabungan mereka = Pekerjaan/Waktu = $(\frac{2}{3}) / 8 = \frac{2}{24} = \frac{1}{12}$. Kita tahu laju Rina adalah 1/30, jadi laju Sita = $\frac{1}{12} - \frac{1}{30} = \frac{5-2}{60} = \frac{3}{60} = \frac{1}{20}$. Waktu untuk Sita sendiri = $1 / (1/20) = 20$ jam.</p>
+                    <div class="final-answer">Answer: 20 hours. / Jawaban: 20 jam.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 29:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Payment is shared in the ratio of the work done by each person. The ratio of work done is the same as the ratio of their work rates.<br/><br/><strong>Konsep:</strong> Pembayaran dibagi sesuai rasio pekerjaan yang dilakukan oleh setiap orang. Rasio pekerjaan yang dilakukan sama dengan rasio laju kerja mereka.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Rate of X = 1/5 job/day. Rate of Y = 1/6 job/day. The ratio of their rates is $R_X : R_Y = \frac{1}{5} : \frac{1}{6}$. To get whole numbers, multiply by the LCM of 5 and 6, which is 30. Ratio = $6:5$. The total parts in the ratio is $6+5=11$. The total payment is \$550. Value of one part = \$550 / 11 = \$50. Y's share is 5 parts, so Y should get 5 $\times$ \$50 = \$250.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Laju X = 1/5 pekerjaan/hari. Laju Y = 1/6 pekerjaan/hari. Rasio laju mereka adalah $R_X : R_Y = \frac{1}{5} : \frac{1}{6}$. Untuk mendapatkan bilangan bulat, kalikan dengan KPK dari 5 dan 6, yaitu 30. Rasio = $6:5$. Total bagian dalam rasio adalah $6+5=11$. Total pembayaran adalah \$550. Nilai satu bagian = \$550 / 11 = \$50. Bagian Y adalah 5 bagian, jadi Y harus mendapatkan 5 $\times$ \$50 = \$250.</p>
+                    <div class="final-answer">Answer: \$250. / Jawaban: \$250.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 30:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Find the work rate of one skilled worker and one apprentice. Then calculate the combined rate of the new team.<br/><br/><strong>Konsep:</strong> Cari laju kerja satu pekerja terampil dan satu pekerja magang. Kemudian hitung laju gabungan dari tim yang baru.</p></div>
+                    <p class="solution-step"><strong>Solution:</strong> Total work by 5 skilled workers in 10 days means 1 skilled worker takes $5 \times 10 = 50$ days. So, the rate of 1 skilled worker ($R_S$) is 1/50 of the task per day. Total work by 12 apprentices in 10 days means 1 apprentice takes $12 \times 10 = 120$ days. So, the rate of 1 apprentice ($R_A$) is 1/120 of the task per day. The new team has 5 skilled workers and 12 apprentices. Their combined rate is $(5 \times R_S) + (12 \times R_A) = (5 \times \frac{1}{50}) + (12 \times \frac{1}{120}) = \frac{1}{10} + \frac{1}{10} = \frac{2}{10} = \frac{1}{5}$ of the task per day. The time to complete the task is the reciprocal of the rate: $1 / (\frac{1}{5}) = 5$ days.</p>
+                    <p class="solution-step"><strong>Langkah Penyelesaian:</strong> Total kerja 5 pekerja terampil dalam 10 hari berarti 1 pekerja terampil membutuhkan $5 \times 10 = 50$ hari. Jadi, laju 1 pekerja terampil ($R_S$) = 1/50 tugas per hari. Total kerja 12 pekerja magang dalam 10 hari berarti 1 pekerja magang membutuhkan $12 \times 10 = 120$ hari. Jadi, laju 1 pekerja magang ($R_A$) = 1/120 tugas per hari. Tim baru memiliki 5 pekerja terampil dan 12 pekerja magang. Laju gabungan mereka = $(5 \times R_S) + (12 \times R_A) = (5 \times \frac{1}{50}) + (12 \times \frac{1}{120}) = \frac{1}{10} + \frac{1}{10} = \frac{2}{10} = \frac{1}{5}$ tugas per hari. Waktu untuk menyelesaikan tugas adalah kebalikan dari laju: $1 / (\frac{1}{5}) = 5$ hari.</p>
+                    <div class="final-answer">Answer: 5 days. / Jawaban: 5 hari.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
+
+
