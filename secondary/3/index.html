@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice Worksheet 3 - Polynomials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 3</h1>
+            <p class="text-gray-600 mt-2">Grade 7 - 9 | Polynomials</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                
+                <h3 class="topic-title">Part 1: Algebraic Operations on Polynomials (Operasi Aljabar pada Polinomial)</h3>
+                <div class="item-container"><p><strong>1.</strong> If $P(x) = 3x^3 - 2x^2 + 5x - 7$ and $Q(x) = -x^3 + 5x^2 - 3$, find $P(x) + Q(x)$.<br/><br/>Jika $P(x) = 3x^3 - 2x^2 + 5x - 7$ dan $Q(x) = -x^3 + 5x^2 - 3$, tentukan $P(x) + Q(x)$.</p></div>
+                <div class="item-container"><p><strong>2.</strong> Find the product of $(2x^2 - 3x + 1)$ and $(x + 4)$.<br/><br/>Tentukan hasil perkalian dari $(2x^2 - 3x + 1)$ dan $(x + 4)$.</p></div>
+                <div class="item-container"><p><strong>3.</strong> Expand $(x^2 - 2x + 3)^2$.<br/><br/>Jabarkan $(x^2 - 2x + 3)^2$.</p></div>
+                <div class="item-container"><p><strong>4.</strong> Find the quotient and remainder when $x^3 - 5x^2 + 7x - 2$ is divided by $(x-2)$.<br/><br/>Tentukan hasil bagi dan sisa ketika $x^3 - 5x^2 + 7x - 2$ dibagi oleh $(x-2)$.</p></div>
+                <div class="item-container"><p><strong>5.</strong> Find the coefficient of $x^3$ in the expansion of $(x^2+3x-1)(2x^2-x+5)$.<br/><br/>Tentukan koefisien $x^3$ pada penjabaran $(x^2+3x-1)(2x^2-x+5)$.</p></div>
+                <div class="item-container"><p><strong>6.</strong> Given that $A(x-1) + B(x+2) = 5x+4$ is an identity, find the values of A and B.<br/><br/>Diketahui $A(x-1) + B(x+2) = 5x+4$ adalah sebuah identitas, tentukan nilai A dan B.</p></div>
+                <div class="item-container"><p><strong>7.</strong> Find the coefficient of $x^2$ in the expansion of $(x^2-2x+3)^3$.<br/><br/>Tentukan koefisien $x^2$ pada penjabaran $(x^2-2x+3)^3$.</p></div>
+                <div class="item-container"><p><strong>8.</strong> If $P(x) = x^2+x+1$ and $Q(x) = x-1$, find $P(x) \cdot Q(x)$ and state the name of this special product.<br/><br/>Jika $P(x) = x^2+x+1$ dan $Q(x) = x-1$, tentukan $P(x) \cdot Q(x)$ dan sebutkan nama dari bentuk perkalian istimewa ini.</p></div>
+                <div class="item-container"><p><strong>9.</strong> The degree of polynomial $P(x)$ is 3 and the degree of polynomial $Q(x)$ is 4. What is the degree of $P(x) \cdot Q(x)$ and $P(x) + Q(x)$?<br/><br/>Derajat dari polinomial $P(x)$ adalah 3 dan derajat dari polinomial $Q(x)$ adalah 4. Berapakah derajat dari $P(x) \cdot Q(x)$ dan $P(x) + Q(x)$?</p></div>
+                <div class="item-container"><p><strong>10.</strong> Perform the division: $(2x^4 - 3x^3 + 5x^2 + x - 7) \div (x^2 - x + 2)$.<br/><br/>Lakukan pembagian: $(2x^4 - 3x^3 + 5x^2 + x - 7) \div (x^2 - x + 2)$.</p></div>
+
+                <h3 class="topic-title">Part 2: Remainder Theorem (Teorema Sisa)</h3>
+                <div class="item-container"><p><strong>11.</strong> Find the remainder when $P(x) = x^3 - 4x^2 + 5x - 2$ is divided by $(x-1)$.<br/><br/>Tentukan sisa pembagian $P(x) = x^3 - 4x^2 + 5x - 2$ oleh $(x-1)$.</p></div>
+                <div class="item-container"><p><strong>12.</strong> When $x^3 + kx^2 - 5x + 6$ is divided by $(x+2)$, the remainder is -4. Find the value of $k$.<br/><br/>Ketika $x^3 + kx^2 - 5x + 6$ dibagi oleh $(x+2)$, sisanya adalah -4. Tentukan nilai $k$.</p></div>
+                <div class="item-container"><p><strong>13.</strong> Find the remainder when $P(x) = 2x^3 + 5x^2 - x + 7$ is divided by $(2x-1)$.<br/><br/>Tentukan sisa pembagian $P(x) = 2x^3 + 5x^2 - x + 7$ oleh $(2x-1)$.</p></div>
+                <div class="item-container"><p><strong>14.</strong> A polynomial $P(x)$ leaves a remainder of 3 when divided by $(x-1)$ and a remainder of -2 when divided by $(x+2)$. What is the remainder when $P(x)$ is divided by $(x-1)(x+2)$?<br/><br/>Sebuah polinomial $P(x)$ bersisa 3 jika dibagi $(x-1)$ dan bersisa -2 jika dibagi $(x+2)$. Berapakah sisanya jika $P(x)$ dibagi oleh $(x-1)(x+2)$?</p></div>
+                <div class="item-container"><p><strong>15.</strong> The polynomials $ax^3+3x^2-3$ and $2x^3-5x+a$ when divided by $(x-4)$ leave the same remainder. Find the value of $a$.<br/><br/>Polinomial $ax^3+3x^2-3$ dan $2x^3-5x+a$ ketika dibagi oleh $(x-4)$ memberikan sisa yang sama. Tentukan nilai $a$.</p></div>
+                 <div class="item-container"><p><strong>16.</strong> Find the remainder when $x^{2025}$ is divided by $x^2-1$.<br/><br/>Tentukan sisa pembagian $x^{2025}$ oleh $x^2-1$.</p></div>
+                <div class="item-container"><p><strong>17.</strong> When a polynomial is divided by $(x-3)$, the quotient is $x^2+x-1$ and the remainder is 5. What is the polynomial?<br/><br/>Ketika sebuah polinomial dibagi oleh $(x-3)$, hasil baginya adalah $x^2+x-1$ dan sisanya adalah 5. Tentukan polinomial tersebut.</p></div>
+                <div class="item-container"><p><strong>18.</strong> What is the remainder when $x^{100} + 2x^{99} + 1$ is divided by $(x+1)$?<br/><br/>Berapakah sisa pembagian $x^{100} + 2x^{99} + 1$ oleh $(x+1)$?</p></div>
+                <div class="item-container"><p><strong>19.</strong> If the remainder of the division of $x^4-3x^3+2x^2-5x+1$ by $(x^2-4)$ is $ax+b$, find $a$ and $b$.<br/><br/>Jika sisa pembagian $x^4-3x^3+2x^2-5x+1$ oleh $(x^2-4)$ adalah $ax+b$, tentukan nilai $a$ dan $b$.</p></div>
+                <div class="item-container"><p><strong>20.</strong> If a polynomial $P(x)$ is divided by $x-2$, the remainder is 5. If it is divided by $x+1$, the remainder is -1. What is the remainder when it is divided by $x^2-x-2$?<br/><br/>Jika polinomial $P(x)$ dibagi oleh $x-2$, sisanya 5. Jika dibagi oleh $x+1$, sisanya -1. Berapakah sisanya jika dibagi oleh $x^2-x-2$?</p></div>
+                
+                <h3 class="topic-title">Part 3: Factor Theorem (Teorema Faktor)</h3>
+                <div class="item-container"><p><strong>21.</strong> Show that $(x+1)$ is a factor of $P(x) = x^3 + 2x^2 - x - 2$.<br/><br/>Tunjukkan bahwa $(x+1)$ adalah faktor dari $P(x) = x^3 + 2x^2 - x - 2$.</p></div>
+                <div class="item-container"><p><strong>22.</strong> If $(x-1)$ is a factor of the polynomial $2024x^2 - 2000x - c$, find the value of c.<br/><br/>Jika $(x-1)$ adalah sebuah faktor dari polinomial $2024x^2 - 2000x - c$, carilah nilai dari c.</p></div>
+                <div class="item-container"><p><strong>23.</strong> If $(x+2)$ is a factor of $x^3 - 4x^2 + kx + 10$, find the value of $k$.<br/><br/>Jika $(x+2)$ adalah faktor dari $x^3 - 4x^2 + kx + 10$, tentukan nilai $k$.</p></div>
+                <div class="item-container"><p><strong>24.</strong> Given that $(x-1)$ is a factor of $x^3 - 7x + 6$, factorize the polynomial completely.<br/><br/>Diketahui $(x-1)$ adalah faktor dari $x^3 - 7x + 6$, faktorkan polinomial tersebut secara lengkap.</p></div>
+                <div class="item-container"><p><strong>25.</strong> If $(x-1)$ and $(x+3)$ are factors of $P(x) = x^3 + ax^2 + bx - 6$, find the values of $a$ and $b$.<br/><br/>Jika $(x-1)$ dan $(x+3)$ adalah faktor dari $P(x) = x^3 + ax^2 + bx - 6$, tentukan nilai $a$ dan $b$.</p></div>
+                <div class="item-container"><p><strong>26.</strong> Factorize $2x^3 + 3x^2 - 11x - 6$ completely.<br/><br/>Faktorkan $2x^3 + 3x^2 - 11x - 6$ secara lengkap.</p></div>
+                <div class="item-container"><p><strong>27.</strong> Find all integer roots of the polynomial $P(x) = x^3 - 6x^2 + 11x - 6$.<br/><br/>Tentukan semua akar-akar bulat dari polinomial $P(x) = x^3 - 6x^2 + 11x - 6$.</p></div>
+                <div class="item-container"><p><strong>28.</strong> If $x^4+mx^3+8x^2+nx-8$ is divisible by $x^2-3x+2$, find the value of $mn$.<br/><br/>Jika $x^4+mx^3+8x^2+nx-8$ habis dibagi oleh $x^2-3x+2$, tentukan nilai $mn$.</p></div>
+                <div class="item-container"><p><strong>29.</strong> If $x^2-4$ is a factor of $x^4 + x^3 - 10x^2 - 4x + 24$, find the other factors.<br/><br/>Jika $x^2-4$ adalah faktor dari $x^4 + x^3 - 10x^2 - 4x + 24$, tentukan faktor-faktor lainnya.</p></div>
+                <div class="item-container"><p><strong>30.</strong> Given that $(x^2-1)$ is a factor of $ax^4 + bx^3 + cx^2 + dx + e$, show that $a+c+e = 0$ and $b+d = 0$.<br/><br/>Diketahui $(x^2-1)$ adalah faktor dari $ax^4 + bx^3 + cx^2 + dx + e$, tunjukkan bahwa $a+c+e = 0$ dan $b+d = 0$.</p></div>
+            </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions & Explanations</h2>
+                
+                <h3 class="topic-title">Part 1: Algebraic Operations on Polynomials</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> To add polynomials, we combine the coefficients of like terms (terms with the same power of x).<br/><br/><strong>Konsep:</strong> Untuk menjumlahkan polinomial, kita menggabungkan koefisien dari suku-suku sejenis (suku dengan pangkat x yang sama).</p></div>
+                    <p><strong>Solution:</strong> We group the terms with the same power of x.
+                    $$\begin{align*} P(x) + Q(x) &= (3x^3 - 2x^2 + 5x - 7) + (-x^3 + 5x^2 - 3) \\ &= (3x^3 - x^3) + (-2x^2 + 5x^2) + (5x) + (-7 - 3) \\ &= 2x^3 + 3x^2 + 5x - 10 \end{align*}$$
+                    <strong>Langkah Penyelesaian:</strong> Kita kelompokkan suku-suku dengan pangkat x yang sama.
+                    $$\begin{align*} P(x) + Q(x) &= (3x^3 - 2x^2 + 5x - 7) + (-x^3 + 5x^2 - 3) \\ &= (3x^3 - x^3) + (-2x^2 + 5x^2) + (5x) + (-7 - 3) \\ &= 2x^3 + 3x^2 + 5x - 10 \end{align*}$$</p>
+                    <div class="final-answer">Answer: $2x^3 + 3x^2 + 5x - 10$.</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> To multiply two polynomials, we use the distributive property. Each term in the first polynomial is multiplied by each term in the second polynomial.<br/><br/><strong>Konsep:</strong> Untuk mengalikan dua polinomial, kita menggunakan sifat distributif. Setiap suku pada polinomial pertama dikalikan dengan setiap suku pada polinomial kedua.</p></div>
+                    <p><strong>Solution:</strong>
+                    $$\begin{align*} (2x^2 - 3x + 1)(x + 4) &= 2x^2(x+4) - 3x(x+4) + 1(x+4) \\ &= (2x^3 + 8x^2) - (3x^2 + 12x) + (x + 4) \\ &= 2x^3 + 8x^2 - 3x^2 - 12x + x + 4 \\ &= 2x^3 + 5x^2 - 11x + 4 \end{align*}$$
+                    <strong>Langkah Penyelesaian:</strong>
+                    $$\begin{align*} (2x^2 - 3x + 1)(x + 4) &= 2x^2(x+4) - 3x(x+4) + 1(x+4) \\ &= (2x^3 + 8x^2) - (3x^2 + 12x) + (x + 4) \\ &= 2x^3 + 8x^2 - 3x^2 - 12x + x + 4 \\ &= 2x^3 + 5x^2 - 11x + 4 \end{align*}$$</p>
+                    <div class="final-answer">Answer: $2x^3 + 5x^2 - 11x + 4$.</div>
+                </div>
+                 <div class="item-container"><p><strong>Solution Number 3:</strong></p><div class="concept"><p><strong>Concept:</strong> Squaring a trinomial means multiplying it by itself. We apply the distributive property twice.<br/><br/><strong>Konsep:</strong> Mengkuadratkan trinomium berarti mengalikannya dengan dirinya sendiri. Kita menerapkan sifat distributif dua kali.</p></div><p><strong>Solution:</strong> $$\begin{align*} (x^2 - 2x + 3)^2 &= (x^2 - 2x + 3)(x^2 - 2x + 3) \\ &= x^2(x^2 - 2x + 3) - 2x(x^2 - 2x + 3) + 3(x^2 - 2x + 3) \\ &= (x^4 - 2x^3 + 3x^2) - (2x^3 - 4x^2 + 6x) + (3x^2 - 6x + 9) \\ &= x^4 - 4x^3 + (3+4+3)x^2 + (-6-6)x + 9 \\ &= x^4 - 4x^3 + 10x^2 - 12x + 9 \end{align*}$$<strong>Langkah Penyelesaian:</strong> $$\begin{align*} (x^2 - 2x + 3)^2 &= (x^2 - 2x + 3)(x^2 - 2x + 3) \\ &= x^2(x^2 - 2x + 3) - 2x(x^2 - 2x + 3) + 3(x^2 - 2x + 3) \\ &= (x^4 - 2x^3 + 3x^2) - (2x^3 - 4x^2 + 6x) + (3x^2 - 6x + 9) \\ &= x^4 - 4x^3 + (3+4+3)x^2 + (-6-6)x + 9 \\ &= x^4 - 4x^3 + 10x^2 - 12x + 9 \end{align*}$$</p><div class="final-answer">Answer: $x^4 - 4x^3 + 10x^2 - 12x + 9$.</div></div>
+                <div class="item-container"><p><strong>Solution Number 4:</strong></p><div class="concept"><p><strong>Concept:</strong> Synthetic division is a quick method for dividing a polynomial by a linear factor of the form $(x-c)$. The numbers in the bottom row represent the coefficients of the quotient and the final number is the remainder.<br/><br/><strong>Konsep:</strong> Pembagian sintetis adalah metode cepat untuk membagi polinomial dengan faktor linear berbentuk $(x-c)$. Angka-angka di baris bawah mewakili koefisien hasil bagi dan angka terakhir adalah sisanya.</p></div><p><strong>Solution:</strong> We perform synthetic division with the root $c=2$.<br> 2 | 1  -5   7   -2 <br>   | &nbsp;&nbsp;&nbsp; 2  -6 &nbsp;&nbsp;&nbsp;  2 <br>   ---------------- <br>   &nbsp;&nbsp;&nbsp; 1  -3   1 &nbsp;&nbsp;&nbsp; |<u> 0 </u><br> The coefficients of the quotient are 1, -3, and 1. The remainder is 0.<br/><br/><strong>Langkah Penyelesaian:</strong> Kita melakukan pembagian sintetis dengan akar $c=2$.<br> 2 | 1  -5   7   -2 <br>   | &nbsp;&nbsp;&nbsp; 2  -6 &nbsp;&nbsp;&nbsp;  2 <br>   ---------------- <br>   &nbsp;&nbsp;&nbsp; 1  -3   1 &nbsp;&nbsp;&nbsp; |<u> 0 </u><br> Koefisien hasil bagi adalah 1, -3, dan 1. Sisanya adalah 0.</p><div class="final-answer">Quotient/Hasil Bagi: $x^2-3x+1$, Remainder/Sisa: 0.</div></div>
+                <div class="item-container"><p><strong>Solution Number 5:</strong></p><div class="concept"><p><strong>Concept:</strong> To find the coefficient of a specific term in a product of polynomials, we only need to identify and multiply the pairs of terms that produce the desired power.<br/><br/><strong>Konsep:</strong> Untuk mencari koefisien dari suku tertentu dalam perkalian polinomial, kita hanya perlu mengidentifikasi dan mengalikan pasangan suku yang menghasilkan pangkat yang diinginkan.</p></div><p><strong>Solution:</strong> An $x^3$ term can be formed by multiplying an $x^2$ term by an $x$ term, or an $x$ term by an $x^2$ term.<br>1. $(x^2)(-x) = -x^3$<br>2. $(3x)(2x^2) = 6x^3$<br>The total coefficient is the sum of the coefficients: $-1 + 6 = 5$.<br/><br/><strong>Langkah Penyelesaian:</strong> Suku $x^3$ dapat dibentuk dengan mengalikan suku $x^2$ dengan suku $x$, atau suku $x$ dengan suku $x^2$.<br>1. $(x^2)(-x) = -x^3$<br>2. $(3x)(2x^2) = 6x^3$<br>Koefisien totalnya adalah jumlah dari koefisien-koefisien tersebut: $-1 + 6 = 5$.</p><div class="final-answer">Answer: 5.</div></div>
+                
+                <h3 class="topic-title">Part 2: Remainder Theorem</h3>
+                 <div class="item-container"><p><strong>Solution Number 11:</strong></p><div class="concept"><p><strong>Concept:</strong> The Remainder Theorem states that if a polynomial $P(x)$ is divided by a linear factor $(x-c)$, the remainder is equal to $P(c)$.<br/><br/><strong>Konsep:</strong> Teorema Sisa menyatakan bahwa jika sebuah polinomial $P(x)$ dibagi oleh faktor linear $(x-c)$, maka sisanya sama dengan $P(c)$.</p></div><p><strong>Solution:</strong> To find the remainder when dividing by $(x-1)$, we evaluate $P(1)$.<br/>$P(1) = (1)^3 - 4(1)^2 + 5(1) - 2 = 1 - 4 + 5 - 2 = 0$.<br/><br/><strong>Langkah Penyelesaian:</strong> Untuk mencari sisa pembagian oleh $(x-1)$, kita hitung nilai $P(1)$.<br/>$P(1) = (1)^3 - 4(1)^2 + 5(1) - 2 = 1 - 4 + 5 - 2 = 0$.</p><div class="final-answer">Answer/Jawaban: 0.</div></div>
+                <div class="item-container"><p><strong>Solution Number 12:</strong></p><div class="concept"><p><strong>Concept:</strong> Using the Remainder Theorem, if the remainder of $P(x) \div (x-c)$ is $R$, then $P(c)=R$. Here, $c=-2$ and $R=-4$.<br/><br/><strong>Konsep:</strong> Menggunakan Teorema Sisa, jika sisa dari $P(x) \div (x-c)$ adalah $R$, maka $P(c)=R$. Di sini, $c=-2$ dan $R=-4$.</p></div><p><strong>Solution:</strong> Let $P(x) = x^3 + kx^2 - 5x + 6$. We are given that $P(-2) = -4$.
+                $$\begin{align*} (-2)^3 + k(-2)^2 - 5(-2) + 6 &= -4 \\ -8 + k(4) + 10 + 6 &= -4 \\ 4k + 8 &= -4 \\ 4k &= -12 \\ k &= -3 \end{align*}$$
+                <strong>Langkah Penyelesaian:</strong> Misalkan $P(x) = x^3 + kx^2 - 5x + 6$. Diketahui bahwa $P(-2) = -4$.
+                $$\begin{align*} (-2)^3 + k(-2)^2 - 5(-2) + 6 &= -4 \\ -8 + 4k + 10 + 6 &= -4 \\ 4k + 8 &= -4 \\ 4k &= -12 \\ k &= -3 \end{align*}$$</p><div class="final-answer">Answer/Jawaban: $k=-3$.</div></div>
+                <div class="item-container"><p><strong>Solution Number 14:</strong></p><div class="concept"><p><strong>Concept:</strong> When a polynomial $P(x)$ is divided by a polynomial of degree $n$, the remainder has a degree of at most $n-1$. When dividing by a quadratic $(x-1)(x+2)$, the remainder is a linear polynomial, $R(x) = ax+b$.<br/><br/><strong>Konsep:</strong> Ketika sebuah polinomial $P(x)$ dibagi oleh polinomial berderajat $n$, sisanya memiliki derajat paling tinggi $n-1$. Ketika dibagi oleh kuadratik $(x-1)(x+2)$, sisanya adalah polinomial linear, $R(x) = ax+b$.</p></div><p><strong>Solution:</strong> We are given $P(1)=3$ and $P(-2)=-2$. The remainder $R(x) = ax+b$ must satisfy these conditions.<br>1. $R(1) = a(1)+b = 3 \implies a+b=3$.<br>2. $R(-2) = a(-2)+b = -2 \implies -2a+b=-2$.<br>Subtracting eq. (2) from (1): $(a+b) - (-2a+b) = 3 - (-2) \implies 3a = 5 \implies a=5/3$.<br>Substitute $a$ into (1): $5/3 + b = 3 \implies b = 3 - 5/3 = 4/3$.<br>The remainder is $\frac{5}{3}x + \frac{4}{3}$.<br/><br/><strong>Langkah Penyelesaian:</strong> Diketahui $P(1)=3$ dan $P(-2)=-2$. Sisa $R(x) = ax+b$ harus memenuhi kondisi ini.<br>1. $R(1) = a(1)+b = 3 \implies a+b=3$.<br>2. $R(-2) = a(-2)+b = -2 \implies -2a+b=-2$.<br>Kurangkan pers. (2) dari (1): $(a+b) - (-2a+b) = 3 - (-2) \implies 3a = 5 \implies a=5/3$.<br>Substitusi $a$ ke (1): $5/3 + b = 3 \implies b = 3 - 5/3 = 4/3$.<br>Sisanya adalah $\frac{5}{3}x + \frac{4}{3}$.</p><div class="final-answer">Answer/Jawaban: $\frac{5}{3}x + \frac{4}{3}$.</div></div>
+                 <div class="item-container"><p><strong>Solution Number 16:</strong></p><div class="concept"><p><strong>Concept:</strong> The divisor $x^2-1$ is of degree 2, so the remainder is at most degree 1, written as $R(x)=ax+b$. We can find $a$ and $b$ by using the roots of the divisor, $x=1$ and $x=-1$.<br/><br/><strong>Konsep:</strong> Pembagi $x^2-1$ berderajat 2, sehingga sisanya paling tinggi berderajat 1, ditulis sebagai $R(x)=ax+b$. Kita bisa mencari $a$ dan $b$ dengan menggunakan akar-akar dari pembagi, yaitu $x=1$ dan $x=-1$.</p></div><p><strong>Solution:</strong> Let $P(x)=x^{2025}$. The divisor is $x^2-1=(x-1)(x+1)$. The remainder is $R(x)=ax+b$.<br>1. $P(1) = R(1) \implies 1^{2025} = a(1)+b \implies 1 = a+b$.<br>2. $P(-1) = R(-1) \implies (-1)^{2025} = a(-1)+b \implies -1 = -a+b$.<br>Adding the two equations: $2b=0 \implies b=0$.<br>Substituting $b=0$ into the first equation: $a+0=1 \implies a=1$.<br>The remainder is $R(x) = 1x+0 = x$.<br/><br/><strong>Langkah Penyelesaian:</strong> Misalkan $P(x)=x^{2025}$. Pembaginya adalah $x^2-1=(x-1)(x+1)$. Sisanya adalah $R(x)=ax+b$.<br>1. $P(1) = R(1) \implies 1^{2025} = a(1)+b \implies 1 = a+b$.<br>2. $P(-1) = R(-1) \implies (-1)^{2025} = a(-1)+b \implies -1 = -a+b$.<br>Jumlahkan kedua persamaan: $2b=0 \implies b=0$.<br>Substitusi $b=0$ ke persamaan pertama: $a+0=1 \implies a=1$.<br>Sisanya adalah $R(x) = 1x+0 = x$.</p><div class="final-answer">Answer/Jawaban: $x$.</div></div>
+                
+                <h3 class="topic-title">Part 3: Factor Theorem</h3>
+                 <div class="item-container"><p><strong>Solution Number 21:</strong></p><div class="concept"><p><strong>Concept:</strong> The Factor Theorem is a special case of the Remainder Theorem. It states that a polynomial $P(x)$ has a factor $(x-c)$ if and only if $P(c) = 0$ (i.e., the remainder is zero).<br/><br/><strong>Konsep:</strong> Teorema Faktor adalah kasus khusus dari Teorema Sisa. Teorema ini menyatakan bahwa sebuah polinomial $P(x)$ memiliki faktor $(x-c)$ jika dan hanya jika $P(c) = 0$ (yaitu, sisanya adalah nol).</p></div><p><strong>Solution:</strong> To show that $(x+1)$ is a factor, we must show that $P(-1) = 0$.
+                $$P(-1) = (-1)^3 + 2(-1)^2 - (-1) - 2 = -1 + 2(1) + 1 - 2 = -1 + 2 + 1 - 2 = 0$$
+                Since $P(-1)=0$, $(x+1)$ is a factor of $P(x)$.<br/><br/><strong>Langkah Penyelesaian:</strong> Untuk menunjukkan bahwa $(x+1)$ adalah sebuah faktor, kita harus menunjukkan bahwa $P(-1) = 0$.
+                $$P(-1) = (-1)^3 + 2(-1)^2 - (-1) - 2 = -1 + 2(1) + 1 - 2 = -1 + 2 + 1 - 2 = 0$$
+                Karena $P(-1)=0$, maka $(x+1)$ adalah faktor dari $P(x)$.</p><div class="final-answer">Proven, since $P(-1)=0$. / Terbukti, karena $P(-1)=0$.</div></div>
+                <div class="item-container"><p><strong>Solution Number 22:</strong></p><div class="concept"><p><strong>Concept:</strong> According to the Factor Theorem, if $(x-1)$ is a factor of a polynomial $P(x)$, then the value of the polynomial at $x=1$ must be zero, i.e., $P(1)=0$.<br/><br/><strong>Konsep:</strong> Menurut Teorema Faktor, jika $(x-1)$ adalah faktor dari sebuah polinomial $P(x)$, maka nilai dari polinomial tersebut saat $x=1$ harus nol, yaitu $P(1)=0$.</p></div><p><strong>Solution:</strong> Let $P(x) = 2024x^2 - 2000x - c$. Since $(x-1)$ is a factor, $P(1)=0$.
+                $$\begin{align*} 2024(1)^2 - 2000(1) - c &= 0 \\ 2024 - 2000 - c &= 0 \\ 24 - c &= 0 \\ c &= 24 \end{align*}$$
+                <strong>Langkah Penyelesaian:</strong> Misalkan $P(x) = 2024x^2 - 2000x - c$. Karena $(x-1)$ adalah faktor, maka $P(1)=0$.
+                 $$\begin{align*} 2024(1)^2 - 2000(1) - c &= 0 \\ 2024 - 2000 - c &= 0 \\ 24 - c &= 0 \\ c &= 24 \end{align*}$$</p><div class="final-answer">Answer/Jawaban: $c=24$.</div></div>
+                <div class="item-container"><p><strong>Solution Number 24:</strong></p><div class="concept"><p><strong>Concept:</strong> If we know one factor of a polynomial, we can find the others by dividing the polynomial by the known factor. The resulting quotient will be a polynomial of a lower degree, which may be easier to factorize.<br/><br/><strong>Konsep:</strong> Jika kita mengetahui satu faktor dari sebuah polinomial, kita bisa mencari faktor lainnya dengan membagi polinomial tersebut dengan faktor yang diketahui. Hasil bagi yang didapat akan menjadi polinomial dengan derajat lebih rendah, yang mungkin lebih mudah untuk difaktorkan.</p></div><p><strong>Solution:</strong> Since $(x-1)$ is a factor, we divide $x^3 - 7x + 6$ by $(x-1)$ using synthetic division. Note that the coefficient of $x^2$ is 0.<br>1 | 1 &nbsp;&nbsp; 0 &nbsp;&nbsp; -7 &nbsp;&nbsp; 6 <br>  | &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp; -6 <br>  ----------------- <br>  &nbsp;&nbsp; 1 &nbsp;&nbsp; 1 &nbsp;&nbsp; -6 &nbsp;&nbsp; |<u> 0 </u><br>The quotient is $x^2+x-6$. We can factor this quadratic: $x^2+x-6 = (x+3)(x-2)$.<br>Therefore, the complete factorization is $(x-1)(x-2)(x+3)$.<br/><br/><strong>Langkah Penyelesaian:</strong> Karena $(x-1)$ adalah faktor, kita bagi $x^3 - 7x + 6$ dengan $(x-1)$ menggunakan pembagian sintetis. Perhatikan bahwa koefisien $x^2$ adalah 0.<br>1 | 1 &nbsp;&nbsp; 0 &nbsp;&nbsp; -7 &nbsp;&nbsp; 6 <br>  | &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp;&nbsp; 1 &nbsp;&nbsp; -6 <br>  ----------------- <br>  &nbsp;&nbsp; 1 &nbsp;&nbsp; 1 &nbsp;&nbsp; -6 &nbsp;&nbsp; |<u> 0 </u><br>Hasil baginya adalah $x^2+x-6$. Kita bisa faktorkan kuadratik ini: $x^2+x-6 = (x+3)(x-2)$.<br>Jadi, faktorisasi lengkapnya adalah $(x-1)(x-2)(x+3)$.</p><div class="final-answer">Answer/Jawaban: $(x-1)(x-2)(x+3)$.</div></div>
+                
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
