@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice Worksheet 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        .solution-points {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+        .solution-points li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 4</h1>
+            <p class="text-gray-600 mt-2">Grade 3 - 4 | Basic Geometry & Working Backwards Heuristics</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                
+                <h3 class="topic-title">Part 1: Basic Geometry (Area & Perimeter)</h3>
+                <div class="item-container">
+                    <p><strong>1.</strong> The figure is L-shaped. The top horizontal side is 8 cm, the leftmost vertical side is 10 cm, the top-right vertical side is 5 cm and the bottom-right horizontal side is 5 cm. Find the area and perimeter of the figure.<br/><br/>Bangun di bawah ini berbentuk L. Sisi horizontal atas adalah 8 cm, sisi vertikal paling kiri 10 cm, sisi vertikal kanan atas 5 cm, dan sisi horizontal kanan bawah 5 cm. Tentukan luas dan keliling bangun tersebut.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_cwmsvo_3428.png" alt="L-shaped figure for question 1" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>2.</strong> A rectangular park measuring 15 cm by 10 cm has a square pond with sides of 4 cm in the center. What is the area of the park not covered by the pond?<br/><br/>Sebuah taman berbentuk persegipanjang berukuran 15 cm x 10 cm memiliki kolam berbentuk persegi dengan sisi 4 cm di tengahnya. Berapakah luas taman yang tidak tertutup oleh kolam?</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_to768j_5318.png" alt="Park with pond" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>3.</strong> Two identical squares, each with a side of 8 cm, overlap each other. The overlapping area is a square with a side of 3 cm. Find the total area of the figure.<br/><br/>Dua persegi identik, masing-masing dengan sisi 8 cm, saling tumpang tindih. Daerah yang tumpang tindih adalah sebuah persegi dengan sisi 3 cm. Tentukan luas total bangun tersebut.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_erams1_40.png" alt="Overlapping squares" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>4.</strong> A rectangular picture frame has outer dimensions of 20 cm by 15 cm. The width of the frame itself is 3 cm. Find the area of the frame.<br/><br/>Sebuah bingkai foto persegipanjang memiliki ukuran luar 20 cm x 15 cm. Lebar bingkai itu sendiri adalah 3 cm. Tentukan luas bingkai tersebut.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_juvtrm_5381.png" alt="Picture frame" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>5.</strong> The figure is made up of 5 identical squares. The total height of the figure is 18 cm. Find the perimeter of the figure.<br/><br/>Bangun di bawah ini terbuat dari 5 persegi identik. Tinggi total bangun adalah 18 cm. Tentukan keliling bangun tersebut.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_8h05br_8371.png" alt="Figure of 5 squares" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>6.</strong> A small square with a side of 5 cm is cut out from a corner of a large square with a side of 12 cm. What is the perimeter of the remaining shape?<br/><br/>Sebuah persegi kecil dengan sisi 5 cm dipotong dari sudut sebuah persegi besar dengan sisi 12 cm. Berapakah keliling dari bangun yang tersisa?</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_06fflv_211.png" alt="Square with corner cut" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>7.</strong> Three identical squares with a side length of 6 cm are placed side-by-side to form a new rectangle. What is the area and perimeter of this new rectangle?<br/><br/>Tiga persegi identik dengan panjang sisi 6 cm diletakkan berdampingan untuk membentuk sebuah persegipanjang baru. Berapakah luas dan keliling dari persegipanjang baru ini?</p>
+                </div>
+                <div class="item-container">
+                    <p><strong>8.</strong> The perimeter of the figure below is 58 cm. The figure is made up of a rectangle with a rectangular part removed. Find the value of x.<br/><br/>Keliling bangun di bawah adalah 58 cm. Bangun ini terbuat dari sebuah persegipanjang dengan sebagian area persegipanjang lainnya dihilangkan. Tentukan nilai x.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_36zd5b_2024.png" alt="U-shaped figure" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>9.</strong> The area of a rectangle is 48 cm². Its length and width are whole numbers. Find the smallest possible perimeter of the rectangle.<br/><br/>Luas sebuah persegipanjang adalah 48 cm². Panjang dan lebarnya adalah bilangan bulat. Tentukan keliling terkecil yang mungkin dari persegipanjang tersebut.</p>
+                </div>
+                <div class="item-container">
+                    <p><strong>10.</strong> The figure is made of a square A and a rectangle B. The side of square A is 6 cm. The perimeter of the whole figure is 36 cm. Find the area of rectangle B.<br/><br/>Bangun ini terbuat dari persegi A dan persegipanjang B. Sisi persegi A adalah 6 cm. Keliling seluruh bangun adalah 36 cm. Tentukan luas persegipanjang B.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zxpjij_7388.png" alt="Square and rectangle figure" class="my-4 mx-auto">
+                </div>
+                <div class="item-container">
+                    <p><strong>11.</strong> A rectangular field is 30 m long and 20 m wide. A path of uniform width 2 m is built around the outside of the field. What is the area of the path?<br/><br/>Sebuah lapangan persegipanjang memiliki panjang 30 m dan lebar 20 m. Sebuah jalan setapak dengan lebar seragam 2 m dibangun di sekeliling bagian luar lapangan. Berapa luas jalan setapak tersebut?</p>
+                </div>
+                <div class="item-container">
+                    <p><strong>12.</strong> In the rectangle ABCD below, E and F are midpoints of AB and BC respectively. Given that AB = 12 cm and BC = 8 cm, find the area of the shaded region AEFC.<br/><br/>Pada persegipanjang ABCD di bawah, E dan F adalah titik tengah dari AB dan BC. Diketahui AB = 12 cm dan BC = 8 cm, tentukan luas daerah yang diarsir AEFC.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_vemoq2_5257.png" alt="Rectangle with shaded region AEFC" class="my-4 mx-auto">
+                </div>
+                <div class="item-container"><p><strong>13.</strong> The perimeter of a square is 32 cm. If two such squares are joined together to form a rectangle, what is the perimeter of the resulting rectangle?<br/><br/>Keliling sebuah persegi adalah 32 cm. Jika dua persegi seperti itu digabungkan untuk membentuk sebuah persegipanjang, berapakah keliling persegipanjang yang terbentuk?</p></div>
+                <div class="item-container">
+                    <p><strong>14.</strong> A figure is formed by a 10 cm by 6 cm rectangle and a square with a side of 4 cm. The square is attached to one of the longer sides of the rectangle. Find the perimeter of the combined figure.<br/><br/>Sebuah bangun dibentuk oleh persegipanjang 10 cm x 6 cm dan sebuah persegi dengan sisi 4 cm. Persegi tersebut menempel pada salah satu sisi panjang persegipanjang. Tentukan keliling bangun gabungan tersebut.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_gzwexz_2353.png" alt="Rectangle and square figure" class="my-4 mx-auto">
+                </div>
+                <div class="item-container"><p><strong>15.</strong> A wire is bent to form a square with an area of 81 cm². If the same wire is bent to form a rectangle with a length of 10 cm, what is the width of the rectangle?<br/><br/>Sebuah kawat dibengkokkan membentuk persegi dengan luas 81 cm². Jika kawat yang sama dibengkokkan membentuk persegipanjang dengan panjang 10 cm, berapakah lebar persegipanjang tersebut?</p></div>
+
+                <h3 class="topic-title">Part 2: Heuristics: Working Backwards</h3>
+                <div class="item-container"><p><strong>1.</strong> I think of a number. I multiply it by 4, add 6, and then divide by 2. The result is 19. What was the number I first thought of?<br/><br/>Aku memikirkan sebuah bilangan. Aku mengalikannya dengan 4, menambahkan 6, lalu membaginya dengan 2. Hasilnya adalah 19. Berapakah bilangan yang pertama kali kupikirkan?</p></div>
+                <div class="item-container"><p><strong>2.</strong> Bella had some stickers. She gave half of them to her friend and then bought 8 more. She now has 25 stickers. How many stickers did Bella have at first?<br/><br/>Bella memiliki beberapa stiker. Dia memberikan setengahnya kepada temannya lalu membeli 8 stiker lagi. Sekarang dia memiliki 25 stiker. Berapa banyak stiker yang dimiliki Bella pada awalnya?</p></div>
+                <div class="item-container"><p><strong>3.</strong> A number of passengers were on a bus. At the first stop, 12 passengers got off and 5 got on. At the second stop, half of the passengers got off. There are now 10 passengers on the bus. How many passengers were there at the beginning?<br/><br/>Sejumlah penumpang berada di dalam bus. Di pemberhentian pertama, 12 penumpang turun dan 5 penumpang naik. Di pemberhentian kedua, setengah dari penumpang turun. Sekarang ada 10 penumpang di dalam bus. Berapa banyak penumpang pada awalnya?</p></div>
+                <div class="item-container"><p><strong>4.</strong> A water tank was partially filled. 50 liters of water were added, and then one-third of the total water was used for watering plants. If 80 liters of water remained in the tank, how much water was in the tank at first?<br/><br/>Sebuah tangki air terisi sebagian. 50 liter air ditambahkan, kemudian sepertiga dari total air digunakan untuk menyiram tanaman. Jika 80 liter air tersisa di tangki, berapa banyak air di dalam tangki pada awalnya?</p></div>
+                <div class="item-container"><p><strong>5.</strong> Andy's father's age this year minus 2, is divided by 4, adds 7 and is multiplied by 3. The result will be 45 years old. How old is Andy's father this year?<br/><br/>Umur Ayah Andy tahun ini dikurangi 2, dibagi 4, ditambah 7 dan dikali 3. Hasilnya adalah 45 tahun. Berapa umur Ayah Andy tahun ini?</p></div>
+                <div class="item-container"><p><strong>6.</strong> A baker baked a batch of cookies. He sold $\frac{1}{3}$ of them in the morning. In the afternoon, he sold 40 more cookies. He then had 60 cookies left. How many cookies did he bake in total?<br/><br/>Seorang pembuat kue memanggang sekumpulan kue. Dia menjual $\frac{1}{3}$ nya di pagi hari. Di sore hari, dia menjual 40 kue lagi. Dia kemudian memiliki sisa 60 kue. Berapa banyak kue yang dia panggang seluruhnya?</p></div>
+                <div class="item-container"><p><strong>7.</strong> Clara went shopping with a sum of money. She spent half of her money on a dress and $\frac{1}{4}$ of the remainder on a book. She was left with \$36. How much money did she have at first?<br/><br/>Clara pergi berbelanja dengan sejumlah uang. Dia menghabiskan setengah uangnya untuk gaun dan $\frac{1}{4}$ dari sisanya untuk buku. Dia memiliki sisa \$36. Berapa banyak uang yang dimilikinya pada awalnya?</p></div>
+                <div class="item-container"><p><strong>8.</strong> A basket contained some apples. $\frac{1}{5}$ of the apples were rotten and thrown away. Then, 15 good apples were sold. In the end, there were 45 apples left in the basket. How many apples were in the basket at first?<br/><br/>Sebuah keranjang berisi beberapa apel. $\frac{1}{5}$ dari apel tersebut busuk dan dibuang. Kemudian, 15 apel yang bagus dijual. Pada akhirnya, tersisa 45 apel di keranjang. Berapa banyak apel di keranjang pada awalnya?</p></div>
+                <div class="item-container"><p><strong>9.</strong> Leo, Mia, and Noah shared a box of crayons. Leo took 10 crayons. Mia took half of the remaining crayons. Noah took the last 14 crayons. How many crayons were in the box at first?<br/><br/>Leo, Mia, dan Noah berbagi sekotak krayon. Leo mengambil 10 krayon. Mia mengambil setengah dari krayon yang tersisa. Noah mengambil 14 krayon terakhir. Berapa banyak krayon di dalam kotak pada awalnya?</p></div>
+                <div class="item-container"><p><strong>10.</strong> A number is divided by 3. Then, 7 is subtracted from the result. The new result is then multiplied by 5, giving a final answer of 55. What is the number?<br/><br/>Sebuah bilangan dibagi 3. Kemudian, 7 dikurangkan dari hasilnya. Hasil baru ini kemudian dikalikan 5, memberikan jawaban akhir 55. Berapakah bilangan tersebut?</p></div>
+                 <div class="item-container"><p><strong>11.</strong> A magic pot doubles the number of coins placed inside it every minute. A boy puts one coin inside. After 5 minutes, he takes out all the coins and finds he has 32 coins. If he had put 3 coins in the beginning, how many coins would he have after 4 minutes?<br/><br/>Sebuah pot ajaib menggandakan jumlah koin di dalamnya setiap menit. Seorang anak laki-laki memasukkan satu koin. Setelah 5 menit, dia mengeluarkan semua koin dan mendapati dia memiliki 32 koin. Jika dia memasukkan 3 koin di awal, berapa banyak koin yang akan dia miliki setelah 4 menit?</p></div>
+                <div class="item-container"><p><strong>12.</strong> A group of students was arranged in rows. First, half of the students were asked to sit down. Then, 10 more students were asked to sit down. Finally, $\frac{1}{3}$ of the remaining students were asked to sit down, leaving 12 students standing. How many students were there in total?<br/><br/>Sekelompok siswa diatur dalam barisan. Pertama, setengah dari siswa diminta duduk. Kemudian, 10 siswa lagi diminta duduk. Akhirnya, $\frac{1}{3}$ dari siswa yang tersisa diminta duduk, menyisakan 12 siswa berdiri. Berapa jumlah total siswa?</p></div>
+                <div class="item-container"><p><strong>13.</strong> Sam had a collection of stamps. He gave 30 stamps to his brother. Then he bought a new packet containing 18 stamps. After that, he arranged his stamps equally into 5 albums, with each album containing 20 stamps. How many stamps did Sam have at first?<br/><br/>Sam memiliki koleksi prangko. Dia memberikan 30 prangko kepada saudaranya. Kemudian dia membeli satu paket baru berisi 18 prangko. Setelah itu, dia menyusun prangkonya secara merata ke dalam 5 album, dengan setiap album berisi 20 prangko. Berapa banyak prangko yang dimiliki Sam pada awalnya?</p></div>
+                <div class="item-container"><p><strong>14.</strong> There were some fish in a pond. One morning, the number of fish tripled. In the afternoon, 25 fish were caught. The next morning, the remaining fish doubled. Then 40 fish were caught. If there were 30 fish left, how many fish were there at the very beginning?<br/><br/>Ada beberapa ikan di sebuah kolam. Suatu pagi, jumlah ikan menjadi tiga kali lipat. Siang harinya, 25 ikan ditangkap. Keesokan paginya, sisa ikan menjadi dua kali lipat. Kemudian 40 ikan ditangkap. Jika tersisa 30 ikan, berapa banyak ikan pada awalnya?</p></div>
+                <div class="item-container"><p><strong>15.</strong> From a roll of ribbon, Mrs. Tan cut off half of it for a big present. Then, she cut off 5 meters for a small present. Finally, she used $\frac{2}{3}$ of the remaining ribbon to tie some flowers. If she had 4 meters of ribbon left, what was the original length of the ribbon?<br/><br/>Dari segulung pita, Ibu Tan memotong setengahnya untuk kado besar. Lalu, dia memotong 5 meter untuk kado kecil. Akhirnya, dia menggunakan $\frac{2}{3}$ dari sisa pita untuk mengikat bunga. Jika dia memiliki sisa pita 4 meter, berapakah panjang pita semula?</p></div>
+           </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions</h2>
+                
+                <h3 class="topic-title">Solutions for Part 1: Basic Geometry (Area & Perimeter)</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> To find the area of a composite figure, we can split it into simpler rectangles. For the perimeter, we add up the lengths of all the outside edges after finding any missing lengths.<br/><br/><strong>Konsep:</strong> Untuk mencari luas bangun gabungan, kita bisa membaginya menjadi beberapa persegipanjang sederhana. Untuk keliling, kita jumlahkan panjang semua sisi luarnya setelah menemukan panjang sisi yang hilang.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Find the missing side lengths:
+                            <ul>
+                                <li>Bottom-left horizontal side = $8 - 5 = 3$ cm.</li>
+                                <li>Right-bottom vertical side = $10 - 5 = 5$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Calculate the <strong>Area</strong> by splitting the figure into two rectangles (vertical cut):
+                            $$
+                            \begin{aligned}
+                            \text{Left Area} &= 10 \times 3 = 30 \text{ cm}^2 \\
+                            \text{Right Area} &= 5 \times 5 = 25 \text{ cm}^2 \\
+                            \text{Total Area} &= 30 + 25 = 55 \text{ cm}^2
+                            \end{aligned}
+                            $$
+                        </li>
+                        <li>Calculate the <strong>Perimeter</strong> by adding all outer sides:
+                            $$
+                            \begin{aligned}
+                            \text{Perimeter} &= 10 + 8 + 5 + 5 + 5 + 3 \\
+                            &= 36 \text{ cm}
+                            \end{aligned}
+                            $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Cari panjang sisi yang hilang:
+                            <ul>
+                                <li>Sisi horizontal kiri bawah = $8 - 5 = 3$ cm.</li>
+                                <li>Sisi vertikal kanan bawah = $10 - 5 = 5$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Hitung <strong>Luas</strong> dengan membagi bangun menjadi dua persegipanjang (potongan vertikal):
+                            $$
+                            \begin{aligned}
+                            \text{Luas Kiri} &= 10 \times 3 = 30 \text{ cm}^2 \\
+                            \text{Luas Kanan} &= 5 \times 5 = 25 \text{ cm}^2 \\
+                            \text{Total Luas} &= 30 + 25 = 55 \text{ cm}^2
+                            \end{aligned}
+                            $$
+                        </li>
+                        <li>Hitung <strong>Keliling</strong> dengan menjumlahkan semua sisi luar:
+                            $$
+                            \begin{aligned}
+                            \text{Keliling} &= 10 + 8 + 5 + 5 + 5 + 3 \\
+                            &= 36 \text{ cm}
+                            \end{aligned}
+                            $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Area: 55 cm², Perimeter: 36 cm. / Luas: 55 cm², Keliling: 36 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> This problem involves finding the area of a larger shape and subtracting the area of a smaller shape that has been removed from it.<br/><br/><strong>Konsep:</strong> Soal ini melibatkan pencarian luas bangun yang lebih besar dan menguranginya dengan luas bangun lebih kecil yang telah dihilangkan darinya.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Calculate the area of the large rectangle (park): $15 \times 10 = 150 \text{ cm}^2$.</li>
+                        <li>Calculate the area of the small square (pond): $4 \times 4 = 16 \text{ cm}^2$.</li>
+                        <li>Subtract the pond's area from the park's area:
+                        $$
+                        \begin{aligned}
+                        \text{Remaining Area} &= \text{Park Area} - \text{Pond Area} \\
+                        &= 150 - 16 \\
+                        &= 134 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hitung luas taman (persegipanjang besar): $15 \times 10 = 150 \text{ cm}^2$.</li>
+                        <li>Hitung luas kolam (persegi kecil): $4 \times 4 = 16 \text{ cm}^2$.</li>
+                        <li>Kurangi luas kolam dari luas taman:
+                        $$
+                        \begin{aligned}
+                        \text{Luas Sisa} &= \text{Luas Taman} - \text{Luas Kolam} \\
+                        &= 150 - 16 \\
+                        &= 134 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 134 cm². / Jawaban: 134 cm².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 3:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> To find the total area of overlapping figures, add the areas of the individual figures and then subtract the area of the overlapping region to avoid counting it twice.<br/><br/><strong>Konsep:</strong> Untuk mencari luas total dari bangun yang tumpang tindih, jumlahkan luas masing-masing bangun lalu kurangi dengan luas daerah yang tumpang tindih agar tidak terhitung dua kali.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Calculate the area of one square: $8 \times 8 = 64 \text{ cm}^2$.</li>
+                        <li>Calculate the total area if the two squares were separate: $64 + 64 = 128 \text{ cm}^2$.</li>
+                        <li>Calculate the area of the overlapping region: $3 \times 3 = 9 \text{ cm}^2$.</li>
+                        <li>Subtract the overlapping area from the total area of two squares:
+                        $$
+                        \begin{aligned}
+                        \text{Total Area} &= (\text{Area}_1 + \text{Area}_2) - \text{Overlap Area} \\
+                        &= 128 - 9 \\
+                        &= 119 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hitung luas satu persegi: $8 \times 8 = 64 \text{ cm}^2$.</li>
+                        <li>Hitung luas total jika kedua persegi tidak tumpang tindih: $64 + 64 = 128 \text{ cm}^2$.</li>
+                        <li>Hitung luas daerah yang tumpang tindih: $3 \times 3 = 9 \text{ cm}^2$.</li>
+                        <li>Kurangi total luas dengan area tumpang tindih:
+                        $$
+                        \begin{aligned}
+                        \text{Total Luas} &= (\text{Luas P}_1 + \text{Luas P}_2) - \text{Luas Tumpang Tindih} \\
+                        &= 128 - 9 \\
+                        &= 119 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 119 cm². / Jawaban: 119 cm².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 4:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> The area of the frame is the area of the outer rectangle minus the area of the inner rectangle (the picture area).<br/><br/><strong>Konsep:</strong> Luas bingkai adalah luas persegipanjang luar dikurangi luas persegipanjang dalam (area gambar).</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Calculate the area of the outer rectangle: $20 \times 15 = 300 \text{ cm}^2$.</li>
+                        <li>Find the inner dimensions:
+                            <ul>
+                                <li>Inner Length = $20 - 3 - 3 = 14$ cm.</li>
+                                <li>Inner Width = $15 - 3 - 3 = 9$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Calculate the area of the inner rectangle: $14 \times 9 = 126 \text{ cm}^2$.</li>
+                        <li>Calculate the frame's area:
+                        $$
+                        \begin{aligned}
+                        \text{Frame Area} &= \text{Outer Area} - \text{Inner Area} \\
+                        &= 300 - 126 \\
+                        &= 174 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hitung luas persegipanjang luar: $20 \times 15 = 300 \text{ cm}^2$.</li>
+                        <li>Cari dimensi bagian dalam:
+                            <ul>
+                                <li>Panjang Dalam = $20 - 3 - 3 = 14$ cm.</li>
+                                <li>Lebar Dalam = $15 - 3 - 3 = 9$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Hitung luas persegipanjang dalam: $14 \times 9 = 126 \text{ cm}^2$.</li>
+                        <li>Hitung luas bingkai:
+                        $$
+                        \begin{aligned}
+                        \text{Luas Bingkai} &= \text{Luas Luar} - \text{Luas Dalam} \\
+                        &= 300 - 126 \\
+                        &= 174 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 174 cm². / Jawaban: 174 cm².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 5:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> First, determine the side length of one square. Then, count the number of exposed sides that form the perimeter of the entire figure.<br/><br/><strong>Konsep:</strong> Pertama, tentukan panjang sisi dari satu persegi. Kemudian, hitung jumlah sisi luar yang membentuk keliling keseluruhan bangun.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The total height of 18 cm is made up of 3 squares stacked vertically.</li>
+                        <li>The side length of one square is $18 \div 3 = 6$ cm.</li>
+                        <li>The figure is shaped like a plus sign (+). Count the outer edges: there are 12 outer sides.</li>
+                        <li>Calculate the perimeter:
+                        $$
+                        \begin{aligned}
+                        \text{Perimeter} &= \text{Number of outer sides} \times \text{Side length} \\
+                        &= 12 \times 6 \\
+                        &= 72 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Tinggi total 18 cm terdiri dari 3 persegi yang ditumpuk secara vertikal.</li>
+                        <li>Panjang sisi satu persegi adalah $18 \div 3 = 6$ cm.</li>
+                        <li>Bangun ini berbentuk tanda tambah (+). Hitung jumlah sisi luarnya, terdapat total 12 sisi.</li>
+                        <li>Hitung keliling:
+                        $$
+                        \begin{aligned}
+                        \text{Keliling} &= \text{Jumlah sisi luar} \times \text{Panjang sisi} \\
+                        &= 12 \times 6 \\
+                        &= 72 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 72 cm. / Jawaban: 72 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 6:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> When a rectangular corner is cut from a larger rectangle or square, the total perimeter does not change.<br/><br/><strong>Konsep:</strong> Ketika sebuah sudut persegipanjang dipotong dari persegipanjang atau persegi yang lebih besar, total kelilingnya tidak berubah.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The perimeter of the original large square is $4 \times 12 = 48$ cm.</li>
+                        <li>When the corner is cut, a 5 cm vertical side and a 5 cm horizontal side are removed, but they are replaced by a new vertical and horizontal side of the same length (5 cm) on the inside.</li>
+                        <li>Because the length removed is equal to the length added, the perimeter stays the same.</li>
+                        <li>The perimeter of the remaining shape is 48 cm.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Keliling persegi besar yang asli adalah $4 \times 12 = 48$ cm.</li>
+                        <li>Saat sudut dipotong, sisi vertikal 5 cm dan sisi horizontal 5 cm dihilangkan, tetapi digantikan oleh sisi vertikal dan horizontal baru dengan panjang yang sama (5 cm) di bagian dalam.</li>
+                        <li>Karena panjang yang dihilangkan sama dengan panjang yang ditambahkan, kelilingnya tetap sama.</li>
+                        <li>Keliling bangun yang tersisa adalah 48 cm.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 48 cm. / Jawaban: 48 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 7:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> When shapes are combined, determine the new length and width to calculate the new area and perimeter.<br/><br/><strong>Konsep:</strong> Saat bangun digabungkan, tentukan panjang dan lebar yang baru untuk menghitung luas dan keliling yang baru.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Three 6 cm squares are placed side-by-side.</li>
+                        <li>Dimensions of the new rectangle:
+                            <ul>
+                                <li>New Length = $6 + 6 + 6 = 18$ cm.</li>
+                                <li>New Width = $6$ cm (remains the same).</li>
+                            </ul>
+                        </li>
+                        <li>Calculate New Area: $18 \times 6 = 108 \text{ cm}^2$.</li>
+                        <li>Calculate New Perimeter: $2 \times (18 + 6) = 2 \times 24 = 48$ cm.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Tiga persegi 6 cm diletakkan berdampingan.</li>
+                        <li>Dimensi persegipanjang baru:
+                            <ul>
+                                <li>Panjang Baru = $6 + 6 + 6 = 18$ cm.</li>
+                                <li>Lebar Baru = $6$ cm (tetap).</li>
+                            </ul>
+                        </li>
+                        <li>Hitung Luas Baru: $18 \times 6 = 108 \text{ cm}^2$.</li>
+                        <li>Hitung Keliling Baru: $2 \times (18 + 6) = 2 \times 24 = 48$ cm.</li>
+                    </ol>
+                    <div class="final-answer">Area: 108 cm², Perimeter: 48 cm. / Luas: 108 cm², Keliling: 48 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 8:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> The perimeter is the sum of all boundary lines. We can form an equation to solve for the unknown side x.<br/><br/><strong>Konsep:</strong> Keliling adalah jumlah dari semua garis batas. Kita dapat membentuk persamaan untuk menyelesaikan sisi x yang tidak diketahui.</p></div>
+                     <p><strong>Solution Steps:</strong></p>
+                     <ol class="solution-points">
+                         <li>Sum the lengths of all outer sides: Left (10), bottom (14), right (10), two top parts (total $14-6=8$), inner horizontal part (6), and two inner vertical parts (x).</li>
+                         <li>Form the perimeter equation: $10 + 14 + 10 + 8 + 6 + x + x = 58$.</li>
+                         <li>Solve the equation for x:
+                         $$
+                         \begin{aligned}
+                         48 + 2x &= 58 \\
+                         2x &= 58 - 48 \\
+                         2x &= 10 \\
+                         x &= 5 \text{ cm}
+                         \end{aligned}
+                         $$
+                         </li>
+                     </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                     <ol class="solution-points">
+                         <li>Jumlahkan panjang semua sisi luar: Sisi kiri (10), bawah (14), kanan (10), dua bagian atas ($14-6=8$), bagian dalam horizontal (6), dan dua bagian dalam vertikal (x).</li>
+                         <li>Bentuk persamaan keliling: $10 + 14 + 10 + 8 + 6 + x + x = 58$.</li>
+                         <li>Selesaikan persamaan untuk x:
+                         $$
+                         \begin{aligned}
+                         48 + 2x &= 58 \\
+                         2x &= 58 - 48 \\
+                         2x &= 10 \\
+                         x &= 5 \text{ cm}
+                         \end{aligned}
+                         $$
+                         </li>
+                     </ol>
+                    <div class="final-answer">Answer: 5 cm. / Jawaban: 5 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 9:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> For a fixed area, a rectangle's perimeter is smallest when its length and width are closest to each other.<br/><br/><strong>Konsep:</strong> Untuk luas yang tetap, keliling sebuah persegipanjang akan menjadi yang terkecil ketika panjang dan lebarnya memiliki nilai yang paling berdekatan.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Find all pairs of whole numbers (length, width) that multiply to 48: (1, 48), (2, 24), (3, 16), (4, 12), (6, 8).</li>
+                        <li>Calculate the perimeter for each pair:
+                            <ul>
+                                <li>P(1,48) = $2(1+48) = 98$ cm.</li>
+                                <li>P(2,24) = $2(2+24) = 52$ cm.</li>
+                                <li>P(3,16) = $2(3+16) = 38$ cm.</li>
+                                <li>P(4,12) = $2(4+12) = 32$ cm.</li>
+                                <li>P(6,8) = $2(6+8) = 28$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>The smallest perimeter is 28 cm, from the pair (6, 8).</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Cari semua pasangan bilangan bulat (panjang, lebar) yang hasil kalinya 48: (1, 48), (2, 24), (3, 16), (4, 12), (6, 8).</li>
+                        <li>Hitung keliling untuk setiap pasangan:
+                            <ul>
+                                <li>K(1,48) = $2(1+48) = 98$ cm.</li>
+                                <li>K(2,24) = $2(2+24) = 52$ cm.</li>
+                                <li>K(3,16) = $2(3+16) = 38$ cm.</li>
+                                <li>K(4,12) = $2(4+12) = 32$ cm.</li>
+                                <li>K(6,8) = $2(6+8) = 28$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Keliling terkecil adalah 28 cm, yang didapat dari pasangan (6, 8).</li>
+                    </ol>
+                    <div class="final-answer">Answer: 28 cm. / Jawaban: 28 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 10:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> Use the given perimeter to find the missing dimension of the attached rectangle.<br/><br/><strong>Konsep:</strong> Gunakan keliling yang diberikan untuk menemukan ukuran sisi yang hilang dari persegipanjang yang menempel.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Let the width of rectangle B be 'w'. Its height is the same as the side of square A, which is 6 cm.</li>
+                        <li>The perimeter is the sum of the outer boundary: $6 (\text{left}) + (6+w) (\text{top}) + 6 (\text{right}) + (6+w) (\text{bottom}) = 36$.</li>
+                        <li>Solve the equation for w:
+                        $$
+                        \begin{aligned}
+                        24 + 2w &= 36 \\
+                        2w &= 36 - 24 \\
+                        2w &= 12 \\
+                        w &= 6 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                        <li>Calculate the area of rectangle B: Area = height $\times$ w = $6 \times 6 = 36 \text{ cm}^2$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Misalkan lebar persegipanjang B adalah 'w'. Tinggi persegipanjang B sama dengan sisi persegi A, yaitu 6 cm.</li>
+                        <li>Keliling bangun adalah jumlah sisi luarnya: $6 (\text{kiri}) + (6+w) (\text{atas}) + 6 (\text{kanan}) + (6+w) (\text{bawah}) = 36$.</li>
+                        <li>Selesaikan persamaan untuk w:
+                        $$
+                        \begin{aligned}
+                        24 + 2w &= 36 \\
+                        2w &= 12 \\
+                        w &= 6 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                        <li>Hitung luas persegipanjang B: Luas = tinggi $\times$ w = $6 \times 6 = 36 \text{ cm}^2$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 36 cm². / Jawaban: 36 cm².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 11:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The area of the path is the area of the large outer rectangle (field + path) minus the area of the inner rectangle (field only).<br/><br/><strong>Konsep:</strong> Luas jalan setapak adalah luas persegipanjang luar (lapangan + jalan) dikurangi luas persegipanjang dalam (hanya lapangan).</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Area of the inner field = $30 \times 20 = 600 \text{ m}^2$.</li>
+                        <li>Outer dimensions (field + path):
+                            <ul>
+                                <li>Outer Length = $30 + 2 + 2 = 34$ m.</li>
+                                <li>Outer Width = $20 + 2 + 2 = 24$ m.</li>
+                            </ul>
+                        </li>
+                        <li>Outer area = $34 \times 24 = 816 \text{ m}^2$.</li>
+                        <li>Area of the path = Outer Area - Inner Area = $816 - 600 = 216 \text{ m}^2$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Luas lapangan (dalam) = $30 \times 20 = 600 \text{ m}^2$.</li>
+                        <li>Dimensi luar (lapangan + jalan):
+                            <ul>
+                                <li>Panjang Luar = $30 + 2 + 2 = 34$ m.</li>
+                                <li>Lebar Luar = $20 + 2 + 2 = 24$ m.</li>
+                            </ul>
+                        </li>
+                        <li>Luas luar = $34 \times 24 = 816 \text{ m}^2$.</li>
+                        <li>Luas jalan setapak = Luas Luar - Luas Dalam = $816 - 600 = 216 \text{ m}^2$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 216 m². / Jawaban: 216 m².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 12:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The area of the shaded region can be found by taking the total area of the rectangle and subtracting the areas of the two unshaded triangles (△ADC and △FBE).<br/><br/><strong>Konsep:</strong> Luas daerah yang diarsir dapat ditemukan dengan mengambil luas total persegipanjang dan menguranginya dengan luas dua segitiga yang tidak diarsir (△ADC dan △FBE).</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Calculate the total area of the rectangle ABCD: $12 \times 8 = 96 \text{ cm}^2$.</li>
+                        <li>Find the lengths of the triangle bases and heights:
+                            <ul>
+                               <li>For △ADC: Base DC = 12 cm, Height AD = 8 cm.</li>
+                               <li>For △FBE: Base EB = 6 cm (midpoint), Height FB = 4 cm (midpoint).</li>
+                            </ul>
+                        </li>
+                        <li>Calculate the areas of the unshaded triangles:
+                            <ul>
+                                <li>Area(△ADC) = $\frac{1}{2} \times 12 \times 8 = 48 \text{ cm}^2$.</li>
+                                <li>Area(△FBE) = $\frac{1}{2} \times 6 \times 4 = 12 \text{ cm}^2$.</li>
+                            </ul>
+                        </li>
+                        <li>Subtract the areas of the unshaded triangles from the total area:
+                        $$
+                        \begin{aligned}
+                        \text{Shaded Area} &= \text{Area(ABCD)} - \text{Area(△ADC)} - \text{Area(△FBE)} \\
+                        &= 96 - 48 - 12 \\
+                        &= 36 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hitung luas total persegipanjang ABCD: $12 \times 8 = 96 \text{ cm}^2$.</li>
+                        <li>Cari panjang alas dan tinggi segitiga:
+                             <ul>
+                               <li>Untuk △ADC: Alas DC = 12 cm, Tinggi AD = 8 cm.</li>
+                               <li>Untuk △FBE: Alas EB = 6 cm (titik tengah), Tinggi FB = 4 cm (titik tengah).</li>
+                            </ul>
+                        </li>
+                        <li>Hitung luas segitiga yang tidak diarsir:
+                            <ul>
+                                <li>Luas(△ADC) = $\frac{1}{2} \times 12 \times 8 = 48 \text{ cm}^2$.</li>
+                                <li>Luas(△FBE) = $\frac{1}{2} \times 6 \times 4 = 12 \text{ cm}^2$.</li>
+                            </ul>
+                        </li>
+                        <li>Kurangi luas segitiga yang tidak diarsir dari luas total:
+                        $$
+                        \begin{aligned}
+                        \text{Luas Arsir} &= \text{Luas(ABCD)} - \text{Luas(△ADC)} - \text{Luas(△FBE)} \\
+                        &= 96 - 48 - 12 \\
+                        &= 36 \text{ cm}^2
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 36 cm². / Jawaban: 36 cm².</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 13:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> First find the side length of the square from its perimeter. Then, determine the dimensions of the new rectangle formed by joining two squares.<br/><br/><strong>Konsep:</strong> Pertama, cari panjang sisi persegi dari kelilingnya. Kemudian, tentukan dimensi persegipanjang baru yang terbentuk dari penggabungan dua persegi.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Side of square = Perimeter $\div$ 4 = $32 \div 4 = 8$ cm.</li>
+                        <li>When two squares are joined, the new rectangle's dimensions are:
+                            <ul>
+                                <li>Length = $8 + 8 = 16$ cm.</li>
+                                <li>Width = $8$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Perimeter of the new rectangle = $2 \times (16 + 8) = 2 \times 24 = 48$ cm.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisi persegi = Keliling $\div$ 4 = $32 \div 4 = 8$ cm.</li>
+                        <li>Saat dua persegi digabung, dimensi persegipanjang baru menjadi:
+                            <ul>
+                                <li>Panjang = $8 + 8 = 16$ cm.</li>
+                                <li>Lebar = $8$ cm.</li>
+                            </ul>
+                        </li>
+                        <li>Keliling persegipanjang baru = $2 \times (16 + 8) = 2 \times 24 = 48$ cm.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 48 cm. / Jawaban: 48 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 14:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The perimeter of the combined figure is the sum of the perimeters of the individual shapes, minus twice the length of the side where they are joined.<br/><br/><strong>Konsep:</strong> Keliling bangun gabungan adalah jumlah keliling dari masing-masing bangun, dikurangi dua kali panjang sisi tempat mereka menyatu.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Perimeter of rectangle = $2 \times (10 + 6) = 32$ cm.</li>
+                        <li>Perimeter of square = $4 \times 4 = 16$ cm.</li>
+                        <li>The length of the joined side is 4 cm.</li>
+                        <li>Combined Perimeter = (Perimeter of Rectangle + Perimeter of Square) - 2 $\times$ (Joined Side)</li>
+                        $$
+                        \begin{aligned}
+                        \text{Perimeter} &= (32 + 16) - (2 \times 4) \\
+                        &= 48 - 8 \\
+                        &= 40 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Keliling persegipanjang = $2 \times (10 + 6) = 32$ cm.</li>
+                        <li>Keliling persegi = $4 \times 4 = 16$ cm.</li>
+                        <li>Panjang sisi yang menempel adalah 4 cm.</li>
+                        <li>Keliling Gabungan = (Keliling Persegi Panjang + Keliling Persegi) - 2 $\times$ (Sisi Tempel)</li>
+                        $$
+                        \begin{aligned}
+                        \text{Keliling} &= (32 + 16) - (2 \times 4) \\
+                        &= 48 - 8 \\
+                        &= 40 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 40 cm. / Jawaban: 40 cm.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 15:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The length of the wire is constant. The length of the wire is the perimeter of the shape it forms.<br/><br/><strong>Konsep:</strong> Panjang kawat adalah konstan. Panjang kawat adalah keliling dari bangun yang dibentuknya.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Area of square is 81 cm², so the side of the square = $\sqrt{81} = 9$ cm.</li>
+                        <li>Length of the wire = Perimeter of the square = $4 \times 9 = 36$ cm.</li>
+                        <li>The wire is bent into a rectangle with a perimeter of 36 cm and a length of 10 cm.</li>
+                        <li>Use the rectangle perimeter formula to find the width (w):
+                        $$
+                        \begin{aligned}
+                        2 \times (10 + w) &= 36 \\
+                        10 + w &= 18 \\
+                        w &= 18 - 10 = 8 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Luas persegi adalah 81 cm², maka sisi persegi = $\sqrt{81} = 9$ cm.</li>
+                        <li>Panjang kawat = Keliling persegi = $4 \times 9 = 36$ cm.</li>
+                        <li>Kawat dibentuk menjadi persegipanjang dengan keliling 36 cm dan panjang 10 cm.</li>
+                        <li>Gunakan rumus keliling persegipanjang untuk mencari lebar (w):
+                        $$
+                        \begin{aligned}
+                        2 \times (10 + w) &= 36 \\
+                        10 + w &= 18 \\
+                        w &= 18 - 10 = 8 \text{ cm}
+                        \end{aligned}
+                        $$
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 8 cm. / Jawaban: 8 cm.</div>
+                </div>
+
+                <h3 class="topic-title">Solutions for Part 2: Heuristics: Working Backwards</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Start with the final result and apply inverse (opposite) operations in reverse order.<br/><br/><strong>Konsep:</strong> Mulai dari hasil akhir dan terapkan operasi kebalikan (lawan) dengan urutan terbalik.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Final result: 19.</li>
+                        <li>Reverse 'divide by 2' $\rightarrow$ $19 \times 2 = 38$.</li>
+                        <li>Reverse 'add 6' $\rightarrow$ $38 - 6 = 32$.</li>
+                        <li>Reverse 'multiply by 4' $\rightarrow$ $32 \div 4 = 8$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hasil akhir: 19.</li>
+                        <li>Balikkan 'dibagi 2' $\rightarrow$ $19 \times 2 = 38$.</li>
+                        <li>Balikkan 'ditambah 6' $\rightarrow$ $38 - 6 = 32$.</li>
+                        <li>Balikkan 'dikali 4' $\rightarrow$ $32 \div 4 = 8$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 8. / Jawaban: 8.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Start from the final number of stickers and reverse the steps.<br/><br/><strong>Konsep:</strong> Mulai dari jumlah stiker terakhir dan balikkan langkah-langkahnya.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Final amount: 25 stickers.</li>
+                        <li>Before buying 8 stickers: $25 - 8 = 17$ stickers.</li>
+                        <li>17 stickers is the half she had left after giving some away.</li>
+                        <li>Initial amount: $17 \times 2 = 34$ stickers.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Jumlah akhir: 25 stiker.</li>
+                        <li>Sebelum membeli 8 stiker: $25 - 8 = 17$ stiker.</li>
+                        <li>17 stiker adalah setengah dari yang ia miliki sebelum memberi kepada teman.</li>
+                        <li>Jumlah awal: $17 \times 2 = 34$ stiker.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 34 stickers. / Jawaban: 34 stiker.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 3:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Reverse the events at each bus stop, starting from the end.<br/><br/><strong>Konsep:</strong> Balikkan kejadian di setiap pemberhentian bus, mulai dari akhir.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>End: 10 passengers.</li>
+                        <li>Before half got off (second stop): $10 \times 2 = 20$ passengers.</li>
+                        <li>Before 5 got on (first stop): $20 - 5 = 15$ passengers.</li>
+                        <li>Before 12 got off (first stop): $15 + 12 = 27$ passengers.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Akhir: 10 penumpang.</li>
+                        <li>Sebelum setengah penumpang turun (di halte kedua): $10 \times 2 = 20$ penumpang.</li>
+                        <li>Sebelum 5 penumpang naik (di halte pertama): $20 - 5 = 15$ penumpang.</li>
+                        <li>Sebelum 12 penumpang turun (di halte pertama): $15 + 12 = 27$ penumpang.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 27 passengers. / Jawaban: 27 penumpang.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 4:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Reverse the process of using and adding water.<br/><br/><strong>Konsep:</strong> Balikkan proses penggunaan dan penambahan air.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Remaining water: 80 liters. This is $\frac{2}{3}$ of the amount before watering (since $\frac{1}{3}$ was used).</li>
+                        <li>Before watering plants: $(80 \div 2) \times 3 = 120$ liters.</li>
+                        <li>Before 50 liters were added: $120 - 50 = 70$ liters.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa air: 80 liter. Ini adalah $\frac{2}{3}$ dari jumlah sebelum disiram (karena $\frac{1}{3}$ digunakan).</li>
+                        <li>Sebelum menyiram tanaman: $(80 \div 2) \times 3 = 120$ liter.</li>
+                        <li>Sebelum 50 liter ditambahkan: $120 - 50 = 70$ liter.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 70 liters. / Jawaban: 70 liter.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 5:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Apply inverse operations in reverse order to find the original age.<br/><br/><strong>Konsep:</strong> Terapkan operasi kebalikan dalam urutan terbalik untuk menemukan usia asli.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Final result: 45.</li>
+                        <li>Before multiplying by 3: $45 \div 3 = 15$.</li>
+                        <li>Before adding 7: $15 - 7 = 8$.</li>
+                        <li>Before dividing by 4: $8 \times 4 = 32$.</li>
+                        <li>Before subtracting 2 (original age): $32 + 2 = 34$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hasil akhir: 45.</li>
+                        <li>Sebelum dikali 3: $45 \div 3 = 15$.</li>
+                        <li>Sebelum ditambah 7: $15 - 7 = 8$.</li>
+                        <li>Sebelum dibagi 4: $8 \times 4 = 32$.</li>
+                        <li>Sebelum dikurangi 2 (usia asli): $32 + 2 = 34$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 34 years old. / Jawaban: 34 tahun.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 6:</strong></p>
+                     <div class="concept"><p><strong>Concept:</strong> Work backwards from the number of cookies left.<br/><br/><strong>Konsep:</strong> Kerjakan secara mundur dari jumlah kue yang tersisa.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>60 cookies left.</li>
+                        <li>Before selling 40 in the afternoon: $60 + 40 = 100$ cookies.</li>
+                        <li>These 100 cookies are $\frac{2}{3}$ of the initial total (since $\frac{1}{3}$ was sold).</li>
+                        <li>If $\frac{2}{3}$ of total is 100, then $\frac{1}{3}$ is $100 \div 2 = 50$.</li>
+                        <li>The total amount baked ($\frac{3}{3}$) is $50 \times 3 = 150$ cookies.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa kue: 60.</li>
+                        <li>Sebelum menjual 40 kue sore hari: $60 + 40 = 100$ kue.</li>
+                        <li>100 kue ini adalah $\frac{2}{3}$ dari total awal (karena $\frac{1}{3}$ sudah terjual).</li>
+                        <li>Jika $\frac{2}{3}$ total adalah 100, maka $\frac{1}{3}$ total adalah $100 \div 2 = 50$.</li>
+                        <li>Total kue yang dipanggang ($\frac{3}{3}$) adalah $50 \times 3 = 150$ kue.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 150 cookies. / Jawaban: 150 kue.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 7:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Reverse the spending steps starting from the final amount of money.<br/><br/><strong>Konsep:</strong> Balikkan langkah-langkah pengeluaran mulai dari jumlah uang terakhir.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Money left: \$36.</li>
+                        <li>This \$36 is the $\frac{3}{4}$ remainder before buying the book (since $\frac{1}{4}$ was spent).</li>
+                        <li>Before buying the book: $(\$36 \div 3) \times 4 = \$48$.</li>
+                        <li>This \$48 was half of the initial money.</li>
+                        <li>Initial money: $\$48 \times 2 = \$96$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa uang: \$36.</li>
+                        <li>\$36 adalah $\frac{3}{4}$ dari sisa uang sebelum membeli buku (karena $\frac{1}{4}$ dibelanjakan).</li>
+                        <li>Sebelum membeli buku: $(\$36 \div 3) \times 4 = \$48$.</li>
+                        <li>\$48 adalah setengah dari uang awal (karena setengahnya dibelanjakan untuk gaun).</li>
+                        <li>Uang awal: $\$48 \times 2 = \$96$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: \$96. / Jawaban: \$96.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 8:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Work backwards from the final number of apples.<br/><br/><strong>Konsep:</strong> Kerjakan secara mundur dari jumlah akhir apel.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>45 apples left.</li>
+                        <li>Before selling 15 good apples: $45 + 15 = 60$ apples.</li>
+                        <li>These 60 apples are the $\frac{4}{5}$ that remained (since $\frac{1}{5}$ were rotten).</li>
+                        <li>If $\frac{4}{5}$ of total is 60, then $\frac{1}{5}$ is $60 \div 4 = 15$.</li>
+                        <li>Initial total ($\frac{5}{5}$) was $15 \times 5 = 75$ apples.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa apel: 45.</li>
+                        <li>Sebelum 15 apel dijual: $45 + 15 = 60$ apel.</li>
+                        <li>60 apel ini adalah $\frac{4}{5}$ dari jumlah awal (karena $\frac{1}{5}$ busuk).</li>
+                        <li>Jika $\frac{4}{5}$ total adalah 60, maka $\frac{1}{5}$ adalah $60 \div 4 = 15$.</li>
+                        <li>Jumlah awal ($\frac{5}{5}$) adalah $15 \times 5 = 75$ apel.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 75 apples. / Jawaban: 75 apel.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 9:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Start with what the last person took and work backwards.<br/><br/><strong>Konsep:</strong> Mulai dengan apa yang diambil orang terakhir dan kerjakan secara mundur.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Noah took the last 14 crayons. This was the second half of what was left.</li>
+                        <li>Before Mia took her share, there were $14 \times 2 = 28$ crayons.</li>
+                        <li>This was the remainder after Leo took 10 crayons.</li>
+                        <li>Number of crayons at the start: $28 + 10 = 38$ crayons.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Noah mengambil 14 krayon terakhir. Ini adalah setengah dari sisa setelah Leo mengambil.</li>
+                        <li>Sebelum Mia mengambil bagiannya, ada $14 \times 2 = 28$ krayon.</li>
+                        <li>28 krayon ini adalah sisa setelah Leo mengambil 10 krayon.</li>
+                        <li>Jumlah krayon di awal: $28 + 10 = 38$ krayon.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 38 crayons. / Jawaban: 38 krayon.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 10:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A multi-step problem that requires reversing the operations in the correct order.<br/><br/><strong>Konsep:</strong> Soal multi-langkah yang membutuhkan pembalikan operasi dalam urutan yang benar.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li> 55.</li>
+                        <li>Before multiplying by 5: $55 \div 5 = 11$.</li>
+                        <li>Before subtracting 7: $11 + 7 = 18$.</li>
+                        <li>Before dividing by 3 (the original number): $18 \times 3 = 54$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Hasil akhir: 55.</li>
+                        <li>Sebelum dikali 5: $55 \div 5 = 11$.</li>
+                        <li>Sebelum dikurangi 7: $11 + 7 = 18$.</li>
+                        <li>Sebelum dibagi 3 (bilangan asli): $18 \times 3 = 54$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 54. / Jawaban: 54.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 11:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This problem has two parts. The first part confirms the "doubling" rule. The second part applies this rule to a new starting condition.<br/><br/><strong>Konsep:</strong> Soal ini memiliki dua bagian. Bagian pertama mengkonfirmasi aturan "penggandaan". Bagian kedua menerapkan aturan ini pada kondisi awal yang baru.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Part one verifies the rule: 1 coin $\rightarrow$ 2 $\rightarrow$ 4 $\rightarrow$ 8 $\rightarrow$ 16 $\rightarrow$ 32 (5 minutes). The rule is correct.</li>
+                        <li>For part two, start with 3 coins and track for 4 minutes:
+                            <ul>
+                                <li>After 1 min: $3 \times 2 = 6$.</li>
+                                <li>After 2 mins: $6 \times 2 = 12$.</li>
+                                <li>After 3 mins: $12 \times 2 = 24$.</li>
+                                <li>After 4 mins: $24 \times 2 = 48$.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Bagian pertama memverifikasi aturan: 1 koin $\rightarrow$ 2 $\rightarrow$ 4 $\rightarrow$ 8 $\rightarrow$ 16 $\rightarrow$ 32 (5 menit). Aturan benar.</li>
+                        <li>Bagian kedua, mulai dengan 3 koin dan hitung selama 4 menit:
+                            <ul>
+                                <li>Setelah 1 menit: $3 \times 2 = 6$.</li>
+                                <li>Setelah 2 menit: $6 \times 2 = 12$.</li>
+                                <li>Setelah 3 menit: $12 \times 2 = 24$.</li>
+                                <li>Setelah 4 menit: $24 \times 2 = 48$.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="final-answer">Answer: 48 coins. / Jawaban: 48 koin.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 12:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A multi-step working backwards problem involving fractions and whole numbers.<br/><br/><strong>Konsep:</strong> Soal kerja mundur multi-langkah yang melibatkan pecahan dan bilangan bulat.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>12 students left standing. This is $\frac{2}{3}$ of the group before the last step (since $\frac{1}{3}$ sat down).</li>
+                        <li>Before the last step, there were $(12 \div 2) \times 3 = 18$ students standing.</li>
+                        <li>Before 10 more students sat down: $18 + 10 = 28$ students standing.</li>
+                        <li>These 28 students were half of the total group.</li>
+                        <li>Total number of students: $28 \times 2 = 56$ students.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa berdiri: 12 siswa. Ini adalah $\frac{2}{3}$ dari kelompok sebelum langkah terakhir (karena $\frac{1}{3}$ duduk).</li>
+                        <li>Sebelum langkah terakhir, ada $(12 \div 2) \times 3 = 18$ siswa berdiri.</li>
+                        <li>Sebelum 10 siswa lagi duduk: $18 + 10 = 28$ siswa berdiri.</li>
+                        <li>28 siswa ini adalah setengah dari jumlah total siswa.</li>
+                        <li>Jumlah total siswa: $28 \times 2 = 56$ siswa.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 56 students. / Jawaban: 56 siswa.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 13:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Work backwards from the total number of stamps at the end.<br/><br/><strong>Konsep:</strong> Kerjakan secara mundur dari jumlah total prangko di akhir.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Total stamps at the end: $5 \text{ albums} \times 20 \text{ stamps/album} = 100$ stamps.</li>
+                        <li>Before buying 18 stamps: $100 - 18 = 82$ stamps.</li>
+                        <li>Before giving 30 stamps away (the initial amount): $82 + 30 = 112$ stamps.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Jumlah prangko di akhir: $5 \text{ album} \times 20 \text{ prangko/album} = 100$ prangko.</li>
+                        <li>Sebelum membeli 18 prangko: $100 - 18 = 82$ prangko.</li>
+                        <li>Sebelum memberi 30 prangko kepada saudaranya (jumlah awal): $82 + 30 = 112$ prangko.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 112 stamps. / Jawaban: 112 prangko.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 14:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A multi-day working backwards problem. Reverse each day's events carefully.<br/><br/><strong>Konsep:</strong> Soal kerja mundur multi-hari. Balikkan setiap peristiwa dengan hati-hati.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Final remainder: 30 fish.</li>
+                        <li>Before 40 fish were caught: $30 + 40 = 70$ fish.</li>
+                        <li>Before the number doubled: $70 \div 2 = 35$ fish.</li>
+                        <li>Before 25 fish were caught: $35 + 25 = 60$ fish.</li>
+                        <li>Before the number tripled (the initial amount): $60 \div 3 = 20$ fish.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa akhir: 30 ikan.</li>
+                        <li>Sebelum 40 ikan ditangkap: $30 + 40 = 70$ ikan.</li>
+                        <li>Sebelum jumlahnya menjadi dua kali lipat: $70 \div 2 = 35$ ikan.</li>
+                        <li>Sebelum 25 ikan ditangkap: $35 + 25 = 60$ ikan.</li>
+                        <li>Sebelum jumlahnya menjadi tiga kali lipat (jumlah awal): $60 \div 3 = 20$ ikan.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 20 fish. / Jawaban: 20 ikan.</div>
+                </div>
+                 <div class="item-container">
+                    <p><strong>Solution Number 15:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Work backwards from the final length of the ribbon, reversing each step of cutting.<br/><br/><strong>Konsep:</strong> Kerjakan secara mundur dari panjang pita terakhir, balikkan setiap langkah pemotongan.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Ribbon left: 4 meters. This is the $\frac{1}{3}$ remainder before tying flowers (since $\frac{2}{3}$ was used).</li>
+                        <li>Before tying flowers: $4 \times 3 = 12$ meters.</li>
+                        <li>Before cutting 5 meters for a small present: $12 + 5 = 17$ meters.</li>
+                        <li>This 17 meters was half of the original length.</li>
+                        <li>Original length: $17 \times 2 = 34$ meters.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Sisa pita: 4 meter. Ini adalah $\frac{1}{3}$ dari sisa sebelum mengikat bunga (karena $\frac{2}{3}$ digunakan).</li>
+                        <li>Sebelum mengikat bunga: $4 \times 3 = 12$ meter.</li>
+                        <li>Sebelum memotong 5 meter untuk kado kecil: $12 + 5 = 17$ meter.</li>
+                        <li>17 meter ini adalah setengah dari panjang pita awal.</li>
+                        <li>Panjang pita awal: $17 \times 2 = 34$ meter.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 34 meters. / Jawaban: 34 meter.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
