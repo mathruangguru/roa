@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Olimpiade - Cryptarithm & Kombinatorik (QC)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        .solution-points {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+        .solution-points li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice: Cryptarithm & Combinatorics</h1>
+            <p class="text-gray-600 mt-2">Grade 3 - 4 | Logic Puzzles & Counting Principles (Quality Checked)</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                
+                <h3 class="topic-title">Part 1: Cryptarithm</h3>
+                <div class="item-container"><p><strong>1.</strong> In the addition puzzle $A + A + 8 = 1A$, the letter A represents a single digit. Find the value of A.<br/><br/>Dalam teka-teki penjumlahan $A + A + 8 = 1A$, huruf A mewakili satu digit angka. Tentukan nilai dari A.</p></div>
+                <div class="item-container"><p><strong>2.</strong> In the addition $A5 + 4B = 83$, each letter represents a different digit. Find the values of A and B.<br/><br/>Pada penjumlahan $A5 + 4B = 83$, setiap huruf mewakili digit yang berbeda. Tentukan nilai dari A dan B.</p></div>
+                <div class="item-container"><p><strong>3.</strong> In the sum $AA + 77 = 1B4$, each letter represents a different digit. Find the values of A and B.<br/><br/>Pada penjumlahan $AA + 77 = 1B4$, setiap huruf mewakili digit yang berbeda. Tentukan nilai dari A dan B.</p></div>
+                <div class="item-container"><p><strong>4.</strong> If $T, O, B, E, R$ are distinct digits, solve the subtraction puzzle $TO - BE = OR$. Given that $O=1$ and $R=9$.<br/><br/>Jika $T, O, B, E, R$ adalah digit-digit yang berbeda, selesaikan teka-teki pengurangan $TO - BE = OR$. Diketahui bahwa $O=1$ dan $R=9$.</p></div>
+                <div class="item-container"><p><strong>5.</strong> In the multiplication $A8 \times 8 = BCC$, find the values of A, B, and C, where each letter is a different digit.<br/><br/>Pada perkalian $A8 \times 8 = BCC$, tentukan nilai dari A, B, dan C, di mana setiap huruf adalah digit yang berbeda.</p></div>
+                <div class="item-container"><p><strong>6.</strong> In the multiplication $AB \times 3 = 1AB$, find the values of the digits A and B.<br/><br/>Pada perkalian $AB \times 3 = 1AB$, tentukan nilai dari digit A dan B.</p></div>
+                <div class="item-container"><p><strong>7.</strong> The letters A, B, C, D represent different digits. Solve the puzzle: $AB + BA = CDC$.<br/><br/>Huruf A, B, C, D mewakili digit yang berbeda. Selesaikan teka-teki berikut: $AB + BA = CDC$.</p></div>
+                <div class="item-container"><p><strong>8.</strong> In the subtraction $7A - A7 = 27$, find the value of A.<br/><br/>Pada pengurangan $7A - A7 = 27$, tentukan nilai dari A.</p></div>
+                <div class="item-container"><p><strong>9.</strong> If $I, T, S, F, U, N$ are distinct digits and $F = 1$, solve the puzzle $IT + IS = FUN$.<br/><br/>Jika $I, T, S, F, U, N$ adalah digit-digit yang berbeda dan $F = 1$, selesaikan teka-teki $IT + IS = FUN$.</p></div>
+                <div class="item-container"><p><strong>10.</strong> If A, B, and C are distinct non-zero digits, solve $ABC + BCA + CAB = 777$.<br/><br/>Jika A, B, dan C adalah digit-digit bukan nol yang berbeda, selesaikan $ABC + BCA + CAB = 777$.</p></div>
+                <div class="item-container"><p><strong>11.</strong> Find three different whole numbers A, B, and C such that $A \times B \times C = 30$ and $A + B + C = 10$.<br/><br/>Tentukan tiga bilangan bulat berbeda A, B, dan C sehingga $A \times B \times C = 30$ dan $A + B + C = 10$.</p></div>
+                <div class="item-container"><p><strong>12.</strong> In the subtraction puzzle $ABC - BC = 200$, find the value of digit A. If B and C are distinct digits and not equal to A, and $B \ne 0$, find one possible set of values for B and C.<br/><br/>Dalam teka-teki pengurangan $ABC - BC = 200$, tentukan nilai digit A. Jika B dan C adalah digit berbeda dan tidak sama dengan A, serta $B \ne 0$, temukan satu set nilai yang mungkin untuk B dan C.</p></div>
+                <div class="item-container"><p><strong>13.</strong> Solve the multiplication puzzle $ME \times 3 = SHE$, where S, H, E, M are different digits.<br/><br/>Selesaikan teka-teki perkalian $ME \times 3 = SHE$, di mana S, H, E, M adalah digit-digit yang berbeda.</p></div>
+                <div class="item-container"><p><strong>14.</strong> In the addition $A4B + 3C2 = 888$, the digits A, B, C are all different. Find the value of $A+B+C$.<br/><br/>Pada penjumlahan $A4B + 3C2 = 888$, digit A, B, C semuanya berbeda. Tentukan nilai dari $A+B+C$.</p></div>
+                <div class="item-container"><p><strong>15.</strong> In the puzzle $AB + CA = DAE$, each letter is a unique digit and D=1. Find the values of A, B, C, E.<br/><br/>Dalam teka-teki $AB + CA = DAE$, setiap huruf adalah digit unik dan D=1. Tentukan nilai dari A, B, C, E.</p></div>
+
+                <h3 class="topic-title">Part 2: Basic Combinatorics</h3>
+                <div class="item-container"><p><strong>1.</strong> Andy has 3 shirts (red, blue, green) and 2 pairs of pants (jeans, shorts). How many different outfits can he wear?<br/><br/>Andy memiliki 3 kemeja (merah, biru, hijau) dan 2 celana (jeans, pendek). Berapa banyak setelan pakaian berbeda yang bisa ia kenakan?</p></div>
+                <div class="item-container"><p><strong>2.</strong> To go from City A to City C, one must pass through City B. There are 4 roads from A to B, and 3 roads from B to C. How many different routes are there from A to C?<br/><br/>Untuk pergi dari Kota A ke Kota C, seseorang harus melewati Kota B. Ada 4 jalan dari A ke B, dan 3 jalan dari B ke C. Berapa banyak rute berbeda yang ada dari A ke C?</p></div>
+                <div class="item-container"><p><strong>3.</strong> How many 2-digit numbers can be formed using the digits 1, 2, 3 without repetition of digits?<br/><br/>Berapa banyak bilangan 2-angka yang dapat dibentuk menggunakan angka 1, 2, 3 tanpa ada pengulangan angka?</p></div>
+                <div class="item-container"><p><strong>4.</strong> How many 2-digit numbers can be formed using the digits 1, 2, 3 if repetition of digits is allowed?<br/><br/>Berapa banyak bilangan 2-angka yang dapat dibentuk menggunakan angka 1, 2, 3 jika pengulangan angka diperbolehkan?</p></div>
+                <div class="item-container"><p><strong>5.</strong> There are 5 runners in a race. In how many different ways can the 1st and 2nd place medals be awarded?<br/><br/>Ada 5 pelari dalam sebuah perlombaan. Berapa banyak cara berbeda medali juara 1 dan juara 2 dapat diberikan?</p></div>
+                <div class="item-container"><p><strong>6.</strong> A restaurant offers 4 appetizers, 5 main courses, and 3 desserts. How many different 3-course meals can be ordered?<br/><br/>Sebuah restoran menawarkan 4 makanan pembuka, 5 hidangan utama, dan 3 hidangan penutup. Berapa banyak paket makan 3-hidangan yang berbeda yang bisa dipesan?</p></div>
+                <div class="item-container"><p><strong>7.</strong> How many 3-digit even numbers can be formed using the digits 2, 5, 8 if repetition of digits is allowed?<br/><br/>Berapa banyak bilangan genap 3-angka yang dapat dibentuk menggunakan angka 2, 5, 8 jika pengulangan angka diperbolehkan?</p></div>
+                <div class="item-container"><p><strong>8.</strong> How many 3-digit odd numbers can be formed using the digits 2, 5, 8 without repetition of digits?<br/><br/>Berapa banyak bilangan ganjil 3-angka yang dapat dibentuk menggunakan angka 2, 5, 8 tanpa ada pengulangan angka?</p></div>
+                <div class="item-container"><p><strong>9.</strong> From a class of 10 students, a president and a vice-president are to be chosen. In how many ways can this be done?<br/><br/>Dari sebuah kelas yang terdiri dari 10 siswa, akan dipilih seorang ketua dan seorang wakil ketua. Berapa banyak cara pemilihan dapat dilakukan?</p></div>
+                <div class="item-container"><p><strong>10.</strong> How many different ways can you arrange the letters of the word 'CAT'?<br/><br/>Berapa banyak cara berbeda Anda dapat menyusun huruf-huruf dari kata 'CAT'?</p></div>
+                <div class="item-container"><p><strong>11.</strong> A flag is to be designed with 3 horizontal stripes. If there are 5 different colors available, how many different flags can be made if no two adjacent stripes can have the same color?<br/><br/>Sebuah bendera akan dirancang dengan 3 garis horizontal. Jika tersedia 5 warna berbeda, berapa banyak bendera berbeda yang dapat dibuat jika tidak ada dua garis yang bersebelahan boleh memiliki warna yang sama?</p></div>
+                <div class="item-container"><p><strong>12.</strong> From a group of 4 friends (Ali, Budi, Cici, Dedi), how many ways can you choose a group of 2 friends to go to the movies?<br/><br/>Dari sekelompok 4 teman (Ali, Budi, Cici, Dedi), berapa banyak cara Anda dapat memilih sekelompok 2 teman untuk pergi ke bioskop?</p></div>
+                <div class="item-container"><p><strong>13.</strong> How many shortest paths are there from corner A to corner B on a 2x2 grid, only moving right or down?<br/><br/>Berapa banyak jalur terpendek dari sudut A ke sudut B pada kotak berukuran 2x2, dengan hanya bergerak ke kanan atau ke bawah? (Deskripsi gambar: Sebuah kotak persegi 2x2 dengan titik A di pojok kiri atas dan titik B di pojok kanan bawah).</p></div>
+                <div class="item-container"><p><strong>14.</strong> A coin is tossed 3 times. How many different sequences of heads (H) and tails (T) are possible?<br/><br/>Sebuah koin dilempar 3 kali. Berapa banyak urutan gambar (G) dan angka (A) yang berbeda yang mungkin terjadi?</p></div>
+                <div class="item-container"><p><strong>15.</strong> A code consists of one letter followed by one digit. The letter can be A, B, or C, and the digit can be 1, 2, 3, or 4. How many different codes are possible?<br/><br/>Sebuah kode terdiri dari satu huruf diikuti oleh satu angka. Hurufnya bisa A, B, atau C, dan angkanya bisa 1, 2, 3, atau 4. Berapa banyak kode berbeda yang mungkin dibuat?</p></div>
+           </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions</h2>
+                
+                <h3 class="topic-title">Solutions for Part 1: Cryptarithm</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> In this puzzle, `1A` represents a two-digit number, which can be written as $10 + A$. We form an algebraic equation to solve for A.<br/><br/><strong>Konsep:</strong> Dalam teka-teki ini, `1A` mewakili bilangan dua-angka, yang dapat ditulis sebagai $10 + A$. Kita membentuk persamaan aljabar untuk mencari nilai A.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The equation is $A + A + 8 = 1A$.</li>
+                        <li>Rewrite this as an algebraic equation: $2 \times A + 8 = 10 + A$.</li>
+                        <li>Subtract A from both sides: $A + 8 = 10$.</li>
+                        <li>Subtract 8 from both sides: $A = 2$.</li>
+                        <li>Check: $2 + 2 + 8 = 12$. The expression `1A` becomes `12`. It matches.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Persamaannya adalah $A + A + 8 = 1A$.</li>
+                        <li>Tulis ulang sebagai persamaan aljabar: $2 \times A + 8 = 10 + A$.</li>
+                        <li>Kurangi A dari kedua sisi: $A + 8 = 10$.</li>
+                        <li>Kurangi 8 dari kedua sisi: $A = 2$.</li>
+                        <li>Periksa: $2 + 2 + 8 = 12$. Ekspresi `1A` menjadi `12`. Hasilnya cocok.</li>
+                    </ol>
+                    <div class="final-answer">Answer: A = 2. / Jawaban: A = 2.</div>
+                </div>
+                 <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> We analyze the addition column by column, starting from the ones (rightmost) column.<br/><br/><strong>Konsep:</strong> Kita menganalisis penjumlahan per kolom, dimulai dari kolom satuan (paling kanan).</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The addition is $A5 + 4B = 83$. Let's write it vertically:
+                          $$
+                          \begin{array}{@{}c@{\,}c}
+                           & A & 5 \\
+                           + & 4 & B \\
+                          \hline
+                           & 8 & 3
+                          \end{array}
+                          $$
+                        </li>
+                        <li>Ones column: $5 + B$ results in a number ending in 3. This means $5+B=13$.</li>
+                        <li>From $5+B=13$, we find that $B = 8$.</li>
+                        <li>Since the ones column sum is 13, we carry over 1 to the tens column.</li>
+                        <li>Tens column: $1(\text{carry}) + A + 4 = 8$.</li>
+                        <li>This simplifies to $A + 5 = 8$, which gives $A = 3$.</li>
+                        <li>The values are A=3 and B=8. Let's check: $35 + 48 = 83$. This is correct.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Penjumlahannya adalah $A5 + 4B = 83$. Kita tulis secara vertikal.</li>
+                        <li>Kolom satuan: $5 + B$ menghasilkan angka yang berakhiran 3. Ini berarti $5+B=13$.</li>
+                        <li>Dari $5+B=13$, kita dapatkan $B = 8$.</li>
+                        <li>Karena hasil penjumlahan kolom satuan adalah 13, kita "menyimpan" 1 ke kolom puluhan.</li>
+                        <li>Kolom puluhan: $1$ (simpanan) $+ A + 4 = 8$.</li>
+                        <li>Persamaan menjadi $A + 5 = 8$, sehingga $A = 3$.</li>
+                        <li>Nilainya adalah A=3 dan B=8. Kita periksa: $35 + 48 = 83$. Jawabannya benar.</li>
+                    </ol>
+                    <div class="final-answer">Answer: A=3, B=8. / Jawaban: A=3, B=8.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 3:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Analyze the addition column by column, looking for carry-overs.<br/><br/><strong>Konsep:</strong> Analisis penjumlahan per kolom, perhatikan angka simpanan (carry-over).</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The sum is $AA + 77 = 1B4$. Let's write it vertically:
+                          $$
+                          \begin{array}{@{}c@{\,}c}
+                           & A & A \\
+                           + & 7 & 7 \\
+                          \hline
+                           1 & B & 4
+                          \end{array}
+                          $$
+                        </li>
+                        <li>Ones column: $A+7$ results in a number ending in 4. This means $A+7=14$.</li>
+                        <li>From $A+7=14$, we find that $A=7$.</li>
+                        <li>Since the sum is 14, we carry over 1 to the tens column.</li>
+                        <li>Tens column: $1(\text{carry}) + A + 7 = 1B$.</li>
+                        <li>Substitute the value of A: $1 + 7 + 7 = 15$.</li>
+                        <li>So, $1B$ represents the number 15. This means $B=5$.</li>
+                        <li>The values are A=7 and B=5. Let's check: $77 + 77 = 154$. This is correct.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Penjumlahannya adalah $AA + 77 = 1B4$. Kita tulis secara vertikal.</li>
+                        <li>Kolom satuan: $A+7$ menghasilkan angka yang berakhiran 4. Ini berarti $A+7=14$.</li>
+                        <li>Dari $A+7=14$, kita dapatkan $A=7$.</li>
+                        <li>Kita menyimpan 1 ke kolom puluhan.</li>
+                        <li>Kolom puluhan: $1(\text{simpanan}) + A + 7 = 1B$.</li>
+                        <li>Masukkan nilai $A=7$: $1+7+7 = 15$.</li>
+                        <li>Jadi, $1B$ adalah bilangan 15, yang berarti $B=5$.</li>
+                        <li>Nilainya A=7 dan B=5. Periksa: $77+77=154$. Benar.</li>
+                    </ol>
+                    <div class="final-answer">Answer: A=7, B=5. / Jawaban: A=7, B=5.</div>
+                </div>
+                 <div class="item-container">
+                    <p><strong>Solution Number 4:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Use the given values to deduce other values in the subtraction puzzle. When subtracting, you may need to "borrow" from the next column.<br/><br/><strong>Konsep:</strong> Gunakan nilai yang diberikan untuk menyimpulkan nilai lain. Saat mengurangkan, Anda mungkin perlu "meminjam" dari kolom berikutnya.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The puzzle is $TO - BE = OR$. Given $O=1, R=9$. So, $T1 - BE = 19$.</li>
+                        <li>Let's write it vertically:
+                          $$
+                          \begin{array}{@{}c@{\,}c}
+                           & T & 1 \\
+                           - & B & E \\
+                          \hline
+                           & 1 & 9
+                          \end{array}
+                          $$
+                        </li>
+                        <li>Ones column: $1 - E$ ends in 9. This is only possible if we borrow from T. So the calculation becomes $(10+1) - E = 9 \implies 11 - E = 9 \implies E=2$.</li>
+                        <li>Tens column: Since we borrowed 1 from T, the calculation for this column is $(T-1) - B = 1$.</li>
+                        <li>This means $T-B=2$. We need to find two distinct digits T and B that differ by 2. The digits used so far are 1, 9, 2.</li>
+                        <li>Possible pairs for (T, B) are: (3,1 - no, 1 is used), (4,2 - no, 2 is used), (5,3), (6,4), (7,5), (8,6). Any of these are valid solutions.</li>
+                        <li>Let's pick one solution: T=5, B=3, E=2.</li>
+                        <li>Check: $51 - 32 = 19$. This is correct.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Teka-tekinya adalah $TO - BE = OR$. Diketahui $O=1, R=9$. Jadi, $T1 - BE = 19$.</li>
+                        <li>Kita tulis secara vertikal.</li>
+                        <li>Kolom satuan: $1 - E$ berakhiran 9. Ini hanya mungkin jika kita "meminjam" dari T. Jadi perhitungannya adalah $(10+1) - E = 9 \implies 11 - E = 9 \implies E=2$.</li>
+                        <li>Kolom puluhan: Karena kita meminjam 1 dari T, perhitungannya adalah $(T-1) - B = 1$.</li>
+                        <li>Jadi, $T-B=2$. Kita perlu mencari dua digit T dan B yang berbeda dengan selisih 2. Digit yang sudah dipakai adalah 1, 9, 2.</li>
+                        <li>Pasangan yang mungkin untuk (T, B) adalah: (5,3), (6,4), (7,5), (8,6). Semua ini adalah solusi yang valid.</li>
+                        <li>Kita pilih salah satu solusi: T=5, B=3, E=2.</li>
+                        <li>Periksa: $51 - 32 = 19$. Benar.</li>
+                    </ol>
+                    <div class="final-answer">Answer: T=5, B=3, E=2 (other solutions possible). / Jawaban: T=5, B=3, E=2 (jawaban lain dimungkinkan).</div>
+                </div>
+                <div class="item-container"><p><strong>Solution Number 5:</strong></p><div class="concept"><p><strong>Concept:</strong> Analyze the multiplication column by column, from right to left, keeping track of carry-overs.<br/><br/><strong>Konsep:</strong> Analisis perkalian per kolom, dari kanan ke kiri, sambil mencatat angka simpanan.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The puzzle is $A8 \times 8 = BCC$.</li><li>Ones column: $8 \times 8 = 64$. The last digit of the result is 4, so $C=4$. We carry over 6 to the tens column.</li><li>Tens column: $(8 \times A) + 6(\text{carry}) = BC$. The number $BC$ is a two-digit number, which can be written as $10B+C$.</li><li>Substitute $C=4$ into the equation: $8A+6 = 10B+4$.</li><li>Simplify the equation: $8A+2 = 10B$. Divide the entire equation by 2: $4A+1 = 5B$.</li><li>This tells us that $4A+1$ must be a multiple of 5. For this to be true, $4A$ must end in a 4 or a 9.</li><li>Let's test values for A: $4 \times 1=4$, $4 \times 2=8$, $4 \times 3=12$, $4 \times 4=16$, $4 \times 5=20$, $4 \times 6=24$. The only values of A that make $4A$ end in 4 are A=1 and A=6.</li><li>Case 1: If A=1. Substitute into $4A+1=5B \implies 4(1)+1=5 \implies 5=5B \implies B=1$. But A and B must be different digits. So this is not a solution.</li><li>Case 2: If A=6. Substitute into $4A+1=5B \implies 4(6)+1=25 \implies 25=5B \implies B=5$. The digits are A=6, B=5, C=4. They are all different. This is a valid solution.</li><li>Check: $68 \times 8 = 544$. This matches $BCC = 544$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Teka-tekinya adalah $A8 \times 8 = BCC$.</li><li>Kolom satuan: $8 \times 8 = 64$. Angka terakhir adalah 4, jadi $C=4$. Kita simpan 6 ke kolom puluhan.</li><li>Kolom puluhan: $(8 \times A) + 6 (\text{simpanan}) = BC$. Bilangan $BC$ adalah bilangan 2-angka $10B+C$.</li><li>Masukkan $C=4$ ke persamaan: $8A+6 = 10B+4$.</li><li>Sederhanakan: $8A+2 = 10B$. Bagi kedua sisi dengan 2: $4A+1 = 5B$.</li><li>Ini berarti $4A+1$ harus kelipatan 5. Agar ini terjadi, $4A$ harus berakhiran 4 atau 9.</li><li>Kita coba nilai A: $4 \times 1=4, 4 \times 6=24$. Jadi A bisa 1 atau 6.</li><li>Kasus 1: Jika A=1. Maka $4(1)+1=5 \implies 5=5B \implies B=1$. Tapi A dan B harus berbeda. Ini bukan solusi.</li><li>Kasus 2: Jika A=6. Maka $4(6)+1=25 \implies 25=5B \implies B=5$. Digitnya adalah A=6, B=5, C=4. Semuanya berbeda. Ini solusi yang valid.</li><li>Periksa: $68 \times 8 = 544$. Ini cocok dengan $BCC=544$.</li></ol><div class="final-answer">Answer: A=6, B=5, C=4. / Jawaban: A=6, B=5, C=4.</div></div>
+                <div class="item-container"><p><strong>Solution Number 6:</strong></p><div class="concept"><p><strong>Concept:</strong> We can represent the numbers algebraically. `AB` is a 2-digit number $10A+B$. `1AB` is a 3-digit number $100+10A+B$.<br/><br/><strong>Konsep:</strong> Kita bisa merepresentasikan bilangan secara aljabar. `AB` adalah bilangan 2-angka $10A+B$. `1AB` adalah bilangan 3-angka $100+10A+B$.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The equation is $(10A+B) \times 3 = 100+10A+B$.</li><li>Expand the left side: $30A + 3B = 100 + 10A + B$.</li><li>Rearrange the terms by subtracting $10A$ and $B$ from both sides: $20A + 2B = 100$.</li><li>Divide the entire equation by 2: $10A + B = 50$.</li><li>The expression $10A+B$ is the algebraic form of the number `AB`. So, the number `AB` is 50.</li><li>This means $A=5$ and $B=0$.</li><li>Check: $50 \times 3 = 150$. The number `1AB` becomes 150. It matches.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Persamaannya adalah $(10A+B) \times 3 = 100+10A+B$.</li><li>Jabarkan sisi kiri: $30A + 3B = 100 + 10A + B$.</li><li>Susun ulang dengan mengurangi $10A$ dan $B$ dari kedua sisi: $20A + 2B = 100$.</li><li>Bagi seluruh persamaan dengan 2: $10A + B = 50$.</li><li>Bentuk $10A+B$ adalah bentuk aljabar dari bilangan `AB`. Jadi, bilangan `AB` adalah 50.</li><li>Ini berarti $A=5$ dan $B=0$.</li><li>Periksa: $50 \times 3 = 150$. Bilangan `1AB` menjadi 150. Hasilnya cocok.</li></ol><div class="final-answer">Answer: A=5, B=0. / Jawaban: A=5, B=0.</div></div>
+                <div class="item-container"><p><strong>Solution Number 7:</strong></p><div class="concept"><p><strong>Concept:</strong> In the sum $AB+BA$, the result must be a multiple of 11. Here, the result is `CDC`, a 3-digit palindrome.<br/><br/><strong>Konsep:</strong> Dalam penjumlahan $AB+BA$, hasilnya pasti kelipatan 11. Di sini, hasilnya adalah `CDC`, sebuah palindrom 3-angka.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The sum is $AB+BA=CDC$.
+                 $$
+                  \begin{array}{@{}c@{\,}c}
+                   & A & B \\
+                   + & B & A \\
+                  \hline
+                   C & D & C
+                  \end{array}
+                  $$
+                </li>
+                <li>The maximum sum for $AB+BA$ is $98+89=187$. This means the hundreds digit, C, must be 1. So, $C=1$.</li>
+                <li>Ones column: $B+A$ must end in C, which is 1. So, $B+A=11$. (It cannot be 1, because A and B are leading digits and cannot be 0). We carry over 1 to the tens column.</li>
+                <li>Tens column: $1(\text{carry})+A+B = CD$. Since $A+B=11$, this becomes $1+11 = 12$.</li>
+                <li>So, the number $CD$ is 12. This means $C=1$ and $D=2$. This is consistent with what we found earlier.</li>
+                <li>We need to find A and B such that $A+B=11$, and A,B,C,D are distinct digits. We have C=1 and D=2.</li>
+                <li>Possible pairs for (A,B): (3,8), (4,7), (5,6) and their reverses. The pair (2,9) is not possible because D=2.</li>
+                <li>Let's choose one valid pair, e.g., A=3, B=8. Then C=1, D=2. All digits are distinct.</li>
+                <li>Check: $38+83=121$. This matches $CDC=121$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Penjumlahannya adalah $AB+BA=CDC$.</li>
+                <li>Jumlah maksimum dari $AB+BA$ adalah $98+89=187$. Ini berarti digit ratusan, C, pastilah 1. Jadi, $C=1$.</li>
+                <li>Kolom satuan: $B+A$ harus berakhiran C, yaitu 1. Maka, $B+A=11$. (Tidak mungkin 1, karena A dan B adalah digit pertama dan tidak boleh 0). Kita menyimpan 1 ke kolom puluhan.</li>
+                <li>Kolom puluhan: $1(\text{simpanan})+A+B = CD$. Karena $A+B=11$, maka menjadi $1+11 = 12$.</li>
+                <li>Jadi, bilangan $CD$ adalah 12. Ini berarti $C=1$ dan $D=2$. Ini konsisten dengan temuan kita sebelumnya.</li>
+                <li>Kita perlu mencari A dan B di mana $A+B=11$, dan A,B,C,D adalah digit yang berbeda. Kita sudah punya C=1 dan D=2.</li>
+                <li>Pasangan (A,B) yang mungkin adalah: (3,8), (4,7), (5,6) dan kebalikannya. Pasangan (2,9) tidak mungkin karena D=2.</li>
+                <li>Kita pilih satu pasangan, misalnya A=3, B=8. Maka C=1, D=2. Semua digit berbeda.</li>
+                <li>Periksa: $38+83=121$. Ini cocok dengan $CDC=121$.</li>
+                </ol><div class="final-answer">Answer: A=3, B=8, C=1, D=2 (other solutions exist). / Jawaban: A=3, B=8, C=1, D=2 (solusi lain ada).</div></div>
+                <div class="item-container"><p><strong>Solution Number 8:</strong></p><div class="concept"><p><strong>Concept:</strong> Convert the numbers to their algebraic form to create a simple equation to solve for A.<br/><br/><strong>Konsep:</strong> Ubah bilangan ke bentuk aljabarnya untuk membuat persamaan sederhana dan mencari nilai A.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The puzzle is $7A - A7 = 27$.</li><li>Convert to algebraic form: $(70+A) - (10A+7) = 27$.</li><li>Be careful with the parentheses: $70 + A - 10A - 7 = 27$.</li><li>Simplify: $63 - 9A = 27$.</li><li>Rearrange to solve for A: $63 - 27 = 9A \implies 36 = 9A$.</li><li>Divide by 9: $A=4$.</li><li>Check: $74 - 47 = 27$. This is correct.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Teka-tekinya adalah $7A - A7 = 27$.</li><li>Ubah ke bentuk aljabar: $(70+A) - (10A+7) = 27$.</li><li>Perhatikan tanda kurung: $70 + A - 10A - 7 = 27$.</li><li>Sederhanakan: $63 - 9A = 27$.</li><li>Susun ulang untuk mencari A: $63 - 27 = 9A \implies 36 = 9A$.</li><li>Bagi dengan 9: $A=4$.</li><li>Periksa: $74 - 47 = 27$. Benar.</li></ol><div class="final-answer">Answer: A=4. / Jawaban: A=4.</div></div>
+                <div class="item-container"><p><strong>Solution Number 9:</strong></p><div class="concept"><p><strong>Concept:</strong> Use logical deduction starting from the given values and the structure of the addition.<br/><br/><strong>Konsep:</strong> Gunakan penalaran logis dimulai dari nilai yang diberikan dan struktur penjumlahannya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The sum is $IT + IS = FUN$. Given $F=1$.
+                 $$
+                  \begin{array}{@{}c@{\,}c@{\,}c}
+                   & & I & T \\
+                   + & & I & S \\
+                  \hline
+                   & F & U & N
+                  \end{array}
+                  $$
+                </li>
+                <li>Since the sum of two 2-digit numbers is a 3-digit number starting with $F=1$, there must be a carry-over to the hundreds column.</li>
+                <li>Tens column: $I+I+\text{carry}_1 = U$ or $I+I+\text{carry}_1 = 10+U$. Since there is a carry to the hundreds column, we must have $I+I+\text{carry}_1 \ge 10$. This means $I$ must be relatively large. Let's assume $I \ge 5$.</li>
+                <li>Let's test values for I. If $I=5$. Tens: $5+5+\text{carry}_1 = 10+\text{carry}_1$. This means the result is $1U$. So $U=\text{carry}_1$.</li>
+                <li>Ones column: $T+S = N$ (so $\text{carry}_1=0$) or $T+S = 10+N$ (so $\text{carry}_1=1$).</li>
+                <li>Let's assume $\text{carry}_1=0$. Then $U=0$. Digits used so far: F=1, I=5, U=0. We need T,S,N from the remaining digits, such that $T+S=N$ and they are all distinct. For example, $T=2, S=4 \implies N=6$. All digits (I=5, T=2, S=4, F=1, U=0, N=6) are unique.</li>
+                <li>Let's check this solution: $52 + 54 = 106$. This matches $FUN=106$. It works.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Penjumlahannya adalah $IT + IS = FUN$. Diketahui $F=1$.</li>
+                <li>Karena jumlah dari dua bilangan 2-angka adalah bilangan 3-angka yang diawali F=1, pasti ada simpanan ke kolom ratusan.</li>
+                <li>Kolom puluhan: $I+I+\text{simpanan}_1 = U$ atau $I+I+\text{simpanan}_1 = 10+U$. Karena ada simpanan ke ratusan, maka $I+I+\text{simpanan}_1 \ge 10$. Ini berarti I harus cukup besar, misal $I \ge 5$.</li>
+                <li>Coba nilai I. Jika $I=5$. Kolom puluhan: $5+5+\text{simpanan}_1 = 10+\text{simpanan}_1$. Hasilnya adalah $1U$. Maka, $U = \text{simpanan}_1$.</li>
+                <li>Kolom satuan: $T+S=N$ (maka $\text{simpanan}_1=0$) atau $T+S=10+N$ (maka $\text{simpanan}_1=1$).</li>
+                <li>Asumsikan $\text{simpanan}_1=0$. Maka $U=0$. Digit yang terpakai: F=1, I=5, U=0. Kita perlu T,S,N dari sisa digit, di mana $T+S=N$. Contohnya, $T=2, S=4 \implies N=6$. Semua digit (I=5, T=2, S=4, F=1, U=0, N=6) unik.</li>
+                <li>Kita periksa solusi ini: $52+54=106$. Ini cocok dengan $FUN=106$. Benar.</li>
+                </ol><div class="final-answer">Answer: I=5, T=2, S=4, U=0, N=6 (other solutions exist). / Jawaban: I=5, T=2, S=4, U=0, N=6 (solusi lain ada).</div></div>
+                <div class="item-container"><p><strong>Solution Number 10:</strong></p><div class="concept"><p><strong>Concept:</strong> By expanding the numbers algebraically, we can find a simple relationship between the sum of the digits.<br/><br/><strong>Konsep:</strong> Dengan menjabarkan bilangan secara aljabar, kita bisa menemukan hubungan sederhana antara jumlah digit-digitnya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The equation is $ABC + BCA + CAB = 777$.</li><li>Expand each number: $(100A+10B+C) + (100B+10C+A) + (100C+10A+B) = 777$.</li><li>Group like terms: $(100A+A+10A) + (10B+100B+B) + (C+10C+100C) = 777$.</li><li>Simplify: $111A + 111B + 111C = 777$.</li><li>Factor out 111: $111(A+B+C) = 777$.</li><li>Divide by 111: $A+B+C = 7$.</li><li>We need three distinct non-zero digits that sum to 7. The only possible set is {1, 2, 4}.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Persamaannya adalah $ABC + BCA + CAB = 777$.</li><li>Jabarkan setiap bilangan: $(100A+10B+C) + (100B+10C+A) + (100C+10A+B) = 777$.</li><li>Kelompokkan suku sejenis: $(100A+A+10A) + (10B+100B+B) + (C+10C+100C) = 777$.</li><li>Sederhanakan: $111A + 111B + 111C = 777$.</li><li>Faktorkan 111: $111(A+B+C) = 777$.</li><li>Bagi dengan 111: $A+B+C = 7$.</li><li>Kita perlu tiga digit berbeda bukan nol yang jumlahnya 7. Satu-satunya kombinasi adalah {1, 2, 4}.</li></ol><div class="final-answer">Answer: The digits are 1, 2, and 4. / Jawaban: Digit-digitnya adalah 1, 2, dan 4.</div></div>
+                <div class="item-container"><p><strong>Solution Number 11:</strong></p><div class="concept"><p><strong>Concept:</strong> Find factor triples of 30 and check which one has the correct sum.<br/><br/><strong>Konsep:</strong> Cari tiga bilangan faktor dari 30 dan periksa mana yang jumlahnya benar.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We need to find three different numbers A, B, C where $A \times B \times C = 30$.</li><li>List the possible combinations of three different factors:
+    <ul>
+        <li>$1 \times 2 \times 15 = 30$. Sum: $1+2+15=18$. (Incorrect sum)</li>
+        <li>$1 \times 3 \times 10 = 30$. Sum: $1+3+10=14$. (Incorrect sum)</li>
+        <li>$1 \times 5 \times 6 = 30$. Sum: $1+5+6=12$. (Incorrect sum)</li>
+        <li>$2 \times 3 \times 5 = 30$. Sum: $2+3+5=10$. (Correct sum)</li>
+    </ul>
+</li>
+<li>The three numbers are 2, 3, and 5.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Kita perlu mencari tiga bilangan berbeda A, B, C di mana $A \times B \times C = 30$.</li><li>Daftar kombinasi tiga faktor yang mungkin:
+    <ul>
+        <li>$1 \times 2 \times 15 = 30$. Jumlah: $1+2+15=18$. (Jumlah salah)</li>
+        <li>$1 \times 3 \times 10 = 30$. Jumlah: $1+3+10=14$. (Jumlah salah)</li>
+        <li>$1 \times 5 \times 6 = 30$. Jumlah: $1+5+6=12$. (Jumlah salah)</li>
+        <li>$2 \times 3 \times 5 = 30$. Jumlah: $2+3+5=10$. (Jumlah benar)</li>
+    </ul>
+</li>
+<li>Ketiga bilangan tersebut adalah 2, 3, dan 5.</li></ol><div class="final-answer">Answer: 2, 3, 5. / Jawaban: 2, 3, 5.</div></div>
+                <div class="item-container"><p><strong>Solution Number 12:</strong></p><div class="concept"><p><strong>Concept:</strong> Use algebraic representation to simplify the problem.<br/><br/><strong>Konsep:</strong> Gunakan representasi aljabar untuk menyederhanakan masalah.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The equation is $ABC - BC = 200$.</li>
+                <li>Algebraically, this is $(100A + 10B + C) - (10B + C) = 200$.</li>
+                <li>The terms $10B$ and $C$ cancel out: $100A = 200$.</li>
+                <li>Solving for A, we get $A=2$.</li>
+                <li>The problem states B and C are distinct, not equal to A (so not 2), and $B \ne 0$.</li>
+                <li>We can choose any digits for B and C that fit these rules. For example, let B=1 and C=3. They are distinct, not equal to 2, and B is not 0.</li>
+                <li>Check: $A=2, B=1, C=3$. The subtraction is $213 - 13 = 200$. This works.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Persamaannya adalah $ABC - BC = 200$.</li>
+                <li>Secara aljabar, ini adalah $(100A + 10B + C) - (10B + C) = 200$.</li>
+                <li>Suku $10B$ dan $C$ saling menghilangkan: $100A = 200$.</li>
+                <li>Menyelesaikan untuk A, kita dapatkan $A=2$.</li>
+                <li>Soal menyatakan B dan C berbeda, tidak sama dengan A (jadi bukan 2), dan $B \ne 0$.</li>
+                <li>Kita bisa memilih digit apa saja untuk B dan C yang memenuhi aturan ini. Contohnya, B=1 dan C=3. Keduanya berbeda, tidak sama dengan 2, dan B bukan 0.</li>
+                <li>Periksa: $A=2, B=1, C=3$. Pengurangannya adalah $213 - 13 = 200$. Ini benar.</li>
+                </ol><div class="final-answer">Answer: A=2. One possible set for (B,C) is (1,3). / Jawaban: A=2. Salah satu set yang mungkin untuk (B,C) adalah (1,3).</div></div>
+                <div class="item-container"><p><strong>Solution Number 13:</strong></p><div class="concept"><p><strong>Concept:</strong> Analyze the multiplication, looking at the units digit to find possible values, then test them.<br/><br/><strong>Konsep:</strong> Analisis perkalian, lihat digit satuan untuk menemukan nilai yang mungkin, lalu uji nilai tersebut.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The puzzle is $ME \times 3 = SHE$.</li>
+                <li>The units digit: $3 \times E$ must end with the digit E. Let's test digits for E:
+                    <ul>
+                        <li>$3 \times 0 = 0$. So E could be 0.</li>
+                        <li>$3 \times 1 = 3$.</li>
+                        <li>$3 \times 5 = 15$. This ends in 5. So E could be 5.</li>
+                        <li>No other digit works.</li>
+                    </ul>
+                </li>
+                <li>Case 1: E = 0. The puzzle is $M0 \times 3 = SH0$. This is $10M \times 3 = 100S+10H$. So $30M=100S+10H \implies 3M=10S+H$. Since $S$ is a leading digit, $S \ge 1$. $10S+H$ is a 2-digit number.
+                Let's test M. If M=4, $3 \times 4 = 12$. So $10S+H=12 \implies S=1, H=2$. The digits are M=4, E=0, S=1, H=2. All distinct. This is a valid solution. Check: $40 \times 3 = 120$.</li>
+                <li>Case 2: E = 5. The puzzle is $M5 \times 3 = SH5$.
+                Units: $3 \times 5 = 15$. We write down 5 and carry over 1.
+                Tens: $3 \times M + 1(\text{carry}) = SH$. If M=8, $3 \times 8 + 1 = 25$. So $S=2, H=5$. But E=5, so digits are not distinct. If M=9, $3 \times 9 + 1 = 28$. So $S=2, H=8$. Digits M=9, E=5, S=2, H=8 are distinct. This is a valid solution. Check: $95 \times 3 = 285$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Teka-tekinya adalah $ME \times 3 = SHE$.</li>
+                <li>Digit satuan: $3 \times E$ harus berakhiran dengan digit E. Mari kita uji:
+                    <ul>
+                        <li>$3 \times 0 = 0$. Jadi E bisa 0.</li>
+                        <li>$3 \times 5 = 15$. Berakhiran 5. Jadi E bisa 5.</li>
+                        <li>Tidak ada digit lain yang berhasil.</li>
+                    </ul>
+                </li>
+                <li>Kasus 1: E = 0. Teka-tekinya menjadi $M0 \times 3 = SH0$. Ini sama dengan $30M = 100S+10H$, atau $3M = 10S+H$.
+                Coba M=4, $3 \times 4 = 12$. Maka $10S+H=12 \implies S=1, H=2$. Digit-digitnya M=4, E=0, S=1, H=2 semuanya berbeda. Ini solusi yang valid. Periksa: $40 \times 3 = 120$.</li>
+                <li>Kasus 2: E = 5. Teka-tekinya menjadi $M5 \times 3 = SH5$.
+                Satuan: $3 \times 5 = 15$. Tulis 5, simpan 1.
+                Puluhan: $3 \times M + 1(\text{simpanan}) = SH$. Jika M=8, $3 \times 8 + 1 = 25$. Maka S=2, H=5. Tapi E=5, jadi digitnya tidak unik. Jika M=9, $3 \times 9 + 1 = 28$. Maka S=2, H=8. Digit M=9, E=5, S=2, H=8 unik. Ini solusi yang valid. Periksa: $95 \times 3 = 285$.</li>
+                </ol><div class="final-answer">Answer: Two solutions exist. (M=4,E=0,S=1,H=2) and (M=9,E=5,S=2,H=8). / Jawaban: Ada dua solusi.</div></div>
+                <div class="item-container"><p><strong>Solution Number 14:</strong></p><div class="concept"><p><strong>Concept:</strong> Solve the addition column by column from right to left.<br/><br/><strong>Konsep:</strong> Selesaikan penjumlahan per kolom dari kanan ke kiri.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The sum is $A4B + 3C2 = 888$.
+                 $$
+                  \begin{array}{@{}c@{\,}c@{\,}c}
+                   & A & 4 & B \\
+                   + & 3 & C & 2 \\
+                  \hline
+                   & 8 & 8 & 8
+                  \end{array}
+                  $$
+                </li>
+                <li>Ones column: $B+2=8$. This gives $B=6$.</li>
+                <li>Tens column: $4+C=8$. This gives $C=4$.</li>
+                <li>Hundreds column: $A+3=8$. This gives $A=5$.</li>
+                <li>The digits are A=5, B=6, C=4. They are all different as required.</li>
+                <li>The sum is $A+B+C = 5+6+4=15$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Penjumlahannya adalah $A4B + 3C2 = 888$.</li>
+                <li>Kolom satuan: $B+2=8$. Ini menghasilkan $B=6$.</li>
+                <li>Kolom puluhan: $4+C=8$. Ini menghasilkan $C=4$.</li>
+                <li>Kolom ratusan: $A+3=8$. Ini menghasilkan $A=5$.</li>
+                <li>Digitnya adalah A=5, B=6, C=4. Semuanya berbeda sesuai syarat.</li>
+                <li>Jumlahnya adalah $A+B+C = 5+6+4=15$.</li>
+                </ol><div class="final-answer">Answer: 15. / Jawaban: 15.</div></div>
+                <div class="item-container"><p><strong>Solution Number 15:</strong></p><div class="concept"><p><strong>Concept:</strong> Work through the addition logically, using the given value of D to constrain the possibilities.<br/><br/><strong>Konsep:</strong> Kerjakan penjumlahan secara logis, gunakan nilai D yang diberikan untuk membatasi kemungkinan.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>The sum is $AB + CA = DAE$. Given D=1, it becomes $AB + CA = 1AE$.
+                 $$
+                  \begin{array}{@{}c@{\,}c}
+                   & A & B \\
+                   + & C & A \\
+                  \hline
+                   1 & A & E
+                  \end{array}
+                  $$
+                </li>
+                <li>From the hundreds column, we see the result is 1, which must be a carry-over from the tens column.</li>
+                <li>Tens column: $A+C+\text{carry}_1 = 1A$. The number $1A$ is $10+A$. So, $A+C+\text{carry}_1 = 10+A$.</li>
+                <li>This simplifies to $C+\text{carry}_1 = 10$. Since C is a single digit, the only possibility is $C=9$ and the carry from the ones column ($\text{carry}_1$) must be 1.</li>
+                <li>Ones column: For $\text{carry}_1$ to be 1, the sum $B+A$ must be greater than or equal to 10. So $B+A = 10+E$.</li>
+                <li>We have D=1, C=9. We need to find A, B, E which are unique and not 1 or 9. Let's try a value for A (it can't be 1 or 9). Let's try A=2.</li>
+                <li>If A=2, the equation from the ones column is $B+2=10+E$. For this to work, B must be a large digit. Let's try B=8. Then $8+2=10$, so $10=10+E$, which means $E=0$.</li>
+                <li>The digits we found are A=2, B=8, C=9, D=1, E=0. All are unique. This is a valid solution.</li>
+                <li>Check: $28+92 = 120$. This matches $DAE = 120$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points">
+                <li>Penjumlahannya adalah $AB+CA=DAE$. Diketahui $D=1$, jadi $AB+CA=1AE$.</li>
+                <li>Dari kolom ratusan, hasilnya adalah 1, yang pastinya merupakan simpanan dari kolom puluhan.</li>
+                <li>Kolom puluhan: $A+C+\text{simpanan}_1 = 1A$. Bilangan $1A$ adalah $10+A$. Jadi, $A+C+\text{simpanan}_1 = 10+A$.</li>
+                <li>Ini disederhanakan menjadi $C+\text{simpanan}_1 = 10$. Karena C adalah satu digit, satu-satunya kemungkinan adalah $C=9$ dan simpanan dari kolom satuan ($\text{simpanan}_1$) harus 1.</li>
+                <li>Kolom satuan: Agar $\text{simpanan}_1$ bernilai 1, jumlah $B+A$ harus 10 atau lebih. Jadi $B+A = 10+E$.</li>
+                <li>Kita punya D=1, C=9. Kita perlu cari A, B, E yang unik dan bukan 1 atau 9. Coba nilai A=2.</li>
+                <li>Jika A=2, dari kolom satuan persamaannya menjadi $B+2=10+E$. B harus digit besar. Coba B=8. Maka $8+2=10$, jadi $10=10+E$, yang berarti $E=0$.</li>
+                <li>Digit yang kita temukan: A=2, B=8, C=9, D=1, E=0. Semuanya unik. Ini solusi yang valid.</li>
+                <li>Periksa: $28+92 = 120$. Ini cocok dengan $DAE = 120$.</li>
+                </ol><div class="final-answer">Answer: A=2, B=8, C=9, E=0. / Jawaban: A=2, B=8, C=9, E=0.</div></div>
+                
+                <h3 class="topic-title">Solutions for Part 2: Basic Combinatorics</h3>
+                <div class="item-container">
+                    <p><strong>Solution Number 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This uses the Fundamental Counting Principle (or Rule of Product). To find the total number of outcomes, multiply the number of choices for each independent event.<br/><br/><strong>Konsep:</strong> Soal ini menggunakan Prinsip Dasar Berhitung (Aturan Perkalian). Untuk menemukan jumlah total kemungkinan, kalikan jumlah pilihan untuk setiap kejadian yang independen.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Identify the choices: Choice 1 is picking a shirt. Choice 2 is picking pants.</li>
+                        <li>Count the options for each choice: There are 3 options for shirts and 2 options for pants.</li>
+                        <li>Multiply the number of options: Total outfits = (Number of shirts) $\times$ (Number of pants) = $3 \times 2 = 6$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Identifikasi pilihan: Pilihan 1 adalah memilih kemeja. Pilihan 2 adalah memilih celana.</li>
+                        <li>Hitung opsi untuk setiap pilihan: Ada 3 opsi untuk kemeja dan 2 opsi untuk celana.</li>
+                        <li>Kalikan jumlah opsi: Total setelan = (Jumlah kemeja) $\times$ (Jumlah celana) = $3 \times 2 = 6$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 6 outfits. / Jawaban: 6 setelan.</div>
+                </div>
+                <div class="item-container">
+                    <p><strong>Solution Number 2:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> This is another application of the Fundamental Counting Principle. The total number of routes is the product of the number of choices for each part of the journey.<br/><br/><strong>Konsep:</strong> Ini adalah aplikasi lain dari Prinsip Dasar Berhitung. Jumlah total rute adalah hasil perkalian dari jumlah pilihan untuk setiap bagian perjalanan.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>The journey has two parts: A to B, and B to C.</li>
+                        <li>Number of choices for the first part (A to B) = 4.</li>
+                        <li>Number of choices for the second part (B to C) = 3.</li>
+                        <li>Total routes = (Routes from A to B) $\times$ (Routes from B to C) = $4 \times 3 = 12$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Perjalanan ini memiliki dua bagian: A ke B, dan B ke C.</li>
+                        <li>Jumlah pilihan untuk bagian pertama (A ke B) = 4.</li>
+                        <li>Jumlah pilihan untuk bagian kedua (B ke C) = 3.</li>
+                        <li>Total rute = (Rute dari A ke B) $\times$ (Rute dari B ke C) = $4 \times 3 = 12$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 12 routes. / Jawaban: 12 rute.</div>
+                </div>
+                <div class="item-container"><p><strong>Solution Number 3:</strong></p><div class="concept"><p><strong>Concept:</strong> We use the filling slots method. Since repetition is not allowed, the number of choices decreases for each subsequent slot.<br/><br/><strong>Konsep:</strong> Kita gunakan metode pengisian slot. Karena pengulangan tidak diperbolehkan, jumlah pilihan berkurang untuk setiap slot berikutnya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We need to form a 2-digit number, so we have two slots: [Tens] [Ones].</li><li>For the 'Tens' slot, we have 3 choices (1, 2, or 3).</li><li>After choosing a digit for the tens place, there are only 2 digits left. So, for the 'Ones' slot, we have 2 choices.</li><li>Total numbers = (Choices for Tens) $\times$ (Choices for Ones) = $3 \times 2 = 6$.</li><li>The numbers are: 12, 13, 21, 23, 31, 32.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Kita perlu membentuk bilangan 2-angka, jadi kita punya dua slot: [Puluhan] [Satuan].</li><li>Untuk slot 'Puluhan', kita punya 3 pilihan (1, 2, atau 3).</li><li>Setelah memilih satu angka untuk puluhan, tersisa 2 angka. Jadi, untuk slot 'Satuan', kita punya 2 pilihan.</li><li>Total bilangan = (Pilihan untuk Puluhan) $\times$ (Pilihan untuk Satuan) = $3 \times 2 = 6$.</li><li>Bilangan-bilangan tersebut adalah: 12, 13, 21, 23, 31, 32.</li></ol><div class="final-answer">Answer: 6. / Jawaban: 6.</div></div>
+                <div class="item-container"><p><strong>Solution Number 4:</strong></p><div class="concept"><p><strong>Concept:</strong> We use the filling slots method. Since repetition is allowed, the number of choices remains the same for each slot.<br/><br/><strong>Konsep:</strong> Kita gunakan metode pengisian slot. Karena pengulangan diperbolehkan, jumlah pilihan tetap sama untuk setiap slot.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We have two slots: [Tens] [Ones].</li><li>For the 'Tens' slot, we have 3 choices (1, 2, or 3).</li><li>Since repetition is allowed, for the 'Ones' slot, we still have 3 choices.</li><li>Total numbers = (Choices for Tens) $\times$ (Choices for Ones) = $3 \times 3 = 9$.</li><li>The numbers are: 11, 12, 13, 21, 22, 23, 31, 32, 33.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Kita punya dua slot: [Puluhan] [Satuan].</li><li>Untuk slot 'Puluhan', kita punya 3 pilihan (1, 2, atau 3).</li><li>Karena pengulangan diizinkan, untuk slot 'Satuan', kita tetap punya 3 pilihan.</li><li>Total bilangan = (Pilihan untuk Puluhan) $\times$ (Pilihan untuk Satuan) = $3 \times 3 = 9$.</li><li>Bilangan-bilangan tersebut adalah: 11, 12, 13, 21, 22, 23, 31, 32, 33.</li></ol><div class="final-answer">Answer: 9. / Jawaban: 9.</div></div>
+                <div class="item-container"><p><strong>Solution Number 5:</strong></p><div class="concept"><p><strong>Concept:</strong> This is a permutation problem because the order matters (1st place is different from 2nd place). We can use the filling slots method.<br/><br/><strong>Konsep:</strong> Ini adalah masalah permutasi karena urutan itu penting (juara 1 berbeda dari juara 2). Kita bisa gunakan metode pengisian slot.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We have two positions to award: 1st place and 2nd place.</li><li>For 1st place, there are 5 possible runners.</li><li>Once 1st place is decided, there are 4 remaining runners for 2nd place.</li><li>Total ways = (Choices for 1st) $\times$ (Choices for 2nd) = $5 \times 4 = 20$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Ada dua posisi yang akan diberikan: juara 1 dan juara 2.</li><li>Untuk juara 1, ada 5 kemungkinan pelari.</li><li>Setelah juara 1 ditentukan, tersisa 4 pelari untuk posisi juara 2.</li><li>Total cara = (Pilihan untuk Juara 1) $\times$ (Pilihan untuk Juara 2) = $5 \times 4 = 20$.</li></ol><div class="final-answer">Answer: 20 ways. / Jawaban: 20 cara.</div></div>
+                <div class="item-container"><p><strong>Solution Number 6:</strong></p><div class="concept"><p><strong>Concept:</strong> Use the Fundamental Counting Principle for three independent choices.<br/><br/><strong>Konsep:</strong> Gunakan Prinsip Dasar Berhitung untuk tiga pilihan yang independen.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>There are 3 choices to make: appetizer, main course, and dessert.</li><li>Number of choices for appetizer = 4.</li>
+<li>Number of choices for main course = 5.</li>
+<li>Number of choices for dessert = 3.</li>
+<li>Total different meals = $4 \times 5 \times 3 = 60$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Ada 3 pilihan yang harus dibuat: makanan pembuka, hidangan utama, dan hidangan penutup.</li><li>Jumlah pilihan makanan pembuka = 4.</li>
+<li>Jumlah pilihan hidangan utama = 5.</li>
+<li>Jumlah pilihan hidangan penutup = 3.</li>
+<li>Total paket makan berbeda = $4 \times 5 \times 3 = 60$.</li></ol><div class="final-answer">Answer: 60 meals. / Jawaban: 60 paket makan.</div></div>
+                <div class="item-container"><p><strong>Solution Number 7:</strong></p><div class="concept"><p><strong>Concept:</strong> For a number to be even, its last digit (ones place) must be an even number. We fill the slots starting with the most restricted one.<br/><br/><strong>Konsep:</strong> Agar sebuah bilangan menjadi genap, digit terakhirnya (posisi satuan) harus angka genap. Kita isi slot dimulai dari yang paling terbatas.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We need a 3-digit number: [Hundreds] [Tens] [Ones].</li><li>The most restricted slot is 'Ones' because the number must be even. The even digits available are 2 and 8. So there are 2 choices for the ones place.</li>
+<li>For the 'Hundreds' slot, repetition is allowed, so we have 3 choices (2, 5, or 8).</li>
+<li>For the 'Tens' slot, we also have 3 choices.</li>
+<li>Total even numbers = (Choices for Hundreds) $\times$ (Choices for Tens) $\times$ (Choices for Ones) = $3 \times 3 \times 2 = 18$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Kita perlu bilangan 3-angka: [Ratusan] [Puluhan] [Satuan].</li>
+                <li>Slot yang paling terbatas adalah 'Satuan' karena bilangannya harus genap. Angka genap yang tersedia adalah 2 dan 8. Jadi ada 2 pilihan untuk posisi satuan.</li>
+                <li>Untuk slot 'Ratusan', pengulangan diizinkan, jadi kita punya 3 pilihan (2, 5, atau 8).</li>
+                <li>Untuk slot 'Puluhan', kita juga punya 3 pilihan.</li>
+                <li>Total bilangan genap = (Pilihan Ratusan) $\times$ (Pilihan Puluhan) $\times$ (Pilihan Satuan) = $3 \times 3 \times 2 = 18$.</li></ol><div class="final-answer">Answer: 18. / Jawaban: 18.</div></div>
+                <div class="item-container"><p><strong>Solution Number 8:</strong></p><div class="concept"><p><strong>Concept:</strong> For a number to be odd, its last digit must be an odd number. Repetition is not allowed, so choices decrease.<br/><br/><strong>Konsep:</strong> Agar sebuah bilangan ganjil, digit terakhirnya harus angka ganjil. Pengulangan tidak diizinkan, jadi pilihan berkurang.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We need a 3-digit number: [Hundreds] [Tens] [Ones]. No repetition.</li>
+<li>The 'Ones' slot is restricted. The only odd digit available is 5. So there is 1 choice for the ones place.</li>
+<li>For the 'Hundreds' slot, we have already used the digit 5. So there are 2 choices left (2 or 8).</li>
+<li>For the 'Tens' slot, we have used two digits. There is only 1 choice left.</li>
+<li>Total odd numbers = (Choices for Hundreds) $\times$ (Choices for Tens) $\times$ (Choices for Ones) = $2 \times 1 \times 1 = 2$.</li>
+<li>The two numbers are 285 and 825.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Kita perlu bilangan 3-angka: [Ratusan] [Puluhan] [Satuan]. Tanpa pengulangan.</li>
+                <li>Slot 'Satuan' terbatas. Satu-satunya digit ganjil yang tersedia adalah 5. Jadi ada 1 pilihan untuk posisi satuan.</li>
+                <li>Untuk slot 'Ratusan', kita sudah menggunakan angka 5. Jadi tersisa 2 pilihan (2 atau 8).</li>
+                <li>Untuk slot 'Puluhan', kita sudah menggunakan dua angka. Hanya tersisa 1 pilihan.</li>
+                <li>Total bilangan ganjil = (Pilihan Ratusan) $\times$ (Pilihan Puluhan) $\times$ (Pilihan Satuan) = $2 \times 1 \times 1 = 2$.</li>
+                <li>Kedua bilangan itu adalah 285 dan 825.</li></ol><div class="final-answer">Answer: 2. / Jawaban: 2.</div></div>
+                <div class="item-container"><p><strong>Solution Number 9:</strong></p><div class="concept"><p><strong>Concept:</strong> Order matters (president is different from vice-president), so this is a permutation.<br/><br/><strong>Konsep:</strong> Urutan penting (ketua berbeda dari wakil ketua), jadi ini adalah permutasi.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We are filling two positions: President and Vice-President.</li><li>For the President position, there are 10 choices.</li>
+<li>After a president is chosen, there are 9 students left. So, there are 9 choices for the Vice-President.</li>
+<li>Total ways = (Choices for President) $\times$ (Choices for Vice-President) = $10 \times 9 = 90$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Kita mengisi dua posisi: Ketua dan Wakil Ketua.</li>
+                <li>Untuk posisi Ketua, ada 10 pilihan.</li>
+                <li>Setelah ketua terpilih, tersisa 9 siswa. Jadi, ada 9 pilihan untuk Wakil Ketua.</li>
+                <li>Total cara = (Pilihan untuk Ketua) $\times$ (Pilihan untuk Wakil Ketua) = $10 \times 9 = 90$.</li></ol><div class="final-answer">Answer: 90 ways. / Jawaban: 90 cara.</div></div>
+                <div class="item-container"><p><strong>Solution Number 10:</strong></p><div class="concept"><p><strong>Concept:</strong> Arranging items is a permutation. The number of ways to arrange 'n' distinct items is $n!$ (n factorial), which is $n \times (n-1) \times \dots \times 1$.<br/><br/><strong>Konsep:</strong> Menyusun benda adalah permutasi. Jumlah cara untuk menyusun 'n' benda yang berbeda adalah $n!$ (n faktorial), yaitu $n \times (n-1) \times \dots \times 1$.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The word 'CAT' has 3 distinct letters.</li><li>For the first position, we have 3 choices.</li>
+<li>For the second position, we have 2 choices left.</li>
+<li>For the third position, we have 1 choice left.</li>
+<li>Total arrangements = $3 \times 2 \times 1 = 6$.</li>
+<li>The arrangements are: CAT, CTA, ACT, ATC, TAC, TCA.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Kata 'CAT' memiliki 3 huruf yang berbeda.</li>
+                <li>Untuk posisi pertama, kita punya 3 pilihan.</li>
+                <li>Untuk posisi kedua, kita punya sisa 2 pilihan.</li>
+                <li>Untuk posisi ketiga, kita punya sisa 1 pilihan.</li>
+                <li>Total susunan = $3 \times 2 \times 1 = 6$.</li>
+                <li>Susunannya adalah: CAT, CTA, ACT, ATC, TAC, TCA.</li></ol><div class="final-answer">Answer: 6 ways. / Jawaban: 6 cara.</div></div>
+                <div class="item-container"><p><strong>Solution Number 11:</strong></p><div class="concept"><p><strong>Concept:</strong> Use the filling slots method. The number of choices for a slot is dependent on the choice made for the adjacent slot.<br/><br/><strong>Konsep:</strong> Gunakan metode pengisian slot. Jumlah pilihan untuk sebuah slot bergantung pada pilihan yang dibuat untuk slot yang bersebelahan.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>There are 3 stripes (slots) to color: [Stripe 1], [Stripe 2], [Stripe 3].</li>
+                <li>For Stripe 1, there are 5 color choices.</li>
+                <li>For Stripe 2, the color must be different from Stripe 1. So, there are 4 choices.</li>
+                <li>For Stripe 3, the color must be different from Stripe 2. It can be the same as Stripe 1. So, there are 4 choices.</li>
+                <li>Total ways = (Choices for S1) $\times$ (Choices for S2) $\times$ (Choices for S3) = $5 \times 4 \times 4 = 80$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Ada 3 garis (slot) untuk diwarnai: [Garis 1], [Garis 2], [Garis 3].</li>
+                <li>Untuk Garis 1, ada 5 pilihan warna.</li>
+                <li>Untuk Garis 2, warnanya harus berbeda dari Garis 1. Jadi, ada 4 pilihan.</li>
+                <li>Untuk Garis 3, warnanya harus berbeda dari Garis 2, tapi boleh sama dengan Garis 1. Jadi, ada 4 pilihan.</li>
+                <li>Total cara = (Pilihan G1) $\times$ (Pilihan G2) $\times$ (Pilihan G3) = $5 \times 4 \times 4 = 80$.</li></ol><div class="final-answer">Answer: 80 flags. / Jawaban: 80 bendera.</div></div>
+                <div class="item-container"><p><strong>Solution Number 12:</strong></p><div class="concept"><p><strong>Concept:</strong> This is a combination problem because the order of choosing friends does not matter (choosing Ali then Budi is the same as Budi then Ali). For small numbers, listing them out is the easiest way.<br/><br/><strong>Konsep:</strong> Ini adalah masalah kombinasi karena urutan pemilihan teman tidak penting (memilih Ali lalu Budi sama dengan Budi lalu Ali). Untuk angka kecil, cara termudah adalah dengan mendaftarnya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>Let the friends be A, B, C, D.</li>
+                <li>List all possible pairs systematically:
+                    <ul>
+                        <li>Pairs with Ali: (Ali, Budi), (Ali, Cici), (Ali, Dedi) -- 3 ways.</li>
+                        <li>Pairs with Budi (without Ali, as it's already counted): (Budi, Cici), (Budi, Dedi) -- 2 ways.</li>
+                        <li>Pairs with Cici (without Ali or Budi): (Cici, Dedi) -- 1 way.</li>
+                    </ul>
+                </li>
+                <li>Total number of groups = $3 + 2 + 1 = 6$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Misalkan teman-temannya adalah A, B, C, D.</li>
+                <li>Daftar semua pasangan yang mungkin secara sistematis:
+                    <ul>
+                        <li>Pasangan dengan Ali: (Ali, Budi), (Ali, Cici), (Ali, Dedi) -- 3 cara.</li>
+                        <li>Pasangan dengan Budi (tanpa Ali, karena sudah dihitung): (Budi, Cici), (Budi, Dedi) -- 2 cara.</li>
+                        <li>Pasangan dengan Cici (tanpa Ali atau Budi): (Cici, Dedi) -- 1 cara.</li>
+                    </ul>
+                </li>
+                <li>Total kelompok = $3 + 2 + 1 = 6$.</li></ol><div class="final-answer">Answer: 6 ways. / Jawaban: 6 cara.</div></div>
+                <div class="item-container"><p><strong>Solution Number 13:</strong></p><div class="concept"><p><strong>Concept:</strong> The number of shortest paths on a grid can be found by summing the number of ways to reach the adjacent nodes (Pascal's Triangle method). A shortest path will only involve moving right (R) and down (D).<br/><br/><strong>Konsep:</strong> Jumlah jalur terpendek pada sebuah grid dapat ditemukan dengan menjumlahkan cara untuk mencapai titik-titik yang bersebelahan (metode Segitiga Pascal). Jalur terpendek hanya akan melibatkan gerakan ke kanan (R) dan ke bawah (D).</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>To get from A (top-left) to B (bottom-right) on a 2x2 grid, you must make 2 Right moves and 2 Down moves.</li>
+                <li>We can list the combinations of these moves: RRDD, RDRD, RDDR, DRRD, DRDR, DDRR. There are 6 paths.</li>
+                <li>Alternatively, using the node method:
+                    <ul>
+                        <li>Label the starting point A with a '1'.</li>
+                        <li>The number on any corner (node) is the sum of the numbers on the nodes immediately above it and to its left.</li>
+                        <li>The node to the right of A is 1. The node below A is 1.</li>
+                        <li>The center node of the grid is $1+1=2$.</li>
+                        <li>The node on the right edge is $1+2=3$.</li>
+                        <li>The node on the bottom edge is $1+2=3$.</li>
+                        <li>The final corner B is the sum of the node to its left (3) and the node above it (3). So, $3+3=6$.</li>
+                    </ul>
+                </li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Untuk sampai dari A (kiri atas) ke B (kanan bawah) pada grid 2x2, Anda harus melakukan 2 gerakan ke Kanan dan 2 gerakan ke Bawah.</li>
+                <li>Kita bisa mendaftar kombinasi gerakan ini: RRDD, RDRD, RDDR, DRRD, DRDR, DDRR. Ada 6 jalur.</li>
+                <li>Cara alternatif, menggunakan metode titik (node):
+                    <ul>
+                        <li>Beri label titik awal A dengan angka '1'.</li>
+                        <li>Angka pada setiap sudut (titik) adalah jumlah angka dari titik di atas dan di kirinya.</li>
+                        <li>Titik di kanan A adalah 1. Titik di bawah A adalah 1.</li>
+                        <li>Titik di tengah grid adalah $1+1=2$.</li>
+                        <li>Titik di tepi kanan adalah $1+2=3$.</li>
+                        <li>Titik di tepi bawah adalah $1+2=3$.</li>
+                        <li>Titik akhir B adalah jumlah dari titik di kirinya (3) dan titik di atasnya (3). Jadi, $3+3=6$.</li>
+                    </ul>
+                </li></ol><div class="final-answer">Answer: 6 paths. / Jawaban: 6 jalur.</div></div>
+                <div class="item-container"><p><strong>Solution Number 14:</strong></p><div class="concept"><p><strong>Concept:</strong> Each toss is an independent event with two possible outcomes. We use the Fundamental Counting Principle.<br/><br/><strong>Konsep:</strong> Setiap lemparan adalah kejadian independen dengan dua kemungkinan hasil. Kita gunakan Prinsip Dasar Berhitung.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points">
+                <li>There are 3 events (tosses).</li>
+                <li>For the 1st toss, there are 2 outcomes (H or T).</li>
+                <li>For the 2nd toss, there are 2 outcomes.</li>
+                <li>For the 3rd toss, there are 2 outcomes.</li>
+                <li>Total sequences = (Outcomes for Toss 1) $\times$ (Outcomes for Toss 2) $\times$ (Outcomes for Toss 3) = $2 \times 2 \times 2 = 8$.</li>
+                </ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points">
+                <li>Ada 3 kejadian (lemparan).</li>
+                <li>Untuk lemparan pertama, ada 2 hasil (Gambar atau Angka).</li>
+                <li>Untuk lemparan kedua, ada 2 hasil.</li>
+                <li>Untuk lemparan ketiga, ada 2 hasil.</li>
+                <li>Total urutan = (Hasil Lemparan 1) $\times$ (Hasil Lemparan 2) $\times$ (Hasil Lemparan 3) = $2 \times 2 \times 2 = 8$.</li></ol><div class="final-answer">Answer: 8 sequences. / Jawaban: 8 urutan.</div></div>
+                <div class="item-container"><p><strong>Solution Number 15:</strong></p><div class="concept"><p><strong>Concept:</strong> Use the Fundamental Counting Principle. We have two independent choices to make: one for the letter and one for the digit.<br/><br/><strong>Konsep:</strong> Gunakan Prinsip Dasar Berhitung. Kita memiliki dua pilihan independen yang harus dibuat: satu untuk huruf dan satu untuk angka.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We need to fill two slots: [Letter] [Digit].</li><li>Number of options for the 'Letter' slot = 3 (A, B, or C).</li><li>Number of options for the 'Digit' slot = 4 (1, 2, 3, or 4).</li><li>Total possible codes = (Number of letter choices) $\times$ (Number of digit choices) = $3 \times 4 = 12$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Kita perlu mengisi dua slot: [Huruf] [Angka].</li><li>Jumlah pilihan untuk slot 'Huruf' = 3 (A, B, atau C).</li><li>Jumlah pilihan untuk slot 'Angka' = 4 (1, 2, 3, atau 4).</li><li>Total kode yang mungkin = (Jumlah pilihan huruf) $\times$ (Jumlah pilihan angka) = $3 \times 4 = 12$.</li></ol><div class="final-answer">Answer: 12 codes. / Jawaban: 12 kode.</div></div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
