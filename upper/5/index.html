@@ -1,992 +1,2394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Competition Practice - Geometry & Combinatorics</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Geometry & Combinatorics</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Konfigurasi MathJax untuk render LaTeX -->
     <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
     </script>
-    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-        .content-card {
-            background-color: white;
-            border-radius: 0.75rem;
-            padding: 1.5rem 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
-        .section-title {
-            font-size: 1.875rem; /* 30px */
-            font-weight: 700;
-            color: #3730a3; /* indigo-800 */
-            border-bottom: 3px solid #6366f1; /* indigo-500 */
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .topic-title {
-            font-size: 1.5rem; /* 24px */
-            font-weight: 600;
-            color: #4338ca; /* indigo-700 */
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.25rem;
-            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
-        }
-        .item-container {
-            margin-bottom: 1.75rem;
-            padding-bottom: 1.75rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .item-container:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        p {
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-        .final-answer {
-            font-weight: 700;
-            color: #166534; /* green-800 */
-            background-color: #dcfce7; /* green-100 */
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            display: inline-block;
-            margin-top: 1.5rem;
-        }
-        .concept {
-            background-color: #eef2ff; /* indigo-50 */
-            border-left: 4px solid #4f46e5; /* indigo-600 */
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0.25rem;
-        }
-        .image-desc {
-            background-color: #f9fafb; /* gray-50 */
-            border: 1px dashed #d1d5db; /* gray-300 */
-            padding: 0.75rem;
-            margin-top: 0.75rem;
-            border-radius: 0.25rem;
-            font-style: italic;
-            color: #4b5563; /* gray-600 */
-        }
-        .solution-wrapper strong {
-            display: block;
-            margin-bottom: 0.75rem;
-            color: #1f2937; /* gray-800 */
-            font-weight: 600;
-        }
-        .solution-step {
-            margin-bottom: 0.75rem;
-        }
-        .solution-step p {
-            margin: 0.2rem 0;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-        .solution-step p:last-child {
-            padding-left: 1.5rem; /* Indent calculation */
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .image-desc {
+        background-color: #f9fafb; /* gray-50 */
+        border: 1px dashed #d1d5db; /* gray-300 */
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+        border-radius: 0.25rem;
+        font-style: italic;
+        color: #4b5563; /* gray-600 */
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step p {
+        margin: 0.2rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .solution-step p:last-child {
+        padding-left: 1.5rem; /* Indent calculation */
+      }
     </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
-
+  </head>
+  <body class="bg-gray-100 text-gray-800">
     <div class="container mx-auto p-4 md:p-8">
-        <div class="text-center mb-8">
-            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
-        </div>
-        <header class="text-center mb-10">
-            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet</h1>
-            <p class="text-gray-600 mt-2">Grade 5 - 6 | Plane Geometry & Advanced Combinatorics</p>
-        </header>
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 5
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 5 - 6 | Plane Geometry & Advanced Combinatorics
+        </p>
+      </header>
 
-        <main>
-            <!-- Bagian Soal -->
-            <section class="content-card">
-                <h2 class="section-title">Competition Problems</h2>
-                
-                <h3 class="topic-title">Part 1: Plane Geometry</h3>
-                <div class="item-container"><p><strong>1.</strong> The figure below is made up of a square and a trapezoid. The area of the square is $81 \text{ cm}^2$. Find the area of the whole figure.<br/><br/>Gambar di bawah ini terdiri dari sebuah persegi dan sebuah trapesium. Luas persegi adalah $81 \text{ cm}^2$. Tentukan luas seluruh bangun.</p>
-                <div class="image-desc"><strong>Image Description:</strong> A square is shown. Attached to its right side is a trapezoid. The top side of the square and the top base of the trapezoid form a single straight line. The top base of the trapezoid is 7 cm. The bottom base of the trapezoid is 12 cm. The height of the trapezoid is the same as the side of the square.</div></div>
-                <div class="item-container"><p><strong>2.</strong> A rectangular park measuring 45 m by 30 m has a path of uniform width 2.5 m built all around the inside of the park. Find the area of the path.<br/><br/>Sebuah taman berbentuk persegi panjang berukuran 45 m x 30 m memiliki jalan setapak dengan lebar seragam 2,5 m yang dibangun di sekeliling bagian dalam taman. Tentukan luas jalan setapak tersebut.</p></div>
-                <div class="item-container"><p><strong>3.</strong> Two overlapping squares have areas of $144 \text{ cm}^2$ and $100 \text{ cm}^2$. If the overlapping area is $24 \text{ cm}^2$, find the area of the non-overlapping region of the figure.<br/><br/>Dua persegi yang tumpang tindih memiliki luas $144 \text{ cm}^2$ dan $100 \text{ cm}^2$. Jika luas daerah yang tumpang tindih adalah $24 \text{ cm}^2$, tentukan luas daerah yang tidak tumpang tindih dari bangun tersebut.</p></div>
-                <div class="item-container"><p><strong>4.</strong> A kite with diagonals of 16 cm and 30 cm is cut from a rectangular piece of paper measuring 20 cm by 35 cm. What is the area of the paper that is left?<br/><br/>Sebuah layang-layang dengan diagonal 16 cm dan 30 cm dipotong dari selembar kertas persegi panjang berukuran 20 cm x 35 cm. Berapa sisa luas kertas tersebut?</p></div>
-                <div class="item-container"><p><strong>5.</strong> An isosceles trapezoid has a perimeter of 56 cm. The length of its shorter parallel side is 10 cm, and each of the non-parallel sides is 13 cm. Find the area of the trapezoid.<br/><br/>Sebuah trapesium sama kaki memiliki keliling 56 cm. Panjang sisi sejajar yang lebih pendek adalah 10 cm, dan panjang setiap sisi yang tidak sejajar adalah 13 cm. Tentukan luas trapesium tersebut.</p></div>
-                <div class="item-container"><p><strong>6.</strong> In the figure, ABCD is a rectangle. The area of the shaded triangle ADG is $36 \text{ cm}^2$. Given AD = 12 cm, find the length of the side of the square DEFG.<br/><br/>Pada gambar, ABCD adalah persegi panjang. Luas segitiga yang diarsir ADG adalah $36 \text{ cm}^2$. Diketahui AD = 12 cm, tentukan panjang sisi dari persegi DEFG.</p>
-                <div class="image-desc"><strong>Image Description:</strong> A rectangle ABCD. Point E is on side CD. A square DEFG is drawn such that G is on side BC. The shaded region is the triangle ADG. Length AD = 12 cm.</div></div>
-                <div class="item-container"><p><strong>7.</strong> The area of a kite is $96 \text{ cm}^2$. If one of its diagonals is 12 cm, what is the length of the other diagonal?<br/><br/>Luas sebuah layang-layang adalah $96 \text{ cm}^2$. Jika salah satu diagonalnya adalah 12 cm, berapakah panjang diagonal lainnya?</p></div>
-                <div class="item-container"><p><strong>8.</strong> A wire is bent to form a square with an area of $121 \text{ cm}^2$. The same wire is then bent to form a rectangle with a width of 8 cm. What is the area of the rectangle?<br/><br/>Sebuah kawat dibengkokkan membentuk persegi dengan luas $121 \text{ cm}^2$. Kawat yang sama kemudian dibengkokkan untuk membentuk persegi panjang dengan lebar 8 cm. Berapa luas persegi panjang tersebut?</p></div>
-                <div class="item-container"><p><strong>9.</strong> The figure is composed of four identical right-angled trapezoids. Find the area of the shaded central square.<br/><br/>Bangun di bawah ini tersusun dari empat trapesium siku-siku identik. Tentukan luas persegi di bagian tengah yang diarsir.</p>
-                <div class="image-desc"><strong>Image Description:</strong> Four identical right-angled trapezoids are arranged to form a large square with a smaller square hole in the center. The longer parallel side of a trapezoid is 10 cm, the shorter parallel side is 6 cm, and its height is also 6 cm.</div></div>
-                <div class="item-container"><p><strong>10.</strong> In a rectangle ABCD, point M is the midpoint of side AB. What is the area of triangle DMC if the area of the rectangle is 120 cm²?<br/><br/>Pada sebuah persegi panjang ABCD, titik M adalah titik tengah sisi AB. Berapakah luas segitiga DMC jika luas persegi panjang tersebut adalah 120 cm²?</p></div>
-                <div class="item-container"><p><strong>11.</strong> The perimeter of an irregular figure made of straight lines is 68 cm. If all side lengths are integers and form an arithmetic progression with a common difference of 1, and the shortest side is 5 cm, how many sides does the figure have?<br/><br/>Keliling sebuah bangun tidak beraturan yang terbuat dari garis lurus adalah 68 cm. Jika semua panjang sisinya adalah bilangan bulat dan membentuk barisan aritmatika dengan beda 1, dan sisi terpendeknya 5 cm, berapa banyak sisi yang dimiliki bangun tersebut?</p></div>
-                <div class="item-container"><p><strong>12.</strong> A rectangular painting has dimensions 30 cm by 20 cm. It is surrounded by a wooden frame of uniform width. If the area of the frame is equal to the area of the painting, find the width of the frame.<br/><br/>Sebuah lukisan persegi panjang berukuran 30 cm x 20 cm. Lukisan itu dikelilingi oleh bingkai kayu dengan lebar yang seragam. Jika luas bingkai sama dengan luas lukisan, tentukan lebar bingkai tersebut.</p></div>
-                <div class="item-container"><p><strong>13.</strong> Find the area of the shaded region. The outer shape is a trapezoid, and a kite is cut out from it.<br/><br/>Tentukan luas daerah yang diarsir. Bangun luar adalah trapesium, dan sebuah layang-layang dipotong darinya.</p>
-                <div class="image-desc"><strong>Image Description:</strong> A trapezoid with parallel sides of 20 cm and 30 cm, and a height of 15 cm. A kite is drawn inside. The vertices of the kite are the two endpoints of the shorter parallel side (20 cm) and the midpoints of the two non-parallel sides.</div></div>
-                <div class="item-container"><p><strong>14.</strong> The figure shows a rectangle divided into 4 parts. The areas of three parts are given. Find the area of the fourth part (X).<br/><br/>Gambar menunjukkan sebuah persegi panjang yang dibagi menjadi 4 bagian. Luas tiga bagian diketahui. Tentukan luas bagian keempat (X).</p>
-                <div class="image-desc"><strong>Image Description:</strong> A rectangle is divided into four smaller rectangles by two perpendicular lines. The top-left area is 18 cm², the top-right is 30 cm², and the bottom-left is 27 cm². The bottom-right area is labeled X.</div></div>
-                <div class="item-container"><p><strong>15.</strong> Find the perimeter of the figure below, which is made up of identical squares of side 5 cm.<br/><br/>Tentukan keliling bangun di bawah ini, yang terdiri dari persegi-persegi identik dengan sisi 5 cm.</p>
-                <div class="image-desc"><strong>Image Description:</strong> A shape made of 6 squares arranged in a 'plus' sign or cross shape. One square is in the center, with four other squares attached to its four sides. A sixth square is attached to the top of the top square.</div></div>
-                
-                <h3 class="topic-title">Part 2: Advanced Combinatorics</h3>
-                <div class="item-container"><p><strong>16.</strong> There are 5 different math books and 3 different science books. In how many ways can you arrange these books on a shelf if all the math books must be kept together?<br/><br/>Terdapat 5 buku matematika yang berbeda dan 3 buku sains yang berbeda. Berapa banyak cara menyusun buku-buku ini di rak jika semua buku matematika harus diletakkan bersamaan?</p></div>
-                <div class="item-container"><p><strong>17.</strong> From a group of 8 students, a committee of 3 is to be chosen. How many different committees can be formed?<br/><br/>Dari sekelompok 8 siswa, akan dipilih sebuah panitia yang terdiri dari 3 orang. Berapa banyak panitia berbeda yang dapat dibentuk?</p></div>
-                <div class="item-container"><p><strong>18.</strong> How many 4-digit numbers can be formed using the digits 1, 2, 3, 4, and 5 without repetition?<br/><br/>Berapa banyak bilangan 4 angka yang dapat dibentuk menggunakan angka 1, 2, 3, 4, dan 5 tanpa pengulangan?</p></div>
-                <div class="item-container"><p><strong>19.</strong> A team of 5 members is to be selected from 6 boys and 4 girls. How many ways can the team be selected if it must consist of 3 boys and 2 girls?<br/><br/>Sebuah tim yang terdiri dari 5 anggota akan dipilih dari 6 anak laki-laki dan 4 anak perempuan. Berapa banyak cara tim dapat dipilih jika harus terdiri dari 3 anak laki-laki dan 2 anak perempuan?</p></div>
-                <div class="item-container"><p><strong>20.</strong> In how many ways can the letters of the word 'SUCCESS' be arranged?<br/><br/>Dalam berapa banyak cara huruf-huruf dari kata 'SUCCESS' dapat disusun?</p></div>
-                <div class="item-container"><p><strong>21.</strong> There are 6 points on a circle. How many straight lines can be drawn by joining any two of these points?<br/><br/>Ada 6 titik pada sebuah lingkaran. Berapa banyak garis lurus yang dapat digambar dengan menghubungkan dua titik mana pun?</p></div>
-                <div class="item-container"><p><strong>22.</strong> A staircase has 10 steps. You can climb 1 or 2 steps at a time. In how many different ways can you climb the stairs?<br/><br/>Sebuah tangga memiliki 10 anak tangga. Anda dapat menaiki 1 atau 2 anak tangga sekaligus. Dalam berapa banyak cara berbeda Anda dapat menaiki tangga tersebut?</p></div>
-                <div class="item-container"><p><strong>23.</strong> How many three-digit even numbers can be formed from the digits 0, 1, 2, 3, 4, 5 if repetition of digits is not allowed?<br/><br/>Berapa banyak bilangan genap tiga angka yang dapat dibentuk dari angka 0, 1, 2, 3, 4, 5 jika pengulangan angka tidak diperbolehkan?</p></div>
-                <div class="item-container"><p><strong>24.</strong> A three-digit number is called 'ascending' if its digits are in strictly increasing order from left to right (e.g., 258). How many three-digit ascending numbers are there? (The digit 0 cannot be the first digit).<br/><br/>Sebuah bilangan tiga angka disebut 'naik' jika angka-angkanya dalam urutan menaik dari kiri ke kanan (contoh: 258). Ada berapa banyak bilangan tiga angka 'naik' yang ada? (Angka 0 tidak boleh menjadi digit pertama).</p></div>
-                <div class="item-container"><p><strong>25.</strong> In how many ways can 5 identical balls be distributed into 3 distinct boxes where empty boxes are allowed?<br/><br/>Dengan berapa cara 5 bola identik dapat didistribusikan ke dalam 3 kotak yang berbeda jika kotak boleh kosong?</p></div>
-                <div class="item-container"><p><strong>26.</strong> How many different signals can be made using 4 flags of different colors, if each signal consists of the use of 2 flags, one below the other?<br/><br/>Berapa banyak sinyal berbeda yang dapat dibuat menggunakan 4 bendera dengan warna berbeda, jika setiap sinyal terdiri dari penggunaan 2 bendera, satu di bawah yang lain?</p></div>
-                <div class="item-container"><p><strong>27.</strong> From 7 consonants and 4 vowels, how many 5-letter arrangements consisting of 3 consonants and 2 vowels can be formed?<br/><br/>Dari 7 konsonan dan 4 vokal, berapa banyak susunan 5 huruf yang terdiri dari 3 konsonan dan 2 vokal yang dapat dibentuk?</p></div>
-                <div class="item-container"><p><strong>28.</strong> Find the number of ways to get from point A to point B by only moving right or down.<br/><br/>Tentukan jumlah cara untuk pergi dari titik A ke titik B dengan hanya bergerak ke kanan atau ke bawah.</p>
-                <div class="image-desc"><strong>Image Description:</strong> A 4x3 grid. Point A is at the top-left corner, and point B is at the bottom-right corner. This requires 4 moves to the right and 3 moves down.</div></div>
-                <div class="item-container"><p><strong>29.</strong> How many diagonals does a decagon (a polygon with 10 sides) have?<br/><br/>Berapa banyak diagonal yang dimiliki dekagon (poligon dengan 10 sisi)?</p></div>
-                <div class="item-container"><p><strong>30.</strong> Five friends are sitting in a row for a photograph. In how many ways can they be arranged if two particular friends, A and B, insist on sitting together?<br/><br/>Lima orang teman duduk berjajar untuk difoto. Dalam berapa banyak cara mereka dapat diatur jika dua teman tertentu, A dan B, bersikeras untuk duduk bersama?</p></div>
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Competition Problems</h2>
 
-            </section>
+          <h3 class="topic-title">Part 1: Plane Geometry</h3>
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> The figure is made up of a square and a
+              trapezoid. The area of the square is $81 \text{ cm}^2$. The top
+              base of the trapezoid is 7 cm and the bottom base is 12 cm. Find
+              the area of the whole figure.<br /><br />Bangun ini terdiri dari
+              sebuah persegi dan sebuah trapesium. Luas persegi adalah $81
+              \text{ cm}^2$. Sisi atas trapesium adalah 7 cm dan sisi bawahnya
+              12 cm. Tentukan luas seluruh bangun.
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_hyyku7_2801.png"
+              class="mx-auto h-40"
+            />
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> A rectangular park measuring 45 m by 30 m has
+              a path of uniform width 2.5 m built all around the inside of the
+              park. Find the area of the path.<br /><br />Sebuah taman berbentuk
+              persegi panjang berukuran 45 m x 30 m memiliki jalan setapak
+              dengan lebar seragam 2,5 m yang dibangun di sekeliling bagian
+              dalam taman. Tentukan luas jalan setapak tersebut.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> In a square ABCD with side length 20 cm, point
+              E is on side AB such that AE:EB = 3:1, and F is the midpoint of
+              side BC. Find the area of triangle DEF.<br /><br />Pada sebuah
+              persegi ABCD dengan panjang sisi 20 cm, titik E berada di sisi AB
+              sehingga AE:EB = 3:1, dan F adalah titik tengah dari sisi BC.
+              Tentukan luas segitiga DEF.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> A kite with diagonals of 16 cm and 30 cm is
+              cut from a rectangular piece of paper measuring 20 cm by 35 cm.
+              What is the area of the paper that is left?<br /><br />Sebuah
+              layang-layang dengan diagonal 16 cm dan 30 cm dipotong dari
+              selembar kertas persegi panjang berukuran 20 cm x 35 cm. Berapa
+              sisa luas kertas tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> An isosceles trapezoid has a perimeter of 56
+              cm. The length of its shorter parallel side is 10 cm, and each of
+              the non-parallel sides is 13 cm. Find the area of the
+              trapezoid.<br /><br />Sebuah trapesium sama kaki memiliki keliling
+              56 cm. Panjang sisi sejajar yang lebih pendek adalah 10 cm, dan
+              panjang setiap sisi yang tidak sejajar adalah 13 cm. Tentukan luas
+              trapesium tersebut.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> In the figure, ABCD is a rectangle. The area
+              of the shaded triangle ADG is $36 \text{ cm}^2$. Given AD = 12 cm,
+              find the length of the side of the square DEFG.<br /><br />Pada
+              gambar, ABCD adalah persegi panjang. Luas segitiga yang diarsir
+              ADG adalah $36 \text{ cm}^2$. Diketahui AD = 12 cm, tentukan
+              panjang sisi dari persegi DEFG.
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_9bloik_1366.png"
+              class="mx-auto h-48"
+            />
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> A kite and a rhombus have the same area. The
+              diagonals of the kite are 18 cm and 24 cm. One of the diagonals of
+              the rhombus is 12 cm. Find the perimeter of the rhombus.<br /><br />Sebuah
+              layang-layang dan sebuah belah ketupat memiliki luas yang sama.
+              Diagonal layang-layang adalah 18 cm dan 24 cm. Salah satu diagonal
+              belah ketupat adalah 12 cm. Tentukan keliling belah ketupat
+              tersebut.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> A wire is bent to form a square with an area
+              of $121 \text{ cm}^2$. The same wire is then bent to form a
+              rectangle with a width of 8 cm. What is the area of the
+              rectangle?<br /><br />Sebuah kawat dibengkokkan membentuk persegi
+              dengan luas $121 \text{ cm}^2$. Kawat yang sama kemudian
+              dibengkokkan untuk membentuk persegi panjang dengan lebar 8 cm.
+              Berapa luas persegi panjang tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> How many rectangles of any size can be found
+              in the 3x4 grid shown below?<br /><br />Berapa banyak persegi
+              panjang dengan berbagai ukuran yang dapat ditemukan pada grid 3x4
+              di bawah ini?
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_rsnjts_6552.png"
+              class="mx-auto h-28"
+            />
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> In rectangle ABCD, AB = 16 cm and BC = 12 cm.
+              Point E is on AD such that AE = 4 cm, and point F is on CD such
+              that CF = 4 cm. Find the area of triangle EBF.<br /><br />Pada
+              persegi panjang ABCD, AB = 16 cm dan BC = 12 cm. Titik E berada
+              pada AD sehingga AE = 4 cm, dan titik F berada pada CD sehingga CF
+              = 4 cm. Tentukan luas segitiga EBF.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> The perimeter of an irregular figure made of
+              straight lines is 68 cm. If all side lengths are integers and form
+              an arithmetic progression with a common difference of 1, and the
+              shortest side is 5 cm, how many sides does the figure have?<br /><br />Keliling
+              sebuah bangun tidak beraturan yang terbuat dari garis lurus adalah
+              68 cm. Jika semua panjang sisinya adalah bilangan bulat dan
+              membentuk barisan aritmatika dengan beda 1, dan sisi terpendeknya
+              5 cm, berapa banyak sisi yang dimiliki bangun tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> A rectangular painting has dimensions 30 cm
+              by 20 cm. It is surrounded by a wooden frame of uniform width. If
+              the area of the frame is equal to the area of the painting, find
+              the width of the frame.<br /><br />Sebuah lukisan persegi panjang
+              berukuran 30 cm x 20 cm. Lukisan itu dikelilingi oleh bingkai kayu
+              dengan lebar yang seragam. Jika luas bingkai sama dengan luas
+              lukisan, tentukan lebar bingkai tersebut.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> Find the area of the shaded region. The outer
+              shape is a trapezoid, and a kite is cut out from it.<br /><br />Tentukan
+              luas daerah yang diarsir. Bangun luar adalah trapesium, dan sebuah
+              layang-layang dipotong darinya.
+            </p>
+            <div class="image-desc">
+              <strong>Image Description:</strong> A trapezoid with parallel
+              sides of 20 cm and 30 cm, and a height of 15 cm. A kite is drawn
+              inside. The vertices of the kite are the two endpoints of the
+              shorter parallel side (20 cm) and the midpoints of the two
+              non-parallel sides.
+            </div>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> The figure shows a rectangle divided into 4
+              parts. The areas of three parts are given. Find the area of the
+              fourth part (X).<br /><br />Gambar menunjukkan sebuah persegi
+              panjang yang dibagi menjadi 4 bagian. Luas tiga bagian diketahui.
+              Tentukan luas bagian keempat (X).
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_nlflxz_7397.png"
+              class="mx-auto h-40"
+            />
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> The figure is made up of four identical
+              rectangles surrounding a shaded square. The area of the shaded
+              square is 49 cm². The perimeter of the whole figure is 76 cm. Find
+              the length of the longer side of one of the small rectangles.<br /><br />Bangun
+              ini terdiri dari empat persegi panjang identik yang mengelilingi
+              sebuah persegi di tengah. Luas persegi yang diarsir adalah 49 cm².
+              Keliling seluruh bangun adalah 76 cm. Tentukan panjang sisi yang
+              lebih panjang dari salah satu persegi panjang kecil tersebut.
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_oywmav_9031.png"
+              class="mx-auto h-40"
+            />
+          </div>
 
-            <!-- Bagian Pembahasan -->
-            <section class="content-card">
-                <h2 class="section-title">Solutions</h2>
-                
-                <h3 class="topic-title">Solutions for Part 1: Plane Geometry</h3>
-                
-                <div class="item-container">
-                    <p><strong>Solution Number 1:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of a square is $s^2$. The area of a trapezoid is $\frac{1}{2} \times (b_1+b_2) \times h$. The total area is the sum of the individual areas.<br/><br/><strong>Konsep:</strong> Luas persegi adalah $s^2$. Luas trapesium adalah $\frac{1}{2} \times (a+b) \times t$. Luas total adalah jumlah dari masing-masing luas.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Find the side length of the square.</p>
-                            <p>$\text{Side} = \sqrt{\text{Area}} = \sqrt{81} = 9 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• The height of the trapezoid is the same as the side of the square.</p>
-                            <p>$\text{Height} = 9 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the trapezoid.</p>
-                            <p>$A_{trap} = \frac{1}{2}(b_1+b_2)h = \frac{1}{2}(7+12)(9) = 85.5 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the total area.</p>
-                            <p>$A_{total} = A_{square} + A_{trap} = 81 + 85.5 = 166.5 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Cari panjang sisi persegi.</p>
-                            <p>$\text{Sisi} = \sqrt{\text{Luas}} = \sqrt{81} = 9 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Tinggi trapesium sama dengan sisi persegi.</p>
-                            <p>$\text{Tinggi} = 9 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas trapesium.</p>
-                            <p>$L_{trap} = \frac{1}{2}(a+b)t = \frac{1}{2}(7+12)(9) = 85,5 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas total.</p>
-                            <p>$L_{total} = L_{persegi} + L_{trap} = 81 + 85,5 = 166,5 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 166.5 cm². / Jawaban: 166,5 cm².</div>
-                </div>
+          <h3 class="topic-title">Part 2: Advanced Combinatorics</h3>
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> There are 5 different math books and 3
+              different science books. In how many ways can you arrange these
+              books on a shelf if all the math books must be kept together?<br /><br />Terdapat
+              5 buku matematika yang berbeda dan 3 buku sains yang berbeda.
+              Berapa banyak cara menyusun buku-buku ini di rak jika semua buku
+              matematika harus diletakkan bersamaan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> From a group of 5 boys and 4 girls, a
+              committee of 4 is to be chosen such that it contains at least 1
+              girl. How many ways can this be done?<br /><br />Dari sekelompok 5
+              anak laki-laki dan 4 anak perempuan, akan dipilih sebuah panitia
+              yang terdiri dari 4 orang sehingga di dalamnya terdapat sedikitnya
+              1 anak perempuan. Berapa banyak cara untuk melakukannya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> How many 4-digit odd numbers greater than
+              3000 can be formed using the digits 1, 2, 3, 4, 5, 6 without
+              repetition?<br /><br />Berapa banyak bilangan ganjil 4 angka yang
+              lebih besar dari 3000 yang dapat dibentuk menggunakan angka 1, 2,
+              3, 4, 5, 6 tanpa pengulangan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> A team of 5 members is to be selected from 6
+              boys and 4 girls. How many ways can the team be selected if it
+              must consist of 3 boys and 2 girls?<br /><br />Sebuah tim yang
+              terdiri dari 5 anggota akan dipilih dari 6 anak laki-laki dan 4
+              anak perempuan. Berapa banyak cara tim dapat dipilih jika harus
+              terdiri dari 3 anak laki-laki dan 2 anak perempuan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> In how many ways can the letters of the word
+              'SUCCESS' be arranged?<br /><br />Dalam berapa banyak cara
+              huruf-huruf dari kata 'SUCCESS' dapat disusun?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> There are 6 points on a circle. How many
+              straight lines can be drawn by joining any two of these points?<br /><br />Ada
+              6 titik pada sebuah lingkaran. Berapa banyak garis lurus yang
+              dapat digambar dengan menghubungkan dua titik mana pun?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> A staircase has 11 steps. You can climb 1 or
+              2 steps at a time. However, the 6th step is broken and cannot be
+              stepped on. In how many different ways can you climb the
+              stairs?<br /><br />Sebuah tangga memiliki 11 anak tangga. Anda
+              dapat menaiki 1 atau 2 anak tangga sekaligus. Namun, anak tangga
+              ke-6 rusak dan tidak bisa diinjak. Dalam berapa banyak cara
+              berbeda Anda dapat menaiki tangga tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> How many three-digit even numbers can be
+              formed from the digits 0, 1, 2, 3, 4, 5 if repetition of digits is
+              not allowed?<br /><br />Berapa banyak bilangan genap tiga angka
+              yang dapat dibentuk dari angka 0, 1, 2, 3, 4, 5 jika pengulangan
+              angka tidak diperbolehkan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> A three-digit number is called 'ascending' if
+              its digits are in strictly increasing order from left to right
+              (e.g., 258). How many three-digit ascending numbers are there?
+              (The digit 0 cannot be the first digit).<br /><br />Sebuah
+              bilangan tiga angka disebut 'naik' jika angka-angkanya dalam
+              urutan menaik dari kiri ke kanan (contoh: 258). Ada berapa banyak
+              bilangan tiga angka 'naik' yang ada? (Angka 0 tidak boleh menjadi
+              digit pertama).
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> In how many ways can 5 identical balls be
+              distributed into 3 distinct boxes where empty boxes are
+              allowed?<br /><br />Dengan berapa cara 5 bola identik dapat
+              didistribusikan ke dalam 3 kotak yang berbeda jika kotak boleh
+              kosong?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> How many different signals can be made using
+              4 flags of different colors, if each signal consists of the use of
+              2 flags, one below the other?<br /><br />Berapa banyak sinyal
+              berbeda yang dapat dibuat menggunakan 4 bendera dengan warna
+              berbeda, jika setiap sinyal terdiri dari penggunaan 2 bendera,
+              satu di bawah yang lain?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> From 7 consonants and 4 vowels, how many
+              5-letter arrangements consisting of 3 consonants and 2 vowels can
+              be formed?<br /><br />Dari 7 konsonan dan 4 vokal, berapa banyak
+              susunan 5 huruf yang terdiri dari 3 konsonan dan 2 vokal yang
+              dapat dibentuk?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> Find the number of ways to get from point A
+              to point B by only moving right or down, avoiding the shaded
+              block.<br /><br />Tentukan jumlah cara untuk pergi dari titik A ke
+              titik B dengan hanya bergerak ke kanan atau ke bawah, dengan
+              menghindari blok yang diarsir.
+            </p>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_8nf9ax_2232.png"
+              class="mx-auto h-40"
+            />
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> How many diagonals does a decagon (a polygon
+              with 10 sides) have?<br /><br />Berapa banyak diagonal yang
+              dimiliki dekagon (poligon dengan 10 sisi)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> In how many ways can 6 people be seated
+              around a circular table if two particular people refuse to sit
+              next to each other?<br /><br />Dalam berapa banyak cara 6 orang
+              dapat duduk mengelilingi meja bundar jika dua orang tertentu
+              menolak untuk duduk bersebelahan?
+            </p>
+          </div>
+        </section>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 2:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of the path is the area of the outer rectangle (the park) minus the area of the inner rectangle (the grass area).<br/><br/><strong>Konsep:</strong> Luas jalan setapak adalah luas persegi panjang luar (taman) dikurangi luas persegi panjang dalam (area rumput).</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the outer rectangle.</p>
-                            <p>$A_{outer} = 45 \times 30 = 1350 \text{ m}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the dimensions of the inner rectangle.</p>
-                            <p>$L_{inner} = 45 - 2(2.5) = 40 \text{ m}$<br>$W_{inner} = 30 - 2(2.5) = 25 \text{ m}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the inner rectangle.</p>
-                            <p>$A_{inner} = 40 \times 25 = 1000 \text{ m}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the path.</p>
-                            <p>$A_{path} = A_{outer} - A_{inner} = 1350 - 1000 = 350 \text{ m}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Hitung luas persegi panjang luar.</p>
-                            <p>$L_{luar} = 45 \times 30 = 1350 \text{ m}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung dimensi persegi panjang dalam.</p>
-                            <p>$P_{dalam} = 45 - 2(2,5) = 40 \text{ m}$<br>$L_{dalam} = 30 - 2(2,5) = 25 \text{ m}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas persegi panjang dalam.</p>
-                            <p>$L_{dalam} = 40 \times 25 = 1000 \text{ m}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas jalan setapak.</p>
-                            <p>$L_{jalan} = L_{luar} - L_{dalam} = 1350 - 1000 = 350 \text{ m}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 350 m². / Jawaban: 350 m².</div>
-                </div>
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions</h2>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 3:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The total area of two overlapping shapes is the sum of their individual areas minus the overlapping area. The non-overlapping area is the sum of their areas minus twice the overlapping area.<br/><br/><strong>Konsep:</strong> Luas total dari dua bangun yang tumpang tindih adalah jumlah luas masing-masing dikurangi luas daerah tumpang tindih. Luas daerah yang tidak tumpang tindih adalah jumlah luas keduanya dikurangi dua kali luas daerah tumpang tindih.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Sum the areas of the two squares.</p>
-                            <p>$144 + 100 = 244 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Subtract the overlapping area twice from the sum.</p>
-                            <p>$A_{non-overlap} = (A_1 + A_2) - 2 \times A_{overlap}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Calculate the final area.</p>
-                            <p>$244 - 2 \times 24 = 244 - 48 = 196 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Jumlahkan luas kedua persegi.</p>
-                            <p>$144 + 100 = 244 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Kurangi dua kali luas daerah tumpang tindih dari jumlah tersebut.</p>
-                            <p>$L_{non-overlap} = (L_1 + L_2) - 2 \times L_{overlap}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Hitung luas akhir.</p>
-                            <p>$244 - 2 \times 24 = 244 - 48 = 196 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 196 cm². / Jawaban: 196 cm².</div>
-                </div>
+          <h3 class="topic-title">Solutions for Part 1: Plane Geometry</h3>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 4:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of a kite is $\frac{1}{2} d_1 d_2$. The remaining area is the area of the rectangle minus the area of the kite.<br/><br/><strong>Konsep:</strong> Luas layang-layang adalah $\frac{1}{2} d_1 d_2$. Luas sisa adalah luas persegi panjang dikurangi luas layang-layang.</p></div>
-                     <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the rectangle.</p>
-                            <p>$A_{rect} = 20 \times 35 = 700 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the kite.</p>
-                            <p>$A_{kite} = \frac{1}{2} \times 16 \times 30 = 240 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the remaining area.</p>
-                            <p>$A_{left} = A_{rect} - A_{kite} = 700 - 240 = 460 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                            <p>• Hitung luas persegi panjang.</p>
-                            <p>$L_{rect} = 20 \times 35 = 700 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas layang-layang.</p>
-                            <p>$L_{kite} = \frac{1}{2} \times 16 \times 30 = 240 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung sisa luas.</p>
-                            <p>$L_{sisa} = L_{rect} - L_{kite} = 700 - 240 = 460 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 460 cm². / Jawaban: 460 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of a square is $s^2$. The
+                area of a trapezoid is $\frac{1}{2} \times (b_1+b_2) \times h$.
+                The total area is the sum of the individual areas.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Luas persegi adalah $s^2$. Luas trapesium adalah $\frac{1}{2}
+                \times (a+b) \times t$. Luas total adalah jumlah dari
+                masing-masing luas.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Find the side length of the square.</p>
+                <p>
+                  $\text{Side} = \sqrt{\text{Area}} = \sqrt{81} = 9 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • The height of the trapezoid is the same as the side of the
+                  square.
+                </p>
+                <p>$\text{Height} = 9 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the trapezoid.</p>
+                <p>
+                  $A_{trap} = \frac{1}{2}(b_1+b_2)h = \frac{1}{2}(7+12)(9) =
+                  85.5 \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the total area.</p>
+                <p>
+                  $A_{total} = A_{square} + A_{trap} = 81 + 85.5 = 166.5 \text{
+                  cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Cari panjang sisi persegi.</p>
+                <p>
+                  $\text{Sisi} = \sqrt{\text{Luas}} = \sqrt{81} = 9 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Tinggi trapesium sama dengan sisi persegi.</p>
+                <p>$\text{Tinggi} = 9 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas trapesium.</p>
+                <p>
+                  $L_{trap} = \frac{1}{2}(a+b)t = \frac{1}{2}(7+12)(9) = 85,5
+                  \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas total.</p>
+                <p>
+                  $L_{total} = L_{persegi} + L_{trap} = 81 + 85,5 = 166,5 \text{
+                  cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 166.5 cm². / Jawaban: 166,5 cm².
+            </div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 5:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> To find the area of a trapezoid, we need its height. The height can be found by constructing a right-angled triangle and using the Pythagorean theorem.<br/><br/><strong>Konsep:</strong> Untuk mencari luas trapesium, kita membutuhkan tingginya. Tinggi dapat ditemukan dengan membuat segitiga siku-siku dan menggunakan teorema Pythagoras.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Find the length of the longer parallel side ($b_2$).</p>
-                            <p>$b_2 = \text{Perimeter} - b_1 - 2 \times (\text{side}) = 56 - 10 - 2(13) = 20 \text{ cm}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Find the base of the right-angled triangle formed by the height.</p>
-                            <p>$x = (b_2 - b_1)/2 = (20 - 10)/2 = 5 \text{ cm}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Calculate the height (h) using Pythagoras' theorem.</p>
-                            <p>$h^2 + 5^2 = 13^2 \implies h^2 + 25 = 169 \implies h = \sqrt{144} = 12 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the trapezoid.</p>
-                            <p>$A = \frac{1}{2}(b_1+b_2)h = \frac{1}{2}(10+20)(12) = 180 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Cari panjang sisi sejajar yang lebih panjang ($b_2$).</p>
-                            <p>$b_2 = \text{Keliling} - b_1 - 2 \times (\text{sisi}) = 56 - 10 - 2(13) = 20 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Cari alas segitiga siku-siku yang dibentuk oleh tinggi.</p>
-                            <p>$x = (b_2 - b_1)/2 = (20 - 10)/2 = 5 \text{ cm}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Hitung tinggi (h) menggunakan teorema Pythagoras.</p>
-                            <p>$h^2 + 5^2 = 13^2 \implies h^2 + 25 = 169 \implies h = \sqrt{144} = 12 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas trapesium.</p>
-                            <p>$L = \frac{1}{2}(a+b)t = \frac{1}{2}(10+20)(12) = 180 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 180 cm². / Jawaban: 180 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of the path is the area of
+                the outer rectangle (the park) minus the area of the inner
+                rectangle (the grass area).<br /><br /><strong>Konsep:</strong>
+                Luas jalan setapak adalah luas persegi panjang luar (taman)
+                dikurangi luas persegi panjang dalam (area rumput).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the area of the outer rectangle.</p>
+                <p>$A_{outer} = 45 \times 30 = 1350 \text{ m}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the dimensions of the inner rectangle.</p>
+                <p>
+                  $L_{inner} = 45 - 2(2.5) = 40 \text{ m}$<br />$W_{inner} = 30
+                  - 2(2.5) = 25 \text{ m}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the inner rectangle.</p>
+                <p>$A_{inner} = 40 \times 25 = 1000 \text{ m}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the path.</p>
+                <p>
+                  $A_{path} = A_{outer} - A_{inner} = 1350 - 1000 = 350 \text{
+                  m}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung luas persegi panjang luar.</p>
+                <p>$L_{luar} = 45 \times 30 = 1350 \text{ m}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung dimensi persegi panjang dalam.</p>
+                <p>
+                  $P_{dalam} = 45 - 2(2,5) = 40 \text{ m}$<br />$L_{dalam} = 30
+                  - 2(2,5) = 25 \text{ m}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas persegi panjang dalam.</p>
+                <p>$L_{dalam} = 40 \times 25 = 1000 \text{ m}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas jalan setapak.</p>
+                <p>
+                  $L_{jalan} = L_{luar} - L_{dalam} = 1350 - 1000 = 350 \text{
+                  m}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 350 m². / Jawaban: 350 m².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 6:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of a triangle is $\frac{1}{2} \times \text{base} \times \text{height}$. In triangle ADG, AD can be the height and the base would be the side of the square.<br/><br/><strong>Konsep:</strong> Luas segitiga adalah $\frac{1}{2} \times \text{alas} \times \text{tinggi}$. Pada segitiga ADG, AD bisa menjadi tinggi dan alasnya adalah sisi persegi.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Let 's' be the side length of the square DEFG. So, DG = s.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• In $\triangle$ADG, the base is DG=s and the height is AD=12.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Use the area formula for a triangle.</p>
-                            <p>$\text{Area} = \frac{1}{2} \times \text{DG} \times \text{AD}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Substitute known values and solve for s.</p>
-                            <p>$36 = \frac{1}{2} \times s \times 12 \implies 36 = 6s \implies s = 6 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Misalkan 's' adalah panjang sisi persegi DEFG. Jadi, DG = s.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Pada $\triangle$ADG, alasnya adalah DG=s dan tingginya adalah AD=12.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Gunakan rumus luas segitiga.</p>
-                            <p>$\text{Luas} = \frac{1}{2} \times \text{DG} \times \text{AD}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Substitusikan nilai yang diketahui dan selesaikan untuk s.</p>
-                            <p>$36 = \frac{1}{2} \times s \times 12 \implies 36 = 6s \implies s = 6 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 6 cm. / Jawaban: 6 cm.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of $\triangle$DEF can be
+                found by subtracting the areas of three other right-angled
+                triangles ($\triangle$ADE, $\triangle$EBF, and $\triangle$FCD)
+                from the total area of the square.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Luas $\triangle$DEF dapat ditemukan dengan mengurangi luas tiga
+                segitiga siku-siku lainnya ($\triangle$ADE, $\triangle$EBF, dan
+                $\triangle$FCD) dari luas total persegi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the lengths of the segments.</p>
+                <p>
+                  $AE = \frac{3}{4} \times 20 = 15 \text{ cm}$, $EB =
+                  \frac{1}{4} \times 20 = 5 \text{ cm}$<br />$BF = FC =
+                  \frac{1}{2} \times 20 = 10 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the square.</p>
+                <p>$A_{square} = 20 \times 20 = 400 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the areas of the three corner triangles.</p>
+                <p>
+                  $A_{\triangle ADE} = \frac{1}{2} \times AD \times AE =
+                  \frac{1}{2} \times 20 \times 15 = 150 \text{ cm}^2$
+                </p>
+                <p>
+                  $A_{\triangle EBF} = \frac{1}{2} \times EB \times BF =
+                  \frac{1}{2} \times 5 \times 10 = 25 \text{ cm}^2$
+                </p>
+                <p>
+                  $A_{\triangle FCD} = \frac{1}{2} \times FC \times CD =
+                  \frac{1}{2} \times 10 \times 20 = 100 \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Subtract these areas from the square's area.</p>
+                <p>
+                  $A_{\triangle DEF} = 400 - (150 + 25 + 100) = 400 - 275 = 125
+                  \text{ cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung panjang setiap segmen.</p>
+                <p>
+                  $AE = \frac{3}{4} \times 20 = 15 \text{ cm}$, $EB =
+                  \frac{1}{4} \times 20 = 5 \text{ cm}$<br />$BF = FC =
+                  \frac{1}{2} \times 20 = 10 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas persegi.</p>
+                <p>$L_{persegi} = 20 \times 20 = 400 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas tiga segitiga di sudut.</p>
+                <p>
+                  $L_{\triangle ADE} = \frac{1}{2} \times AD \times AE =
+                  \frac{1}{2} \times 20 \times 15 = 150 \text{ cm}^2$
+                </p>
+                <p>
+                  $L_{\triangle EBF} = \frac{1}{2} \times EB \times BF =
+                  \frac{1}{2} \times 5 \times 10 = 25 \text{ cm}^2$
+                </p>
+                <p>
+                  $L_{\triangle FCD} = \frac{1}{2} \times FC \times CD =
+                  \frac{1}{2} \times 10 \times 20 = 100 \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kurangkan luas-luas ini dari luas persegi.</p>
+                <p>
+                  $L_{\triangle DEF} = 400 - (150 + 25 + 100) = 400 - 275 = 125
+                  \text{ cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 125 cm². / Jawaban: 125 cm².</div>
+          </div>
 
-                 <div class="item-container">
-                    <p><strong>Solution Number 7:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of a kite is given by the formula $A = \frac{1}{2} d_1 d_2$.<br/><br/><strong>Konsep:</strong> Luas layang-layang diberikan oleh rumus $L = \frac{1}{2} d_1 d_2$.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Write down the formula for the area of a kite.</p>
-                            <p>$96 = \frac{1}{2} \times 12 \times d_2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Simplify the equation.</p>
-                            <p>$96 = 6 \times d_2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Solve for the second diagonal, $d_2$.</p>
-                            <p>$d_2 = \frac{96}{6} = 16 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Tuliskan rumus luas layang-layang.</p>
-                            <p>$96 = \frac{1}{2} \times 12 \times d_2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Sederhanakan persamaan.</p>
-                            <p>$96 = 6 \times d_2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Selesaikan untuk diagonal kedua, $d_2$.</p>
-                            <p>$d_2 = \frac{96}{6} = 16 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 16 cm. / Jawaban: 16 cm.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of a kite is $\frac{1}{2} d_1
+                d_2$. The remaining area is the area of the rectangle minus the
+                area of the kite.<br /><br /><strong>Konsep:</strong> Luas
+                layang-layang adalah $\frac{1}{2} d_1 d_2$. Luas sisa adalah
+                luas persegi panjang dikurangi luas layang-layang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the area of the rectangle.</p>
+                <p>$A_{rect} = 20 \times 35 = 700 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the kite.</p>
+                <p>
+                  $A_{kite} = \frac{1}{2} \times 16 \times 30 = 240 \text{
+                  cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the remaining area.</p>
+                <p>
+                  $A_{left} = A_{rect} - A_{kite} = 700 - 240 = 460 \text{
+                  cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung luas persegi panjang.</p>
+                <p>$L_{rect} = 20 \times 35 = 700 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas layang-layang.</p>
+                <p>
+                  $L_{kite} = \frac{1}{2} \times 16 \times 30 = 240 \text{
+                  cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung sisa luas.</p>
+                <p>
+                  $L_{sisa} = L_{rect} - L_{kite} = 700 - 240 = 460 \text{
+                  cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 460 cm². / Jawaban: 460 cm².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 8:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> When a wire is bent into different shapes, its total length (perimeter) remains constant.<br/><br/><strong>Konsep:</strong> Ketika sebuah kawat dibengkokkan menjadi bentuk yang berbeda, panjang totalnya (keliling) tetap konstan.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Find the side length of the square.</p>
-                            <p>$\text{Side} = \sqrt{121} = 11 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the perimeter of the square (length of the wire).</p>
-                            <p>$\text{Perimeter} = 4 \times 11 = 44 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Use the perimeter to find the length of the rectangle.</p>
-                            <p>$44 = 2(L + 8) \implies 22 = L + 8 \implies L = 14 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the rectangle.</p>
-                            <p>$\text{Area} = 14 \times 8 = 112 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Cari panjang sisi persegi.</p>
-                            <p>$\text{Sisi} = \sqrt{121} = 11 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung keliling persegi (panjang kawat).</p>
-                            <p>$\text{Keliling} = 4 \times 11 = 44 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Gunakan keliling untuk mencari panjang persegi panjang.</p>
-                            <p>$44 = 2(P + 8) \implies 22 = P + 8 \implies P = 14 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas persegi panjang.</p>
-                            <p>$\text{Luas} = 14 \times 8 = 112 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 112 cm². / Jawaban: 112 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To find the area of a trapezoid, we
+                need its height. The height can be found by constructing a
+                right-angled triangle and using the Pythagorean theorem.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Untuk mencari luas trapesium, kita membutuhkan tingginya. Tinggi
+                dapat ditemukan dengan membuat segitiga siku-siku dan
+                menggunakan teorema Pythagoras.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Find the length of the longer parallel side ($b_2$).</p>
+                <p>
+                  $b_2 = \text{Perimeter} - b_1 - 2 \times (\text{side}) = 56 -
+                  10 - 2(13) = 20 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Find the base of the right-angled triangle formed by the
+                  height.
+                </p>
+                <p>$x = (b_2 - b_1)/2 = (20 - 10)/2 = 5 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the height (h) using Pythagoras' theorem.</p>
+                <p>
+                  $h^2 + 5^2 = 13^2 \implies h^2 + 25 = 169 \implies h =
+                  \sqrt{144} = 12 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the trapezoid.</p>
+                <p>
+                  $A = \frac{1}{2}(b_1+b_2)h = \frac{1}{2}(10+20)(12) = 180
+                  \text{ cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Cari panjang sisi sejajar yang lebih panjang ($b_2$).</p>
+                <p>
+                  $b_2 = \text{Keliling} - b_1 - 2 \times (\text{sisi}) = 56 -
+                  10 - 2(13) = 20 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Cari alas segitiga siku-siku yang dibentuk oleh tinggi.</p>
+                <p>$x = (b_2 - b_1)/2 = (20 - 10)/2 = 5 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung tinggi (h) menggunakan teorema Pythagoras.</p>
+                <p>
+                  $h^2 + 5^2 = 13^2 \implies h^2 + 25 = 169 \implies h =
+                  \sqrt{144} = 12 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas trapesium.</p>
+                <p>
+                  $L = \frac{1}{2}(a+b)t = \frac{1}{2}(10+20)(12) = 180 \text{
+                  cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 180 cm². / Jawaban: 180 cm².</div>
+          </div>
 
-                 <div class="item-container">
-                    <p><strong>Solution Number 9:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The side of the central square is the difference between the longer and shorter parallel sides of one of the trapezoids.<br/><br/><strong>Konsep:</strong> Sisi persegi di tengah adalah selisih antara sisi sejajar yang lebih panjang dan lebih pendek dari salah satu trapesium.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Find the side length of the inner square.</p>
-                            <p>$\text{Side}_{\text{inner}} = \text{Longer base} - \text{Shorter base} = 10 - 6 = 4 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the inner square.</p>
-                            <p>$\text{Area} = 4 \times 4 = 16 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Cari panjang sisi persegi dalam.</p>
-                            <p>$\text{Sisi}_{\text{dalam}} = \text{Alas panjang} - \text{Alas pendek} = 10 - 6 = 4 \text{ cm}$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas persegi dalam.</p>
-                            <p>$\text{Luas} = 4 \times 4 = 16 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 16 cm². / Jawaban: 16 cm².</div>
-                </div>
-                
-                 <div class="item-container">
-                    <p><strong>Solution Number 10:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of a triangle is $\frac{1}{2} \times \text{base} \times \text{height}$. The base of $\triangle$DMC is DC, and its height is the same as the rectangle's width (AD or BC).<br/><br/><strong>Konsep:</strong> Luas segitiga adalah $\frac{1}{2} \times \text{alas} \times \text{tinggi}$. Alas $\triangle$DMC adalah DC, dan tingginya sama dengan lebar persegi panjang (AD atau BC).</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Let L be the length (DC) and W be the width (AD).</p>
-                            <p>$\text{Area}_{\text{rect}} = L \times W = 120$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of $\triangle$DMC.</p>
-                            <p>$\text{Area}_{\triangle\text{DMC}} = \frac{1}{2} \times \text{DC} \times \text{AD} = \frac{1}{2} \times L \times W$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• The triangle's area is half the rectangle's area.</p>
-                             <p>$\text{Area}_{\triangle\text{DMC}} = \frac{1}{2} \times 120 = 60 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                            <p>• Misalkan P adalah panjang (DC) dan L adalah lebar (AD).</p>
-                            <p>$\text{Luas}_{\text{rect}} = P \times L = 120$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas $\triangle$DMC.</p>
-                            <p>$\text{Luas}_{\triangle\text{DMC}} = \frac{1}{2} \times \text{DC} \times \text{AD} = \frac{1}{2} \times P \times L$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Luas segitiga adalah setengah dari luas persegi panjang.</p>
-                             <p>$\text{Luas}_{\triangle\text{DMC}} = \frac{1}{2} \times 120 = 60 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 60 cm². / Jawaban: 60 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of a triangle is $\frac{1}{2}
+                \times \text{base} \times \text{height}$. In triangle ADG, AD
+                can be the height and the base would be the side of the
+                square.<br /><br /><strong>Konsep:</strong> Luas segitiga adalah
+                $\frac{1}{2} \times \text{alas} \times \text{tinggi}$. Pada
+                segitiga ADG, AD bisa menjadi tinggi dan alasnya adalah sisi
+                persegi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Let 's' be the side length of the square DEFG. So, DG = s.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • In $\triangle$ADG, the base is DG=s and the height is AD=12.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Use the area formula for a triangle.</p>
+                <p>
+                  $\text{Area} = \frac{1}{2} \times \text{DG} \times \text{AD}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Substitute known values and solve for s.</p>
+                <p>
+                  $36 = \frac{1}{2} \times s \times 12 \implies 36 = 6s \implies
+                  s = 6 \text{ cm}$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Misalkan 's' adalah panjang sisi persegi DEFG. Jadi, DG = s.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Pada $\triangle$ADG, alasnya adalah DG=s dan tingginya
+                  adalah AD=12.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Gunakan rumus luas segitiga.</p>
+                <p>
+                  $\text{Luas} = \frac{1}{2} \times \text{DG} \times \text{AD}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Substitusikan nilai yang diketahui dan selesaikan untuk s.
+                </p>
+                <p>
+                  $36 = \frac{1}{2} \times s \times 12 \implies 36 = 6s \implies
+                  s = 6 \text{ cm}$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 6 cm. / Jawaban: 6 cm.</div>
+          </div>
 
-                 <div class="item-container">
-                    <p><strong>Solution Number 11:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The sum of an arithmetic series is $S_n = \frac{n}{2}(2a + (n-1)d)$, where n is the number of terms (sides).<br/><br/><strong>Konsep:</strong> Jumlah dari deret aritmatika adalah $S_n = \frac{n}{2}(2a + (n-1)d)$, di mana n adalah jumlah suku (sisi).</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Set up the equation for the perimeter.</p>
-                            <p>$68 = \frac{n}{2}(2(5) + (n-1)(1))$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Simplify the equation.</p>
-                            <p>$136 = n(10 + n - 1) \implies 136 = n(n+9)$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Rearrange into a quadratic equation and solve.</p>
-                            <p>$n^2 + 9n - 136 = 0 \implies (n+17)(n-8) = 0$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Since n must be positive, choose the positive root.</p>
-                            <p>$n = 8$</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Buat persamaan untuk keliling.</p>
-                            <p>$68 = \frac{n}{2}(2(5) + (n-1)(1))$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Sederhanakan persamaan.</p>
-                            <p>$136 = n(10 + n - 1) \implies 136 = n(n+9)$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Ubah menjadi persamaan kuadrat dan selesaikan.</p>
-                            <p>$n^2 + 9n - 136 = 0 \implies (n+17)(n-8) = 0$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Karena n harus positif, pilih akar positif.</p>
-                            <p>$n = 8$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 8 sides. / Jawaban: 8 sisi.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> First, find the area of the kite. Then
+                use the rhombus area formula ($A = \frac{1}{2} d_1 d_2$) to find
+                its other diagonal. Finally, use the diagonals to find the side
+                length of the rhombus (using Pythagoras) and then its
+                perimeter.<br /><br /><strong>Konsep:</strong> Pertama, cari
+                luas layang-layang. Gunakan rumus luas belah ketupat ($L =
+                \frac{1}{2} d_1 d_2$) untuk mencari diagonal lainnya. Terakhir,
+                gunakan diagonal untuk mencari panjang sisi belah ketupat
+                (dengan Pythagoras) lalu kelilingnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the area of the kite (and rhombus).</p>
+                <p>$A = \frac{1}{2} \times 18 \times 24 = 216 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Find the second diagonal ($d_2$) of the rhombus.</p>
+                <p>
+                  $216 = \frac{1}{2} \times 12 \times d_2 \implies 216 = 6
+                  \times d_2 \implies d_2 = 36 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • The diagonals of a rhombus bisect each other at right
+                  angles. Use Pythagoras on a small triangle with sides
+                  $(\frac{12}{2})$ and $(\frac{36}{2})$.
+                </p>
+                <p>$\text{side}^2 = 6^2 + 18^2 = 36 + 324 = 360$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the side length and perimeter.</p>
+                <p>$\text{side} = \sqrt{360} = 6\sqrt{10} \text{ cm}$</p>
+                <p>
+                  $\text{Perimeter} = 4 \times 6\sqrt{10} = 24\sqrt{10} \text{
+                  cm}$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung luas layang-layang (dan belah ketupat).</p>
+                <p>$L = \frac{1}{2} \times 18 \times 24 = 216 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Cari diagonal kedua ($d_2$) dari belah ketupat.</p>
+                <p>
+                  $216 = \frac{1}{2} \times 12 \times d_2 \implies 216 = 6
+                  \times d_2 \implies d_2 = 36 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Diagonal belah ketupat berpotongan tegak lurus dan saling
+                  membagi dua. Gunakan Pythagoras pada segitiga kecil dengan
+                  sisi $(\frac{12}{2})$ dan $(\frac{36}{2})$.
+                </p>
+                <p>$\text{sisi}^2 = 6^2 + 18^2 = 36 + 324 = 360$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung panjang sisi dan kelilingnya.</p>
+                <p>$\text{sisi} = \sqrt{360} = 6\sqrt{10} \text{ cm}$</p>
+                <p>
+                  $\text{Keliling} = 4 \times 6\sqrt{10} = 24\sqrt{10} \text{
+                  cm}$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $24\sqrt{10}$ cm. / Jawaban: $24\sqrt{10}$ cm.
+            </div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 12:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> Set up an algebraic equation where the area of the frame equals the area of the painting. The frame's area is the total area minus the painting's area.<br/><br/><strong>Konsep:</strong> Buat persamaan aljabar di mana luas bingkai sama dengan luas lukisan. Luas bingkai adalah luas total dikurangi luas lukisan.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Let 'w' be the width of the frame.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the painting.</p>
-                            <p>$A_{paint} = 30 \times 20 = 600 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• The area of the frame is also 600 cm². The total area is 1200 cm².</p>
-                            <p>$A_{total} = (30+2w)(20+2w) = 1200$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Expand and solve the quadratic equation.</p>
-                            <p>$600 + 100w + 4w^2 = 1200 \implies 4w^2 + 100w - 600 = 0$</p>
-                            <p>$w^2 + 25w - 150 = 0 \implies (w+30)(w-5) = 0$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Since width must be positive, w = 5 cm.</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Misalkan 'w' adalah lebar bingkai.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas lukisan.</p>
-                            <p>$L_{lukisan} = 30 \times 20 = 600 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Luas bingkai juga 600 cm². Luas total adalah 1200 cm².</p>
-                            <p>$L_{total} = (30+2w)(20+2w) = 1200$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Jabarkan dan selesaikan persamaan kuadrat.</p>
-                            <p>$600 + 100w + 4w^2 = 1200 \implies 4w^2 + 100w - 600 = 0$</p>
-                            <p>$w^2 + 25w - 150 = 0 \implies (w+30)(w-5) = 0$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Karena lebar harus positif, w = 5 cm.</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 5 cm. / Jawaban: 5 cm.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When a wire is bent into different
+                shapes, its total length (perimeter) remains constant.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Ketika sebuah kawat dibengkokkan menjadi bentuk yang berbeda,
+                panjang totalnya (keliling) tetap konstan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Find the side length of the square.</p>
+                <p>$\text{Side} = \sqrt{121} = 11 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Calculate the perimeter of the square (length of the wire).
+                </p>
+                <p>$\text{Perimeter} = 4 \times 11 = 44 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Use the perimeter to find the length of the rectangle.</p>
+                <p>
+                  $44 = 2(L + 8) \implies 22 = L + 8 \implies L = 14 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the rectangle.</p>
+                <p>$\text{Area} = 14 \times 8 = 112 \text{ cm}^2$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Cari panjang sisi persegi.</p>
+                <p>$\text{Sisi} = \sqrt{121} = 11 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung keliling persegi (panjang kawat).</p>
+                <p>$\text{Keliling} = 4 \times 11 = 44 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Gunakan keliling untuk mencari panjang persegi panjang.</p>
+                <p>
+                  $44 = 2(P + 8) \implies 22 = P + 8 \implies P = 14 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas persegi panjang.</p>
+                <p>$\text{Luas} = 14 \times 8 = 112 \text{ cm}^2$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 112 cm². / Jawaban: 112 cm².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 13:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The area of the shaded region is the area of the trapezoid minus the area of the kite.<br/><br/><strong>Konsep:</strong> Luas daerah yang diarsir adalah luas trapesium dikurangi luas layang-layang.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                         <div class="solution-step">
-                            <p>• Calculate the area of the trapezoid.</p>
-                             <p>$A_{trap} = \frac{1}{2}(20+30)(15) = 375 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Identify the diagonals of the kite. One diagonal is the shorter base (20 cm). The other is the height of the trapezoid (15 cm).</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the area of the kite.</p>
-                            <p>$A_{kite} = \frac{1}{2} \times 20 \times 15 = 150 \text{ cm}^2$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Calculate the shaded area.</p>
-                            <p>$A_{shaded} = 375 - 150 = 225 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                            <p>• Hitung luas trapesium.</p>
-                             <p>$L_{trap} = \frac{1}{2}(20+30)(15) = 375 \text{ cm}^2$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Identifikasi diagonal layang-layang. Satu diagonal adalah alas yang lebih pendek (20 cm). Yang lainnya adalah tinggi trapesium (15 cm).</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung luas layang-layang.</p>
-                            <p>$L_{kite} = \frac{1}{2} \times 20 \times 15 = 150 \text{ cm}^2$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Hitung luas yang diarsir.</p>
-                            <p>$L_{arsir} = 375 - 150 = 225 \text{ cm}^2$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 225 cm². / Jawaban: 225 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To form a rectangle or square, we need
+                to choose 2 distinct horizontal lines and 2 distinct vertical
+                lines. This is a combination problem.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Untuk membentuk sebuah persegi panjang maupun persegi, kita
+                perlu memilih 2 garis horizontal yang berbeda dan 2 garis
+                vertikal yang berbeda. Ini adalah soal kombinasi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Count the number of horizontal lines. A 4x3 grid has 3+1 = 4
+                  horizontal lines.
+                </p>
+                <p>
+                  • Count the number of vertical lines. A 4x3 grid has 4+1 = 5
+                  vertical lines.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Calculate the number of ways to choose 2 horizontal lines.
+                </p>
+                <p>$C(4, 2) = \frac{4 \times 3}{2} = 6$</p>
+                <p>
+                  • Calculate the number of ways to choose 2 vertical lines.
+                </p>
+                <p>$C(5, 2) = \frac{5 \times 4}{2} = 10$</p>
+                <p>
+                  • Multiply the results to get the total number of rectangles
+                  and squares.
+                </p>
+                <p>$\text{Total} = 6 \times 10 = 60$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Counting the squares in a 4×3 grid</p>
+                <p>$1×1 : 4 \times 3 = 12$</p>
+                <p>$2×2 : 3 \times 2 = 6$</p>
+                <p>$3×3 : 2 \times 1 = 2$</p>
+                <p>Total number of squares = 20</p>
+                <p>• Total number of rectangles = 60 - 20 = 40</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Hitung jumlah garis horizontal. Grid 4x3 memiliki 3+1 = 4
+                  garis horizontal.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Hitung jumlah garis vertikal. Grid 4x3 memiliki 4+1 = 5
+                  garis vertikal.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung cara memilih 2 garis horizontal.</p>
+                <p>$C(4, 2) = \frac{4 \times 3}{2} = 6$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung cara memilih 2 garis vertikal.</p>
+                <p>$C(5, 2) = \frac{5 \times 4}{2} = 10$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Kalikan hasilnya untuk mendapatkan jumlah total persegi
+                  panjang.
+                </p>
+                <p>$\text{Total} = 6 \times 10 = 60$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung banyak persegi pada grid 4×3.</p>
+                <p>$1×1 : 4 \times 3 = 12$</p>
+                <p>$2×2 : 3 \times 2 = 6$</p>
+                <p>$3×3 : 2 \times 1 = 2$</p>
+                <p>Banyak persegi = 20</p>
+              </div>
+              <div class="solution-step">
+                <p>• Banyak persegi panjang = 60 - 20 = 40</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 40 rectangles. / Jawaban: 40 persegi panjang.
+            </div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 14:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> For a rectangle divided into four smaller rectangles, the product of the areas of diagonally opposite rectangles are equal.<br/><br/><strong>Konsep:</strong> Untuk sebuah persegi panjang yang dibagi menjadi empat persegi panjang kecil, hasil kali luas persegi panjang yang berlawanan secara diagonal adalah sama.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Apply the area product property.</p>
-                            <p>$A_{TL} \times A_{BR} = A_{TR} \times A_{BL}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Substitute the values and solve for X.</p>
-                            <p>$18 \times X = 30 \times 27 \implies 18X = 810$</p>
-                            <p>$X = \frac{810}{18} = 45$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                            <p>• Gunakan sifat hasil kali luas.</p>
-                            <p>$L_{KA} \times L_{KB} = L_{BA} \times L_{BB}$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Substitusi nilai dan selesaikan untuk X.</p>
-                            <p>$18 \times X = 30 \times 27 \implies 18X = 810$</p>
-                            <p>$X = \frac{810}{18} = 45$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 45 cm². / Jawaban: 45 cm².</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of $\triangle$EBF can be
+                found by subtracting the areas of three other right-angled
+                triangles ($\triangle$ABE, $\triangle$BCF, and $\triangle$FDE)
+                from the total area of the rectangle.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Luas $\triangle$EBF dapat ditemukan dengan mengurangi luas tiga
+                segitiga siku-siku lainnya ($\triangle$ABE, $\triangle$BCF, dan
+                $\triangle$FDE) dari luas total persegi panjang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the area of the rectangle.</p>
+                <p>$A_{rect} = 16 \times 12 = 192 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the lengths of the remaining segments.</p>
+                <p>
+                  $ED = AD - AE = 12 - 4 = 8 \text{ cm}$<br />$FD = CD - CF = 16
+                  - 4 = 12 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the areas of the three other triangles.</p>
+                <p>
+                  $A_{\triangle ABE} = \frac{1}{2} \times 16 \times 4 = 32
+                  \text{ cm}^2$
+                </p>
+                <p>
+                  $A_{\triangle BCF} = \frac{1}{2} \times 12 \times 4 = 24
+                  \text{ cm}^2$
+                </p>
+                <p>
+                  $A_{\triangle FDE} = \frac{1}{2} \times 12 \times 8 = 48
+                  \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Subtract these areas from the rectangle's area.</p>
+                <p>
+                  $A_{\triangle EBF} = 192 - (32 + 24 + 48) = 192 - 104 = 88
+                  \text{ cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung luas persegi panjang.</p>
+                <p>$L_{rect} = 16 \times 12 = 192 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung panjang segmen yang tersisa.</p>
+                <p>
+                  $ED = AD - AE = 12 - 4 = 8 \text{ cm}$<br />$FD = CD - CF = 16
+                  - 4 = 12 \text{ cm}$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas tiga segitiga lainnya.</p>
+                <p>
+                  $L_{\triangle ABE} = \frac{1}{2} \times 16 \times 4 = 32
+                  \text{ cm}^2$
+                </p>
+                <p>
+                  $L_{\triangle BCF} = \frac{1}{2} \times 12 \times 4 = 24
+                  \text{ cm}^2$
+                </p>
+                <p>
+                  $L_{\triangle FDE} = \frac{1}{2} \times 12 \times 8 = 48
+                  \text{ cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kurangkan luas-luas ini dari luas persegi panjang.</p>
+                <p>
+                  $L_{\triangle EBF} = 192 - (32 + 24 + 48) = 192 - 104 = 88
+                  \text{ cm}^2$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 88 cm². / Jawaban: 88 cm².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 15:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> The perimeter is the total length of the outer boundary of the figure. Count the number of exposed sides and multiply by the side length.<br/><br/><strong>Konsep:</strong> Keliling adalah total panjang batas luar bangun. Hitung jumlah sisi yang terbuka dan kalikan dengan panjang sisinya.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Count the number of exposed sides on the outer boundary.</p>
-                            <p>There are 14 exposed sides.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the perimeter.</p>
-                            <p>$\text{Perimeter} = 14 \times 5 = 70 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Hitung jumlah sisi yang terbuka di batas luar.</p>
-                            <p>Terdapat 14 sisi yang terbuka.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung keliling.</p>
-                            <p>$\text{Keliling} = 14 \times 5 = 70 \text{ cm}$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 70 cm. / Jawaban: 70 cm.</div>
-                </div>
-                
-                <h3 class="topic-title">Solutions for Part 2: Advanced Combinatorics</h3>
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The sum of an arithmetic series is
+                $S_n = \frac{n}{2}(2a + (n-1)d)$, where n is the number of terms
+                (sides).<br /><br /><strong>Konsep:</strong> Jumlah dari deret
+                aritmatika adalah $S_n = \frac{n}{2}(2a + (n-1)d)$, di mana n
+                adalah jumlah suku (sisi).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Set up the equation for the perimeter.</p>
+                <p>$68 = \frac{n}{2}(2(5) + (n-1)(1))$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Simplify the equation.</p>
+                <p>$136 = n(10 + n - 1) \implies 136 = n(n+9)$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Rearrange into a quadratic equation and solve.</p>
+                <p>$n^2 + 9n - 136 = 0 \implies (n+17)(n-8) = 0$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Since n must be positive, choose the positive root.</p>
+                <p>$n = 8$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Buat persamaan untuk keliling.</p>
+                <p>$68 = \frac{n}{2}(2(5) + (n-1)(1))$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Sederhanakan persamaan.</p>
+                <p>$136 = n(10 + n - 1) \implies 136 = n(n+9)$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Ubah menjadi persamaan kuadrat dan selesaikan.</p>
+                <p>$n^2 + 9n - 136 = 0 \implies (n+17)(n-8) = 0$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Karena n harus positif, pilih akar positif.</p>
+                <p>$n = 8$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 8 sides. / Jawaban: 8 sisi.</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 16:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> This is a permutation problem with a restriction. When items must be kept together, treat them as a single block. Arrange the block with other items, then arrange the items within the block.<br/><br/><strong>Konsep:</strong> Ini adalah soal permutasi dengan batasan. Ketika beberapa objek harus selalu bersama, anggap mereka sebagai satu blok tunggal. Susun blok tersebut dengan objek lainnya, kemudian susun objek-objek di dalam blok.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Group the 5 math books as one block. Now we have 4 items to arrange (1 block + 3 science books).</p>
-                            <p>$\text{Ways to arrange blocks} = 4! = 24$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Arrange the 5 math books within their block.</p>
-                            <p>$\text{Ways to arrange books in block} = 5! = 120$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Multiply the results to get the total arrangements.</p>
-                            <p>$\text{Total} = 4! \times 5! = 24 \times 120 = 2880$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                             <p>• Kelompokkan 5 buku matematika menjadi satu blok. Sekarang ada 4 item untuk disusun (1 blok + 3 buku sains).</p>
-                             <p>$\text{Cara susun blok} = 4! = 24$</p>
-                         </div>
-                         <div class="solution-step">
-                             <p>• Susun 5 buku matematika di dalam bloknya.</p>
-                             <p>$\text{Cara susun buku dalam blok} = 5! = 120$</p>
-                         </div>
-                         <div class="solution-step">
-                             <p>• Kalikan hasilnya untuk mendapatkan total susunan.</p>
-                             <p>$\text{Total} = 4! \times 5! = 24 \times 120 = 2880$</p>
-                         </div>
-                    </div>
-                    <div class="final-answer">Answer: 2880 ways. / Jawaban: 2880 cara.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Set up an algebraic equation where the
+                area of the frame equals the area of the painting. The frame's
+                area is the total area minus the painting's area.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Buat persamaan aljabar di mana luas bingkai sama dengan luas
+                lukisan. Luas bingkai adalah luas total dikurangi luas lukisan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Let 'w' be the width of the frame.</p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the painting.</p>
+                <p>$A_{paint} = 30 \times 20 = 600 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • The area of the frame is also 600 cm². The total area is
+                  1200 cm².
+                </p>
+                <p>$A_{total} = (30+2w)(20+2w) = 1200$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Expand and solve the quadratic equation.</p>
+                <p>$600 + 100w + 4w^2 = 1200 \implies 4w^2 + 100w - 600 = 0$</p>
+                <p>$w^2 + 25w - 150 = 0 \implies (w+30)(w-5) = 0$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Since width must be positive, w = 5 cm.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Misalkan 'w' adalah lebar bingkai.</p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas lukisan.</p>
+                <p>$L_{lukisan} = 30 \times 20 = 600 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Luas bingkai juga 600 cm². Luas total adalah 1200 cm².</p>
+                <p>$L_{total} = (30+2w)(20+2w) = 1200$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Jabarkan dan selesaikan persamaan kuadrat.</p>
+                <p>$600 + 100w + 4w^2 = 1200 \implies 4w^2 + 100w - 600 = 0$</p>
+                <p>$w^2 + 25w - 150 = 0 \implies (w+30)(w-5) = 0$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Karena lebar harus positif, w = 5 cm.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 5 cm. / Jawaban: 5 cm.</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 17:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> Combination. This is a selection problem where the order does not matter. Use the formula $C(n, k) = \frac{n!}{k!(n-k)!}$.<br/><br/><strong>Konsep:</strong> Kombinasi. Ini adalah masalah pemilihan di mana urutan tidak penting. Gunakan rumus $C(n, k) = \frac{n!}{k!(n-k)!}$.</p></div>
-                     <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• We need to choose 3 students from 8, so n=8 and k=3.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Apply the combination formula.</p>
-                            <p>$C(8, 3) = \frac{8!}{3!(8-3)!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Kita perlu memilih 3 siswa dari 8, jadi n=8 dan k=3.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Gunakan rumus kombinasi.</p>
-                            <p>$C(8, 3) = \frac{8!}{3!(8-3)!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 56 committees. / Jawaban: 56 panitia.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The area of the shaded region is the
+                area of the trapezoid minus the area of the kite.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Luas daerah yang diarsir adalah luas trapesium dikurangi luas
+                layang-layang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the area of the trapezoid.</p>
+                <p>$A_{trap} = \frac{1}{2}(20+30)(15) = 375 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Identify the diagonals of the kite. One diagonal is the
+                  shorter base (20 cm). The other is the height of the trapezoid
+                  (15 cm).
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the area of the kite.</p>
+                <p>
+                  $A_{kite} = \frac{1}{2} \times 20 \times 15 = 150 \text{
+                  cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the shaded area.</p>
+                <p>$A_{shaded} = 375 - 150 = 225 \text{ cm}^2$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung luas trapesium.</p>
+                <p>$L_{trap} = \frac{1}{2}(20+30)(15) = 375 \text{ cm}^2$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Identifikasi diagonal layang-layang. Satu diagonal adalah
+                  alas yang lebih pendek (20 cm). Yang lainnya adalah tinggi
+                  trapesium (15 cm).
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas layang-layang.</p>
+                <p>
+                  $L_{kite} = \frac{1}{2} \times 20 \times 15 = 150 \text{
+                  cm}^2$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung luas yang diarsir.</p>
+                <p>$L_{arsir} = 375 - 150 = 225 \text{ cm}^2$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 225 cm². / Jawaban: 225 cm².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 18:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> Permutation. This is an arrangement problem where order matters and there is no repetition. Use the formula $P(n, k) = \frac{n!}{(n-k)!}$.<br/><br/><strong>Konsep:</strong> Permutasi. Ini adalah masalah penyusunan di mana urutan penting dan tidak ada pengulangan. Gunakan rumus $P(n, k) = \frac{n!}{(n-k)!}$.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                             <p>• We are arranging 4 digits from a set of 5, so n=5 and k=4.</p>
-                        </div>
-                        <div class="solution-step">
-                             <p>• Apply the permutation formula.</p>
-                             <p>$P(5, 4) = \frac{5!}{(5-4)!} = 5! = 120$</p>
-                        </div>
-                        <div class="solution-step">
-                             <p>• Alternatively, using the filling slots method:</p>
-                             <p>$5 \times 4 \times 3 \times 2 = 120$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                             <p>• Kita menyusun 4 angka dari 5 angka yang tersedia, jadi n=5 dan k=4.</p>
-                        </div>
-                        <div class="solution-step">
-                             <p>• Gunakan rumus permutasi.</p>
-                             <p>$P(5, 4) = \frac{5!}{(5-4)!} = 5! = 120$</p>
-                        </div>
-                        <div class="solution-step">
-                             <p>• Alternatif, menggunakan metode pengisian slot:</p>
-                             <p>$5 \times 4 \times 3 \times 2 = 120$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 120 numbers. / Jawaban: 120 bilangan.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> For a rectangle divided into four
+                smaller rectangles, the product of the areas of diagonally
+                opposite rectangles are equal.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Untuk sebuah persegi panjang yang dibagi menjadi empat persegi
+                panjang kecil, hasil kali luas persegi panjang yang berlawanan
+                secara diagonal adalah sama.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Apply the area product property.</p>
+                <p>$A_{TL} \times A_{BR} = A_{TR} \times A_{BL}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Substitute the values and solve for X.</p>
+                <p>$18 \times X = 30 \times 27 \implies 18X = 810$</p>
+                <p>$X = \frac{810}{18} = 45$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Gunakan sifat hasil kali luas.</p>
+                <p>$L_{KA} \times L_{KB} = L_{BA} \times L_{BB}$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Substitusi nilai dan selesaikan untuk X.</p>
+                <p>$18 \times X = 30 \times 27 \implies 18X = 810$</p>
+                <p>$X = \frac{810}{18} = 45$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 45 cm². / Jawaban: 45 cm².</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 19:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> This involves two independent combinations. We choose the boys and then choose the girls, and multiply the results.<br/><br/><strong>Konsep:</strong> Ini melibatkan dua kombinasi independen. Kita memilih anak laki-laki dan kemudian memilih anak perempuan, lalu mengalikan hasilnya.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Calculate the number of ways to choose 3 boys from 6.</p>
-                            <p>$C(6, 3) = \frac{6!}{3!3!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Calculate the number of ways to choose 2 girls from 4.</p>
-                            <p>$C(4, 2) = \frac{4!}{2!2!} = \frac{4 \times 3}{2 \times 1} = 6$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Multiply the results.</p>
-                            <p>$\text{Total ways} = 20 \times 6 = 120$</p>
-                        </div>
-                    </div>
-                     <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Hitung cara memilih 3 anak laki-laki dari 6.</p>
-                            <p>$C(6, 3) = \frac{6!}{3!3!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Hitung cara memilih 2 anak perempuan dari 4.</p>
-                            <p>$C(4, 2) = \frac{4!}{2!2!} = \frac{4 \times 3}{2 \times 1} = 6$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Kalikan hasilnya.</p>
-                            <p>$\text{Total cara} = 20 \times 6 = 120$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 120 ways. / Jawaban: 120 cara.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use the area and perimeter information
+                to set up a system of equations for the length (l) and width (w)
+                of the small rectangles.<br /><br /><strong>Konsep:</strong>
+                Gunakan informasi luas dan keliling untuk membuat sistem
+                persamaan untuk panjang (p) dan lebar (l) dari persegi panjang
+                kecil.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Find the side of the inner square.</p>
+                <p>$\text{Side}_{inner} = \sqrt{49} = 7 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Let the longer side be 'l' and shorter side be 'w'. From the
+                  figure, the side of the inner square is $l - w$.
+                </p>
+                <p>$l - w = 7$ (Eq. 1)</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • The side of the large outer square is $l + w$. The perimeter
+                  is $4(l+w)$.
+                </p>
+                <p>$4(l+w) = 76 \implies l+w = 19$ (Eq. 2)</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Solve the system of equations by adding Eq. 1 and Eq. 2.
+                </p>
+                <p>$(l-w) + (l+w) = 7+19 \implies 2l = 26 \implies l = 13$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Cari sisi persegi dalam.</p>
+                <p>$\text{Sisi}_{dalam} = \sqrt{49} = 7 \text{ cm}$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Misalkan sisi panjang 'p' dan sisi lebar 'l'. Dari gambar,
+                  sisi persegi dalam adalah $p - l$.
+                </p>
+                <p>$p - l = 7$ (Pers. 1)</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Sisi persegi luar yang besar adalah $p + l$. Kelilingnya
+                  adalah $4(p+l)$.
+                </p>
+                <p>$4(p+l) = 76 \implies p+l = 19$ (Pers. 2)</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Selesaikan sistem persamaan dengan menjumlahkan Pers. 1 dan
+                  Pers. 2.
+                </p>
+                <p>$(p-l) + (p+l) = 7+19 \implies 2p = 26 \implies p = 13$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 13 cm. / Jawaban: 13 cm.</div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 20:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> This is a permutation with repeated items. Use the formula $\frac{n!}{n_1! n_2! \dots}$.<br/><br/><strong>Konsep:</strong> Ini adalah permutasi dengan item yang berulang. Gunakan rumus $\frac{n!}{n_1! n_2! \dots}$.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• The word 'SUCCESS' has 7 letters. 'S' is repeated 3 times, 'C' is repeated 2 times.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Apply the formula.</p>
-                            <p>$\frac{7!}{3!2!} = \frac{5040}{(6)(2)} = \frac{5040}{12} = 420$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                            <p>• Kata 'SUCCESS' memiliki 7 huruf. 'S' diulang 3 kali, 'C' diulang 2 kali.</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Terapkan rumus.</p>
-                            <p>$\frac{7!}{3!2!} = \frac{5040}{(6)(2)} = \frac{5040}{12} = 420$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 420 ways. / Jawaban: 420 cara.</div>
-                </div>
-                
-                <!-- More solutions in the final format -->
+          <h3 class="topic-title">
+            Solutions for Part 2: Advanced Combinatorics
+          </h3>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 29:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> A diagonal connects two non-adjacent vertices. The number of diagonals in a polygon with $n$ sides is the total number of lines between vertices minus the number of sides.<br/><br/><strong>Konsep:</strong> Diagonal menghubungkan dua simpul yang tidak bersebelahan. Jumlah diagonal pada poligon dengan $n$ sisi adalah jumlah total garis antar simpul dikurangi jumlah sisi.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Calculate the total number of lines connecting any two of the 10 vertices.</p>
-                            <p>$C(10, 2) = \frac{10!}{2!(8!)} = \frac{10 \times 9}{2} = 45$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Subtract the number of sides (which are not diagonals) from this total.</p>
-                            <p>$\text{Diagonals} = 45 - 10 = 35$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                         <div class="solution-step">
-                             <p>• Hitung jumlah total garis yang menghubungkan dua dari 10 simpul.</p>
-                             <p>$C(10, 2) = \frac{10!}{2!(8!)} = \frac{10 \times 9}{2} = 45$</p>
-                         </div>
-                         <div class="solution-step">
-                             <p>• Kurangi jumlah sisi (yang bukan diagonal) dari total ini.</p>
-                             <p>$\text{Diagonal} = 45 - 10 = 35$</p>
-                         </div>
-                    </div>
-                    <div class="final-answer">Answer: 35 diagonals. / Jawaban: 35 diagonal.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a permutation problem with a
+                restriction. When items must be kept together, treat them as a
+                single block. Arrange the block with other items, then arrange
+                the items within the block.<br /><br /><strong>Konsep:</strong>
+                Ini adalah soal permutasi dengan batasan. Ketika beberapa objek
+                harus selalu bersama, anggap mereka sebagai satu blok tunggal.
+                Susun blok tersebut dengan objek lainnya, kemudian susun
+                objek-objek di dalam blok.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Group the 5 math books as one block. Now we have 4 items to
+                  arrange (1 block + 3 science books).
+                </p>
+                <p>$\text{Ways to arrange blocks} = 4! = 24$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Arrange the 5 math books within their block.</p>
+                <p>$\text{Ways to arrange books in block} = 5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Multiply the results to get the total arrangements.</p>
+                <p>$\text{Total} = 4! \times 5! = 24 \times 120 = 2880$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kelompokkan 5 buku matematika menjadi satu blok. Sekarang
+                  ada 4 item untuk disusun (1 blok + 3 buku sains).
+                </p>
+                <p>$\text{Cara susun blok} = 4! = 24$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Susun 5 buku matematika di dalam bloknya.</p>
+                <p>$\text{Cara susun buku dalam blok} = 5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Kalikan hasilnya untuk mendapatkan total susunan.</p>
+                <p>$\text{Total} = 4! \times 5! = 24 \times 120 = 2880$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 2880 ways. / Jawaban: 2880 cara.
+            </div>
+          </div>
 
-                <div class="item-container">
-                    <p><strong>Solution Number 30:</strong></p>
-                    <div class="concept"><p><strong>Concept:</strong> Similar to the books problem, treat the two friends who must sit together as a single block.<br/><br/><strong>Konsep:</strong> Mirip dengan soal buku, perlakukan dua teman yang harus duduk bersama sebagai satu blok tunggal.</p></div>
-                    <div class="solution-wrapper">
-                        <strong>Solution:</strong>
-                        <div class="solution-step">
-                            <p>• Group friends A and B as one block. Now we arrange 4 items (the block and 3 other friends).</p>
-                            <p>$\text{Ways to arrange blocks} = 4! = 24$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Friends A and B can be arranged in 2 ways within their block (AB or BA).</p>
-                            <p>$\text{Ways to arrange in block} = 2! = 2$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Multiply the results.</p>
-                            <p>$\text{Total ways} = 24 \times 2 = 48$</p>
-                        </div>
-                    </div>
-                    <div class="solution-wrapper" style="margin-top: 1.5rem;">
-                        <strong>Langkah Penyelesaian:</strong>
-                        <div class="solution-step">
-                            <p>• Kelompokkan teman A dan B sebagai satu blok. Sekarang kita menyusun 4 item (blok dan 3 teman lainnya).</p>
-                            <p>$\text{Cara susun blok} = 4! = 24$</p>
-                        </div>
-                        <div class="solution-step">
-                            <p>• Teman A dan B dapat disusun dalam 2 cara di dalam blok mereka (AB atau BA).</p>
-                            <p>$\text{Cara susun dalam blok} = 2! = 2$</p>
-                        </div>
-                         <div class="solution-step">
-                            <p>• Kalikan hasilnya.</p>
-                            <p>$\text{Total cara} = 24 \times 2 = 48$</p>
-                        </div>
-                    </div>
-                    <div class="final-answer">Answer: 48 ways. / Jawaban: 48 cara.</div>
-                </div>
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "At least 1" problems are often
+                easiest solved using complementary counting: Total ways - Ways
+                with "none".<br /><br /><strong>Konsep:</strong> Soal
+                "sedikitnya 1" seringkali paling mudah diselesaikan menggunakan
+                perhitungan komplementer: Total cara - Cara dengan "tidak ada
+                sama sekali".
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Calculate the total number of ways to choose any 4 people
+                  from 9 (5 boys + 4 girls).
+                </p>
+                <p>
+                  $\text{Total ways} = C(9, 4) = \frac{9!}{4!5!} = \frac{9
+                  \times 8 \times 7 \times 6}{4 \times 3 \times 2 \times 1} =
+                  126$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Calculate the number of ways to have "no girls" (i.e., all 4
+                  are boys).
+                </p>
+                <p>
+                  $\text{Ways with no girls} = C(5, 4) = \frac{5!}{4!1!} = 5$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Subtract the "no girls" case from the total.</p>
+                <p>$\text{Ways with at least 1 girl} = 126 - 5 = 121$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Hitung total cara memilih 4 orang dari 9 (5 laki-laki + 4
+                  perempuan).
+                </p>
+                <p>
+                  $\text{Total cara} = C(9, 4) = \frac{9!}{4!5!} = \frac{9
+                  \times 8 \times 7 \times 6}{4 \times 3 \times 2 \times 1} =
+                  126$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Hitung cara agar tidak ada "anak perempuan" (yaitu,
+                  keempatnya anak laki-laki).
+                </p>
+                <p>
+                  $\text{Cara tanpa perempuan} = C(5, 4) = \frac{5!}{4!1!} = 5$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kurangkan kasus "tanpa perempuan" dari total.</p>
+                <p>
+                  $\text{Cara dengan sedikitnya 1 perempuan} = 126 - 5 = 121$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 121 ways. / Jawaban: 121 cara.
+            </div>
+          </div>
 
-            </section>
-        </main>
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Permutation with multiple
+                restrictions. We must consider the restriction on the first
+                digit (thousands place) and the last digit (units place)
+                simultaneously. It is best to handle this by breaking it into
+                cases.<br /><br /><strong>Konsep:</strong> Permutasi dengan
+                banyak batasan. Kita harus mempertimbangkan batasan pada digit
+                pertama (ribuan) dan digit terakhir (satuan) secara bersamaan.
+                Cara terbaik adalah membaginya menjadi beberapa kasus.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Last digit must be odd: {1, 3, 5}. First digit must be from
+                  {3, 4, 5, 6}. The digits 3 and 5 are common, so we split into
+                  cases based on the last digit.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Case 1: Last digit is 1.</p>
+                <p>
+                  First digit options: {3,4,5,6} (4 choices). Middle two: 4
+                  digits left, so P(4,2) = 12 choices. Total: $4 \times 12 = 48$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Case 2: Last digit is 3.</p>
+                <p>
+                  First digit options: {4,5,6} (3 choices). Middle two: 4 digits
+                  left, so P(4,2) = 12 choices. Total: $3 \times 12 = 36$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Case 3: Last digit is 5.</p>
+                <p>
+                  First digit options: {3,4,6} (3 choices). Middle two: 4 digits
+                  left, so P(4,2) = 12 choices. Total: $3 \times 12 = 36$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Sum the cases.</p>
+                <p>$48 + 36 + 36 = 120$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Digit terakhir harus ganjil: {1, 3, 5}. Digit pertama harus
+                  dari {3, 4, 5, 6}. Angka 3 dan 5 ada di kedua syarat, jadi
+                  kita bagi kasus berdasarkan digit terakhir.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kasus 1: Digit terakhir adalah 1.</p>
+                <p>
+                  Pilihan digit pertama: {3,4,5,6} (4 pilihan). Dua tengah: sisa
+                  4 angka, jadi P(4,2) = 12 pilihan. Total: $4 \times 12 = 48$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kasus 2: Digit terakhir adalah 3.</p>
+                <p>
+                  Pilihan digit pertama: {4,5,6} (3 pilihan). Dua tengah: sisa 4
+                  angka, jadi P(4,2) = 12 pilihan. Total: $3 \times 12 = 36$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kasus 3: Digit terakhir adalah 5.</p>
+                <p>
+                  Pilihan digit pertama: {3,4,6} (3 pilihan). Dua tengah: sisa 4
+                  angka, jadi P(4,2) = 12 pilihan. Total: $3 \times 12 = 36$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Jumlahkan semua kasus.</p>
+                <p>$48 + 36 + 36 = 120$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 120 numbers. / Jawaban: 120 bilangan.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This involves two independent
+                combinations. We choose the boys and then choose the girls, and
+                multiply the results.<br /><br /><strong>Konsep:</strong> Ini
+                melibatkan dua kombinasi independen. Kita memilih anak laki-laki
+                dan kemudian memilih anak perempuan, lalu mengalikan hasilnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate the number of ways to choose 3 boys from 6.</p>
+                <p>
+                  $C(6, 3) = \frac{6!}{3!3!} = \frac{6 \times 5 \times 4}{3
+                  \times 2 \times 1} = 20$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Calculate the number of ways to choose 2 girls from 4.</p>
+                <p>
+                  $C(4, 2) = \frac{4!}{2!2!} = \frac{4 \times 3}{2 \times 1} =
+                  6$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Multiply the results.</p>
+                <p>$\text{Total ways} = 20 \times 6 = 120$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung cara memilih 3 anak laki-laki dari 6.</p>
+                <p>
+                  $C(6, 3) = \frac{6!}{3!3!} = \frac{6 \times 5 \times 4}{3
+                  \times 2 \times 1} = 20$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Hitung cara memilih 2 anak perempuan dari 4.</p>
+                <p>
+                  $C(4, 2) = \frac{4!}{2!2!} = \frac{4 \times 3}{2 \times 1} =
+                  6$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kalikan hasilnya.</p>
+                <p>$\text{Total cara} = 20 \times 6 = 120$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 120 ways. / Jawaban: 120 cara.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a permutation with repeated
+                items. Use the formula $\frac{n!}{n_1! n_2! \dots}$.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Ini adalah permutasi dengan item yang berulang. Gunakan rumus
+                $\frac{n!}{n_1! n_2! \dots}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • The word 'SUCCESS' has 7 letters. 'S' is repeated 3 times,
+                  'C' is repeated 2 times.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Apply the formula.</p>
+                <p>
+                  $\frac{7!}{3!2!} = \frac{5040}{(6)(2)} = \frac{5040}{12} =
+                  420$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kata 'SUCCESS' memiliki 7 huruf. 'S' diulang 3 kali, 'C'
+                  diulang 2 kali.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Terapkan rumus.</p>
+                <p>
+                  $\frac{7!}{3!2!} = \frac{5040}{(6)(2)} = \frac{5040}{12} =
+                  420$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 420 ways. / Jawaban: 420 cara.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A straight line is formed by choosing
+                any 2 points. Since the order of points does not matter, this is
+                a combination problem.<br /><br /><strong>Konsep:</strong>
+                Sebuah garis lurus dibentuk dengan memilih 2 titik. Karena
+                urutan titik tidak penting, ini adalah soal kombinasi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• We need to choose 2 points from 6.</p>
+                <p>
+                  $C(6, 2) = \frac{6!}{2!(6-2)!} = \frac{6 \times 5}{2 \times 1}
+                  = 15$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Kita perlu memilih 2 titik dari 6.</p>
+                <p>
+                  $C(6, 2) = \frac{6!}{2!(6-2)!} = \frac{6 \times 5}{2 \times 1}
+                  = 15$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 15 lines. / Jawaban: 15 garis.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a dynamic programming problem
+                with a restriction. The number of ways to reach step 'n' is
+                $W(n) = W(n-1) + W(n-2)$, but if a step is broken, the number of
+                ways to reach it is 0.<br /><br /><strong>Konsep:</strong> Ini
+                adalah masalah program dinamis dengan batasan. Jumlah cara untuk
+                mencapai anak tangga ke-'n' adalah $W(n) = W(n-1) + W(n-2)$,
+                tetapi jika sebuah anak tangga rusak, jumlah cara untuk
+                mencapainya adalah 0.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Calculate ways for each step, setting W(6)=0.</p>
+                <p>$W(1)=1, W(2)=2, W(3)=3, W(4)=5, W(5)=8$</p>
+                <p>$W(6)=0$</p>
+                <p>$W(7)=W(6)+W(5)=0+8=8$</p>
+                <p>$W(8)=W(7)+W(6)=8+0=8$</p>
+                <p>$W(9)=W(8)+W(7)=8+8=16$</p>
+                <p>$W(10)=W(9)+W(8)=16+8=24$</p>
+                <p>$W(11)=W(10)+W(9)=24+16=40$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung cara untuk setiap anak tangga, dengan W(6)=0.</p>
+                <p>$W(1)=1, W(2)=2, W(3)=3, W(4)=5, W(5)=8$</p>
+                <p>$W(6)=0$</p>
+                <p>$W(7)=W(6)+W(5)=0+8=8$</p>
+                <p>$W(8)=W(7)+W(6)=8+0=8$</p>
+                <p>$W(9)=W(8)+W(7)=8+8=16$</p>
+                <p>$W(10)=W(9)+W(8)=16+8=24$</p>
+                <p>$W(11)=W(10)+W(9)=24+16=40$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 40 ways. / Jawaban: 40 cara.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a permutation problem with
+                restrictions on the first and last digits, especially involving
+                the digit 0. It's best solved using cases.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Ini adalah soal permutasi dengan batasan pada digit pertama dan
+                terakhir, terutama yang melibatkan angka 0. Paling baik
+                diselesaikan dengan menggunakan kasus.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Case 1: The last digit is 0.</p>
+                <p>
+                  First digit: 5 choices {1,2,3,4,5}. Second digit: 4 choices.
+                  Total: $5 \times 4 \times 1 = 20$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Case 2: The last digit is 2 or 4 (2 choices).</p>
+                <p>
+                  First digit cannot be 0: 4 choices. Second digit: 4 choices
+                  remaining. Total: $4 \times 4 \times 2 = 32$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Add the results from both cases.</p>
+                <p>$20 + 32 = 52$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Kasus 1: Digit terakhir adalah 0.</p>
+                <p>
+                  Digit pertama: 5 pilihan {1,2,3,4,5}. Digit kedua: 4 pilihan.
+                  Total: $5 \times 4 \times 1 = 20$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kasus 2: Digit terakhir adalah 2 atau 4 (2 pilihan).</p>
+                <p>
+                  Digit pertama tidak boleh 0: 4 pilihan. Digit kedua: sisa 4
+                  pilihan. Total: $4 \times 4 \times 2 = 32$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Jumlahkan hasil dari kedua kasus.</p>
+                <p>$20 + 32 = 52$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 52 numbers. / Jawaban: 52 bilangan.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> An ascending number is uniquely
+                defined by the set of 3 distinct digits it contains. Since 0
+                cannot be the first digit, we can simply choose 3 distinct
+                digits from the set {1, 2, ..., 9}.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Sebuah bilangan 'naik' secara unik ditentukan oleh 3 digit
+                berbeda yang menyusunnya. Karena 0 tidak boleh menjadi digit
+                pertama, kita cukup memilih 3 digit berbeda dari himpunan {1, 2,
+                ..., 9}.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • We need to choose 3 distinct digits from {1, 2, 3, 4, 5, 6,
+                  7, 8, 9}. The order will automatically be ascending.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• This is a combination problem.</p>
+                <p>
+                  $C(9, 3) = \frac{9!}{3!(9-3)!} = \frac{9 \times 8 \times 7}{3
+                  \times 2 \times 1} = 84$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kita perlu memilih 3 digit berbeda dari {1, 2, 3, 4, 5, 6,
+                  7, 8, 9}. Urutannya akan otomatis menjadi menaik.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Ini adalah soal kombinasi.</p>
+                <p>
+                  $C(9, 3) = \frac{9!}{3!(9-3)!} = \frac{9 \times 8 \times 7}{3
+                  \times 2 \times 1} = 84$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 84 numbers. / Jawaban: 84 bilangan.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a "Stars and Bars" problem for
+                distributing identical items into distinct boxes. The formula is
+                $C(n+k-1, k-1)$, where n is the number of items and k is the
+                number of boxes.<br /><br /><strong>Konsep:</strong> Ini adalah
+                masalah "Bintang dan Batang" untuk mendistribusikan benda
+                identik ke dalam kotak yang berbeda. Rumusnya adalah $C(n+k-1,
+                k-1)$, di mana n adalah jumlah benda dan k adalah jumlah kotak.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Here, n = 5 (balls) and k = 3 (boxes).</p>
+              </div>
+              <div class="solution-step">
+                <p>• Apply the Stars and Bars formula.</p>
+                <p>
+                  $C(5+3-1, 3-1) = C(7, 2) = \frac{7 \times 6}{2 \times 1} = 21$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Di sini, n = 5 (bola) dan k = 3 (kotak).</p>
+              </div>
+              <div class="solution-step">
+                <p>• Terapkan rumus Bintang dan Batang.</p>
+                <p>
+                  $C(5+3-1, 3-1) = C(7, 2) = \frac{7 \times 6}{2 \times 1} = 21$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 21 ways. / Jawaban: 21 cara.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The order of the flags matters (e.g.,
+                red above blue is a different signal from blue above red).
+                Therefore, this is a permutation problem.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Urutan bendera penting (misalnya, merah di atas biru adalah
+                sinyal yang berbeda dari biru di atas merah). Oleh karena itu,
+                ini adalah masalah permutasi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• We need to arrange 2 flags from a choice of 4.</p>
+                <p>$P(4, 2) = \frac{4!}{(4-2)!} = 4 \times 3 = 12$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Kita perlu menyusun 2 bendera dari 4 pilihan.</p>
+                <p>$P(4, 2) = \frac{4!}{(4-2)!} = 4 \times 3 = 12$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 12 signals. / Jawaban: 12 sinyal.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a multi-step problem. First,
+                choose the letters (combination), then arrange them
+                (permutation).<br /><br /><strong>Konsep:</strong> Ini adalah
+                masalah multi-langkah. Pertama, pilih huruf-hurufnya
+                (kombinasi), kemudian susun (permutasi).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>• Choose 3 consonants from 7.</p>
+                <p>$C(7, 3) = \frac{7!}{3!4!} = 35$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Choose 2 vowels from 4.</p>
+                <p>$C(4, 2) = \frac{4!}{2!2!} = 6$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • The number of ways to select the 5 letters is $35 \times 6 =
+                  210$.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Arrange these 5 chosen letters.</p>
+                <p>$5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Total arrangements = (Ways to choose) x (Ways to arrange).
+                </p>
+                <p>$210 \times 120 = 25200$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Pilih 3 konsonan dari 7.</p>
+                <p>$C(7, 3) = \frac{7!}{3!4!} = 35$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Pilih 2 vokal dari 4.</p>
+                <p>$C(4, 2) = \frac{4!}{2!2!} = 6$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Jumlah cara memilih 5 huruf adalah $35 \times 6 = 210$.</p>
+              </div>
+              <div class="solution-step">
+                <p>• Susun 5 huruf yang terpilih ini.</p>
+                <p>$5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Total susunan = (Cara memilih) x (Cara menyusun).</p>
+                <p>$210 \times 120 = 25200$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 25200 ways. / Jawaban: 25200 cara.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use complementary counting. Calculate
+                the total number of paths and subtract the number of paths that
+                pass through the forbidden block.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Gunakan perhitungan komplementer. Hitung jumlah total jalur dan
+                kurangi jumlah jalur yang melewati blok terlarang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total paths from A(0,0) to B(4,3) without restriction. Needs
+                  4 Right and 3 Down moves.
+                </p>
+                <p>$\text{Total} = C(4+3, 3) = C(7,3) = 35$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Any path through the block at (2,1) must go from A to the
+                  block's entry point P(2,1) and from the block's exit point
+                  Q(3,2) to B.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Paths from A(0,0) to P(2,1): 2 Right, 1 Down.</p>
+                <p>$C(2+1, 1) = C(3,1) = 3$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Paths from Q(3,2) to B(4,3): 1 Right, 1 Down.</p>
+                <p>$C(1+1, 1) = C(2,1) = 2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Total forbidden paths = (Ways A to P) x (Ways Q to B).</p>
+                <p>$\text{Forbidden} = 3 \times 2 = 6$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Allowed paths = Total - Forbidden.</p>
+                <p>$35 - 6 = 29$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total jalur dari A(0,0) ke B(4,3) tanpa batasan. Butuh 4
+                  Kanan dan 3 Bawah.
+                </p>
+                <p>$\text{Total} = C(4+3, 3) = C(7,3) = 35$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Jalur yang melalui blok di (2,1) harus pergi dari A ke titik
+                  masuk blok P(2,1) dan dari titik keluar blok Q(3,2) ke B.
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Jalur dari A(0,0) ke P(2,1): 2 Kanan, 1 Bawah.</p>
+                <p>$C(2+1, 1) = C(3,1) = 3$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Jalur dari Q(3,2) ke B(4,3): 1 Kanan, 1 Bawah.</p>
+                <p>$C(1+1, 1) = C(2,1) = 2$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Total jalur terlarang = (Cara A ke P) x (Cara Q ke B).</p>
+                <p>$\text{Terlarang} = 3 \times 2 = 6$</p>
+              </div>
+              <div class="solution-step">
+                <p>• Jalur yang diizinkan = Total - Terlarang.</p>
+                <p>$35 - 6 = 29$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 29 ways. / Jawaban: 29 cara.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A diagonal connects two non-adjacent
+                vertices. The number of diagonals in a polygon with $n$ sides is
+                the total number of lines between vertices minus the number of
+                sides.<br /><br /><strong>Konsep:</strong> Diagonal
+                menghubungkan dua simpul yang tidak bersebelahan. Jumlah
+                diagonal pada poligon dengan $n$ sisi adalah jumlah total garis
+                antar simpul dikurangi jumlah sisi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Calculate the total number of lines connecting any two of
+                  the 10 vertices.
+                </p>
+                <p>
+                  $C(10, 2) = \frac{10!}{2!(8!)} = \frac{10 \times 9}{2} = 45$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Subtract the number of sides (which are not diagonals) from
+                  this total.
+                </p>
+                <p>$\text{Diagonals} = 45 - 10 = 35$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Hitung jumlah total garis yang menghubungkan dua dari 10
+                  simpul.
+                </p>
+                <p>
+                  $C(10, 2) = \frac{10!}{2!(8!)} = \frac{10 \times 9}{2} = 45$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Kurangi jumlah sisi (yang bukan diagonal) dari total ini.
+                </p>
+                <p>$\text{Diagonal} = 45 - 10 = 35$</p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 35 diagonals. / Jawaban: 35 diagonal.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> For circular permutations, the formula
+                is $(n-1)!$. For restrictions, it is often easier to calculate
+                the total arrangements and subtract the arrangements where the
+                forbidden event occurs.<br /><br /><strong>Konsep:</strong>
+                Untuk permutasi siklis, rumusnya adalah $(n-1)!$. Untuk soal
+                dengan batasan, seringkali lebih mudah menghitung total susunan
+                dan mengurangi susunan di mana kejadian yang dilarang terjadi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Calculate the total number of ways to seat 6 people around a
+                  table.
+                </p>
+                <p>$\text{Total ways} = (6-1)! = 5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Calculate the number of ways where the two particular people
+                  SIT TOGETHER (treat them as a block).
+                </p>
+                <p>
+                  $\text{Arrange 5 items (4 people + 1 block)} = (5-1)! = 4! =
+                  24$. The two people can swap places: $24 \times 2 = 48$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Subtract the "together" ways from the total ways.</p>
+                <p>$\text{Ways not together} = 120 - 48 = 72$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Hitung total cara 6 orang duduk di meja bundar.</p>
+                <p>$\text{Total cara} = (6-1)! = 5! = 120$</p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  • Hitung cara di mana dua orang tertentu DUDUK BERSAMA (anggap
+                  sebagai satu blok).
+                </p>
+                <p>
+                  $\text{Susun 5 item (4 orang + 1 blok)} = (5-1)! = 4! = 24$.
+                  Kedua orang bisa bertukar tempat: $24 \times 2 = 48$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>• Kurangi cara "duduk bersama" dari total cara.</p>
+                <p>$\text{Cara tidak bersama} = 120 - 48 = 72$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 72 ways. / Jawaban: 72 cara.</div>
+          </div>
+        </section>
+      </main>
     </div>
-
-</body>
+  </body>
 </html>
-
