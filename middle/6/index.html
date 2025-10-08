@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Worksheet - 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step {
+             margin-bottom: 0.75rem;
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        .solution-points {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+        .solution-points li {
+            margin-bottom: 0.5rem;
+        }
+        .figure-description {
+            font-style: italic;
+            color: #4b5563;
+            background-color: #f9fafb;
+            border: 1px dashed #d1d5db;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-10">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto h-24 mb-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Worksheet 6</h1>
+            <p class="text-gray-600 mt-2">Grade 3 - 4 | Time Measurement, Calendar & Angle Geometry</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+
+                <!-- Topik 1: Pengukuran Waktu & Kalender -->
+                <h3 class="topic-title">Part 1: Time Measurement & Calendar</h3>
+                <div class="item-container"><p><strong>1.</strong> A concert was scheduled to last for 2 hours 45 minutes and end at 10:30 PM. However, it started 15 minutes late and had an unexpected 20-minute break. What time did the concert actually end?<br/><br/>Sebuah konser dijadwalkan berlangsung selama 2 jam 45 menit dan selesai pada pukul 22:30. Namun, konser dimulai 15 menit terlambat dan ada jeda tak terduga selama 20 menit. Pukul berapa konser tersebut benar-benar berakhir?</p></div>
+                <div class="item-container"><p><strong>2.</strong> Today is Tuesday. What day of the week will it be 100 days from now?<br/><br/>Hari ini adalah hari Selasa. Hari apakah 100 hari dari sekarang?</p></div>
+                <div class="item-container"><p><strong>3.</strong> A bus travels from Town A to Town B. It leaves Town A at 8:40 AM. The journey has two segments. The first segment takes 1 hour 50 minutes. There is a 25-minute stop before the second segment, which takes 2 hours 15 minutes. What time does the bus arrive at Town B?<br/><br/>Sebuah bus melakukan perjalanan dari Kota A ke Kota B. Bus berangkat dari Kota A pukul 08:40. Perjalanan memiliki dua segmen. Segmen pertama memakan waktu 1 jam 50 menit. Ada perhentian selama 25 menit sebelum segmen kedua, yang memakan waktu 2 jam 15 menit. Pukul berapa bus tiba di Kota B?</p></div>
+                <div class="item-container"><p><strong>4.</strong> March 1st, 2023 was a Wednesday. What day of the week will March 1st, 2026 be?<br/><br/>Tanggal 1 Maret 2023 adalah hari Rabu. Hari apakah tanggal 1 Maret 2026?</p></div>
+                <div class="item-container"><p><strong>5.</strong> It is currently 3:00 PM. What time will it be in 250 minutes?<br/><br/>Sekarang pukul 15:00. Pukul berapakah 250 menit dari sekarang?</p></div>
+                <div class="item-container"><p><strong>6.</strong> A summer camp lasts for 45 days. If the camp has the maximum possible number of Sundays, how many Sundays are there?<br/><br/>Sebuah perkemahan musim panas berlangsung selama 45 hari. Jika perkemahan tersebut memiliki jumlah hari Minggu semaksimal mungkin, ada berapa hari Minggu?</p></div>
+                <div class="item-container"><p><strong>7.</strong> At what approximate time between 7 and 8 o'clock are the hands of a clock together?<br/><br/>Kira-kira pukul berapa di antara jam 7 dan 8 jarum jam dan menit akan berimpit?</p></div>
+                <div class="item-container"><p><strong>8.</strong> Budi's birthday is on February 29th. In 2020, he celebrated his birthday on a Saturday. On what day of the week will he celebrate his next birthday?<br/><br/>Ulang tahun Budi jatuh pada tanggal 29 Februari. Pada tahun 2020, ia merayakan ulang tahunnya pada hari Sabtu. Pada hari apa ia akan merayakan ulang tahunnya yang berikutnya?</p></div>
+                <div class="item-container"><p><strong>9.</strong> A bus leaves every 25 minutes. If the first bus leaves at 6:00 AM, what time does the 5th bus leave?<br/><br/>Sebuah bus berangkat setiap 25 menit. Jika bus pertama berangkat pukul 06:00, pukul berapa bus ke-5 berangkat?</p></div>
+                <div class="item-container"><p><strong>10.</strong> What is the total number of days from March 15th to May 5th, inclusive?<br/><br/>Berapa jumlah total hari dari 15 Maret hingga 5 Mei, termasuk kedua tanggal tersebut?</p></div>
+                <div class="item-container"><p><strong>11.</strong> At 3:30, the hour and minute hands of a clock are not quite opposite each other. When is the next time they will be approximately opposite each other (forming a straight line)?<br/><br/>Pada pukul 3:30, jarum jam dan menit pada sebuah jam tidak saling berhadapan. Kira-kira kapan waktu berikutnya mereka akan saling berhadapan (membentuk garis lurus)?</p></div>
+                <div class="item-container"><p><strong>12.</strong> A project started on June 10th and was completed on July 28th. How many weeks and days did the project take?<br/><br/>Sebuah proyek dimulai pada 10 Juni dan selesai pada 28 Juli. Berapa minggu dan hari proyek tersebut memakan waktu?</p></div>
+                <div class="item-container"><p><strong>13.</strong> If yesterday was Sunday, what day of the week was 20 days ago?<br/><br/>Jika kemarin adalah hari Minggu, hari apakah 20 hari yang lalu?</p></div>
+                <div class="item-container"><p><strong>14.</strong> Clock A gains 3 minutes every hour, and Clock B loses 2 minutes every hour. If both are set correctly at 12:00 PM on Monday, what is the time difference between them at 12:00 PM on Tuesday?<br/><br/>Jam A lebih cepat 3 menit setiap jam, dan Jam B lebih lambat 2 menit setiap jam. Jika keduanya diatur dengan benar pada pukul 12:00 siang hari Senin, berapa selisih waktu antara keduanya pada pukul 12:00 siang hari Selasa?</p></div>
+                <div class="item-container"><p><strong>15.</strong> How many times do the hour and minute hands of a clock form a right angle ($90^\circ$) in a 12-hour period?<br/><br/>Berapa kali jarum jam dan menit pada sebuah jam membentuk sudut siku-siku ($90^\circ$) dalam periode 12 jam?</p></div>
+
+                <!-- Topik 2: Geometri Sudut -->
+                <h3 class="topic-title">Part 2: Angle Geometry</h3>
+                <div class="item-container"><p><strong>16.</strong> What is the reflex angle between the hands of a clock at 10:10?<br/><br/>Berapakah sudut refleks antara jarum jam dan menit pada pukul 10:10?</p></div>
+                <div class="item-container"><p><strong>17.</strong> In a regular pentagon, what is the measure of each interior angle?<br/><br/>Pada sebuah segilima beraturan, berapakah besar setiap sudut dalamnya?</p></div>
+                <div class="item-container"><p><strong>18.</strong> A person starts facing South. They turn $135^\circ$ clockwise, then $45^\circ$ anti-clockwise, and finally $270^\circ$ clockwise. What direction are they facing now?<br/><br/>Seseorang mulai menghadap ke Selatan. Ia berputar $135^\circ$ searah jarum jam, lalu $45^\circ$ berlawanan arah jarum jam, dan terakhir $270^\circ$ searah jarum jam. Ke arah manakah ia menghadap sekarang?</p></div>
+                <div class="item-container"><p><strong>19.</strong> What type of angle is formed by the hands of a clock at 2:00? (Acute, Right, Obtuse)<br/><br/>Jenis sudut apakah yang dibentuk oleh jarum jam pada pukul 2:00? (Lancip, Siku-siku, Tumpul)</p></div>
+                <div class="item-container"><p><strong>20.</strong> Find the smaller angle formed by the hour and minute hands at 8:20 PM.<br/><br/>Tentukan sudut yang lebih kecil yang dibentuk oleh jarum jam dan menit pada pukul 20:20.</p></div>
+                <div class="item-container">
+                    <p><strong>21.</strong> In the figure, line AB is parallel to line CD. Find the value of $\angle BED$.<br/><br/>Pada gambar, garis AB sejajar dengan garis CD. Tentukan besar $\angle BED$.</p>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_teayr3_952.png" alt="Diagram for question 21" class="my-4 mx-auto max-w-md">
+                </div>
+                <div class="item-container"><p><strong>22.</strong> How many right angles are there inside a rectangle?<br/><br/>Ada berapa banyak sudut siku-siku di dalam sebuah persegi panjang?</p></div>
+                <div class="item-container"><p><strong>23.</strong> A wheel has 12 spokes equally spaced. What is the angle between any two adjacent spokes?<br/><br/>Sebuah roda memiliki 12 jeruji yang jaraknya sama. Berapakah sudut antara dua jeruji yang berdekatan?</p></div>
+                <div class="item-container"><p><strong>24.</strong> What is the sum of angles in a triangle?<br/><br/>Berapakah jumlah sudut dalam sebuah segitiga?</p></div>
+                <div class="item-container"><p><strong>25.</strong> If you cut a right angle into two equal smaller angles, what is the measure of each smaller angle?<br/><br/>Jika Anda memotong sebuah sudut siku-siku menjadi dua sudut yang lebih kecil dan sama besar, berapakah ukuran masing-masing sudut yang lebih kecil?</p></div>
+                <div class="item-container"><p><strong>26.</strong> What is the angle between the hour and minute hands at 4:20?<br/><br/>Berapakah sudut antara jarum jam dan menit pada pukul 4:20?</p></div>
+                <div class="item-container"><p><strong>27.</strong> A ship turns 270 degrees anti-clockwise from facing East. Which direction is it facing now?<br/><br/>Sebuah kapal berputar 270 derajat berlawanan arah jarum jam dari arah Timur. Ke arah manakah kapal itu menghadap sekarang?</p></div>
+                <div class="item-container"><p><strong>28.</strong> An isosceles triangle has one angle measuring $100^\circ$. What are the measures of the other two angles?<br/><br/>Sebuah segitiga sama kaki memiliki salah satu sudut berukuran $100^\circ$. Berapakah ukuran kedua sudut lainnya?</p></div>
+                <div class="item-container"><p><strong>29.</strong> Calculate the angle between the hour and minute hand at 2:48.<br/><br/>Hitunglah sudut antara jarum jam dan menit pada pukul 2:48.</p></div>
+                <div class="item-container"><p><strong>30.</strong> An angle is twice as large as a right angle. What is its measure in degrees?<br/><br/>Sebuah sudut berukuran dua kali lebih besar dari sudut siku-siku. Berapakah ukurannya dalam derajat?</p></div>
+            </section>
+
+            <!-- Bagian Pembahasan -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions</h2>
+
+                <!-- Pembahasan Topik 1 -->
+                <h3 class="topic-title">Solutions for Part 1: Time Measurement & Calendar</h3>
+                
+                <div class="item-container">
+                    <p><strong>Solution 1:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The actual end time is the scheduled end time plus the sum of all delays.<br/><br/><strong>Konsep:</strong> Waktu selesai sebenarnya adalah waktu selesai yang dijadwalkan ditambah dengan total semua penundaan.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Total extra time = 15 minutes (delay) + 20 minutes (break) = 35 minutes.</li>
+                        <li>The scheduled end time was 10:30 PM.</li>
+                        <li>Actual end time = 10:30 PM + 35 minutes = 11:05 PM.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Total waktu tambahan = 15 menit (terlambat) + 20 menit (jeda) = 35 menit.</li>
+                        <li>Waktu selesai yang dijadwalkan adalah 22:30.</li>
+                        <li>Waktu selesai sebenarnya = 22:30 + 35 menit = 23:05.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 11:05 PM / Jawaban: 23:05</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution 2:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The cycle of days in a week is 7 days. To find a future day, we divide the number of days by 7 and look at the remainder.<br/><br/><strong>Konsep:</strong> Siklus hari dalam seminggu adalah 7 hari. Untuk menemukan hari di masa depan, kita bagi jumlah hari dengan 7 dan lihat sisanya.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>There are 7 days in a week.</li>
+                        <li>Divide 100 by 7: $100 \div 7 = 14$ with a remainder of 2.</li>
+                        <li>This means there will be 14 full weeks and 2 extra days.</li>
+                        <li>We just need to count 2 days forward from Tuesday.</li>
+                        <li>Tuesday + 1 day = Wednesday. Wednesday + 1 day = Thursday.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Ada 7 hari dalam seminggu.</li>
+                        <li>Bagi 100 dengan 7: $100 \div 7 = 14$ dengan sisa 2.</li>
+                        <li>Ini berarti akan ada 14 minggu penuh dan 2 hari tambahan.</li>
+                        <li>Kita hanya perlu menghitung 2 hari setelah hari Selasa.</li>
+                        <li>Selasa + 1 hari = Rabu. Rabu + 1 hari = Kamis.</li>
+                    </ol>
+                    <div class="final-answer">Answer: Thursday / Jawaban: Kamis</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution 3:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Sum all durations (travel and stop) to get the total elapsed time, then add it to the departure time.<br/><br/><strong>Konsep:</strong> Jumlahkan semua durasi (perjalanan dan berhenti) untuk mendapatkan total waktu yang berlalu, lalu tambahkan ke waktu keberangkatan.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Total duration = (1 hr 50 min) + (25 min) + (2 hr 15 min).</li>
+                        <li>Sum the hours: 1 hr + 2 hr = 3 hr.</li>
+                        <li>Sum the minutes: 50 min + 25 min + 15 min = 90 min.</li>
+                        <li>Convert minutes: 90 min = 1 hr 30 min.</li>
+                        <li>Total duration = 3 hr + 1 hr 30 min = 4 hr 30 min.</li>
+                        <li>Arrival time = 8:40 AM + 4 hr 30 min = 1:10 PM.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Total durasi = (1 jam 50 menit) + (25 menit) + (2 jam 15 menit).</li>
+                        <li>Jumlahkan jam: 1 jam + 2 jam = 3 jam.</li>
+                        <li>Jumlahkan menit: 50 menit + 25 menit + 15 menit = 90 menit.</li>
+                        <li>Konversi menit: 90 menit = 1 jam 30 menit.</li>
+                        <li>Total durasi = 3 jam + 1 jam 30 menit = 4 jam 30 menit.</li>
+                        <li>Waktu tiba = 08:40 + 4 jam 30 menit = 13:10.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 1:10 PM / Jawaban: 13:10</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>Solution 4:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> For every common year (365 days), the day of the week shifts forward by 1. For a leap year (366 days), it shifts forward by 2. A leap year is divisible by 4.<br/><br/><strong>Konsep:</strong> Setiap tahun biasa (365 hari), hari akan bergeser maju 1 hari. Pada tahun kabisat (366 hari), bergeser maju 2 hari. Tahun kabisat adalah tahun yang habis dibagi 4.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>From March 1, 2023, to March 1, 2024: This period crosses Feb 29, 2024 (a leap year), so it shifts by 2 days. Wednesday + 2 days = Friday.</li>
+                        <li>From March 1, 2024, to March 1, 2025: 2025 is not a leap year, so it shifts by 1 day. Friday + 1 day = Saturday.</li>
+                        <li>From March 1, 2025, to March 1, 2026: 2026 is not a leap year, so it shifts by 1 day. Saturday + 1 day = Sunday.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Dari 1 Maret 2023 ke 1 Maret 2024: Melewati 29 Februari 2024 (tahun kabisat), jadi bergeser 2 hari. Rabu + 2 hari = Jumat.</li>
+                        <li>Dari 1 Maret 2024 ke 1 Maret 2025: Tahun 2025 bukan tahun kabisat, jadi bergeser 1 hari. Jumat + 1 hari = Sabtu.</li>
+                        <li>Dari 1 Maret 2025 ke 1 Maret 2026: Tahun 2026 bukan tahun kabisat, jadi bergeser 1 hari. Sabtu + 1 hari = Minggu.</li>
+                    </ol>
+                    <div class="final-answer">Answer: Sunday / Jawaban: Minggu</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution 5:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Convert the total minutes into hours and minutes, then add them to the starting time.<br/><br/><strong>Konsep:</strong> Ubah total menit menjadi jam dan menit, lalu tambahkan ke waktu awal.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>There are 60 minutes in 1 hour.</li>
+                        <li>Divide 250 by 60: $250 \div 60 = 4$ with a remainder of 10.</li>
+                        <li>So, 250 minutes is 4 hours and 10 minutes.</li>
+                        <li>Add 4 hours and 10 minutes to 3:00 PM.</li>
+                        <li>3:00 PM + 4 hours = 7:00 PM. Then 7:00 PM + 10 minutes = 7:10 PM.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Ada 60 menit dalam 1 jam.</li>
+                        <li>Bagi 250 dengan 60: $250 \div 60 = 4$ dengan sisa 10.</li>
+                        <li>Jadi, 250 menit adalah 4 jam dan 10 menit.</li>
+                        <li>Tambahkan 4 jam 10 menit ke pukul 15:00.</li>
+                        <li>15:00 + 4 jam = 19:00. Kemudian 19:00 + 10 menit = 19:10.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 7:10 PM / Jawaban: 19:10</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution 6:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Divide the total days by 7. The remainder indicates how many days of the week appear one more time than others. To maximize a specific day, it must be the first day of the remainder.<br/><br/><strong>Konsep:</strong> Bagi total hari dengan 7. Sisa hari menunjukkan berapa banyak hari dalam seminggu yang muncul satu kali lebih banyak dari yang lain. Untuk memaksimalkan suatu hari, hari itu harus menjadi hari pertama dari sisa hari.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Divide 45 by 7: $45 \div 7 = 6$ with a remainder of 3.</li>
+                        <li>This means there are 6 full weeks, so every day of the week appears at least 6 times.</li>
+                        <li>There are 3 remaining days. To maximize the number of Sundays, the camp must start on a Sunday.</li>
+                        <li>If it starts on a Sunday, the 3 remaining days will be Sunday, Monday, and Tuesday.</li>
+                        <li>Total number of Sundays = 6 (from the full weeks) + 1 (from the remainder) = 7.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Bagi 45 dengan 7: $45 \div 7 = 6$ dengan sisa 3.</li>
+                        <li>Ini berarti ada 6 minggu penuh, jadi setiap hari dalam seminggu muncul setidaknya 6 kali.</li>
+                        <li>Ada 3 hari sisa. Untuk memaksimalkan jumlah hari Minggu, perkemahan harus dimulai pada hari Minggu.</li>
+                        <li>Jika dimulai pada hari Minggu, 3 hari sisa akan menjadi Minggu, Senin, dan Selasa.</li>
+                        <li>Jumlah total hari Minggu = 6 (dari minggu penuh) + 1 (dari sisa hari) = 7.</li>
+                    </ol>
+                    <div class="final-answer">Answer: 7 / Jawaban: 7</div>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>Solution 7:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> In 12 hours, the hour and minute hands are together 11 times. This happens every $12/11$ hours, or about 65.5 minutes. The exact time can be calculated with the formula $(h \times 60/11)$ minutes past hour $h$.<br/><br/><strong>Konsep:</strong> Dalam 12 jam, jarum jam dan menit berimpit 11 kali. Ini terjadi setiap $12/11$ jam, atau sekitar 65.5 menit. Waktu pasti dapat dihitung dengan rumus $(h \times 60/11)$ menit lewat pukul $h$.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Use the formula for $h=7$.</li>
+                        <li>Minutes past the hour = $7 \times (60/11) = 420/11$.</li>
+                        <li>Convert to a mixed number: $420 \div 11 = 38$ with a remainder of 2. So, $38 \frac{2}{11}$ minutes.</li>
+                        <li>The exact time is $38 \frac{2}{11}$ minutes past 7.</li>
+                    </ol>
+                     <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Gunakan rumus untuk $h=7$.</li>
+                        <li>Menit saat berimpit = $7 \times (60/11) = 420/11$.</li>
+                        <li>Ubah ke pecahan campuran: $420 \div 11 = 38$ sisa 2. Jadi, $38 \frac{2}{11}$ menit.</li>
+                        <li>Waktu pastinya adalah 7 lewat $38 \frac{2}{11}$ menit.</li>
+                    </ol>
+                    <div class="final-answer">Answer: $38 \frac{2}{11}$ minutes past 7 / Jawaban: 7 lewat $38 \frac{2}{11}$ menit</div>
+                </div>
+
+                <div class="item-container"><p><strong>Solution 8:</strong></p><div class="concept"><p><strong>Concept:</strong> A birthday on February 29th only occurs every 4 years (on a leap year). The number of days between Feb 29, 2020 and Feb 29, 2024 is exactly $365+365+365+366 = 1461$ days.<br/><br/><strong>Konsep:</strong> Ulang tahun pada 29 Februari hanya terjadi setiap 4 tahun sekali (pada tahun kabisat). Jumlah hari antara 29 Feb 2020 dan 29 Feb 2024 adalah tepat $365+365+365+366 = 1461$ hari.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Budi's next birthday is on February 29, 2024.</li><li>The number of days between these two dates is $365 \times 4 + 1 = 1461$ days.</li><li>Find the remainder when 1461 is divided by 7. $1461 \div 7 = 208$ with a remainder of 5.</li>
+                        <li>So, the day of the week will shift forward by 5 days.</li>
+                        <li>Saturday + 5 days = Thursday.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Ulang tahun Budi berikutnya adalah pada 29 Februari 2024.</li><li>Jumlah hari di antara kedua tanggal ini adalah $365 \times 4 + 1 = 1461$ hari.</li>
+                        <li>Cari sisa pembagian 1461 dengan 7. $1461 \div 7 = 208$ dengan sisa 5.</li>
+                        <li>Jadi, hari akan bergeser maju sebanyak 5 hari.</li>
+                        <li>Sabtu + 5 hari = Kamis.</li></ol><div class="final-answer">Answer: Thursday / Jawaban: Kamis</div></div>
+                
+                <div class="item-container"><p><strong>Solution 9:</strong></p><div class="concept"><p><strong>Concept:</strong> To find the departure time of the nth bus, we need to add (n-1) time intervals to the first departure time.<br/><br/><strong>Konsep:</strong> Untuk menemukan waktu keberangkatan bus ke-n, kita perlu menambahkan (n-1) kali interval waktu ke waktu keberangkatan pertama.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The number of intervals between the 1st and 5th bus is $5-1=4$ intervals.</li><li>Total added time = $4 \times 25$ minutes = 100 minutes.</li><li>100 minutes is equal to 1 hour and 40 minutes.</li><li>The 5th bus's departure time = 6:00 AM + 1 hour 40 minutes = 7:40 AM.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Interval antara bus ke-1 dan ke-5 adalah $5-1=4$ interval.</li><li>Total waktu tambahan = $4 \times 25$ menit = 100 menit.</li><li>100 menit sama dengan 1 jam 40 menit.</li><li>Waktu keberangkatan bus ke-5 = 06:00 + 1 jam 40 menit = 07:40.</li></ol><div class="final-answer">Answer: 7:40 AM / Jawaban: 07:40</div></div>
+                
+                <div class="item-container"><p><strong>Solution 10:</strong></p><div class="concept"><p><strong>Concept:</strong> Count the remaining days in the first month, add the full days in the intervening months, and add the days in the last month. Remember to include the start and end dates (inclusive).<br/><br/><strong>Konsep:</strong> Hitung sisa hari di bulan pertama, tambahkan hari penuh di bulan-bulan berikutnya, dan tambahkan hari di bulan terakhir. Ingat untuk menghitung hari awal dan akhir (inklusif).</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Number of days in March: 31. Days remaining in March = $31 - 15 + 1 = 17$ days.</li><li>Number of days in April: 30 days.</li><li>Number of days in May: 5 days (from the 1st to the 5th).</li><li>Total days = $17 + 30 + 5 = 52$ days.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Jumlah hari di bulan Maret: 31 hari. Hari tersisa di Maret = $31 - 15 + 1 = 17$ hari.</li><li>Jumlah hari di bulan April: 30 hari.</li><li>Jumlah hari di bulan Mei: 5 hari (dari tanggal 1 sampai 5).</li><li>Total hari = $17 + 30 + 5 = 52$ hari.</li></ol><div class="final-answer">Answer: 52 days / Jawaban: 52 hari</div></div>
+                
+                <div class="item-container"><p><strong>Solution 11:</strong></p><div class="concept"><p><strong>Concept:</strong> The hands are opposite (form a straight line) 11 times in 12 hours. The exact time can be calculated with a formula. After 3:30, the next instance will be between 4 and 5 o'clock.<br/><br/><strong>Konsep:</strong> Jarum jam dan menit membentuk garis lurus (berlawanan arah) 11 kali dalam 12 jam. Waktu pastinya dapat dihitung dengan rumus. Setelah pukul 3:30, kejadian berikutnya akan terjadi antara pukul 4 dan 5.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>We are looking for a time between 4 and 5 o'clock.</li><li>At 4 o'clock, the minute hand is at 12 and the hour hand is at 4. To be opposite, they must be 30 minute-marks apart. The minute hand needs to gain 20 marks to catch up and another 30 to be opposite, for a total of 50 minute-marks.</li>
+                        <li>The minute hand gains on the hour hand at a rate of 5.5 degrees per minute, which is 55/60 = 11/12 minute-marks per minute.</li>
+                        <li>Time needed = (marks to gain) / (rate of gain) = $50 / (11/12) = 600/11 = 54 \frac{6}{11}$ minutes.</li>
+                        <li>The time is $54 \frac{6}{11}$ minutes past 4.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Kita mencari waktu antara pukul 4 dan 5.</li><li>Pada pukul 4, jarum menit di angka 12 dan jarum jam di angka 4. Agar berlawanan, mereka harus terpisah 30 skala menit. Jarum menit perlu mengejar 20 skala menit dan unggul 30 skala menit, total 50 skala menit.</li>
+                        <li>Kecepatan relatif jarum menit adalah 11/12 skala menit per menit.</li>
+                        <li>Waktu yang dibutuhkan = (jarak kejar) / (kecepatan relatif) = $50 / (11/12) = 600/11 = 54 \frac{6}{11}$ menit.</li>
+                        <li>Waktunya adalah pukul 4 lewat $54 \frac{6}{11}$ menit.</li></ol><div class="final-answer">Answer: Approximately 4:54 / Jawaban: Sekitar pukul 4:54</div></div>
+
+                <div class="item-container"><p><strong>Solution 12:</strong></p><div class="concept"><p><strong>Concept:</strong> To find the duration including the start and end dates, calculate the number of days in each month and sum them up. Then convert the total days to weeks.<br/><br/><strong>Konsep:</strong> Untuk mencari durasi termasuk tanggal mulai dan selesai, hitung jumlah hari di setiap bulan lalu jumlahkan. Kemudian konversikan total hari ke dalam minggu.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Number of days in June: June has 30 days. The number of project days in June is $30 - 10 + 1 = 21$ days.</li>
+                        <li>Number of days in July: The project ran until the 28th, so there are 28 days in July.</li>
+                        <li>Total project days = $21 (\text{June}) + 28 (\text{July}) = 49$ days.</li>
+                        <li>Convert total days to weeks: $49 \div 7 = 7$ with a remainder of 0.</li>
+                        <li>So, the project took exactly 7 weeks and 0 days.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Jumlah hari di bulan Juni: Juni memiliki 30 hari. Jumlah hari proyek di bulan Juni adalah $30 - 10 + 1 = 21$ hari.</li>
+                        <li>Jumlah hari di bulan Juli: Proyek berjalan hingga tanggal 28, jadi ada 28 hari di bulan Juli.</li>
+                        <li>Total hari proyek = $21 (\text{Juni}) + 28 (\text{Juli}) = 49$ hari.</li>
+                        <li>Konversi total hari ke minggu: $49 \div 7 = 7$ dengan sisa 0.</li>
+                        <li>Jadi, proyek tersebut memakan waktu tepat 7 minggu dan 0 hari.</li></ol><div class="final-answer">Answer: 7 weeks and 0 days / Jawaban: 7 minggu dan 0 hari</div></div>
+                
+                <div class="item-container"><p><strong>Solution 13:</strong></p><div class="concept"><p><strong>Concept:</strong> Determine today's day first. Then, divide the number of past days by 7 to find the remainder and count backward from today.<br/><br/><strong>Konsep:</strong> Tentukan hari ini terlebih dahulu. Kemudian, bagi jumlah hari yang lalu dengan 7 untuk menemukan sisa dan hitung mundur dari hari ini.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>If yesterday was Sunday, then today is Monday.</li>
+                        <li>We want to find the day of the week 20 days ago from Monday.</li>
+                        <li>$20 \div 7 = 2$ with a remainder of 6.</li>
+                        <li>We need to count back 6 days from Monday. This is the same as counting forward 1 day ($7-6=1$).</li>
+                        <li>Monday - 6 days = Tuesday. Or Monday + 1 day (counting backward from the start of the week) = Tuesday.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Jika kemarin adalah hari Minggu, maka hari ini adalah hari Senin.</li>
+                        <li>Kita ingin tahu hari apakah 20 hari yang lalu dari hari Senin.</li>
+                        <li>$20 \div 7 = 2$ dengan sisa 6.</li>
+                        <li>Kita perlu menghitung mundur 6 hari dari hari Senin. Ini sama dengan menghitung maju 1 hari ($7-6=1$).</li>
+                        <li>Senin - 6 hari = Selasa. Atau, Senin + 1 hari (jika menghitung mundur dari awal minggu) = Selasa.</li></ol><div class="final-answer">Answer: Tuesday / Jawaban: Selasa</div></div>
+
+                <div class="item-container"><p><strong>Solution 14:</strong></p><div class="concept"><p><strong>Concept:</strong> Calculate the total time difference per hour, then multiply by the number of hours that have passed.<br/><br/><strong>Konsep:</strong> Hitung total selisih waktu per jam, lalu kalikan dengan jumlah jam yang telah berlalu.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Every hour, Clock A gains 3 minutes and Clock B loses 2 minutes.</li><li>The difference between them increases by $3 - (-2) = 3 + 2 = 5$ minutes every hour.</li><li>The time elapsed from 12:00 PM Monday to 12:00 PM Tuesday is 24 hours.</li><li>Total time difference = 5 minutes/hour $\times$ 24 hours = 120 minutes.</li><li>120 minutes is equal to 2 hours.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Setiap jam, Jam A menjadi 3 menit lebih cepat dan Jam B menjadi 2 menit lebih lambat.</li><li>Selisih waktu antara keduanya bertambah sebesar $3 - (-2) = 3 + 2 = 5$ menit setiap jam.</li><li>Waktu yang berlalu dari pukul 12:00 siang Senin hingga 12:00 siang Selasa adalah 24 jam.</li><li>Total selisih waktu = 5 menit/jam $\times$ 24 jam = 120 menit.</li><li>120 menit sama dengan 2 jam.</li></ol><div class="final-answer">Answer: 120 minutes or 2 hours / Jawaban: 120 menit atau 2 jam</div></div>
+                
+                <div class="item-container"><p><strong>Solution 15:</strong></p><div class="concept"><p><strong>Concept:</strong> The hour and minute hands form a right angle twice every hour, but there are exceptions around the 3 and 9 o'clock hours.<br/><br/><strong>Konsep:</strong> Jarum jam dan menit membentuk sudut siku-siku dua kali setiap jam, tetapi ada beberapa pengecualian di sekitar pukul 3 dan 9.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Generally, the hands form a right angle twice per hour. So in 12 hours, one might expect $12 \times 2 = 24$ times.</li><li>However, the positions at 3:00 and 9:00 are counted by two different hours. For example, the right angle near 2:55 and the one at 3:00 are for the 2 o'clock hour, but the 3:00 position is also the start for the 3 o'clock hour. This overlap means we lose 2 instances over 12 hours.</li>
+                        <li>The total number of times is $2 \times 11 = 22$ times.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Secara umum, jarum jam membentuk sudut siku-siku dua kali per jam. Jadi dalam 12 jam, kita mungkin berharap $12 \times 2 = 24$ kali.</li><li>Namun, posisi pada pukul 3:00 dan 9:00 dihitung oleh dua jam yang berbeda. Tumpang tindih ini berarti kita kehilangan 2 kejadian selama 12 jam.</li>
+                        <li>Jumlah totalnya adalah $2 \times 11 = 22$ kali.</li></ol><div class="final-answer">Answer: 22 times / Jawaban: 22 kali</div></div>
+
+
+                <!-- Pembahasan Topik 2 -->
+                <h3 class="topic-title">Solutions for Part 2: Angle Geometry</h3>
+
+                <div class="item-container">
+                    <p><strong>Solution 16:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> A reflex angle is an angle greater than $180^\circ$. Calculate the angle between the hands. If it's less than $180^\circ$, subtract it from $360^\circ$.<br/><br/><strong>Konsep:</strong> Sudut refleks adalah sudut yang lebih besar dari $180^\circ$. Hitung sudut di antara jarum jam. Jika kurang dari $180^\circ$, kurangi dari $360^\circ$.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Minute hand position at 10:10: $10 \times 6^\circ = 60^\circ$ from the 12.</li>
+                        <li>Hour hand position at 10:10: $(10 \times 30^\circ) + (10 \times 0.5^\circ) = 300^\circ + 5^\circ = 305^\circ$ from the 12.</li>
+                        <li>The angle between them is $|305^\circ - 60^\circ| = 245^\circ$.</li>
+                        <li>Since $245^\circ$ is greater than $180^\circ$, this is the reflex angle.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Posisi jarum menit pada pukul 10:10: $10 \times 6^\circ = 60^\circ$ dari angka 12.</li>
+                        <li>Posisi jarum jam pada pukul 10:10: $(10 \times 30^\circ) + (10 \times 0.5^\circ) = 300^\circ + 5^\circ = 305^\circ$ dari angka 12.</li>
+                        <li>Sudut di antara keduanya = $|305^\circ - 60^\circ| = 245^\circ$.</li>
+                        <li>Karena $245^\circ$ lebih besar dari $180^\circ$, ini adalah sudut refleks yang dicari.</li>
+                    </ol>
+                    <div class="final-answer">Answer: $245^\circ$ / Jawaban: $245^\circ$</div>
+                </div>
+                
+                <div class="item-container">
+                    <p><strong>Solution 17:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> The sum of interior angles in a polygon with $n$ sides is $(n-2) \times 180^\circ$. For a regular polygon, all angles are equal.<br/><br/><strong>Konsep:</strong> Jumlah sudut dalam sebuah poligon dengan $n$ sisi adalah $(n-2) \times 180^\circ$. Untuk poligon beraturan, semua sudut sama besar.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>A pentagon has 5 sides ($n=5$).</li>
+                        <li>The sum of interior angles = $(5-2) \times 180^\circ = 3 \times 180^\circ = 540^\circ$.</li>
+                        <li>Since it is a regular pentagon, all 5 angles are equal.</li>
+                        <li>The measure of each angle = $540^\circ \div 5 = 108^\circ$.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Segilima (pentagon) memiliki 5 sisi ($n=5$).</li>
+                        <li>Jumlah sudut dalam = $(5-2) \times 180^\circ = 3 \times 180^\circ = 540^\circ$.</li>
+                        <li>Karena ini segilima beraturan, semua 5 sudutnya sama besar.</li>
+                        <li>Besar setiap sudut = $540^\circ \div 5 = 108^\circ$.</li>
+                    </ol>
+                    <div class="final-answer">Answer: $108^\circ$ / Jawaban: $108^\circ$</div>
+                </div>
+
+                 <div class="item-container">
+                    <p><strong>Solution 18:</strong></p>
+                    <div class="concept"><p><strong>Concept:</strong> Track the direction changes step by step. Clockwise is a positive turn, anti-clockwise is negative. North is $0^\circ$, East is $90^\circ$, South is $180^\circ$, West is $270^\circ$.<br/><br/><strong>Konsep:</strong> Lacak perubahan arah langkah demi langkah. Searah jarum jam adalah putaran positif, berlawanan arah adalah negatif. Utara adalah $0^\circ$, Timur $90^\circ$, Selatan $180^\circ$, Barat $270^\circ$.</p></div>
+                    <p><strong>Solution Steps:</strong></p>
+                    <ol class="solution-points">
+                        <li>Starting position: South.</li>
+                        <li>Turn 1: $+135^\circ$ (clockwise). From South, a $90^\circ$ turn is West, plus another $45^\circ$ leads to North-West.</li>
+                        <li>Turn 2: $-45^\circ$ (anti-clockwise). From North-West, a $45^\circ$ turn back leads to West.</li>
+                        <li>Turn 3: $+270^\circ$ (clockwise). From West, a $270^\circ$ turn is equivalent to a $-90^\circ$ (anti-clockwise) turn, which leads to South.</li>
+                        <li>The final direction is South.</li>
+                    </ol>
+                    <p class="mt-4"><strong>Langkah Penyelesaian:</strong></p>
+                    <ol class="solution-points">
+                        <li>Posisi awal: Selatan.</li>
+                        <li>Putaran 1: $+135^\circ$ (searah jarum jam). Dari Selatan, $90^\circ$ ke Barat, tambah $45^\circ$ menjadi Barat Laut.</li>
+                        <li>Putaran 2: $-45^\circ$ (berlawanan arah jarum jam). Dari Barat Laut, kembali $45^\circ$ menjadi Barat.</li>
+                        <li>Putaran 3: $+270^\circ$ (searah jarum jam). Dari Barat, putaran $270^\circ$ searah jarum jam sama dengan putaran $90^\circ$ berlawanan arah, yang menuju ke Selatan.</li>
+                        <li>Arah terakhir adalah Selatan.</li>
+                    </ol>
+                    <div class="final-answer">Answer: South / Jawaban: Selatan</div>
+                </div>
+
+                <div class="item-container"><p><strong>Solution 19:</strong></p><div class="concept"><p><strong>Concept:</strong> One hour-mark on a clock represents a $30^\circ$ angle. An acute angle is less than $90^\circ$, a right angle is exactly $90^\circ$, and an obtuse angle is greater than $90^\circ$.<br/><br/><strong>Konsep:</strong> Satu jam pada jam mewakili sudut $30^\circ$. Sudut lancip kurang dari $90^\circ$, sudut siku-siku sama dengan $90^\circ$, dan sudut tumpul lebih dari $90^\circ$.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>At 2:00, the gap between the hour and minute hands is 2 hour-marks.</li><li>The angle measure = $2 \times 30^\circ = 60^\circ$.</li><li>Since $60^\circ$ is less than $90^\circ$, it is an acute angle.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Pada pukul 2:00, jarak antara jarum jam dan menit adalah 2 jam.</li><li>Besar sudut = $2 \times 30^\circ = 60^\circ$.</li><li>Karena $60^\circ$ kurang dari $90^\circ$, ini adalah sudut lancip.</li></ol><div class="final-answer">Answer: Acute / Jawaban: Lancip</div></div>
+
+                <div class="item-container"><p><strong>Solution 20:</strong></p><div class="concept"><p><strong>Concept:</strong> Calculate the precise angular position of the hour and minute hands from a reference point (the 12), then find their difference.<br/><br/><strong>Konsep:</strong> Hitung posisi sudut yang tepat dari jarum jam dan menit dari titik referensi (angka 12), lalu hitung selisihnya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Position of the minute hand at 20 minutes past: $20 \times 6^\circ = 120^\circ$.</li><li>Position of the hour hand: At 8 o'clock, it's at $8 \times 30^\circ = 240^\circ$. In 20 minutes, it moves an additional $20 \times 0.5^\circ = 10^\circ$.</li><li>The total position of the hour hand is $240^\circ + 10^\circ = 250^\circ$.</li><li>The angle between them = $|250^\circ - 120^\circ| = 130^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Posisi jarum menit pada menit ke-20: $20 \times 6^\circ = 120^\circ$.</li><li>Posisi jarum jam: Pada pukul 8, posisinya $8 \times 30^\circ = 240^\circ$. Selama 20 menit, ia bergerak lagi sejauh $20 \times 0.5^\circ = 10^\circ$.</li>
+                        <li>Posisi total jarum jam adalah $240^\circ + 10^\circ = 250^\circ$.</li>
+                        <li>Sudut antara keduanya = $|250^\circ - 120^\circ| = 130^\circ$.</li></ol><div class="final-answer">Answer: $130^\circ$ / Jawaban: $130^\circ$</div></div>
+                
+                <div class="item-container"><p><strong>Solution 21:</strong></p><div class="concept"><p><strong>Concept:</strong> Use the properties of angles on parallel lines. The sum of consecutive interior angles is $180^\circ$. Draw an auxiliary parallel line through the vertex.<br/><br/><strong>Konsep:</strong> Gunakan sifat sudut-sudut pada garis sejajar. Jumlah sudut dalam sepihak adalah $180^\circ$. Buat garis bantu yang sejajar melalui titik sudut.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Draw an auxiliary horizontal line through E, parallel to AB and CD.</li>
+                        <li>The angle to the left of E (consecutive to $\angle ABE$) is $180^\circ - 110^\circ = 70^\circ$.</li>
+                        <li>The angle to the right of E (consecutive to $\angle CDE$) is $180^\circ - 140^\circ = 40^\circ$.</li>
+                        <li>$\angle BED$ is the sum of these two angles: $70^\circ + 40^\circ = 110^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p><ol class="solution-points"><li>Gambar garis bantu horizontal melalui E yang sejajar dengan AB dan CD.</li><li>Sudut di sebelah kiri E (sepihak dengan $\angle ABE$) adalah $180^\circ - 110^\circ = 70^\circ$.</li><li>Sudut di sebelah kanan E (sepihak dengan $\angle CDE$) adalah $180^\circ - 140^\circ = 40^\circ$.</li>
+                        <li>$\angle BED$ adalah jumlah kedua sudut tersebut: $70^\circ + 40^\circ = 110^\circ$.</li></ol><div class="final-answer">Answer: $110^\circ$ / Jawaban: $110^\circ$</div></div>
+
+                <div class="item-container"><p><strong>Solution 22:</strong></p><div class="concept"><p><strong>Concept:</strong> The definition of a rectangle is a quadrilateral in which all four angles are right angles ($90^\circ$).<br/><br/><strong>Konsep:</strong> Definisi dari persegi panjang adalah sebuah bangun datar segiempat yang keempat sudutnya adalah sudut siku-siku ($90^\circ$).</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>By definition, a rectangle has four angles.</li>
+                        <li>Each of these angles is a right angle.</li>
+                        <li>Therefore, there are 4 right angles.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Berdasarkan definisi, sebuah persegi panjang memiliki empat sudut.</li><li>Setiap sudut dalam persegi panjang adalah sudut siku-siku.</li>
+                        <li>Jadi, ada 4 sudut siku-siku.</li></ol><div class="final-answer">Answer: 4 / Jawaban: 4</div></div>
+                
+                <div class="item-container"><p><strong>Solution 23:</strong></p><div class="concept"><p><strong>Concept:</strong> The full angle of a circle is $360^\circ$. If it is divided into several equal parts, the angle of each part is $360^\circ$ divided by the number of parts.<br/><br/><strong>Konsep:</strong> Sudut penuh sebuah lingkaran adalah $360^\circ$. Jika dibagi menjadi beberapa bagian yang sama, besar sudut setiap bagian adalah $360^\circ$ dibagi dengan jumlah bagian.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>A full circle is $360^\circ$.</li>
+                        <li>The wheel is divided into 12 equal sections by the spokes.</li>
+                        <li>The angle between two adjacent spokes = $360^\circ \div 12 = 30^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Lingkaran penuh adalah $360^\circ$.</li>
+                        <li>Roda dibagi menjadi 12 bagian yang sama oleh jeruji.</li>
+                        <li>Sudut antara dua jeruji yang berdekatan = $360^\circ \div 12 = 30^\circ$.</li></ol><div class="final-answer">Answer: $30^\circ$ / Jawaban: $30^\circ$</div></div>
+
+                <div class="item-container"><p><strong>Solution 24:</strong></p><div class="concept"><p><strong>Concept:</strong> This is a fundamental theorem in Euclidean geometry.<br/><br/><strong>Konsep:</strong> Ini adalah salah satu teorema dasar dalam geometri Euklides.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The sum of the three interior angles of any triangle is always constant.</li>
+                        <li>This sum is $180^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Jumlah dari tiga sudut dalam (interior) dari segitiga mana pun selalu sama.</li>
+                        <li>Jumlah ini adalah $180^\circ$.</li></ol><div class="final-answer">Answer: $180^\circ$ / Jawaban: $180^\circ$</div></div>
+                
+                <div class="item-container"><p><strong>Solution 25:</strong></p><div class="concept"><p><strong>Concept:</strong> A right angle measures $90^\circ$. Dividing it into two equal parts means dividing its measure by 2.<br/><br/><strong>Konsep:</strong> Sudut siku-siku berukuran $90^\circ$. Membaginya menjadi dua bagian yang sama berarti membagi ukurannya dengan 2.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The measure of a right angle is $90^\circ$.</li>
+                        <li>Divided into two equal angles: $90^\circ \div 2 = 45^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Ukuran sudut siku-siku adalah $90^\circ$.</li>
+                        <li>Dibagi menjadi dua sudut yang sama besar: $90^\circ \div 2 = 45^\circ$.</li></ol><div class="final-answer">Answer: $45^\circ$ / Jawaban: $45^\circ$</div></div>
+                
+                <div class="item-container"><p><strong>Solution 26:</strong></p><div class="concept"><p><strong>Concept:</strong> Calculate the precise angular position of the hour and minute hands from a reference point (the 12), then find their difference.<br/><br/><strong>Konsep:</strong> Hitung posisi sudut yang tepat dari jarum jam dan menit dari titik referensi (angka 12), lalu hitung selisihnya.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Position of the minute hand at 20 minutes past: $20 \times 6^\circ = 120^\circ$.</li>
+                        <li>Position of the hour hand: At 4 o'clock, it's at $4 \times 30^\circ = 120^\circ$. In 20 minutes, it moves an additional $20 \times 0.5^\circ = 10^\circ$.</li>
+                        <li>The total position of the hour hand is $120^\circ + 10^\circ = 130^\circ$.</li>
+                        <li>The angle between them = $|130^\circ - 120^\circ| = 10^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Posisi jarum menit pada menit ke-20: $20 \times 6^\circ = 120^\circ$.</li>
+                        <li>Posisi jarum jam: Pada pukul 4, posisinya $4 \times 30^\circ = 120^\circ$. Selama 20 menit, ia bergerak lagi sejauh $20 \times 0.5^\circ = 10^\circ$.</li>
+                        <li>Posisi total jarum jam adalah $120^\circ + 10^\circ = 130^\circ$.</li>
+                        <li>Sudut antara keduanya = $|130^\circ - 120^\circ| = 10^\circ$.</li></ol><div class="final-answer">Answer: $10^\circ$ / Jawaban: $10^\circ$</div></div>
+                
+                <div class="item-container"><p><strong>Solution 27:</strong></p><div class="concept"><p><strong>Concept:</strong> The cardinal directions are $90^\circ$ apart. Turning anti-clockwise from East.<br/><br/><strong>Konsep:</strong> Arah mata angin berjarak $90^\circ$ satu sama lain. Berputar berlawanan arah jarum jam dari Timur.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Starting position: East.</li>
+                        <li>A $90^\circ$ anti-clockwise turn leads to North.</li>
+                        <li>A $180^\circ$ anti-clockwise turn leads to West.</li>
+                        <li>A $270^\circ$ anti-clockwise turn leads to South.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Posisi awal: Timur.</li>
+                        <li>Putar $90^\circ$ berlawanan arah jarum jam menuju Utara.</li>
+                        <li>Putar $180^\circ$ berlawanan arah jarum jam menuju Barat.</li>
+                        <li>Putar $270^\circ$ berlawanan arah jarum jam menuju Selatan.</li></ol><div class="final-answer">Answer: South / Jawaban: Selatan</div></div>
+                
+                <div class="item-container"><p><strong>Solution 28:</strong></p><div class="concept"><p><strong>Concept:</strong> The sum of angles in a triangle is $180^\circ$. An isosceles triangle has two equal base angles.<br/><br/><strong>Konsep:</strong> Jumlah sudut dalam segitiga adalah $180^\circ$. Segitiga sama kaki memiliki dua sudut alas yang sama besar.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The $100^\circ$ angle cannot be one of the equal base angles, because two such angles would sum to $200^\circ$, exceeding the $180^\circ$ total for a triangle.</li><li>Therefore, the $100^\circ$ angle must be the vertex angle (the unique angle).</li><li>The remaining sum for the two base angles is $180^\circ - 100^\circ = 80^\circ$.</li><li>Since the two base angles are equal, each one measures $80^\circ \div 2 = 40^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Sudut $100^\circ$ tidak mungkin menjadi salah satu sudut alas yang sama, karena jika begitu, jumlah dua sudut saja sudah $200^\circ$, melebihi $180^\circ$.</li><li>Jadi, $100^\circ$ adalah sudut puncak (sudut yang berbeda).</li><li>Sisa jumlah sudut untuk dua sudut alas adalah $180^\circ - 100^\circ = 80^\circ$.</li><li>Karena kedua sudut alas sama besar, maka masing-masing berukuran $80^\circ \div 2 = 40^\circ$.</li></ol><div class="final-answer">Answer: $40^\circ$ and $40^\circ$ / Jawaban: $40^\circ$ dan $40^\circ$</div></div>
+                
+                <div class="item-container"><p><strong>Solution 29:</strong></p><div class="concept"><p><strong>Concept:</strong> Calculate the precise angular positions of the hour and minute hands, and then find their difference. If the result is greater than $180^\circ$, subtract it from $360^\circ$ to get the smaller angle.<br/><br/><strong>Konsep:</strong> Hitung posisi sudut yang tepat dari jarum jam dan menit, lalu cari selisihnya. Jika hasilnya lebih dari $180^\circ$, kurangi dari $360^\circ$ untuk mendapatkan sudut yang lebih kecil.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>Position of the minute hand at 48 minutes past: $48 \times 6^\circ = 288^\circ$.</li><li>Position of the hour hand: At 2 o'clock, it's at $2 \times 30^\circ = 60^\circ$. In 48 minutes, it moves an additional $48 \times 0.5^\circ = 24^\circ$.</li><li>The total position of the hour hand is $60^\circ + 24^\circ = 84^\circ$.</li><li>The angle between them is $|288^\circ - 84^\circ| = 204^\circ$.</li><li>This is the reflex (larger) angle. The smaller angle is $360^\circ - 204^\circ = 156^\circ$.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Posisi jarum menit pada menit ke-48: $48 \times 6^\circ = 288^\circ$.</li><li>Posisi jarum jam: Pada pukul 2, posisinya $2 \times 30^\circ = 60^\circ$. Selama 48 menit, ia bergerak lagi sejauh $48 \times 0.5^\circ = 24^\circ$.</li>
+                        <li>Posisi total jarum jam adalah $60^\circ + 24^\circ = 84^\circ$.</li>
+                        <li>Sudut antara keduanya = $|288^\circ - 84^\circ| = 204^\circ$.</li>
+                        <li>Ini adalah sudut refleks (lebih besar). Sudut yang lebih kecil adalah $360^\circ - 204^\circ = 156^\circ$.</li></ol><div class="final-answer">Answer: $156^\circ$ / Jawaban: $156^\circ$</div></div>
+
+                <div class="item-container"><p><strong>Solution 30:</strong></p><div class="concept"><p><strong>Concept:</strong> A right angle measures $90^\circ$. The angle in question is twice this measure.<br/><br/><strong>Konsep:</strong> Sudut siku-siku berukuran $90^\circ$. Sudut yang dimaksud adalah dua kali lipat dari ukuran ini.</p></div><p><strong>Solution Steps:</strong></p><ol class="solution-points"><li>The measure of a right angle is $90^\circ$.</li>
+                        <li>An angle twice as large is $2 \times 90^\circ = 180^\circ$.</li>
+                        <li>An angle of $180^\circ$ is known as a straight angle.</li></ol><p class="mt-4"><strong>Langkah Penyelesaian:</strong></p<ol class="solution-points"><li>Ukuran sudut siku-siku adalah $90^\circ$.</li>
+                        <li>Sudut yang dua kali lebih besar adalah $2 \times 90^\circ = 180^\circ$.</li>
+                        <li>Sudut $180^\circ$ dikenal sebagai sudut lurus.</li></ol><div class="final-answer">Answer: $180^\circ$ / Jawaban: $180^\circ$</div></div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
