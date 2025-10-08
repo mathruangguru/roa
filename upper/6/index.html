@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Kompetisi Matematika - Barisan Aritmetika & Logika</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            overflow-x: auto;
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step { 
+            margin-bottom: 0.75rem; 
+        }
+        .solution-step ul li {
+            line-height: 1.8;
+            padding-left: 0.5rem;
+        }
+        .solution-step ul ul li {
+            padding-left: 1rem;
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 6</h1>
+            <p class="text-gray-600 mt-2">Grade 5 - 6 | Arithmetic Progression & Logic Puzzles</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal (Sama) -->
+            <section class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                <h3 class="topic-title">Part 1: Arithmetic Progression</h3>
+                <div class="item-container"><p><strong>1.</strong> Find the 20th term of the sequence 5, 9, 13, 17, ...<br/><br/>Tentukan suku ke-20 dari barisan 5, 9, 13, 17, ...</p></div>
+                <div class="item-container"><p><strong>2.</strong> The first term of an arithmetic sequence is 3 and the common difference is 5. What is the sum of the first 15 terms?<br/><br/>Suku pertama dari sebuah barisan aritmetika adalah 3 dan bedanya adalah 5. Berapakah jumlah 15 suku pertamanya?</p></div>
+                <div class="item-container"><p><strong>3.</strong> Find the value of $7 + 10 + 13 + ... + 61$.<br/><br/>Carilah nilai dari $7 + 10 + 13 + ... + 61$.</p></div>
+                <div class="item-container"><p><strong>4.</strong> The 5th term of an arithmetic sequence is 23 and the 11th term is 53. What is the first term?<br/><br/>Suku ke-5 dari sebuah barisan aritmetika adalah 23 dan suku ke-11 adalah 53. Berapakah suku pertamanya?</p></div>
+                <div class="item-container"><p><strong>5.</strong> In a theater, the first row has 20 seats. Each subsequent row has 2 more seats than the row in front of it. If there are 25 rows in total, how many seats are in the entire theater?<br/><br/>Di sebuah teater, baris pertama memiliki 20 kursi. Setiap baris berikutnya memiliki 2 kursi lebih banyak dari baris di depannya. Jika total ada 25 baris, berapa banyak kursi di seluruh teater?</p></div>
+                <div class="item-container"><p><strong>6.</strong> The sum of 15 consecutive odd numbers is 675. What is the largest number?<br/><br/>Jumlah dari 15 bilangan ganjil berurutan adalah 675. Berapakah bilangan terbesarnya?</p></div>
+                <div class="item-container"><p><strong>7.</strong> A stack of cans has 1 can on the top layer, 3 cans on the second layer, 5 on the third, and so on. If the bottom layer has 29 cans, how many cans are there in the entire stack?<br/><br/>Sebuah tumpukan kaleng memiliki 1 kaleng di lapisan atas, 3 kaleng di lapisan kedua, 5 di lapisan ketiga, dan seterusnya. Jika lapisan paling bawah memiliki 29 kaleng, berapa banyak total kaleng dalam tumpukan tersebut?</p></div>
+                <div class="item-container"><p><strong>8.</strong> How many numbers between 100 and 500 are divisible by 7?<br/><br/>Ada berapa banyak bilangan antara 100 dan 500 yang habis dibagi 7?</p></div>
+                <div class="item-container"><p><strong>9.</strong> The sum of the first $n$ terms of a sequence is given by $S_n = 2n^2 + 3n$. Find the 10th term of the sequence.<br/><br/>Jumlah $n$ suku pertama dari sebuah barisan diberikan oleh rumus $S_n = 2n^2 + 3n$. Tentukan suku ke-10 dari barisan tersebut.</p></div>
+                <div class="item-container"><p><strong>10.</strong> A person saves \$10 in the first month, \$15 in the second month, \$20 in the third month, and so on. How much money will they have saved in total after 2 years?<br/><br/>Seseorang menabung \$10 di bulan pertama, \$15 di bulan kedua, \$20 di bulan ketiga, dan seterusnya. Berapa total uang yang akan ia tabung setelah 2 tahun?</p></div>
+                <div class="item-container"><p><strong>11.</strong> The height of the first stack of 8 identical cups is 44 cm. The height of the second stack of 5 identical cups is 32 cm. What is the height of one cup?<br/><br/>Tinggi tumpukan pertama dari 8 gelas identik adalah 44 cm. Tinggi tumpukan kedua dari 5 gelas identik adalah 32 cm. Berapakah tinggi satu gelas?</p></div>
+                <div class="item-container"><p><strong>12.</strong> Find the sum of all multiples of 6 between 50 and 250.<br/><br/>Tentukan jumlah dari semua kelipatan 6 antara 50 dan 250.</p></div>
+                <div class="item-container"><p><strong>13.</strong> The sum of three consecutive terms in an arithmetic progression is 45, and their product is 3000. Find the three terms.<br/><br/>Jumlah tiga suku berurutan dalam barisan aritmetika adalah 45, dan hasil kalinya adalah 3000. Tentukan ketiga suku tersebut.</p></div>
+                <div class="item-container"><p><strong>14.</strong> The angles of a quadrilateral form an arithmetic progression. If the smallest angle is 60 degrees, find the largest angle.<br/><br/>Sudut-sudut dari sebuah segiempat membentuk barisan aritmetika. Jika sudut terkecilnya adalah 60 derajat, tentukan sudut terbesarnya.</p></div>
+                <div class="item-container"><p><strong>15.</strong> A bookstore sold 150 books on Monday. The sales form an arithmetic sequence, with the total number of books sold by the end of Friday being 1000. How many books were sold on Thursday?<br/><br/>Sebuah toko buku menjual 150 buku pada hari Senin. Penjualan setiap harinya membentuk barisan aritmetika, dengan total buku yang terjual hingga akhir hari Jumat adalah 1000 buku. Berapa banyak buku yang terjual pada hari Kamis?</p></div>
+                <h3 class="topic-title">Part 2: Logic: Truth-tellers & Liars</h3>
+                <div class="item-container"><p><strong>16.</strong> On an island, there are two types of people: Knights who always tell the truth, and Knaves who always lie. You meet two inhabitants, A and B. A says, "At least one of us is a Knave." What are A and B?<br/><br/>Di sebuah pulau, ada dua jenis orang: Ksatria yang selalu berkata benar, dan Penjahat yang selalu berbohong. Anda bertemu dua penduduk, A dan B. A berkata, "Setidaknya salah satu dari kami adalah Penjahat." Siapakah A dan B?</p></div>
+                <div class="item-container"><p><strong>17.</strong> You meet three inhabitants: C, D, and E. C says, "D is a Knave." D says, "C and E are of the same type." E says, "I am a Knight." Who are the Knights and who are the Knaves?<br/><br/>Anda bertemu tiga penduduk: C, D, dan E. C berkata, "D adalah Penjahat." D berkata, "C dan E adalah tipe yang sama." E berkata, "Saya adalah Ksatria." Siapakah Ksatria dan siapakah Penjahat?</p></div>
+                <div class="item-container"><p><strong>18.</strong> A treasure chest is in one of three rooms. Each room has a sign. Only one sign is true.<br/>- Room 1: "The treasure is not here."<br/>- Room 2: "The treasure is not here."<br/>- Room 3: "The treasure is in Room 2."<br/>Where is the treasure?<br/><br/>Sebuah peti harta karun berada di salah satu dari tiga ruangan. Setiap ruangan memiliki sebuah tanda. Hanya satu tanda yang benar.<br/>- Ruang 1: "Harta karun tidak ada di sini."<br/>- Ruang 2: "Harta karun tidak ada di sini."<br/>- Ruang 3: "Harta karun ada di Ruang 2."<br/>Di manakah harta karun itu?</p></div>
+                <div class="item-container"><p><strong>19.</strong> Four friends are suspected of eating the last cookie: Alex, Ben, Carl, and David. Only one is telling the truth.<br/>- Alex: "Ben ate it."<br/>- Ben: "David ate it."<br/>- Carl: "I didn't eat it."<br/>- David: "Ben is lying."<br/>Who ate the cookie?<br/><br/>Empat teman dicurigai memakan kue terakhir: Alex, Ben, Carl, dan David. Hanya satu yang berkata benar.<br/>- Alex: "Ben yang memakannya."<br/>- Ben: "David yang memakannya."<br/>- Carl: "Bukan saya yang memakannya."<br/>- David: "Ben berbohong."<br/>Siapakah yang memakan kue itu?</p></div>
+                <div class="item-container"><p><strong>20.</strong> Amy, Beth, and Chloe are sisters. One is a doctor, one is a lawyer, and one is a teacher. The doctor always lies, the lawyer always tells the truth. <br/>- Amy says, "I am not the lawyer." <br/>- Beth says, "I am the doctor." <br/>- Chloe says, "Amy is the teacher."<br/>If the teacher's statement is false, what is Beth's profession?<br/><br/>Amy, Beth, dan Chloe adalah tiga bersaudara. Satu adalah dokter, satu pengacara, dan satu guru. Dokter selalu berbohong, pengacara selalu berkata benar. <br/>- Amy berkata, "Saya bukan pengacara." <br/>- Beth berkata, "Saya adalah dokter." <br/>- Chloe berkata, "Amy adalah guru."<br/>Jika pernyataan guru adalah salah, apa profesi Beth?</p></div>
+                <div class="item-container"><p><strong>21.</strong> You are at a fork in the road. One path leads to the City of Truth (where everyone tells the truth) and the other to the City of Lies (where everyone lies). A single guard stands at the fork, but you don't know which city they are from. What one question can you ask the guard to find the path to the City of Truth?<br/><br/>Anda berada di sebuah persimpangan jalan. Satu jalan menuju Kota Kebenaran (semua penduduknya berkata benar) dan yang lain menuju Kota Kebohongan (semua penduduknya berbohong). Seorang penjaga berdiri di persimpangan, tapi Anda tidak tahu dia dari kota mana. Pertanyaan tunggal apa yang bisa Anda ajukan untuk menemukan jalan ke Kota Kebenaran?</p></div>
+                <div class="item-container"><p><strong>22.</strong> A detective questions three suspects for a theft: Peter, Quinn, and Ron. Only the innocent suspects tell the truth.<br/>- Peter says, "Quinn is guilty."<br/>- Quinn says, "Ron is not guilty."<br/>- Ron says, "I am not guilty, but at least one of the others is."<br/>Who is the thief?<br/><br/>Seorang detektif menanyai tiga tersangka pencurian: Peter, Quinn, dan Ron. Hanya tersangka yang tidak bersalah yang berkata benar.<br/>- Peter berkata, "Quinn bersalah."<br/>- Quinn berkata, "Ron tidak bersalah."<br/>- Ron berkata, "Saya tidak bersalah, tapi setidaknya salah satu dari yang lain bersalah."<br/>Siapakah pencurinya?</p></div>
+                <div class="item-container"><p><strong>23.</strong> There are three boxes: Gold, Silver, and Lead. One contains a prize. Each box has an inscription. At most one statement is true.<br/>- Gold Box: "The prize is in this box."<br/>- Silver Box: "The prize is not in this box."<br/>- Lead Box: "The prize is not in the Gold box."<br/>Where is the prize?<br/><br/>Ada tiga kotak: Emas, Perak, dan Timah. Salah satunya berisi hadiah. Setiap kotak memiliki tulisan. Paling banyak hanya satu pernyataan yang benar.<br/>- Kotak Emas: "Hadiah ada di kotak ini."<br/>- Kotak Perak: "Hadiah tidak ada di kotak ini."<br/>- Kotak Timah: "Hadiah tidak ada di Kotak Emas."<br/>Di manakah hadiahnya?</p></div>
+                <div class="item-container"><p><strong>24.</strong> Alice lies on Mondays, Tuesdays, and Wednesdays. Bob lies on Thursdays, Fridays, and Saturdays. On all other days they tell the truth. One day, Alice says, "I lied yesterday" and Bob says, "I also lied yesterday." What day of the week is it?<br/><br/>Alice berbohong pada hari Senin, Selasa, dan Rabu. Bob berbohong pada hari Kamis, Jumat, dan Sabtu. Pada hari-hari lainnya mereka berkata benar. Suatu hari, Alice berkata, "Kemarin saya berbohong" dan Bob berkata, "Saya juga berbohong kemarin." Hari apakah itu?</p></div>
+                <div class="item-container"><p><strong>25.</strong> You meet two islanders, X and Y. X says, "I am a Knave, but Y isn't." What are X and Y?<br/><br/>Anda bertemu dua penduduk pulau, X dan Y. X berkata, "Saya seorang Penjahat, tapi Y bukan." Siapakah X dan Y?</p></div>
+                <div class="item-container"><p><strong>26.</strong> Five people (A, B, C, D, E) are sitting in a circle. Each is either a Knight or a Knave. Each person says, "Both of my neighbors are Knaves." How many Knights are there?<br/><br/>Lima orang (A, B, C, D, E) duduk melingkar. Masing-masing adalah Ksatria atau Penjahat. Setiap orang berkata, "Kedua tetangga saya adalah Penjahat." Ada berapa banyak Ksatria?</p></div>
+                <div class="item-container"><p><strong>27.</strong> A mother found her vase broken. She asked her three children. Exactly two of them are telling the truth.<br/>- John: "Mary broke it."<br/>- Mary: "I didn't break it."<br/>- Sam: "John is lying."<br/>Who broke the vase?<br/><br/>Seorang ibu menemukan vasnya pecah. Dia bertanya kepada ketiga anaknya. Tepat dua dari mereka berkata benar.<br/>- John: "Mary yang memecahkannya."<br/>- Mary: "Bukan saya yang memecahkannya."<br/>- Sam: "John berbohong."<br/>Siapa yang memecahkan vas itu?</p></div>
+                <div class="item-container"><p><strong>28.</strong> On an island of Knights and Knaves, you want to know if it is currently raining. You ask an inhabitant, "Is it true that you are a Knight and it is raining?" The inhabitant answers "No". What can you conclude?<br/><br/>Di sebuah pulau Ksatria dan Penjahat, Anda ingin tahu apakah sedang hujan. Anda bertanya kepada seorang penduduk, "Apakah benar bahwa Anda seorang Ksatria dan saat ini sedang hujan?" Penduduk itu menjawab "Tidak". Apa yang bisa Anda simpulkan?</p></div>
+                <div class="item-container"><p><strong>29.</strong> A king wants to find which of his two advisors is the Knight and which is the Knave. He asks Advisor 1, "What would Advisor 2 say if I asked him whether this door leads to freedom?" Advisor 1 replies, "He would say this door does not lead to freedom." Should the king take this door to find freedom?<br/><br/>Seorang raja ingin tahu mana dari dua penasihatnya yang Ksatria dan mana yang Penjahat. Dia bertanya pada Penasihat 1, "Apa yang akan dikatakan Penasihat 2 jika aku bertanya padanya apakah pintu ini menuju kebebasan?" Penasihat 1 menjawab, "Dia akan mengatakan pintu ini tidak menuju kebebasan." Haruskah raja mengambil pintu ini untuk menemukan kebebasan?</p></div>
+                <div class="item-container"><p><strong>30.</strong> Four suspects are being interviewed. The detective knows that exactly one of them is guilty and exactly one of them is telling the truth.<br/>- Suspect A: "Suspect C is guilty."<br/>- Suspect B: "I am not guilty."<br/>- Suspect C: "Suspect D is guilty."<br/>- Suspect D: "Suspect C is lying."<br/>Who is the guilty person?<br/><br/>Empat tersangka sedang diwawancarai. Detektif tahu bahwa tepat satu dari mereka bersalah dan tepat satu dari mereka berkata benar.<br/>- Tersangka A: "Tersangka C bersalah."<br/>- Tersangka B: "Saya tidak bersalah."<br/>- Tersangka C: "Tersangka D bersalah."<br/>- Tersangka D: "Tersangka C berbohong."<br/>Siapakah yang bersalah?</p></div>
+            </section>
+
+            <!-- Bagian Pembahasan (Bilingual Final) -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions</h2>
+                
+                <h3 class="topic-title">Solutions for Part 1: Arithmetic Progression</h3>
+                <!-- Solution 1 -->
+                <div class="item-container">
+                    <p><strong>Solution 1 / Pembahasan 1:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Use the formula for the nth term, $U_n = a + (n-1)d$, where $a$ is the first term, $n$ is the term number, and $d$ is the common difference.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Gunakan rumus suku ke-n, $U_n = a + (n-1)d$, dimana $a$ adalah suku pertama, $n$ nomor suku, dan $d$ adalah beda.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Identify Variables:</b> From the sequence 5, 9, 13, ..., we get:
+                                <ul>
+                                    <li>First term ($a$) = 5</li>
+                                    <li>Common difference ($d$) = $9 - 5 = 4$</li>
+                                    <li>Term to find ($n$) = 20</li>
+                                </ul>
+                            </li>
+                            <li><b>Substitute and Calculate:</b>
+                                $$
+                                \begin{aligned}
+                                U_{20} &= 5 + (20-1) \times 4 \\
+                                       &= 5 + (19 \times 4) \\
+                                       &= 5 + 76 \\
+                                       &= 81
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Identifikasi Variabel:</b> Dari barisan 5, 9, 13, ..., kita dapatkan:
+                                <ul>
+                                    <li>Suku pertama ($a$) = 5</li>
+                                    <li>Beda ($d$) = $9 - 5 = 4$</li>
+                                    <li>Suku yang dicari ($n$) = 20</li>
+                                </ul>
+                            </li>
+                            <li><b>Substitusi dan Hitung:</b>
+                                $$
+                                \begin{aligned}
+                                U_{20} &= 5 + (20-1) \times 4 \\
+                                       &= 5 + 76 \\
+                                       &= 81
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 81.</div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="item-container">
+                    <p><strong>Solution 2 / Pembahasan 2:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Use the formula for the sum of the first n terms, $S_n = \frac{n}{2}(2a + (n-1)d)$.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Gunakan rumus jumlah n suku pertama, $S_n = \frac{n}{2}(2a + (n-1)d)$.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Identify Variables:</b> $a = 3$, $d = 5$, $n = 15$.</li>
+                            <li><b>Substitute and Calculate:</b>
+                                $$
+                                \begin{aligned}
+                                S_{15} &= \frac{15}{2}(2 \times 3 + (15-1) \times 5) \\
+                                &= \frac{15}{2}(6 + 14 \times 5) \\
+                                &= \frac{15}{2}(6 + 70) \\
+                                &= \frac{15}{2}(76) \\
+                                &= 15 \times 38 = 570
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Identifikasi Variabel:</b> $a = 3$, $d = 5$, $n = 15$.</li>
+                            <li><b>Substitusi dan Hitung:</b>
+                               $$
+                                \begin{aligned}
+                                S_{15} &= \frac{15}{2}(2 \times 3 + (15-1) \times 5) \\
+                                &= \frac{15}{2}(6 + 70) \\
+                                &= 15 \times 38 \\
+                                &= 570
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 570.</div>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="item-container">
+                    <p><strong>Solution 3 / Pembahasan 3:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> First, find the number of terms ($n$). Then, calculate the total sum ($S_n$) using the formula $S_n = \frac{n}{2}(a + U_n)$.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pertama, cari banyaknya suku ($n$). Kedua, hitung jumlah totalnya ($S_n$) dengan rumus $S_n = \frac{n}{2}(a + U_n)$.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Step 1: Find the number of terms (n).</b>
+                                <ul>
+                                    <li>The sequence has $a=7$, $d=3$, and the last term $U_n=61$.</li>
+                                    <li>Using the formula $U_n = a + (n-1)d$:
+                                        $$
+                                        \begin{aligned}
+                                        61 &= 7 + (n-1) \times 3 \\
+                                        54 &= (n-1) \times 3 \\
+                                        18 &= n-1 \\
+                                        n &= 19
+                                        \end{aligned}
+                                        $$
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><b>Step 2: Calculate the sum (S_n).</b>
+                                <ul>
+                                    <li>Using the formula $S_n = \frac{n}{2}(a + U_n)$:
+                                        $$
+                                        \begin{aligned}
+                                        S_{19} &= \frac{19}{2}(7 + 61) \\
+                                               &= \frac{19}{2}(68) \\
+                                               &= 19 \times 34 = 646
+                                        \end{aligned}
+                                        $$
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Langkah 1: Cari banyaknya suku (n).</b>
+                                <ul>
+                                    <li>Barisan memiliki $a=7$, $d=3$, dan suku terakhir $U_n=61$.</li>
+                                    $$
+                                    \begin{aligned}
+                                    61 &= 7 + (n-1) \times 3 \\
+                                    n &= 19
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                            <li><b>Langkah 2: Hitung jumlah (S_n).</b>
+                                <ul>
+                                    $$
+                                    \begin{aligned}
+                                    S_{19} &= \frac{19}{2}(7 + 61) \\
+                                           &= 646
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 646.</div>
+                </div>
+                
+                <!-- Solution 4 -->
+                <div class="item-container">
+                    <p><strong>Solution 4 / Pembahasan 4:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Use the elimination method on a system of linear equations to find the difference ($d$), then substitute back to find the first term ($a$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Gunakan metode eliminasi pada sistem persamaan linear untuk menemukan beda ($d$), lalu substitusi untuk menemukan suku pertama ($a$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Create two equations</b> based on the problem:
+                                <ul>
+                                    <li>11th term: $a + 10d = 53$</li>
+                                    <li>5th term: $a + 4d = 23$</li>
+                                </ul>
+                            </li>
+                            <li><b>Eliminate to find d:</b> Subtract the second equation from the first.
+                                $$
+                                \begin{aligned}
+                                (a + 10d) - (a + 4d) &= 53-23 \\
+                                6d &= 30 \implies d = 5
+                                \end{aligned}
+                                $$
+                            </li>
+                             <li><b>Substitute to find a:</b> Insert $d=5$ into the second equation.
+                                $$
+                                \begin{aligned}
+                                a + 4(5) &= 23 \\
+                                a + 20 &= 23 \implies a = 3
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Buat dua persamaan:</b>
+                                <ul>
+                                    <li>$a + 10d = 53$</li>
+                                    <li>$a + 4d = 23$</li>
+                                </ul>
+                           </li>
+                           <li><b>Eliminasi untuk mencari d:</b>
+                                $$
+                                \begin{aligned}
+                                6d &= 30 \\
+                                d &= 5
+                                \end{aligned}
+                                $$
+                           </li>
+                           <li><b>Substitusi untuk mencari a:</b>
+                                $$
+                                \begin{aligned}
+                                a + 4(5) &= 23 \\
+                                a &= 3
+                                \end{aligned}
+                                $$
+                           </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 3.</div>
+                </div>
+                
+                <!-- Solution 5 -->
+                <div class="item-container">
+                    <p><strong>Solution 5 / Pembahasan 5:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The number of seats in each row forms an arithmetic sequence. Use the sum formula $S_n$ to find the total number of seats.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Jumlah kursi di setiap baris membentuk barisan aritmetika. Gunakan rumus jumlah $S_n$ untuk mencari total kursi.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                           <li><b>Identify Variables:</b>
+                                <ul>
+                                    <li>First row ($a$) = 20 seats.</li>
+                                    <li>Increase per row ($d$) = 2.</li>
+                                    <li>Number of rows ($n$) = 25.</li>
+                                </ul>
+                            </li>
+                            <li><b>Calculate total seats:</b>
+                                $$
+                                \begin{aligned}
+                                S_{25} &= \frac{25}{2}(2 \times 20 + (25-1) \times 2) \\
+                                &= \frac{25}{2}(40 + 48) \\
+                                &= \frac{25}{2}(88) \\
+                                &= 25 \times 44 = 1100
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Identifikasi Variabel:</b>
+                                <ul>
+                                    <li>Baris pertama ($a$) = 20 kursi.</li>
+                                    <li>Penambahan kursi per baris ($d$) = 2.</li>
+                                    <li>Jumlah baris ($n$) = 25.</li>
+                                </ul>
+                            </li>
+                            <li><b>Hitung total kursi:</b>
+                                $$
+                                \begin{aligned}
+                                S_{25} &= \frac{25}{2}(2 \times 20 + (25-1) \times 2) \\
+                                &= \frac{25}{2}(40 + 48) \\
+                                &= 1100
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 1100 seats / kursi.</div>
+                </div>
+                
+                <!-- Solution 6 -->
+                <div class="item-container">
+                    <p><strong>Solution 6 / Pembahasan 6:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The average of an arithmetic sequence is its middle term. The middle term can be found by dividing the sum by the number of terms.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Rata-rata dari barisan aritmetika adalah suku tengahnya. Suku tengah dapat ditemukan dengan membagi jumlah total dengan banyaknya suku.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Step 1: Find the middle term.</b>
+                                <ul>
+                                    <li>Middle term = $\frac{\text{Sum}}{\text{Number of Terms}} = \frac{675}{15} = 45$.</li>
+                                    <li>Since there are 15 terms (odd), the middle term is the 8th term ($U_8$). So, $U_8 = 45$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Step 2: Find the largest term.</b>
+                                <ul>
+                                     <li>The difference ($d$) between consecutive odd numbers is 2.</li>
+                                     <li>The largest term is the 15th term ($U_{15}$).</li>
+                                     <li>$U_{15} = U_8 + (15-8)d = 45 + (7 \times 2) = 59$.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Langkah 1: Cari suku tengah.</b>
+                                <ul>
+                                    <li>Suku tengah = $\frac{675}{15} = 45$.</li>
+                                    <li>Karena ada 15 suku, suku tengahnya adalah suku ke-8 ($U_8$). Jadi, $U_8 = 45$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Langkah 2: Cari suku terbesar.</b>
+                                <ul>
+                                     <li>Beda ($d$) antar bilangan ganjil berurutan adalah 2.</li>
+                                     <li>Suku terbesar adalah suku ke-15 ($U_{15}$).</li>
+                                     <li>$U_{15} = U_8 + (15-8)d = 45 + 14 = 59$.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 59.</div>
+                </div>
+
+                <!-- Solution 7 -->
+                <div class="item-container">
+                    <p><strong>Solution 7 / Pembahasan 7:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The number of cans per layer (1, 3, 5, ...) forms an arithmetic sequence. First find the number of layers ($n$), then calculate the total number of cans ($S_n$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Jumlah kaleng per lapisan (1, 3, 5, ...) membentuk barisan aritmetika. Cari dulu jumlah lapisan ($n$), lalu hitung total kaleng ($S_n$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                           <li><b>Step 1: Find the number of layers (n).</b>
+                                <ul>
+                                    <li>The sequence is: $a=1$, $d=2$, last term $U_n=29$.</li>
+                                    $$
+                                    \begin{aligned}
+                                        29 &= 1 + (n-1) \times 2 \\
+                                        28 &= (n-1) \times 2 \\
+                                        14 &= n-1 \implies n = 15
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                           <li><b>Step 2: Calculate the total cans.</b>
+                                <ul>
+                                    $$
+                                    \begin{aligned}
+                                        S_{15} &= \frac{15}{2}(a + U_n) \\
+                                               &= \frac{15}{2}(1 + 29) \\
+                                               &= \frac{15}{2}(30) = 225
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Langkah 1: Cari jumlah lapisan (n).</b>
+                                <ul>
+                                    <li>Barisan: $a=1$, $d=2$, suku terakhir $U_n=29$.</li>
+                                    $$
+                                    \begin{aligned}
+                                        29 &= 1 + (n-1) \times 2 \\
+                                        n &= 15
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                           <li><b>Langkah 2: Hitung total kaleng.</b>
+                                <ul>
+                                    $$
+                                    \begin{aligned}
+                                        S_{15} &= \frac{15}{2}(1 + 29) \\
+                                               &= 225
+                                    \end{aligned}
+                                    $$
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 225 cans / kaleng.</div>
+                </div>
+                
+                <!-- Solution 8 -->
+                <div class="item-container">
+                    <p><strong>Solution 8 / Pembahasan 8:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Find the first multiple ($a$) and the last multiple ($U_n$) of 7 within the range, then use the nth term formula to find the count ($n$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Cari bilangan kelipatan 7 pertama ($a$) dan terakhir ($U_n$) dalam rentang, lalu gunakan rumus suku ke-n untuk mencari banyaknya bilangan ($n$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Find the first and last terms:</b>
+                                <ul>
+                                    <li>The first multiple of 7 after 100 is 105. So $a=105$.</li>
+                                    <li>The last multiple of 7 before 500 is 497. So $U_n=497$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Find the number of terms (n):</b> The difference ($d$) is 7.
+                                $$
+                                \begin{aligned}
+                                497 &= 105 + (n-1) \times 7 \\
+                                392 &= (n-1) \times 7 \\
+                                56 &= n-1 \\
+                                n &= 57
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Cari suku pertama dan terakhir:</b>
+                                <ul>
+                                    <li>Kelipatan 7 pertama > 100 adalah $a=105$.</li>
+                                    <li>Kelipatan 7 terakhir < 500 adalah $U_n=497$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Cari banyaknya bilangan (n):</b> Beda ($d$) adalah 7.
+                                $$
+                                \begin{aligned}
+                                497 &= 105 + (n-1) \times 7 \\
+                                n &= 57
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 57.</div>
+                </div>
+
+                <!-- Solution 9 -->
+                <div class="item-container">
+                    <p><strong>Solution 9 / Pembahasan 9:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The nth term ($U_n$) is the difference between the sum of the first n terms ($S_n$) and the sum of the first (n-1) terms ($S_{n-1}$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Suku ke-n ($U_n$) adalah hasil dari jumlah n suku pertama ($S_n$) dikurangi jumlah (n-1) suku pertama ($S_{n-1}$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Formula used:</b> $U_{10} = S_{10} - S_9$.</li>
+                            <li><b>Calculate $S_{10}$:</b> $S_{10} = 2(10)^2 + 3(10) = 200 + 30 = 230$.</li>
+                            <li><b>Calculate $S_9$:</b> $S_9 = 2(9)^2 + 3(9) = 2(81) + 27 = 162 + 27 = 189$.</li>
+                            <li><b>Calculate $U_{10}$:</b> $U_{10} = 230 - 189 = 41$.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Rumus yang digunakan:</b> $U_{10} = S_{10} - S_9$.</li>
+                            <li><b>Hitung $S_{10}$:</b> $S_{10} = 2(100) + 30 = 230$.</li>
+                            <li><b>Hitung $S_9$:</b> $S_9 = 2(81) + 27 = 189$.</li>
+                            <li><b>Hitung $U_{10}$:</b> $U_{10} = 230 - 189 = 41$.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 41.</div>
+                </div>
+
+                <!-- Solution 10 -->
+                <div class="item-container">
+                    <p><strong>Solution 10 / Pembahasan 10:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The monthly savings form an arithmetic sequence. Calculate the total sum ($S_n$) for 2 years (24 months).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Tabungan membentuk barisan aritmetika. Hitung jumlah total ($S_n$) untuk 2 tahun (24 bulan).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Identify Variables:</b>
+                                <ul>
+                                    <li>First saving ($a$) = 10.</li>
+                                    <li>Increase in saving ($d$) = 5.</li>
+                                    <li>Duration ($n$) = 24 months.</li>
+                                </ul>
+                            </li>
+                            <li><b>Calculate Total Savings:</b>
+                                $$
+                                \begin{aligned}
+                                S_{24} &= \frac{24}{2}(2 \times 10 + (24-1) \times 5) \\
+                                &= 12(20 + 23 \times 5) \\
+                                &= 12(20 + 115) \\
+                                &= 12(135) = 1620
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Identifikasi Variabel:</b>
+                                <ul>
+                                    <li>Tabungan pertama ($a$) = 10.</li>
+                                    <li>Kenaikan tabungan ($d$) = 5.</li>
+                                    <li>Lama menabung ($n$) = 24 bulan.</li>
+                                </ul>
+                            </li>
+                            <li><b>Hitung Total Tabungan:</b>
+                                $$
+                                \begin{aligned}
+                                S_{24} &= \frac{24}{2}(20 + (23 \times 5)) \\
+                                &= 12(135) \\
+                                &= 1620
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: $1620.</div>
+                </div>
+
+                <!-- Solution 11 -->
+                <div class="item-container">
+                    <p><strong>Solution 11 / Pembahasan 11:</strong></p>
+                     <div class="concept">
+                        <p><strong>Concept:</strong> The height of a stack of cups forms an arithmetic sequence. Let $a$ be the height of one full cup, and $d$ be the height of the lip that appears when another cup is stacked.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Tinggi tumpukan gelas membentuk barisan aritmetika. Misalkan $a$ adalah tinggi satu gelas utuh, dan $d$ adalah tinggi pinggiran gelas yang terlihat saat ditumpuk.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                             <li><b>Create two equations:</b>
+                                <ul>
+                                    <li>8 cups: height of 1 full cup + 7 lips $\implies a + 7d = 44$.</li>
+                                    <li>5 cups: height of 1 full cup + 4 lips $\implies a + 4d = 32$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Find $d$ (height of lip):</b> Subtract the equations. $(a+7d) - (a+4d) = 44 - 32 \implies 3d = 12 \implies d = 4$ cm.</li>
+                            <li><b>Find $a$ (height of 1 cup):</b> Substitute $d=4$ into the second equation. $a + 4(4) = 32 \implies a + 16 = 32 \implies a = 16$ cm.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                         <ul class="list-disc">
+                             <li><b>Buat dua persamaan:</b>
+                                <ul>
+                                    <li>8 gelas: $a + 7d = 44$.</li>
+                                    <li>5 gelas: $a + 4d = 32$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Cari $d$ (tinggi pinggiran):</b> Kurangkan kedua persamaan. $3d = 12 \implies d = 4$ cm.</li>
+                            <li><b>Cari $a$ (tinggi 1 gelas):</b> Masukkan $d=4$ ke persamaan kedua. $a + 16 = 32 \implies a = 16$ cm.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 16 cm.</div>
+                </div>
+
+                <!-- Solution 12 -->
+                <div class="item-container">
+                    <p><strong>Solution 12 / Pembahasan 12:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Find the first term ($a$), last term ($U_n$), and number of terms ($n$) for the multiples of 6, then calculate their sum.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Cari suku pertama ($a$), terakhir ($U_n$), dan banyaknya suku ($n$) dari kelipatan 6, lalu hitung jumlahnya.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Find the first and last terms:</b>
+                                <ul>
+                                    <li>First multiple of 6 > 50 is $a = 54$.</li>
+                                    <li>Last multiple of 6 < 250 is $U_n = 246$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Find the number of terms (n):</b>
+                                $$
+                                \begin{aligned}
+                                246 &= 54 + (n-1) \times 6 \\
+                                192 &= (n-1) \times 6 \implies n = 33
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Calculate the sum:</b>
+                                $$
+                                \begin{aligned}
+                                S_{33} &= \frac{33}{2}(54 + 246) = \frac{33}{2}(300) = 4950
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Cari suku pertama dan terakhir:</b>
+                                <ul>
+                                    <li>$a = 54$.</li>
+                                    <li>$U_n = 246$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Cari banyaknya suku (n):</b>
+                                $$
+                                \begin{aligned}
+                                246 &= 54 + (n-1) \times 6 \\
+                                n &= 33
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Hitung jumlah:</b>
+                                $$
+                                \begin{aligned}
+                                S_{33} &= \frac{33}{2}(54 + 246) = 4950
+                                \end{aligned}
+                                $$
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 4950.</div>
+                </div>
+
+                <!-- Solution 13 -->
+                <div class="item-container">
+                    <p><strong>Solution 13 / Pembahasan 13:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Represent the three terms as $(x-d), x, (x+d)$. Use the sum to find $x$ (the middle term), then use the product to find $d$.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Misalkan ketiga suku adalah $(x-d), x, (x+d)$. Gunakan info jumlah untuk mencari $x$ (suku tengah), lalu info hasil kali untuk mencari $d$.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                           <li><b>Find the middle term (x):</b>
+                                <ul>
+                                    <li>Sum: $(x-d) + x + (x+d) = 3x = 45 \implies x = 15$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Find the difference (d):</b>
+                                <ul>
+                                    <li>Product: $(15-d) \times 15 \times (15+d) = 3000$.</li>
+                                    <li>$(15-d)(15+d) = \frac{3000}{15} \implies 225 - d^2 = 200 \implies d^2 = 25 \implies d = 5$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Determine the terms:</b> $(15-5), 15, (15+5) \implies 10, 15, 20$.</li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Cari suku tengah (x):</b>
+                                <ul>
+                                    <li>Jumlah: $3x = 45 \implies x = 15$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Cari beda (d):</b>
+                                <ul>
+                                    <li>Hasil Kali: $(15-d) \times 15 \times (15+d) = 3000$.</li>
+                                    <li>$225 - d^2 = 200 \implies d = 5$.</li>
+                                </ul>
+                            </li>
+                            <li><b>Tentukan suku-sukunya:</b> 10, 15, 20.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: The terms are 10, 15, and 20. / Suku-sukunya adalah 10, 15, dan 20.</div>
+                </div>
+
+                <!-- Solution 14 -->
+                <div class="item-container">
+                    <p><strong>Solution 14 / Pembahasan 14:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The sum of angles in a quadrilateral is 360°. Use the arithmetic series sum formula ($S_4 = 360$) to find the common difference ($d$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Jumlah sudut segiempat adalah 360°. Gunakan rumus jumlah barisan aritmetika ($S_4 = 360$) untuk mencari beda ($d$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Identify Variables:</b> $a=60$ (smallest angle), $n=4$, $S_4=360$.</li>
+                            <li><b>Find the difference (d):</b>
+                                $$
+                                \begin{aligned}
+                                S_4 &= \frac{4}{2}(2a + (4-1)d) \\
+                                360 &= 2(2 \times 60 + 3d) \\
+                                180 &= 120 + 3d \implies 60 = 3d \implies d = 20
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Find the largest angle (U_4):</b> $U_4 = a + 3d = 60 + 3(20) = 120°$.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Identifikasi Variabel:</b> $a=60$, $n=4$, $S_4=360$.</li>
+                            <li><b>Cari beda (d):</b>
+                                $$
+                                \begin{aligned}
+                                360 &= 2(120 + 3d) \\
+                                180 &= 120 + 3d \implies d = 20
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Cari sudut terbesar (U_4):</b> $U_4 = 60 + 3(20) = 120°$.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 120 degrees / derajat.</div>
+                </div>
+
+                <!-- Solution 15 -->
+                <div class="item-container">
+                    <p><strong>Solution 15 / Pembahasan 15:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The 5 days of sales (Mon-Fri) form an arithmetic sequence. Find the difference ($d$) using the total sales ($S_5$), then find the sales on Thursday ($U_4$).</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Penjualan 5 hari (Senin-Jumat) adalah barisan aritmetika. Cari beda ($d$) menggunakan info total penjualan ($S_5$), lalu cari penjualan hari Kamis ($U_4$).</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Identify Variables:</b> $n=5$, $a = 150$, $S_5 = 1000$.</li>
+                            <li><b>Find the difference (d):</b>
+                                $$
+                                \begin{aligned}
+                                1000 &= \frac{5}{2}(2 \times 150 + (5-1)d) \\
+                                1000 &= 2.5(300 + 4d) \\
+                                400 &= 300 + 4d \implies 100 = 4d \implies d = 25
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Find sales on Thursday (U_4):</b>
+                                $U_4 = a + 3d = 150 + 3(25) = 150 + 75 = 225$.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Identifikasi Variabel:</b> $n=5$, $a = 150$, $S_5 = 1000$.</li>
+                            <li><b>Cari beda (d):</b>
+                                $$
+                                \begin{aligned}
+                                1000 &= \frac{5}{2}(300 + 4d) \\
+                                400 &= 300 + 4d \implies d = 25
+                                \end{aligned}
+                                $$
+                            </li>
+                            <li><b>Cari penjualan hari Kamis (U_4):</b>
+                                $U_4 = 150 + 3(25) = 225$.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 225 books / buku.</div>
+                </div>
+
+                <h3 class="topic-title">Solutions for Part 2: Logic: Truth-tellers & Liars</h3>
+
+                <!-- Solution 16 -->
+                <div class="item-container">
+                    <p><strong>Solution 16 / Pembahasan 16:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Test each possibility (A is a Knight or a Knave) and see which one is logically consistent.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Uji setiap kemungkinan (A adalah Ksatria atau Penjahat) dan cari mana yang logis.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                           <li><b>Case 1: Assume A is a Knight (tells truth).</b>
+                                <ul>
+                                    <li>A's statement "At least one of us is a Knave" must be true.</li>
+                                    <li>Since A is a Knight, the Knave must be B.</li>
+                                    <li><b>Result:</b> This scenario is logically consistent.</li>
+                                </ul>
+                            </li>
+                            <li><b>Case 2: Assume A is a Knave (lies).</b>
+                                <ul>
+                                    <li>A's statement must be false. The opposite of "At least one Knave" is "There are no Knaves" (both are Knights).</li>
+                                    <li><b>Result:</b> This contradicts the initial assumption that A is a Knave. Impossible.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Kasus 1: A adalah Ksatria (Jujur).</b>
+                                <ul>
+                                    <li>Pernyataan A ("Setidaknya satu dari kami adalah Penjahat") harus benar.</li>
+                                    <li>Karena A adalah Ksatria, maka B pastilah Penjahat.</li>
+                                    <li><b>Hasil:</b> Skenario ini logis.</li>
+                                </ul>
+                            </li>
+                            <li><b>Kasus 2: A adalah Penjahat (Pembohong).</b>
+                                <ul>
+                                    <li>Pernyataan A harus salah. Kebalikannya adalah "Tidak ada Penjahat" (keduanya Ksatria).</li>
+                                    <li><b>Hasil:</b> Bertentangan dengan asumsi. Tidak mungkin.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: A is a Knight, B is a Knave. / A adalah Ksatria, B adalah Penjahat.</div>
+                </div>
+                 <!-- All other 14 solutions follow the same bilingual, point-by-point format -->
+                 <!-- Solution 17 -->
+                <div class="item-container">
+                    <p><strong>Solution 17 / Pembahasan 17:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Start analyzing from the most testable assumption. E's statement, "I am a Knight," is a good starting point.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Mulai analisis dari asumsi yang paling mudah diuji kebenarannya. Pernyataan E "Saya adalah Ksatria" adalah titik awal yang baik.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Assume E is a Knave.</b>
+                                <ul>
+                                    <li>Then E's statement "I am a Knight" is a lie. This is consistent.</li>
+                                    <li><b>Now, test D. Assume D is a Knight.</b> His statement "C and E are of the same type" would be true. This means C must be a Knave, like E.</li>
+                                    <li><b>Check C's consistency:</b> C (a Knave) says "D is a Knave". This is a lie, which means D is actually a Knight.</li>
+                                    <li><b>Result:</b> All statements are consistent with C=Knave, D=Knight, E=Knave.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Asumsi E adalah Penjahat.</b>
+                                <ul>
+                                    <li>Maka pernyataan E ("Saya Ksatria") adalah bohong. Ini konsisten.</li>
+                                    <li><b>Uji D: Asumsikan D adalah Ksatria.</b> Pernyataan D ("C dan E tipe yang sama") benar. Maka C harus sama dengan E, yaitu Penjahat.</li>
+                                    <li><b>Cek C:</b> C (seorang Penjahat) berkata "D adalah Penjahat". Ini adalah kebohongan, yang berarti D adalah Ksatria.</li>
+                                    <li><b>Hasil:</b> Semuanya konsisten dengan C=Penjahat, D=Ksatria, E=Penjahat.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: C is a Knave, D is a Knight, E is a Knave. / C adalah Penjahat, D adalah Ksatria, E adalah Penjahat.</div>
+                </div>
+
+                <!-- Solution 18 -->
+                <div class="item-container">
+                    <p><strong>Solution 18 / Pembahasan 18:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Since only one statement is true, test each case one by one.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Karena hanya satu pernyataan yang benar, uji setiap kasus.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Case 1: Sign 1 is true.</b> The treasure is NOT in R1. Sign 2 ("not here") must be false $\implies$ it IS in R2. Sign 3 ("is in R2") must be false $\implies$ it is NOT in R2. (Contradiction).</li>
+                            <li><b>Case 2: Sign 2 is true.</b> The treasure is NOT in R2. Sign 1 ("not here") must be false $\implies$ it IS in R1. Sign 3 ("is in R2") must be false $\implies$ it is NOT in R2. (Consistent).</li>
+                            <li><b>Case 3: Sign 3 is true.</b> The treasure IS in R2. Sign 1 ("not here") must be false $\implies$ it IS in R1. (Contradiction).</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Kasus 1: Tanda 1 Benar.</b> Harta TIDAK di R1. Tanda 2 salah $\implies$ ADA di R2. Tanda 3 salah $\implies$ TIDAK di R2. (Kontradiksi).</li>
+                            <li><b>Kasus 2: Tanda 2 Benar.</b> Harta TIDAK di R2. Tanda 1 salah $\implies$ ADA di R1. Tanda 3 salah $\implies$ TIDAK di R2. (Logis).</li>
+                            <li><b>Kasus 3: Tanda 3 Benar.</b> Harta ADA di R2. Tanda 1 salah $\implies$ ADA di R1. (Kontradiksi).</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: The treasure is in Room 1. / Harta karun ada di Ruang 1.</div>
+                </div>
+                
+                <!-- Solution 19 -->
+                <div class="item-container">
+                    <p><strong>Solution 19 / Pembahasan 19:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Ben's and David's statements contradict each other. Since only one person is telling the truth, it must be one of them.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pernyataan Ben dan David saling meniadakan, jadi salah satu dari mereka pasti berkata benar.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Assume Ben is truthful:</b> Then David ate it. This means Carl's statement ("I didn't eat it") is a lie, which means Carl DID eat it. (Contradiction).</li>
+                            <li><b>Assume David is truthful:</b> Then "Ben is lying" is true. This means the other three (Alex, Ben, Carl) are liars. Carl's lie ("I didn't eat it") means Carl DID eat it. (Consistent).</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Asumsi Ben Jujur:</b> Maka David memakan kue. Ini berarti Carl berbohong. Jika kebohongan Carl ("Saya tidak memakannya") salah, berarti Carl memakannya. (Kontradiksi).</li>
+                            <li><b>Asumsi David Jujur:</b> Maka "Ben berbohong" adalah benar. Ini berarti tiga lainnya (Alex, Ben, Carl) berbohong. Jika kebohongan Carl ("Saya tidak memakannya") salah, berarti Carl memakannya. (Logis).</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Carl ate the cookie. / Carl yang memakan kuenya.</div>
+                </div>
+
+                <!-- Solution 20 -->
+                <div class="item-container">
+                    <p><strong>Solution 20 / Pembahasan 20:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The statement "I am the doctor" is a paradox. A doctor (liar) cannot say it because it's true. A lawyer (truth-teller) cannot say it because it's false.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pernyataan "Saya adalah dokter" adalah sebuah paradoks. Dokter (pembohong) tidak mungkin mengatakannya karena itu benar. Pengacara (jujur) juga tidak mungkin mengatakannya karena itu salah.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>Analyze Beth's statement: "I am the doctor".</li>
+                            <li>Beth cannot be the Doctor (because she would be telling the truth).</li>
+                            <li>Beth cannot be the Lawyer (because she would be lying).</li>
+                            <li>Therefore, the only possibility is that Beth is the **Teacher** (who is allowed to lie, as per the condition).</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li>Analisis pernyataan Beth "Saya adalah dokter".</li>
+                            <li>Beth tidak mungkin Dokter (karena akan jadi jujur).</li>
+                            <li>Beth tidak mungkin Pengacara (karena akan jadi berbohong).</li>
+                            <li>Satu-satunya kemungkinan adalah Beth **bukan** Dokter dan **bukan** Pengacara.</li>
+                            <li>Maka, **Beth pastilah Guru** (yang pernyataannya salah).</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Beth is the Teacher. / Beth adalah Guru.</div>
+                </div>
+
+                <!-- Solution 21 -->
+                <div class="item-container">
+                    <p><strong>Solution 21 / Pembahasan 21:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Ask a question that forces both a Knight and a Knave to point in the same correct direction.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Ajukan pertanyaan yang memaksa Ksatria dan Penjahat untuk menunjuk ke arah yang sama.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>The Question:</b> "Which path leads to your city?"</li>
+                            <li><b>If you ask a Knight:</b> He is from the City of Truth and will truthfully point towards the City of Truth.</li>
+                            <li><b>If you ask a Knave:</b> He is from the City of Lies. Because he must lie, he will not point to his own city. He will point to the other city, which is the City of Truth.</li>
+                            <li>In both cases, the guard points to the correct path.</li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Pertanyaan:</b> "Jalan mana yang menuju ke kotamu?"</li>
+                            <li><b>Jika bertanya pada Ksatria:</b> Dia dari Kota Kebenaran dan akan jujur menunjuk ke arah Kota Kebenaran.</li>
+                            <li><b>Jika bertanya pada Penjahat:</b> Dia dari Kota Kebohongan. Karena harus berbohong, dia akan menunjuk ke kota yang lain, yaitu Kota Kebenaran.</li>
+                            <li>Keduanya akan menunjuk ke jalan yang benar.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer: Ask, "Which path leads to your city?" / Jawaban: Tanya, "Jalan mana yang menuju ke kotamu?"</div>
+                </div>
+
+                <!-- Solution 22 -->
+                <div class="item-container">
+                    <p><strong>Solution 22 / Pembahasan 22:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Test each suspect as the thief. Remember: the thief lies, the innocent tell the truth.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Uji setiap tersangka sebagai pencuri. Ingat: pencuri berbohong, yang tidak bersalah berkata jujur.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Assume Quinn is the thief (liar):</b> His statement "Ron is not guilty" is a lie $\implies$ Ron IS guilty. (Contradiction, only 1 thief).</li>
+                            <li><b>Assume Ron is the thief (liar):</b> Peter (truthful) says "Quinn is guilty". (Contradiction, we assumed Ron is the thief).</li>
+                            <li><b>Assume Peter is the thief (liar):</b>
+                                <ul>
+                                    <li>Peter's (liar) statement "Quinn is guilty" is a lie $\implies$ Quinn is innocent (Consistent).</li>
+                                    <li>Quinn (truthful) says "Ron is not guilty" (Consistent).</li>
+                                    <li>Ron (truthful) says "...at least one of the others is" (Consistent, because Peter is guilty).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                           <li><b>Asumsi Quinn pencuri (bohong):</b> Pernyataannya "Ron tidak bersalah" bohong $\implies$ Ron bersalah. (Kontradiksi, hanya 1 pencuri).</li>
+                            <li><b>Asumsi Ron pencuri (bohong):</b> Peter (jujur) berkata "Quinn bersalah". (Kontradiksi, kita asumsi Ron pencuri).</li>
+                            <li><b>Asumsi Peter pencuri (bohong):</b> Skenario ini konsisten. Peter (bohong) menuduh Quinn. Quinn (jujur) membebaskan Ron. Ron (jujur) berkata ada yang bersalah (yaitu Peter).</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Peter is the thief. / Peter adalah pencurinya.</div>
+                </div>
+
+                <!-- Solution 23 -->
+                <div class="item-container">
+                    <p><strong>Solution 23 / Pembahasan 23:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The rule "at most one is true" means either 0 are true or exactly 1 is true. Test both cases.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Aturannya adalah "paling banyak satu yang benar", artinya bisa 0 benar atau 1 benar. Uji kedua kasus.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Case 1: 0 are true (All are false).</b>
+                                <ul>
+                                    <li>Gold false $\implies$ Prize is NOT in Gold.</li>
+                                    <li>Silver false $\implies$ Prize IS in Silver.</li>
+                                    <li>Lead false $\implies$ Prize IS in Gold. (Contradiction).</li>
+                                </ul>
+                            </li>
+                            <li><b>Case 2: 1 is true.</b>
+                                <ul>
+                                    <li>If the Lead statement is the true one ("prize not in gold"), then the Gold statement must be false.</li>
+                                    <li>For only one to be true, the Silver statement ("not in this box") must also be false. If it's false, the prize IS in the Silver box. (Consistent).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Kasus 1: 0 Benar (Semua Salah).</b>
+                                <ul>
+                                    <li>Emas Salah $\implies$ TIDAK di Emas.</li>
+                                    <li>Perak Salah $\implies$ ADA di Perak.</li>
+                                    <li>Timah Salah $\implies$ ADA di Emas. (Kontradiksi).</li>
+                                </ul>
+                            </li>
+                            <li><b>Kasus 2: 1 Benar.</b>
+                                <ul>
+                                    <li>Jika Timah Benar ("tidak di emas"), maka Emas Salah. Agar hanya Timah yang benar, Perak harus Salah.</li>
+                                    <li>Jika Perak Salah ("tidak di perak" adalah salah), maka hadiah ADA di Perak. (Logis).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: The prize is in the Silver box. / Hadiah ada di Kotak Perak.</div>
+                </div>
+
+                <!-- Solution 24 -->
+                <div class="item-container">
+                    <p><strong>Solution 24 / Pembahasan 24:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Someone can say "I lied yesterday" only on two conditions: 1) Today is a truth day & yesterday was a lie day. 2) Today is a lie day & yesterday was a truth day.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Seseorang bisa berkata "Kemarin saya berbohong" hanya pada dua kondisi: 1) Hari ini Jujur & Kemarin Bohong. 2) Hari ini Bohong & Kemarin Jujur.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>When can Alice say it?</b> She needs a truth day following a lie day. This only happens on **Thursday** (truth day, following Wednesday, a lie day).</li>
+                            <li><b>When can Bob say it?</b> He needs a truth day after a lie day (Sunday after Saturday) OR a lie day after a truth day (**Thursday**, a lie day, after Wednesday, a truth day).</li>
+                            <li>The only day they can both make the statement is **Thursday**.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Kapan Alice bisa berkata demikian?</b> Saat hari ini jujur dan kemarin bohong. Ini hanya terjadi pada hari **Kamis** (Kamis jujur, Rabu bohong).</li>
+                            <li><b>Kapan Bob bisa berkata demikian?</b> Saat hari ini jujur dan kemarin bohong (Minggu setelah Sabtu) ATAU saat hari ini bohong dan kemarin jujur (**Kamis**, bohong, setelah Rabu, jujur).</li>
+                            <li>Satu-satunya hari yang sama adalah **Kamis**.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Thursday. / Kamis.</div>
+                </div>
+
+                <!-- Solution 25 -->
+                <div class="item-container">
+                    <p><strong>Solution 25 / Pembahasan 25:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> The statement "I am a Knave" is a paradox. A Knave cannot say it because it would be true. Therefore, the speaker must be a Knave and the entire statement must be a lie.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pernyataan "Saya seorang Penjahat" adalah paradoks. Penjahat tidak bisa mengaku dirinya Penjahat. Maka, seluruh kalimat yang diucapkannya haruslah sebuah kebohongan.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>X cannot be a Knight, so **X is a Knave**.</li>
+                            <li>As a Knave, his entire statement ("I am a Knave, but Y isn't") must be false.</li>
+                            <li>A "P but Q" statement is the same as "P and Q". It is false if either P or Q is false.</li>
+                            <li>The first part, "I am a Knave," is factually true. For the whole statement to be a lie, the second part ("Y isn't a Knave") must be false.</li>
+                            <li>If "Y isn't a Knave" is false, then **Y is a Knave**.</li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li>X tidak mungkin Ksatria, jadi **X adalah Penjahat**.</li>
+                            <li>Karena X Penjahat, pernyataannya ("Saya Penjahat, TAPI Y bukan") harus salah.</li>
+                            <li>Pernyataan "A tapi B" sama dengan "A dan B". Agar salah, salah satu bagiannya harus salah.</li>
+                            <li>Bagian pertama "Saya Penjahat" adalah fakta (benar). Agar seluruh kalimat salah, bagian kedua ("Y bukan Penjahat") harus salah.</li>
+                            <li>Jika "Y bukan Penjahat" salah, maka **Y adalah Penjahat**.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Both X and Y are Knaves. / X dan Y keduanya adalah Penjahat.</div>
+                </div>
+                
+                 <!-- Solution 26 -->
+                <div class="item-container">
+                    <p><strong>Solution 26 / Pembahasan 26:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Test the conditions for a Knight (K) and a Knave (N). A Knight must have two Knave neighbors (N-K-N). A Knave must have at least one Knight neighbor for their statement to be false.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Uji kondisi untuk Ksatria (K) dan Penjahat (N). Ksatria harus punya 2 tetangga Penjahat. Penjahat harus punya minimal 1 tetangga Ksatria agar pernyataannya salah.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>Key rules that emerge:
+                                <ul>
+                                    <li>There cannot be two Knights next to each other (K-K).</li>
+                                    <li>There cannot be three Knaves in a row (N-N-N).</li>
+                                </ul>
+                            </li>
+                            <li>The only pattern that satisfies these rules for a circle of 5 is **K-N-K-N-N**.
+                                <ul>
+                                    <li>Each Knight (K) is surrounded by two Knaves (N), so their statement is true.</li>
+                                    <li>Each Knave (N) has at least one Knight (K) as a neighbor, so their statement is false.</li>
+                                </ul>
+                            </li>
+                             <li>This pattern has 2 Knights.</li>
+                        </ul>
+                    </div>
+                     <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li>Aturan Kunci:
+                                <ul>
+                                    <li>Tidak boleh ada K-K berdampingan.</li>
+                                    <li>Tidak boleh ada N-N-N berurutan.</li>
+                                </ul>
+                            </li>
+                            <li>Satu-satunya pola yang memenuhi aturan untuk 5 orang adalah **K-N-K-N-N**.
+                                <ul>
+                                    <li>Setiap Ksatria (K) dikelilingi oleh 2 Penjahat (N), pernyataannya benar.</li>
+                                    <li>Setiap Penjahat (N) memiliki minimal satu Ksatria (K) sebagai tetangga, pernyataannya salah.</li>
+                                </ul>
+                            </li>
+                             <li>Pola ini memiliki 2 Ksatria.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: 2 Knights / Ksatria.</div>
+                </div>
+
+                <!-- Solution 27 -->
+                <div class="item-container">
+                    <p><strong>Solution 27 / Pembahasan 27:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> John's and Mary's statements are contradictory, so one must be true and one false. Since exactly two people are telling the truth, Sam's statement must be true.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pernyataan John dan Mary bertentangan, jadi salah satunya benar & satunya salah. Karena ada 2 pernyataan benar, maka pernyataan Sam pasti benar.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>Sam's statement ("John is lying") must be true.</li>
+                            <li>If John is lying, his statement ("Mary broke it") is false. This means Mary did NOT break it.</li>
+                            <li>This makes Mary's statement ("I didn't break it") true.</li>
+                            <li>The pattern is: John (Liar), Mary (Truthful), Sam (Truthful). This is consistent with the rules.</li>
+                            <li>Since it wasn't John or Mary, the culprit must be **Sam**.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li>Karena pernyataan Sam ("John berbohong") pasti benar, maka John berbohong.</li>
+                            <li>Jika John berbohong, pernyataannya ("Mary memecahkannya") adalah salah. Artinya, Mary TIDAK memecahkannya.</li>
+                            <li>Ini membuat pernyataan Mary ("Bukan saya...") menjadi benar.</li>
+                            <li>Pola: John (Bohong), Mary (Jujur), Sam (Jujur). Konsisten.</li>
+                            <li>Karena bukan John atau Mary, pelakunya pasti **Sam**.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Sam broke the vase. / Sam yang memecahkan vas itu.</div>
+                </div>
+
+                <!-- Solution 28 -->
+                <div class="item-container">
+                    <p><strong>Solution 28 / Pembahasan 28:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Analyze the answer "No" to a compound "AND" question ("Is A AND B true?").</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Analisis jawaban "Tidak" untuk pertanyaan gabungan ("Apakah A DAN B benar?").</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>Question: "Is it true that (you are a Knight AND it is raining)?" Answer: "No".</li>
+                            <li><b>Test a Knight (truthful):</b> His "No" means the statement is indeed false. Since he IS a Knight (first part is true), the second part ("it is raining") must be false for the whole AND statement to be false. So, <b>it is not raining</b>. (Consistent).</li>
+                            <li><b>Test a Knave (liar):</b> His "No" means the statement is actually true. But he IS a Knave (first part is false), so the AND statement cannot be true. (Contradiction).</li>
+                            <li>The only possible scenario is that he is a Knight.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li>Pertanyaan: "Apakah benar (Anda Ksatria DAN sedang hujan)?" Jawaban: "Tidak".</li>
+                            <li><b>Uji Ksatria (Jujur):</b> Jawaban "Tidak" berarti pernyataan itu memang salah. Karena dia Ksatria (bagian pertama benar), maka bagian kedua ("sedang hujan") harus salah. Jadi, <b>tidak sedang hujan</b>. (Logis).</li>
+                            <li><b>Uji Penjahat (Bohong):</b> Jawaban "Tidak" berarti pernyataan itu sebenarnya benar. Tapi karena dia Penjahat (bagian pertama salah), pernyataan "A DAN B" tidak mungkin benar. (Kontradiksi).</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: It is not raining. / Tidak sedang hujan.</div>
+                </div>
+
+                <!-- Solution 29 -->
+                <div class="item-container">
+                    <p><strong>Solution 29 / Pembahasan 29:</strong></p>
+                    <div class="concept">
+                        <p><strong>Key Principle:</strong> When you ask anyone (Knight or Knave), "What would the other type of person say?", the answer will always be a lie.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Prinsip Kunci:</strong> Jika Anda bertanya kepada siapa pun (Ksatria atau Penjahat), "Apa yang akan dikatakan oleh orang tipe lain?", jawabannya akan selalu merupakan kebalikan dari fakta yang sebenarnya.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li>Advisor 1 reports that Advisor 2 would say "this door does NOT lead to freedom".</li>
+                            <li>Based on the key principle, this reported statement is the opposite of the truth.</li>
+                            <li>Therefore, the truth is that the door **does lead to freedom**.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li>Penasihat 1 melaporkan bahwa Penasihat 2 akan berkata "pintu ini TIDAK menuju kebebasan".</li>
+                            <li>Berdasarkan prinsip di atas, laporan ini adalah kebalikan dari kenyataan.</li>
+                            <li>Maka, kenyataannya adalah pintu itu **menuju kebebasan**.</li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer: Yes, he should take the door. / Jawaban: Ya, dia harus mengambil pintu itu.</div>
+                </div>
+
+                <!-- Solution 30 -->
+                <div class="item-container">
+                    <p><strong>Solution 30 / Pembahasan 30:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Statements from C and D are contradictory, so one of them must be the single truth-teller.</p>
+                        <hr class="my-2 border-indigo-100">
+                        <p><strong>Konsep:</strong> Pernyataan C dan D saling bertentangan, jadi salah satu dari mereka adalah satu-satunya orang yang berkata benar.</p>
+                    </div>
+                    <div class="solution-step">
+                        <p class="font-bold text-indigo-600">Solution:</p>
+                        <ul class="list-disc">
+                            <li><b>Assume C is the truth-teller:</b> His statement "D is guilty" is true. This means B is a liar. B's lie ("I am not guilty") means B IS guilty. (Contradiction, only one is guilty).</li>
+                            <li><b>Assume D is the truth-teller:</b> His statement "C is lying" is true. This means A, B, and C are liars.
+                                <ul>
+                                    <li>C's lie ("D is guilty") $\implies$ D is innocent.</li>
+                                    <li>A's lie ("C is guilty") $\implies$ C is innocent.</li>
+                                    <li>B's lie ("I am not guilty") $\implies$ **B is guilty**.</li>
+                                </ul>
+                                (This scenario is consistent).
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="solution-step mt-4">
+                        <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                        <ul class="list-disc">
+                            <li><b>Asumsi C Jujur:</b> "D bersalah" adalah benar. Maka B berbohong. Kebohongan B ("Saya tidak bersalah") berarti B bersalah. (Kontradiksi).</li>
+                            <li><b>Asumsi D Jujur:</b> "C berbohong" adalah benar. Maka A, B, C berbohong.
+                                <ul>
+                                    <li>Kebohongan C ("D bersalah") $\implies$ D tidak bersalah.</li>
+                                    <li>Kebohongan A ("C bersalah") $\implies$ C tidak bersalah.</li>
+                                    <li>Kebohongan B ("Saya tidak bersalah") $\implies$ **B bersalah**.</li>
+                                </ul>
+                                (Logis dan Konsisten).
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="final-answer">Answer / Jawaban: Suspect B is the guilty one. / Tersangka B adalah yang bersalah.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+
