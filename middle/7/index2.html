@@ -109,7 +109,7 @@
         margin: 1rem 0;
         border-radius: 0.25rem;
       }
-       .bar-model-container {
+      .bar-model-container {
         margin: 1.5rem 0;
         padding: 1rem;
         background-color: #f8fafc;
@@ -146,9 +146,9 @@
         border: 2px solid #10b981; /* green-500 */
       }
       .bar-label {
-          text-align: right;
-          font-weight: 500;
-          padding-right: 1rem;
+        text-align: right;
+        font-weight: 500;
+        padding-right: 1rem;
       }
       .brace {
         position: relative;
@@ -156,10 +156,20 @@
         margin-top: 4px;
         text-align: center;
       }
-      .brace:before, .brace:after {
-        content: '';
+      .brace:before {
+        content: "";
         position: absolute;
-        bottom: -4px;
+        bottom: -2px;
+        width: 10px;
+        height: 10px;
+        border-style: solid;
+        border-width: 0 0 2px 2px;
+        border-color: #6b7280;
+      }
+      .brace:after {
+        content: "";
+        position: absolute;
+        bottom: 6px;
         width: 10px;
         height: 10px;
         border-style: solid;
@@ -168,12 +178,12 @@
       }
       .brace:before {
         left: 0;
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
         transform-origin: bottom left;
       }
       .brace:after {
         right: 0;
-        transform: rotate(45deg);
+        transform: rotate(-135deg);
         transform-origin: bottom right;
       }
     </style>
@@ -559,7 +569,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: 26 years / Jawaban: 26 tahun.</div>
+            <div class="final-answer">
+              Answer: 26 years / Jawaban: 26 tahun.
+            </div>
           </div>
 
           <!-- Solution 2 -->
@@ -567,44 +579,55 @@
             <p><strong>Solution 2 / Pembahasan 2:</strong></p>
             <div class="concept">
               <p>
-                <strong>Concept:</strong> This is a 'Sum and Difference' problem. We first make the parts equal by subtracting the difference from the total, then divide by 2 to find the value of the smaller part.
+                <strong>Concept:</strong> This is a 'Sum and Difference'
+                problem. We first make the parts equal by subtracting the
+                difference from the total, then divide by 2 to find the value of
+                the smaller part.
               </p>
               <hr class="my-2 border-indigo-100" />
               <p>
-                <strong>Konsep:</strong> Ini adalah soal 'Jumlah dan Selisih'. Kita pertama-tama membuat semua bagian sama besar dengan mengurangi total dengan selisihnya, lalu membaginya dengan 2 untuk menemukan nilai bagian yang lebih kecil.
+                <strong>Konsep:</strong> Ini adalah soal 'Jumlah dan Selisih'.
+                Kita pertama-tama membuat semua bagian sama besar dengan
+                mengurangi total dengan selisihnya, lalu membaginya dengan 2
+                untuk menemukan nilai bagian yang lebih kecil.
               </p>
             </div>
-             <div class="bar-model-container">
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <div class="bar-label w-16">Rina:</div>
-                        <div class="flex h-10 flex-1">
-                            <div class="bar" style="width: 70%;">1 unit</div>
-                            <div class="bar-diff ml-1" style="width: 30%;">+5</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bar-label w-16">Tio:</div>
-                        <div class="flex h-10 flex-1">
-                            <div class="bar" style="width: 70%;">1 unit</div>
-                        </div>
-                    </div>
-                    <div class="pl-16">
-                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 17</div></div>
-                    </div>
+            <div class="bar-model-container">
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <div class="bar-label w-16">Rina:</div>
+                  <div class="flex h-10 flex-1">
+                    <div class="bar" style="width: 70%">1 unit</div>
+                    <div class="bar-diff ml-1" style="width: 30%">+5</div>
+                  </div>
                 </div>
+                <div class="flex items-center">
+                  <div class="bar-label w-16">Tio:</div>
+                  <div class="flex h-10 flex-1">
+                    <div class="bar" style="width: 70%">1 unit</div>
+                  </div>
+                </div>
+                <div class="pl-16">
+                  <div class="brace" style="width: 100%">
+                    <div class="pt-2">Total = 17</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
               <ul>
                 <li>
-                  <b>Step 1:</b> From the bar model, we see two equal units and an extra part of 5. To find the value of the two equal units, we subtract the extra part from the total.
+                  <b>Step 1:</b> From the bar model, we see two equal units and
+                  an extra part of 5. To find the value of the two equal units,
+                  we subtract the extra part from the total.
                   <ul>
                     <li>$17 - 5 = 12$.</li>
                   </ul>
                 </li>
                 <li>
-                  <b>Step 2:</b> The result (12) is the value of 2 equal units. To find 1 unit (Tio's age), we divide by 2.
+                  <b>Step 2:</b> The result (12) is the value of 2 equal units.
+                  To find 1 unit (Tio's age), we divide by 2.
                   <ul>
                     <li>$12 \div 2 = 6$. So, Tio is 6 years old.</li>
                   </ul>
@@ -615,13 +638,17 @@
               <p class="font-bold text-indigo-600">Penyelesaian:</p>
               <ul>
                 <li>
-                  <b>Langkah 1:</b> Dari model balok, terlihat ada dua unit yang sama dan satu bagian lebih senilai 5. Untuk mencari nilai dari dua unit yang sama tersebut, kita kurangi total dengan bagian lebihnya.
+                  <b>Langkah 1:</b> Dari model balok, terlihat ada dua unit yang
+                  sama dan satu bagian lebih senilai 5. Untuk mencari nilai dari
+                  dua unit yang sama tersebut, kita kurangi total dengan bagian
+                  lebihnya.
                   <ul>
                     <li>$17 - 5 = 12$.</li>
                   </ul>
                 </li>
                 <li>
-                  <b>Langkah 2:</b> Hasil (12) adalah nilai dari 2 unit yang sama. Untuk mencari 1 unit (umur Tio), kita bagi dengan 2.
+                  <b>Langkah 2:</b> Hasil (12) adalah nilai dari 2 unit yang
+                  sama. Untuk mencari 1 unit (umur Tio), kita bagi dengan 2.
                   <ul>
                     <li>$12 \div 2 = 6$. Jadi, umur Tio adalah 6 tahun.</li>
                   </ul>
@@ -712,28 +739,32 @@
                 depan.
               </p>
             </div>
-             <div class="bar-model-container">
-                 <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 5 Tahun Lalu</p>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Ibu:</div>
-                        <div class="flex h-10 flex-1 gap-1">
-                            <div class="bar w-1/4">1 unit</div>
-                            <div class="bar w-1/4">1 unit</div>
-                            <div class="bar w-1/4">1 unit</div>
-                            <div class="bar w-1/4">1 unit</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Maya:</div>
-                        <div class="flex h-10 flex-1">
-                            <div class="bar" style="width: 25%;">1 unit</div>
-                        </div>
-                    </div>
-                     <div class="pl-20">
-                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 30</div></div>
-                    </div>
+            <div class="bar-model-container">
+              <p class="font-medium text-gray-700 mb-2 text-center">
+                Model untuk 5 Tahun Lalu
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Ibu:</div>
+                  <div class="flex h-10 flex-1 gap-1">
+                    <div class="bar w-1/4">1 unit</div>
+                    <div class="bar w-1/4">1 unit</div>
+                    <div class="bar w-1/4">1 unit</div>
+                    <div class="bar w-1/4">1 unit</div>
+                  </div>
                 </div>
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Maya:</div>
+                  <div class="flex h-10 flex-1">
+                    <div class="bar" style="width: 25%">1 unit</div>
+                  </div>
+                </div>
+                <div class="pl-20">
+                  <div class="brace" style="width: 100%">
+                    <div class="pt-2">Total = 30</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -748,14 +779,16 @@
                   </ul>
                 </li>
                 <li>
-                  <b>Step 2:</b> From the model, we have 5 equal units that total 30.
+                  <b>Step 2:</b> From the model, we have 5 equal units that
+                  total 30.
                   <ul>
                     <li>
                       5 units = 30 years $\implies$ 1 unit = $30 \div 5 = 6$
                       years.
                     </li>
                     <li>
-                      5 years ago: Maya was 1 unit (6 years), Mother was 4 units ($4 \times 6 = 24$ years).
+                      5 years ago: Maya was 1 unit (6 years), Mother was 4 units
+                      ($4 \times 6 = 24$ years).
                     </li>
                   </ul>
                 </li>
@@ -766,14 +799,22 @@
                   </ul>
                 </li>
                 <li>
-                  <b>Step 4:</b> The age difference is constant: $29 - 11 = 18$ years.
+                  <b>Step 4:</b> The age difference is constant: $29 - 11 = 18$
+                  years.
                 </li>
                 <li>
-                  <b>Step 5:</b> For the future, when the mother is twice Maya's age, the difference (18) will be equal to 1 unit (Maya's future age).
+                  <b>Step 5:</b> For the future, when the mother is twice Maya's
+                  age, the difference (18) will be equal to 1 unit (Maya's
+                  future age).
                   <ul>
-                    <li>Maya's future age = 18. Mother's future age = $2 \times 18 = 36$.
+                    <li>
+                      Maya's future age = 18. Mother's future age = $2 \times 18
+                      = 36$.
                     </li>
-                    <li>Years to wait = Maya's future age - Maya's current age = $18 - 11 = 7$ years.</li>
+                    <li>
+                      Years to wait = Maya's future age - Maya's current age =
+                      $18 - 11 = 7$ years.
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -782,25 +823,35 @@
               <p class="font-bold text-indigo-600">Penyelesaian:</p>
               <ul>
                 <li>
-                  <b>Langkah 1:</b> Cari jumlah umur mereka 5 tahun lalu: $40 - 5 - 5 = 30$ tahun.
+                  <b>Langkah 1:</b> Cari jumlah umur mereka 5 tahun lalu: $40 -
+                  5 - 5 = 30$ tahun.
                 </li>
                 <li>
-                  <b>Langkah 2:</b> Dari model, kita punya 5 unit yang sama dengan total 30.
+                  <b>Langkah 2:</b> Dari model, kita punya 5 unit yang sama
+                  dengan total 30.
                   <ul>
-                    <li>5 unit = 30 tahun $\implies$ 1 unit = 6 tahun.
+                    <li>5 unit = 30 tahun $\implies$ 1 unit = 6 tahun.</li>
+                    <li>
+                      5 tahun lalu: Umur Maya 1 unit (6 tahun), Umur Ibu 4 unit
+                      (24 tahun).
                     </li>
-                    <li>5 tahun lalu: Umur Maya 1 unit (6 tahun), Umur Ibu 4 unit (24 tahun).</li>
                   </ul>
                 </li>
                 <li>
-                  <b>Langkah 3:</b> Cari umur mereka sekarang: Umur Maya $6+5=11$, Umur Ibu $24+5=29$.</li>
-                <li>
-                  <b>Langkah 4:</b> Selisih umur mereka selalu tetap: $29 - 11 = 18$ tahun.
+                  <b>Langkah 3:</b> Cari umur mereka sekarang: Umur Maya
+                  $6+5=11$, Umur Ibu $24+5=29$.
                 </li>
                 <li>
-                  <b>Langkah 5:</b> Di masa depan, saat umur Ibu 2x umur Maya, selisihnya (18 tahun) akan sama dengan 1 unit (umur Maya saat itu).
+                  <b>Langkah 4:</b> Selisih umur mereka selalu tetap: $29 - 11 =
+                  18$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Di masa depan, saat umur Ibu 2x umur Maya,
+                  selisihnya (18 tahun) akan sama dengan 1 unit (umur Maya saat
+                  itu).
                   <ul>
-                    <li>Umur Maya di masa depan = 18 tahun. Umur Ibu = 36 tahun.
+                    <li>
+                      Umur Maya di masa depan = 18 tahun. Umur Ibu = 36 tahun.
                     </li>
                     <li>Waktu yang dibutuhkan = $18 - 11 = 7$ tahun.</li>
                   </ul>
@@ -817,59 +868,70 @@
             <p><strong>Solution 5 / Pembahasan 5:</strong></p>
             <div class="concept">
               <p>
-                <strong>Concept:</strong> The age difference is always constant. In this 'Times as many' problem, the difference is known, which allows us to find the value of one unit.
+                <strong>Concept:</strong> The age difference is always constant.
+                In this 'Times as many' problem, the difference is known, which
+                allows us to find the value of one unit.
               </p>
               <hr class="my-2 border-indigo-100" />
               <p>
-                <strong>Konsep:</strong> Selisih umur selalu tetap. Dalam soal 'Kali Lebih Banyak' ini, selisihnya diketahui, sehingga kita bisa mencari nilai satu unit.
+                <strong>Konsep:</strong> Selisih umur selalu tetap. Dalam soal
+                'Kali Lebih Banyak' ini, selisihnya diketahui, sehingga kita
+                bisa mencari nilai satu unit.
               </p>
             </div>
-             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 10 Tahun Lalu</p>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Ayah:</div>
-                        <div class="flex h-10 flex-1 gap-1">
-                            <div class="bar w-1/3">1 unit</div>
-                            <div class="bar w-1/3">1 unit</div>
-                            <div class="bar w-1/3">1 unit</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Dino:</div>
-                        <div class="flex h-10 flex-1">
-                            <div class="bar" style="width: 33.33%;">1 unit</div>
-                        </div>
-                    </div>
-                    <div class="pl-20">
-                         <div class="mt-2 text-center font-bold">Selisih = 2 unit = 30 tahun</div>
-                    </div>
+            <div class="bar-model-container">
+              <p class="font-medium text-gray-700 mb-2 text-center">
+                Model untuk 10 Tahun Lalu
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Ayah:</div>
+                  <div class="flex h-10 flex-1 gap-1">
+                    <div class="bar w-1/3">1 unit</div>
+                    <div class="bar w-1/3">1 unit</div>
+                    <div class="bar w-1/3">1 unit</div>
+                  </div>
                 </div>
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Dino:</div>
+                  <div class="flex h-10 flex-1">
+                    <div class="bar" style="width: 33.33%">1 unit</div>
+                  </div>
+                </div>
+                <div class="pl-20">
+                  <div class="mt-2 text-center font-bold">
+                    Selisih = 2 unit = 30 tahun
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
               <ul>
                 <li>
-                  <b>Step 1:</b> The age difference is 30 years and is always constant.
+                  <b>Step 1:</b> The age difference is 30 years and is always
+                  constant.
                 </li>
                 <li>
-                  <b>Step 2:</b> 10 years ago, the father was 3 times Dino's age. The difference in units was $3 - 1 = 2$ units. This difference is equal to the constant age difference.
+                  <b>Step 2:</b> 10 years ago, the father was 3 times Dino's
+                  age. The difference in units was $3 - 1 = 2$ units. This
+                  difference is equal to the constant age difference.
                   <ul>
                     <li>
                       2 units = 30 years $\implies$ 1 unit = $30 \div 2 = 15$
                       years.
                     </li>
                     <li>
-                      So, 10 years ago, Dino was 1 unit (15 years) and his father was 3 units ($3 \times 15 = 45$ years).
+                      So, 10 years ago, Dino was 1 unit (15 years) and his
+                      father was 3 units ($3 \times 15 = 45$ years).
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <b>Step 3:</b> Find the father's current age by adding 10 years.
+                  <b>Step 3:</b> Find the father's current age by adding 10
+                  years.
                   <ul>
-                    <li>
-                      Father's current age = $45 + 10 = 55$ years.
-                    </li>
+                    <li>Father's current age = $45 + 10 = 55$ years.</li>
                   </ul>
                 </li>
               </ul>
@@ -878,25 +940,26 @@
               <p class="font-bold text-indigo-600">Penyelesaian:</p>
               <ul>
                 <li>
-                  <b>Langkah 1:</b> Selisih umur adalah 30 tahun dan akan selalu sama.
+                  <b>Langkah 1:</b> Selisih umur adalah 30 tahun dan akan selalu
+                  sama.
                 </li>
                 <li>
-                  <b>Langkah 2:</b> 10 tahun yang lalu, umur ayah 3 kali umur Dino. Selisih perbandingannya adalah $3 - 1 = 2$ unit. Selisih ini sama dengan selisih umur mereka.
+                  <b>Langkah 2:</b> 10 tahun yang lalu, umur ayah 3 kali umur
+                  Dino. Selisih perbandingannya adalah $3 - 1 = 2$ unit. Selisih
+                  ini sama dengan selisih umur mereka.
                   <ul>
+                    <li>2 unit = 30 tahun $\implies$ 1 unit = 15 tahun.</li>
                     <li>
-                      2 unit = 30 tahun $\implies$ 1 unit = 15 tahun.
-                    </li>
-                    <li>
-                      Jadi, 10 tahun lalu, umur Dino 1 unit (15 tahun) dan umur ayahnya 3 unit (45 tahun).
+                      Jadi, 10 tahun lalu, umur Dino 1 unit (15 tahun) dan umur
+                      ayahnya 3 unit (45 tahun).
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <b>Langkah 3:</b> Cari umur ayah sekarang dengan menambahkan 10 tahun.
+                  <b>Langkah 3:</b> Cari umur ayah sekarang dengan menambahkan
+                  10 tahun.
                   <ul>
-                    <li>
-                      Umur ayah sekarang = $45 + 10 = 55$ tahun.
-                    </li>
+                    <li>Umur ayah sekarang = $45 + 10 = 55$ tahun.</li>
                   </ul>
                 </li>
               </ul>
@@ -1048,7 +1111,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: 27 years / Jawaban: 27 tahun.</div>
+            <div class="final-answer">
+              Answer: 27 years / Jawaban: 27 tahun.
+            </div>
           </div>
 
           <div class="item-container">
@@ -1351,26 +1416,30 @@
               </p>
             </div>
             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 4 Tahun Lalu</p>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Kakak:</div>
-                        <div class="flex h-10 flex-1 gap-1">
-                            <div class="bar w-1/3">1 unit</div>
-                            <div class="bar w-1/3">1 unit</div>
-                            <div class="bar w-1/3">1 unit</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="bar-label w-20">Adik:</div>
-                        <div class="flex h-10 flex-1">
-                            <div class="bar" style="width: 33.33%;">1 unit</div>
-                        </div>
-                    </div>
-                     <div class="pl-20">
-                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 20</div></div>
-                    </div>
+              <p class="font-medium text-gray-700 mb-2 text-center">
+                Model untuk 4 Tahun Lalu
+              </p>
+              <div class="space-y-2">
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Kakak:</div>
+                  <div class="flex h-10 flex-1 gap-1">
+                    <div class="bar w-1/3">1 unit</div>
+                    <div class="bar w-1/3">1 unit</div>
+                    <div class="bar w-1/3">1 unit</div>
+                  </div>
                 </div>
+                <div class="flex items-center">
+                  <div class="bar-label w-20">Adik:</div>
+                  <div class="flex h-10 flex-1">
+                    <div class="bar" style="width: 33.33%">1 unit</div>
+                  </div>
+                </div>
+                <div class="pl-20">
+                  <div class="brace" style="width: 100%">
+                    <div class="pt-2">Total = 20</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -1422,7 +1491,9 @@
                 <li><b>Langkah 4:</b> Selisih umur = $19 - 9 = 10$ tahun.</li>
               </ul>
             </div>
-            <div class="final-answer">Answer: 10 years / Jawaban: 10 tahun.</div>
+            <div class="final-answer">
+              Answer: 10 years / Jawaban: 10 tahun.
+            </div>
           </div>
 
           <div class="item-container">
@@ -1441,7 +1512,12 @@
               </p>
             </div>
             <div class="my-4 text-center">
-                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_nnxvgr_2686.png" alt="Diagram Logika untuk Soal 13" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_nnxvgr_2686.png"
+                alt="Diagram Logika untuk Soal 13"
+                class="mx-auto rounded-lg shadow-md max-w-full h-auto"
+                style="width: 450px"
+              />
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -1675,18 +1751,22 @@
               </p>
             </div>
             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2 text-center">Model Pizza</p>
-                <div class="flex h-12 w-full gap-1">
-                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
-                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
-                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
-                    <div class="bar w-[12.5%]">1/8</div>
-                    <div class="bar w-[12.5%]">1/8</div>
-                    <div class="bar w-[12.5%]">1/8</div>
-                    <div class="bar w-[12.5%]">1/8</div>
-                    <div class="bar w-[12.5%]">1/8</div>
-                </div>
-                 <div class="pt-2 text-center font-bold">3 dari 8 bagian dimakan</div>
+              <p class="font-medium text-gray-700 mb-2 text-center">
+                Model Pizza
+              </p>
+              <div class="flex h-12 w-full gap-1">
+                <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                <div class="bar w-[12.5%]">1/8</div>
+                <div class="bar w-[12.5%]">1/8</div>
+                <div class="bar w-[12.5%]">1/8</div>
+                <div class="bar w-[12.5%]">1/8</div>
+                <div class="bar w-[12.5%]">1/8</div>
+              </div>
+              <div class="pt-2 text-center font-bold">
+                3 dari 8 bagian dimakan
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -1716,7 +1796,9 @@
                 <li><b>Langkah 3:</b> Tulis pecahannya: $\frac{3}{8}$.</li>
               </ul>
             </div>
-            <div class="final-answer">Answer: $\frac{3}{8}$ / Jawaban: $\frac{3}{8}$.</div>
+            <div class="final-answer">
+              Answer: $\frac{3}{8}$ / Jawaban: $\frac{3}{8}$.
+            </div>
           </div>
 
           <!-- Solution 17 -->
@@ -1781,7 +1863,8 @@
               </ul>
             </div>
             <div class="final-answer">
-              Answer: $\frac{3}{5}$ is greater / Jawaban: $\frac{3}{5}$ lebih besar.
+              Answer: $\frac{3}{5}$ is greater / Jawaban: $\frac{3}{5}$ lebih
+              besar.
             </div>
           </div>
 
@@ -1822,7 +1905,7 @@
               </p>
             </div>
             <div class="final-answer">
-             Answer: $\frac{2}{3}$ meters / Jawaban: $\frac{2}{3}$ meter.
+              Answer: $\frac{2}{3}$ meters / Jawaban: $\frac{2}{3}$ meter.
             </div>
           </div>
 
@@ -1844,16 +1927,18 @@
               </p>
             </div>
             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2">Model Dinding</p>
-                <div class="flex h-12 w-full gap-1">
-                    <div class="bar bar-shaded w-1/4">Pagi (1/4)</div>
-                    <div class="bar bar-shaded w-1/4">Sore</div>
-                    <div class="bar bar-shaded w-1/4">Sore</div>
-                    <div class="bar w-1/4">Belum</div>
+              <p class="font-medium text-gray-700 mb-2">Model Dinding</p>
+              <div class="flex h-12 w-full gap-1">
+                <div class="bar bar-shaded w-1/4">Pagi (1/4)</div>
+                <div class="bar bar-shaded w-1/4">Sore</div>
+                <div class="bar bar-shaded w-1/4">Sore</div>
+                <div class="bar w-1/4">Belum</div>
+              </div>
+              <div class="pl-[25%] mt-2">
+                <div class="brace" style="width: 100%">
+                  <div class="pt-2">Sisa (3/4)</div>
                 </div>
-                 <div class="pl-[25%] mt-2">
-                    <div class="brace" style="width: 75%;"><div class="pt-2">Sisa (3/4)</div></div>
-                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -1902,7 +1987,8 @@
               </ul>
             </div>
             <div class="final-answer">
-              Answer: $\frac{1}{4}$ of the wall / Jawaban: $\frac{1}{4}$ bagian dinding.
+              Answer: $\frac{1}{4}$ of the wall / Jawaban: $\frac{1}{4}$ bagian
+              dinding.
             </div>
           </div>
 
@@ -1961,7 +2047,8 @@
               <p class="font-bold text-indigo-600">Penyelesaian:</p>
               <ul>
                 <li>
-                  <b>Langkah 1:</b> Misal B adalah jumlah awal laki-laki dan G perempuan. Total T. Kita tahu $B = \frac{2}{5}T$ dan $G =
+                  <b>Langkah 1:</b> Misal B adalah jumlah awal laki-laki dan G
+                  perempuan. Total T. Kita tahu $B = \frac{2}{5}T$ dan $G =
                   \frac{3}{5}T$. Artinya rasio $B:G = 2:3$.
                 </li>
                 <li>
@@ -2008,20 +2095,24 @@
               </p>
             </div>
             <div class="bar-model-container">
-                 <p class="font-medium text-gray-700 mb-2">Model Tangki Air (8 unit)</p>
-                <div class="flex h-12 w-full gap-1">
-                    <div class="bar bar-shaded w-[12.5%]"></div>
-                    <div class="bar bar-shaded w-[12.5%]"></div>
-                    <div class="bar bar-shaded w-[12.5%]"></div>
-                    <div class="bar-diff w-[12.5%]"></div>
-                    <div class="bar-diff w-[12.5%]"></div>
-                    <div class="bar-diff w-[12.5%]"></div>
-                    <div class="bar-diff w-[12.5%]"></div>
-                    <div class="bar w-[12.5%]"></div>
+              <p class="font-medium text-gray-700 mb-2">
+                Model Tangki Air (8 unit)
+              </p>
+              <div class="flex h-12 w-full gap-1">
+                <div class="bar bar-shaded w-[12.5%]"></div>
+                <div class="bar bar-shaded w-[12.5%]"></div>
+                <div class="bar bar-shaded w-[12.5%]"></div>
+                <div class="bar-diff w-[12.5%]"></div>
+                <div class="bar-diff w-[12.5%]"></div>
+                <div class="bar-diff w-[12.5%]"></div>
+                <div class="bar-diff w-[12.5%]"></div>
+                <div class="bar w-[12.5%]"></div>
+              </div>
+              <div class="ml-[37.5%] mt-2">
+                <div class="brace" style="width: 80%">
+                  <div class="pt-2">4 unit terpakai = 20 Liter</div>
                 </div>
-                 <div class="ml-[37.5%] mt-2">
-                    <div class="brace" style="width: 50%;"><div class="pt-2">4 unit terpakai = 20 Liter</div></div>
-                </div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2035,9 +2126,10 @@
                   </ul>
                 </li>
                 <li>
-                  <b>Step 2:</b> From the model, 4 units represent 20 liters. To find 1 unit, we divide.
+                  <b>Step 2:</b> From the model, 4 units represent 20 liters. To
+                  find 1 unit, we divide.
                   <ul>
-                      <li>1 unit = $20 \div 4 = 5$ liters.</li>
+                    <li>1 unit = $20 \div 4 = 5$ liters.</li>
                   </ul>
                 </li>
                 <li>
@@ -2055,14 +2147,16 @@
                   <b>Langkah 1:</b> Cari bagian air yang digunakan.
                   <ul>
                     <li>
-                      Bagian yang digunakan = $\frac{7}{8} - \frac{3}{8} = \frac{4}{8}$.
+                      Bagian yang digunakan = $\frac{7}{8} - \frac{3}{8} =
+                      \frac{4}{8}$.
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <b>Langkah 2:</b> Dari model, 4 unit mewakili 20 liter. Untuk mencari 1 unit, kita bagi.
+                  <b>Langkah 2:</b> Dari model, 4 unit mewakili 20 liter. Untuk
+                  mencari 1 unit, kita bagi.
                   <ul>
-                      <li>1 unit = $20 \div 4 = 5$ liter.</li>
+                    <li>1 unit = $20 \div 4 = 5$ liter.</li>
                   </ul>
                 </li>
                 <li>
@@ -2073,7 +2167,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: 40 liters / Jawaban: 40 liter.</div>
+            <div class="final-answer">
+              Answer: 40 liters / Jawaban: 40 liter.
+            </div>
           </div>
 
           <!-- Solution 22 -->
@@ -2093,7 +2189,12 @@
               </p>
             </div>
             <div class="my-4 text-center">
-                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_uhpfzw_906.png" alt="Bar Model untuk Soal 22" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_uhpfzw_906.png"
+                alt="Bar Model untuk Soal 22"
+                class="mx-auto rounded-lg shadow-md max-w-full h-auto"
+                style="width: 500px"
+              />
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2104,19 +2205,25 @@
                   left. This is the 30 kg.
                 </li>
                 <li>
-                  <b>Step 2:</b> From the model, 3 units = 30 kg. So, 1 unit = $30 \div 3 = 10$ kg.
+                  <b>Step 2:</b> From the model, 3 units = 30 kg. So, 1 unit =
+                  $30 \div 3 = 10$ kg.
                 </li>
                 <li>
-                  <b>Step 3:</b> The full remainder (4 units) was $4 \times 10 = 40$ kg.
+                  <b>Step 3:</b> The full remainder (4 units) was $4 \times 10 =
+                  40$ kg.
                 </li>
                 <li>
-                  <b>Step 4:</b> This 40 kg was the remainder after selling $\frac{3}{5}$ on the first day. So, 40 kg is equal to $1 - \frac{3}{5} = \frac{2}{5}$ of the original harvest.
+                  <b>Step 4:</b> This 40 kg was the remainder after selling
+                  $\frac{3}{5}$ on the first day. So, 40 kg is equal to $1 -
+                  \frac{3}{5} = \frac{2}{5}$ of the original harvest.
                 </li>
                 <li>
-                  <b>Step 5:</b> If $\frac{2}{5}$ of the total is 40 kg, then $\frac{1}{5}$ is $40 \div 2 = 20$ kg.
+                  <b>Step 5:</b> If $\frac{2}{5}$ of the total is 40 kg, then
+                  $\frac{1}{5}$ is $40 \div 2 = 20$ kg.
                 </li>
                 <li>
-                  <b>Step 6:</b> The total original harvest ($\frac{5}{5}$) is $5 \times 20 = 100$ kg.
+                  <b>Step 6:</b> The total original harvest ($\frac{5}{5}$) is
+                  $5 \times 20 = 100$ kg.
                 </li>
               </ul>
             </div>
@@ -2129,10 +2236,12 @@
                   itu.
                 </li>
                 <li>
-                  <b>Langkah 2:</b> Dari model, 3 unit = 30 kg. Jadi, 1 unit = $30 \div 3 = 10$ kg.
+                  <b>Langkah 2:</b> Dari model, 3 unit = 30 kg. Jadi, 1 unit =
+                  $30 \div 3 = 10$ kg.
                 </li>
                 <li>
-                  <b>Langkah 3:</b> Jumlah sisa seluruhnya (4 unit) adalah $4 \times 10 = 40$ kg.
+                  <b>Langkah 3:</b> Jumlah sisa seluruhnya (4 unit) adalah $4
+                  \times 10 = 40$ kg.
                 </li>
                 <li>
                   <b>Langkah 4:</b> 40 kg ini adalah sisa setelah menjual
@@ -2229,7 +2338,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: $\frac{1}{2}$ / Jawaban: $\frac{1}{2}$.</div>
+            <div class="final-answer">
+              Answer: $\frac{1}{2}$ / Jawaban: $\frac{1}{2}$.
+            </div>
           </div>
 
           <!-- Solution 24 -->
@@ -2326,7 +2437,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: 12 liters / Jawaban: 12 liter.</div>
+            <div class="final-answer">
+              Answer: 12 liters / Jawaban: 12 liter.
+            </div>
           </div>
 
           <!-- Solution 25 -->
@@ -2425,8 +2538,13 @@
                 bisa menggunakannya untuk mencari panjang total (keseluruhan).
               </p>
             </div>
-             <div class="my-4 text-center">
-                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_qtgach_7874.png" alt="Bar Model untuk Soal 26" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            <div class="my-4 text-center">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_qtgach_7874.png"
+                alt="Bar Model untuk Soal 26"
+                class="mx-auto rounded-lg shadow-md max-w-full h-auto"
+                style="width: 250px"
+              />
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2516,7 +2634,11 @@
               </p>
             </div>
             <div class="my-4 text-center">
-                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_3is324_7807.png" alt="Bar Model untuk Soal 27" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_3is324_7807.png"
+                alt="Bar Model untuk Soal 27"
+                class="mx-auto rounded-lg shadow-md max-w-full h-auto"
+              />
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2605,13 +2727,13 @@
                 terakhir cari sisanya.
               </p>
             </div>
-             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2">Model Kue</p>
-                <div class="flex h-12 w-full gap-1">
-                    <div class="bar bar-shaded w-1/3">Tetangga (1/3)</div>
-                    <div class="bar bar-shaded w-1/3">Anak (1/3)</div>
-                    <div class="bar w-1/3">Sisa (1/3)</div>
-                </div>
+            <div class="bar-model-container">
+              <p class="font-medium text-gray-700 mb-2">Model Kue</p>
+              <div class="flex h-12 w-full gap-1">
+                <div class="bar bar-shaded w-1/3">Tetangga (1/3)</div>
+                <div class="bar bar-shaded w-1/3">Anak (1/3)</div>
+                <div class="bar w-1/3">Sisa (1/3)</div>
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2682,7 +2804,8 @@
               </ul>
             </div>
             <div class="final-answer">
-              Answer: $\frac{1}{3}$ of the cake / Jawaban: $\frac{1}{3}$ bagian kue.
+              Answer: $\frac{1}{3}$ of the cake / Jawaban: $\frac{1}{3}$ bagian
+              kue.
             </div>
           </div>
 
@@ -2739,7 +2862,9 @@
                 </li>
               </ul>
             </div>
-            <div class="final-answer">Answer: $\frac{5}{7}$ / Jawaban: $\frac{5}{7}$.</div>
+            <div class="final-answer">
+              Answer: $\frac{5}{7}$ / Jawaban: $\frac{5}{7}$.
+            </div>
           </div>
 
           <!-- Solution 30 -->
@@ -2760,12 +2885,21 @@
               </p>
             </div>
             <div class="bar-model-container">
-                <p class="font-medium text-gray-700 mb-2">Model Kendaraan (10 unit)</p>
-                <div class="flex h-12 w-full gap-1">
-                    <div class="bar bar-shaded w-[30%]">Motor (3/10)</div>
-                    <div class="bar w-[70%]" style="background-color: #fef08a; border-color: #facc15;">Mobil (7/10)</div>
+              <p class="font-medium text-gray-700 mb-2">
+                Model Kendaraan (10 unit)
+              </p>
+              <div class="flex h-12 w-full gap-1">
+                <div class="bar bar-shaded w-[30%]">Motor (3/10)</div>
+                <div
+                  class="bar w-[70%]"
+                  style="background-color: #fef08a; border-color: #facc15"
+                >
+                  Mobil (7/10)
                 </div>
-                 <div class="mt-2 text-center font-bold">Selisih (4/10) = 16 kendaraan</div>
+              </div>
+              <div class="mt-2 text-center font-bold">
+                Selisih (4/10) = 16 kendaraan
+              </div>
             </div>
             <div class="solution-step">
               <p class="font-bold text-indigo-600">Solution:</p>
@@ -2849,4 +2983,3 @@
     </div>
   </body>
 </html>
-
