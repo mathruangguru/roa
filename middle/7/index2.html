@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Olympiad Math Practice Worksheet - Age Logic Problems & Fractions
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step ul li {
+        line-height: 1.8;
+        padding-left: 0.5rem;
+      }
+      .solution-step ul ul li {
+        padding-left: 1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+       .bar-model-container {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px dashed #cbd5e1;
+        border-radius: 8px;
+      }
+      .bar {
+        background-color: #93c5fd; /* blue-300 */
+        border: 2px solid #3b82f6; /* blue-500 */
+        color: #1e3a8a; /* blue-900 */
+        text-align: center;
+        font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bar-diff {
+        background-color: #fca5a5; /* red-300 */
+        border: 2px dotted #ef4444; /* red-500 */
+        color: #991b1b; /* red-900 */
+        text-align: center;
+        font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bar-shaded {
+        background-color: #a7f3d0; /* green-200 */
+        border: 2px solid #10b981; /* green-500 */
+      }
+      .bar-label {
+          text-align: right;
+          font-weight: 500;
+          padding-right: 1rem;
+      }
+      .brace {
+        position: relative;
+        border-bottom: 2px solid #6b7280;
+        margin-top: 4px;
+        text-align: center;
+      }
+      .brace:before, .brace:after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        width: 10px;
+        height: 10px;
+        border-style: solid;
+        border-width: 0 0 2px 2px;
+        border-color: #6b7280;
+      }
+      .brace:before {
+        left: 0;
+        transform: rotate(-45deg);
+        transform-origin: bottom left;
+      }
+      .brace:after {
+        right: 0;
+        transform: rotate(45deg);
+        transform-origin: bottom right;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 7
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 3 - 4 | Age Logic Problems & Fractions
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+          <h3 class="topic-title">Part 1: Age Logic Problems</h3>
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> The sum of Andi's age and Budi's age is 20
+              years. In 3 years, what will be the sum of their ages?<br /><br />Jumlah
+              umur Andi dan Budi adalah 20 tahun. Berapakah jumlah umur mereka 3
+              tahun lagi?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> Rina is 5 years older than her brother, Tio.
+              If the sum of their ages is 17 years, how old is Tio?<br /><br />Rina
+              5 tahun lebih tua dari adiknya, Tio. Jika jumlah umur mereka
+              adalah 17 tahun, berapakah umur Tio?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> Five years ago, my father's age was 35. My age
+              is 25 years younger than my father's current age. How old am I
+              now?<br /><br />Lima tahun yang lalu, umur ayahku adalah 35 tahun.
+              Umurku 25 tahun lebih muda dari umur ayahku sekarang. Berapa
+              umurku sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> The sum of Maya's age and her mother's age is
+              40. 5 years ago, her mother's age was 4 times Maya's age. In how
+              many years will the mother's age be twice Maya's age?<br /><br />Jumlah
+              umur Maya dan ibunya adalah 40 tahun. 5 tahun yang lalu, umur
+              ibunya adalah 4 kali umur Maya. Dalam berapa tahun lagi umur ibu
+              akan menjadi dua kali umur Maya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> Dino's father is 30 years older than him. Ten
+              years ago, his father's age was 3 times Dino's age. How old is the
+              father now?<br /><br />Ayah Dino 30 tahun lebih tua darinya.
+              Sepuluh tahun yang lalu, umur ayahnya adalah 3 kali umur Dino.
+              Berapa umur ayah sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> An uncle's age is currently a multiple of 5
+              and is also 4 times his nephew's age. Eight years ago, the sum of
+              their ages was 34. In how many years will the uncle's age be 3
+              times the nephew's age?<br /><br />Umur seorang paman saat ini
+              adalah kelipatan 5 dan juga 4 kali umur keponakannya. Delapan
+              tahun yang lalu, jumlah umur mereka adalah 34 tahun. Dalam berapa
+              tahun lagi umur paman akan menjadi 3 kali umur keponakannya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> Anna's age is 12 years. Bob's age is half of
+              Anna's age. Cici's age is 3 years older than Bob. What is the sum
+              of their ages?<br /><br />Umur Anna adalah 12 tahun. Umur Bob
+              setengah dari umur Anna. Umur Cici 3 tahun lebih tua dari Bob.
+              Berapakah jumlah umur mereka bertiga?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> In 4 years, Leo will be 15 years old. Three
+              years ago, Leo's age was twice Dani's age at that time. How old is
+              Dani now?<br /><br />Dalam 4 tahun, Leo akan berumur 15 tahun.
+              Tiga tahun yang lalu, umur Leo adalah dua kali umur Dani saat itu.
+              Berapa umur Dani sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> The product of the ages of twin siblings and
+              their older sister is 160. If the older sister is 10 years old,
+              how old are the twins?<br /><br />Hasil kali dari umur sepasang
+              saudara kembar dan kakak perempuan mereka adalah 160. Jika kakak
+              perempuannya berumur 10 tahun, berapa umur si kembar?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> A grandfather's age is a 2-digit number. The
+              two digits are the same. Last year, his age was a multiple of 8.
+              How old is the grandfather now?<br /><br />Umur seorang kakek
+              adalah bilangan 2 angka. Kedua angkanya sama. Tahun lalu, umurnya
+              adalah kelipatan 8. Berapa umur kakek sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> A family has 4 children. The sum of their
+              ages is 28. The age of the youngest child is 4. Two of them are
+              twins. The oldest child is 10 years old. How old are the twins?<br /><br />Sebuah
+              keluarga memiliki 4 orang anak. Jumlah umur mereka adalah 28
+              tahun. Umur anak termuda adalah 4 tahun. Dua di antara mereka
+              adalah kembar. Anak tertua berumur 10 tahun. Berapa umur si
+              kembar?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> The sum of the ages of two brothers is 28.
+              Four years ago, the older brother was 3 times as old as the
+              younger one. What is their age difference?<br /><br />Jumlah umur
+              dua orang kakak beradik adalah 28 tahun. Empat tahun yang lalu,
+              umur si kakak adalah 3 kali umur si adik. Berapakah selisih umur
+              mereka?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> The current sum of the ages of a father and
+              his son is 50. When the son's age is equal to the father's current
+              age, the sum of their ages will be 110. How old is the son now?<br /><br />Jumlah
+              umur ayah dan anak saat ini adalah 50 tahun. Ketika umur anak sama
+              dengan umur ayah sekarang, jumlah umur mereka akan menjadi 110
+              tahun. Berapa umur anak sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> Four years ago, the sum of ages of four
+              children born one year apart was 36. How old is the oldest child
+              now?<br /><br />Empat tahun lalu, jumlah umur dari empat anak yang
+              lahir berselang satu tahun adalah 36. Berapa umur anak tertua
+              sekarang?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> Fara's age is a prime number between 10 and
+              15. Last year, her age was a multiple of 3. How old will Fara be
+              in 5 years?<br /><br />Umur Fara adalah sebuah bilangan prima
+              antara 10 dan 15. Tahun lalu, umurnya adalah kelipatan 3. Berapa
+              umur Fara 5 tahun lagi?
+            </p>
+          </div>
+
+          <h3 class="topic-title">Part 2: Fractions</h3>
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> A mother bought a pizza and cut it into 8
+              equal slices. If Budi ate 3 slices, what fraction of the pizza did
+              he eat?<br /><br />Ibu membeli sebuah pizza dan memotongnya
+              menjadi 8 bagian sama besar. Jika Budi memakan 3 potong, berapa
+              bagian pizza yang ia makan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> Which fraction is greater, $\frac{3}{5}$ or
+              $\frac{4}{7}$?<br /><br />Manakah pecahan yang lebih besar,
+              $\frac{3}{5}$ atau $\frac{4}{7}$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> Ani has a ribbon that is $\frac{5}{6}$ meters
+              long. She used $\frac{1}{6}$ meters for a craft. How much ribbon
+              does she have left?<br /><br />Ani memiliki pita sepanjang
+              $\frac{5}{6}$ meter. Ia menggunakan $\frac{1}{6}$ meter untuk
+              kerajinan tangan. Berapa sisa panjang pita Ani?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> Father painted $\frac{1}{4}$ of a wall in the
+              morning and $\frac{2}{3}$ of the remaining wall in the afternoon.
+              What fraction of the wall is unpainted?<br /><br />Ayah mengecat
+              $\frac{1}{4}$ bagian dinding di pagi hari dan $\frac{2}{3}$ dari
+              sisa dinding di sore hari. Berapa bagian dinding yang belum dicat?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> In a class, $\frac{2}{5}$ of the students are
+              boys. If 6 more boys join the class, the number of boys will be
+              $\frac{1}{2}$ of the total number of students. How many girls are
+              in the class?<br /><br />Di sebuah kelas, $\frac{2}{5}$ dari
+              muridnya adalah laki-laki. Jika 6 murid laki-laki lagi bergabung,
+              jumlah murid laki-laki akan menjadi $\frac{1}{2}$ dari total
+              murid. Ada berapa banyak murid perempuan di kelas tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> A water tank is $\frac{7}{8}$ full. After 20
+              liters of water are used, the tank is now $\frac{3}{8}$ full. What
+              is the total capacity of the tank in liters?<br /><br />Sebuah
+              tangki air terisi $\frac{7}{8}$ bagian. Setelah 20 liter air
+              digunakan, tangki tersebut kini terisi $\frac{3}{8}$ bagian.
+              Berapa kapasitas total tangki tersebut dalam liter?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> A farmer harvested some mangoes. He sold
+              $\frac{3}{5}$ of them on the first day and $\frac{1}{4}$ of the
+              remainder on the second day. If he has 30 kg of mangoes left, how
+              many kilograms of mangoes did he harvest at first?<br /><br />Seorang
+              petani memanen sejumlah mangga. Ia menjual $\frac{3}{5}$ dari
+              panennya di hari pertama dan $\frac{1}{4}$ dari sisanya di hari
+              kedua. Jika sisa mangganya sekarang 30 kg, berapa kg mangga yang
+              ia panen pada awalnya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> Rian spends $\frac{1}{3}$ of his money on a
+              book and $\frac{1}{6}$ on a pen. What fraction of his money is
+              left?<br /><br />Rian membelanjakan $\frac{1}{3}$ dari uangnya
+              untuk membeli buku dan $\frac{1}{6}$ untuk membeli pulpen. Berapa
+              bagian sisa uang Rian?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> A container is $\frac{3}{4}$ full of juice.
+              After pouring out 12 glasses, each with a capacity of
+              $\frac{1}{4}$ liter, the container is now $\frac{1}{2}$ full. What
+              is the total capacity of the container in liters?<br /><br />Sebuah
+              wadah terisi $\frac{3}{4}$ penuh dengan jus. Setelah 12 gelas jus
+              dituang, masing-masing berkapasitas $\frac{1}{4}$ liter, wadah
+              tersebut kini terisi $\frac{1}{2}$ penuh. Berapa kapasitas total
+              wadah tersebut dalam liter?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> What is the value of $(3 - \frac{2}{5}) +
+              \frac{1}{2}$?<br /><br />Berapakah nilai dari $(3 - \frac{2}{5}) +
+              \frac{1}{2}$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> A stick is painted red, blue, and yellow.
+              $\frac{1}{2}$ of the stick is red and $\frac{1}{5}$ is blue. The
+              rest is yellow. If the yellow part is 12 cm long, what is the
+              total length of the stick?<br /><br />Sebuah tongkat dicat merah,
+              biru, dan kuning. $\frac{1}{2}$ bagian tongkat berwarna merah dan
+              $\frac{1}{5}$ berwarna biru. Sisanya kuning. Jika bagian yang
+              kuning panjangnya 12 cm, berapa panjang total tongkat tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> In a box of balls, $\frac{1}{4}$ are red. Of
+              the remaining balls, $\frac{3}{5}$ are blue. The rest are green.
+              If there are 18 green balls, how many red balls are there?<br /><br />Di
+              dalam sebuah kotak, $\frac{1}{4}$ dari bola berwarna merah. Dari
+              sisanya, $\frac{3}{5}$ berwarna biru. Sisanya lagi berwarna hijau.
+              Jika ada 18 bola hijau, ada berapa banyak bola merah?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> Mother gives $\frac{1}{3}$ of a cake to her
+              neighbor. She then gives $\frac{1}{2}$ of the remaining cake to
+              her children. What fraction of the original cake is left?<br /><br />Ibu
+              memberikan $\frac{1}{3}$ bagian kue kepada tetangga. Lalu ia
+              memberikan $\frac{1}{2}$ dari sisa kue kepada anak-anaknya. Berapa
+              bagian dari kue semula yang tersisa?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> What fraction must be added to $\frac{2}{7}$
+              to get the result of 1?<br /><br />Pecahan berapakah yang harus
+              ditambahkan pada $\frac{2}{7}$ agar hasilnya menjadi 1?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> In a parking lot, $\frac{3}{10}$ of the
+              vehicles are motorcycles and the rest are cars. If the difference
+              between the number of cars and motorcycles is 16, how many
+              vehicles are there in total?<br /><br />Di sebuah tempat parkir,
+              $\frac{3}{10}$ dari kendaraannya adalah motor dan sisanya mobil.
+              Jika selisih antara jumlah mobil dan motor adalah 16, berapa
+              jumlah total kendaraan di sana?
+            </p>
+          </div>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+
+          <h3 class="topic-title">
+            Pembahasan Bagian 1: Problem Solving (Logika Umur)
+          </h3>
+
+          <!-- Solution 1 -->
+          <div class="item-container">
+            <p><strong>Solution 1 / Pembahasan 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When time passes, each person's age
+                increases by the same amount. If 3 years pass, both Andi and
+                Budi will be 3 years older.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ketika waktu berjalan, umur setiap
+                orang bertambah dengan jumlah yang sama. Jika 3 tahun berlalu,
+                umur Andi dan Budi masing-masing akan bertambah 3 tahun.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Calculate the total age increase.
+                  <ul>
+                    <li>Andi's age increases by 3 years.</li>
+                    <li>Budi's age increases by 3 years.</li>
+                    <li>Total increase = $3 + 3 = 6$ years.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Add the total increase to the current sum of
+                  ages.
+                  <ul>
+                    <li>
+                      New sum = Current sum + Total increase = $20 + 6 = 26$
+                      years.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Hitung total pertambahan umur.
+                  <ul>
+                    <li>Umur Andi bertambah 3 tahun.</li>
+                    <li>Umur Budi bertambah 3 tahun.</li>
+                    <li>Total pertambahan = $3 + 3 = 6$ tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Tambahkan total pertambahan ke jumlah umur
+                  sekarang.
+                  <ul>
+                    <li>
+                      Jumlah baru = Jumlah sekarang + Total pertambahan = $20 +
+                      6 = 26$ tahun.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 26 years / Jawaban: 26 tahun.</div>
+          </div>
+
+          <!-- Solution 2 -->
+          <div class="item-container">
+            <p><strong>Solution 2 / Pembahasan 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a 'Sum and Difference' problem. We first make the parts equal by subtracting the difference from the total, then divide by 2 to find the value of the smaller part.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini adalah soal 'Jumlah dan Selisih'. Kita pertama-tama membuat semua bagian sama besar dengan mengurangi total dengan selisihnya, lalu membaginya dengan 2 untuk menemukan nilai bagian yang lebih kecil.
+              </p>
+            </div>
+             <div class="bar-model-container">
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="bar-label w-16">Rina:</div>
+                        <div class="flex h-10 flex-1">
+                            <div class="bar" style="width: 70%;">1 unit</div>
+                            <div class="bar-diff ml-1" style="width: 30%;">+5</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bar-label w-16">Tio:</div>
+                        <div class="flex h-10 flex-1">
+                            <div class="bar" style="width: 70%;">1 unit</div>
+                        </div>
+                    </div>
+                    <div class="pl-16">
+                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 17</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> From the bar model, we see two equal units and an extra part of 5. To find the value of the two equal units, we subtract the extra part from the total.
+                  <ul>
+                    <li>$17 - 5 = 12$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> The result (12) is the value of 2 equal units. To find 1 unit (Tio's age), we divide by 2.
+                  <ul>
+                    <li>$12 \div 2 = 6$. So, Tio is 6 years old.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Dari model balok, terlihat ada dua unit yang sama dan satu bagian lebih senilai 5. Untuk mencari nilai dari dua unit yang sama tersebut, kita kurangi total dengan bagian lebihnya.
+                  <ul>
+                    <li>$17 - 5 = 12$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hasil (12) adalah nilai dari 2 unit yang sama. Untuk mencari 1 unit (umur Tio), kita bagi dengan 2.
+                  <ul>
+                    <li>$12 \div 2 = 6$. Jadi, umur Tio adalah 6 tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 6 years old / Jawaban: 6 tahun.
+            </div>
+          </div>
+
+          <!-- Solution 3 -->
+          <div class="item-container">
+            <p><strong>Solution 3 / Pembahasan 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find the father's current age first,
+                then find your age based on the age difference.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Cari umur ayah sekarang terlebih
+                dahulu, baru kemudian cari umurmu berdasarkan selisih umur.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the father's current age.
+                  <ul>
+                    <li>
+                      Father's current age = Age 5 years ago + 5 = $35 + 5 = 40$
+                      years.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find my current age.
+                  <ul>
+                    <li>
+                      My age = Father's current age - 25 = $40 - 25 = 15$ years.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari umur ayah sekarang.
+                  <ul>
+                    <li>
+                      Umur ayah sekarang = Umur 5 tahun lalu + 5 = $40$ tahun.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari umurku sekarang.
+                  <ul>
+                    <li>
+                      Umurku = Umur ayah sekarang - 25 = $40 - 25 = 15$ tahun.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 15 years old / Jawaban: 15 tahun.
+            </div>
+          </div>
+
+          <!-- Solution 4 -->
+          <div class="item-container">
+            <p><strong>Solution 4 / Pembahasan 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a multi-step problem. First,
+                work with the past to find their current ages. Then, use the
+                constant age difference to find the future situation.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini adalah soal multi-langkah. Pertama,
+                gunakan data masa lalu untuk mencari umur sekarang. Kemudian,
+                gunakan selisih umur yang konstan untuk mencari situasi di masa
+                depan.
+              </p>
+            </div>
+             <div class="bar-model-container">
+                 <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 5 Tahun Lalu</p>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Ibu:</div>
+                        <div class="flex h-10 flex-1 gap-1">
+                            <div class="bar w-1/4">1 unit</div>
+                            <div class="bar w-1/4">1 unit</div>
+                            <div class="bar w-1/4">1 unit</div>
+                            <div class="bar w-1/4">1 unit</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Maya:</div>
+                        <div class="flex h-10 flex-1">
+                            <div class="bar" style="width: 25%;">1 unit</div>
+                        </div>
+                    </div>
+                     <div class="pl-20">
+                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 30</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find their sum of ages 5 years ago.
+                  <ul>
+                    <li>
+                      Current sum = 40. Sum 5 years ago = $40 - 5 - 5 = 30$
+                      years.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> From the model, we have 5 equal units that total 30.
+                  <ul>
+                    <li>
+                      5 units = 30 years $\implies$ 1 unit = $30 \div 5 = 6$
+                      years.
+                    </li>
+                    <li>
+                      5 years ago: Maya was 1 unit (6 years), Mother was 4 units ($4 \times 6 = 24$ years).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find their current ages.
+                  <ul>
+                    <li>Maya now = $6+5=11$. Mother now = $24+5=29$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 4:</b> The age difference is constant: $29 - 11 = 18$ years.
+                </li>
+                <li>
+                  <b>Step 5:</b> For the future, when the mother is twice Maya's age, the difference (18) will be equal to 1 unit (Maya's future age).
+                  <ul>
+                    <li>Maya's future age = 18. Mother's future age = $2 \times 18 = 36$.
+                    </li>
+                    <li>Years to wait = Maya's future age - Maya's current age = $18 - 11 = 7$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari jumlah umur mereka 5 tahun lalu: $40 - 5 - 5 = 30$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Dari model, kita punya 5 unit yang sama dengan total 30.
+                  <ul>
+                    <li>5 unit = 30 tahun $\implies$ 1 unit = 6 tahun.
+                    </li>
+                    <li>5 tahun lalu: Umur Maya 1 unit (6 tahun), Umur Ibu 4 unit (24 tahun).</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari umur mereka sekarang: Umur Maya $6+5=11$, Umur Ibu $24+5=29$.</li>
+                <li>
+                  <b>Langkah 4:</b> Selisih umur mereka selalu tetap: $29 - 11 = 18$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Di masa depan, saat umur Ibu 2x umur Maya, selisihnya (18 tahun) akan sama dengan 1 unit (umur Maya saat itu).
+                  <ul>
+                    <li>Umur Maya di masa depan = 18 tahun. Umur Ibu = 36 tahun.
+                    </li>
+                    <li>Waktu yang dibutuhkan = $18 - 11 = 7$ tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: In 7 years / Jawaban: Dalam 7 tahun.
+            </div>
+          </div>
+
+          <!-- Solution 5 -->
+          <div class="item-container">
+            <p><strong>Solution 5 / Pembahasan 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The age difference is always constant. In this 'Times as many' problem, the difference is known, which allows us to find the value of one unit.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Selisih umur selalu tetap. Dalam soal 'Kali Lebih Banyak' ini, selisihnya diketahui, sehingga kita bisa mencari nilai satu unit.
+              </p>
+            </div>
+             <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 10 Tahun Lalu</p>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Ayah:</div>
+                        <div class="flex h-10 flex-1 gap-1">
+                            <div class="bar w-1/3">1 unit</div>
+                            <div class="bar w-1/3">1 unit</div>
+                            <div class="bar w-1/3">1 unit</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Dino:</div>
+                        <div class="flex h-10 flex-1">
+                            <div class="bar" style="width: 33.33%;">1 unit</div>
+                        </div>
+                    </div>
+                    <div class="pl-20">
+                         <div class="mt-2 text-center font-bold">Selisih = 2 unit = 30 tahun</div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> The age difference is 30 years and is always constant.
+                </li>
+                <li>
+                  <b>Step 2:</b> 10 years ago, the father was 3 times Dino's age. The difference in units was $3 - 1 = 2$ units. This difference is equal to the constant age difference.
+                  <ul>
+                    <li>
+                      2 units = 30 years $\implies$ 1 unit = $30 \div 2 = 15$
+                      years.
+                    </li>
+                    <li>
+                      So, 10 years ago, Dino was 1 unit (15 years) and his father was 3 units ($3 \times 15 = 45$ years).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the father's current age by adding 10 years.
+                  <ul>
+                    <li>
+                      Father's current age = $45 + 10 = 55$ years.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Selisih umur adalah 30 tahun dan akan selalu sama.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> 10 tahun yang lalu, umur ayah 3 kali umur Dino. Selisih perbandingannya adalah $3 - 1 = 2$ unit. Selisih ini sama dengan selisih umur mereka.
+                  <ul>
+                    <li>
+                      2 unit = 30 tahun $\implies$ 1 unit = 15 tahun.
+                    </li>
+                    <li>
+                      Jadi, 10 tahun lalu, umur Dino 1 unit (15 tahun) dan umur ayahnya 3 unit (45 tahun).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari umur ayah sekarang dengan menambahkan 10 tahun.
+                  <ul>
+                    <li>
+                      Umur ayah sekarang = $45 + 10 = 55$ tahun.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 55 years old / Jawaban: 55 tahun.
+            </div>
+          </div>
+
+          <!-- Solution 6 -->
+          <div class="item-container">
+            <p><strong>Solution 6 / Pembahasan 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A multi-step problem. First, find
+                their current ages from the past information. Then, use the
+                constant age difference to find the future scenario.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Soal multi-langkah. Pertama, cari umur
+                mereka sekarang dari informasi masa lalu. Kemudian, gunakan
+                selisih umur yang konstan untuk mencari skenario masa depan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Part 1: Find current ages.</b></li>
+                <li>
+                  <b>Step 1:</b> Find sum of current ages: $34 + (8 \times 2) =
+                  50$ years.
+                </li>
+                <li>
+                  <b>Step 2:</b> Use ratio for current ages: Nephew = 1 unit,
+                  Uncle = 4 units. Total = 5 units = 50. So 1 unit = 10 years.
+                </li>
+                <li>
+                  <b>Step 3:</b> Current ages: Nephew is 10, Uncle is 40. (Check
+                  condition: 40 is a multiple of 5. Yes.)
+                </li>
+                <li><b>Part 2: Find the future scenario.</b></li>
+                <li><b>Step 4:</b> Age difference = $40 - 10 = 30$ years.</li>
+                <li>
+                  <b>Step 5:</b> Future ratio: Uncle = 3 units, Nephew = 1 unit.
+                  Difference = 2 units = 30 years. So 1 unit = 15 years.
+                </li>
+                <li>
+                  <b>Step 6:</b> The nephew will be 15. Years to wait = $15 - 10
+                  = 5$ years.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Bagian 1: Mencari umur sekarang.</b></li>
+                <li>
+                  <b>Langkah 1:</b> Jumlah umur sekarang: $34 + (8 \times 2) =
+                  50$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Umur sekarang: Keponakan = 1 unit, Paman = 4
+                  unit. Total 5 unit = 50, maka 1 unit = 10 tahun.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Umur sekarang: Keponakan 10, Paman 40. (Cek:
+                  40 adalah kelipatan 5. Benar).
+                </li>
+                <li><b>Bagian 2: Mencari skenario masa depan.</b></li>
+                <li><b>Langkah 4:</b> Selisih umur = $40 - 10 = 30$ tahun.</li>
+                <li>
+                  <b>Langkah 5:</b> Rasio masa depan: Paman = 3 unit, Keponakan
+                  = 1 unit. Selisih 2 unit = 30, maka 1 unit = 15 tahun.
+                </li>
+                <li>
+                  <b>Langkah 6:</b> Umur keponakan akan menjadi 15. Waktu yang
+                  dibutuhkan = $15 - 10 = 5$ tahun.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: In 5 years / Jawaban: Dalam 5 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 7 / Pembahasan 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find the age of each person one by
+                one, then add them all up.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Cari umur setiap orang satu per satu,
+                lalu jumlahkan semuanya.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find Bob's age.
+                  <ul>
+                    <li>
+                      Bob's age = Anna's age $\div 2 = 12 \div 2 = 6$ years.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find Cici's age.
+                  <ul>
+                    <li>Cici's age = Bob's age + 3 = $6 + 3 = 9$ years.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the sum of their ages.
+                  <ul>
+                    <li>Sum = Anna + Bob + Cici = $12 + 6 + 9 = 27$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari umur Bob.
+                  <ul>
+                    <li>
+                      Umur Bob = Umur Anna $\div 2 = 12 \div 2 = 6$ tahun.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari umur Cici.
+                  <ul>
+                    <li>Umur Cici = Umur Bob + 3 = $6 + 3 = 9$ tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari jumlah umur mereka.
+                  <ul>
+                    <li>
+                      Jumlah = Anna + Bob + Cici = $12 + 6 + 9 = 27$ tahun.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 27 years / Jawaban: 27 tahun.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 8 / Pembahasan 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Work backward in time. First find
+                Leo's current age, then his age 3 years ago, then Dani's age 3
+                years ago, and finally Dani's current age.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Bekerja mundur. Cari dulu umur Leo
+                sekarang, lalu umur Leo 3 tahun lalu, lalu umur Dani 3 tahun
+                lalu, dan terakhir umur Dani sekarang.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find Leo's current age.
+                  <ul>
+                    <li>Leo's current age = $15 - 4 = 11$ years.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find their ages 3 years ago.
+                  <ul>
+                    <li>Leo's age 3 years ago = $11 - 3 = 8$ years.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find Dani's age 3 years ago.
+                  <ul>
+                    <li>
+                      Leo was twice Dani's age, so Dani's age = Leo's age $\div
+                      2 = 8 \div 2 = 4$ years.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 4:</b> Find Dani's current age.
+                  <ul>
+                    <li>
+                      Dani's current age = Dani's age 3 years ago + 3 = $4 + 3 =
+                      7$ years.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari umur Leo sekarang.
+                  <ul>
+                    <li>Umur Leo sekarang = $15 - 4 = 11$ tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari umur mereka 3 tahun yang lalu.
+                  <ul>
+                    <li>Umur Leo 3 tahun lalu = $11 - 3 = 8$ tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari umur Dani 3 tahun yang lalu.
+                  <ul>
+                    <li>
+                      Umur Leo dua kali umur Dani, jadi Umur Dani = Umur Leo
+                      $\div 2 = 8 \div 2 = 4$ tahun.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Cari umur Dani sekarang.
+                  <ul>
+                    <li>
+                      Umur Dani sekarang = Umur Dani 3 tahun lalu + 3 = $4 + 3 =
+                      7$ tahun.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 7 years old / Jawaban: 7 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 9 / Pembahasan 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The product of ages is given. Use
+                division to find the product of the twins' ages, then find the
+                square root to determine the age of one twin.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Hasil kali umur sudah diketahui.
+                Gunakan pembagian untuk mencari hasil kali umur si kembar, lalu
+                cari akar kuadratnya untuk menentukan umur satu anak kembar.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Let the age of one twin be 'T'. The ages are T,
+                  T, and 10.
+                  <ul>
+                    <li>Product of ages = $T \times T \times 10 = 160$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the product of the twins' ages.
+                  <ul>
+                    <li>$T \times T = 160 \div 10 = 16$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the age of one twin.
+                  <ul>
+                    <li>
+                      We need a number that, when multiplied by itself, equals
+                      16. That number is 4.
+                    </li>
+                    <li>So, $T = 4$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Misalkan umur satu anak kembar adalah 'T'.
+                  Umur mereka adalah T, T, dan 10.
+                  <ul>
+                    <li>Hasil kali umur = $T \times T \times 10 = 160$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari hasil kali umur si kembar.
+                  <ul>
+                    <li>$T \times T = 160 \div 10 = 16$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari umur satu anak kembar.
+                  <ul>
+                    <li>
+                      Kita perlu mencari angka yang jika dikalikan dengan
+                      dirinya sendiri hasilnya 16. Angka itu adalah 4.
+                    </li>
+                    <li>Jadi, $T = 4$ tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 4 years old / Jawaban: 4 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 10 / Pembahasan 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> List all 2-digit numbers with
+                identical digits. Then, for each number, check the condition for
+                the previous year.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Buat daftar semua bilangan 2 angka
+                dengan angka yang sama. Lalu, untuk setiap bilangan, periksa
+                kondisi untuk tahun sebelumnya.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> List the possible current ages (2-digit numbers
+                  with identical digits): 11, 22, 33, 44, 55, 66, 77, 88, 99.
+                </li>
+                <li>
+                  <b>Step 2:</b> List his age "last year" for each possibility
+                  by subtracting 1: 10, 21, 32, 43, 54, 65, 76, 87, 98.
+                </li>
+                <li>
+                  <b>Step 3:</b> Find which of these "last year" ages is a
+                  multiple of 8. The only number in the list that is a multiple
+                  of 8 is 32.
+                </li>
+                <li>
+                  <b>Step 4:</b> Determine the current age. If his age last year
+                  was 32, his current age is $32 + 1 = 33$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Buat daftar kemungkinan umur sekarang
+                  (bilangan 2 angka dengan angka yang sama): 11, 22, 33, 44, 55,
+                  66, 77, 88, 99.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Buat daftar umurnya "tahun lalu" untuk
+                  setiap kemungkinan dengan mengurangi 1: 10, 21, 32, 43, 54,
+                  65, 76, 87, 98.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari manakah dari umur "tahun lalu" tersebut
+                  yang merupakan kelipatan 8. Satu-satunya bilangan dalam daftar
+                  yang merupakan kelipatan 8 adalah 32.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Tentukan umur sekarang. Jika umurnya tahun
+                  lalu adalah 32, maka umurnya sekarang adalah $32 + 1 = 33$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 33 years old / Jawaban: 33 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 11 / Pembahasan 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Subtract the known ages from the total
+                sum to find the sum of the remaining children's ages.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Kurangi total jumlah umur dengan umur
+                yang sudah diketahui untuk menemukan jumlah umur anak-anak yang
+                tersisa.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Sum of known ages (oldest and youngest) = $10 +
+                  4 = 14$ years.
+                </li>
+                <li>
+                  <b>Step 2:</b> Sum of the twins' ages = Total sum - Sum of
+                  known ages = $28 - 14 = 14$ years.
+                </li>
+                <li>
+                  <b>Step 3:</b> Age of one twin = Sum of twins' ages $\div 2 =
+                  14 \div 2 = 7$ years.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Jumlah umur yang diketahui (tertua dan
+                  termuda) = $10 + 4 = 14$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Jumlah umur si kembar = Total jumlah -
+                  Jumlah umur yang diketahui = $28 - 14 = 14$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Umur satu anak kembar = Jumlah umur si
+                  kembar $\div 2 = 14 \div 2 = 7$ tahun.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 7 years old / Jawaban: 7 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 12 / Pembahasan 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Work backwards from the past
+                information to find their current ages, then calculate the
+                difference.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Bekerja mundur dari informasi masa lalu
+                untuk menemukan umur mereka saat ini, lalu hitung selisihnya.
+              </p>
+            </div>
+            <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2 text-center">Model untuk 4 Tahun Lalu</p>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Kakak:</div>
+                        <div class="flex h-10 flex-1 gap-1">
+                            <div class="bar w-1/3">1 unit</div>
+                            <div class="bar w-1/3">1 unit</div>
+                            <div class="bar w-1/3">1 unit</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bar-label w-20">Adik:</div>
+                        <div class="flex h-10 flex-1">
+                            <div class="bar" style="width: 33.33%;">1 unit</div>
+                        </div>
+                    </div>
+                     <div class="pl-20">
+                        <div class="brace" style="width: 100%;"><div class="pt-2">Total = 20</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the sum of their ages 4 years ago. Current
+                  sum is 28, so 4 years ago it was $28 - 4 - 4 = 20$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Use the ratio from 4 years ago. Younger = 1
+                  unit, Older = 3 units. Total = 4 units.
+                  <ul>
+                    <li>4 units = 20 years $\implies$ 1 unit = 5 years.</li>
+                    <li>
+                      Ages 4 years ago: Younger was 5, Older was $3 \times 5 =
+                      15$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find their current ages. Younger = $5+4=9$.
+                  Older = $15+4=19$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Calculate the age difference. $19 - 9 = 10$
+                  years.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Jumlah umur 4 tahun lalu adalah $28 - 4 - 4
+                  = 20$ tahun.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Gunakan perbandingan 4 tahun lalu. Adik = 1
+                  unit, Kakak = 3 unit. Total 4 unit = 20, maka 1 unit = 5
+                  tahun.
+                  <ul>
+                    <li>Umur 4 tahun lalu: Adik 5 tahun, Kakak 15 tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Umur sekarang: Adik = $5+4=9$. Kakak =
+                  $15+4=19$.
+                </li>
+                <li><b>Langkah 4:</b> Selisih umur = $19 - 9 = 10$ tahun.</li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 10 years / Jawaban: 10 tahun.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 13 / Pembahasan 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The increase in the sum of ages is
+                twice the number of years that have passed. The number of years
+                passed is equal to their age difference.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Peningkatan jumlah umur adalah dua kali
+                jumlah tahun yang telah berlalu. Jumlah tahun yang berlalu sama
+                dengan selisih umur mereka.
+              </p>
+            </div>
+            <div class="my-4 text-center">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_nnxvgr_2686.png" alt="Diagram Logika untuk Soal 13" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Increase in the sum of ages = $110 - 50 = 60$.
+                </li>
+                <li>
+                  <b>Step 2:</b> This increase is twice the number of years
+                  passed. So, years passed = $60 \div 2 = 30$ years.
+                </li>
+                <li>
+                  <b>Step 3:</b> The number of years passed is also their age
+                  difference. So, Father is 30 years older than the son.
+                </li>
+                <li>
+                  <b>Step 4:</b> Use the current sum (50) and difference (30) to
+                  find the son's age.
+                  <ul>
+                    <li>Sum of two equal parts = $50 - 30 = 20$.</li>
+                    <li>Twice son's age = 20.</li>
+                    <li>Son's age = $20 \div 2 = 10$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Peningkatan jumlah umur = $110 - 50 = 60$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Peningkatan ini adalah dua kali jumlah tahun
+                  yang berlalu. Jadi, tahun yang berlalu = $60 \div 2 = 30$
+                  tahun.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Jumlah tahun yang berlalu juga merupakan
+                  selisih umur mereka. Jadi, Ayah 30 tahun lebih tua dari anak.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Gunakan jumlah sekarang (50) dan selisih
+                  (30) untuk mencari umur anak.
+                  <ul>
+                    <li>Jumlah dua bagian yang sama = $50 - 30 = 20$.</li>
+                    <li>Dua kali umur anak = 20.</li>
+                    <li>Umur anak = $20 \div 2 = 10$ tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 10 years old / Jawaban: 10 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 14 / Pembahasan 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> First, find the sum of their ages 4
+                years ago. Let the ages be y, y+1, y+2, y+3 and solve for y.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Pertama, cari jumlah umur mereka 4
+                tahun lalu. Misalkan umur mereka y, y+1, y+2, y+3 dan cari nilai
+                y.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Let the ages 4 years ago be y, y+1, y+2, and
+                  y+3. Their sum is 36.
+                  <ul>
+                    <li>$y + (y+1) + (y+2) + (y+3) = 36$</li>
+                    <li>$4y + 6 = 36$</li>
+                    <li>$4y = 30$</li>
+                    <li>$y = 7.5$</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> The age of the oldest child 4 years ago was
+                  $y+3$.
+                  <ul>
+                    <li>Oldest's age then = $7.5 + 3 = 10.5$ years.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> The oldest child's current age is 4 years more
+                  than that.
+                  <ul>
+                    <li>Current age = $10.5 + 4 = 14.5$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Misal umur mereka 4 tahun lalu adalah y,
+                  y+1, y+2, y+3. Jumlahnya 36.
+                  <ul>
+                    <li>$y + (y+1) + (y+2) + (y+3) = 36$.</li>
+                    <li>$4y + 6 = 36$.</li>
+                    <li>$4y = 30$.</li>
+                    <li>$y = 7,5$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari umur tertua 4 tahun lalu, yaitu $y+3$.
+                  <ul>
+                    <li>Umur tertua saat itu = $7,5 + 3 = 10,5$ tahun.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari umur tertua sekarang dengan menambahkan
+                  4 tahun.
+                  <ul>
+                    <li>Umur tertua sekarang = $10,5 + 4 = 14,5$ tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 14.5 years old / Jawaban: 14,5 tahun.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution 15 / Pembahasan 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use the process of elimination. List
+                all possibilities that fit the first condition, then check them
+                against the second condition.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Gunakan proses eliminasi. Buat daftar
+                semua kemungkinan yang sesuai dengan kondisi pertama, lalu
+                periksa dengan kondisi kedua.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> List prime numbers between 10 and 15. The
+                  possibilities are 11 and 13.
+                </li>
+                <li>
+                  <b>Step 2:</b> Check the second condition for each
+                  possibility. "Last year, her age was a multiple of 3."
+                  <ul>
+                    <li>
+                      If Fara is 11 now, last year she was 10. (10 is not a
+                      multiple of 3).
+                    </li>
+                    <li>
+                      If Fara is 13 now, last year she was 12. (12 is a multiple
+                      of 3). This is correct.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Fara's current age is 13. Find her age in 5
+                  years.
+                  <ul>
+                    <li>Age in 5 years = $13 + 5 = 18$ years.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Daftar bilangan prima antara 10 dan 15.
+                  Kemungkinannya adalah 11 dan 13.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Periksa kondisi kedua untuk setiap
+                  kemungkinan. "Tahun lalu, umurnya adalah kelipatan 3."
+                  <ul>
+                    <li>
+                      Jika Fara sekarang 11, tahun lalu umurnya 10. (10 bukan
+                      kelipatan 3).
+                    </li>
+                    <li>
+                      Jika Fara sekarang 13, tahun lalu umurnya 12. (12 adalah
+                      kelipatan 3). Ini benar.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Umur Fara sekarang adalah 13. Cari umurnya 5
+                  tahun lagi.
+                  <ul>
+                    <li>Umur 5 tahun lagi = $13 + 5 = 18$ tahun.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 18 years old / Jawaban: 18 tahun.
+            </div>
+          </div>
+
+          <h3 class="topic-title">Pembahasan Bagian 2: Pecahan</h3>
+          <!-- Solution 16 -->
+          <div class="item-container">
+            <p><strong>Solution 16 / Pembahasan 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A fraction is represented as (Number
+                of parts taken) / (Total number of equal parts). The total
+                number of slices is the denominator, and the number of slices
+                eaten is the numerator.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Pecahan direpresentasikan sebagai
+                (Jumlah bagian yang diambil) / (Jumlah total bagian yang sama
+                besar). Jumlah total potongan adalah penyebut, dan jumlah
+                potongan yang dimakan adalah pembilang.
+              </p>
+            </div>
+            <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2 text-center">Model Pizza</p>
+                <div class="flex h-12 w-full gap-1">
+                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                    <div class="bar bar-shaded w-[12.5%]">1/8</div>
+                    <div class="bar w-[12.5%]">1/8</div>
+                    <div class="bar w-[12.5%]">1/8</div>
+                    <div class="bar w-[12.5%]">1/8</div>
+                    <div class="bar w-[12.5%]">1/8</div>
+                    <div class="bar w-[12.5%]">1/8</div>
+                </div>
+                 <div class="pt-2 text-center font-bold">3 dari 8 bagian dimakan</div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Identify the total number of parts. The pizza
+                  was cut into 8 slices. So, the denominator is 8.
+                </li>
+                <li>
+                  <b>Step 2:</b> Identify the number of parts taken. Budi ate 3
+                  slices. So, the numerator is 3.
+                </li>
+                <li><b>Step 3:</b> Write the fraction: $\frac{3}{8}$.</li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Identifikasi jumlah total bagian. Pizza
+                  dipotong menjadi 8 bagian. Jadi, penyebutnya adalah 8.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Identifikasi jumlah bagian yang diambil.
+                  Budi makan 3 potong. Jadi, pembilangnya adalah 3.
+                </li>
+                <li><b>Langkah 3:</b> Tulis pecahannya: $\frac{3}{8}$.</li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: $\frac{3}{8}$ / Jawaban: $\frac{3}{8}$.</div>
+          </div>
+
+          <!-- Solution 17 -->
+          <div class="item-container">
+            <p><strong>Solution 17 / Pembahasan 17:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To compare fractions with different
+                denominators, we find a common denominator. A simple way is to
+                use cross-multiplication.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Untuk membandingkan pecahan dengan
+                penyebut yang berbeda, kita samakan penyebutnya. Cara mudahnya
+                adalah dengan perkalian silang.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Cross-multiply. Multiply the numerator of the
+                  first fraction by the denominator of the second, and vice
+                  versa.
+                  <ul>
+                    <li>For $\frac{3}{5}$: $3 \times 7 = 21$.</li>
+                    <li>For $\frac{4}{7}$: $4 \times 5 = 20$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Compare the results.
+                  <ul>
+                    <li>
+                      Since 21 is greater than 20, the first fraction
+                      ($\frac{3}{5}$) is greater.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Lakukan perkalian silang. Kalikan pembilang
+                  pecahan pertama dengan penyebut pecahan kedua, dan sebaliknya.
+                  <ul>
+                    <li>Untuk $\frac{3}{5}$: $3 \times 7 = 21$.</li>
+                    <li>Untuk $\frac{4}{7}$: $4 \times 5 = 20$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Bandingkan hasilnya.
+                  <ul>
+                    <li>
+                      Karena 21 lebih besar dari 20, maka pecahan pertama
+                      ($\frac{3}{5}$) lebih besar.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{3}{5}$ is greater / Jawaban: $\frac{3}{5}$ lebih besar.
+            </div>
+          </div>
+
+          <!-- Solution 18 -->
+          <div class="item-container">
+            <p><strong>Solution 18 / Pembahasan 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To subtract fractions with the same
+                denominator, simply subtract the numerators and keep the
+                denominator the same.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Untuk mengurangkan pecahan dengan
+                penyebut yang sama, cukup kurangkan pembilangnya dan biarkan
+                penyebutnya tetap sama.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <p>Calculate the difference:</p>
+              $$ \begin{aligned} \frac{5}{6} - \frac{1}{6} = \frac{5-1}{6} =
+              \frac{4}{6} \end{aligned} $$
+              <p>
+                The fraction $\frac{4}{6}$ can be simplified by dividing both
+                the numerator and denominator by 2, which gives $\frac{2}{3}$.
+              </p>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <p>Hitung selisihnya:</p>
+              $$ \begin{aligned} \frac{5}{6} - \frac{1}{6} = \frac{5-1}{6} =
+              \frac{4}{6} \end{aligned} $$
+              <p>
+                Pecahan $\frac{4}{6}$ bisa disederhanakan dengan membagi
+                pembilang dan penyebut dengan 2, sehingga menjadi $\frac{2}{3}$.
+              </p>
+            </div>
+            <div class="final-answer">
+             Answer: $\frac{2}{3}$ meters / Jawaban: $\frac{2}{3}$ meter.
+            </div>
+          </div>
+
+          <!-- Solution 19 -->
+          <div class="item-container">
+            <p><strong>Solution 19 / Pembahasan 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This involves finding a fraction of a
+                remainder. First find the remaining fraction, calculate the part
+                painted in the afternoon, sum the painted parts, and subtract
+                from 1.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini melibatkan pencarian bagian dari
+                sisa. Pertama cari sisa bagian, hitung bagian yang dicat sore
+                hari, jumlahkan semua bagian yang dicat, lalu kurangi dari 1.
+              </p>
+            </div>
+            <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2">Model Dinding</p>
+                <div class="flex h-12 w-full gap-1">
+                    <div class="bar bar-shaded w-1/4">Pagi (1/4)</div>
+                    <div class="bar bar-shaded w-1/4">Sore</div>
+                    <div class="bar bar-shaded w-1/4">Sore</div>
+                    <div class="bar w-1/4">Belum</div>
+                </div>
+                 <div class="pl-[25%] mt-2">
+                    <div class="brace" style="width: 75%;"><div class="pt-2">Sisa (3/4)</div></div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> After the morning, the remaining unpainted wall
+                  is $1 - \frac{1}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> In the afternoon, father painted $\frac{2}{3}$
+                  of the remaining $\frac{3}{4}$. This is $\frac{2}{3} \times
+                  \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$ of the total wall.
+                </li>
+                <li>
+                  <b>Step 3:</b> Total painted is the sum of morning and
+                  afternoon parts: $\frac{1}{4} + \frac{1}{2} = \frac{1}{4} +
+                  \frac{2}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Step 4:</b> The unpainted fraction is $1 - \frac{3}{4} =
+                  \frac{1}{4}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Setelah pagi hari, sisa dinding yang belum
+                  dicat adalah $1 - \frac{1}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Sore hari, ayah mengecat $\frac{2}{3}$ dari
+                  sisa $\frac{3}{4}$. Ini adalah $\frac{2}{3} \times \frac{3}{4}
+                  = \frac{6}{12} = \frac{1}{2}$ dari total dinding.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Total yang dicat adalah jumlah bagian pagi
+                  dan sore: $\frac{1}{4} + \frac{1}{2} = \frac{1}{4} +
+                  \frac{2}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Bagian yang belum dicat adalah $1 -
+                  \frac{3}{4} = \frac{1}{4}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{4}$ of the wall / Jawaban: $\frac{1}{4}$ bagian dinding.
+            </div>
+          </div>
+
+          <!-- Solution 20 -->
+          <div class="item-container">
+            <p><strong>Solution 20 / Pembahasan 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a complex algebra problem. Set
+                up equations for the initial and final states of the class and
+                solve for the number of girls.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini adalah soal aljabar yang kompleks.
+                Buat persamaan untuk kondisi awal dan akhir kelas, lalu
+                selesaikan untuk mencari jumlah murid perempuan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Let B be the initial number of boys and G be
+                  the number of girls. Let T be the initial total. We know $B =
+                  \frac{2}{5}T$ and $G = \frac{3}{5}T$. This means the ratio
+                  $B:G = 2:3$.
+                </li>
+                <li>
+                  <b>Step 2:</b> The new situation: Boys = $B+6$. Total = $T+6 =
+                  B+G+6$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Set up the equation for the new situation: $B+6
+                  = \frac{1}{2}(T+6)$. Since $T=B+G$, this is $B+6 =
+                  \frac{1}{2}(B+G+6)$.
+                </li>
+                <li>
+                  <b>Step 4:</b> From the ratio in Step 1, $G = \frac{3}{2}B$.
+                  Substitute this into the equation from Step 3: $B+6 =
+                  \frac{1}{2}(B + \frac{3}{2}B + 6)$.
+                </li>
+                <li>
+                  <b>Step 5:</b> Solve for B: $$ \begin{aligned} B+6 &=
+                  \frac{1}{2}(\frac{5}{2}B + 6) \\ B+6 &= \frac{5}{4}B + 3 \\ 3
+                  &= \frac{5}{4}B - B \\ 3 &= \frac{1}{4}B \\ B &= 12
+                  \end{aligned} $$
+                </li>
+                <li>
+                  <b>Step 6:</b> Find G. Since $G = \frac{3}{2}B$, then $G =
+                  \frac{3}{2} \times 12 = 18$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Misal B adalah jumlah awal laki-laki dan G perempuan. Total T. Kita tahu $B = \frac{2}{5}T$ dan $G =
+                  \frac{3}{5}T$. Artinya rasio $B:G = 2:3$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Kondisi baru: Laki-laki = $B+6$. Total =
+                  $T+6$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Persamaan baru: $B+6 = \frac{1}{2}(T+6)
+                  \implies B+6 = \frac{1}{2}(B+G+6)$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Dari rasio, kita tahu $G = \frac{3}{2}B$.
+                  Substitusikan ke persamaan baru: $B+6 = \frac{1}{2}(B +
+                  \frac{3}{2}B + 6)$.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Selesaikan untuk B. Perhitungan menunjukkan
+                  $B=12$.
+                </li>
+                <li>
+                  <b>Langkah 6:</b> Cari G. Karena $G = \frac{3}{2}B$, maka $G =
+                  \frac{3}{2} \times 12 = 18$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 18 girls / Jawaban: 18 murid perempuan.
+            </div>
+          </div>
+
+          <!-- Solution 21 -->
+          <div class="item-container">
+            <p><strong>Solution 21 / Pembahasan 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The amount of water used corresponds
+                to the difference between the initial and final fractions of the
+                tank's capacity.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Jumlah air yang digunakan setara dengan
+                selisih antara pecahan kapasitas awal dan akhir tangki.
+              </p>
+            </div>
+            <div class="bar-model-container">
+                 <p class="font-medium text-gray-700 mb-2">Model Tangki Air (8 unit)</p>
+                <div class="flex h-12 w-full gap-1">
+                    <div class="bar bar-shaded w-[12.5%]"></div>
+                    <div class="bar bar-shaded w-[12.5%]"></div>
+                    <div class="bar bar-shaded w-[12.5%]"></div>
+                    <div class="bar-diff w-[12.5%]"></div>
+                    <div class="bar-diff w-[12.5%]"></div>
+                    <div class="bar-diff w-[12.5%]"></div>
+                    <div class="bar-diff w-[12.5%]"></div>
+                    <div class="bar w-[12.5%]"></div>
+                </div>
+                 <div class="ml-[37.5%] mt-2">
+                    <div class="brace" style="width: 50%;"><div class="pt-2">4 unit terpakai = 20 Liter</div></div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the fraction of water used.
+                  <ul>
+                    <li>
+                      Fraction used = $\frac{7}{8} - \frac{3}{8} = \frac{4}{8}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> From the model, 4 units represent 20 liters. To find 1 unit, we divide.
+                  <ul>
+                      <li>1 unit = $20 \div 4 = 5$ liters.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> The total capacity is 8 units.
+                  <ul>
+                    <li>Total capacity = $8 \times 5 = 40$ liters.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari bagian air yang digunakan.
+                  <ul>
+                    <li>
+                      Bagian yang digunakan = $\frac{7}{8} - \frac{3}{8} = \frac{4}{8}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Dari model, 4 unit mewakili 20 liter. Untuk mencari 1 unit, kita bagi.
+                  <ul>
+                      <li>1 unit = $20 \div 4 = 5$ liter.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Kapasitas total adalah 8 unit.
+                  <ul>
+                    <li>Kapasitas total = $8 \times 5 = 40$ liter.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 40 liters / Jawaban: 40 liter.</div>
+          </div>
+
+          <!-- Solution 22 -->
+          <div class="item-container">
+            <p><strong>Solution 22 / Pembahasan 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a "working backwards" problem.
+                The final remainder (30 kg) corresponds to the fraction left
+                after the second day's sale.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini adalah soal "bekerja mundur". Sisa
+                akhir (30 kg) adalah bagian yang tersisa setelah penjualan hari
+                kedua.
+              </p>
+            </div>
+            <div class="my-4 text-center">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_uhpfzw_906.png" alt="Bar Model untuk Soal 22" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> On the second day, $\frac{1}{4}$ of the
+                  remainder was sold, so $\frac{3}{4}$ of the remainder was
+                  left. This is the 30 kg.
+                </li>
+                <li>
+                  <b>Step 2:</b> From the model, 3 units = 30 kg. So, 1 unit = $30 \div 3 = 10$ kg.
+                </li>
+                <li>
+                  <b>Step 3:</b> The full remainder (4 units) was $4 \times 10 = 40$ kg.
+                </li>
+                <li>
+                  <b>Step 4:</b> This 40 kg was the remainder after selling $\frac{3}{5}$ on the first day. So, 40 kg is equal to $1 - \frac{3}{5} = \frac{2}{5}$ of the original harvest.
+                </li>
+                <li>
+                  <b>Step 5:</b> If $\frac{2}{5}$ of the total is 40 kg, then $\frac{1}{5}$ is $40 \div 2 = 20$ kg.
+                </li>
+                <li>
+                  <b>Step 6:</b> The total original harvest ($\frac{5}{5}$) is $5 \times 20 = 100$ kg.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Di hari kedua, $\frac{1}{4}$ sisa terjual,
+                  artinya $\frac{3}{4}$ dari sisa masih ada. Inilah yang 30 kg
+                  itu.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Dari model, 3 unit = 30 kg. Jadi, 1 unit = $30 \div 3 = 10$ kg.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Jumlah sisa seluruhnya (4 unit) adalah $4 \times 10 = 40$ kg.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> 40 kg ini adalah sisa setelah menjual
+                  $\frac{3}{5}$ di hari pertama. Jadi, 40 kg = $1 - \frac{3}{5}
+                  = \frac{2}{5}$ dari total panen.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Jika $\frac{2}{5}$ total adalah 40 kg, maka
+                  $\frac{1}{5}$ total adalah $40 \div 2 = 20$ kg.
+                </li>
+                <li>
+                  <b>Langkah 6:</b> Total panen awal ($\frac{5}{5}$) adalah $5
+                  \times 20 = 100$ kg.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 100 kg / Jawaban: 100 kg.</div>
+          </div>
+
+          <!-- Solution 23 -->
+          <div class="item-container">
+            <p><strong>Solution 23 / Pembahasan 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To find the remaining fraction, first
+                add up all the fractions that were spent, and then subtract the
+                total from 1 (the whole).
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Untuk mencari sisa bagian, pertama
+                jumlahkan semua bagian yang dibelanjakan, lalu kurangi totalnya
+                dari 1 (keseluruhan).
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the total fraction of money spent.
+                  <ul>
+                    <li>Total spent = $\frac{1}{3} + \frac{1}{6}$.</li>
+                    <li>
+                      Find a common denominator (6): $\frac{1}{3} =
+                      \frac{2}{6}$.
+                    </li>
+                    <li>Add: $\frac{2}{6} + \frac{1}{6} = \frac{3}{6}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the fraction of money left.
+                  <ul>
+                    <li>
+                      Fraction left = $1 - \frac{3}{6} = \frac{6}{6} -
+                      \frac{3}{6} = \frac{3}{6}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Simplify the result.
+                  <ul>
+                    <li>$\frac{3}{6} = \frac{1}{2}$.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari total bagian uang yang dibelanjakan.
+                  <ul>
+                    <li>Total dibelanjakan = $\frac{1}{3} + \frac{1}{6}$.</li>
+                    <li>Samakan penyebut (6): $\frac{1}{3} = \frac{2}{6}$.</li>
+                    <li>
+                      Jumlahkan: $\frac{2}{6} + \frac{1}{6} = \frac{3}{6}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari bagian uang yang tersisa.
+                  <ul>
+                    <li>
+                      Sisa bagian = $1 - \frac{3}{6} = \frac{6}{6} - \frac{3}{6}
+                      = \frac{3}{6}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Sederhanakan hasilnya.
+                  <ul>
+                    <li>$\frac{3}{6} = \frac{1}{2}$.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: $\frac{1}{2}$ / Jawaban: $\frac{1}{2}$.</div>
+          </div>
+
+          <!-- Solution 24 -->
+          <div class="item-container">
+            <p><strong>Solution 24 / Pembahasan 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find the total volume of juice poured
+                out, and find the fraction of the container this volume
+                represents. Then, use this relationship to find the total
+                capacity.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Cari total volume jus yang dituang, dan
+                cari bagian (pecahan) wadah yang direpresentasikan oleh volume
+                tersebut. Lalu, gunakan hubungan ini untuk mencari kapasitas
+                total.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Calculate the total volume of juice poured out.
+                  <ul>
+                    <li>
+                      Volume poured = 12 glasses $\times \frac{1}{4}$
+                      liter/glass = 3 liters.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the fraction of the container that
+                  was emptied.
+                  <ul>
+                    <li>
+                      Fraction emptied = Initial fraction - Final fraction =
+                      $\frac{3}{4} - \frac{1}{2} = \frac{3}{4} - \frac{2}{4} =
+                      \frac{1}{4}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> We now know that $\frac{1}{4}$ of the
+                  container's capacity is equal to the 3 liters that were poured
+                  out.
+                </li>
+                <li>
+                  <b>Step 4:</b> Find the total capacity (4/4).
+                  <ul>
+                    <li>
+                      If $\frac{1}{4}$ capacity = 3 liters, then the total
+                      capacity = $4 \times 3 = 12$ liters.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Hitung total volume jus yang dituang.
+                  <ul>
+                    <li>
+                      Volume dituang = 12 gelas $\times \frac{1}{4}$ liter/gelas
+                      = 3 liter.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung bagian wadah yang dikosongkan.
+                  <ul>
+                    <li>
+                      Bagian dikosongkan = Bagian awal - Bagian akhir =
+                      $\frac{3}{4} - \frac{1}{2} = \frac{3}{4} - \frac{2}{4} =
+                      \frac{1}{4}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Sekarang kita tahu bahwa $\frac{1}{4}$ dari
+                  kapasitas wadah setara dengan 3 liter yang dituang.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Cari kapasitas total (4/4).
+                  <ul>
+                    <li>
+                      Jika $\frac{1}{4}$ kapasitas = 3 liter, maka kapasitas
+                      total = $4 \times 3 = 12$ liter.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 12 liters / Jawaban: 12 liter.</div>
+          </div>
+
+          <!-- Solution 25 -->
+          <div class="item-container">
+            <p><strong>Solution 25 / Pembahasan 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Perform the operations in the
+                parentheses first, then add the second fraction. This requires
+                finding common denominators.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Kerjakan operasi di dalam kurung
+                terlebih dahulu, baru kemudian jumlahkan dengan pecahan kedua.
+                Ini membutuhkan penyamaan penyebut.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Solve the part in the parentheses: $3 -
+                  \frac{2}{5}$.
+                  <ul>
+                    <li>
+                      $3 = \frac{15}{5}$. So, $\frac{15}{5} - \frac{2}{5} =
+                      \frac{13}{5}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Now calculate $\frac{13}{5} + \frac{1}{2}$.
+                  <ul>
+                    <li>The common denominator for 5 and 2 is 10.</li>
+                    <li>
+                      $\frac{13}{5} = \frac{26}{10}$. And $\frac{1}{2} =
+                      \frac{5}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Add the fractions: $\frac{26}{10} +
+                  \frac{5}{10} = \frac{31}{10}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Selesaikan bagian dalam kurung: $3 -
+                  \frac{2}{5}$.
+                  <ul>
+                    <li>
+                      $3 = \frac{15}{5}$. Maka, $\frac{15}{5} - \frac{2}{5} =
+                      \frac{13}{5}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Sekarang hitung $\frac{13}{5} +
+                  \frac{1}{2}$.
+                  <ul>
+                    <li>KPK dari 5 dan 2 adalah 10.</li>
+                    <li>
+                      $\frac{13}{5} = \frac{26}{10}$. Dan $\frac{1}{2} =
+                      \frac{5}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Jumlahkan: $\frac{26}{10} + \frac{5}{10} =
+                  \frac{31}{10}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{31}{10}$ / Jawaban: $\frac{31}{10}$.
+            </div>
+          </div>
+
+          <!-- Solution 26 -->
+          <div class="item-container">
+            <p><strong>Solution 26 / Pembahasan 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> First, find the fraction of the stick
+                that is yellow. We know the length of this fraction, so we can
+                use it to find the total length (the whole).
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Pertama, cari bagian tongkat yang
+                berwarna kuning. Kita tahu panjang dari bagian ini, jadi kita
+                bisa menggunakannya untuk mencari panjang total (keseluruhan).
+              </p>
+            </div>
+             <div class="my-4 text-center">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_qtgach_7874.png" alt="Bar Model untuk Soal 26" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the total fraction of red and blue parts.
+                  <ul>
+                    <li>
+                      $\frac{1}{2} + \frac{1}{5} = \frac{5}{10} + \frac{2}{10} =
+                      \frac{7}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the fraction of the yellow part.
+                  <ul>
+                    <li>Yellow part = $1 - \frac{7}{10} = \frac{3}{10}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> We know that $\frac{3}{10}$ of the stick is 12
+                  cm. Find the length of $\frac{1}{10}$.
+                  <ul>
+                    <li>
+                      If 3 units = 12 cm, then 1 unit = $12 \div 3 = 4$ cm.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 4:</b> Find the total length (10 units).
+                  <ul>
+                    <li>Total length = $10 \times 4 = 40$ cm.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari total bagian merah dan biru.
+                  <ul>
+                    <li>
+                      $\frac{1}{2} + \frac{1}{5} = \frac{5}{10} + \frac{2}{10} =
+                      \frac{7}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari bagian yang berwarna kuning.
+                  <ul>
+                    <li>Bagian kuning = $1 - \frac{7}{10} = \frac{3}{10}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Kita tahu bahwa $\frac{3}{10}$ dari tongkat
+                  adalah 12 cm. Cari panjang untuk $\frac{1}{10}$.
+                  <ul>
+                    <li>
+                      Jika 3 kotak = 12 cm, maka 1 kotak = $12 \div 3 = 4$ cm.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Cari panjang total (10 kotak).
+                  <ul>
+                    <li>Panjang total = $10 \times 4 = 40$ cm.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: 40 cm / Jawaban: 40 cm.</div>
+          </div>
+
+          <!-- Solution 27 -->
+          <div class="item-container">
+            <p><strong>Solution 27 / Pembahasan 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A multi-step "fraction of a remainder"
+                problem where you work backwards from the final part.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Soal "bagian dari sisa" multi-langkah
+                di mana Anda bekerja mundur dari bagian terakhir.
+              </p>
+            </div>
+            <div class="my-4 text-center">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_3is324_7807.png" alt="Bar Model untuk Soal 27" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> The red balls are $\frac{1}{4}$ of the total,
+                  so the remainder is $1 - \frac{1}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> The blue balls are $\frac{3}{5}$ of this
+                  remainder. So the green balls must be the rest of the
+                  remainder, which is $1 - \frac{3}{5} = \frac{2}{5}$ of the
+                  remainder.
+                </li>
+                <li>
+                  <b>Step 3:</b> So, the green fraction is $\frac{2}{5}$ of
+                  $\frac{3}{4}$ of the total. That is $\frac{2}{5} \times
+                  \frac{3}{4} = \frac{6}{20} = \frac{3}{10}$ of the total.
+                </li>
+                <li>
+                  <b>Step 4:</b> We know this fraction is 18 balls. If
+                  $\frac{3}{10}$ of total = 18, then $\frac{1}{10}$ of total =
+                  $18 \div 3 = 6$.
+                </li>
+                <li>
+                  <b>Step 5:</b> The total number of balls is $10 \times 6 = 60$
+                  balls.
+                </li>
+                <li>
+                  <b>Step 6:</b> The question asks for red balls. Red balls =
+                  $\frac{1}{4}$ of total = $\frac{1}{4} \times 60 = 15$ balls.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Bola merah $\frac{1}{4}$, jadi sisanya
+                  adalah $1 - \frac{1}{4} = \frac{3}{4}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Bola biru $\frac{3}{5}$ dari sisa, maka bola
+                  hijau adalah $1 - \frac{3}{5} = \frac{2}{5}$ dari sisa.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Jadi, bagian hijau adalah $\frac{2}{5}$ dari
+                  $\frac{3}{4}$ total. Yaitu $\frac{2}{5} \times \frac{3}{4} =
+                  \frac{6}{20} = \frac{3}{10}$ dari total.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Bagian ini adalah 18 bola. Jika
+                  $\frac{3}{10}$ total = 18, maka $\frac{1}{10}$ total = $18
+                  \div 3 = 6$.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Jumlah total bola adalah $10 \times 6 = 60$
+                  bola.
+                </li>
+                <li>
+                  <b>Langkah 6:</b> Yang ditanya adalah bola merah. Bola merah =
+                  $\frac{1}{4}$ dari total = $\frac{1}{4} \times 60 = 15$ bola.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 15 red balls / Jawaban: 15 bola merah.
+            </div>
+          </div>
+
+          <!-- Solution 28 -->
+          <div class="item-container">
+            <p><strong>Solution 28 / Pembahasan 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a multi-step fraction problem.
+                First, find the fraction remaining after the first part is given
+                away. Then, calculate the fraction of the remainder that is
+                given away, and finally find what is left.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Ini adalah soal pecahan bertingkat.
+                Pertama, cari sisa kue setelah bagian pertama diberikan.
+                Kemudian, hitung bagian dari sisa tersebut yang diberikan, dan
+                terakhir cari sisanya.
+              </p>
+            </div>
+             <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2">Model Kue</p>
+                <div class="flex h-12 w-full gap-1">
+                    <div class="bar bar-shaded w-1/3">Tetangga (1/3)</div>
+                    <div class="bar bar-shaded w-1/3">Anak (1/3)</div>
+                    <div class="bar w-1/3">Sisa (1/3)</div>
+                </div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the fraction of cake remaining after
+                  giving to the neighbor.
+                  <ul>
+                    <li>
+                      Remaining = $1 - \frac{1}{3} = \frac{2}{3}$ of the
+                      original cake.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the fraction of cake given to the
+                  children. This is $\frac{1}{2}$ OF the remaining
+                  $\frac{2}{3}$.
+                  <ul>
+                    <li>
+                      Given to children = $\frac{1}{2} \times \frac{2}{3} =
+                      \frac{2}{6} = \frac{1}{3}$ of the original cake.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the final fraction left.
+                  <ul>
+                    <li>
+                      Final left = Remaining (from step 1) - Given to children =
+                      $\frac{2}{3} - \frac{1}{3} = \frac{1}{3}$.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari bagian sisa kue setelah diberikan ke
+                  tetangga.
+                  <ul>
+                    <li>
+                      Sisa = $1 - \frac{1}{3} = \frac{2}{3}$ dari kue semula.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari bagian kue yang diberikan ke anak. Ini
+                  adalah $\frac{1}{2}$ DARI sisa $\frac{2}{3}$.
+                  <ul>
+                    <li>
+                      Diberikan ke anak = $\frac{1}{2} \times \frac{2}{3} =
+                      \frac{2}{6} = \frac{1}{3}$ dari kue semula.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari sisa kue terakhir.
+                  <ul>
+                    <li>
+                      Sisa akhir = Sisa (dari langkah 1) - Diberikan ke anak =
+                      $\frac{2}{3} - \frac{1}{3} = \frac{1}{3}$.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{3}$ of the cake / Jawaban: $\frac{1}{3}$ bagian kue.
+            </div>
+          </div>
+
+          <!-- Solution 29 -->
+          <div class="item-container">
+            <p><strong>Solution 29 / Pembahasan 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The number 1 represents a whole. To
+                find the missing part, you subtract the known part from the
+                whole.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Angka 1 mewakili satu kesatuan utuh.
+                Untuk mencari bagian yang hilang, Anda kurangi bagian yang utuh
+                dengan bagian yang sudah diketahui.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Represent 1 as a fraction with a denominator of
+                  7.
+                  <ul>
+                    <li>$1 = \frac{7}{7}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Subtract the known fraction from the whole.
+                  <ul>
+                    <li>$\frac{7}{7} - \frac{2}{7} = \frac{5}{7}$.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Nyatakan 1 sebagai pecahan dengan penyebut
+                  7.
+                  <ul>
+                    <li>$1 = \frac{7}{7}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Kurangi keseluruhan dengan pecahan yang
+                  diketahui.
+                  <ul>
+                    <li>$\frac{7}{7} - \frac{2}{7} = \frac{5}{7}$.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">Answer: $\frac{5}{7}$ / Jawaban: $\frac{5}{7}$.</div>
+          </div>
+
+          <!-- Solution 30 -->
+          <div class="item-container">
+            <p><strong>Solution 30 / Pembahasan 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find the fraction representing the
+                difference between the number of cars and motorcycles. This
+                fraction is equivalent to 16 vehicles, which allows us to find
+                the total.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>Konsep:</strong> Cari pecahan yang mewakili selisih
+                antara jumlah mobil dan motor. Pecahan ini setara dengan 16
+                kendaraan, yang memungkinkan kita untuk mencari jumlah totalnya.
+              </p>
+            </div>
+            <div class="bar-model-container">
+                <p class="font-medium text-gray-700 mb-2">Model Kendaraan (10 unit)</p>
+                <div class="flex h-12 w-full gap-1">
+                    <div class="bar bar-shaded w-[30%]">Motor (3/10)</div>
+                    <div class="bar w-[70%]" style="background-color: #fef08a; border-color: #facc15;">Mobil (7/10)</div>
+                </div>
+                 <div class="mt-2 text-center font-bold">Selisih (4/10) = 16 kendaraan</div>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the fraction of cars.
+                  <ul>
+                    <li>
+                      Fraction of cars = $1 - \frac{3}{10} = \frac{7}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the fraction representing the difference.
+                  <ul>
+                    <li>
+                      Difference = Fraction of cars - Fraction of motorcycles =
+                      $\frac{7}{10} - \frac{3}{10} = \frac{4}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> We know that $\frac{4}{10}$ of the total
+                  vehicles is 16.
+                  <ul>
+                    <li>
+                      If 4 units = 16, then 1 unit = $16 \div 4 = 4$ vehicles.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 4:</b> Find the total number of vehicles (10 units).
+                  <ul>
+                    <li>Total = $10 \times 4 = 40$ vehicles.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari bagian mobil.
+                  <ul>
+                    <li>Bagian mobil = $1 - \frac{3}{10} = \frac{7}{10}$.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari bagian yang mewakili selisih.
+                  <ul>
+                    <li>
+                      Selisih = Bagian mobil - Bagian motor = $\frac{7}{10} -
+                      \frac{3}{10} = \frac{4}{10}$.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Kita tahu bahwa $\frac{4}{10}$ dari total
+                  kendaraan adalah 16.
+                  <ul>
+                    <li>
+                      Jika 4 kotak = 16, maka 1 kotak = $16 \div 4 = 4$
+                      kendaraan.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Cari jumlah total kendaraan (10 kotak).
+                  <ul>
+                    <li>Total = $10 \times 4 = 40$ kendaraan.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: 40 vehicles / Jawaban: 40 kendaraan.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
