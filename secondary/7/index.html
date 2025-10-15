@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice Worksheet 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: #4338ca; /* indigo-700 */
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        /* Penyesuaian untuk readability */
+        .item-container p {
+            line-height: 1.75; /* Jarak antar baris ditambah */
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem; /* Jarak antar paragraf */
+        }
+         .item-container p:last-child {
+            margin-bottom: 0;
+        }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 6</h1>
+            <p class="text-gray-600 mt-2">Grade 7 - 9 | Pigeonhole Principle & Probability</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal -->
+            <section id="problems-section" class="content-card">
+                <h2 class="section-title">Competition Problems</h2>
+                <!-- Konten Soal Dimasukkan oleh JavaScript -->
+            </section>
+
+            <!-- Bagian Pembahasan -->
+            <section id="solutions-section" class="content-card">
+                <h2 class="section-title">Solutions & Explanations</h2>
+                 <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const questions = [
+            // --- Part 1: Pigeonhole Principle (Soal 1-15) ---
+            { 
+                topic: 'Part 1: Pigeonhole Principle', 
+                question_en: 'In a box, there are 10 red balls, 12 blue balls, and 8 green balls. What is the minimum number of balls you must draw (without looking) to guarantee that you have at least 5 balls of the same color?', 
+                question_id: 'Di dalam sebuah kotak, terdapat 10 bola merah, 12 bola biru, dan 8 bola hijau. Berapa jumlah minimum bola yang harus kamu ambil (tanpa melihat) untuk menjamin bahwa kamu memiliki setidaknya 5 bola dengan warna yang sama?', 
+                answer: 13, 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> To guarantee an outcome, we must consider the worst-case scenario. The worst case is picking the maximum number of items possible *without* satisfying the condition. The very next item picked will then guarantee it.<br/><br/><strong>Konsep:</strong> Untuk menjamin suatu hasil, kita harus mempertimbangkan skenario terburuk. Skenario terburuk adalah mengambil jumlah item maksimum yang mungkin *tanpa* memenuhi kondisi yang diinginkan. Item berikutnya yang diambil pasti akan memenuhi kondisi tersebut.</p></div><p><strong>Solution:</strong><br/>The condition is to have "at least 5 balls of the same color". The pigeonholes are the 3 colors.<br/>In the worst-case scenario, you pick the maximum number of balls without getting 5 of any single color. This means you have 4 balls of each color.<br/>- 4 red balls<br/>- 4 blue balls<br/>- 4 green balls<br/>Total drawn = $4 + 4 + 4 = 12$ balls. The condition is still not met.<br/>The next ball (the 13th) must be red, blue, or green, making it the 5th ball of that color.<br/>Minimum number = $12 + 1 = 13$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Kondisi yang harus dipenuhi adalah "setidaknya 5 bola dengan warna yang sama". Sarang merpatinya adalah 3 warna.<br/>Dalam skenario terburuk, kamu mengambil bola sebanyak mungkin tanpa mendapatkan 5 bola berwarna sama. Ini berarti kamu memiliki 4 bola dari setiap warna.<br/>- 4 bola merah<br/>- 4 bola biru<br/>- 4 bola hijau<br/>Total terambil = $4 + 4 + 4 = 12$ bola. Kondisi belum terpenuhi.<br/>Bola berikutnya (ke-13) pasti akan menjadi bola ke-5 untuk salah satu warna.<br/>Jumlah minimum = $12 + 1 = 13$.</p>` 
+            },
+            { 
+                topic: 'Part 1: Pigeonhole Principle', 
+                question_en: 'There are 50 students in a classroom. What is the minimum number of students that are guaranteed to have their birthday in the same month?', 
+                question_id: 'Terdapat 50 siswa di dalam sebuah kelas. Berapa jumlah minimum siswa yang dijamin lahir pada bulan yang sama?', 
+                answer: 5, 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem uses the Generalized Pigeonhole Principle. If $N$ items are put into $k$ containers, then at least one container must hold at least $\\lceil N/k \\rceil$ items, where $\\lceil x \\rceil$ is the ceiling function (rounds up to the nearest integer).<br/><br/><strong>Konsep:</strong> Soal ini menggunakan Prinsip Sangkar Merpati yang Diperumum. Jika $N$ benda dimasukkan ke dalam $k$ wadah, maka setidaknya ada satu wadah yang berisi minimal $\\lceil N/k \\rceil$ benda, di mana $\\lceil x \\rceil$ adalah fungsi pembulatan ke atas.</p></div><p><strong>Solution:</strong><br/>- Pigeons ($N$): 50 students.<br/>- Pigeonholes ($k$): 12 months.<br/>Using the formula: Minimum guaranteed = $\\lceil N/k \\rceil = \\lceil 50/12 \\rceil = \\lceil 4.166... \\rceil = 5$.<br/>This means at least 5 students must share the same birth month.</p><p><strong>Langkah Penyelesaian:</strong><br/>- Merpati ($N$): 50 siswa.<br/>- Sangkar ($k$): 12 bulan.<br/>Menggunakan rumus: Jaminan minimum = $\\lceil N/k \\rceil = \\lceil 50/12 \\rceil = \\lceil 4.166... \\rceil = 5$.<br/>Ini berarti dijamin ada setidaknya 5 siswa yang lahir di bulan yang sama.</p>` 
+            },
+            { 
+                topic: 'Part 1: Pigeonhole Principle', 
+                question_en: 'Five points are placed inside an equilateral triangle with a side length of 2 cm. Show that there must be at least two points whose distance is at most 1 cm.', 
+                question_id: 'Lima titik ditempatkan di dalam sebuah segitiga sama sisi dengan panjang sisi 2 cm. Tunjukkan bahwa pasti ada setidaknya dua titik yang jaraknya paling jauh 1 cm.', 
+                answer: 'Proof by argument', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> A geometric application of PHP. The strategy is to divide a larger shape into a specific number of smaller, identical regions (the pigeonholes).<br/><br/><strong>Konsep:</strong> Aplikasi geometris dari PHP. Strateginya adalah dengan membagi sebuah bangun yang besar menjadi beberapa wilayah kecil yang identik (sebagai sangkar merpati).</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeonholes:</strong> Divide the large triangle into 4 smaller equilateral triangles by connecting the midpoints of its sides. Each small triangle has a side length of 1 cm. These 4 triangles are the pigeonholes ($k=4$).<br/>2. <strong>Pigeons:</strong> The 5 points are the pigeons ($N=5$).<br/>3. <strong>Apply PHP:</strong> Placing 5 pigeons into 4 holes guarantees that at least one hole must contain at least two pigeons. So, one small triangle contains at least 2 points.<br/>4. <strong>Conclusion:</strong> The maximum distance between any two points within a 1 cm-side equilateral triangle is 1 cm. Therefore, the two points in the same small triangle are at most 1 cm apart.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Sangkar:</strong> Bagi segitiga besar menjadi 4 segitiga sama sisi yang lebih kecil dengan menghubungkan titik tengah sisinya. Setiap segitiga kecil ini bersisi 1 cm dan menjadi 4 sangkar kita ($k=4$).<br/>2. <strong>Merpati:</strong> 5 titik yang ditempatkan adalah merpati ($N=5$).<br/>3. <strong>Terapkan PHP:</strong> Menempatkan 5 merpati ke 4 sangkar menjamin satu sangkar berisi minimal dua merpati. Jadi, satu segitiga kecil berisi minimal 2 titik.<br/>4. <strong>Kesimpulan:</strong> Jarak terjauh antara dua titik dalam segitiga sama sisi 1 cm adalah 1 cm. Oleh karena itu, dua titik dalam segitiga kecil yang sama berjarak paling jauh 1 cm.</p>`
+            },
+            { 
+                topic: 'Part 1: Pigeonhole Principle', 
+                question_en: 'From any set of 7 distinct integers, show that there must be a pair whose sum or difference is divisible by 10.', 
+                question_id: 'Dari sembarang himpunan 7 bilangan bulat berbeda, tunjukkan bahwa pasti ada sepasang bilangan yang jumlah atau selisihnya habis dibagi 10.', 
+                answer: 'Proof by argument', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem uses PHP with modular arithmetic. The "pigeonholes" are created based on the remainders when the numbers are divided by a certain value.<br/><br/><strong>Konsep:</strong> Soal ini menggunakan PHP dengan aritmetika modular. "Sangkar merpati" dibuat berdasarkan sisa bagi dari bilangan-bilangan tersebut terhadap suatu nilai.</p></div><p><strong>Solution:</strong><br/>We create pigeonholes based on the remainders modulo 10:<br/>- Hole 1: {0}<br/>- Hole 2: {1, 9}<br/>- Hole 3: {2, 8}<br/>- Hole 4: {3, 7}<br/>- Hole 5: {4, 6}<br/>- Hole 6: {5}<br/>We have 6 pigeonholes ($k=6$) and 7 integers (pigeons, $N=7$). By PHP, at least one hole must contain two numbers.<br/>- If two numbers are in {0} or {5}, they have the same remainder. Their difference is divisible by 10.<br/>- If two numbers are in a pair-hole (e.g. {3, 7}), one has remainder 3, the other 7. Their sum is divisible by 10.</p><p><strong>Langkah Penyelesaian:</strong><br/>Kita buat sangkar merpati berdasarkan sisa bagi 10:<br/>- Sangkar 1: {0}<br/>- Sangkar 2: {1, 9}<br/>- Sangkar 3: {2, 8}<br/>- Sangkar 4: {3, 7}<br/>- Sangkar 5: {4, 6}<br/>- Sangkar 6: {5}<br/>Ada 6 sangkar ($k=6$) untuk 7 bilangan (merpati, $N=7$). Menurut PHP, satu sangkar pasti berisi dua bilangan.<br/>- Jika dua bilangan ada di {0} atau {5}, sisa baginya sama. Selisihnya habis dibagi 10.<br/>- Jika dua bilangan ada di sangkar pasangan (misal {3, 7}), satu bersisa 3 dan lainnya 7. Jumlahnya habis dibagi 10.</p>`
+            },
+            { 
+                topic: 'Part 1: Pigeonhole Principle', 
+                question_en: 'In a math competition with 25 problems, each correct answer gets 4 points, a wrong answer gets -1 point, and an unanswered question gets 0 points. Find the minimum number of students required to ensure that at least 3 students have the same final score.', 
+                question_id: 'Dalam sebuah kompetisi matematika dengan 25 soal, setiap jawaban benar mendapat 4 poin, jawaban salah mendapat -1 poin, dan soal yang tidak dijawab mendapat 0 poin. Tentukan jumlah minimum siswa yang diperlukan untuk memastikan bahwa setidaknya 3 siswa memiliki skor akhir yang sama.', 
+                answer: 253, 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This uses the Extended Pigeonhole Principle. To guarantee that $m$ pigeons land in the same hole, you need $N = k(m-1) + 1$ pigeons, where $k$ is the number of holes.<br/><br/><strong>Konsep:</strong> Soal ini menggunakan Prinsip Sangkar Merpati yang Diperluas. Untuk menjamin ada $m$ merpati dalam satu sangkar yang sama, dibutuhkan $N = k(m-1) + 1$ merpati, di mana $k$ adalah jumlah sangkar.</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeonholes (Possible Scores):</strong><br/>   - Max score: 25 correct = $4 \\times 25 = 100$.<br/>   - Min score: 25 wrong = $-1 \\times 25 = -25$.<br/>   Total distinct scores = $100 - (-25) + 1 = 126$. So, $k=126$.<br/>2. <strong>Pigeons and Guarantee:</strong><br/>   - Pigeons ($N$): students.<br/>   - Guarantee ($m$): 3 students with the same score.<br/>3. <strong>Apply Formula:</strong> $N = k(m-1) + 1 = 126(3-1) + 1 = 126(2) + 1 = 253$.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Sangkar (Skor yang Mungkin):</strong><br/>   - Skor maks: 25 benar = $4 \\times 25 = 100$.<br/>   - Skor min: 25 salah = $-1 \\times 25 = -25$.<br/>   Total skor berbeda = $100 - (-25) + 1 = 126$. Jadi, $k=126$.<br/>2. <strong>Merpati dan Jaminan:</strong><br/>   - Merpati ($N$): siswa.<br/>   - Jaminan ($m$): 3 siswa dengan skor sama.<br/>3. <strong>Terapkan Rumus:</strong> $N = k(m-1) + 1 = 126(3-1) + 1 = 126(2) + 1 = 253$.</p>` 
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: '10 distinct integers are chosen from the set {1, 2, ..., 18}. Show that there must be a pair of these integers that sum to 19.',
+                question_id: '10 bilangan bulat berbeda dipilih dari himpunan {1, 2, ..., 18}. Tunjukkan bahwa pasti ada sepasang bilangan yang jumlahnya 19.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a classic PHP problem where the pigeonholes are created by pairing up numbers that satisfy a certain condition (in this case, summing to 19).<br/><br/><strong>Konsep:</strong> Ini adalah soal PHP klasik di mana sangkar merpati dibuat dengan memasangkan angka-angka yang memenuhi kondisi tertentu (dalam hal ini, berjumlah 19).</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeonholes:</strong> Pair up the numbers from {1,...,18} that sum to 19:<br/>   {1,18}, {2,17}, {3,16}, {4,15}, {5,14}, {6,13}, {7,12}, {8,11}, {9,10}.<br/>   There are 9 pairs, so we have 9 pigeonholes ($k=9$).<br/>2. <strong>Pigeons:</strong> We choose 10 integers ($N=10$).<br/>3. <strong>Apply PHP:</strong> Placing 10 pigeons into 9 holes means at least one hole must contain two pigeons. This means we must have picked both numbers from one of the pairs. These two numbers sum to 19.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Sangkar Merpati:</strong> Pasangkan bilangan dari {1,...,18} yang jumlahnya 19:<br/>   {1,18}, {2,17}, {3,16}, {4,15}, {5,14}, {6,13}, {7,12}, {8,11}, {9,10}.<br/>   Ada 9 pasang, ini adalah 9 sangkar kita ($k=9$).<br/>2. <strong>Merpati:</strong> Kita memilih 10 bilangan ($N=10$).<br/>3. <strong>Terapkan PHP:</strong> Menempatkan 10 merpati ke 9 sangkar berarti satu sangkar harus berisi dua merpati. Ini artinya kita pasti memilih kedua bilangan dari salah satu pasangan. Kedua bilangan ini berjumlah 19.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'A drawer contains 8 pairs of black socks and 6 pairs of white socks (all socks are individual). If you pick socks one by one in the dark, what is the minimum number of socks you must pick to be sure you have a matching pair?',
+                question_id: 'Sebuah laci berisi 8 pasang kaos kaki hitam dan 6 pasang kaos kaki putih (semua kaos kaki terpisah). Jika kamu mengambil kaos kaki satu per satu dalam gelap, berapa jumlah minimum kaos kaki yang harus kamu ambil untuk memastikan kamu mendapatkan satu pasang yang serasi?',
+                answer: 3,
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a classic worst-case scenario problem. The pigeonholes are the categories (colors) of the items.<br/><br/><strong>Konsep:</strong> Ini adalah soal klasik skenario terburuk. Sangkar merpatinya adalah kategori (warna) dari benda yang diambil.</p></div><p><strong>Solution:</strong><br/>The pigeonholes are the 2 colors: black and white.<br/>Worst case scenario:<br/>- 1st pick: 1 black sock.<br/>- 2nd pick: 1 white sock.<br/>You now have 2 socks of different colors. The 3rd pick must be either black or white, thus completing a pair.<br/>Minimum picks required: 3.</p><p><strong>Langkah Penyelesaian:</strong><br/>Sangkar merpatinya adalah 2 warna: hitam dan putih.<br/>Skenario terburuk:<br/>- Ambilan pertama: 1 kaos kaki hitam.<br/>- Ambilan kedua: 1 kaos kaki putih.<br/>Sekarang kamu punya 2 kaos kaki beda warna. Ambilan ke-3 pasti hitam atau putih, yang akan melengkapi pasangan.<br/>Jumlah minimum ambilan: 3.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'Show that if you pick any 5 numbers from the set {1, 2, 3, 4, 5, 6, 7, 8}, there will be at least one pair of numbers whose sum is 9.',
+                question_id: 'Tunjukkan bahwa jika kamu memilih 5 angka dari himpunan {1, 2, 3, 4, 5, 6, 7, 8}, akan ada setidaknya satu pasang angka yang jumlahnya 9.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> Similar to a previous problem, we create pigeonholes by pairing numbers that satisfy the given condition (summing to 9).<br/><br/><strong>Konsep:</strong> Mirip dengan soal sebelumnya, kita membuat sangkar merpati dengan memasangkan angka-angka yang memenuhi kondisi yang diberikan (berjumlah 9).</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeonholes:</strong> Pair up numbers from the set that sum to 9:<br/>   {1, 8}, {2, 7}, {3, 6}, {4, 5}.<br/>   There are 4 pairs, so $k=4$.<br/>2. <strong>Pigeons:</strong> We pick 5 numbers, so $N=5$.<br/>3. <strong>Apply PHP:</strong> Placing 5 pigeons into 4 holes guarantees at least one hole has two pigeons. This means we have selected both numbers from one of the pairs, and their sum is 9.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Sangkar Merpati:</strong> Pasangkan angka dari himpunan yang jumlahnya 9:<br/>   {1, 8}, {2, 7}, {3, 6}, {4, 5}.<br/>   Ada 4 pasang, jadi $k=4$.<br/>2. <strong>Merpati:</strong> Kita memilih 5 angka, jadi $N=5$.<br/>3. <strong>Terapkan PHP:</strong> Menempatkan 5 merpati ke 4 sangkar menjamin setidaknya satu sangkar berisi dua merpati. Artinya kita telah memilih kedua angka dari salah satu pasangan, dan jumlahnya adalah 9.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'In a group of 6 people, prove that there are either 3 people who are mutual friends or 3 people who are mutual strangers. (Assume that for any two people, they are either friends or strangers).',
+                question_id: 'Dalam sebuah kelompok berisi 6 orang, buktikan bahwa pasti ada 3 orang yang saling berteman satu sama lain atau 3 orang yang saling tidak mengenal satu sama lain. (Asumsikan bahwa untuk setiap dua orang, mereka adalah teman atau bukan teman).',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a classic problem from Ramsey Theory, often used as an example of the Pigeonhole Principle in graph theory. The core idea is to focus on one person and categorize their relationships with others.<br/><br/><strong>Konsep:</strong> Ini adalah masalah klasik dari Teori Ramsey, yang sering digunakan sebagai contoh Prinsip Sangkar Merpati dalam teori graf. Ide utamanya adalah fokus pada satu orang dan mengkategorikan hubungannya dengan orang lain.</p></div><p><strong>Solution:</strong><br/>Pick one person, Alex. Alex has a relationship (friend or stranger) with the other 5 people.<br/>- <strong>Pigeons:</strong> The 5 other people.<br/>- <strong>Pigeonholes:</strong> The 2 types of relationships (friend, stranger).<br/>By PHP, Alex must have at least $\\lceil 5/2 \\rceil = 3$ friends or 3 strangers.<br/>- <strong>Case A (3 friends):</strong> Let B,C,D be Alex's friends. If any two of them are friends (e.g., B and C), then {Alex, B, C} are 3 mutual friends. If none of them are friends, then {B, C, D} are 3 mutual strangers.<br/>- <strong>Case B (3 strangers):</strong> Let E,F,G be strangers to Alex. If any two of them are strangers (e.g., E and F), then {Alex, E, F} are 3 mutual strangers. If they are all friends, then {E, F, G} are 3 mutual friends.</p><p><strong>Langkah Penyelesaian:</strong><br/>Pilih satu orang, Alex. Alex punya hubungan (teman atau bukan) dengan 5 orang lain.<br/>- <strong>Merpati:</strong> 5 orang lain.<br/>- <strong>Sangkar:</strong> 2 jenis hubungan (teman, bukan teman).<br/>Menurut PHP, Alex pasti punya setidaknya $\\lceil 5/2 \\rceil = 3$ teman atau 3 orang yang tidak dikenal.<br/>- <strong>Kasus A (3 teman):</strong> Misal B,C,D adalah teman Alex. Jika ada dua dari mereka berteman (misal B dan C), maka {Alex, B, C} adalah 3 teman sejati. Jika tidak ada, maka {B, C, D} adalah 3 orang yang saling asing.<br/>- <strong>Kasus B (3 orang asing):</strong> Misal E,F,G asing bagi Alex. Jika ada dua dari mereka saling asing (misal E dan F), maka {Alex, E, F} adalah 3 orang asing. Jika mereka semua berteman, maka {E, F, G} adalah 3 teman sejati.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: '51 distinct numbers are chosen from the set {1, 2, ..., 100}. Prove that there is at least one number that divides another number in the chosen set.',
+                question_id: '51 bilangan berbeda dipilih dari himpunan {1, 2, ..., 100}. Buktikan bahwa setidaknya ada satu bilangan yang habis membagi bilangan lain dalam himpunan yang dipilih tersebut.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This advanced PHP problem relies on the unique prime factorization of integers. Specifically, any integer $n$ can be written as $n = 2^k \\times m$, where $m$ is an odd number.<br/><br/><strong>Konsep:</strong> Soal PHP tingkat lanjut ini bergantung pada faktorisasi prima unik dari bilangan bulat. Secara spesifik, setiap bilangan bulat $n$ dapat ditulis dalam bentuk $n = 2^k \\times m$, di mana $m$ adalah bilangan ganjil.</p></div><p><strong>Solution:</strong><br/>Any integer can be written as $n = 2^k \\times m$ where $m$ is odd.<br/>- <strong>Pigeonholes:</strong> The odd part, $m$. For numbers 1-100, the possible odd parts are {1, 3, ..., 99}. There are 50 such odd numbers. So, $k=50$.<br/>- <strong>Pigeons:</strong> We choose 51 numbers ($N=51$).<br/>By PHP, at least two of the chosen numbers must share the same odd part, $m$. Let these be $a = 2^{k_1}m$ and $b = 2^{k_2}m$ with $k_1 < k_2$. Then $a$ divides $b$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Setiap bilangan bisa ditulis sebagai $n = 2^k \\times m$ di mana $m$ ganjil.<br/>- <strong>Sangkar:</strong> Bagian ganjil, $m$. Untuk angka 1-100, bagian ganjil yang mungkin adalah {1, 3, ..., 99}. Ada 50 bilangan ganjil. Jadi, $k=50$.<br/>- <strong>Merpati:</strong> Kita memilih 51 bilangan ($N=51$).<br/>Menurut PHP, setidaknya dua bilangan yang dipilih pasti punya bagian ganjil $m$ yang sama. Misal $a = 2^{k_1}m$ dan $b = 2^{k_2}m$ dengan $k_1 < k_2$. Maka, $a$ habis membagi $b$.</p>`
+            },
+             {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'Seven distinct points are chosen on a circle. How many triangles can be formed with these points as vertices?',
+                question_id: 'Tujuh titik berbeda dipilih pada sebuah lingkaran. Berapa banyak segitiga yang bisa dibentuk dengan titik-titik tersebut sebagai sudutnya?',
+                answer: 35,
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a basic combination problem. A triangle is defined by 3 non-collinear points. Since all points are on a circle, no three points can be collinear.<br/><br/><strong>Konsep:</strong> Ini adalah soal kombinasi dasar. Sebuah segitiga ditentukan oleh 3 titik yang tidak segaris. Karena semua titik berada pada lingkaran, tidak mungkin ada tiga titik yang segaris.</p></div><p><strong>Solution:</strong><br/>We need to choose 3 points (vertices) from the 7 available points. The order of choosing the points does not matter, so we use combinations.<br/>Number of triangles = $C(7, 3) = \\frac{7!}{3!(7-3)!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Kita perlu memilih 3 titik (sudut) dari 7 titik yang tersedia. Urutan pemilihan titik tidak penting, jadi kita menggunakan kombinasi.<br/>Jumlah segitiga = $C(7, 3) = \\frac{7!}{3!(7-3)!} = \\frac{7 \\times 6 \\times 5}{3 \\times 2 \\times 1} = 35$.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'Given any 12 distinct integers, prove that there exist two of them whose difference is a multiple of 11.',
+                question_id: 'Diberikan 12 bilangan bulat berbeda, buktikan bahwa ada dua di antaranya yang selisihnya merupakan kelipatan 11.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a direct application of PHP using modular arithmetic. The pigeonholes are the possible remainders when an integer is divided by 11.<br/><br/><strong>Konsep:</strong> Ini adalah aplikasi langsung dari PHP menggunakan aritmetika modular. Sangkar merpatinya adalah sisa bagi yang mungkin ketika sebuah bilangan bulat dibagi 11.</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeonholes:</strong> When an integer is divided by 11, the possible remainders are {0, 1, 2, ..., 10}. There are 11 possible remainders. These are our 11 pigeonholes ($k=11$).<br/>2. <strong>Pigeons:</strong> We are given 12 distinct integers. These are our pigeons ($N=12$).<br/>3. <strong>Apply PHP:</strong> When we place 12 pigeons into 11 holes, at least one hole must contain at least two pigeons. This means at least two of the integers must have the same remainder when divided by 11.<br/>4. <strong>Conclusion:</strong> Let the two integers be $a$ and $b$. If they have the same remainder, we can write $a = 11q_1 + r$ and $b = 11q_2 + r$. Their difference is $a-b = (11q_1 + r) - (11q_2 + r) = 11(q_1 - q_2)$. Since $q_1 - q_2$ is an integer, the difference $a-b$ is a multiple of 11.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Sangkar Merpati:</strong> Ketika sebuah bilangan bulat dibagi 11, sisa bagi yang mungkin adalah {0, 1, 2, ..., 10}. Ada 11 kemungkinan sisa. Ini adalah 11 sangkar kita ($k=11$).<br/>2. <strong>Merpati:</strong> Kita diberikan 12 bilangan bulat berbeda. Ini adalah merpati kita ($N=12$).<br/>3. <strong>Terapkan PHP:</strong> Ketika kita menempatkan 12 merpati ke dalam 11 sangkar, setidaknya satu sangkar harus berisi minimal dua merpati. Ini berarti setidaknya dua dari bilangan tersebut memiliki sisa bagi yang sama ketika dibagi 11.<br/>4. <strong>Kesimpulan:</strong> Misalkan kedua bilangan itu adalah $a$ dan $b$. Jika mereka memiliki sisa yang sama, kita dapat menulis $a = 11q_1 + r$ dan $b = 11q_2 + r$. Selisihnya adalah $a-b = 11(q_1 - q_2)$, yang jelas merupakan kelipatan 11.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: 'Five points are chosen at the vertices of a regular 8-gon (octagon). Prove that there must be an isosceles triangle among the triangles formed by these points.',
+                question_id: 'Lima titik dipilih pada simpul-simpul dari sebuah segi-8 beraturan (oktagon). Buktikan bahwa pasti ada sebuah segitiga sama kaki di antara segitiga-segitiga yang terbentuk oleh titik-titik tersebut.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> A geometric application of PHP where the pigeons are the chosen vertices and the pigeonholes are sets of vertices that can form a certain type of triangle with a central point.<br/><br/><strong>Konsep:</strong> Aplikasi geometris PHP di mana merpatinya adalah titik-titik yang dipilih dan sangkarnya adalah himpunan titik-titik yang dapat membentuk jenis segitiga tertentu dengan titik pusat.</p></div><p><strong>Solution:</strong><br/>Let the vertices of the octagon be $V_1, V_2, ..., V_8$ and the center of the octagon be $O$.<br/>1. <strong>Pigeonholes:</strong> Consider the distances from the center $O$ to any vertex. All these distances are equal (it's a regular octagon). We can pair up vertices that are diametrically opposite: $\\{V_1, V_5\\}, \\{V_2, V_6\\}, \\{V_3, V_7\\}, \\{V_4, V_8\\}$. There are 4 such pairs. These are our 4 pigeonholes ($k=4$).<br/>2. <strong>Pigeons:</strong> We choose 5 vertices from the 8 available vertices ($N=5$).<br/>3. <strong>Apply PHP:</strong> When we choose 5 vertices (pigeons) and place them into the 4 pairs (pigeonholes), at least one pigeonhole must be filled. This means we must have selected two vertices that are diametrically opposite. Let these be $V_i$ and $V_j$.<br/>4. <strong>Conclusion:</strong> Let the two opposite vertices be $A$ and $B$. Let $C$ be any of the other three chosen vertices. Consider the triangle $\\triangle ABC$. Since $A$ and $B$ are opposite, the line segment $AB$ is a diameter of the circumcircle of the octagon. The center of the circumcircle, $O$, lies on $AB$. The distance $OA = OB$ (both are radii). The distance $OC$ is also a radius. In $\\triangle OAC$, $OA=OC$, so it is isosceles. In $\\triangle OBC$, $OB=OC$, so it is also isosceles. The triangle $\\triangle ABC$ will have two equal sides originating from $C$ to the endpoints of the diameter, making it an isosceles triangle.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misalkan titik sudut oktagon adalah $V_1, ..., V_8$ dan pusatnya adalah $O$.<br/>1. <strong>Sangkar Merpati:</strong> Kita pasangkan titik-titik sudut yang berseberangan secara diametral: $\\{V_1, V_5\\}, \\{V_2, V_6\\}, \\{V_3, V_7\\}, \\{V_4, V_8\\}$. Ada 4 pasang. Ini adalah 4 sangkar kita ($k=4$).<br/>2. <strong>Merpati:</strong> Kita memilih 5 titik sudut ($N=5$).<br/>3. <strong>Terapkan PHP:</strong> Memilih 5 titik (merpati) dari 4 pasang (sangkar) menjamin bahwa kita pasti memilih sepasang titik yang berseberangan.<br/>4. <strong>Kesimpulan:</strong> Misalkan titik-titik yang berseberangan itu adalah $A$ dan $B$. Misalkan $C$ adalah salah satu dari tiga titik lain yang dipilih. Bentuk segitiga $\\triangle ABC$. Karena $A$ dan $B$ berseberangan, garis $AB$ adalah diameter lingkaran luar oktagon. Jarak dari pusat $O$ ke $A$, $B$, dan $C$ semuanya sama (jari-jari). Dengan demikian, $\\triangle OAC$ dan $\\triangle OBC$ adalah segitiga sama kaki. Segitiga $\\triangle ABC$ yang terbentuk dengan $C$ sebagai puncak dan $AB$ sebagai alas pasti memiliki sisi $AC=BC$, sehingga ia adalah segitiga sama kaki.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: '<strong>(Non-Routine)</strong> At a party, there are $n \\ge 2$ people. Prove that there must be at least two people who have the same number of friends at the party. (Friendship is mutual).',
+                question_id: '<strong>(Non-Rutin)</strong> Di sebuah pesta, terdapat $n \\ge 2$ orang. Buktikan bahwa pasti ada setidaknya dua orang yang memiliki jumlah teman yang sama di pesta itu. (Pertemanan bersifat timbal balik).',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a classic PHP problem where the challenge lies in correctly identifying the number of pigeonholes. It requires a logical deduction to show that two potential outcomes are mutually exclusive.<br/><br/><strong>Konsep:</strong> Ini adalah soal PHP klasik di mana tantangannya terletak pada identifikasi jumlah sangkar yang tepat. Diperlukan deduksi logis untuk menunjukkan bahwa dua kemungkinan hasil tidak dapat terjadi bersamaan.</p></div><p><strong>Solution:</strong><br/>1. <strong>Pigeons:</strong> The $n$ people at the party.<br/>2. <strong>Pigeonholes:</strong> The possible number of friends a person can have. A person can have from 0 friends up to a maximum of $n-1$ friends.<br/>3. <strong>The Crucial Insight:</strong> It seems there are $n$ possible values for the number of friends {0, 1, ..., n-1}. However, the values 0 and $n-1$ cannot coexist. If one person has $n-1$ friends, they are friends with everyone, so it's impossible for another person to have 0 friends. <br/>   Therefore, the actual set of possible friend counts must be either {0, 1, ..., n-2} or {1, 2, ..., n-1}. In both scenarios, there are only $n-1$ possible values.<br/>4. <strong>Apply PHP:</strong> We have $n$ people (pigeons) and only $n-1$ possible values for the number of friends they can have (pigeonholes). By PHP, at least two people must be assigned to the same pigeonhole, meaning they must have the same number of friends.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Merpati:</strong> Ada $n$ orang di pesta.<br/>2. <strong>Sangkar Merpati:</strong> Jumlah teman yang mungkin dimiliki seseorang. Rentangnya adalah dari 0 (tidak punya teman) hingga $n-1$ (berteman dengan semua orang).<br/>3. <strong>Wawasan Kunci:</strong> Terlihat seolah ada $n$ kemungkinan jumlah teman {0, 1, ..., n-1}. Namun, tidak mungkin ada seseorang yang punya 0 teman dan seseorang yang punya $n-1$ teman secara bersamaan. Jika ada orang yang punya $n-1$ teman, artinya ia berteman dengan semua orang, sehingga tidak mungkin ada orang yang tidak punya teman sama sekali.<br/>   Oleh karena itu, himpunan jumlah teman yang mungkin terjadi hanyalah salah satu dari dua kemungkinan: {0, 1, ..., n-2} atau {1, 2, ..., n-1}. Dalam kedua skenario, hanya ada $n-1$ kemungkinan nilai.<br/>4. <strong>Terapkan PHP:</strong> Karena ada $n$ orang (merpati) dan hanya $n-1$ kemungkinan jumlah teman (sangkar), menurut PHP, setidaknya dua orang harus memiliki jumlah teman yang sama.</p>`
+            },
+            {
+                topic: 'Part 1: Pigeonhole Principle',
+                question_en: '<strong>(Non-Routine)</strong> Any sequence of 10 distinct integers must have an increasing subsequence of length 4 or a decreasing subsequence of length 4. Prove this.',
+                question_id: '<strong>(Non-Rutin)</strong> Buktikan bahwa setiap barisan 10 bilangan bulat berbeda pasti memiliki sub-barisan menaik dengan panjang 4 atau sub-barisan menurun dengan panjang 4.',
+                answer: 'Proof by argument',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a famous result known as the Erdős–Szekeres theorem. The proof uses a clever application of PHP by associating a pair of values with each element in the sequence.<br/><br/><strong>Konsep:</strong> Ini adalah hasil terkenal yang dikenal sebagai teorema Erdős–Szekeres. Pembuktiannya menggunakan aplikasi PHP yang cerdas dengan mengasosiasikan sepasang nilai dengan setiap elemen dalam barisan.</p></div><p><strong>Solution:</strong><br/>Let the sequence be $a_1, a_2, ..., a_{10}$. For each element $a_i$ in the sequence, we associate a pair of integers $(x_i, y_i)$, where:<br/>- $x_i$ = the length of the longest increasing subsequence ending at $a_i$.<br/>- $y_i$ = the length of the longest decreasing subsequence ending at $a_i$.<br/><br/>Now, assume for the sake of contradiction that there is NO increasing or decreasing subsequence of length 4. This would mean that for all $i$, both $x_i$ and $y_i$ must be less than 4 (i.e., they can only be 1, 2, or 3).<br/><br/>1. <strong>Pigeonholes:</strong> The possible pairs $(x_i, y_i)$. Since $x_i, y_i \\in \\{1, 2, 3\\}$, there are $3 \\times 3 = 9$ possible distinct pairs. These are our 9 pigeonholes.<br/>2. <strong>Pigeons:</strong> The 10 numbers in our sequence, $a_1, ..., a_{10}$. These are our 10 pigeons.<br/><br/>By PHP, since we have 10 pigeons and 9 holes, at least two pigeons must share the same hole. This means there must be two numbers in the sequence, say $a_i$ and $a_j$ with $i < j$, that have the same associated pair: $(x_i, y_i) = (x_j, y_j)$.<br/><br/>But this is a contradiction. Consider $a_i$ and $a_j$ where $i < j$:<br/>- If $a_i < a_j$, we can append $a_j$ to the longest increasing subsequence ending at $a_i$. This means the longest increasing subsequence ending at $a_j$ must be at least one longer than the one ending at $a_i$. So, $x_j \\ge x_i + 1$.<br/>- If $a_i > a_j$, we can append $a_j$ to the longest decreasing subsequence ending at $a_i$. This means the longest decreasing subsequence ending at $a_j$ must be at least one longer than the one ending at $a_i$. So, $y_j \\ge y_i + 1$.<br/>In either case, it's impossible for $(x_i, y_i)$ to equal $(x_j, y_j)$. Since our assumption leads to a contradiction, the assumption must be false. Therefore, there must be an increasing subsequence of length 4 or a decreasing subsequence of length 4.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misalkan barisannya adalah $a_1, ..., a_{10}$. Untuk setiap elemen $a_i$, kita kaitkan dengan pasangan $(x_i, y_i)$, di mana:<br/>- $x_i$ = panjang sub-barisan menaik terpanjang yang berakhir di $a_i$.<br/>- $y_i$ = panjang sub-barisan menurun terpanjang yang berakhir di $a_i$.<br/><br/>Sekarang, asumsikan (untuk mencari kontradiksi) bahwa TIDAK ADA sub-barisan menaik atau menurun dengan panjang 4. Ini berarti nilai $x_i$ dan $y_i$ hanya bisa 1, 2, atau 3.<br/><br/>1. <strong>Sangkar Merpati:</strong> Pasangan $(x_i, y_i)$ yang mungkin. Karena $x_i, y_i \\in \\{1, 2, 3\\}$, hanya ada $3 \\times 3 = 9$ kemungkinan pasangan berbeda. Ini adalah 9 sangkar kita.<br/>2. <strong>Merpati:</strong> Ada 10 bilangan dalam barisan kita, $a_1, ..., a_{10}$. Ini adalah 10 merpati kita.<br/><br/>Menurut PHP, karena ada 10 merpati dan 9 sangkar, setidaknya dua merpati harus berbagi sangkar yang sama. Ini berarti ada dua bilangan, misal $a_i$ dan $a_j$ dengan $i < j$, yang memiliki pasangan yang sama: $(x_i, y_i) = (x_j, y_j)$.<br/><br/>Ini adalah sebuah kontradiksi. Perhatikan $a_i$ dan $a_j$ dengan $i < j$:<br/>- Jika $a_i < a_j$, maka kita bisa menambahkan $a_j$ ke akhir sub-barisan menaik terpanjang yang berakhir di $a_i$. Ini berarti panjang sub-barisan menaik yang berakhir di $a_j$ harusnya lebih panjang. Jadi, $x_j \\ge x_i + 1$.<br/>- Jika $a_i > a_j$, maka kita bisa menambahkan $a_j$ ke akhir sub-barisan menurun terpanjang yang berakhir di $a_i$. Ini berarti $y_j \\ge y_i + 1$.<br/>Dalam kedua kasus, tidak mungkin $(x_i, y_i)$ sama dengan $(x_j, y_j)$. Karena asumsi kita membawa ke kontradiksi, maka asumsi tersebut salah. Jadi, terbukti pasti ada sub-barisan menaik dengan panjang 4 atau menurun dengan panjang 4.</p>`
+            },
+            // --- Part 2: Probability (Soal 16-30) ---
+            { 
+                topic: 'Part 2: Probability', 
+                question_en: 'Two fair six-sided dice are rolled. What is the probability that the sum of the numbers shown is a prime number?', 
+                question_id: 'Dua buah dadu enam-sisi yang adil dilempar. Berapa peluang bahwa jumlah angka yang muncul adalah bilangan prima?', 
+                answer: '5/12', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> Basic probability is calculated as $P(E) = \\frac{\\text{Number of Favorable Outcomes}}{\\text{Total Number of Possible Outcomes}}$. First, determine the entire sample space.<br/><br/><strong>Konsep:</strong> Peluang dasar dihitung dengan rumus $P(E) = \\frac{\\text{Jumlah Hasil yang Diharapkan}}{\\text{Jumlah Total Hasil yang Mungkin}}$. Pertama, tentukan seluruh ruang sampelnya.</p></div><p><strong>Solution:</strong><br/>1. <strong>Total Outcomes:</strong> $6 \\times 6 = 36$.<br/>2. <strong>Favorable Outcomes (Prime Sums):</strong> {2, 3, 5, 7, 11}.<br/>   - Sum=2: (1,1) -> 1 way.<br/>   - Sum=3: (1,2),(2,1) -> 2 ways.<br/>   - Sum=5: (1,4),(4,1),(2,3),(3,2) -> 4 ways.<br/>   - Sum=7: (1,6),(6,1),(2,5),(5,2),(3,4),(4,3) -> 6 ways.<br/>   - Sum=11: (5,6),(6,5) -> 2 ways.<br/>   Total favorable outcomes = $1+2+4+6+2=15$.<br/>3. <strong>Probability:</strong> $\\frac{15}{36} = \\frac{5}{12}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Total Hasil:</strong> $6 \\times 6 = 36$.<br/>2. <strong>Hasil Diharapkan (Jumlah Prima):</strong> {2, 3, 5, 7, 11}.<br/>   - Jumlah=2: (1,1) -> 1 cara.<br/>   - Jumlah=3: (1,2),(2,1) -> 2 cara.<br/>   - Jumlah=5: (1,4),(4,1),(2,3),(3,2) -> 4 cara.<br/>   - Jumlah=7: (1,6),(6,1),(2,5),(5,2),(3,4),(4,3) -> 6 cara.<br/>   - Jumlah=11: (5,6),(6,5) -> 2 cara.<br/>   Total hasil diharapkan = $1+2+4+6+2=15$.<br/>3. <strong>Peluang:</strong> $\\frac{15}{36} = \\frac{5}{12}$.</p>` 
+            },
+            { 
+                topic: 'Part 2: Probability', 
+                question_en: 'A bag contains 5 red marbles and 7 blue marbles. If 3 marbles are drawn at random without replacement, what is the probability that exactly two of them are red?', 
+                question_id: 'Sebuah kantong berisi 5 kelereng merah dan 7 kelereng biru. Jika 3 kelereng diambil secara acak tanpa pengembalian, berapa peluang bahwa tepat dua di antaranya berwarna merah?', 
+                answer: '7/22', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem involves combinations, as the order in which the marbles are drawn does not matter. The probability is the ratio of favorable combinations to total possible combinations.<br/><br/><strong>Konsep:</strong> Soal ini melibatkan kombinasi, karena urutan pengambilan kelereng tidak penting. Peluang adalah rasio dari jumlah kombinasi yang diharapkan terhadap jumlah total kombinasi yang mungkin.</p></div><p><strong>Solution:</strong><br/>1. <strong>Total Combinations:</strong> Ways to choose 3 marbles from 12 is $C(12, 3) = 220$.<br/>2. <strong>Favorable Combinations:</strong> We want 2 red AND 1 blue.<br/>   - Ways to choose 2 red from 5: $C(5, 2) = 10$.<br/>   - Ways to choose 1 blue from 7: $C(7, 1) = 7$.<br/>   Total favorable ways = $10 \\times 7 = 70$.<br/>3. <strong>Probability:</strong> $\\frac{70}{220} = \\frac{7}{22}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>1. <strong>Total Kombinasi:</strong> Cara memilih 3 dari 12 kelereng adalah $C(12, 3) = 220$.<br/>2. <strong>Kombinasi Diharapkan:</strong> Kita ingin 2 merah DAN 1 biru.<br/>   - Cara memilih 2 merah dari 5: $C(5, 2) = 10$.<br/>   - Cara memilih 1 biru dari 7: $C(7, 1) = 7$.<br/>   Total cara yang diharapkan = $10 \\times 7 = 70$.<br/>3. <strong>Peluang:</strong> $\\frac{70}{220} = \\frac{7}{22}$.</p>` 
+            },
+            { 
+                topic: 'Part 2: Probability', 
+                question_en: 'From a group of 6 boys and 4 girls, a committee of 3 is to be formed. What is the probability that the committee has at least one girl?', 
+                question_id: 'Dari sebuah kelompok yang terdiri dari 6 anak laki-laki dan 4 anak perempuan, akan dibentuk sebuah panitia beranggotakan 3 orang. Berapa peluang panitia tersebut memiliki setidaknya satu anak perempuan?', 
+                answer: '5/6', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> For problems with "at least one", it is often much easier to calculate the probability of the complementary (opposite) event and subtract it from 1. The complement of "at least one girl" is "zero girls".<br/><br/><strong>Konsep:</strong> Untuk soal dengan kata kunci "setidaknya satu", seringkali lebih mudah untuk menghitung peluang dari kejadian komplementer (kebalikannya) dan menguranginya dari 1. Komplemen dari "setidaknya satu perempuan" adalah "nol perempuan".</p></div><p><strong>Solution:</strong><br/>$P(\\text{at least one girl}) = 1 - P(\\text{no girls})$.<br/>1. <strong>Total Committees:</strong> $C(10, 3) = 120$.<br/>2. <strong>Committees with No Girls (all boys):</strong> $C(6, 3) = 20$.<br/>3. <strong>Probability of No Girls:</strong> $P(\\text{no girls}) = \\frac{20}{120} = \\frac{1}{6}$.<br/>4. <strong>Probability of At Least One Girl:</strong> $1 - \\frac{1}{6} = \\frac{5}{6}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>$P(\\text{setidaknya satu perempuan}) = 1 - P(\\text{tidak ada perempuan})$.<br/>1. <strong>Total Panitia:</strong> $C(10, 3) = 120$.<br/>2. <strong>Panitia Tanpa Perempuan (semua laki-laki):</strong> $C(6, 3) = 20$.<br/>3. <strong>Peluang Tidak Ada Perempuan:</strong> $P(\\text{tidak ada perempuan}) = \\frac{20}{120} = \\frac{1}{6}$.<br/>4. <strong>Peluang Setidaknya Satu Perempuan:</strong> $1 - \\frac{1}{6} = \\frac{5}{6}$.</p>`
+            },
+            { 
+                topic: 'Part 2: Probability', 
+                question_en: 'A circular dartboard has a radius of 15 cm. It has a central bullseye with a radius of 3 cm. If a dart hits the board at a random point, what is the probability that it hits the bullseye?', 
+                question_id: 'Sebuah papan dart berbentuk lingkaran memiliki jari-jari 15 cm. Papan tersebut memiliki area sasaran tengah (bullseye) dengan jari-jari 3 cm. Jika sebuah anak panah mengenai papan secara acak, berapa peluang anak panah tersebut mengenai bullseye?', 
+                answer: '1/25', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> Geometric probability deals with outcomes that are points in a geometric space. The probability of an event is the ratio of the measure (length, area, volume) of the favorable region to the measure of the total sample space region.<br/><br/><strong>Konsep:</strong> Peluang geometris berkaitan dengan hasil yang berupa titik dalam suatu ruang geometris. Peluang suatu kejadian adalah rasio dari ukuran (panjang, luas, volume) dari wilayah yang diharapkan terhadap ukuran dari total wilayah ruang sampel.</p></div><p><strong>Solution:</strong><br/>The probability is the ratio of the areas.<br/>- <strong>Total Area:</strong> $A_{\\text{total}} = \\pi (15)^2 = 225\\pi$.<br/>- <strong>Favorable Area (Bullseye):</strong> $A_{\\text{favorable}} = \\pi (3)^2 = 9\\pi$.<br/>- <strong>Probability:</strong> $P(\\text{bullseye}) = \\frac{9\\pi}{225\\pi} = \\frac{9}{225} = \\frac{1}{25}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Peluang adalah rasio dari kedua luas.<br/>- <strong>Luas Total:</strong> $A_{\\text{total}} = \\pi (15)^2 = 225\\pi$.<br/>- <strong>Luas Diharapkan (Bullseye):</strong> $A_{\\text{diharapkan}} = \\pi (3)^2 = 9\\pi$.<br/>- <strong>Peluang:</strong> $P(\\text{bullseye}) = \\frac{9\\pi}{225\\pi} = \\frac{9}{225} = \\frac{1}{25}$.</p>`
+            },
+            { 
+                topic: 'Part 2: Probability', 
+                question_en: 'Bag A contains 3 red balls and 2 blue balls. Bag B contains 2 red balls and 5 blue balls. A fair coin is tossed. If it\'s heads, a ball is drawn from Bag A. If it\'s tails, a ball is drawn from Bag B. What is the probability that a red ball is drawn?', 
+                question_id: 'Kantong A berisi 3 bola merah dan 2 bola biru. Kantong B berisi 2 bola merah dan 5 bola biru. Sebuah koin adil dilempar. Jika muncul gambar (heads), sebuah bola diambil dari Kantong A. Jika muncul angka (tails), sebuah bola diambil dari Kantong B. Berapa peluang terambilnya bola merah?', 
+                answer: '31/70', 
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem involves a multi-stage experiment and is solved using the Law of Total Probability. The overall probability of an event is found by summing the probabilities of the event occurring through all possible mutually exclusive paths.<br/><br/><strong>Konsep:</strong> Soal ini melibatkan eksperimen multi-tahap dan diselesaikan dengan Hukum Peluang Total. Peluang keseluruhan dari suatu kejadian ditemukan dengan menjumlahkan peluang-peluang dari kejadian tersebut yang terjadi melalui semua jalur yang saling lepas.</p></div><p><strong>Solution:</strong><br/>There are two paths to get a red ball:<br/>- Path 1: Heads $\\rightarrow$ Red from Bag A. $P(\\text{Path 1}) = P(H) \\times P(R|A) = \\frac{1}{2} \\times \\frac{3}{5} = \\frac{3}{10}$.<br/>- Path 2: Tails $\\rightarrow$ Red from Bag B. $P(\\text{Path 2}) = P(T) \\times P(R|B) = \\frac{1}{2} \\times \\frac{2}{7} = \\frac{1}{7}$.<br/>Total Probability = $P(\\text{Path 1}) + P(\\text{Path 2}) = \\frac{3}{10} + \\frac{1}{7} = \\frac{21+10}{70} = \\frac{31}{70}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Ada dua jalur untuk mendapat bola merah:<br/>- Jalur 1: Gambar $\\rightarrow$ Merah dari Kantong A. $P(\\text{Jalur 1}) = \\frac{1}{2} \\times \\frac{3}{5} = \\frac{3}{10}$.<br/>- Jalur 2: Angka $\\rightarrow$ Merah dari Kantong B. $P(\\text{Jalur 2}) = \\frac{1}{2} \\times \\frac{2}{7} = \\frac{1}{7}$.<br/>Peluang Total = $P(\\text{Jalur 1}) + P(\\text{Jalur 2}) = \\frac{3}{10} + \\frac{1}{7} = \\frac{21+10}{70} = \\frac{31}{70}$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'A card is drawn from a standard 52-card deck. What is the probability that the card is a queen or a heart?',
+                question_id: 'Sebuah kartu diambil dari setumpuk 52 kartu standar. Berapa peluang kartu yang terambil adalah kartu Queen atau kartu Heart?',
+                answer: '4/13',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem uses the Principle of Inclusion-Exclusion for non-mutually exclusive events: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.<br/><br/><strong>Konsep:</strong> Soal ini menggunakan Prinsip Inklusi-Eksklusi untuk kejadian yang tidak saling lepas: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.</p></div><p><strong>Solution:</strong><br/>- $P(Queen) = \\frac{4}{52}$.<br/>- $P(Heart) = \\frac{13}{52}$.<br/>- The event "Queen and Heart" is the Queen of Hearts. $P(Queen \\cap Heart) = \\frac{1}{52}$.<br/>$$ \\begin{aligned} P(Queen \\cup Heart) &= P(Queen) + P(Heart) - P(Queen \\cap Heart) \\\\ &= \\frac{4}{52} + \\frac{13}{52} - \\frac{1}{52} = \\frac{16}{52} = \\frac{4}{13} \\end{aligned} $$</p><p><strong>Langkah Penyelesaian:</strong><br/>- $P(Queen) = \\frac{4}{52}$.<br/>- $P(Heart) = \\frac{13}{52}$.<br/>- Kejadian "Queen dan Heart" adalah kartu Queen of Hearts. $P(Queen \\cap Heart) = \\frac{1}{52}$.<br/>$$ \\begin{aligned} P(Queen \\cup Heart) &= P(Queen) + P(Heart) - P(Queen \\cap Heart) \\\\ &= \\frac{4}{52} + \\frac{13}{52} - \\frac{1}{52} = \\frac{16}{52} = \\frac{4}{13} \\end{aligned} $$</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'The letters of the word "PROBABILITY" are arranged randomly. What is the probability that the two \'B\'s are next to each other?',
+                question_id: 'Huruf-huruf dari kata "PROBABILITY" disusun secara acak. Berapa peluang kedua huruf \'B\' saling berdampingan?',
+                answer: '2/11',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> To find the probability, we divide the number of favorable arrangements by the total number of possible arrangements. For words with repeated letters, we use the formula for permutations with repetition.<br/><br/><strong>Konsep:</strong> Untuk mencari peluang, kita membagi jumlah susunan yang diharapkan dengan jumlah total susunan yang mungkin. Untuk kata dengan huruf berulang, kita gunakan rumus permutasi dengan repetisi.</p></div><p><strong>Solution:</strong><br/>The word has 11 letters (B repeats 2x, I repeats 2x).<br/>1. <strong>Total Arrangements:</strong> $\\frac{11!}{2!2!} = 9,979,200$.<br/>2. <strong>Favorable Arrangements (BB together):</strong> Treat (BB) as one block. We arrange 10 items {P,R,O,(BB),A,I,L,I,T,Y} with 2 'I's. Arrangements = $\\frac{10!}{2!} = 1,814,400$.<br/>3. <strong>Probability:</strong> $\\frac{1,814,400}{9,979,200} = \\frac{10!/2!}{11!/(2!2!)} = \\frac{2}{11}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Kata ini punya 11 huruf (B berulang 2x, I berulang 2x).<br/>1. <strong>Total Susunan:</strong> $\\frac{11!}{2!2!} = 9.979.200$.<br/>2. <strong>Susunan Diharapkan (BB berdampingan):</strong> Anggap (BB) satu blok. Susun 10 item dengan 2 'I'. Susunan = $\\frac{10!}{2!} = 1.814.400$.<br/>3. <strong>Peluang:</strong> $\\frac{1.814.400}{9.979.200} = \\frac{10!/2!}{11!/(2!2!)} = \\frac{2}{11}$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'Three fair dice are rolled. What is the probability that you get at least one 6?',
+                question_id: 'Tiga dadu adil dilempar. Berapa peluang kamu mendapatkan setidaknya satu angka 6?',
+                answer: '91/216',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> Using the complement rule is highly effective for "at least one" scenarios. The probability of an event happening is 1 minus the probability of the event not happening.<br/><br/><strong>Konsep:</strong> Menggunakan aturan komplementer sangat efektif untuk skenario "setidaknya satu". Peluang suatu kejadian terjadi adalah 1 dikurangi peluang kejadian tersebut tidak terjadi sama sekali.</p></div><p><strong>Solution:</strong><br/>$P(\\text{at least one 6}) = 1 - P(\\text{no 6s})$.<br/>- Total outcomes for 3 dice = $6^3 = 216$.<br/>- Outcomes with no 6s = $5 \\times 5 \\times 5 = 125$.<br/>- $P(\\text{no 6s}) = \\frac{125}{216}$.<br/>- $P(\\text{at least one 6}) = 1 - \\frac{125}{216} = \\frac{91}{216}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>$P(\\text{setidaknya satu 6}) = 1 - P(\\text{tidak ada 6})$.<br/>- Total hasil 3 dadu = $6^3 = 216$.<br/>- Hasil tanpa angka 6 = $5 \\times 5 \\times 5 = 125$.<br/>- $P(\\text{tidak ada 6}) = \\frac{125}{216}$.<br/>- $P(\\text{setidaknya satu 6}) = 1 - \\frac{125}{216} = \\frac{91}{216}$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'In a class, 60% of students have brown hair, 30% have brown eyes, and 10% have both. What is the probability that a randomly selected student has neither brown hair nor brown eyes?',
+                question_id: 'Di sebuah kelas, 60% siswa memiliki rambut cokelat, 30% memiliki mata cokelat, dan 10% memiliki keduanya. Berapa peluang seorang siswa yang dipilih secara acak tidak memiliki rambut cokelat maupun mata cokelat?',
+                answer: '0.2 or 20%',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem uses the Principle of Inclusion-Exclusion and the complement rule. First, find the probability of a student having at least one of the traits, then find the complement.<br/><br/><strong>Konsep:</strong> Soal ini menggunakan Prinsip Inklusi-Eksklusi dan aturan komplementer. Pertama, cari peluang seorang siswa memiliki setidaknya salah satu dari sifat tersebut, lalu cari komplemennya.</p></div><p><strong>Solution:</strong><br/>Let H = Brown Hair, E = Brown Eyes.<br/>$P(H) = 0.6$, $P(E) = 0.3$, $P(H \\cap E) = 0.1$.<br/>$P(H \\cup E) = P(H) + P(E) - P(H \\cap E) = 0.6 + 0.3 - 0.1 = 0.8$.<br/>The probability of having at least one trait is 0.8.<br/>The probability of having neither is the complement: $1 - P(H \\cup E) = 1 - 0.8 = 0.2$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misal H = Rambut Cokelat, E = Mata Cokelat.<br/>$P(H) = 0.6$, $P(E) = 0.3$, $P(H \\cap E) = 0.1$.<br/>$P(H \\cup E) = P(H) + P(E) - P(H \\cap E) = 0.6 + 0.3 - 0.1 = 0.8$.<br/>Peluang memiliki setidaknya satu sifat adalah 0.8.<br/>Peluang tidak memiliki keduanya adalah komplemennya: $1 - P(H \\cup E) = 1 - 0.8 = 0.2$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'A point (x, y) is chosen randomly from the square region defined by $0 \\le x \\le 2$ and $0 \\le y \\le 2$. What is the probability that $x+y < 1$?',
+                question_id: 'Sebuah titik (x, y) dipilih secara acak dari daerah persegi yang ditentukan oleh $0 \\le x \\le 2$ dan $0 \\le y \\le 2$. Berapa peluang bahwa $x+y < 1$?',
+                answer: '1/8',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is a geometric probability problem. The probability is the ratio of the favorable area to the total area.<br/><br/><strong>Konsep:</strong> Ini adalah soal peluang geometris. Peluangnya adalah rasio dari luas daerah yang diharapkan terhadap luas total daerah sampel.</p></div><p><strong>Solution:</strong><br/>- <strong>Total Area (Sample Space):</strong> A square with side 2. Area = $2 \\times 2 = 4$.<br/>- <strong>Favorable Area:</strong> The region defined by $x \\ge 0$, $y \\ge 0$, and $x+y < 1$. This forms a right triangle with vertices at (0,0), (1,0), and (0,1).<br/>  Area = $\\frac{1}{2} \\times \\text{base} \\times \\text{height} = \\frac{1}{2} \\times 1 \\times 1 = 0.5$.<br/>- <strong>Probability:</strong> $\\frac{\\text{Favorable Area}}{\\text{Total Area}} = \\frac{0.5}{4} = \\frac{1/2}{4} = \\frac{1}{8}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>- <strong>Luas Total (Ruang Sampel):</strong> Persegi dengan sisi 2. Luas = $2 \\times 2 = 4$.<br/>- <strong>Luas Diharapkan:</strong> Daerah yang dibatasi $x \\ge 0$, $y \\ge 0$, dan $x+y < 1$. Ini membentuk segitiga siku-siku dengan titik sudut di (0,0), (1,0), dan (0,1).<br/>  Luas = $\\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi} = \\frac{1}{2} \\times 1 \\times 1 = 0.5$.<br/>- <strong>Peluang:</strong> $\\frac{\\text{Luas Diharapkan}}{\\text{Luas Total}} = \\frac{0.5}{4} = \\frac{1/2}{4} = \\frac{1}{8}$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'Two people, A and B, take turns rolling a standard die. The first person to roll a 6 wins. If A rolls first, what is the probability that A wins?',
+                question_id: 'Dua orang, A dan B, bergantian melempar sebuah dadu standar. Orang pertama yang mendapatkan angka 6 menang. Jika A melempar pertama, berapa peluang A menang?',
+                answer: '6/11',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem can be solved using the concept of an infinite geometric series. A can win on his first turn, or his second, or his third, and so on. We sum the probabilities of these mutually exclusive events.<br/><br/><strong>Konsep:</strong> Soal ini dapat diselesaikan menggunakan konsep deret geometri tak hingga. A bisa menang pada lemparan pertamanya, atau keduanya, atau ketiganya, dan seterusnya. Kita menjumlahkan peluang dari kejadian-kejadian yang saling lepas ini.</p></div><p><strong>Solution:</strong><br/>Let $P(6)$ be the probability of rolling a 6, which is $\\frac{1}{6}$.<br/>Let $P(\\neg 6)$ be the probability of not rolling a 6, which is $\\frac{5}{6}$.<br/>A can win on the following turns:<br/>- <strong>Turn 1:</strong> A rolls a 6. Probability = $\\frac{1}{6}$.<br/>- <strong>Turn 3:</strong> A fails, B fails, A succeeds. Probability = $P(\\neg 6) \\times P(\\neg 6) \\times P(6) = (\\frac{5}{6})^2 \\times \\frac{1}{6}$.<br/>- <strong>Turn 5:</strong> A fails, B fails, A fails, B fails, A succeeds. Probability = $(\\frac{5}{6})^4 \\times \\frac{1}{6}$.<br/>The total probability for A to win is the sum of this infinite geometric series:<br/>$P(A \\text{ wins}) = \\frac{1}{6} + (\\frac{5}{6})^2\\frac{1}{6} + (\\frac{5}{6})^4\\frac{1}{6} + ...$<br/>This is a geometric series with first term $a = \\frac{1}{6}$ and common ratio $r = (\\frac{5}{6})^2 = \\frac{25}{36}$.<br/>The sum is $S = \\frac{a}{1-r} = \\frac{1/6}{1 - 25/36} = \\frac{1/6}{11/36} = \\frac{1}{6} \\times \\frac{36}{11} = \\frac{6}{11}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misal $P(6)$ adalah peluang mendapat angka 6, yaitu $\\frac{1}{6}$.<br/>Misal $P(\\neg 6)$ adalah peluang tidak mendapat angka 6, yaitu $\\frac{5}{6}$.<br/>A bisa menang pada skenario berikut:<br/>- <strong>Lemparan ke-1:</strong> A langsung dapat 6. Peluang = $\\frac{1}{6}$.<br/>- <strong>Lemparan ke-3:</strong> A gagal, B gagal, A dapat 6. Peluang = $(\\frac{5}{6})^2 \\times \\frac{1}{6}$.<br/>- <strong>Lemparan ke-5:</strong> A gagal, B gagal, A gagal, B gagal, A dapat 6. Peluang = $(\\frac{5}{6})^4 \\times \\frac{1}{6}$.<br/>Total peluang A menang adalah jumlah dari deret geometri tak hingga ini:<br/>$P(A \\text{ menang}) = \\frac{1}{6} + (\\frac{5}{6})^2\\frac{1}{6} + (\\frac{5}{6})^4\\frac{1}{6} + ...$<br/>Ini adalah deret geometri dengan suku pertama $a = \\frac{1}{6}$ dan rasio $r = (\\frac{5}{6})^2 = \\frac{25}{36}$.<br/>Jumlahnya adalah $S = \\frac{a}{1-r} = \\frac{1/6}{1 - 25/36} = \\frac{1/6}{11/36} = \\frac{6}{11}$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'A box contains 4 red balls and 6 blue balls. A ball is drawn, its color noted, and it is NOT replaced. Then a second ball is drawn. What is the probability that the second ball is red?',
+                question_id: 'Sebuah kotak berisi 4 bola merah dan 6 bola biru. Sebuah bola diambil, warnanya dicatat, dan TIDAK dikembalikan. Kemudian bola kedua diambil. Berapa peluang bola kedua berwarna merah?',
+                answer: '2/5',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This problem can be solved using the Law of Total Probability. The outcome of the second draw depends on the outcome of the first. We must consider all possible paths leading to the desired outcome.<br/><br/><strong>Konsep:</strong> Soal ini bisa diselesaikan dengan Hukum Peluang Total. Hasil dari pengambilan kedua bergantung pada hasil pengambilan pertama. Kita harus mempertimbangkan semua jalur yang mungkin yang mengarah ke hasil yang diinginkan.</p></div><p><strong>Solution:</strong><br/>There are two mutually exclusive ways for the second ball to be red:<br/>1. <strong>Path 1: First is Red, Second is Red (R-R)</strong><br/>   - Probability of drawing a red first: $P(R_1) = \\frac{4}{10}$.<br/>   - After drawing one red, 3 red and 6 blue remain (9 total). Probability of drawing a red second: $P(R_2|R_1) = \\frac{3}{9}$.<br/>   - Probability of this path: $\\frac{4}{10} \\times \\frac{3}{9} = \\frac{12}{90}$.<br/>2. <strong>Path 2: First is Blue, Second is Red (B-R)</strong><br/>   - Probability of drawing a blue first: $P(B_1) = \\frac{6}{10}$.<br/>   - After drawing one blue, 4 red and 5 blue remain (9 total). Probability of drawing a red second: $P(R_2|B_1) = \\frac{4}{9}$.<br/>   - Probability of this path: $\\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90}$.<br/>The total probability of the second ball being red is the sum of the probabilities of these two paths:<br/>$P(R_2) = P(R_1 \\cap R_2) + P(B_1 \\cap R_2) = \\frac{12}{90} + \\frac{24}{90} = \\frac{36}{90} = \\frac{2}{5}$.<br/>(Alternatively, by symmetry, the probability of the second ball being red is the same as the first, $\\frac{4}{10}=\\frac{2}{5}$).</p><p><strong>Langkah Penyelesaian:</strong><br/>Ada dua cara yang saling lepas agar bola kedua berwarna merah:<br/>1. <strong>Jalur 1: Merah Pertama, Merah Kedua (M-M)</strong><br/>   - Peluang mengambil merah pertama: $P(M_1) = \\frac{4}{10}$.<br/>   - Setelah itu, tersisa 3 merah dari total 9 bola. Peluang mengambil merah kedua: $P(M_2|M_1) = \\frac{3}{9}$.<br/>   - Peluang jalur ini: $\\frac{4}{10} \\times \\frac{3}{9} = \\frac{12}{90}$.<br/>2. <strong>Jalur 2: Biru Pertama, Merah Kedua (B-M)</strong><br/>   - Peluang mengambil biru pertama: $P(B_1) = \\frac{6}{10}$.<br/>   - Setelah itu, tersisa 4 merah dari total 9 bola. Peluang mengambil merah kedua: $P(M_2|B_1) = \\frac{4}{9}$.<br/>   - Peluang jalur ini: $\\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90}$.<br/>Peluang total bola kedua berwarna merah adalah jumlah dari kedua jalur:<br/>$P(M_2) = \\frac{12}{90} + \\frac{24}{90} = \\frac{36}{90} = \\frac{2}{5}$.<br/>(Sebagai alternatif, karena simetri, peluang bola kedua berwarna merah sama dengan peluang bola pertama, yaitu $\\frac{4}{10}=\\frac{2}{5}$).</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: 'What is the expected value of the sum of numbers when two fair six-sided dice are rolled?',
+                question_id: 'Berapakah nilai harapan (expected value) dari jumlah angka ketika dua dadu enam-sisi yang adil dilempar?',
+                answer: 7,
+                explanation: `<div class="concept"><p><strong>Concept:</strong> The expected value of a random variable is the weighted average of all possible values, where the weights are the probabilities. A key property is the Linearity of Expectation: $E(X+Y) = E(X) + E(Y)$, even if the variables are not independent.<br/><br/><strong>Konsep:</strong> Nilai harapan dari sebuah variabel acak adalah rata-rata tertimbang dari semua nilai yang mungkin, di mana bobotnya adalah probabilitas. Sifat kunci yang digunakan adalah Linieritas Harapan: $E(X+Y) = E(X) + E(Y)$, bahkan jika variabelnya tidak independen.</p></div><p><strong>Solution:</strong><br/>Let $X$ be the result of the first die and $Y$ be the result of the second die. We want to find $E(X+Y)$.<br/>By the Linearity of Expectation, $E(X+Y) = E(X) + E(Y)$.<br/>First, let's find the expected value of a single die roll, $E(X)$. The possible outcomes are {1, 2, 3, 4, 5, 6}, each with a probability of $\\frac{1}{6}$.<br/>$$ \\begin{aligned} E(X) &= 1(\\frac{1}{6}) + 2(\\frac{1}{6}) + 3(\\frac{1}{6}) + 4(\\frac{1}{6}) + 5(\\frac{1}{6}) + 6(\\frac{1}{6}) \\\\ &= \\frac{1+2+3+4+5+6}{6} = \\frac{21}{6} = 3.5 \\end{aligned} $$<br/>Since die Y is identical, $E(Y)$ is also 3.5.<br/>Therefore, the expected value of the sum is:<br/>$E(X+Y) = 3.5 + 3.5 = 7$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misalkan $X$ adalah hasil lemparan dadu pertama dan $Y$ adalah hasil lemparan dadu kedua. Kita ingin mencari $E(X+Y)$.<br/>Dengan sifat Linieritas Harapan, $E(X+Y) = E(X) + E(Y)$.<br/>Pertama, kita cari nilai harapan dari satu lemparan dadu, $E(X)$. Hasil yang mungkin adalah {1, 2, 3, 4, 5, 6}, masing-masing dengan peluang $\\frac{1}{6}$.<br/>$$ \\begin{aligned} E(X) &= 1\\left(\\frac{1}{6}\\right) + 2\\left(\\frac{1}{6}\\right) + 3\\left(\\frac{1}{6}\\right) + 4\\left(\\frac{1}{6}\\right) + 5\\left(\\frac{1}{6}\\right) + 6\\left(\\frac{1}{6}\\right) \\\\ &= \\frac{1+2+3+4+5+6}{6} = \\frac{21}{6} = 3.5 \\end{aligned} $$<br/>Karena dadu Y identik, $E(Y)$ juga 3.5.<br/>Maka, nilai harapan dari jumlahnya adalah:<br/>$E(X+Y) = 3.5 + 3.5 = 7$.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: '<strong>(Non-Routine)</strong> What is the minimum number of people needed in a room so that the probability of at least two of them sharing a birthday is greater than 50%? (Assume 365 days in a year and ignore leap years).',
+                question_id: '<strong>(Non-Rutin)</strong> Berapa jumlah minimum orang yang dibutuhkan di sebuah ruangan agar peluang setidaknya dua dari mereka memiliki tanggal ulang tahun yang sama lebih besar dari 50%? (Asumsikan ada 365 hari dalam setahun dan abaikan tahun kabisat).',
+                answer: 23,
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is the famous "Birthday Problem," which demonstrates how probabilities can be counter-intuitive. It is solved using the complement rule: find the probability that *no one* shares a birthday and subtract it from 1.<br/><br/><strong>Konsep:</strong> Ini adalah "Masalah Ulang Tahun" yang terkenal, yang menunjukkan bagaimana probabilitas bisa menjadi kontra-intuitif. Masalah ini diselesaikan menggunakan aturan komplementer: cari peluang *tidak ada* yang berulang tahun sama, lalu kurangi dari 1.</p></div><p><strong>Solution:</strong><br/>Let $P(A)$ be the probability that at least two people share a birthday.<br/>Let $P(A')$ be the complement event, that all $n$ people have different birthdays.<br/>We want to find the smallest $n$ such that $P(A) > 0.5$, which is equivalent to $1 - P(A') > 0.5$, or $P(A') < 0.5$.<br/><br/>The probability that all $n$ birthdays are different is calculated as:<br/>$P(A') = \\frac{\\text{Number of ways to choose n distinct birthdays}}{\\text{Total number of ways for n birthdays}} = \\frac{_{365}P_n}{365^n}$<br/>$$ P(A') = \\frac{365 \\times 364 \\times \\dots \\times (365-n+1)}{365^n} = 1 \\times \\frac{364}{365} \\times \\frac{363}{365} \\times \\dots $$<br/>We need to find the smallest $n$ for which this value drops below 0.5. Calculating this iteratively:<br/>- For $n=1$, $P(A') = 1$.<br/>- For $n=2$, $P(A') = \\frac{364}{365} \\approx 0.997$.<br/>- ... (calculating for each n)<br/>- For $n=22$, $P(A') \\approx 0.524$.<br/>- For $n=23$, $P(A') \\approx 0.493$.<br/>Since for $n=23$ the probability of everyone having a different birthday drops below 50%, the probability of at least one shared birthday rises above 50%. Thus, the minimum number of people is 23.</p><p><strong>Langkah Penyelesaian:</strong><br/>Misal $P(A)$ adalah peluang setidaknya dua orang berulang tahun sama.<br/>Misal $P(A')$ adalah kejadian komplemennya, yaitu semua $n$ orang memiliki tanggal ulang tahun yang berbeda.<br/>Kita ingin mencari $n$ terkecil sehingga $P(A) > 0.5$, yang setara dengan $1 - P(A') > 0.5$, atau $P(A') < 0.5$.<br/><br/>Peluang semua $n$ tanggal ulang tahun berbeda dihitung sebagai berikut:<br/>$P(A') = \\frac{\\text{Cara memilih n tanggal berbeda}}{\\text{Total cara untuk n tanggal}} = \\frac{_{365}P_n}{365^n}$<br/>$$ P(A') = \\frac{365 \\times 364 \\times \\dots \\times (365-n+1)}{365^n} $$<br/>Kita perlu mencari $n$ terkecil di mana nilai ini turun di bawah 0.5. Dengan menghitungnya secara berulang:<br/>- Untuk $n=22$, $P(A') \\approx 0.524$ (lebih dari 50%).<br/>- Untuk $n=23$, $P(A') \\approx 0.493$ (kurang dari 50%).<br/>Karena pada $n=23$ peluang semua orang memiliki ulang tahun berbeda turun di bawah 50%, maka peluang setidaknya ada satu ulang tahun yang sama menjadi lebih dari 50%. Jadi, jumlah minimum orang yang dibutuhkan adalah 23.</p>`
+            },
+            {
+                topic: 'Part 2: Probability',
+                question_en: '<strong>(Non-Routine)</strong> You\'re on a game show with three doors. Behind one is a car; behind the others, goats. You pick a door (say, Door 1). The host, who knows what\'s behind the doors, opens another door (say, Door 3), which has a goat. He then asks, "Do you want to switch to Door 2?" Is it to your advantage to switch? Explain why.',
+                question_id: '<strong>(Non-Rutin)</strong> Kamu berada di sebuah acara permainan dengan tiga pintu. Di balik salah satu pintu ada mobil, di balik pintu lainnya ada kambing. Kamu memilih satu pintu (misalnya, Pintu 1). Pembawa acara, yang tahu apa di balik setiap pintu, membuka pintu lain (misalnya, Pintu 3) yang berisi kambing. Ia lalu bertanya, "Apakah kamu mau beralih ke Pintu 2?" Apakah beralih pilihan menguntungkanmu? Jelaskan kenapa.',
+                answer: 'Yes, switching doubles your chance of winning.',
+                explanation: `<div class="concept"><p><strong>Concept:</strong> This is the famous "Monty Hall Problem". The key is understanding that the host's action of opening a door provides new information that changes the conditional probabilities of the unopened doors.<br/><br/><strong>Konsep:</strong> Ini adalah "Masalah Monty Hall" yang terkenal. Kuncinya adalah memahami bahwa tindakan pembawa acara membuka pintu memberikan informasi baru yang mengubah probabilitas kondisional dari pintu-pintu yang belum dibuka.</p></div><p><strong>Solution:</strong><br/>Yes, you should always switch. Here's why:<br/><br/>1. <strong>Initial Choice:</strong> When you first pick Door 1, the probability that the car is behind it is $\\frac{1}{3}$. The probability that the car is behind one of the *other* two doors (Door 2 or Door 3) is $\\frac{2}{3}$.<br/><br/>2. <strong>Host's Action:</strong> The host then opens a door he *knows* contains a goat. This action is crucial. He is not opening a door randomly.<br/>   - If you initially picked the car (a $\\frac{1}{3}$ chance), the host can open either of the other two doors. If you switch, you lose.<br/>   - If you initially picked a goat (a $\\frac{2}{3}$ chance), the host has no choice. He *must* open the other door that has a goat. This leaves the car behind the remaining closed door. If you switch, you win.<br/><br/>3. <strong>Conclusion:</strong> Since you have a $\\frac{2}{3}$ chance of picking a goat initially, there is a $\\frac{2}{3}$ chance that switching will lead you to the car. Your original door's probability remains at $\\frac{1}{3}$. By switching, you are essentially betting that your initial pick was wrong, which it was with a $\\frac{2}{3}$ probability. Switching doubles your chance of winning from $\\frac{1}{3}$ to $\\frac{2}{3}$.</p><p><strong>Langkah Penyelesaian:</strong><br/>Ya, kamu harus selalu beralih. Inilah alasannya:<br/><br/>1. <strong>Pilihan Awal:</strong> Saat kamu pertama kali memilih Pintu 1, peluang mobil ada di baliknya adalah $\\frac{1}{3}$. Peluang mobil ada di balik salah satu dari dua pintu lainnya (Pintu 2 atau Pintu 3) adalah $\\frac{2}{3}$.<br/><br/>2. <strong>Tindakan Pembawa Acara:</strong> Pembawa acara kemudian membuka pintu yang ia *tahu* berisi kambing. Tindakannya ini sangat penting; ia tidak membuka pintu secara acak.<br/>   - Jika pilihan awalmu benar (peluang $\\frac{1}{3}$), pembawa acara bisa membuka salah satu dari dua pintu lain. Jika kamu beralih, kamu kalah.<br/>   - Jika pilihan awalmu salah (peluang $\\frac{2}{3}$), pembawa acara tidak punya pilihan. Ia *harus* membuka satu-satunya pintu lain yang juga berisi kambing, meninggalkan pintu mobil sebagai satu-satunya pilihan lain. Jika kamu beralih, kamu menang.<br/><br/>3. <strong>Kesimpulan:</strong> Karena kamu memiliki peluang $\\frac{2}{3}$ untuk salah pada pilihan pertama, maka ada peluang $\\frac{2}{3}$ bahwa tindakan beralih akan membawamu ke mobil. Peluang pintu aslimu tetap $\\frac{1}{3}$. Dengan beralih, kamu secara efektif mengubah peluang kemenanganmu dari $\\frac{1}{3}$ menjadi $\\frac{2}{3}$.</p>`
+            }
+        ];
+
+        // This function will re-order the questions array to group them by topic for correct rendering.
+        function getOrderedQuestions() {
+            const topics = [...new Set(questions.map(q => q.topic))]; // Get unique topics in order
+            let ordered = [];
+            topics.forEach(topic => {
+                const questionsForTopic = questions.filter(q => q.topic === topic);
+                ordered = ordered.concat(questionsForTopic);
+            });
+            // Re-assign IDs to be sequential
+            ordered.forEach((q, index) => {
+                q.id = index + 1;
+            });
+            return ordered;
+        }
+
+        const problemsContainer = document.getElementById('problems-section');
+        const solutionsContainer = document.getElementById('solutions-section');
+
+        function renderContent() {
+            let problemsHTML = '';
+            let solutionsHTML = '';
+            let currentProblemTopic = '';
+            let currentSolutionTopic = '';
+
+            const orderedQuestions = getOrderedQuestions();
+
+            orderedQuestions.forEach(q => {
+                // Render Problems
+                if (q.topic !== currentProblemTopic) {
+                    currentProblemTopic = q.topic;
+                    problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+                }
+                problemsHTML += `
+                    <div class="item-container">
+                        <p><strong>${q.id}.</strong> ${q.question_en}<br/><br/>${q.question_id}</p>
+                    </div>`;
+
+                // Render Solutions
+                if (q.topic !== currentSolutionTopic) {
+                    currentSolutionTopic = q.topic;
+                    solutionsHTML += `<h3 class="topic-title">${currentSolutionTopic}</h3>`;
+                }
+                solutionsHTML += `
+                    <div class="item-container">
+                        <p><strong>Solution for Question ${q.id}:</strong></p>
+                        ${q.explanation}
+                        <div class="final-answer">Answer: ${q.answer}</div>
+                    </div>`;
+            });
+            
+            problemsContainer.innerHTML = problemsHTML;
+            solutionsContainer.innerHTML = solutionsHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            renderContent();
+            // Since MathJax might run before the content is added, we need to tell it to re-process the page.
+            if (typeof MathJax !== 'undefined') {
+                MathJax.typesetPromise();
+            }
+        });
+
+    </script>
+</body>
+</html>
+
