@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 1 - Numbers & Counting</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 12cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+        .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before,
+      .solutions-cover-page::before {
+        opacity: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1, h2 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 20pt;
+        margin-top: 0;
+      }
+      .soal-latihan {
+        margin-bottom: 25px;
+        break-inside: avoid;
+      }
+      .soal-latihan b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .lang-id {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dotted #ccc;
+        color: #555;
+        font-style: italic;
+        font-size: 11pt;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+        .solution-detail {
+          margin-top: 20px;
+        }
+      .concept {
+          background-color: #eef2ff;
+          border-left: 4px solid #4f46e5;
+          padding: 1rem;
+          margin: 1rem 0;
+          border-radius: 0.25rem;
+          text-align: justify;
+      }
+      .concept p {
+          margin: 0;
+          padding: 0;
+          border: none;
+      }
+      .steps-title {
+          font-weight: 700;
+          font-size: 14pt;
+          margin-top: 20px;
+          margin-bottom: 10px;
+      }
+      .solution-points {
+          padding-left: 20px;
+      }
+      .solution-points li {
+          margin-bottom: 15px;
+          text-align: justify;
+      }
+      .final-answer {
+          font-weight: 700;
+          color: #166534;
+          background-color: #dcfce7;
+          padding: 0.75rem 1.25rem;
+          border-radius: 6px;
+          display: inline-block;
+          margin-top: 1rem;
+          width: 100%;
+          text-align: center;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Cover Page --><section class="page cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
+        <h1 class="cover-title">Math Competition Practice 1</h1>
+        <p class="cover-subtitle">Numbers & Counting</p>
+        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 1 - 2</p>
+      </div>
+    </section>
+
+    <!-- Halaman Soal 1 (Soal 1-3) --><section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems</h1>
+        <div class="soal-latihan">
+          <b>1. COUNTING FORWARD</b>
+          <div class="soal-konten">
+            Continue the pattern by counting forward: 5, 10, 15, 20, ___, ___.
+            <div class="lang-id">
+              Lanjutkan pola dengan membilang maju: 5, 10, 15, 20, ___, ___.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>2. COUNTING BACKWARD</b>
+          <div class="soal-konten">
+            Continue the pattern by counting backward: 30, 28, 26, 24, ___, ___.
+            <div class="lang-id">
+              Lanjutkan pola dengan membilang mundur: 30, 28, 26, 24, ___, ___.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>3. COMPARING OBJECTS</b>
+          <div class="soal-konten">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_ebndko_598.png" alt="8 stars and 11 hearts" style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 8px;">
+            Are there more stars or more hearts?
+            <div class="lang-id">
+              Apakah ada lebih banyak bintang atau lebih banyak hati?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 2 (Soal 4-7) --><section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems</h1>
+        <div class="soal-latihan">
+          <b>4. CONCEPT OF 'MORE'</b>
+          <div class="soal-konten">
+            Anna has 15 candies. Ben has 9 candies. How many more candies does Anna have than Ben?
+            <div class="lang-id">
+              Anna memiliki 15 permen. Ben memiliki 9 permen. Berapa permen lebih banyak yang dimiliki Anna daripada Ben?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>5. CONCEPT OF 'FEWER'</b>
+          <div class="soal-konten">
+            A red box contains 14 crayons. A blue box contains 20 crayons. How many fewer crayons are in the red box than in the blue box?
+            <div class="lang-id">
+              Sebuah kotak merah berisi 14 krayon. Sebuah kotak biru berisi 20 krayon. Berapa lebih sedikit krayon di kotak merah dibandingkan di kotak biru?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>6. FILL IN THE BLANKS</b>
+          <div class="soal-konten">
+            Fill in the blank: 12, 15, 18, ___, 24, 27.
+            <div class="lang-id">
+              Isi bagian yang kosong: 12, 15, 18, ___, 24, 27.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>7. COUNTING BACKWARD</b>
+          <div class="soal-konten">
+            A frog jumps backward. It starts at lily pad number 40. It jumps back 5 lily pads at a time. What are the numbers of the next three lily pads it lands on?
+            <div class="lang-id">
+              Seekor katak melompat mundur. Dia mulai dari daun teratai nomor 40. Dia melompat mundur 5 daun teratai setiap kali. Berapa nomor tiga daun teratai berikutnya yang dia pijak?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 3 (Soal 8-10) --><section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems</h1>
+        <div class="soal-latihan">
+          <b>8. COMPARING GROUPS</b>
+          <div class="soal-konten">
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_ihftxu_4238.png" alt="Group A with 4 cats and 5 dogs, Group B with 6 cats and 2 dogs" style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 8px;">
+            Which group has more animals in total?
+            <div class="lang-id">
+              Kelompok manakah yang memiliki total hewan lebih banyak?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>9. FINDING THE DIFFERENCE</b>
+          <div class="soal-konten">
+            There are 25 students in the music class and 18 students in the art class. How many more students are in the music class?
+            <div class="lang-id">
+              Ada 25 siswa di kelas musik dan 18 siswa di kelas seni. Berapa siswa lebih banyak di kelas musik?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>10. SKIP COUNTING</b>
+          <div class="soal-konten">
+            Start at 10. Count forward by 10s. What is the fourth number you say?
+            <div class="lang-id">
+              Mulai dari 10. Membilang maju loncat 10. Berapakah bilangan keempat yang kamu sebutkan?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 4 (Soal 11-14) --><section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems</h1>
+        <div class="soal-latihan">
+            <b>11. FINDING THE NUMBER BETWEEN</b>
+            <div class="soal-konten">
+              What number is between 39 and 41?
+              <div class="lang-id">
+                Bilangan berapakah yang berada di antara 39 dan 41?
+              </div>
+            </div>
+          </div>
+        <div class="soal-latihan">
+          <b>12. MORE OR FEWER</b>
+          <div class="soal-konten">
+            Tom has 17 marbles. Jerry has 22 marbles. Does Tom have more or fewer marbles than Jerry?
+            <div class="lang-id">
+              Tom memiliki 17 kelereng. Jerry memiliki 22 kelereng. Apakah Tom memiliki lebih banyak atau lebih sedikit kelereng daripada Jerry?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>13. ORDERING NUMBERS</b>
+          <div class="soal-konten">
+            Arrange these numbers from smallest to largest: 21, 8, 15, 32, 19.
+            <div class="lang-id">
+              Urutkan bilangan berikut dari yang terkecil hingga terbesar: 21, 8, 15, 32, 19.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>14. COUNTING BACKWARD FROM A LARGE NUMBER</b>
+          <div class="soal-konten">
+            Count backward by 1 from 53. What are the next four numbers?
+            <div class="lang-id">
+              Membilang mundur 1 langkah dari 53. Berapakah empat bilangan berikutnya?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+    
+    <!-- Halaman Soal 5 (Soal 15-17) --><section class="page">
+        <div class="content-wrapper">
+            <h1>Practice Problems</h1>
+            <div class="soal-latihan">
+                <b>15. COMPARING QUANTITIES</b>
+                <div class="soal-konten">
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_bwsbtv_9465.png" alt="A basket with 12 red apples and another basket with 12 green apples." style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 8px;">
+                  Compare the number of red apples and green apples. Use 'more than', 'less than', or 'equal to'.
+                  <div class="lang-id">
+                    Bandingkan jumlah apel merah dan apel hijau. Gunakan 'lebih dari', 'kurang dari', atau 'sama dengan'.
+                  </div>
+                </div>
+              </div>
+            <div class="soal-latihan">
+                <b>16. ADDITION AND COMPARISON</b>
+                <div class="soal-konten">
+                    Lisa reads 10 pages of a book on Monday and 8 pages on Tuesday. David reads 15 pages in total over the two days. Who read more pages?
+                    <div class="lang-id">
+                        Lisa membaca 10 halaman buku pada hari Senin dan 8 halaman pada hari Selasa. David membaca total 15 halaman selama dua hari itu. Siapakah yang membaca lebih banyak halaman?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>17. SUBTRACTION AND COMPARISON</b>
+                <div class="soal-konten">
+                    There are 30 cookies on a plate. 7 cookies are eaten. Are there more or less than 25 cookies left?
+                    <div class="lang-id">
+                        Ada 30 kue di atas piring. 7 kue dimakan. Apakah kue yang tersisa lebih banyak atau lebih sedikit dari 25?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 6 (Soal 18-21) --><section class="page">
+        <div class="content-wrapper">
+            <h1>Practice Problems</h1>
+            <div class="soal-latihan">
+                <b>18. FINDING THE PATTERN</b>
+                <div class="soal-konten">
+                    What is the missing number in the pattern? 50, 45, 40, ___, 30.
+                    <div class="lang-id">
+                        Berapakah bilangan yang hilang dalam pola berikut? 50, 45, 40, ___, 30.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>19. TWO-DIGIT COUNTING</b>
+                <div class="soal-konten">
+                    How many two-digit numbers can you make using the digits 1 and 2, if you can use each digit more than once?
+                    <div class="lang-id">
+                        Berapa banyak bilangan dua angka yang dapat kamu buat menggunakan angka 1 dan 2, jika setiap angka boleh digunakan lebih dari sekali?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>20. COMPARING THREE-DIGIT NUMBERS</b>
+                <div class="soal-konten">
+                    Which number is smaller: 112 or 121?
+                    <div class="lang-id">
+                        Manakah bilangan yang lebih kecil: 112 atau 121?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>21. 'MORE THAN' IN CONTEXT</b>
+                <div class="soal-konten">
+                    A tree has 23 green leaves and 14 yellow leaves. How many more green leaves are there than yellow leaves?
+                    <div class="lang-id">
+                        Sebuah pohon memiliki 23 daun hijau dan 14 daun kuning. Berapa lebih banyak daun hijau dibandingkan daun kuning?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 7 (Soal 22-24) --><section class="page">
+        <div class="content-wrapper">
+            <h1>Practice Problems</h1>
+            <div class="soal-latihan">
+                <b>22. COUNTING DOWN TO ZERO</b>
+                <div class="soal-konten">
+                    A rocket launch counts down from 12. What are the last three numbers said before 'Blast off!'?
+                    <div class="lang-id">
+                        Peluncuran roket menghitung mundur dari 12. Apakah tiga angka terakhir yang diucapkan sebelum 'Meluncur!'?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>23. CONCEPT OF 'ONE MORE'</b>
+                <div class="soal-konten">
+                    What is one more than 29?
+                    <div class="lang-id">
+                        Berapakah satu lebihnya dari 29?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>24. CONCEPT OF 'ONE LESS'</b>
+                <div class="soal-konten">
+                    What is one less than 40?
+                    <div class="lang-id">
+                        Berapakah satu kurangnya dari 40?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 8 (Soal 25-27) --><section class="page">
+        <div class="content-wrapper">
+            <h1>Practice Problems</h1>
+            <div class="soal-latihan">
+                <b>25. COMPARING GROUPS OF OBJECTS</b>
+                <div class="soal-konten">
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_2gpnwf_6594.png" alt="A farm with 17 chickens and 11 pigs." style="max-width: 100%; height: auto; margin-bottom: 10px; border-radius: 8px;">
+                    Are there fewer chickens or fewer pigs on the farm?
+                    <div class="lang-id">
+                        Apakah ada lebih sedikit ayam atau lebih sedikit babi di peternakan?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>26. COUNTING WITH CONDITIONS</b>
+                <div class="soal-konten">
+                    How many numbers between 1 and 20 have the digit '1' in them?
+                    <div class="lang-id">
+                        Ada berapa banyak bilangan antara 1 dan 20 yang memiliki angka '1'?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>27. INDIRECT COMPARISON</b>
+                <div class="soal-konten">
+                    John has more apples than Mary. Mary has more apples than Sam. Who has the most apples?
+                    <div class="lang-id">
+                        John memiliki apel lebih banyak dari Mary. Mary memiliki apel lebih banyak dari Sam. Siapakah yang memiliki apel paling banyak?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 9 (Soal 28-30) --><section class="page">
+        <div class="content-wrapper">
+            <h1>Practice Problems</h1>
+            <div class="soal-latihan">
+                <b>28. COUNTING IN GROUPS</b>
+                <div class="soal-konten">
+                    There are 5 cars. Each car has 4 wheels. How many wheels are there in total? You can count them: 4, 8, ___, ___, ___.
+                    <div class="lang-id">
+                        Ada 5 mobil. Setiap mobil memiliki 4 roda. Berapa total roda yang ada? Kamu bisa menghitungnya: 4, 8, ___, ___, ___.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>29. DETERMINING THE GREATER AMOUNT</b>
+                <div class="soal-konten">
+                    Team A scored 45 points. Team B scored 10 fewer points than Team A. Which team scored more points?
+                    <div class="lang-id">
+                        Tim A mencetak 45 poin. Tim B mencetak 10 poin lebih sedikit dari Tim A. Tim manakah yang mencetak poin lebih banyak?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>30. COMPLEX WORD PROBLEM</b>
+                <div class="soal-konten">
+                    A bus has 20 seats. 15 students get on the bus. Then, 5 more students get on. Are there enough seats for everyone?
+                    <div class="lang-id">
+                        Sebuah bus memiliki 20 kursi. 15 siswa naik ke bus. Kemudian, 5 siswa lagi naik. Apakah kursinya cukup untuk semua orang?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- SOLUTIONS START HERE --><!-- Pembahasan 1 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 1</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Counting forward" in a pattern means finding the rule that connects the numbers and then applying that rule to find the next numbers. In this case, the numbers are getting bigger.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Look at the numbers:</strong> 5, 10, 15, 20.</li><li><strong>Find the rule:</strong> To get from 5 to 10, we add 5. To get from 10 to 15, we add 5. To get from 15 to 20, we add 5. The rule is to add 5 each time. This is also called skip-counting by 5.</li><li><strong>Apply the rule:</strong> The last number is 20. The next number will be $20 + 5 = 25$.</li><li><strong>Apply the rule again:</strong> The new last number is 25. The next number will be $25 + 5 = 30$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The next two numbers in the pattern are 25 and 30.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 1</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Membilang maju" dalam sebuah pola berarti menemukan aturan yang menghubungkan angka-angka tersebut dan kemudian menerapkan aturan itu untuk menemukan angka berikutnya. Dalam kasus ini, angkanya semakin besar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Lihat angkanya:</strong> 5, 10, 15, 20.</li><li><strong>Temukan aturannya:</strong> Untuk berpindah dari 5 ke 10, kita tambah 5. Dari 10 ke 15, kita tambah 5. Dari 15 ke 20, kita tambah 5. Aturannya adalah menambahkan 5 setiap kali. Ini juga disebut membilang loncat 5.</li><li><strong>Terapkan aturannya:</strong> Angka terakhir adalah 20. Angka berikutnya adalah $20 + 5 = 25$.</li><li><strong>Terapkan aturannya lagi:</strong> Angka terakhir yang baru adalah 25. Angka berikutnya adalah $25 + 5 = 30$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dua bilangan berikutnya dalam pola adalah 25 dan 30.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 2 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 2</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Counting backward" means the numbers are getting smaller. We need to find the rule, which will be subtraction, and apply it to find the next numbers.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Look at the numbers:</strong> 30, 28, 26, 24.</li><li><strong>Find the rule:</strong> To get from 30 to 28, we subtract 2. To get from 28 to 26, we subtract 2. The rule is to subtract 2 each time.</li><li><strong>Apply the rule:</strong> The last number is 24. The next number will be $24 - 2 = 22$.</li><li><strong>Apply the rule again:</strong> The new last number is 22. The next number will be $22 - 2 = 20$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The next two numbers are 22 and 20.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 2</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Membilang mundur" berarti angkanya semakin kecil. Kita perlu menemukan aturannya, yaitu pengurangan, dan menerapkannya untuk menemukan angka berikutnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Lihat angkanya:</strong> 30, 28, 26, 24.</li><li><strong>Temukan aturannya:</strong> Untuk berpindah dari 30 ke 28, kita kurangi 2. Dari 28 ke 26, kita kurangi 2. Aturannya adalah mengurangi 2 setiap kali.</li><li><strong>Terapkan aturannya:</strong> Angka terakhir adalah 24. Angka berikutnya adalah $24 - 2 = 22$.</li><li><strong>Terapkan aturannya lagi:</strong> Angka terakhir yang baru adalah 22. Angka berikutnya adalah $22 - 2 = 20$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dua bilangan berikutnya adalah 22 dan 20.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 3 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 3</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To compare two groups of objects, we first need to count the number of objects in each group. Then, we compare the two numbers to see which one is larger.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Count the stars:</strong> The description says there are 8 stars.</li><li><strong>Count the hearts:</strong> The description says there are 11 hearts.</li><li><strong>Compare the numbers:</strong> We compare 8 and 11. When we count, 11 comes after 8, which means 11 is a bigger number than 8.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are more hearts.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 3</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk membandingkan dua kelompok benda, pertama-tama kita perlu menghitung jumlah benda di setiap kelompok. Kemudian, kita bandingkan kedua bilangan tersebut untuk melihat mana yang lebih besar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung bintang:</strong> Deskripsi soal menyatakan ada 8 bintang.</li><li><strong>Hitung hati:</strong> Deskripsi soal menyatakan ada 11 hati.</li><li><strong>Bandingkan angkanya:</strong> Kita membandingkan 8 dan 11. Saat kita berhitung, 11 muncul setelah 8, yang berarti 11 adalah angka yang lebih besar dari 8.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada lebih banyak hati.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 4 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 4</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find out "how many more" one person has than another, we are looking for the difference between the two amounts. The best way to find the difference is by using subtraction.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the numbers:</strong> Anna has 15 candies, and Ben has 9 candies.</li><li><strong>Set up the subtraction:</strong> Since we want to find how many more Anna has, we subtract Ben's smaller number from Anna's larger number. The calculation is $15 - 9$.</li><li><strong>Calculate the difference:</strong> $15 - 9 = 6$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Anna has 6 more candies than Ben.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 4</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk mengetahui "berapa lebih banyak" yang dimiliki seseorang dibandingkan orang lain, kita mencari selisih antara dua jumlah tersebut. Cara terbaik untuk menemukan selisih adalah dengan menggunakan pengurangan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi angkanya:</strong> Anna memiliki 15 permen, dan Ben memiliki 9 permen.</li><li><strong>Lakukan pengurangan:</strong> Karena kita ingin mencari berapa lebih banyak permen yang dimiliki Anna, kita kurangkan jumlah permen Ben yang lebih sedikit dari jumlah permen Anna yang lebih banyak. Perhitungannya adalah $15 - 9$.</li><li><strong>Hitung selisihnya:</strong> $15 - 9 = 6$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Anna memiliki 6 permen lebih banyak dari Ben.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 5 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 5</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The term "how many fewer" also asks for the difference between two numbers. We find the difference by subtracting the smaller number from the larger number.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the numbers:</strong> The blue box has 20 crayons, and the red box has 14 crayons.</li><li><strong>Set up the subtraction:</strong> We subtract the smaller number (14) from the larger number (20). The calculation is $20 - 14$.</li><li><strong>Calculate the difference:</strong> $20 - 14 = 6$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The red box has 6 fewer crayons.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 5</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Istilah "berapa lebih sedikit" juga menanyakan selisih antara dua bilangan. Kita mencari selisih dengan mengurangkan bilangan yang lebih kecil dari bilangan yang lebih besar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi angkanya:</strong> Kotak biru berisi 20 krayon, dan kotak merah berisi 14 krayon.</li><li><strong>Lakukan pengurangan:</strong> Kita kurangkan angka yang lebih kecil (14) dari angka yang lebih besar (20). Perhitungannya adalah $20 - 14$.</li><li><strong>Hitung selisihnya:</strong> $20 - 14 = 6$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Kotak merah memiliki 6 krayon lebih sedikit.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 6 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 6</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a number pattern problem. We need to find the rule that governs the sequence of numbers to determine the missing number.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze the pattern:</strong> The numbers are 12, 15, 18, ___, 24, 27. They are increasing.</li><li><strong>Find the rule:</strong> From 12 to 15 is an increase of 3 ($12+3=15$). From 15 to 18 is an increase of 3 ($15+3=18$). The rule seems to be "add 3".</li><li><strong>Apply the rule to find the missing number:</strong> We take the number before the blank, which is 18, and add 3. $18 + 3 = 21$.</li><li><strong>Verify the rule:</strong> Let's check if our missing number, 21, fits the rest of the pattern. The next number should be $21+3=24$. This matches the pattern.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The missing number is 21.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 6</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal pola bilangan. Kita perlu menemukan aturan yang mengatur urutan bilangan untuk menentukan bilangan yang hilang.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis polanya:</strong> Angka-angkanya adalah 12, 15, 18, ___, 24, 27. Angka-angka tersebut bertambah besar.</li><li><strong>Temukan aturannya:</strong> Dari 12 ke 15 adalah penambahan 3 ($12+3=15$). Dari 15 ke 18 adalah penambahan 3 ($15+3=18$). Aturannya sepertinya "tambah 3".</li><li><strong>Terapkan aturan untuk menemukan angka yang hilang:</strong> Kita ambil angka sebelum bagian kosong, yaitu 18, dan tambahkan 3. $18 + 3 = 21$.</li><li><strong>Verifikasi aturannya:</strong> Mari kita periksa apakah angka yang kita temukan, 21, sesuai dengan sisa polanya. Angka berikutnya seharusnya $21+3=24$. Ini cocok dengan polanya.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan yang hilang adalah 21.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 7 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 7</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem involves counting backward by a specific number (skip-counting backward). We need to perform repeated subtraction.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the starting point and the rule:</strong> The frog starts at 40 and jumps back 5 at a time. This means we need to subtract 5 repeatedly.</li><li><strong>First jump:</strong> The frog starts at 40. After one jump back, it lands on $40 - 5 = 35$.</li><li><strong>Second jump:</strong> From 35, it jumps back again. It lands on $35 - 5 = 30$.</li><li><strong>Third jump:</strong> From 30, it jumps back a third time. It lands on $30 - 5 = 25$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The next three lily pads are 35, 30, and 25.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 7</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini melibatkan membilang mundur dengan bilangan tertentu (membilang loncat mundur). Kita perlu melakukan pengurangan berulang.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi titik awal dan aturannya:</strong> Katak mulai dari 40 dan melompat mundur 5 setiap kali. Ini berarti kita perlu mengurangi 5 berulang kali.</li><li><strong>Lompatan pertama:</strong> Katak mulai dari 40. Setelah satu lompatan mundur, ia mendarat di $40 - 5 = 35$.</li><li><strong>Lompatan kedua:</strong> Dari 35, ia melompat mundur lagi. Ia mendarat di $35 - 5 = 30$.</li><li><strong>Lompatan ketiga:</strong> Dari 30, ia melompat mundur untuk ketiga kalinya. Ia mendarat di $30 - 5 = 25$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Tiga daun teratai berikutnya adalah 35, 30, dan 25.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 8 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 8</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To compare which group has more, we need to find the total number of items in each group first by using addition. Then, we compare the totals.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate total for Group A:</strong> Group A has 4 cats and 5 dogs. The total is $4 + 5 = 9$ animals.</li><li><strong>Calculate total for Group B:</strong> Group B has 6 cats and 2 dogs. The total is $6 + 2 = 8$ animals.</li><li><strong>Compare the totals:</strong> We compare the total of Group A (9) with the total of Group B (8). The number 9 is greater than 8.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Group A has more animals.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 8</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk membandingkan kelompok mana yang memiliki lebih banyak, kita perlu mencari jumlah total benda di setiap kelompok terlebih dahulu dengan menggunakan penjumlahan. Kemudian, kita bandingkan totalnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung total untuk Kelompok A:</strong> Kelompok A memiliki 4 kucing dan 5 anjing. Totalnya adalah $4 + 5 = 9$ hewan.</li><li><strong>Hitung total untuk Kelompok B:</strong> Kelompok B memiliki 6 kucing dan 2 anjing. Totalnya adalah $6 + 2 = 8$ hewan.</li><li><strong>Bandingkan totalnya:</strong> Kita membandingkan total Kelompok A (9) dengan total Kelompok B (8). Angka 9 lebih besar dari 8.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Kelompok A memiliki lebih banyak hewan.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 9 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 9</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The question "how many more" asks for the difference between two quantities. We use subtraction to find the difference.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the numbers:</strong> Music class has 25 students. Art class has 18 students.</li><li><strong>Set up the subtraction:</strong> To find how many more students are in the music class, we subtract the smaller number from the larger number: $25 - 18$.</li><li><strong>Calculate:</strong> $25 - 18 = 7$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 7 more students in the music class.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 9</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Pertanyaan "berapa lebih banyak" menanyakan selisih antara dua kuantitas. Kita menggunakan pengurangan untuk mencari selisihnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi angkanya:</strong> Kelas musik memiliki 25 siswa. Kelas seni memiliki 18 siswa.</li><li><strong>Lakukan pengurangan:</strong> Untuk mencari berapa lebih banyak siswa di kelas musik, kita kurangkan angka yang lebih kecil dari angka yang lebih besar: $25 - 18$.</li><li><strong>Hitung:</strong> $25 - 18 = 7$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 7 siswa lebih banyak di kelas musik.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 10 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 10</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Skip-counting means adding the same number over and over. We need to find the fourth number in a sequence that starts at 10 and increases by 10 each time.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>First number:</strong> The problem says to start at 10.</li><li><strong>Second number:</strong> Add 10 to the first number: $10 + 10 = 20$.</li><li><strong>Third number:</strong> Add 10 to the second number: $20 + 10 = 30$.</li><li><strong>Fourth number:</strong> Add 10 to the third number: $30 + 10 = 40$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The fourth number you say is 40.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 10</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Membilang loncat berarti menambahkan bilangan yang sama berulang kali. Kita perlu mencari bilangan keempat dalam urutan yang dimulai dari 10 dan bertambah 10 setiap kalinya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Bilangan pertama:</strong> Soal mengatakan untuk memulai dari 10.</li><li><strong>Bilangan kedua:</strong> Tambahkan 10 ke bilangan pertama: $10 + 10 = 20$.</li><li><strong>Bilangan ketiga:</strong> Tambahkan 10 ke bilangan kedua: $20 + 10 = 30$.</li><li><strong>Bilangan keempat:</strong> Tambahkan 10 ke bilangan ketiga: $30 + 10 = 40$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan keempat yang kamu sebutkan adalah 40.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 11 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 11</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The number "between" two other numbers is the one that comes immediately after the first number and immediately before the second number when counting in order.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Think about the number line or counting sequence:</strong> We have the number 39.</li><li><strong>Count one step forward:</strong> The number after 39 is 40.</li><li><strong>Count one more step forward:</strong> The number after 40 is 41.</li><li><strong>Conclusion:</strong> So, 40 is the number that sits between 39 and 41.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The number is 40.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 11</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Bilangan "di antara" dua bilangan lain adalah bilangan yang muncul tepat setelah bilangan pertama dan tepat sebelum bilangan kedua saat berhitung secara berurutan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Pikirkan tentang garis bilangan atau urutan berhitung:</strong> Kita memiliki angka 39.</li><li><strong>Hitung satu langkah maju:</strong> Angka setelah 39 adalah 40.</li><li><strong>Hitung satu langkah maju lagi:</strong> Angka setelah 40 adalah 41.</li><li><strong>Kesimpulan:</strong> Jadi, 40 adalah bilangan yang berada di antara 39 dan 41.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan tersebut adalah 40.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 12 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 12</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To determine if a quantity is "more" or "fewer" than another, we compare their numerical values. A smaller number means "fewer", and a larger number means "more".</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the quantities:</strong> Tom has 17 marbles. Jerry has 22 marbles.</li><li><strong>Compare the numbers:</strong> We compare 17 and 22.</li><li><strong>Determine the relationship:</strong> The number 17 is smaller than the number 22.</li><li><strong>Conclusion:</strong> Therefore, Tom has fewer marbles than Jerry.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Tom has fewer marbles.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 12</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menentukan apakah suatu jumlah "lebih banyak" atau "lebih sedikit" dari yang lain, kita membandingkan nilai numeriknya. Angka yang lebih kecil berarti "lebih sedikit", dan angka yang lebih besar berarti "lebih banyak".</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi jumlahnya:</strong> Tom memiliki 17 kelereng. Jerry memiliki 22 kelereng.</li><li><strong>Bandingkan angkanya:</strong> Kita membandingkan 17 dan 22.</li><li><strong>Tentukan hubungannya:</strong> Angka 17 lebih kecil dari angka 22.</li><li><strong>Kesimpulan:</strong> Oleh karena itu, Tom memiliki lebih sedikit kelereng daripada Jerry.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Tom memiliki lebih sedikit kelereng.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 13 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 13</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Ordering numbers from smallest to largest means arranging them in the sequence they would appear if you were counting up.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>List the numbers:</strong> 21, 8, 15, 32, 19.</li><li><strong>Find the smallest number:</strong> Look through the list and find the smallest value. The number 8 is the smallest.</li><li><strong>Find the next smallest:</strong> From the remaining numbers (21, 15, 32, 19), the smallest is 15.</li><li><strong>Continue the process:</strong> From (21, 32, 19), the smallest is 19. From (21, 32), the smallest is 21. The last number is 32.</li><li><strong>Write the final order:</strong> 8, 15, 19, 21, 32.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The correct order is 8, 15, 19, 21, 32.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 13</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Mengurutkan bilangan dari yang terkecil hingga terbesar berarti menyusunnya sesuai urutan kemunculannya jika Anda berhitung maju.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Daftar angkanya:</strong> 21, 8, 15, 32, 19.</li><li><strong>Cari angka terkecil:</strong> Lihat daftar dan temukan nilai terkecil. Angka 8 adalah yang terkecil.</li><li><strong>Cari angka terkecil berikutnya:</strong> Dari angka yang tersisa (21, 15, 32, 19), yang terkecil adalah 15.</li><li><strong>Lanjutkan prosesnya:</strong> Dari (21, 32, 19), yang terkecil adalah 19. Dari (21, 32), yang terkecil adalah 21. Angka terakhir adalah 32.</li><li><strong>Tulis urutan akhirnya:</strong> 8, 15, 19, 21, 32.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Urutan yang benar adalah 8, 15, 19, 21, 32.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 14 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 14</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Counting backward by 1 means finding the number that comes just before the current number. It is the same as subtracting 1.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Starting number:</strong> 53.</li><li><strong>First number backward:</strong> $53 - 1 = 52$.</li><li><strong>Second number backward:</strong> $52 - 1 = 51$.</li><li><strong>Third number backward:</strong> $51 - 1 = 50$.</li><li><strong>Fourth number backward:</strong> $50 - 1 = 49$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The next four numbers are 52, 51, 50, 49.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 14</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Membilang mundur 1 langkah berarti mencari bilangan yang tepat sebelum bilangan saat ini. Ini sama dengan mengurangi 1.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Angka awal:</strong> 53.</li><li><strong>Angka mundur pertama:</strong> $53 - 1 = 52$.</li><li><strong>Angka mundur kedua:</strong> $52 - 1 = 51$.</li><li><strong>Angka mundur ketiga:</strong> $51 - 1 = 50$.</li><li><strong>Angka mundur keempat:</strong> $50 - 1 = 49$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Empat bilangan berikutnya adalah 52, 51, 50, 49.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 15 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 15</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To compare quantities, we first count them. If the counts are the same number, the quantities are 'equal to' each other.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Count the red apples:</strong> There are 12 red apples.</li><li><strong>Count the green apples:</strong> There are 12 green apples.</li><li><strong>Compare the counts:</strong> The number 12 is the same as the number 12.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The number of red apples is equal to the number of green apples.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 15</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk membandingkan kuantitas, kita menghitungnya terlebih dahulu. Jika hasil hitungannya adalah angka yang sama, maka kuantitasnya 'sama dengan' satu sama lain.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung apel merah:</strong> Ada 12 apel merah.</li><li><strong>Hitung apel hijau:</strong> Ada 12 apel hijau.</li><li><strong>Bandingkan hasil hitungan:</strong> Angka 12 sama dengan angka 12.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Jumlah apel merah sama dengan jumlah apel hijau.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 16 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 16</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a two-step problem. First, we need to find the total for one person using addition. Then, we compare that total with the other person's amount.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find Lisa's total:</strong> Lisa read 10 pages on Monday and 8 pages on Tuesday. Her total is $10 + 8 = 18$ pages.</li><li><strong>Identify David's total:</strong> The problem states David read 15 pages in total.</li><li><strong>Compare the totals:</strong> Compare Lisa's total (18) with David's total (15). The number 18 is greater than 15.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Lisa read more pages.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 16</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal dua langkah. Pertama, kita perlu mencari total untuk satu orang menggunakan penjumlahan. Kemudian, kita bandingkan total tersebut dengan jumlah orang lain.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari total Lisa:</strong> Lisa membaca 10 halaman pada hari Senin dan 8 halaman pada hari Selasa. Totalnya adalah $10 + 8 = 18$ halaman.</li><li><strong>Identifikasi total David:</strong> Soal menyatakan David membaca total 15 halaman.</li><li><strong>Bandingkan totalnya:</strong> Bandingkan total Lisa (18) dengan total David (15). Angka 18 lebih besar dari 15.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Lisa membaca lebih banyak halaman.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 17 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 17</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We must first calculate the number of cookies left using subtraction. Then, we compare this result to the number 25 to see if it's more or less.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate cookies left:</strong> There were 30 cookies, and 7 were eaten. The number of cookies left is $30 - 7 = 23$.</li><li><strong>Compare with 25:</strong> Now we compare the number of cookies left (23) with the number 25.</li><li><strong>Determine relationship:</strong> The number 23 is smaller than 25.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are less than 25 cookies left.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 17</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita harus terlebih dahulu menghitung sisa kue menggunakan pengurangan. Kemudian, kita bandingkan hasil ini dengan angka 25 untuk melihat apakah lebih banyak atau lebih sedikit.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung sisa kue:</strong> Ada 30 kue, dan 7 dimakan. Jumlah kue yang tersisa adalah $30 - 7 = 23$.</li><li><strong>Bandingkan dengan 25:</strong> Sekarang kita bandingkan jumlah kue yang tersisa (23) dengan angka 25.</li><li><strong>Tentukan hubungannya:</strong> Angka 23 lebih kecil dari 25.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Kue yang tersisa lebih sedikit dari 25.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 18 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 18</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the missing number in a pattern, we must first figure out the rule. Since the numbers are getting smaller, the rule is likely subtraction.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Look at the numbers:</strong> 50, 45, 40, ___, 30.</li><li><strong>Find the rule:</strong> To go from 50 to 45, we subtract 5. To go from 45 to 40, we subtract 5. The rule is to subtract 5.</li><li><strong>Find the missing number:</strong> Apply the rule to 40. $40 - 5 = 35$.</li><li><strong>Check the pattern:</strong> If the missing number is 35, the next number should be $35 - 5 = 30$. This matches the pattern.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The missing number is 35.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 18</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menemukan bilangan yang hilang dalam sebuah pola, kita harus terlebih dahulu mencari aturannya. Karena bilangannya semakin kecil, aturannya kemungkinan adalah pengurangan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Lihat angkanya:</strong> 50, 45, 40, ___, 30.</li><li><strong>Temukan aturannya:</strong> Untuk berpindah dari 50 ke 45, kita kurangi 5. Dari 45 ke 40, kita kurangi 5. Aturannya adalah mengurangi 5.</li><li><strong>Temukan angka yang hilang:</strong> Terapkan aturan pada 40. $40 - 5 = 35$.</li><li><strong>Periksa polanya:</strong> Jika angka yang hilang adalah 35, angka berikutnya seharusnya $35 - 5 = 30$. Ini cocok dengan polanya.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan yang hilang adalah 35.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 19 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 19</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a simple combination problem. We can list all the possible two-digit numbers we can form using the given digits.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>First digit can be 1:</strong> If the first digit is 1, the second digit can be 1 (making 11) or 2 (making 12).</li><li><strong>First digit can be 2:</strong> If the first digit is 2, the second digit can be 1 (making 21) or 2 (making 22).</li><li><strong>List all possibilities:</strong> The numbers we can make are 11, 12, 21, and 22.</li><li><strong>Count the possibilities:</strong> There are 4 different numbers in our list.</li></ol><div class="final-answer"><strong>Final Answer:</strong> You can make 4 two-digit numbers.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 19</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal kombinasi sederhana. Kita dapat mendaftar semua kemungkinan bilangan dua angka yang bisa dibentuk menggunakan angka-angka yang diberikan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Angka pertama bisa 1:</strong> Jika angka pertama adalah 1, angka kedua bisa 1 (menjadi 11) atau 2 (menjadi 12).</li><li><strong>Angka pertama bisa 2:</strong> Jika angka pertama adalah 2, angka kedua bisa 1 (menjadi 21) atau 2 (menjadi 22).</li><li><strong>Daftar semua kemungkinan:</strong> Angka yang bisa kita buat adalah 11, 12, 21, dan 22.</li><li><strong>Hitung kemungkinannya:</strong> Ada 4 angka berbeda dalam daftar kita.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Kamu bisa membuat 4 bilangan dua angka.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 20 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 20</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To compare multi-digit numbers, we start by looking at the digit in the largest place value (in this case, the hundreds place). If they are the same, we move to the next place value (tens) to compare.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Compare the hundreds place:</strong> The number 112 has a 1 in the hundreds place. The number 121 also has a 1 in the hundreds place. They are the same, so we can't decide yet.</li><li><strong>Compare the tens place:</strong> The number 112 has a 1 in the tens place. The number 121 has a 2 in the tens place.</li><li><strong>Make a decision:</strong> Since 1 is smaller than 2, the number with 1 in the tens place (112) is the smaller number. We don't need to look at the ones place.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 112 is the smaller number.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 20</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk membandingkan bilangan multi-digit, kita mulai dengan melihat angka pada nilai tempat terbesar (dalam hal ini, tempat ratusan). Jika sama, kita pindah ke nilai tempat berikutnya (puluhan) untuk membandingkan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Bandingkan tempat ratusan:</strong> Angka 112 memiliki 1 di tempat ratusan. Angka 121 juga memiliki 1 di tempat ratusan. Keduanya sama, jadi kita belum bisa memutuskan.</li><li><strong>Bandingkan tempat puluhan:</strong> Angka 112 memiliki 1 di tempat puluhan. Angka 121 memiliki 2 di tempat puluhan.</li><li><strong>Buat keputusan:</strong> Karena 1 lebih kecil dari 2, maka angka dengan 1 di tempat puluhan (112) adalah angka yang lebih kecil. Kita tidak perlu melihat tempat satuan.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 112 adalah bilangan yang lebih kecil.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 21 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 21</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The phrase "how many more" asks for the difference between two quantities. Subtraction is used to find the difference.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the quantities:</strong> There are 23 green leaves and 14 yellow leaves.</li><li><strong>Set up the subtraction:</strong> We subtract the smaller number from the larger number: $23 - 14$.</li><li><strong>Calculate:</strong> $23 - 14 = 9$.</li></li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 9 more green leaves than yellow leaves.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 21</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Frasa "berapa lebih banyak" menanyakan selisih antara dua kuantitas. Pengurangan digunakan untuk mencari selisihnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi kuantitasnya:</strong> Ada 23 daun hijau dan 14 daun kuning.</li><li><strong>Lakukan pengurangan:</strong> Kita kurangkan angka yang lebih kecil dari angka yang lebih besar: $23 - 14$.</li><li><strong>Hitung:</strong> $23 - 14 = 9$.</li></li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 9 daun hijau lebih banyak daripada daun kuning.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 22 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 22</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A countdown means counting backward one by one until you reach zero. We need to identify the three numbers that come right before zero.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Understand the end point:</strong> "Blast off!" happens at 0. We need the three numbers before 0.</li><li><strong>The number before 0 is 1.</strong></li><li><strong>The number before 1 is 2.</strong></li><li><strong>The number before 2 is 3.</strong></li><li><strong>List them in order of speech:</strong> During the countdown, they would say "..., 3, 2, 1, Blast off!".</li></ol><div class="final-answer"><strong>Final Answer:</strong> The last three numbers are 3, 2, 1.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 22</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Hitung mundur berarti menghitung ke belakang satu per satu hingga mencapai nol. Kita perlu mengidentifikasi tiga angka yang muncul tepat sebelum nol.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Pahami titik akhirnya:</strong> "Meluncur!" terjadi pada hitungan 0. Kita perlu tiga angka sebelum 0.</li><li><strong>Angka sebelum 0 adalah 1.</strong></li><li><strong>Angka sebelum 1 adalah 2.</strong></li><li><strong>Angka sebelum 2 adalah 3.</strong></li><li><strong>Sebutkan secara berurutan:</strong> Selama hitung mundur, mereka akan mengucapkan "..., 3, 2, 1, Meluncur!".</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Tiga angka terakhir adalah 3, 2, 1.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 23 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 23</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "One more than" a number means you add 1 to that number. It is the very next number when you count forward.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Take the starting number:</strong> 29.</li><li><strong>Add 1:</strong> The calculation is $29 + 1$.</li><li><strong>Result:</strong> $29 + 1 = 30$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> One more than 29 is 30.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 23</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Satu lebihnya dari" sebuah bilangan berarti Anda menambahkan 1 pada bilangan tersebut. Ini adalah bilangan berikutnya saat Anda berhitung maju.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Ambil angka awalnya:</strong> 29.</li><li><strong>Tambah 1:</strong> Perhitungannya adalah $29 + 1$.</li><li><strong>Hasil:</strong> $29 + 1 = 30$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Satu lebihnya dari 29 adalah 30.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 24 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 24</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "One less than" a number means you subtract 1 from that number. It is the number that comes just before it when you count.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Take the starting number:</strong> 40.</li><li><strong>Subtract 1:</strong> The calculation is $40 - 1$.</li><li><strong>Result:</strong> $40 - 1 = 39$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> One less than 40 is 39.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 24</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Satu kurangnya dari" sebuah bilangan berarti Anda mengurangi 1 dari bilangan tersebut. Ini adalah bilangan yang muncul tepat sebelumnya saat Anda berhitung.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Ambil angka awalnya:</strong> 40.</li><li><strong>Kurangi 1:</strong> Perhitungannya adalah $40 - 1$.</li><li><strong>Hasil:</strong> $40 - 1 = 39$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Satu kurangnya dari 40 adalah 39.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 25 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 25</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Fewer" means a smaller quantity. To find which group has fewer, we count each group and identify which count is the smaller number.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Count the chickens:</strong> There are 17 chickens.</li><li><strong>Count the pigs:</strong> There are 11 pigs.</li><li><strong>Compare the numbers:</strong> Compare 17 and 11. The number 11 is smaller than 17.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are fewer pigs on the farm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 25</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Lebih sedikit" berarti jumlah yang lebih kecil. Untuk menemukan kelompok mana yang lebih sedikit, kita hitung setiap kelompok dan identifikasi hitungan mana yang merupakan angka yang lebih kecil.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung ayam:</strong> Ada 17 ayam.</li><li><strong>Hitung babi:</strong> Ada 11 babi.</li><li><strong>Bandingkan angkanya:</strong> Bandingkan 17 dan 11. Angka 11 lebih kecil dari 17.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada lebih sedikit babi di peternakan.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 26 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 26</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to systematically list all the numbers in the given range (1 to 20) and check each one to see if it contains the digit '1'. Then we count how many such numbers we found.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>List the numbers from 1 to 20:</strong> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.</li><li><strong>Identify numbers with the digit '1':</strong> From 1 to 9, only the number <strong>1</strong> has a '1'. From 10 to 19, all numbers have a '1': <strong>10, 11, 12, 13, 14, 15, 16, 17, 18, 19</strong>. The number 20 does not have a '1'.</li><li><strong>Count them:</strong> We found 1 number in the first group, and 10 numbers in the second group. Total is $1 + 10 = 11$ numbers. (Note: 11 has two '1's, but it's still one number).</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 11 numbers.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 26</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu secara sistematis mendaftar semua bilangan dalam rentang yang diberikan (1 hingga 20) dan memeriksa masing-masing untuk melihat apakah bilangan tersebut mengandung angka '1'. Kemudian kita hitung berapa banyak bilangan tersebut yang kita temukan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Daftar angka dari 1 sampai 20:</strong> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.</li><li><strong>Identifikasi angka dengan digit '1':</strong> Dari 1 sampai 9, hanya angka <strong>1</strong> yang memiliki '1'. Dari 10 sampai 19, semua angka memiliki '1': <strong>10, 11, 12, 13, 14, 15, 16, 17, 18, 19</strong>. Angka 20 tidak memiliki '1'.</li><li><strong>Hitung jumlahnya:</strong> Kita menemukan 1 angka di kelompok pertama, dan 10 angka di kelompok kedua. Totalnya adalah $1 + 10 = 11$ angka. (Catatan: 11 memiliki dua angka '1', tapi tetap dihitung sebagai satu bilangan).</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 11 bilangan.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 27 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 27</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem involves logical ordering, also known as transitive reasoning. If A is greater than B, and B is greater than C, then A must be the greatest.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze the first statement:</strong> "John has more apples than Mary." We can write this as: John > Mary.</li><li><strong>Analyze the second statement:</strong> "Mary has more apples than Sam." We can write this as: Mary > Sam.</li><li><strong>Combine the statements:</strong> If John has more than Mary, and Mary has more than Sam, we can put them in a single line: John > Mary > Sam.</li><li><strong>Identify who has the most:</strong> The person at the beginning of this ordered list has the most apples.</li></ol><div class="final-answer"><strong>Final Answer:</strong> John has the most apples.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 27</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini melibatkan pengurutan logis, yang juga dikenal sebagai penalaran transitif. Jika A lebih besar dari B, dan B lebih besar dari C, maka A pasti yang terbesar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis pernyataan pertama:</strong> "John memiliki apel lebih banyak dari Mary." Kita bisa menulisnya sebagai: John > Mary.</li><li><strong>Analisis pernyataan kedua:</strong> "Mary memiliki apel lebih banyak dari Sam." Kita bisa menulisnya sebagai: Mary > Sam.</li><li><strong>Gabungkan pernyataan:</strong> Jika John memiliki lebih banyak dari Mary, dan Mary memiliki lebih banyak dari Sam, kita bisa menuliskannya dalam satu baris: John > Mary > Sam.</li><li><strong>Identifikasi siapa yang paling banyak:</strong> Orang yang berada di awal daftar urutan ini memiliki apel paling banyak.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> John memiliki apel paling banyak.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 28 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 28</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a skip-counting or repeated addition problem. We are adding 4 repeatedly for each car to find the total number of wheels.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>1 car:</strong> 4 wheels.</li><li><strong>2 cars:</strong> $4 + 4 = 8$ wheels.</li><li><strong>3 cars:</strong> $8 + 4 = 12$ wheels.</li><li><strong>4 cars:</strong> $12 + 4 = 16$ wheels.</li><li><strong>5 cars:</strong> $16 + 4 = 20$ wheels.</li><li><strong>Fill in the blanks:</strong> The pattern is 4, 8, 12, 16, 20.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 20 wheels in total. The blanks are 12, 16, 20.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 28</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal membilang loncat atau penjumlahan berulang. Kita menambahkan 4 berulang kali untuk setiap mobil untuk menemukan jumlah total roda.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>1 mobil:</strong> 4 roda.</li><li><strong>2 mobil:</strong> $4 + 4 = 8$ roda.</li><li><strong>3 mobil:</strong> $8 + 4 = 12$ roda.</li><li><strong>4 mobil:</strong> $12 + 4 = 16$ roda.</li><li><strong>5 mobil:</strong> $16 + 4 = 20$ roda.</li><li><strong>Isi bagian yang kosong:</strong> Polanya adalah 4, 8, 12, 16, 20.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Totalnya ada 20 roda. Bagian yang kosong adalah 12, 16, 20.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 29 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 29</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a two-step problem. First, calculate the score for Team B using subtraction. Then, compare the scores of Team A and Team B to see which is greater.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find Team B's score:</strong> Team B scored 10 fewer than Team A's 45 points. So, Team B's score is $45 - 10 = 35$ points.</li><li><strong>Compare the scores:</strong> Team A scored 45 points. Team B scored 35 points.</li><li><strong>Determine which is more:</strong> The number 45 is greater than 35.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Team A scored more points.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 29</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal dua langkah. Pertama, hitung skor untuk Tim B menggunakan pengurangan. Kemudian, bandingkan skor Tim A dan Tim B untuk melihat mana yang lebih besar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari skor Tim B:</strong> Tim B mencetak 10 poin lebih sedikit dari 45 poin Tim A. Jadi, skor Tim B adalah $45 - 10 = 35$ poin.</li><li><strong>Bandingkan skornya:</strong> Tim A mencetak 45 poin. Tim B mencetak 35 poin.</li><li><strong>Tentukan mana yang lebih banyak:</strong> Angka 45 lebih besar dari 35.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Tim A mencetak lebih banyak poin.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 30 --><section class="page"><div class="content-wrapper"><h2>Solution for Question 30</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to find the total number of people on the bus by using addition. Then, we compare this total to the number of available seats.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate the total number of students:</strong> First, 15 students got on. Then, 5 more got on. The total number of students is $15 + 5 = 20$.</li><li><strong>Identify the number of seats:</strong> The bus has 20 seats.</li><li><strong>Compare students to seats:</strong> There are 20 students and 20 seats. The numbers are equal.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Yes, there are enough seats for everyone.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 30</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu mencari jumlah total orang di dalam bus dengan menggunakan penjumlahan. Kemudian, kita bandingkan total ini dengan jumlah kursi yang tersedia.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung jumlah total siswa:</strong> Pertama, 15 siswa naik. Kemudian, 5 siswa lagi naik. Jumlah total siswa adalah $15 + 5 = 20$.</li><li><strong>Identifikasi jumlah kursi:</strong> Bus memiliki 20 kursi.</li><li><strong>Bandingkan siswa dengan kursi:</strong> Ada 20 siswa dan 20 kursi. Jumlahnya sama.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ya, kursinya cukup untuk semua orang.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+</body>
+</html>
+
