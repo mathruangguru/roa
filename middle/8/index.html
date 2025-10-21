@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika - Kelas 3 & 4</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 12cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+        .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before,
+      .solutions-cover-page::before {
+        opacity: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1, h2 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 20pt;
+        margin-top: 0;
+      }
+      .soal-latihan {
+        margin-bottom: 25px;
+        break-inside: avoid;
+      }
+      .soal-latihan b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .lang-id {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dotted #ccc;
+        color: #555;
+        font-style: italic;
+        font-size: 11pt;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+        .solution-detail {
+          margin-top: 20px;
+      }
+      .concept {
+          background-color: #eef2ff;
+          border-left: 4px solid #4f46e5;
+          padding: 1rem;
+          margin: 1rem 0;
+          border-radius: 0.25rem;
+          text-align: justify;
+      }
+      .concept p {
+          margin: 0;
+          padding: 0;
+          border: none;
+      }
+      .steps-title {
+          font-weight: 700;
+          font-size: 14pt;
+          margin-top: 20px;
+          margin-bottom: 10px;
+      }
+      .solution-points {
+          padding-left: 20px;
+      }
+      .solution-points li {
+          margin-bottom: 15px;
+          text-align: justify;
+      }
+      .final-answer {
+          font-weight: 700;
+          color: #166534;
+          background-color: #dcfce7;
+          padding: 0.75rem 1.25rem;
+          border-radius: 6px;
+          display: inline-block;
+          margin-top: 1rem;
+          width: 100%;
+          text-align: center;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <section class="page cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
+        <h1 class="cover-title">Math Competition Practice 8</h1>
+        <p class="cover-subtitle">Heuristics: Excess & Shortage, Interval Problems</p>
+        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 3 - 4</p>
+      </div>
+    </section>
+
+    <!-- Halaman Soal 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Excess & Shortage Problems</h1>
+        <div class="soal-latihan">
+          <b>1. SHARING SWEETS</b>
+          <div class="soal-konten">
+            A teacher wants to give some sweets to her students. If she gives 4 sweets to each student, she will have 8 sweets left over. If she gives 6 sweets to each student, she will be short of 12 sweets. How many students are in the class?
+            <div class="lang-id">
+              Seorang guru ingin membagikan permen kepada murid-muridnya. Jika dia memberikan 4 permen kepada setiap murid, dia akan memiliki sisa 8 permen. Jika dia memberikan 6 permen kepada setiap murid, dia akan kekurangan 12 permen. Berapa banyak murid di kelas itu?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>2. EXCHANGING MARBLES</b>
+          <div class="soal-konten">
+            Andy and Ben have some marbles. If Andy gives 10 marbles to Ben, they will both have the same number of marbles. If the total number of marbles they have is 80, how many marbles did Andy have at first?
+            <div class="lang-id">
+              Andy dan Ben memiliki sejumlah kelereng. Jika Andy memberikan 10 kelereng kepada Ben, mereka berdua akan memiliki jumlah kelereng yang sama. Jika jumlah total kelereng mereka adalah 80, berapa banyak kelereng yang dimiliki Andy pada awalnya?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>3. ARRANGING CHAIRS</b>
+          <div class="soal-konten">
+            For a school event, chairs are arranged in rows. If 10 chairs are placed in each row, there will be a shortage of 3 chairs. If 9 chairs are placed in each row, there will be 5 chairs left over. How many chairs are there in total?
+            <div class="lang-id">
+              Untuk sebuah acara sekolah, kursi-kursi disusun dalam barisan. Jika 10 kursi diletakkan di setiap baris, akan ada kekurangan 3 kursi. Jika 9 kursi diletakkan di setiap baris, akan ada sisa 5 kursi. Berapa jumlah total kursi yang ada?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 2 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Excess & Shortage Problems</h1>
+            <div class="soal-latihan">
+              <b>4. BUYING PENS</b>
+              <div class="soal-konten">
+                Clara has a certain amount of money. If she buys pens that cost 3 dollars each, she will have 5 dollars left. If she buys pens that cost 4 dollars each, she will be short of 2 dollars. How much money does Clara have?
+                <div class="lang-id">
+                  Clara memiliki sejumlah uang. Jika dia membeli pulpen seharga 3 dolar per buah, dia akan memiliki sisa uang 5 dolar. Jika dia membeli pulpen seharga 4 dolar per buah, dia akan kekurangan uang 2 dolar. Berapa banyak uang yang dimiliki Clara?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+                <b>5. APPLES IN BASKETS</b>
+                <div class="soal-konten">
+                    There are two baskets of apples, Basket A and Basket B. If 20 apples are moved from Basket A to Basket B, Basket B will have 3 times as many apples as Basket A. Initially, both baskets had a total of 240 apples. How many apples were in Basket A at first?
+                    <div class="lang-id">
+                        Ada dua keranjang apel, Keranjang A dan Keranjang B. Jika 20 apel dipindahkan dari Keranjang A ke Keranjang B, Keranjang B akan memiliki apel 3 kali lebih banyak dari Keranjang A. Awalnya, kedua keranjang memiliki total 240 apel. Berapa banyak apel di Keranjang A pada awalnya?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>6. DIVIDING STUDENTS</b>
+                <div class="soal-konten">
+                    A group of students are to be divided into teams. If they are divided into teams of 7, there are 2 students left. If they are divided into teams of 8, one team will be short of 3 students. How many students are there in the group? (The number of students is less than 100).
+                    <div class="lang-id">
+                        Sekelompok siswa akan dibagi menjadi beberapa tim. Jika mereka dibagi menjadi tim yang terdiri dari 7 orang, ada 2 siswa yang tersisa. Jika mereka dibagi menjadi tim yang terdiri dari 8 orang, satu tim akan kekurangan 3 siswa. Berapa banyak siswa dalam kelompok tersebut? (Jumlah siswa kurang dari 100).
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 3 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Excess & Shortage Problems</h1>
+            <div class="soal-latihan">
+                <b>7. MONEY TRANSFER</b>
+                <div class="soal-konten">
+                    David has twice as much money as Eric. If David gives Eric 15 dollars, they will have the same amount of money. How much money did they have altogether?
+                    <div class="lang-id">
+                        David memiliki uang dua kali lebih banyak dari Eric. Jika David memberikan 15 dolar kepada Eric, mereka akan memiliki jumlah uang yang sama. Berapa jumlah total uang yang mereka miliki?
+                    </div>
+                </div>
+            </div>
+             <div class="soal-latihan">
+                <b>8. PACKING COOKIES</b>
+                <div class="soal-konten">
+                    Mrs. Lee baked some cookies. If she packs 12 cookies in each bag, she will have 5 cookies left. If she had packed 13 cookies in each bag instead, she would need 4 more cookies to fill the last bag completely. How many cookies did Mrs. Lee bake?
+                    <div class="lang-id">
+                        Ibu Lee memanggang beberapa kue kering. Jika dia mengemas 12 kue kering di setiap kantong, dia akan memiliki sisa 5 kue. Jika sebaliknya dia mengemas 13 kue kering di setiap kantong, dia akan membutuhkan 4 kue lagi untuk mengisi kantong terakhir hingga penuh. Berapa banyak kue yang dipanggang Ibu Lee?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>9. BOOKS ON SHELVES</b>
+                <div class="soal-konten">
+                    There are two bookshelves, Shelf X and Shelf Y. If 30 books are moved from Shelf X to Shelf Y, both shelves will have the same number of books. If 15 books are moved from Shelf Y to Shelf X, Shelf X will have 4 times as many books as Shelf Y. How many books are on Shelf X initially?
+                    <div class="lang-id">
+                        Ada dua rak buku, Rak X dan Rak Y. Jika 30 buku dipindahkan dari Rak X ke Rak Y, kedua rak akan memiliki jumlah buku yang sama. Jika 15 buku dipindahkan dari Rak Y ke Rak X, Rak X akan memiliki buku 4 kali lebih banyak dari Rak Y. Berapa banyak buku di Rak X pada awalnya?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 4 -->
+    <section class="page">
+        <div class="content-wrapper">
+             <h1>Topic: Excess & Shortage Problems</h1>
+            <div class="soal-latihan">
+                <b>10. FARM ANIMALS</b>
+                <div class="soal-konten">
+                    A farmer has some chickens and goats. There are a total of 30 heads and 80 legs. If the farmer sells some goats so that the number of chickens becomes four times the number of goats, how many goats did he sell?
+                    <div class="lang-id">
+                        Seorang peternak memiliki beberapa ayam dan kambing. Total ada 30 kepala dan 80 kaki. Jika peternak menjual beberapa kambing sehingga jumlah ayam menjadi empat kali jumlah kambing, berapa banyak kambing yang dia jual?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>11. STORYBOOK PAGES</b>
+                <div class="soal-konten">
+                    Leo reads a storybook. If he reads 15 pages a day, he will finish the book with 6 pages left unread on the last day. If he reads 18 pages a day, he will finish the book exactly in 2 fewer days. How many pages are in the book?
+                    <div class="lang-id">
+                        Leo membaca sebuah buku cerita. Jika dia membaca 15 halaman sehari, dia akan menyelesaikan buku dengan sisa 6 halaman yang belum dibaca pada hari terakhir. Jika dia membaca 18 halaman sehari, dia akan menyelesaikan buku tepat dalam 2 hari lebih sedikit. Ada berapa halaman dalam buku itu?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>12. PLANTING SEEDLINGS</b>
+                <div class="soal-konten">
+                    A group of students planted seedlings. If each student plants 5 seedlings, there are 20 seedlings left. If each student plants 8 seedlings, they are short of 16 seedlings. How many seedlings were there?
+                    <div class="lang-id">
+                        Sekelompok siswa menanam bibit. Jika setiap siswa menanam 5 bibit, ada 20 bibit yang tersisa. Jika setiap siswa menanam 8 bibit, mereka kekurangan 16 bibit. Berapa banyak bibit yang ada?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 5 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Excess & Shortage Problems</h1>
+            <div class="soal-latihan">
+                <b>13. TRANSFERRING WATER</b>
+                <div class="soal-konten">
+                    Container A has 120 ml more water than Container B. After 80 ml of water is poured from Container A to Container B, which container has more water and by how much?
+                    <div class="lang-id">
+                        Wadah A memiliki 120 ml air lebih banyak dari Wadah B. Setelah 80 ml air dituangkan dari Wadah A ke Wadah B, wadah manakah yang memiliki air lebih banyak dan berapa selisihnya?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>14. ORANGES AND BOXES</b>
+                <div class="soal-konten">
+                    A fruit seller packs oranges into boxes. If he packs 24 oranges per box, he will have 10 oranges left. If he packs 28 oranges per box, he will be short of 6 oranges for the last box. How many boxes of oranges does he have?
+                    <div class="lang-id">
+                        Seorang penjual buah mengemas jeruk ke dalam kotak. Jika dia mengemas 24 jeruk per kotak, dia akan memiliki sisa 10 jeruk. Jika dia mengemas 28 jeruk per kotak, dia akan kekurangan 6 jeruk untuk kotak terakhir. Berapa banyak kotak jeruk yang dia miliki?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>15. CLASSROOM DESKS</b>
+                <div class="soal-konten">
+                    Students are seated at desks in a classroom. If 2 students sit at each desk, 7 students are left without a seat. If 3 students sit at each desk, there are 4 empty desks. How many students are in the classroom?
+                    <div class="lang-id">
+                        Siswa duduk di meja di dalam kelas. Jika 2 siswa duduk di setiap meja, 7 siswa tidak mendapat tempat duduk. Jika 3 siswa duduk di setiap meja, ada 4 meja yang kosong. Berapa banyak siswa di dalam kelas?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 6 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Interval Problems</h1>
+            <div class="soal-latihan">
+                <b>16. PLANTING TREES</b>
+                <div class="soal-konten">
+                    Trees are planted at regular intervals of 8 meters along one side of a straight road. If the road is 120 meters long, how many trees are planted from the start to the end of the road?
+                    <div class="lang-id">
+                        Pohon-pohon ditanam dengan jarak teratur 8 meter di sepanjang satu sisi jalan yang lurus. Jika panjang jalan tersebut 120 meter, berapa banyak pohon yang ditanam dari awal hingga akhir jalan?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>17. CUTTING A ROPE</b>
+                <div class="soal-konten">
+                    A rope is 54 meters long. It is cut into smaller pieces, each 6 meters long. How many cuts are needed to get all the smaller pieces?
+                    <div class="lang-id">
+                        Sebuah tali panjangnya 54 meter. Tali tersebut dipotong menjadi beberapa bagian kecil, masing-masing sepanjang 6 meter. Berapa banyak potongan yang diperlukan untuk mendapatkan semua bagian kecil tersebut?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>18. CLOCK CHIMES</b>
+                <div class="soal-konten">
+                    A clock takes 12 seconds to chime 5 times at 5 o'clock. Assuming the interval between each chime is the same, how long would it take to chime 9 times at 9 o'clock?
+                    <div class="lang-id">
+                        Sebuah jam membutuhkan 12 detik untuk berdentang 5 kali pada pukul 5. Dengan asumsi interval antara setiap dentangan adalah sama, berapa lama waktu yang dibutuhkan untuk berdentang 9 kali pada pukul 9?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 7 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Interval Problems</h1>
+            <div class="soal-latihan">
+                <b>19. FENCE POSTS AROUND A GARDEN</b>
+                <div class="soal-konten">
+                    A rectangular garden has a perimeter of 90 meters. Fence posts are placed every 5 meters around the garden. How many fence posts are needed?
+                    <div class="lang-id">
+                        Sebuah taman persegi panjang memiliki keliling 90 meter. Tiang pagar diletakkan setiap 5 meter di sekeliling taman. Berapa banyak tiang pagar yang dibutuhkan?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>20. SAWING A LOG</b>
+                <div class="soal-konten">
+                    A worker needs to saw a wooden log into 7 pieces. Each saw cut takes 3 minutes. How much time does he need to finish the job?
+                    <div class="lang-id">
+                        Seorang pekerja perlu menggergaji sebatang kayu menjadi 7 bagian. Setiap potongan gergaji memakan waktu 3 menit. Berapa banyak waktu yang dia butuhkan untuk menyelesaikan pekerjaan itu?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>21. STATIONS ON A TRAIN LINE</b>
+                <div class="soal-konten">
+                    A train travels from Station A to Station H, passing through stations B, C, D, E, F, and G without stopping. There are 12 kilometers between any two consecutive stations. What is the total distance from Station A to Station H?
+                    <div class="lang-id">
+                        Sebuah kereta api melakukan perjalanan dari Stasiun A ke Stasiun H, melewati stasiun B, C, D, E, F, dan G tanpa berhenti. Jarak antara dua stasiun yang berurutan adalah 12 kilometer. Berapa jarak total dari Stasiun A ke Stasiun H?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 8 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Interval Problems</h1>
+            <div class="soal-latihan">
+                <b>22. KNOTTING ROPES</b>
+                <div class="soal-konten">
+                    Five short ropes, each 10 cm long, are tied together to make a long rope. Each knot uses up 1 cm from each rope end being tied. What is the total length of the long rope?
+                    <div class="lang-id">
+                        Lima tali pendek, masing-masing sepanjang 10 cm, diikat menjadi satu untuk membuat tali panjang. Setiap simpul menggunakan 1 cm dari setiap ujung tali yang diikat. Berapa panjang total tali panjang tersebut?
+                    </div>
+                </div>
+            </div>
+             <div class="soal-latihan">
+                <b>23. CLIMBING STAIRS</b>
+                <div class="soal-konten">
+                    Ben lives on the 6th floor of an apartment building. He takes 40 seconds to walk up from the 1st floor to the 5th floor. How much more time does he need to reach his home on the 6th floor, walking at the same speed?
+                    <div class="lang-id">
+                        Ben tinggal di lantai 6 sebuah gedung apartemen. Dia membutuhkan 40 detik untuk berjalan dari lantai 1 ke lantai 5. Berapa banyak waktu lagi yang dia butuhkan untuk mencapai rumahnya di lantai 6, dengan kecepatan berjalan yang sama?
+                    </div>
+                </div>
+            </div>
+             <div class="soal-latihan">
+                <b>24. BEADS ON A NECKLACE</b>
+                <div class="soal-konten">
+                    Maria is making a necklace by stringing beads. She strings 2 red beads, then 1 blue bead, then 2 red beads, then 1 blue bead, and so on. If she uses a total of 45 beads, how many blue beads are on the necklace?
+                    <div class="lang-id">
+                        Maria sedang membuat kalung dengan merangkai manik-manik. Dia merangkai 2 manik-manik merah, lalu 1 manik-manik biru, lalu 2 manik-manik merah, lalu 1 manik-manik biru, dan seterusnya. Jika dia menggunakan total 45 manik-manik, berapa banyak manik-manik biru di kalung itu?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 9 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Interval Problems</h1>
+            <div class="soal-latihan">
+                <b>25. BUS STOPS</b>
+                <div class="soal-konten">
+                    A bus route has 15 stops in total, including the first and the last stop. The distance between each stop is 2 km. How long is the entire bus route from the first stop to the last stop?
+                    <div class="lang-id">
+                        Sebuah rute bus memiliki total 15 pemberhentian, termasuk pemberhentian pertama dan terakhir. Jarak antara setiap pemberhentian adalah 2 km. Berapa panjang keseluruhan rute bus dari pemberhentian pertama hingga pemberhentian terakhir?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>26. READING A BOOK</b>
+                <div class="soal-konten">
+                    Sonia started reading a book from page 25 to page 110, inclusive. How many pages did she read in total?
+                    <div class="lang-id">
+                        Sonia mulai membaca buku dari halaman 25 hingga halaman 110, inklusif. Berapa total halaman yang dia baca?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>27. LAMPS AROUND A SQUARE</b>
+                <div class="soal-konten">
+                    A square park has a side length of 50 meters. Lamps are placed along its perimeter, with one lamp at each corner. If the lamps are 10 meters apart, how many lamps are there in total?
+                    <div class="lang-id">
+                        Sebuah taman berbentuk persegi memiliki panjang sisi 50 meter. Lampu-lampu ditempatkan di sepanjang kelilingnya, dengan satu lampu di setiap sudut. Jika jarak antar lampu adalah 10 meter, berapa jumlah total lampu?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 10 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Interval Problems</h1>
+             <div class="soal-latihan">
+                <b>28. WAITING FOR A BUS</b>
+                <div class="soal-konten">
+                    Buses arrive at a bus stop every 12 minutes. The first bus arrives at 7:00 AM. What time will the 6th bus arrive?
+                    <div class="lang-id">
+                        Bus tiba di halte setiap 12 menit. Bus pertama tiba pukul 07:00. Pukul berapa bus ke-6 akan tiba?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>29. PEOPLE IN A QUEUE</b>
+                <div class="soal-konten">
+                    In a queue, Daniel is the 9th person from the front and the 15th person from the back. How many people are in the queue?
+                    <div class="lang-id">
+                        Dalam sebuah antrean, Daniel adalah orang ke-9 dari depan dan orang ke-15 dari belakang. Berapa banyak orang dalam antrean tersebut?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>30. STACKING PLATES</b>
+                <div class="soal-konten">
+                    A stack of 10 identical plates is 24 cm tall. The thickness of one plate is 1.5 cm. What is the height of the rim of each plate (the part that creates the interval between plates)?
+                    <div class="lang-id">
+                        Tumpukan 10 piring identik tingginya 24 cm. Ketebalan satu piring adalah 1,5 cm. Berapa tinggi tepi setiap piring (bagian yang menciptakan interval antar piring)?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- SOLUTIONS START HERE -->
+
+    <!-- Pembahasan 1 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 1</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is an 'Excess and Shortage' problem. We find the total difference between the two scenarios and divide it by the difference in items given per group to find the number of groups (students).</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Difference per Student:</strong> In the first case, each student gets 4 sweets. In the second, 6 sweets. The difference in sweets per student is $6 - 4 = 2$ sweets.</li><li><strong>Total Difference:</strong> In the first case, there's an excess of 8 sweets (+8). In the second, there's a shortage of 12 sweets (-12). The total swing or difference between these two outcomes is $8 + 12 = 20$ sweets. This total difference is caused by giving each student 2 extra sweets.</li><li><strong>Find Number of Students:</strong> To find the number of students, we divide the total difference in sweets by the difference per student. Number of students = $20 \div 2 = 10$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 10 students in the class.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 1</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal 'Kelebihan dan Kekurangan'. Kita mencari selisih total antara dua skenario dan membaginya dengan selisih benda yang diberikan per kelompok untuk menemukan jumlah kelompok (murid).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih per Murid:</strong> Pada kasus pertama, setiap murid mendapat 4 permen. Pada kasus kedua, 6 permen. Selisih permen per murid adalah $6 - 4 = 2$ permen.</li><li><strong>Selisih Total:</strong> Pada kasus pertama, ada kelebihan 8 permen (+8). Pada kasus kedua, ada kekurangan 12 permen (-12). Rentang total atau selisih antara kedua hasil ini adalah $8 + 12 = 20$ permen. Selisih total ini disebabkan oleh pemberian 2 permen tambahan kepada setiap murid.</li><li><strong>Cari Jumlah Murid:</strong> Untuk menemukan jumlah murid, kita bagi total selisih permen dengan selisih per murid. Jumlah murid = $20 \div 2 = 10$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 10 murid di kelas itu.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 2 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 2</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> If giving away some items makes the amounts equal, the initial difference is twice the amount given away. We can find the individual amounts if we know their sum and difference.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the Difference:</strong> Andy gives 10 marbles to Ben to make them equal. This means Andy initially had more. The 10 marbles taken from Andy and given to Ben covered the gap. So, the initial difference was $10 \times 2 = 20$ marbles. Andy had 20 more marbles than Ben.</li><li><strong>Find the 'Equal' Amount:</strong> If they had an equal number of marbles, each would have $80 \div 2 = 40$ marbles.</li><li><strong>Find Andy's Initial Amount:</strong> The equal amount (40) is the midpoint. The difference is 20, so half the difference is $20 \div 2 = 10$. Andy's initial amount is the midpoint plus half the difference: $40 + 10 = 50$. (Ben's would be $40 - 10 = 30$).</li><li><strong>Verification:</strong> Initially, Andy has 50, Ben has 30. Total is 80. If Andy gives 10 to Ben, Andy has $50 - 10 = 40$ and Ben has $30 + 10 = 40$. They are equal.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Andy had 50 marbles at first.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 2</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jika pemberian sejumlah benda membuat jumlahnya menjadi sama, selisih awalnya adalah dua kali lipat dari jumlah yang diberikan. Kita dapat menemukan jumlah masing-masing jika kita mengetahui jumlah total dan selisihnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Selisihnya:</strong> Andy memberikan 10 kelereng kepada Ben agar jumlah mereka sama. Ini berarti Andy awalnya memiliki lebih banyak. 10 kelereng yang diambil dari Andy dan diberikan kepada Ben menutupi selisih. Jadi, selisih awalnya adalah $10 \times 2 = 20$ kelereng. Andy memiliki 20 kelereng lebih banyak dari Ben.</li><li><strong>Cari Jumlah 'Sama':</strong> Jika mereka memiliki jumlah kelereng yang sama, masing-masing akan memiliki $80 \div 2 = 40$ kelereng.</li><li><strong>Cari Jumlah Awal Andy:</strong> Jumlah yang sama (40) adalah titik tengahnya. Selisihnya adalah 20, jadi setengah dari selisihnya adalah $20 \div 2 = 10$. Jumlah awal Andy adalah titik tengah ditambah setengah selisih: $40 + 10 = 50$. (Milik Ben adalah $40 - 10 = 30$).</li><li><strong>Verifikasi:</strong> Awalnya, Andy punya 50, Ben punya 30. Totalnya 80. Jika Andy memberi 10 ke Ben, Andy punya $50 - 10 = 40$ dan Ben punya $30 + 10 = 40$. Jumlah mereka sama.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Andy memiliki 50 kelereng pada awalnya.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 3 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 3</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is another 'Excess and Shortage' problem. We first find the number of rows, then use that information to calculate the total number of chairs.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Difference per Row:</strong> In the first case, 10 chairs per row. In the second, 9 chairs per row. The difference is $10 - 9 = 1$ chair per row.</li><li><strong>Total Difference:</strong> In the first case, there's a shortage of 3 chairs (-3). In the second, there's an excess of 5 chairs (+5). The total difference is $3 + 5 = 8$ chairs.</li><li><strong>Find Number of Rows:</strong> Number of rows = Total Difference $\div$ Difference per Row = $8 \div 1 = 8$ rows.</li><li><strong>Calculate Total Chairs:</strong> We can use either scenario. <br>Using scenario 1: (8 rows $\times$ 10 chairs/row) - 3 (shortage) = $80 - 3 = 77$ chairs.<br>Using scenario 2: (8 rows $\times$ 9 chairs/row) + 5 (excess) = $72 + 5 = 77$ chairs.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 77 chairs in total.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 3</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal 'Kelebihan dan Kekurangan' lainnya. Pertama, kita cari jumlah baris, lalu gunakan informasi itu untuk menghitung jumlah total kursi.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih per Baris:</strong> Pada kasus pertama, 10 kursi per baris. Pada kasus kedua, 9 kursi per baris. Selisihnya adalah $10 - 9 = 1$ kursi per baris.</li><li><strong>Selisih Total:</strong> Pada kasus pertama, ada kekurangan 3 kursi (-3). Pada kasus kedua, ada kelebihan 5 kursi (+5). Selisih totalnya adalah $3 + 5 = 8$ kursi.</li><li><strong>Cari Jumlah Baris:</strong> Jumlah baris = Selisih Total $\div$ Selisih per Baris = $8 \div 1 = 8$ baris.</li><li><strong>Hitung Total Kursi:</strong> Kita bisa menggunakan salah satu skenario.<br>Menggunakan skenario 1: (8 baris $\times$ 10 kursi/baris) - 3 (kekurangan) = $80 - 3 = 77$ kursi.<br>Menggunakan skenario 2: (8 baris $\times$ 9 kursi/baris) + 5 (kelebihan) = $72 + 5 = 77$ kursi.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 77 kursi secara total.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 4 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 4</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Similar to the other problems, we find the number of items (pens) first and then calculate the total money.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Difference in Cost per Pen:</strong> The difference in cost is $4 - 3 = 1$ dollar.</li><li><strong>Total Difference in Money:</strong> In the first scenario, she has 5 dollars left (excess). In the second, she is short of 2 dollars (shortage). The total swing in money is $5 + 2 = 7$ dollars.</li><li><strong>Find Number of Pens:</strong> The number of pens she wanted to buy is Total Difference $\div$ Difference per Pen = $7 \div 1 = 7$ pens.</li><li><strong>Calculate Total Money:</strong> We can use either scenario.<br>Using scenario 1: (7 pens $\times$ 3 dollars/pen) + 5 dollars left = $21 + 5 = 26$ dollars.<br>Using scenario 2: (7 pens $\times$ 4 dollars/pen) - 2 dollars short = $28 - 2 = 26$ dollars.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Clara has 26 dollars.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 4</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Mirip dengan soal lainnya, kita mencari jumlah barang (pulpen) terlebih dahulu lalu menghitung total uangnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih Harga per Pulpen:</strong> Selisih harganya adalah $4 - 3 = 1$ dolar.</li><li><strong>Selisih Total Uang:</strong> Pada skenario pertama, dia punya sisa 5 dolar (kelebihan). Pada skenario kedua, dia kekurangan 2 dolar (kekurangan). Rentang total uangnya adalah $5 + 2 = 7$ dolar.</li><li><strong>Cari Jumlah Pulpen:</strong> Jumlah pulpen yang ingin dibeli adalah Selisih Total $\div$ Selisih per Pulpen = $7 \div 1 = 7$ pulpen.</li><li><strong>Hitung Total Uang:</strong> Kita bisa menggunakan salah satu skenario.<br>Menggunakan skenario 1: (7 pulpen $\times$ 3 dolar/pulpen) + sisa 5 dolar = $21 + 5 = 26$ dolar.<br>Menggunakan skenario 2: (7 pulpen $\times$ 4 dolar/pulpen) - kurang 2 dolar = $28 - 2 = 26$ dolar.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Clara memiliki uang 26 dolar.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 5 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 5</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The total number of apples remains constant even after the transfer. We can use the final ratio to find the amounts after the transfer, and then work backward to find the initial amounts.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Total is Constant:</strong> The total number of apples is always 240.</li><li><strong>After Transfer:</strong> After the transfer, Basket B has 3 times as many as Basket A. This is a ratio of B:A = 3:1. The total number of units is $3 + 1 = 4$ units.</li><li><strong>Value of One Unit:</strong> 4 units represent 240 apples. So, 1 unit = $240 \div 4 = 60$ apples.</li><li><strong>Apples After Transfer:</strong> After the transfer, Basket A has 1 unit = 60 apples. Basket B has 3 units = $3 \times 60 = 180$ apples.</li><li><strong>Find Initial Amount in Basket A:</strong> The 60 apples in Basket A is the amount *after* giving away 20 apples. So, initially, Basket A had $60 + 20 = 80$ apples.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There were 80 apples in Basket A at first.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 5</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jumlah total apel tetap konstan bahkan setelah pemindahan. Kita bisa menggunakan rasio akhir untuk menemukan jumlah setelah pemindahan, lalu bekerja mundur untuk menemukan jumlah awal.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Total Tetap:</strong> Jumlah total apel selalu 240.</li><li><strong>Setelah Pemindahan:</strong> Setelah pemindahan, Keranjang B memiliki 3 kali lebih banyak dari Keranjang A. Ini adalah rasio B:A = 3:1. Jumlah total unit adalah $3 + 1 = 4$ unit.</li><li><strong>Nilai Satu Unit:</strong> 4 unit mewakili 240 apel. Jadi, 1 unit = $240 \div 4 = 60$ apel.</li><li><strong>Apel Setelah Pemindahan:</strong> Setelah pemindahan, Keranjang A memiliki 1 unit = 60 apel. Keranjang B memiliki 3 unit = $3 \times 60 = 180$ apel.</li><li><strong>Cari Jumlah Awal di Keranjang A:</strong> 60 apel di Keranjang A adalah jumlah *setelah* memberikan 20 apel. Jadi, awalnya, Keranjang A memiliki $60 + 20 = 80$ apel.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Awalnya ada 80 apel di Keranjang A.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Continue for all 30 questions -->
+    
+    <!-- Pembahasan 6 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 6</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Short of 3 students for a team of 8" is the same as having 5 students left over ($8 - 3 = 5$). We look for a number that leaves a remainder of 2 when divided by 7, and a remainder of 5 when divided by 8.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze Scenario 1:</strong> Number of students = (Multiple of 7) + 2. Let's list them: 9, 16, 23, 30, 37, 44, 51, 58, 65, 72, 79, 86, 93...</li><li><strong>Analyze Scenario 2:</strong> Number of students = (Multiple of 8) - 3, which is the same as (Multiple of 8) + 5. Let's list them: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93...</li><li><strong>Find the Common Number:</strong> We look for a number that appears in both lists. The number 37 appears in both, but we can also see 93. Let's check both.</li><li><strong>Check 37:</strong> $37 \div 7 = 5$ R 2. (Correct). $37 \div 8 = 4$ R 5. (Correct). Let's verify shortage: 4 full teams of 8 is 32. 37 students means the 5th team has 5 students, so it's short of $8-5=3$. This works.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 37 students. (93 also works, but usually these problems imply the smallest number unless stated otherwise).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 6</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Kekurangan 3 siswa untuk tim berisi 8" sama dengan memiliki sisa 5 siswa ($8 - 3 = 5$). Kita mencari sebuah bilangan yang bersisa 2 jika dibagi 7, dan bersisa 5 jika dibagi 8.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis Skenario 1:</strong> Jumlah siswa = (Kelipatan 7) + 2. Mari kita daftar: 9, 16, 23, 30, 37, 44, 51, 58, 65, 72, 79, 86, 93...</li><li><strong>Analisis Skenario 2:</strong> Jumlah siswa = (Kelipatan 8) - 3, yang sama dengan (Kelipatan 8) + 5. Mari kita daftar: 13, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93...</li><li><strong>Cari Bilangan yang Sama:</strong> Kita mencari bilangan yang muncul di kedua daftar. Bilangan 37 muncul di keduanya, tapi kita juga bisa lihat 93. Mari kita periksa keduanya.</li><li><strong>Periksa 37:</strong> $37 \div 7 = 5$ Sisa 2. (Benar). $37 \div 8 = 4$ Sisa 5. (Benar). Mari verifikasi kekurangan: 4 tim penuh berisi 8 adalah 32. 37 siswa berarti tim ke-5 memiliki 5 siswa, jadi kekurangan $8-5=3$. Ini berhasil.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 37 siswa. (93 juga bisa, tetapi soal seperti ini biasanya mengacu pada bilangan terkecil kecuali dinyatakan lain).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 7 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 7</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The amount of money David gives away must be equal to half the difference between their initial amounts for them to become equal.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Model the Initial State:</strong> David has twice as much as Eric. We can model this with units. Eric = 1 unit. David = 2 units. The difference is $2 - 1 = 1$ unit.</li><li><strong>Relate the Transfer to the Difference:</strong> David gives Eric 15 dollars. This action makes their money equal. This means 15 dollars represents half of the initial difference.</li><li><strong>Find the Value of 1 Unit:</strong> The initial difference is 1 unit. Therefore, half the difference is half a unit. So, 15 dollars is equal to half a unit. This means 1 full unit is $15 \times 2 = 30$ dollars.</li><li><strong>Calculate Total Money:</strong> Eric had 1 unit = 30 dollars. David had 2 units = $30 \times 2 = 60$ dollars. The total amount is $30 + 60 = 90$ dollars.</li></ol><div class="final-answer"><strong>Final Answer:</strong> They had 90 dollars altogether.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 7</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jumlah uang yang diberikan David harus sama dengan setengah dari selisih jumlah awal mereka agar jumlah uang mereka menjadi sama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Modelkan Keadaan Awal:</strong> David memiliki uang dua kali lebih banyak dari Eric. Kita bisa memodelkannya dengan unit. Eric = 1 unit. David = 2 unit. Selisihnya adalah $2 - 1 = 1$ unit.</li><li><strong>Hubungkan Pemberian dengan Selisih:</strong> David memberi Eric 15 dolar. Tindakan ini membuat uang mereka sama. Ini berarti 15 dolar mewakili setengah dari selisih awal.</li><li><strong>Cari Nilai 1 Unit:</strong> Selisih awal adalah 1 unit. Oleh karena itu, setengah dari selisih adalah setengah unit. Jadi, 15 dolar sama dengan setengah unit. Ini berarti 1 unit penuh adalah $15 \times 2 = 30$ dolar.</li><li><strong>Hitung Total Uang:</strong> Eric punya 1 unit = 30 dolar. David punya 2 unit = $30 \times 2 = 60$ dolar. Jumlah totalnya adalah $30 + 60 = 90$ dolar.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Mereka memiliki total 90 dolar.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 8 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 8</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Needing 4 more cookies for a bag of 13" is a shortage scenario. It means if she had 4 more cookies, she could have filled one more bag of 13, leaving no remainder. This is equivalent to saying if you divide her actual number of cookies by 13, the remainder is $13 - 4 = 9$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze the Scenarios:</strong><br>Scenario 1: (Number of bags $\times$ 12) + 5 = Total Cookies.<br>Scenario 2: (Number of bags $\times$ 13) - 4 = Total Cookies.</li><li><strong>Find the Difference per Bag:</strong> The difference is $13 - 12 = 1$ cookie per bag.</li><li><strong>Find the Total Difference:</strong> One scenario has an excess of 5, the other has a shortage of 4. The total difference is $5 + 4 = 9$ cookies.</li><li><strong>Find the Number of Bags:</strong> Number of bags = Total Difference $\div$ Difference per Bag = $9 \div 1 = 9$ bags.</li><li><strong>Calculate Total Cookies:</strong> Use scenario 1: (9 bags $\times$ 12 cookies/bag) + 5 = $108 + 5 = 113$ cookies.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Mrs. Lee baked 113 cookies.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 8</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Membutuhkan 4 kue lagi untuk satu kantong isi 13" adalah skenario kekurangan. Ini berarti jika dia punya 4 kue lagi, dia bisa mengisi satu kantong lagi dengan 13 kue, tanpa sisa. Ini sama dengan mengatakan jika jumlah kue sebenarnya dibagi 13, sisanya adalah $13 - 4 = 9$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis Skenario:</strong><br>Skenario 1: (Jumlah kantong $\times$ 12) + 5 = Total Kue.<br>Skenario 2: (Jumlah kantong $\times$ 13) - 4 = Total Kue.</li><li><strong>Cari Selisih per Kantong:</strong> Selisihnya adalah $13 - 12 = 1$ kue per kantong.</li><li><strong>Cari Selisih Total:</strong> Satu skenario kelebihan 5, yang lain kekurangan 4. Selisih totalnya adalah $5 + 4 = 9$ kue.</li><li><strong>Cari Jumlah Kantong:</strong> Jumlah kantong = Selisih Total $\div$ Selisih per Kantong = $9 \div 1 = 9$ kantong.</li><li><strong>Hitung Total Kue:</strong> Gunakan skenario 1: (9 kantong $\times$ 12 kue/kantong) + 5 = $108 + 5 = 113$ kue.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ibu Lee memanggang 113 kue kering.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 9 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 9</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can determine the initial difference from the first statement. Then we can set up an equation based on the second scenario to find the exact numbers.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find Initial Difference:</strong> Moving 30 books from X to Y makes them equal. This means Shelf X initially had $30 \times 2 = 60$ more books than Shelf Y. Let Y have $u$ books. Then X has $u + 60$ books.</li><li><strong>Analyze Scenario 2:</strong> 15 books are moved from Y to X.
+        <br>New amount on Shelf Y = $u - 15$.
+        <br>New amount on Shelf X = $(u + 60) + 15 = u + 75$.</li><li><strong>Set up the Equation:</strong> After this second transfer, X has 4 times as many as Y.
+        <br>$u + 75 = 4 \times (u - 15)$
+        <br>$u + 75 = 4u - 60$</li><li><strong>Solve for u (initial number of books on Shelf Y):</strong>
+        <br>$75 + 60 = 4u - u$
+        <br>$135 = 3u$
+        <br>$u = 135 \div 3 = 45$. So, Shelf Y initially had 45 books.</li><li><strong>Find Initial Amount on Shelf X:</strong> Shelf X had $u + 60$ books. So, X = $45 + 60 = 105$ books.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Shelf X had 105 books initially.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 9</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita dapat menentukan selisih awal dari pernyataan pertama. Kemudian kita dapat membuat persamaan berdasarkan skenario kedua untuk menemukan jumlah pastinya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Selisih Awal:</strong> Memindahkan 30 buku dari X ke Y membuat jumlahnya sama. Ini berarti Rak X awalnya memiliki $30 \times 2 = 60$ buku lebih banyak dari Rak Y. Misalkan Y memiliki $u$ buku. Maka X memiliki $u + 60$ buku.</li><li><strong>Analisis Skenario 2:</strong> 15 buku dipindahkan dari Y ke X.
+        <br>Jumlah baru di Rak Y = $u - 15$.
+        <br>Jumlah baru di Rak X = $(u + 60) + 15 = u + 75$.</li><li><strong>Buat Persamaan:</strong> Setelah pemindahan kedua ini, X memiliki 4 kali lebih banyak dari Y.
+        <br>$u + 75 = 4 \times (u - 15)$
+        <br>$u + 75 = 4u - 60$</li><li><strong>Selesaikan untuk u (jumlah awal buku di Rak Y):</strong>
+        <br>$75 + 60 = 4u - u$
+        <br>$135 = 3u$
+        <br>$u = 135 \div 3 = 45$. Jadi, Rak Y awalnya memiliki 45 buku.</li><li><strong>Cari Jumlah Awal di Rak X:</strong> Rak X memiliki $u + 60$ buku. Jadi, X = $45 + 60 = 105$ buku.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Rak X memiliki 105 buku pada awalnya.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 10 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 10</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a classic "Chicken and Goat" problem. We can solve it using the assumption method. Assume all animals are of one type, find the difference in legs, and adjust.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Initial State:</strong> 30 heads, 80 legs. Chickens have 2 legs, goats have 4 legs.</li><li><strong>Assumption Method:</strong> Assume all 30 animals are chickens. Total legs would be $30 \times 2 = 60$ legs.</li><li><strong>Find the Leg Difference:</strong> The actual number of legs is 80. The difference is $80 - 60 = 20$ legs. This shortage of legs is because we counted goats (4 legs) as chickens (2 legs).</li><li><strong>Find Number of Goats:</strong> Each time we replace a chicken with a goat, we add $4 - 2 = 2$ legs. To make up the 20-leg difference, we need to make $20 \div 2 = 10$ replacements. So, there are 10 goats.</li><li><strong>Find Number of Chickens:</strong> Number of chickens = $30 - 10 = 20$ chickens. (Check: $10 \times 4 + 20 \times 2 = 40 + 40 = 80$ legs. Correct).</li><li><strong>After Selling:</strong> The number of chickens (20) becomes four times the number of goats. So, the new number of goats must be $20 \div 4 = 5$.
+    <br>Number of goats sold = Initial number of goats - Final number of goats = $10 - 5 = 5$.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> He sold 5 goats.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 10</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah masalah klasik "Ayam dan Kambing". Kita bisa menyelesaikannya dengan metode asumsi. Asumsikan semua hewan adalah satu jenis, temukan selisih kaki, lalu sesuaikan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Keadaan Awal:</strong> 30 kepala, 80 kaki. Ayam punya 2 kaki, kambing punya 4 kaki.</li><li><strong>Metode Asumsi:</strong> Asumsikan semua 30 hewan adalah ayam. Total kaki akan menjadi $30 \times 2 = 60$ kaki.</li><li><strong>Cari Selisih Kaki:</strong> Jumlah kaki sebenarnya adalah 80. Selisihnya adalah $80 - 60 = 20$ kaki. Kekurangan kaki ini karena kita menghitung kambing (4 kaki) sebagai ayam (2 kaki).</li><li><strong>Cari Jumlah Kambing:</strong> Setiap kali kita mengganti ayam dengan kambing, kita menambahkan $4 - 2 = 2$ kaki. Untuk menutupi selisih 20 kaki, kita perlu melakukan $20 \div 2 = 10$ penggantian. Jadi, ada 10 kambing.</li><li><strong>Cari Jumlah Ayam:</strong> Jumlah ayam = $30 - 10 = 20$ ayam. (Periksa: $10 \times 4 + 20 \times 2 = 40 + 40 = 80$ kaki. Benar).</li><li><strong>Setelah Menjual:</strong> Jumlah ayam (20) menjadi empat kali jumlah kambing. Jadi, jumlah kambing yang baru haruslah $20 \div 4 = 5$.
+    <br>Jumlah kambing yang dijual = Jumlah kambing awal - Jumlah kambing akhir = $10 - 5 = 5$.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia menjual 5 ekor kambing.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 11 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 11</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can set up an equation where the total number of pages is equal in both scenarios. Let 'd' be the number of days in the first scenario.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Set up Scenario 1:</strong> Reads 15 pages/day for 'd' days. Total pages = $15 \times (d-1) + 6$ (since the last day he only reads 6 pages). This simplifies to $15d - 15 + 6 = 15d - 9$.</li><li><strong>Set up Scenario 2:</strong> Reads 18 pages/day for 'd-2' days. Total pages = $18 \times (d - 2)$.</li><li><strong>Equate Total Pages:</strong> $15d - 9 = 18(d-2)$
+    <br>$15d - 9 = 18d - 36$</li><li><strong>Solve for d:</strong>
+    <br>$36 - 9 = 18d - 15d$
+    <br>$27 = 3d$
+    <br>$d = 9$. So, the first scenario takes 9 days.</li><li><strong>Calculate Total Pages:</strong> We can use either scenario.
+    <br>Using scenario 2: It takes $9 - 2 = 7$ days. Total pages = $18 \times 7 = 126$ pages.
+    <br>Check with scenario 1: It takes 9 days. (8 days $\times$ 15 pages) + 6 pages on the last day = $120 + 6 = 126$ pages. It matches.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 126 pages in the book.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 11</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita dapat membuat persamaan di mana jumlah total halaman sama dalam kedua skenario. Misalkan 'd' adalah jumlah hari dalam skenario pertama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Skenario 1:</strong> Membaca 15 halaman/hari selama 'd' hari. Total halaman = $15 \times (d-1) + 6$ (karena hari terakhir dia hanya membaca 6 halaman). Ini disederhanakan menjadi $15d - 15 + 6 = 15d - 9$.</li><li><strong>Buat Skenario 2:</strong> Membaca 18 halaman/hari selama 'd-2' hari. Total halaman = $18 \times (d - 2)$.</li><li><strong>Samakan Total Halaman:</strong> $15d - 9 = 18(d-2)$
+    <br>$15d - 9 = 18d - 36$</li><li><strong>Selesaikan untuk d:</strong>
+    <br>$36 - 9 = 18d - 15d$
+    <br>$27 = 3d$
+    <br>$d = 9$. Jadi, skenario pertama memakan waktu 9 hari.</li><li><strong>Hitung Total Halaman:</strong> Kita bisa menggunakan salah satu skenario.
+    <br>Menggunakan skenario 2: Butuh waktu $9 - 2 = 7$ hari. Total halaman = $18 \times 7 = 126$ halaman.
+    <br>Periksa dengan skenario 1: Butuh 9 hari. (8 hari $\times$ 15 halaman) + 6 halaman di hari terakhir = $120 + 6 = 126$ halaman. Cocok.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 126 halaman dalam buku itu.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 12 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 12</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A classic 'Excess and Shortage' problem. Find the number of students first, then calculate the total number of seedlings.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Difference per Student:</strong> The difference in planting is $8 - 5 = 3$ seedlings per student.</li><li><strong>Total Difference:</strong> There is an excess of 20 seedlings and a shortage of 16 seedlings. The total swing is $20 + 16 = 36$ seedlings.</li><li><strong>Find Number of Students:</strong> Number of students = Total Difference $\div$ Difference per Student = $36 \div 3 = 12$ students.</li><li><strong>Calculate Total Seedlings:</strong> Use scenario 1: (12 students $\times$ 5 seedlings/student) + 20 left = $60 + 20 = 80$ seedlings.
+    <br>Check with scenario 2: (12 students $\times$ 8 seedlings/student) - 16 short = $96 - 16 = 80$ seedlings.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There were 80 seedlings.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 12</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal klasik 'Kelebihan dan Kekurangan'. Cari jumlah siswa terlebih dahulu, kemudian hitung jumlah total bibit.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih per Siswa:</strong> Selisih penanaman adalah $8 - 5 = 3$ bibit per siswa.</li><li><strong>Selisih Total:</strong> Ada kelebihan 20 bibit dan kekurangan 16 bibit. Rentang totalnya adalah $20 + 16 = 36$ bibit.</li><li><strong>Cari Jumlah Siswa:</strong> Jumlah siswa = Selisih Total $\div$ Selisih per Siswa = $36 \div 3 = 12$ siswa.</li><li><strong>Hitung Total Bibit:</strong> Gunakan skenario 1: (12 siswa $\times$ 5 bibit/siswa) + 20 sisa = $60 + 20 = 80$ bibit.
+    <br>Periksa dengan skenario 2: (12 siswa $\times$ 8 bibit/siswa) - 16 kurang = $96 - 16 = 80$ bibit.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 80 bibit.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 13 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 13</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can track the difference between the two containers. The transfer of water reduces the difference by twice the amount transferred.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Initial Difference:</strong> Container A had 120 ml more water than Container B.</li><li><strong>Transfer Effect on Difference:</strong> When 80 ml is poured from A to B, Container A's amount decreases by 80, and Container B's amount increases by 80. The new difference will shrink by $80 \times 2 = 160$ ml.</li><li><strong>Calculate New Difference:</strong> The initial difference was 120 ml (with A having more). The new difference is $120 - 160 = -40$ ml.</li><li><strong>Interpret the Result:</strong> A negative difference means the order has flipped. Container B now has 40 ml more water than Container A.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Container B has 40 ml more water.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 13</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita bisa melacak selisih antara kedua wadah. Pemindahan air mengurangi selisih sebesar dua kali jumlah yang dipindahkan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih Awal:</strong> Wadah A memiliki 120 ml air lebih banyak dari Wadah B.</li><li><strong>Efek Pemindahan pada Selisih:</strong> Ketika 80 ml dituangkan dari A ke B, jumlah di A berkurang 80, dan jumlah di B bertambah 80. Selisih baru akan menyusut sebesar $80 \times 2 = 160$ ml.</li><li><strong>Hitung Selisih Baru:</strong> Selisih awal adalah 120 ml (dengan A lebih banyak). Selisih baru adalah $120 - 160 = -40$ ml.</li><li><strong>Interpretasi Hasil:</strong> Selisih negatif berarti urutannya telah terbalik. Wadah B sekarang memiliki 40 ml air lebih banyak dari Wadah A.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Wadah B memiliki 40 ml air lebih banyak.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 14 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 14</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "Short of 6 oranges for the last box of 28" is a shortage scenario. It means he has $28 - 6 = 22$ oranges for the last box. We compare an excess scenario with another excess scenario.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Difference per Box:</strong> The difference in packing is $28 - 24 = 4$ oranges per box.</li><li><strong>Analyze the remainders:</strong> In scenario 1, he has an excess of 10. In scenario 2, he puts 22 in the last box. If he had put 24 in that box too (like scenario 1), he would be short $24-22=2$ oranges.
+    Let's re-state scenario 2: If he packs 24 oranges per box, he needs 2 more oranges for the last box to be 'full' at 24.
+    Let's use the standard shortage method. Scenario 2: (Number of boxes $\times$ 28) - 6 = Total Oranges.
+    This is not a standard excess/shortage.
+    Let N be the number of boxes.
+    Total Oranges = $24N + 10$.
+    Total Oranges = $28(N-1) + (28-6) = 28N - 28 + 22 = 28N - 6$.
+    $24N + 10 = 28N - 6 \rightarrow 16 = 4N \rightarrow N = 4$.
+    Let's check. 4 boxes. Total Oranges = $24(4) + 10 = 96+10=106$.
+    Scenario 2: packs 28. Box 1=28, Box 2=28, Box 3=28. Total 84. Remaining = $106-84 = 22$. He needs 6 more for the 4th box. It works.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> He has 4 boxes.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 14</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "Kekurangan 6 jeruk untuk kotak terakhir isi 28" adalah skenario kekurangan. Ini berarti dia punya $28 - 6 = 22$ jeruk untuk kotak terakhir. Kita membandingkan skenario kelebihan dengan skenario lain.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Selisih per Kotak:</strong> Selisih pengepakan adalah $28 - 24 = 4$ jeruk per kotak.</li><li><strong>Analisis Sisa:</strong>
+    Misalkan N adalah jumlah kotak.
+    Total Jeruk = $24N + 10$.
+    Dalam skenario kedua, dia mengisi (N-1) kotak dengan 28 jeruk, dan kotak terakhir (ke-N) memiliki $28 - 6 = 22$ jeruk.
+    Total Jeruk = $28(N-1) + 22 = 28N - 28 + 22 = 28N - 6$.
+    </li><li><strong>Samakan Total Jeruk:</strong>
+    $24N + 10 = 28N - 6$
+    $10 + 6 = 28N - 24N$
+    $16 = 4N$
+    $N = 16 \div 4 = 4$.
+    </li><li><strong>Verifikasi:</strong> 4 kotak. Total Jeruk = $24(4) + 10 = 96+10=106$.
+    Skenario 2: kemas 28. Kotak 1=28, Kotak 2=28, Kotak 3=28. Total 84. Sisa = $106-84 = 22$. Dia butuh 6 lagi untuk kotak ke-4. Berhasil.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia memiliki 4 kotak.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 15 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 15</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> "4 empty desks" for groups of 3 is a shortage scenario. The shortage is not just the students to fill those 4 desks, but also the 1 student missing from the desk where the last group is sitting (if any).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analyze Scenario 1:</strong> (Number of desks $\times$ 2) + 7 = Total Students.</li><li><strong>Analyze Scenario 2:</strong> In this case, 4 desks are completely empty. This means the students occupied (Number of desks - 4) desks. Total Students = (Number of desks - 4) $\times$ 3.</li><li><strong>Set up the equation:</strong> Let 'D' be the number of desks.
+    <br>$2D + 7 = 3(D - 4)$
+    <br>$2D + 7 = 3D - 12$</li><li><strong>Solve for D:</strong>
+    <br>$7 + 12 = 3D - 2D$
+    <br>$19 = D$. So there are 19 desks.</li><li><strong>Calculate Total Students:</strong> Use scenario 1: (19 desks $\times$ 2 students/desk) + 7 = $38 + 7 = 45$ students.
+    <br>Check with scenario 2: 4 desks empty means $19-4=15$ desks are used. $15 \times 3 = 45$ students. It matches.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 45 students.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 15</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> "4 meja kosong" untuk kelompok 3 adalah skenario kekurangan. Kekurangannya bukan hanya siswa untuk mengisi 4 meja itu, tetapi juga siswa lain yang diperlukan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis Skenario 1:</strong> (Jumlah meja $\times$ 2) + 7 = Total Siswa.</li><li><strong>Analisis Skenario 2:</strong> Dalam kasus ini, 4 meja benar-benar kosong. Ini berarti para siswa menempati (Jumlah meja - 4) meja. Total Siswa = (Jumlah meja - 4) $\times$ 3.</li><li><strong>Buat Persamaan:</strong> Misalkan 'D' adalah jumlah meja.
+    <br>$2D + 7 = 3(D - 4)$
+    <br>$2D + 7 = 3D - 12$</li><li><strong>Selesaikan untuk D:</strong>
+    <br>$7 + 12 = 3D - 2D$
+    <br>$19 = D$. Jadi ada 19 meja.</li><li><strong>Hitung Total Siswa:</strong> Gunakan skenario 1: (19 meja $\times$ 2 siswa/meja) + 7 = $38 + 7 = 45$ siswa.
+    <br>Periksa dengan skenario 2: 4 meja kosong berarti $19-4=15$ meja digunakan. $15 \times 3 = 45$ siswa. Cocok.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 45 siswa di dalam kelas.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 16 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 16</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> For items placed along an open path (like a road), the number of items is always one more than the number of intervals (gaps) between them.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the Number of Intervals:</strong> The total length of the road is 120 meters, and the interval between trees is 8 meters. Number of intervals = Total Length $\div$ Interval Length = $120 \div 8 = 15$ intervals.</li><li><strong>Find the Number of Trees:</strong> Since the trees are planted along a straight road (an open path), there is one tree at the very beginning before the first interval. Therefore, the number of trees is the number of intervals plus one. Number of trees = $15 + 1 = 16$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 16 trees planted.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 16</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk benda-benda yang diletakkan di sepanjang jalur terbuka (seperti jalan), jumlah benda selalu satu lebih banyak dari jumlah interval (celah) di antara mereka.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Jumlah Interval:</strong> Panjang total jalan adalah 120 meter, dan interval antar pohon adalah 8 meter. Jumlah interval = Panjang Total $\div$ Panjang Interval = $120 \div 8 = 15$ interval.</li><li><strong>Cari Jumlah Pohon:</strong> Karena pohon ditanam di sepanjang jalan lurus (jalur terbuka), ada satu pohon di paling awal sebelum interval pertama. Oleh karena itu, jumlah pohon adalah jumlah interval ditambah satu. Jumlah pohon = $15 + 1 = 16$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 16 pohon yang ditanam.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 17 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 17</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The number of cuts needed to get a certain number of pieces is one less than the number of pieces.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the Number of Pieces:</strong> The total length is 54 meters, and each piece is 6 meters. Number of pieces = Total Length $\div$ Length per Piece = $54 \div 6 = 9$ pieces.</li><li><strong>Find the Number of Cuts:</strong> To get 'n' pieces from a single long item, you always need 'n-1' cuts. So, to get 9 pieces, the number of cuts needed is $9 - 1 = 8$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 8 cuts are needed.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 17</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jumlah potongan yang diperlukan untuk mendapatkan sejumlah bagian adalah satu kurang dari jumlah bagian tersebut.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Jumlah Bagian:</strong> Panjang total adalah 54 meter, dan setiap bagian adalah 6 meter. Jumlah bagian = Panjang Total $\div$ Panjang per Bagian = $54 \div 6 = 9$ bagian.</li><li><strong>Cari Jumlah Potongan:</strong> Untuk mendapatkan 'n' bagian dari satu benda panjang, Anda selalu memerlukan 'n-1' potongan. Jadi, untuk mendapatkan 9 bagian, jumlah potongan yang diperlukan adalah $9 - 1 = 8$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Diperlukan 8 potongan.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 18 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 18</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The total time taken for chimes depends on the number of intervals between the chimes, not the number of chimes itself. The number of intervals is one less than the number of chimes.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find Intervals for 5 Chimes:</strong> For 5 chimes, there are $5 - 1 = 4$ intervals.</li><li><strong>Find Time per Interval:</strong> The clock took 12 seconds for 4 intervals. Time per interval = $12 \text{ seconds} \div 4 \text{ intervals} = 3$ seconds per interval.</li><li><strong>Find Intervals for 9 Chimes:</strong> For 9 chimes, there are $9 - 1 = 8$ intervals.</li><li><strong>Calculate Total Time for 9 Chimes:</strong> Total time = Number of intervals $\times$ Time per interval = $8 \times 3 = 24$ seconds.</li></ol><div class="final-answer"><strong>Final Answer:</strong> It would take 24 seconds.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 18</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Total waktu yang dibutuhkan untuk dentangan bergantung pada jumlah interval antara dentangan, bukan jumlah dentangannya sendiri. Jumlah interval adalah satu kurang dari jumlah dentangan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Interval untuk 5 Dentangan:</strong> Untuk 5 dentangan, ada $5 - 1 = 4$ interval.</li><li><strong>Cari Waktu per Interval:</strong> Jam tersebut membutuhkan 12 detik untuk 4 interval. Waktu per interval = $12 \text{ detik} \div 4 \text{ interval} = 3$ detik per interval.</li><li><strong>Cari Interval untuk 9 Dentangan:</strong> Untuk 9 dentangan, ada $9 - 1 = 8$ interval.</li><li><strong>Hitung Total Waktu untuk 9 Dentangan:</strong> Total waktu = Jumlah interval $\times$ Waktu per interval = $8 \times 3 = 24$ detik.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Waktu yang dibutuhkan adalah 24 detik.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 19 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 19</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> For items placed in a closed loop (like around a garden), the number of items is equal to the number of intervals.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Total Length:</strong> The total length is the perimeter of the garden, which is 90 meters.</li><li><strong>Find the Number of Intervals:</strong> The posts are placed every 5 meters. Number of intervals = Total Length $\div$ Interval Length = $90 \div 5 = 18$ intervals.</li><li><strong>Find the Number of Posts:</strong> Because it is a closed loop, the starting point and ending point are the same. Therefore, the number of posts is equal to the number of intervals.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 18 fence posts are needed.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 19</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk benda-benda yang ditempatkan dalam lingkaran tertutup (seperti di sekeliling taman), jumlah benda sama dengan jumlah interval.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Panjang Total:</strong> Panjang total adalah keliling taman, yaitu 90 meter.</li><li><strong>Cari Jumlah Interval:</strong> Tiang-tiang diletakkan setiap 5 meter. Jumlah interval = Panjang Total $\div$ Panjang Interval = $90 \div 5 = 18$ interval.</li><li><strong>Cari Jumlah Tiang:</strong> Karena ini adalah lingkaran tertutup, titik awal dan titik akhir adalah sama. Oleh karena itu, jumlah tiang sama dengan jumlah interval.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dibutuhkan 18 tiang pagar.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 20 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 20</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Similar to cutting a rope, the time needed depends on the number of cuts, which is one less than the number of pieces.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the Number of Cuts:</strong> To get 7 pieces, the worker needs to make $7 - 1 = 6$ cuts.</li><li><strong>Calculate the Total Time:</strong> Each cut takes 3 minutes. Total time = Number of Cuts $\times$ Time per Cut = $6 \times 3 = 18$ minutes.</li></ol><div class="final-answer"><strong>Final Answer:</strong> He needs 18 minutes.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 20</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Mirip dengan memotong tali, waktu yang dibutuhkan bergantung pada jumlah potongan, yang mana satu kurang dari jumlah bagian.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Jumlah Potongan:</strong> Untuk mendapatkan 7 bagian, pekerja perlu membuat $7 - 1 = 6$ potongan.</li><li><strong>Hitung Total Waktu:</strong> Setiap potongan memakan waktu 3 menit. Total waktu = Jumlah Potongan $\times$ Waktu per Potongan = $6 \times 3 = 18$ menit.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membutuhkan waktu 18 menit.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+     <!-- Pembahasan 21 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 21</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The total distance is the number of intervals between the stations multiplied by the distance of each interval.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Count the Stations:</strong> From A to H, there are 8 stations (A, B, C, D, E, F, G, H).</li><li><strong>Find the Number of Intervals:</strong> For an open path with 8 stations, there are $8 - 1 = 7$ intervals between them.</li><li><strong>Calculate the Total Distance:</strong> Each interval is 12 km. Total distance = Number of intervals $\times$ Distance per interval = $7 \times 12 = 84$ km.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The total distance is 84 km.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 21</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jarak total adalah jumlah interval antar stasiun dikalikan dengan jarak setiap interval.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung Stasiun:</strong> Dari A sampai H, ada 8 stasiun (A, B, C, D, E, F, G, H).</li><li><strong>Cari Jumlah Interval:</strong> Untuk jalur terbuka dengan 8 stasiun, ada $8 - 1 = 7$ interval di antaranya.</li><li><strong>Hitung Jarak Total:</strong> Setiap interval adalah 12 km. Jarak total = Jumlah interval $\times$ Jarak per interval = $7 \times 12 = 84$ km.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Jarak totalnya adalah 84 km.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 22 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 22</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To tie 'n' ropes together, you need 'n-1' knots. Each knot reduces the total length.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate Total Initial Length:</strong> There are 5 ropes, each 10 cm long. Total initial length = $5 \times 10 = 50$ cm.</li><li><strong>Find the Number of Knots:</strong> To tie 5 ropes together, you need $5 - 1 = 4$ knots.</li><li><strong>Calculate Total Length Used by Knots:</strong> Each knot uses 1 cm from *each* of the two rope ends being tied. So, one knot uses up $1 + 1 = 2$ cm of the total length. For 4 knots, the total length used is $4 \times 2 = 8$ cm.</li><li><strong>Find the Final Length:</strong> Final length = Total Initial Length - Length Used by Knots = $50 - 8 = 42$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The total length of the long rope is 42 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 22</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk mengikat 'n' tali menjadi satu, Anda memerlukan 'n-1' simpul. Setiap simpul mengurangi panjang total.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung Panjang Awal Total:</strong> Ada 5 tali, masing-masing panjangnya 10 cm. Panjang awal total = $5 \times 10 = 50$ cm.</li><li><strong>Cari Jumlah Simpul:</strong> Untuk mengikat 5 tali, Anda memerlukan $5 - 1 = 4$ simpul.</li><li><strong>Hitung Total Panjang yang Digunakan oleh Simpul:</strong> Setiap simpul menggunakan 1 cm dari *setiap* ujung dari dua tali yang diikat. Jadi, satu simpul menggunakan $1 + 1 = 2$ cm dari total panjang. Untuk 4 simpul, total panjang yang digunakan adalah $4 \times 2 = 8$ cm.</li><li><strong>Cari Panjang Akhir:</strong> Panjang akhir = Panjang Awal Total - Panjang yang Digunakan Simpul = $50 - 8 = 42$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang total tali panjang adalah 42 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 23 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 23</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The number of intervals (flights of stairs) climbed is one less than the floor number you reach. The time taken depends on the number of intervals climbed.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Intervals from 1st to 5th floor:</strong> To go from the 1st to the 5th floor, Ben climbs $5 - 1 = 4$ flights of stairs (intervals).</li><li><strong>Time per Interval:</strong> It took him 40 seconds to climb 4 intervals. Time per interval = $40 \text{ seconds} \div 4 \text{ intervals} = 10$ seconds per interval.</li><li><strong>Intervals from 5th to 6th floor:</strong> To go from the 5th to his home on the 6th floor, he needs to climb $6 - 5 = 1$ more flight of stairs.</li><li><strong>Calculate Additional Time:</strong> Additional Time = Number of new intervals $\times$ Time per interval = $1 \times 10 = 10$ seconds.</li></ol><div class="final-answer"><strong>Final Answer:</strong> He needs 10 more seconds.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 23</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jumlah interval (anak tangga) yang dinaiki adalah satu kurang dari nomor lantai yang Anda capai. Waktu yang dibutuhkan tergantung pada jumlah interval yang dinaiki.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Interval dari lantai 1 ke 5:</strong> Untuk naik dari lantai 1 ke lantai 5, Ben menaiki $5 - 1 = 4$ undakan tangga (interval).</li><li><strong>Waktu per Interval:</strong> Dia butuh 40 detik untuk menaiki 4 interval. Waktu per interval = $40 \text{ detik} \div 4 \text{ interval} = 10$ detik per interval.</li><li><strong>Interval dari lantai 5 ke 6:</strong> Untuk pergi dari lantai 5 ke rumahnya di lantai 6, dia perlu menaiki $6 - 5 = 1$ undakan tangga lagi.</li><li><strong>Hitung Waktu Tambahan:</strong> Waktu Tambahan = Jumlah interval baru $\times$ Waktu per interval = $1 \times 10 = 10$ detik.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membutuhkan 10 detik lagi.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 24 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 24</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a pattern problem that can be solved by identifying the repeating unit and seeing how many times it fits into the total.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Repeating Unit:</strong> The pattern is "2 red, 1 blue". This unit consists of $2 + 1 = 3$ beads.</li><li><strong>Find How Many Units Fit:</strong> Divide the total number of beads by the number of beads in one unit. $45 \div 3 = 15$.</li><li><strong>Calculate the Number of Blue Beads:</strong> The pattern fits exactly 15 times. Each unit has exactly 1 blue bead. Therefore, the total number of blue beads is $15 \times 1 = 15$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 15 blue beads.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 24</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal pola yang bisa diselesaikan dengan mengidentifikasi unit yang berulang dan melihat berapa kali unit tersebut muat dalam total keseluruhan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Unit Berulang:</strong> Polanya adalah "2 merah, 1 biru". Unit ini terdiri dari $2 + 1 = 3$ manik-manik.</li><li><strong>Cari Berapa Banyak Unit yang Muat:</strong> Bagi jumlah total manik-manik dengan jumlah manik-manik dalam satu unit. $45 \div 3 = 15$.</li><li><strong>Hitung Jumlah Manik-manik Biru:</strong> Pola tersebut pas tepat 15 kali. Setiap unit memiliki tepat 1 manik-manik biru. Oleh karena itu, jumlah total manik-manik biru adalah $15 \times 1 = 15$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 15 manik-manik biru.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 25 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 25</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The total length of a route is the number of intervals between stops multiplied by the length of each interval. The number of intervals is one less than the number of stops.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the Number of Intervals:</strong> There are 15 stops. For an open path, the number of intervals is $15 - 1 = 14$ intervals.</li><li><strong>Calculate the Total Length:</strong> The distance between each stop (one interval) is 2 km. Total length = Number of intervals $\times$ Distance per interval = $14 \times 2 = 28$ km.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The entire bus route is 28 km long.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 25</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Panjang total sebuah rute adalah jumlah interval antar pemberhentian dikalikan dengan panjang setiap interval. Jumlah interval adalah satu kurang dari jumlah pemberhentian.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari Jumlah Interval:</strong> Ada 15 pemberhentian. Untuk jalur terbuka, jumlah interval adalah $15 - 1 = 14$ interval.</li><li><strong>Hitung Panjang Total:</strong> Jarak antara setiap pemberhentian (satu interval) adalah 2 km. Panjang total = Jumlah interval $\times$ Jarak per interval = $14 \times 2 = 28$ km.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Seluruh rute bus panjangnya 28 km.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 26 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 26</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the number of items in an inclusive range (from A to B, including A and B), the formula is (Last - First) + 1.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify First and Last Page:</strong> The first page read is 25, and the last page is 110.</li><li><strong>Apply the Formula:</strong> Number of pages = (Last Page - First Page) + 1 = $(110 - 25) + 1$.</li><li><strong>Calculate:</strong> $110 - 25 = 85$. Then, $85 + 1 = 86$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> She read 86 pages.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 26</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk mencari jumlah benda dalam rentang inklusif (dari A sampai B, termasuk A dan B), rumusnya adalah (Terakhir - Pertama) + 1.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Halaman Pertama dan Terakhir:</strong> Halaman pertama yang dibaca adalah 25, dan halaman terakhir adalah 110.</li><li><strong>Terapkan Rumus:</strong> Jumlah halaman = (Halaman Terakhir - Halaman Pertama) + 1 = $(110 - 25) + 1$.</li><li><strong>Hitung:</strong> $110 - 25 = 85$. Kemudian, $85 + 1 = 86$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membaca 86 halaman.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 27 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 27</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a closed-loop interval problem. The total length is the perimeter. The number of items (lamps) equals the number of intervals.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate the Perimeter:</strong> A square has 4 equal sides. Perimeter = $4 \times \text{side length} = 4 \times 50 = 200$ meters.</li><li><strong>Find the Number of Intervals:</strong> The lamps are 10 meters apart. Number of intervals = Total Length (Perimeter) $\div$ Interval Length = $200 \div 10 = 20$ intervals.</li><li><strong>Find the Number of Lamps:</strong> Since the lamps are placed in a closed loop (around the square), the number of lamps is equal to the number of intervals.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 20 lamps in total.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 27</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah masalah interval lingkaran tertutup. Panjang total adalah kelilingnya. Jumlah benda (lampu) sama dengan jumlah interval.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung Keliling:</strong> Persegi memiliki 4 sisi yang sama. Keliling = $4 \times \text{panjang sisi} = 4 \times 50 = 200$ meter.</li><li><strong>Cari Jumlah Interval:</strong> Jarak antar lampu adalah 10 meter. Jumlah interval = Panjang Total (Keliling) $\div$ Panjang Interval = $200 \div 10 = 20$ interval.</li><li><strong>Cari Jumlah Lampu:</strong> Karena lampu ditempatkan dalam lingkaran tertutup (di sekeliling persegi), jumlah lampu sama dengan jumlah interval.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Total ada 20 lampu.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 28 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 28</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The nth event happens after (n-1) intervals have passed since the first event.</p></div><p class="steps-title">Solution Steps:</p<ol class="solution-points"><li><strong>Identify the First Event:</strong> The 1st bus arrives at 7:00 AM.</li><li><strong>Find the Number of Intervals:</strong> To get to the 6th bus, there are $6 - 1 = 5$ intervals of time that must pass after the first bus.</li><li><strong>Calculate Total Time Passed:</strong> Each interval is 12 minutes. Total time passed = $5 \times 12 = 60$ minutes.</li><li><strong>Find the Arrival Time:</strong> 60 minutes is equal to 1 hour. The arrival time of the 6th bus is 1 hour after 7:00 AM, which is 8:00 AM.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The 6th bus will arrive at 8:00 AM.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 28</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Peristiwa ke-n terjadi setelah (n-1) interval telah berlalu sejak peristiwa pertama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Peristiwa Pertama:</strong> Bus pertama tiba pukul 07:00.</li><li><strong>Cari Jumlah Interval:</strong> Untuk sampai ke bus ke-6, ada $6 - 1 = 5$ interval waktu yang harus berlalu setelah bus pertama.</li><li><strong>Hitung Total Waktu yang Berlalu:</strong> Setiap interval adalah 12 menit. Total waktu yang berlalu = $5 \times 12 = 60$ menit.</li><li><strong>Cari Waktu Kedatangan:</strong> 60 menit sama dengan 1 jam. Waktu kedatangan bus ke-6 adalah 1 jam setelah pukul 07:00, yaitu pukul 08:00.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bus ke-6 akan tiba pukul 08:00.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 29 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 29</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the total number of people in a queue from two positions (front and back), you add the positions and subtract 1, because the person in question is counted twice.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Add the Positions:</strong> Position from front is 9th. Position from back is 15th. Sum = $9 + 15 = 24$.</li><li><strong>Subtract the Overlap:</strong> When we add these two numbers, Daniel is counted once as the 9th person from the front and once again as the 15th from the back. To correct this double-counting, we must subtract 1.</li><li><strong>Calculate the Total:</strong> Total people = $24 - 1 = 23$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 23 people in the queue.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 29</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menemukan jumlah total orang dalam antrean dari dua posisi (depan dan belakang), Anda menjumlahkan kedua posisi tersebut dan mengurangi 1, karena orang yang bersangkutan dihitung dua kali.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Jumlahkan Posisi:</strong> Posisi dari depan adalah ke-9. Posisi dari belakang adalah ke-15. Jumlah = $9 + 15 = 24$.</li><li><strong>Kurangi yang Tumpang Tindih:</strong> Ketika kita menjumlahkan kedua angka ini, Daniel dihitung satu kali sebagai orang ke-9 dari depan dan sekali lagi sebagai orang ke-15 dari belakang. Untuk memperbaiki penghitungan ganda ini, kita harus mengurangi 1.</li><li><strong>Hitung Totalnya:</strong> Total orang = $24 - 1 = 23$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 23 orang dalam antrean tersebut.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+     <!-- Pembahasan 30 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 30</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A stack of items consists of the thickness of all items plus the height of all the intervals (rims) between them. A stack of 'n' plates has 'n-1' intervals.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate Total Thickness of Plates:</strong> There are 10 plates, each 1.5 cm thick. Total thickness = $10 \times 1.5 = 15$ cm.</li><li><strong>Calculate Total Height of Rims:</strong> The total height of the stack is 24 cm. The total height of all the rims is the difference between the stack height and the total plate thickness. Total rim height = $24 - 15 = 9$ cm.</li><li><strong>Find the Number of Intervals (Rims):</strong> For a stack of 10 plates, there are $10 - 1 = 9$ rims (or intervals) creating space between them.</li><li><strong>Find the Height of One Rim:</strong> The total height of 9 rims is 9 cm. Height of one rim = Total rim height $\div$ Number of rims = $9 \div 9 = 1$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The height of the rim of each plate is 1 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 30</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Tumpukan benda terdiri dari ketebalan semua benda ditambah tinggi semua interval (tepi) di antaranya. Tumpukan 'n' piring memiliki 'n-1' interval.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung Total Ketebalan Piring:</strong> Ada 10 piring, masing-masing tebalnya 1,5 cm. Total ketebalan = $10 \times 1.5 = 15$ cm.</li><li><strong>Hitung Total Tinggi Tepi:</strong> Tinggi total tumpukan adalah 24 cm. Total tinggi semua tepi adalah selisih antara tinggi tumpukan dan total ketebalan piring. Total tinggi tepi = $24 - 15 = 9$ cm.</li><li><strong>Cari Jumlah Interval (Tepi):</strong> Untuk tumpukan 10 piring, ada $10 - 1 = 9$ tepi (atau interval) yang menciptakan ruang di antara mereka.</li><li><strong>Cari Tinggi Satu Tepi:</strong> Total tinggi 9 tepi adalah 9 cm. Tinggi satu tepi = Total tinggi tepi $\div$ Jumlah tepi = $9 \div 9 = 1$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Tinggi tepi setiap piring adalah 1 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+</body>
+</html>
+
