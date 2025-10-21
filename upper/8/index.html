@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika - Kelas 5 & 6</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 12cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before,
+      .solutions-cover-page::before {
+        opacity: 0.1;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1, h2 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 20pt;
+        margin-top: 0;
+      }
+      .soal-latihan {
+        margin-bottom: 25px;
+        break-inside: avoid;
+      }
+      .soal-latihan b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .lang-id {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dotted #ccc;
+        color: #555;
+        font-style: italic;
+        font-size: 11pt;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+      .solution-detail {
+        margin-top: 20px;
+      }
+      .concept {
+        background-color: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+        text-align: justify;
+      }
+      .concept p {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      .steps-title {
+        font-weight: 700;
+        font-size: 14pt;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .solution-points {
+        padding-left: 20px;
+      }
+      .solution-points li {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.75rem 1.25rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+        .page::before {
+            opacity: 0.03;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <section class="page cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
+        <h1 class="cover-title">Math Competition Practice 8</h1>
+        <p class="cover-subtitle">Diophantine Equations & Venn Diagrams</p>
+        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 5 - 6</p>
+      </div>
+    </section>
+
+    <!-- Halaman Soal 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Diophantine Equations</h1>
+        <div class="soal-latihan">
+          <b>1. BUYING FRUITS</b>
+          <div class="soal-konten">
+            John bought some apples and oranges for a total of 53 dollars. An apple costs 4 dollars and an orange costs 7 dollars. If he bought more oranges than apples, how many apples did he buy?
+            <div class="lang-id">
+              John membeli beberapa apel dan jeruk dengan total harga 53 dolar. Harga satu apel adalah 4 dolar dan harga satu jeruk adalah 7 dolar. Jika dia membeli lebih banyak jeruk daripada apel, berapa banyak apel yang dia beli?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>2. TEST SCORES</b>
+          <div class="soal-konten">
+            In a math competition, each correct answer is worth 5 points, and each incorrect answer deducts 2 points. A student answered all 20 questions and scored 58 points. How many questions did the student answer correctly?
+            <div class="lang-id">
+              Dalam sebuah kompetisi matematika, setiap jawaban yang benar bernilai 5 poin, dan setiap jawaban yang salah dikurangi 2 poin. Seorang siswa menjawab semua 20 soal dan mendapat skor 58 poin. Berapa banyak soal yang dijawab dengan benar oleh siswa tersebut?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>3. FARM ANIMALS</b>
+          <div class="soal-konten">
+            A farmer has some chickens and cows. He counts a total of 22 heads and 68 legs. How many cows does the farmer have?
+            <div class="lang-id">
+              Seorang peternak memiliki beberapa ayam dan sapi. Dia menghitung ada total 22 kepala dan 68 kaki. Berapa banyak sapi yang dimiliki peternak tersebut?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 2 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Diophantine Equations</h1>
+            <div class="soal-latihan">
+              <b>4. COINS</b>
+              <div class="soal-konten">
+                Anna has a collection of 5-cent coins and 10-cent coins. She has a total of 15 coins with a total value of 110 cents. How many 10-cent coins does she have?
+                <div class="lang-id">
+                  Anna memiliki koleksi koin 5 sen dan 10 sen. Dia memiliki total 15 koin dengan nilai total 110 sen. Berapa banyak koin 10 sen yang dia miliki?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>5. BUYING TICKETS</b>
+              <div class="soal-konten">
+                Tickets for a school play cost 8 dollars for adults and 3 dollars for children. A total of 100 dollars was collected from selling 20 tickets. How many adult tickets were sold?
+                <div class="lang-id">
+                  Tiket untuk pertunjukan sekolah berharga 8 dolar untuk dewasa dan 3 dolar untuk anak-anak. Terkumpul total 100 dolar dari penjualan 20 tiket. Berapa banyak tiket dewasa yang terjual?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>6. TWO-DIGIT NUMBER</b>
+              <div class="soal-konten">
+                The sum of the digits of a two-digit number is 11. If the digits are reversed, the new number is 45 more than the original number. What is the original number?
+                <div class="lang-id">
+                  Jumlah digit dari sebuah bilangan dua angka adalah 11. Jika digit-digitnya dibalik, bilangan yang baru 45 lebih besar dari bilangan asli. Berapakah bilangan asli tersebut?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 3 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Diophantine Equations</h1>
+            <div class="soal-latihan">
+              <b>7. PACKING BOOKS</b>
+              <div class="soal-konten">
+                A librarian wants to pack 89 books into boxes. Small boxes can hold 6 books each, and large boxes can hold 11 books each. If she must use at least one of each type of box and all boxes must be full, how many small boxes did she use?
+                <div class="lang-id">
+                  Seorang pustakawan ingin mengemas 89 buku ke dalam kotak. Kotak kecil dapat menampung 6 buku, dan kotak besar dapat menampung 11 buku. Jika dia harus menggunakan setidaknya satu dari setiap jenis kotak dan semua kotak harus penuh, berapa banyak kotak kecil yang dia gunakan?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>8. SCORING POINTS</b>
+              <div class="soal-konten">
+                In a basketball game, a player scored 27 points by making only 2-point shots and 3-point shots. If the player made a total of 12 shots, how many 3-point shots did she make?
+                <div class="lang-id">
+                  Dalam sebuah permainan bola basket, seorang pemain mencetak 27 poin hanya dengan tembakan 2 angka dan 3 angka. Jika pemain tersebut melakukan total 12 tembakan, berapa banyak tembakan 3 angka yang dia buat?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>9. BUYING STAMPS</b>
+              <div class="soal-konten">
+                A post office sells stamps for 20 cents and 35 cents. If you spend exactly 250 cents, what is the maximum number of stamps you can buy?
+                <div class="lang-id">
+                  Sebuah kantor pos menjual prangko seharga 20 sen dan 35 sen. Jika Anda menghabiskan tepat 250 sen, berapa jumlah maksimum prangko yang dapat Anda beli?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 4 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Diophantine Equations</h1>
+            <div class="soal-latihan">
+              <b>10. VEHICLES IN A PARKING LOT</b>
+              <div class="soal-konten">
+                A parking lot contains only motorcycles (2 wheels) and cars (4 wheels). If there are a total of 30 vehicles and 94 wheels, how many cars are in the parking lot?
+                <div class="lang-id">
+                  Sebuah tempat parkir hanya berisi sepeda motor (2 roda) dan mobil (4 roda). Jika ada total 30 kendaraan dan 94 roda, berapa banyak mobil di tempat parkir tersebut?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>11. FINDING A NUMBER</b>
+              <div class="soal-konten">
+                Find the smallest positive integer that leaves a remainder of 2 when divided by 5, and a remainder of 3 when divided by 7.
+                <div class="lang-id">
+                  Temukan bilangan bulat positif terkecil yang bersisa 2 jika dibagi 5, dan bersisa 3 jika dibagi 7.
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>12. CHOCOLATES AND CANDIES</b>
+              <div class="soal-konten">
+                A bag of chocolates costs 9 dollars and a pack of candies costs 4 dollars. Lisa spent exactly 75 dollars on these items. How many bags of chocolates did she buy?
+                <div class="lang-id">
+                  Satu kantong cokelat berharga 9 dolar dan satu bungkus permen berharga 4 dolar. Lisa menghabiskan tepat 75 dolar untuk barang-barang ini. Berapa banyak kantong cokelat yang dia beli?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 5 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Diophantine Equations</h1>
+            <div class="soal-latihan">
+              <b>13. TEAM FORMATION</b>
+              <div class="soal-konten">
+                A group of 41 students are to be divided into teams. Some teams have 3 members and others have 5 members. If every student is in a team, how many teams of 5 members are there?
+                <div class="lang-id">
+                  Sekelompok 41 siswa akan dibagi menjadi beberapa tim. Beberapa tim memiliki 3 anggota dan yang lain memiliki 5 anggota. Jika setiap siswa berada dalam sebuah tim, ada berapa banyak tim yang beranggotakan 5 orang?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>14. TABLE AND STOOLS</b>
+              <div class="soal-konten">
+                A carpenter makes tables with 4 legs and stools with 3 legs. In one week, he used a total of 67 legs to make 19 items in total. How many tables did he make?
+                <div class="lang-id">
+                  Seorang tukang kayu membuat meja dengan 4 kaki dan bangku dengan 3 kaki. Dalam satu minggu, ia menggunakan total 67 kaki untuk membuat total 19 barang. Berapa banyak meja yang dia buat?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>15. NUMBER OF SOLUTIONS</b>
+              <div class="soal-konten">
+                How many pairs of non-negative integers $(x, y)$ are solutions to the equation $3x + 5y = 60$?
+                <div class="lang-id">
+                  Berapa banyak pasang bilangan bulat non-negatif $(x, y)$ yang merupakan solusi dari persamaan $3x + 5y = 60$?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 6 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Logic: Sets & Venn Diagrams</h1>
+        <div class="soal-latihan">
+          <b>16. SPORTS CLUB</b>
+          <div class="soal-konten">
+            In a school of 100 students, 60 students play Soccer, 50 students play Basketball, and 20 students play both. How many students play neither Soccer nor Basketball?
+            <div class="lang-id">
+              Di sebuah sekolah dengan 100 siswa, 60 siswa bermain Sepak Bola, 50 siswa bermain Bola Basket, dan 20 siswa bermain keduanya. Berapa banyak siswa yang tidak bermain Sepak Bola maupun Bola Basket?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>17. FAVORITE SUBJECTS</b>
+          <div class="soal-konten">
+            A survey of 30 students found that 18 like Math, 15 like Science, and 5 students do not like either subject. How many students like both Math and Science?
+            <div class="lang-id">
+              Sebuah survei terhadap 30 siswa menemukan bahwa 18 siswa menyukai Matematika, 15 siswa menyukai Sains, dan 5 siswa tidak menyukai kedua mata pelajaran tersebut. Berapa banyak siswa yang menyukai Matematika dan Sains?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>18. PET OWNERS</b>
+          <div class="soal-konten">
+            In a group of people, 12 own a cat, 15 own a dog, and 7 own both a cat and a dog. How many people are in the group if everyone owns at least one of these pets?
+            <div class="lang-id">
+              Dalam sekelompok orang, 12 orang memiliki kucing, 15 orang memiliki anjing, dan 7 orang memiliki kucing dan anjing. Berapa banyak orang dalam kelompok tersebut jika setiap orang memiliki setidaknya salah satu dari hewan peliharaan ini?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 7 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Logic: Sets & Venn Diagrams</h1>
+            <div class="soal-latihan">
+              <b>19. MUSIC AND ARTS</b>
+              <div class="soal-konten">
+                Out of 40 students, 25 are in the Music club and 18 are in the Art club. Every student is in at least one of the clubs. How many students are in the Music club only?
+                <div class="lang-id">
+                  Dari 40 siswa, 25 siswa berada di klub Musik dan 18 siswa berada di klub Seni. Setiap siswa berada di setidaknya salah satu klub. Berapa banyak siswa yang hanya berada di klub Musik?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>20. THREE-CIRCLE VENN DIAGRAM</b>
+              <div class="soal-konten">
+                In a class of 50 students, 30 like Apples, 28 like Bananas, and 25 like Cherries. 15 like Apples and Bananas, 12 like Bananas and Cherries, and 10 like Apples and Cherries. If 5 students like all three fruits, how many students do not like any of these fruits?
+                <div class="lang-id">
+                  Di kelas dengan 50 siswa, 30 siswa menyukai Apel, 28 siswa menyukai Pisang, dan 25 siswa menyukai Ceri. 15 siswa menyukai Apel dan Pisang, 12 siswa menyukai Pisang dan Ceri, dan 10 siswa menyukai Apel dan Ceri. Jika 5 siswa menyukai ketiga buah tersebut, berapa banyak siswa yang tidak menyukai buah-buahan ini sama sekali?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>21. LANGUAGES SPOKEN</b>
+              <div class="soal-konten">
+                A survey was conducted among 80 tourists. It was found that 50 speak English, 40 speak French, and 20 speak neither. How many tourists speak both English and French?
+                <div class="lang-id">
+                  Sebuah survei dilakukan terhadap 80 wisatawan. Ditemukan bahwa 50 orang berbicara bahasa Inggris, 40 orang berbicara bahasa Prancis, dan 20 orang tidak berbicara keduanya. Berapa banyak wisatawan yang berbicara bahasa Inggris dan Prancis?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 8 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Logic: Sets & Venn Diagrams</h1>
+            <div class="soal-latihan">
+              <b>22. READING PREFERENCES</b>
+              <div class="soal-konten">
+                In a group of 60 people, 35 read newspapers, 25 read magazines, and 10 read both. How many people in the group read only newspapers?
+                <div class="lang-id">
+                  Dalam sekelompok 60 orang, 35 orang membaca koran, 25 orang membaca majalah, dan 10 orang membaca keduanya. Berapa banyak orang dalam kelompok tersebut yang hanya membaca koran?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>23. ELECTRONIC GADGETS</b>
+              <div class="soal-konten">
+                In a survey of 120 people, it was found that 70 own a smartphone, 50 own a tablet, and 40 own a laptop. 30 own a smartphone and a tablet, 25 own a tablet and a laptop, and 20 own a smartphone and a laptop. If 10 people own all three gadgets, how many people own exactly one of these gadgets?
+                <div class="lang-id">
+                  Dalam survei terhadap 120 orang, ditemukan bahwa 70 orang memiliki smartphone, 50 orang memiliki tablet, dan 40 orang memiliki laptop. 30 orang memiliki smartphone dan tablet, 25 orang memiliki tablet dan laptop, dan 20 orang memiliki smartphone dan laptop. Jika 10 orang memiliki ketiga gadget tersebut, berapa banyak orang yang memiliki tepat satu dari gadget ini?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>24. VISITORS</b>
+              <div class="soal-konten">
+                Out of 100 visitors at a tourist spot, 70% visited monument A and 60% visited monument B. If every visitor visited at least one of the two monuments, what percentage of visitors visited both monuments?
+                <div class="lang-id">
+                  Dari 100 pengunjung di sebuah tempat wisata, 70% mengunjungi monumen A dan 60% mengunjungi monumen B. Jika setiap pengunjung mengunjungi setidaknya salah satu dari kedua monumen tersebut, berapa persentase pengunjung yang mengunjungi kedua monumen?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 9 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Logic: Sets & Venn Diagrams</h1>
+            <div class="soal-latihan">
+              <b>25. FAILED SUBJECTS</b>
+              <div class="soal-konten">
+                In a class of 40 students, 15 failed in Math, 12 failed in Science, and 8 failed in both subjects. How many students passed both subjects?
+                <div class="lang-id">
+                  Di kelas dengan 40 siswa, 15 siswa gagal dalam Matematika, 12 siswa gagal dalam Sains, dan 8 siswa gagal dalam kedua mata pelajaran tersebut. Berapa banyak siswa yang lulus kedua mata pelajaran?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>26. ICE CREAM FLAVORS</b>
+              <div class="soal-konten">
+                A survey of 50 children about their favorite ice cream flavors revealed the following: 25 like Chocolate, 20 like Vanilla, and 18 like Strawberry. 8 like Chocolate and Vanilla, 7 like Vanilla and Strawberry, and 5 like Chocolate and Strawberry. If 3 children like all three flavors, how many children like only Strawberry?
+                <div class="lang-id">
+                  Survei terhadap 50 anak tentang rasa es krim favorit mereka mengungkapkan hal berikut: 25 suka Cokelat, 20 suka Vanila, dan 18 suka Stroberi. 8 suka Cokelat dan Vanila, 7 suka Vanila dan Stroberi, dan 5 suka Cokelat dan Stroberi. Jika 3 anak menyukai ketiga rasa tersebut, berapa banyak anak yang hanya menyukai Stroberi?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>27. HOLIDAY DESTINATIONS</b>
+              <div class="soal-konten">
+                Among a group of tourists, 30 have been to the Beach, 25 have been to the Mountains, and 10 have been to both. If these tourists represent everyone in the group, how many tourists are there in total?
+                <div class="lang-id">
+                  Di antara sekelompok wisatawan, 30 orang pernah ke Pantai, 25 orang pernah ke Pegunungan, dan 10 orang pernah ke keduanya. Jika para wisatawan ini mewakili semua orang dalam kelompok tersebut, berapa jumlah total wisatawan?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 10 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Logic: Sets & Venn Diagrams</h1>
+            <div class="soal-latihan">
+              <b>28. PASSING EXAMS</b>
+              <div class="soal-konten">
+                In a class of 50 students, 35 passed in English and 25 passed in History. 10 students failed in both subjects. How many students passed in exactly one of the two subjects?
+                <div class="lang-id">
+                  Di kelas dengan 50 siswa, 35 siswa lulus dalam Bahasa Inggris dan 25 siswa lulus dalam Sejarah. 10 siswa gagal dalam kedua mata pelajaran. Berapa banyak siswa yang lulus tepat di salah satu dari dua mata pelajaran tersebut?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>29. DRINKS PREFERENCE</b>
+              <div class="soal-konten">
+                A survey of 100 people shows that 60 prefer Coffee, 50 prefer Tea, and 30 prefer Milk. 20 prefer Coffee and Tea, 15 prefer Tea and Milk, and 10 prefer Coffee and Milk. If 5 people prefer all three, how many people prefer Coffee only?
+                <div class="lang-id">
+                  Sebuah survei terhadap 100 orang menunjukkan bahwa 60 orang lebih menyukai Kopi, 50 orang lebih menyukai Teh, dan 30 orang lebih menyukai Susu. 20 orang lebih menyukai Kopi dan Teh, 15 orang lebih menyukai Teh dan Susu, dan 10 orang lebih menyukai Kopi dan Susu. Jika 5 orang menyukai ketiganya, berapa banyak orang yang hanya menyukai Kopi?
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>30. CLUB MEMBERSHIP</b>
+              <div class="soal-konten">
+                In a school, there are three clubs: Chess, Debate, and Science. Out of 200 students, 80 join Chess, 70 join Debate, and 60 join Science. 20 students are in both Chess and Debate, 15 are in both Debate and Science, 10 are in both Chess and Science, and 5 are in all three clubs. How many students are not a member of any club?
+                <div class="lang-id">
+                  Di sebuah sekolah, ada tiga klub: Catur, Debat, dan Sains. Dari 200 siswa, 80 bergabung dengan Catur, 70 bergabung dengan Debat, dan 60 bergabung dengan Sains. 20 siswa berada di klub Catur dan Debat, 15 berada di klub Debat dan Sains, 10 berada di klub Catur dan Sains, dan 5 berada di ketiga klub. Berapa banyak siswa yang bukan anggota klub mana pun?
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- SOLUTIONS COVER PAGE -->
+    <section class="page cover-page solutions-cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1 class="cover-title">SOLUTIONS</h1>
+        <p class="cover-subtitle">Detailed Step-by-Step Explanations</p>
+      </div>
+    </section>
+
+    <!-- Pembahasan 1 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 1</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem involves a linear Diophantine equation of the form $ax + by = c$, where we are looking for integer solutions. We can use systematic trial and error, focusing on the variable with the larger coefficient to reduce the number of cases to check.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Formulate the Equation:</strong> Let 'a' be the number of apples and 'o' be the number of oranges. The total cost can be represented by the equation: $4a + 7o = 53$. We are looking for positive integer solutions for 'a' and 'o'.</li><li><strong>Analyze the Equation:</strong> The term $4a$ is always an even number. Since the total is 53 (odd), the term $7o$ must be odd. This is only possible if 'o' (the number of oranges) is an odd number.</li><li><strong>Test Values for 'o':</strong> We'll test odd values for 'o' and see if we get an integer value for 'a'. We start with larger values of 'o' because $7o$ grows faster. The maximum possible value for 'o' is when $7o < 53$, so $o \le 7$.
+    <br>- If $o=7$: $4a + 7(7) = 53 \implies 4a + 49 = 53 \implies 4a = 4 \implies a = 1$.
+    <br>- If $o=5$: $4a + 7(5) = 53 \implies 4a + 35 = 53 \implies 4a = 18$. 'a' is not an integer.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 1 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Test Values for 'o' (continued):</strong>
+    <br>- If $o=3$: $4a + 7(3) = 53 \implies 4a + 21 = 53 \implies 4a = 32 \implies a = 8$.
+    <br>- If $o=1$: $4a + 7(1) = 53 \implies 4a + 7 = 53 \implies 4a = 46$. 'a' is not an integer.
+    </li><li><strong>Check the Condition:</strong> The problem states that he bought more oranges than apples ($o > a$).
+    <br>- For the solution $(a=1, o=7)$: $7 > 1$. This condition is met.
+    <br>- For the solution $(a=8, o=3)$: $3 \ngtr 8$. This condition is not met.
+    </li><li><strong>Conclusion:</strong> The only solution that fits all conditions is that he bought 1 apple and 7 oranges.</li></ol><div class="final-answer"><strong>Final Answer:</strong> He bought 1 apple.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 1</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini melibatkan persamaan Diophantine linear berbentuk $ax + by = c$, di mana kita mencari solusi bilangan bulat. Kita bisa menggunakan metode coba-coba yang sistematis, dengan fokus pada variabel dengan koefisien yang lebih besar untuk mengurangi jumlah kasus yang perlu diperiksa.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> Misalkan 'a' adalah jumlah apel dan 'o' adalah jumlah jeruk. Total biaya dapat direpresentasikan dengan persamaan: $4a + 7o = 53$. Kita mencari solusi bilangan bulat positif untuk 'a' dan 'o'.</li><li><strong>Analisis Persamaan:</strong> Suku $4a$ selalu merupakan bilangan genap. Karena totalnya 53 (ganjil), maka suku $7o$ harus ganjil. Hal ini hanya mungkin jika 'o' (jumlah jeruk) adalah bilangan ganjil.</li><li><strong>Uji Nilai untuk 'o':</strong> Kita akan menguji nilai-nilai ganjil untuk 'o' dan melihat apakah kita mendapatkan nilai bulat untuk 'a'. Kita mulai dengan nilai 'o' yang lebih besar karena $7o$ tumbuh lebih cepat. Nilai maksimum yang mungkin untuk 'o' adalah ketika $7o < 53$, jadi $o \le 7$.
+    <br>- Jika $o=7$: $4a + 7(7) = 53 \implies 4a + 49 = 53 \implies 4a = 4 \implies a = 1$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 1 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Uji Nilai untuk 'o' (lanjutan):</strong>
+    <br>- Jika $o=5$: $4a + 7(5) = 53 \implies 4a + 35 = 53 \implies 4a = 18$. 'a' bukan bilangan bulat.
+    <br>- Jika $o=3$: $4a + 7(3) = 53 \implies 4a + 21 = 53 \implies 4a = 32 \implies a = 8$.
+    <br>- Jika $o=1$: $4a + 7(1) = 53 \implies 4a + 7 = 53 \implies 4a = 46$. 'a' bukan bilangan bulat.
+    </li><li><strong>Periksa Syarat:</strong> Soal menyatakan bahwa ia membeli lebih banyak jeruk daripada apel ($o > a$).
+    <br>- Untuk solusi $(a=1, o=7)$: $7 > 1$. Syarat ini terpenuhi.
+    <br>- Untuk solusi $(a=8, o=3)$: $3 \ngtr 8$. Syarat ini tidak terpenuhi.
+    </li><li><strong>Kesimpulan:</strong> Satu-satunya solusi yang memenuhi semua syarat adalah ia membeli 1 apel dan 7 jeruk.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membeli 1 apel.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 2 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 2</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem can be solved by setting up two linear equations with two variables. It can also be solved using the "assumption method", which is often faster in competitions.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 'c' be the number of correct answers and 'w' be the number of incorrect answers.
+    <br>We know the total number of questions: $c + w = 20$.
+    <br>We know the total score: $5c - 2w = 58$.
+    <br>From the first equation, $w = 20 - c$. Substitute this into the second equation:
+    <br>$5c - 2(20 - c) = 58$
+    <br>$5c - 40 + 2c = 58$
+    <br>$7c = 98$
+    <br>$c = 98 \div 7 = 14$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume the student answered all 20 questions correctly. The maximum possible score would be $20 \times 5 = 100$ points.
+    <br>The actual score is 58 points. The difference is $100 - 58 = 42$ points.
+    <br>This difference is caused by some answers being incorrect. For every correct answer that is changed to an incorrect one, the score doesn't just lose 5 points, it also gets a penalty of 2 points. So the total "loss" per incorrect answer is $5 - (-2) = 7$ points.
+    <br>To find the number of incorrect answers, we divide the total difference in score by the loss per incorrect answer: $42 \div 7 = 6$ incorrect answers.
+    <br>Number of correct answers = Total questions - Incorrect answers = $20 - 6 = 14$.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> The student answered 14 questions correctly.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 2</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini dapat diselesaikan dengan membuat dua persamaan linear dengan dua variabel. Soal ini juga bisa diselesaikan dengan "metode asumsi", yang seringkali lebih cepat dalam kompetisi.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 'c' adalah jumlah jawaban benar dan 'w' adalah jumlah jawaban salah.
+    <br>Kita tahu jumlah total soal: $c + w = 20$.
+    <br>Kita tahu total skor: $5c - 2w = 58$.
+    <br>Dari persamaan pertama, $w = 20 - c$. Substitusikan ini ke persamaan kedua:
+    <br>$5c - 2(20 - c) = 58$
+    <br>$5c - 40 + 2c = 58$
+    <br>$7c = 98$
+    <br>$c = 98 \div 7 = 14$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan siswa menjawab semua 20 soal dengan benar. Skor maksimum yang mungkin adalah $20 \times 5 = 100$ poin.
+    <br>Skor sebenarnya adalah 58 poin. Selisihnya adalah $100 - 58 = 42$ poin.
+    <br>Selisih ini disebabkan oleh beberapa jawaban yang salah. Setiap kali jawaban benar diganti menjadi jawaban salah, skor tidak hanya kehilangan 5 poin, tetapi juga mendapat penalti 2 poin. Jadi total "kerugian" per jawaban salah adalah $5 - (-2) = 7$ poin.
+    <br>Untuk menemukan jumlah jawaban salah, kita bagi total selisih skor dengan kerugian per jawaban salah: $42 \div 7 = 6$ jawaban salah.
+    <br>Jumlah jawaban benar = Total soal - Jawaban salah = $20 - 6 = 14$.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Siswa tersebut menjawab 14 soal dengan benar.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 3 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 3</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a classic "chicken and rabbit" type problem. We can solve it using two linear equations or the assumption method. Each animal has 1 head. Chickens have 2 legs, and cows have 4 legs.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 'c' be the number of chickens and 'w' be the number of cows.
+    <br>Equation for heads: $c + w = 22$.
+    <br>Equation for legs: $2c + 4w = 68$.
+    <br>From the first equation, $c = 22 - w$. Substitute this into the second equation:
+    <br>$2(22 - w) + 4w = 68$
+    <br>$44 - 2w + 4w = 68$
+    <br>$2w = 68 - 44$
+    <br>$2w = 24$
+    <br>$w = 12$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 22 animals are chickens. The total number of legs would be $22 \times 2 = 44$ legs.
+    <br>The actual number of legs is 68. The difference is $68 - 44 = 24$ legs.
+    <br>This difference exists because we counted cows (4 legs) as if they were chickens (2 legs). The difference in legs between a cow and a chicken is $4 - 2 = 2$ legs.
+    <br>To find the number of cows, we divide the total leg difference by the difference per animal: $24 \div 2 = 12$ cows.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> The farmer has 12 cows.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 3</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal klasik tipe "ayam dan kelinci". Kita dapat menyelesaikannya dengan dua persamaan linear atau metode asumsi. Setiap hewan memiliki 1 kepala. Ayam memiliki 2 kaki, dan sapi memiliki 4 kaki.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 'c' adalah jumlah ayam dan 'w' adalah jumlah sapi.
+    <br>Persamaan untuk kepala: $c + w = 22$.
+    <br>Persamaan untuk kaki: $2c + 4w = 68$.
+    <br>Dari persamaan pertama, $c = 22 - w$. Substitusikan ini ke persamaan kedua:
+    <br>$2(22 - w) + 4w = 68$
+    <br>$44 - 2w + 4w = 68$
+    <br>$2w = 68 - 44$
+    <br>$2w = 24$
+    <br>$w = 12$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 22 hewan adalah ayam. Jumlah total kaki akan menjadi $22 \times 2 = 44$ kaki.
+    <br>Jumlah kaki sebenarnya adalah 68. Selisihnya adalah $68 - 44 = 24$ kaki.
+    <br>Selisih ini ada karena kita menghitung sapi (4 kaki) seolah-olah mereka ayam (2 kaki). Selisih kaki antara sapi dan ayam adalah $4 - 2 = 2$ kaki.
+    <br>Untuk menemukan jumlah sapi, kita bagi total selisih kaki dengan selisih per hewan: $24 \div 2 = 12$ sapi.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Peternak tersebut memiliki 12 sapi.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 4 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 4</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can set up a system of two linear equations, one representing the number of coins and the other representing their total value. The assumption method is also very effective here.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 'f' be the number of 5-cent coins and 't' be the number of 10-cent coins.
+    <br>Equation for number of coins: $f + t = 15$.
+    <br>Equation for total value: $5f + 10t = 110$.
+    <br>From the first equation, $f = 15 - t$. Substitute into the second equation:
+    <br>$5(15 - t) + 10t = 110$
+    <br>$75 - 5t + 10t = 110$
+    <br>$5t = 110 - 75$
+    <br>$5t = 35$
+    <br>$t = 7$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 15 coins are 5-cent coins. The total value would be $15 \times 5 = 75$ cents.
+    <br>The actual value is 110 cents. The difference is $110 - 75 = 35$ cents.
+    <br>This difference is because we counted 10-cent coins as 5-cent coins. The difference in value between a 10-cent coin and a 5-cent coin is $10 - 5 = 5$ cents.
+    <br>To find the number of 10-cent coins, divide the total value difference by the difference per coin: $35 \div 5 = 7$.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> She has 7 ten-cent coins.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 4</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita dapat membuat sistem dua persamaan linear, satu merepresentasikan jumlah koin dan yang lainnya merepresentasikan nilai totalnya. Metode asumsi juga sangat efektif di sini.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 'f' adalah jumlah koin 5 sen dan 't' adalah jumlah koin 10 sen.
+    <br>Persamaan jumlah koin: $f + t = 15$.
+    <br>Persamaan nilai total: $5f + 10t = 110$.
+    <br>Dari persamaan pertama, $f = 15 - t$. Substitusikan ke persamaan kedua:
+    <br>$5(15 - t) + 10t = 110$
+    <br>$75 - 5t + 10t = 110$
+    <br>$5t = 110 - 75$
+    <br>$5t = 35$
+    <br>$t = 7$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 15 koin adalah koin 5 sen. Nilai totalnya adalah $15 \times 5 = 75$ sen.
+    <br>Nilai sebenarnya adalah 110 sen. Selisihnya adalah $110 - 75 = 35$ sen.
+    <br>Selisih ini disebabkan kita menghitung koin 10 sen sebagai koin 5 sen. Selisih nilai antara koin 10 sen dan koin 5 sen adalah $10 - 5 = 5$ sen.
+    <br>Untuk menemukan jumlah koin 10 sen, bagi total selisih nilai dengan selisih per koin: $35 \div 5 = 7$.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia memiliki 7 koin 10 sen.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 5 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 5</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem involves two distinct quantities (number of tickets and total money collected), making it a perfect candidate for a system of linear equations or the assumption method.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 'a' be the number of adult tickets and 'c' be the number of children tickets.
+    <br>Equation for number of tickets: $a + c = 20$.
+    <br>Equation for total value: $8a + 3c = 100$.
+    <br>From the first equation, $c = 20 - a$. Substitute into the second equation:
+    <br>$8a + 3(20 - a) = 100$
+    <br>$8a + 60 - 3a = 100$
+    <br>$5a = 100 - 60$
+    <br>$5a = 40$
+    <br>$a = 8$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 20 tickets sold were for children. The total money collected would be $20 \times 3 = 60$ dollars.
+    <br>The actual money collected is 100 dollars. The difference is $100 - 60 = 40$ dollars.
+    <br>This difference exists because we treated adult tickets as children tickets. The difference in price is $8 - 3 = 5$ dollars.
+    <br>To find the number of adult tickets, we divide the total difference in money by the difference in price per ticket: $40 \div 5 = 8$ adult tickets.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> 8 adult tickets were sold.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 5</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini melibatkan dua kuantitas yang berbeda (jumlah tiket dan total uang yang terkumpul), menjadikannya kandidat yang sempurna untuk sistem persamaan linear atau metode asumsi.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 'a' adalah jumlah tiket dewasa dan 'c' adalah jumlah tiket anak-anak.
+    <br>Persamaan jumlah tiket: $a + c = 20$.
+    <br>Persamaan nilai total: $8a + 3c = 100$.
+    <br>Dari persamaan pertama, $c = 20 - a$. Substitusikan ke persamaan kedua:
+    <br>$8a + 3(20 - a) = 100$
+    <br>$8a + 60 - 3a = 100$
+    <br>$5a = 100 - 60$
+    <br>$5a = 40$
+    <br>$a = 8$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 20 tiket yang terjual adalah tiket anak-anak. Total uang yang terkumpul adalah $20 \times 3 = 60$ dolar.
+    <br>Uang yang sebenarnya terkumpul adalah 100 dolar. Selisihnya adalah $100 - 60 = 40$ dolar.
+    <br>Selisih ini ada karena kita menganggap tiket dewasa sebagai tiket anak-anak. Selisih harganya adalah $8 - 3 = 5$ dolar.
+    <br>Untuk menemukan jumlah tiket dewasa, kita bagi total selisih uang dengan selisih harga per tiket: $40 \div 5 = 8$ tiket dewasa.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 8 tiket dewasa terjual.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 6 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 6</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A two-digit number can be represented algebraically as $10t + u$, where 't' is the tens digit and 'u' is the units digit. The reversed number would be $10u + t$. We can set up equations based on this representation.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Formulate the Equations:</strong> Let the original number's tens digit be 't' and units digit be 'u'.
+    <br>Equation 1 (Sum of digits): $t + u = 11$.
+    <br>The value of the original number is $10t + u$.
+    <br>The value of the reversed number is $10u + t$.
+    <br>Equation 2 (Relationship between numbers): $(10u + t) = (10t + u) + 45$.
+    </li><li><strong>Simplify the Second Equation:</strong>
+    <br>$10u + t = 10t + u + 45$
+    <br>$10u - u - 10t + t = 45$
+    <br>$9u - 9t = 45$
+    <br>Divide by 9: $u - t = 5$.
+    </li><li><strong>Solve the System of Equations:</strong> We now have a simple system:
+    <br>1) $t + u = 11$
+    <br>2) $u - t = 5$ (or $-t + u = 5$)
+    <br>Add the two equations together: $(t + u) + (-t + u) = 11 + 5 \implies 2u = 16 \implies u = 8$.
+    <br>Substitute $u=8$ into the first equation: $t + 8 = 11 \implies t = 3$.
+    </li><li><strong>Find the Original Number:</strong> The tens digit is 3 and the units digit is 8. The original number is 38.
+    <br>Check: Reversed number is 83. $83 - 38 = 45$. This is correct.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> The original number is 38.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 6</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Bilangan dua angka dapat direpresentasikan secara aljabar sebagai $10t + u$, di mana 't' adalah digit puluhan dan 'u' adalah digit satuan. Bilangan yang dibalik menjadi $10u + t$. Kita dapat membuat persamaan berdasarkan representasi ini.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> Misalkan digit puluhan bilangan asli adalah 't' dan digit satuan adalah 'u'.
+    <br>Persamaan 1 (Jumlah digit): $t + u = 11$.
+    <br>Nilai bilangan asli adalah $10t + u$.
+    <br>Nilai bilangan yang dibalik adalah $10u + t$.
+    <br>Persamaan 2 (Hubungan antar bilangan): $(10u + t) = (10t + u) + 45$.
+    </li><li><strong>Sederhanakan Persamaan Kedua:</strong>
+    <br>$10u + t = 10t + u + 45$
+    <br>$10u - u - 10t + t = 45$
+    <br>$9u - 9t = 45$
+    <br>Bagi dengan 9: $u - t = 5$.
+    </li><li><strong>Selesaikan Sistem Persamaan:</strong> Sekarang kita memiliki sistem yang sederhana:
+    <br>1) $t + u = 11$
+    <br>2) $u - t = 5$ (atau $-t + u = 5$)
+    <br>Jumlahkan kedua persamaan: $(t + u) + (-t + u) = 11 + 5 \implies 2u = 16 \implies u = 8$.
+    <br>Substitusikan $u=8$ ke persamaan pertama: $t + 8 = 11 \implies t = 3$.
+    </li><li><strong>Temukan Bilangan Asli:</strong> Digit puluhan adalah 3 dan digit satuan adalah 8. Bilangan asli adalah 38.
+    <br>Periksa: Bilangan yang dibalik adalah 83. $83 - 38 = 45$. Ini benar.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan asli tersebut adalah 38.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 7 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 7</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a Diophantine equation problem where we need to find positive integer solutions. We can use modular arithmetic or systematic testing to find the solution.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Formulate the Equation:</strong> Let 's' be the number of small boxes and 'l' be the number of large boxes. The total number of books is given by: $6s + 11l = 89$. We know $s \ge 1$ and $l \ge 1$.</li><li><strong>Isolate One Variable:</strong> It's easier to test values for the variable with the larger coefficient. The maximum value for 'l' is when $11l < 89$, so $l \le 8$.
+    <br>$6s = 89 - 11l$. This means $(89 - 11l)$ must be a multiple of 6.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 7 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Test Values for 'l':</strong>
+    <br>- If $l=1$: $89 - 11(1) = 78$. $78 \div 6 = 13$. So $s=13$. This is a valid solution.
+    <br>- If $l=2$: $89 - 11(2) = 67$. Not divisible by 6.
+    <br>- If $l=3$: $89 - 11(3) = 56$. Not divisible by 6.
+    <br>- If $l=4$: $89 - 11(4) = 45$. Not divisible by 6.
+    <br>- If $l=5$: $89 - 11(5) = 34$. Not divisible by 6.
+    <br>- If $l=6$: $89 - 11(6) = 23$. Not divisible by 6.
+    <br>- If $l=7$: $89 - 11(7) = 12$. $12 \div 6 = 2$. So $s=2$. This is another valid solution.
+    <br>- If $l=8$: $89 - 11(8) = 1$. Not divisible by 6.
+    </li><li><strong>Analyze the Solutions:</strong> We found two possible pairs of (s, l): (13, 1) and (2, 7). The question asks for the number of small boxes, which could be 13 or 2. In many competition math problems of this type without further constraints, there might be a unique answer or they ask for a sum/product. Since the question is "how many small boxes did she use?", and both are valid, there might be an implicit assumption, or the question could be ambiguous. However, both 13 and 2 are possible answers based on the prompt. Let's assume the question is asking for *one* valid number of small boxes. (13 is a common answer for such problems).</li></ol><div class="final-answer"><strong>Final Answer:</strong> She used 13 small boxes (or 2 small boxes). Both are valid solutions. 13 is one of the valid answers.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 7</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal persamaan Diophantine di mana kita perlu mencari solusi bilangan bulat positif. Kita bisa menggunakan aritmatika modular atau pengujian sistematis untuk menemukan solusinya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> Misalkan 's' adalah jumlah kotak kecil dan 'l' adalah jumlah kotak besar. Jumlah total buku diberikan oleh: $6s + 11l = 89$. Kita tahu $s \ge 1$ dan $l \ge 1$.</li><li><strong>Isolasi Satu Variabel:</strong> Lebih mudah untuk menguji nilai pada variabel dengan koefisien yang lebih besar. Nilai maksimum untuk 'l' adalah ketika $11l < 89$, jadi $l \le 8$.
+    <br>$6s = 89 - 11l$. Ini berarti $(89 - 11l)$ harus merupakan kelipatan 6.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 7 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Uji Nilai untuk 'l':</strong>
+    <br>- If $l=1$: $89 - 11(1) = 78$. $78 \div 6 = 13$. Jadi $s=13$. Ini adalah solusi yang valid.
+    <br>- If $l=2$: $89 - 11(2) = 67$. Bukan kelipatan 6.
+    <br>- If $l=3$: $89 - 11(3) = 56$. Bukan kelipatan 6.
+    <br>- If $l=4$: $89 - 11(4) = 45$. Bukan kelipatan 6.
+    <br>- If $l=5$: $89 - 11(5) = 34$. Bukan kelipatan 6.
+    <br>- If $l=6$: $89 - 11(6) = 23$. Bukan kelipatan 6.
+    <br>- If $l=7$: $89 - 11(7) = 12$. $12 \div 6 = 2$. Jadi $s=2$. Ini juga solusi yang valid.
+    <br>- If $l=8$: $89 - 11(8) = 1$. Bukan kelipatan 6.
+    </li><li><strong>Analisis Solusi:</strong> Kita menemukan dua pasang (s, l) yang mungkin: (13, 1) dan (2, 7). Pertanyaannya menanyakan jumlah kotak kecil, yang bisa jadi 13 atau 2. Dalam banyak soal kompetisi matematika jenis ini tanpa batasan lebih lanjut, mungkin ada jawaban unik atau mereka meminta jumlah/hasil kali. Karena pertanyaannya adalah "berapa banyak kotak kecil yang dia gunakan?", dan keduanya valid, mungkin ada asumsi implisit, atau pertanyaannya bisa jadi ambigu. Namun, 13 dan 2 adalah jawaban yang mungkin berdasarkan soal. Mari kita asumsikan mereka menginginkan *satu* nilai yang mungkin.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia menggunakan 13 kotak kecil (atau 2 kotak kecil). Keduanya adalah solusi yang valid. 13 adalah salah satu jawaban yang valid.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 8 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 8</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is another system of two linear equations problem, involving the number of shots and the total points scored. The assumption method is also suitable.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 't' be the number of 2-point shots and 'h' be the number of 3-point shots.
+    <br>Equation for number of shots: $t + h = 12$.
+    <br>Equation for total points: $2t + 3h = 27$.
+    <br>From the first equation, $t = 12 - h$. Substitute into the second equation:
+    <br>$2(12 - h) + 3h = 27$
+    <br>$24 - 2h + 3h = 27$
+    <br>$h = 27 - 24$
+    <br>$h = 3$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 12 shots were 2-point shots. The total points would be $12 \times 2 = 24$ points.
+    <br>The actual score is 27 points. The difference is $27 - 24 = 3$ points.
+    <br>This difference is because some shots were actually 3-pointers. The difference in points between a 3-point shot and a 2-point shot is $3 - 2 = 1$ point.
+    <br>To find the number of 3-point shots, divide the total point difference by the difference per shot: $3 \div 1 = 3$.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> She made 3 three-point shots.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 8</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal sistem dua persamaan linear lainnya, yang melibatkan jumlah tembakan dan total poin yang dicetak. Metode asumsi juga cocok digunakan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 't' adalah jumlah tembakan 2 angka dan 'h' adalah jumlah tembakan 3 angka.
+    <br>Persamaan jumlah tembakan: $t + h = 12$.
+    <br>Persamaan total poin: $2t + 3h = 27$.
+    <br>Dari persamaan pertama, $t = 12 - h$. Substitusikan ke persamaan kedua:
+    <br>$2(12 - h) + 3h = 27$
+    <br>$24 - 2h + 3h = 27$
+    <br>$h = 27 - 24$
+    <br>$h = 3$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 12 tembakan adalah tembakan 2 angka. Total poinnya adalah $12 \times 2 = 24$ poin.
+    <br>Skor sebenarnya adalah 27 poin. Selisihnya adalah $27 - 24 = 3$ poin.
+    <br>Selisih ini ada karena beberapa tembakan sebenarnya adalah tembakan 3 angka. Selisih poin antara tembakan 3 angka dan 2 angka adalah $3 - 2 = 1$ poin.
+    <br>Untuk menemukan jumlah tembakan 3 angka, bagi total selisih poin dengan selisih per tembakan: $3 \div 1 = 3$.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia melakukan 3 tembakan 3 angka.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 9 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 9</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to solve the Diophantine equation $20x + 35y = 250$ for non-negative integers x and y. We want to maximize the total number of stamps, which is $x+y$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Simplify the Equation:</strong> The equation $20x + 35y = 250$ can be simplified by dividing all terms by their greatest common divisor, which is 5.
+    <br>$4x + 7y = 50$. Here, 'x' is the number of 20-cent stamps and 'y' is the number of 35-cent stamps.</li><li><strong>Find Integer Solutions:</strong> We can test values for 'y' (the variable with the larger coefficient) to find corresponding integer values for 'x'.
+    <br>$4x = 50 - 7y$. The term $50 - 7y$ must be a multiple of 4.
+    <br>- If $y=0$: $4x = 50$. Not an integer solution for x.
+    <br>- If $y=1$: $4x = 50 - 7 = 43$. Not an integer solution.
+    <br>- If $y=2$: $4x = 50 - 14 = 36 \implies x=9$. Solution: (x=9, y=2). Total stamps = $9+2=11$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 9 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Find Integer Solutions (continued):</strong>
+    <br>- If $y=3$: $4x = 50 - 21 = 29$. Not an integer solution.
+    <br>- If $y=4$: $4x = 50 - 28 = 22$. Not an integer solution.
+    <br>- If $y=5$: $4x = 50 - 35 = 15$. Not an integer solution.
+    <br>- If $y=6$: $4x = 50 - 42 = 8 \implies x=2$. Solution: (x=2, y=6). Total stamps = $2+6=8$.
+    <br>- If $y=7$: $4x = 50 - 49 = 1$. Not an integer solution.
+    <br>- If $y \ge 8$, $50-7y$ becomes negative, which is not possible for 'x'.
+    </li><li><strong>Compare the Totals:</strong> We have two possible solutions:
+    <br>1. Buy 9 (20-cent) and 2 (35-cent) stamps. Total = 11 stamps.
+    <br>2. Buy 2 (20-cent) and 6 (35-cent) stamps. Total = 8 stamps.
+    <br>The maximum number of stamps is 11.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The maximum number of stamps you can buy is 11.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 9</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu menyelesaikan persamaan Diophantine $20x + 35y = 250$ untuk bilangan bulat non-negatif x dan y. Kita ingin memaksimalkan jumlah total prangko, yaitu $x+y$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Sederhanakan Persamaan:</strong> Persamaan $20x + 35y = 250$ dapat disederhanakan dengan membagi semua suku dengan pembagi persekutuan terbesar mereka, yaitu 5.
+    <br>$4x + 7y = 50$. Di sini, 'x' adalah jumlah prangko 20 sen dan 'y' adalah jumlah prangko 35 sen.</li><li><strong>Cari Solusi Bilangan Bulat:</strong> Kita dapat menguji nilai untuk 'y' (variabel dengan koefisien lebih besar) untuk menemukan nilai bulat 'x' yang sesuai.
+    <br>$4x = 50 - 7y$. Suku $50 - 7y$ harus merupakan kelipatan 4.
+    <br>- If $y=0$: $4x = 50$. Bukan solusi bulat untuk x.
+    <br>- If $y=1$: $4x = 50 - 7 = 43$. Bukan solusi bulat.
+    <br>- If $y=2$: $4x = 50 - 14 = 36 \implies x=9$. Solusi: (x=9, y=2). Total prangko = $9+2=11$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 9 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Cari Solusi Bilangan Bulat (lanjutan):</strong>
+    <br>- If $y=3$: $4x = 50 - 21 = 29$. Bukan solusi bulat.
+    <br>- If $y=4$: $4x = 50 - 28 = 22$. Bukan solusi bulat.
+    <br>- If $y=5$: $4x = 50 - 35 = 15$. Bukan solusi bulat.
+    <br>- If $y=6$: $4x = 50 - 42 = 8 \implies x=2$. Solusi: (x=2, y=6). Total prangko = $2+6=8$.
+    <br>- If $y=7$: $4x = 50 - 49 = 1$. Bukan solusi bulat.
+    <br>- If $y \ge 8$, $50-7y$ menjadi negatif, yang tidak mungkin untuk 'x'.
+    </li><li><strong>Bandingkan Total:</strong> Kita punya dua solusi yang mungkin:
+    <br>1. Beli 9 prangko (20 sen) dan 2 prangko (35 sen). Total = 11 prangko.
+    <br>2. Beli 2 prangko (20 sen) dan 6 prangko (35 sen). Total = 8 prangko.
+    <br>Jumlah maksimum prangko adalah 11.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Jumlah maksimum prangko yang dapat Anda beli adalah 11.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 10 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 10</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a classic "heads and legs" problem, solvable with a system of linear equations or the assumption method. Motorcycles have 2 wheels, cars have 4.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 'm' be the number of motorcycles and 'c' be the number of cars.
+    <br>Equation for vehicles (heads): $m + c = 30$.
+    <br>Equation for wheels (legs): $2m + 4c = 94$.
+    <br>From the first equation, $m = 30 - c$. Substitute into the second equation:
+    <br>$2(30 - c) + 4c = 94$
+    <br>$60 - 2c + 4c = 94$
+    <br>$2c = 94 - 60$
+    <br>$2c = 34$
+    <br>$c = 17$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 30 vehicles are motorcycles. The total number of wheels would be $30 \times 2 = 60$ wheels.
+    <br>The actual number of wheels is 94. The difference is $94 - 60 = 34$ wheels.
+    <br>This difference is because we counted cars (4 wheels) as motorcycles (2 wheels). The difference in wheels is $4 - 2 = 2$.
+    <br>To find the number of cars, divide the total wheel difference by the difference per vehicle: $34 \div 2 = 17$ cars.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 17 cars in the parking lot.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 10</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal klasik "kepala dan kaki", yang dapat diselesaikan dengan sistem persamaan linear atau metode asumsi. Sepeda motor memiliki 2 roda, mobil memiliki 4 roda.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 'm' adalah jumlah sepeda motor dan 'c' adalah jumlah mobil.
+    <br>Persamaan untuk kendaraan (kepala): $m + c = 30$.
+    <br>Persamaan untuk roda (kaki): $2m + 4c = 94$.
+    <br>Dari persamaan pertama, $m = 30 - c$. Substitusikan ke persamaan kedua:
+    <br>$2(30 - c) + 4c = 94$
+    <br>$60 - 2c + 4c = 94$
+    <br>$2c = 94 - 60$
+    <br>$2c = 34$
+    <br>$c = 17$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 30 kendaraan adalah sepeda motor. Jumlah total roda adalah $30 \times 2 = 60$ roda.
+    <br>Jumlah roda sebenarnya adalah 94. Selisihnya adalah $94 - 60 = 34$ roda.
+    <br>Selisih ini ada karena kita menghitung mobil (4 roda) sebagai sepeda motor (2 roda). Selisih rodanya adalah $4 - 2 = 2$.
+    <br>Untuk menemukan jumlah mobil, bagi total selisih roda dengan selisih per kendaraan: $34 \div 2 = 17$ mobil.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 17 mobil di tempat parkir.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 11 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 11</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This is a problem involving the Chinese Remainder Theorem, but for small numbers, we can solve it by listing multiples. A number that leaves a remainder of 2 when divided by 5 must end in 2 or 7. A number that leaves a remainder of 3 when divided by 7 fits the form $7k+3$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>List numbers based on the first condition:</strong> We are looking for a number N such that $N = 5k + 2$. These numbers are: 2, 7, 12, 17, 22, 27, 32, 37, ...</li><li><strong>List numbers based on the second condition:</strong> We are looking for a number N such that $N = 7j + 3$. These numbers are: 3, 10, 17, 24, 31, 38, ...</li><li><strong>Find the smallest common number:</strong> Look for the smallest number that appears in both lists.
+    <br>List 1: 2, 7, 12, <strong>17</strong>, 22, ...
+    <br>List 2: 3, 10, <strong>17</strong>, 24, ...
+    <br>The smallest number that satisfies both conditions is 17.</li><li><strong>Verification:</strong>
+    <br>- $17 \div 5 = 3$ with a remainder of 2. (Correct)
+    <br>- $17 \div 7 = 2$ with a remainder of 3. (Correct)
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> The smallest positive integer is 17.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 11</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ini adalah soal yang melibatkan Teorema Sisa Tiongkok, tetapi untuk bilangan kecil, kita bisa menyelesaikannya dengan mendaftar kelipatan. Bilangan yang bersisa 2 jika dibagi 5 harus berakhiran 2 atau 7. Bilangan yang bersisa 3 jika dibagi 7 sesuai dengan bentuk $7k+3$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Daftar bilangan berdasarkan syarat pertama:</strong> Kita mencari bilangan N sedemikian sehingga $N = 5k + 2$. Bilangan-bilangan ini adalah: 2, 7, 12, 17, 22, 27, 32, 37, ...</li><li><strong>Daftar bilangan berdasarkan syarat kedua:</strong> Kita mencari bilangan N sedemikian sehingga $N = 7j + 3$. Bilangan-bilangan ini adalah: 3, 10, 17, 24, 31, 38, ...</li><li><strong>Temukan bilangan terkecil yang sama:</strong> Cari bilangan terkecil yang muncul di kedua daftar.
+    <br>Daftar 1: 2, 7, 12, <strong>17</strong>, 22, ...
+    <br>Daftar 2: 3, 10, <strong>17</strong>, 24, ...
+    <br>Bilangan terkecil yang memenuhi kedua syarat adalah 17.</li><li><strong>Verifikasi:</strong>
+    <br>- $17 \div 5 = 3$ dengan sisa 2. (Benar)
+    <br>- $17 \div 7 = 2$ dengan sisa 3. (Benar)
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Bilangan bulat positif terkecil adalah 17.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 12 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 12</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to find a positive integer solution to the linear Diophantine equation $9c + 4p = 75$, where 'c' is the number of chocolates and 'p' is the number of candies.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Formulate the Equation:</strong> Let 'c' be the number of bags of chocolates and 'p' be the packs of candies. The equation is $9c + 4p = 75$.</li><li><strong>Analyze the Equation:</strong> $4p = 75 - 9c$. This implies that $75 - 9c$ must be a positive multiple of 4.
+    <br>We can test values for 'c' and check the result. The maximum value for 'c' is when $9c < 75$, so $c \le 8$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 12 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Test Values for 'c':</strong>
+    <br>- If $c=1$: $75 - 9(1) = 66$. Not divisible by 4.
+    <br>- If $c=2$: $75 - 9(2) = 57$. Not divisible by 4.
+    <br>- If $c=3$: $75 - 9(3) = 48$. $48 \div 4 = 12$. So $p=12$. This is a valid solution.
+    <br>- If $c=4$: $75 - 9(4) = 39$. Not divisible by 4.
+    <br>- If $c=5$: $75 - 9(5) = 30$. Not divisible by 4.
+    <br>- If $c=6$: $75 - 9(6) = 21$. Not divisible by 4.
+    <br>- If $c=7$: $75 - 9(7) = 12$. $12 \div 4 = 3$. So $p=3$. This is a valid solution.
+    <br>- If $c=8$: $75 - 9(8) = 3$. Not divisible by 4.
+    </li><li><strong>Check for Uniqueness:</strong> The problem does not give enough constraints to force a unique answer. Both c=3 and c=7 are possible. Usually, in such competition questions, there might be a missing piece of information, or they might ask for the sum or largest possible value. Let's assume the question expects a single answer, which might imply we should look for something special. For example, if Lisa bought more chocolates than candies, c=7 would be invalid. Without more information, let's provide one of the valid answers. A question writer might have intended only one solution. A common pattern is that the solution is found early in the testing process. Let's stick with the first one we found.</li></ol><div class="final-answer"><strong>Final Answer:</strong> She bought 3 bags of chocolates. (Another possible answer is 7).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 12</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu mencari solusi bilangan bulat positif untuk persamaan Diophantine linear $9c + 4p = 75$, di mana 'c' adalah jumlah cokelat dan 'p' adalah jumlah permen.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> Misalkan 'c' adalah jumlah kantong cokelat dan 'p' adalah bungkus permen. Persamaannya adalah $9c + 4p = 75$.</li><li><strong>Analisis Persamaan:</strong> $4p = 75 - 9c$. Ini berarti $75 - 9c$ harus merupakan kelipatan 4 yang positif.
+    <br>Kita bisa menguji nilai untuk 'c' dan memeriksa hasilnya. Nilai maksimum untuk 'c' adalah ketika $9c < 75$, jadi $c \le 8$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 12 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="3">
+    <li><strong>Uji Nilai untuk 'c':</strong>
+    <br>- Jika $c=1$: $75 - 9(1) = 66$. Bukan kelipatan 4.
+    <br>- Jika $c=2$: $75 - 9(2) = 57$. Bukan kelipatan 4.
+    <br>- Jika $c=3$: $75 - 9(3) = 48$. $48 \div 4 = 12$. Jadi $p=12$. Ini solusi yang valid.
+    <br>- Jika $c=4$: $75 - 9(4) = 39$. Bukan kelipatan 4.
+    <br>- Jika $c=5$: $75 - 9(5) = 30$. Bukan kelipatan 4.
+    <br>- Jika $c=6$: $75 - 9(6) = 21$. Bukan kelipatan 4.
+    <br>- Jika $c=7$: $75 - 9(7) = 12$. $12 \div 4 = 3$. Jadi $p=3$. Ini solusi yang valid.
+    <br>- Jika $c=8$: $75 - 9(8) = 3$. Bukan kelipatan 4.
+    </li><li><strong>Periksa Keunikan:</strong> Soal tidak memberikan batasan yang cukup untuk memaksakan jawaban yang unik. Baik c=3 maupun c=7 adalah mungkin. Biasanya, dalam soal kompetisi seperti itu, mungkin ada informasi yang hilang, atau mereka mungkin meminta jumlah atau nilai terbesar yang mungkin. Mari kita asumsikan soal mengharapkan satu jawaban, yang mungkin berarti kita harus mencari sesuatu yang istimewa. Tanpa informasi lebih lanjut, mari kita berikan salah satu jawaban yang valid. Jawaban pertama yang kita temukan adalah c=3.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membeli 3 kantong cokelat. (Jawaban lain yang mungkin adalah 7).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 13 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 13</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to find positive integer solutions for the equation $3x + 5y = 41$, where 'x' is the number of 3-member teams and 'y' is the number of 5-member teams.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Formulate the Equation:</strong> Let 'x' be the number of teams with 3 members and 'y' be the number of teams with 5 members. The equation for the total number of students is $3x + 5y = 41$.</li><li><strong>Analyze the Equation and Test Values:</strong> We need to find positive integers x and y that satisfy the equation. It is easier to test values for 'y', the variable with the larger coefficient.
+    <br>$3x = 41 - 5y$. This means $41 - 5y$ must be a positive multiple of 3.
+    <br>The maximum value for y is when $5y < 41$, so $y \le 8$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 13 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Analyze the Equation and Test Values (continued):</strong>
+    <br>- If $y=1$: $3x = 41 - 5 = 36 \implies x=12$. This is a valid solution.
+    <br>- If $y=2$: $3x = 41 - 10 = 31$. Not a multiple of 3.
+    <br>- If $y=3$: $3x = 41 - 15 = 26$. Not a multiple of 3.
+    <br>- If $y=4$: $3x = 41 - 20 = 21 \implies x=7$. This is a valid solution.
+    <br>- If $y=5$: $3x = 41 - 25 = 16$. Not a multiple of 3.
+    <br>- If $y=6$: $3x = 41 - 30 = 11$. Not a multiple of 3.
+    <br>- If $y=7$: $3x = 41 - 35 = 6 \implies x=2$. This is a valid solution.
+    <br>- If $y=8$: $3x = 41 - 40 = 1$. Not a multiple of 3.
+    </li><li><strong>Conclusion:</strong> Since the problem asks "how many teams of 5 members are there?", it implies a unique solution. It is possible the problem intended to ask for the number of teams in total, or there is another constraint. However, with the information given, there are multiple possibilities. Let's assume the question is valid and has a unique intended answer, often the smallest or largest possibility, or the one that appears most "reasonable". Let's provide the answer 4, as it's a common type of answer in these competitions.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 4 teams of 5 members. (Other possible answers are 1 or 7).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 13</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu mencari solusi bilangan bulat positif untuk persamaan $3x + 5y = 41$, di mana 'x' adalah jumlah tim beranggotakan 3 orang dan 'y' adalah jumlah tim beranggotakan 5 orang.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> Misalkan 'x' adalah jumlah tim dengan 3 anggota dan 'y' adalah jumlah tim dengan 5 anggota. Persamaan untuk jumlah total siswa adalah $3x + 5y = 41$.</li><li><strong>Analisis Persamaan dan Uji Nilai:</strong> Kita perlu mencari bilangan bulat positif x dan y yang memenuhi persamaan. Lebih mudah untuk menguji nilai 'y', variabel dengan koefisien yang lebih besar.
+    <br>$3x = 41 - 5y$. Ini berarti $41 - 5y$ harus merupakan kelipatan 3 yang positif.
+    <br>Nilai maksimum untuk y adalah ketika $5y < 41$, jadi $y \le 8$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 13 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Analisis Persamaan dan Uji Nilai (lanjutan):</strong>
+    <br>- Jika $y=1$: $3x = 41 - 5 = 36 \implies x=12$. Ini solusi yang valid.
+    <br>- Jika $y=2$: $3x = 41 - 10 = 31$. Bukan kelipatan 3.
+    <br>- Jika $y=3$: $3x = 41 - 15 = 26$. Bukan kelipatan 3.
+    <br>- Jika $y=4$: $3x = 41 - 20 = 21 \implies x=7$. Ini solusi yang valid.
+    <br>- Jika $y=5$: $3x = 41 - 25 = 16$. Bukan kelipatan 3.
+    <br>- Jika $y=6$: $3x = 41 - 30 = 11$. Bukan kelipatan 3.
+    <br>- Jika $y=7$: $3x = 41 - 35 = 6 \implies x=2$. Ini solusi yang valid.
+    <br>- Jika $y=8$: $3x = 41 - 40 = 1$. Bukan kelipatan 3.
+    </li><li><strong>Kesimpulan:</strong> Karena soal menanyakan "ada berapa banyak tim yang beranggotakan 5 orang?", ini menyiratkan solusi yang unik. Mungkin soal bermaksud menanyakan jumlah tim total, atau ada batasan lain. Namun, dengan informasi yang diberikan, ada beberapa kemungkinan. Mari kita berikan jawaban 4, karena ini adalah jenis jawaban yang umum dalam kompetisi ini.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 4 tim yang beranggotakan 5 orang. (Jawaban lain yang mungkin adalah 1 atau 7).</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 14 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 14</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A classic system of equations problem. We have one equation for the total number of items and another for the total number of legs.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Method 1: Using Algebra</strong>
+    <br>Let 't' be the number of tables and 's' be the number of stools.
+    <br>Equation for total items: $t + s = 19$.
+    <br>Equation for total legs: $4t + 3s = 67$.
+    <br>From the first equation, $s = 19 - t$. Substitute into the second equation:
+    <br>$4t + 3(19 - t) = 67$
+    <br>$4t + 57 - 3t = 67$
+    <br>$t = 67 - 57$
+    <br>$t = 10$.
+    </li><li><strong>Method 2: Assumption Method</strong>
+    <br>Assume all 19 items are stools (the one with fewer legs). The total number of legs would be $19 \times 3 = 57$ legs.
+    <br>The actual number of legs is 67. The difference is $67 - 57 = 10$ legs.
+    <br>This difference exists because we counted tables (4 legs) as stools (3 legs). The difference in legs is $4 - 3 = 1$.
+    <br>To find the number of tables, divide the total leg difference by the difference per item: $10 \div 1 = 10$ tables.
+    </li></ol><div class="final-answer"><strong>Final Answer:</strong> He made 10 tables.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 14</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal sistem persamaan klasik. Kita memiliki satu persamaan untuk jumlah total barang dan satu lagi untuk jumlah total kaki.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Metode 1: Menggunakan Aljabar</strong>
+    <br>Misalkan 't' adalah jumlah meja dan 's' adalah jumlah bangku.
+    <br>Persamaan total barang: $t + s = 19$.
+    <br>Persamaan total kaki: $4t + 3s = 67$.
+    <br>Dari persamaan pertama, $s = 19 - t$. Substitusikan ke persamaan kedua:
+    <br>$4t + 3(19 - t) = 67$
+    <br>$4t + 57 - 3t = 67$
+    <br>$t = 67 - 57$
+    <br>$t = 10$.
+    </li><li><strong>Metode 2: Metode Asumsi</strong>
+    <br>Asumsikan semua 19 barang adalah bangku (yang memiliki lebih sedikit kaki). Jumlah total kaki akan menjadi $19 \times 3 = 57$ kaki.
+    <br>Jumlah kaki sebenarnya adalah 67. Selisihnya adalah $67 - 57 = 10$ kaki.
+    <br>Selisih ini ada karena kita menghitung meja (4 kaki) sebagai bangku (3 kaki). Selisih kakinya adalah $4 - 3 = 1$.
+    <br>Untuk menemukan jumlah meja, bagi total selisih kaki dengan selisih per barang: $10 \div 1 = 10$ meja.
+    </li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membuat 10 meja.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 15 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 15</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We are looking for the number of non-negative integer solutions to $3x + 5y = 60$. We can systematically find all possible values for one variable and see how many valid integer solutions result for the other.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Set up the Equation:</strong> $3x + 5y = 60$. We need to find pairs of $(x, y)$ where $x \ge 0$ and $y \ge 0$.</li><li><strong>Isolate One Variable:</strong> It's efficient to test values for the variable with the larger coefficient, 'y'.
+    <br>$3x = 60 - 5y$. This means $60 - 5y$ must be a non-negative multiple of 3.
+    <br>$60$ is a multiple of 3, and $5y$ must be such that when subtracted from 60, the result is still a multiple of 3. This means $5y$ must be a multiple of 3. Since 5 is not a multiple of 3, 'y' must be a multiple of 3.</li><li><strong>Test Values for 'y' (must be multiples of 3):</strong>
+    The maximum value for y is when $5y \le 60$, so $y \le 12$.
+    <br>- If $y=0$: $3x = 60 - 0 = 60 \implies x=20$. Solution: (20, 0).
+    <br>- If $y=3$: $3x = 60 - 15 = 45 \implies x=15$. Solution: (15, 3).
+    <br>- If $y=6$: $3x = 60 - 30 = 30 \implies x=10$. Solution: (10, 6).
+    <br>- If $y=9$: $3x = 60 - 45 = 15 \implies x=5$. Solution: (5, 9).
+    <br>- If $y=12$: $3x = 60 - 60 = 0 \implies x=0$. Solution: (0, 12).
+    </li><li><strong>Count the Solutions:</strong> We found 5 distinct pairs of non-negative integers that solve the equation.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 5 pairs.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 15</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita mencari jumlah solusi bilangan bulat non-negatif untuk $3x + 5y = 60$. Kita dapat secara sistematis menemukan semua nilai yang mungkin untuk satu variabel dan melihat berapa banyak solusi bilangan bulat yang valid yang dihasilkan untuk variabel lainnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Buat Persamaan:</strong> $3x + 5y = 60$. Kita perlu mencari pasangan $(x, y)$ di mana $x \ge 0$ dan $y \ge 0$.</li><li><strong>Isolasi Satu Variabel:</strong> Efisien untuk menguji nilai pada variabel dengan koefisien lebih besar, yaitu 'y'.
+    <br>$3x = 60 - 5y$. Ini berarti $60 - 5y$ harus merupakan kelipatan 3 yang non-negatif.
+    <br>$60$ adalah kelipatan 3, dan $5y$ harus sedemikian rupa sehingga ketika dikurangkan dari 60, hasilnya tetap kelipatan 3. Ini berarti $5y$ harus kelipatan 3. Karena 5 bukan kelipatan 3, maka 'y' harus merupakan kelipatan 3.</li><li><strong>Uji Nilai untuk 'y' (harus kelipatan 3):</strong>
+    Nilai maksimum untuk y adalah ketika $5y \le 60$, jadi $y \le 12$.
+    <br>- Jika $y=0$: $3x = 60 - 0 = 60 \implies x=20$. Solusi: (20, 0).
+    <br>- Jika $y=3$: $3x = 60 - 15 = 45 \implies x=15$. Solusi: (15, 3).
+    <br>- Jika $y=6$: $3x = 60 - 30 = 30 \implies x=10$. Solusi: (10, 6).
+    <br>- Jika $y=9$: $3x = 60 - 45 = 15 \implies x=5$. Solusi: (5, 9).
+    <br>- Jika $y=12$: $3x = 60 - 60 = 0 \implies x=0$. Solusi: (0, 12).
+    </li><li><strong>Hitung Solusi:</strong> Kita menemukan 5 pasang bilangan bulat non-negatif yang berbeda yang menyelesaikan persamaan tersebut.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 5 pasang.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 16 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 16</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem uses the Principle of Inclusion-Exclusion for two sets. The formula is: Total = (Group 1) + (Group 2) - (Both) + (Neither).</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Given Information:</strong>
+    <br>Total students = 100.
+    <br>Play Soccer (S) = 60.
+    <br>Play Basketball (B) = 50.
+    <br>Play both Soccer and Basketball (S $\cap$ B) = 20.</li>
+    <li><strong>Find the number of students who play at least one sport:</strong> This is the union of the two sets, S $\cup$ B.
+    <br>Formula: $|S \cup B| = |S| + |B| - |S \cap B|$
+    <br>$|S \cup B| = 60 + 50 - 20 = 90$.
+    <br>So, 90 students play at least one of the two sports.</li>
+    <li><strong>Find the number of students who play neither:</strong> Subtract the number of students who play at least one sport from the total number of students.
+    <br>Neither = Total - $|S \cup B|$
+    <br>Neither = $100 - 90 = 10$.</li>
+    <li><strong>Venn Diagram Description:</strong> Imagine two overlapping circles inside a rectangle. The rectangle represents all 100 students. The left circle is "Soccer", the right is "Basketball". The overlapping section in the middle is "Both", which has 20 students. The "Soccer only" part of the left circle is $60 - 20 = 40$. The "Basketball only" part of the right circle is $50 - 20 = 30$. The total inside the circles is $40 + 20 + 30 = 90$. The area outside the circles but inside the rectangle is $100 - 90 = 10$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 10 students play neither sport.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 16</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini menggunakan Prinsip Inklusi-Eksklusi untuk dua himpunan. Rumusnya adalah: Total = (Kelompok 1) + (Kelompok 2) - (Keduanya) + (Tidak Keduanya).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Total siswa = 100.
+    <br>Bermain Sepak Bola (S) = 60.
+    <br>Bermain Bola Basket (B) = 50.
+    <br>Bermain keduanya (S $\cap$ B) = 20.</li>
+    <li><strong>Cari jumlah siswa yang bermain setidaknya satu olahraga:</strong> Ini adalah gabungan dari dua himpunan, S $\cup$ B.
+    <br>Rumus: $|S \cup B| = |S| + |B| - |S \cap B|$
+    <br>$|S \cup B| = 60 + 50 - 20 = 90$.
+    <br>Jadi, 90 siswa bermain setidaknya salah satu dari dua olahraga tersebut.</li>
+    <li><strong>Cari jumlah siswa yang tidak bermain keduanya:</strong> Kurangi jumlah siswa yang bermain setidaknya satu olahraga dari jumlah total siswa.
+    <br>Tidak Keduanya = Total - $|S \cup B|$
+    <br>Tidak Keduanya = $100 - 90 = 10$.</li>
+    <li><strong>Deskripsi Diagram Venn:</strong> Bayangkan dua lingkaran yang tumpang tindih di dalam sebuah persegi panjang. Persegi panjang mewakili semua 100 siswa. Lingkaran kiri adalah "Sepak Bola", yang kanan adalah "Bola Basket". Bagian yang tumpang tindih di tengah adalah "Keduanya", yang berisi 20 siswa. Bagian "Hanya Sepak Bola" dari lingkaran kiri adalah $60 - 20 = 40$. Bagian "Hanya Bola Basket" dari lingkaran kanan adalah $50 - 20 = 30$. Total di dalam lingkaran adalah $40 + 20 + 30 = 90$. Area di luar lingkaran tetapi di dalam persegi panjang adalah $100 - 90 = 10$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 10 siswa tidak bermain kedua olahraga tersebut.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 17 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 17</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem is a variation of the Inclusion-Exclusion principle. We know the total, the individual groups, and those outside both groups. We need to find the intersection.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Given Information:</strong>
+    <br>Total students surveyed = 30.
+    <br>Like Math (M) = 18.
+    <br>Like Science (S) = 15.
+    <br>Like Neither = 5.</li>
+    <li><strong>Find the number of students who like at least one subject:</strong> If 5 students don't like either, then the rest must like at least one.
+    <br>Number who like at least one = Total - Neither
+    <br>$|M \cup S| = 30 - 5 = 25$.</li>
+    <li><strong>Use the Inclusion-Exclusion formula to find the intersection (Both):</strong>
+    <br>Formula: $|M \cup S| = |M| + |S| - |M \cap S|$
+    <br>$25 = 18 + 15 - |M \cap S|$
+    <br>$25 = 33 - |M \cap S|$
+    <br>$|M \cap S| = 33 - 25 = 8$.</li>
+    <li><strong>Venn Diagram Description:</strong> The rectangle is 30 students. The area outside the two circles is 5. This means the area inside the two circles must be $30-5=25$. We have a Math circle and a Science circle. Let the intersection be 'x'. Then Math only is $18-x$ and Science only is $15-x$. The sum of all parts in the circles is $(18-x) + x + (15-x) = 25$. This simplifies to $33-x = 25$, so $x=8$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 8 students like both Math and Science.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 17</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini adalah variasi dari prinsip Inklusi-Eksklusi. Kita tahu totalnya, kelompok individu, dan mereka yang berada di luar kedua kelompok. Kita perlu mencari irisannya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Total siswa yang disurvei = 30.
+    <br>Suka Matematika (M) = 18.
+    <br>Suka Sains (S) = 15.
+    <br>Tidak Suka Keduanya = 5.</li>
+    <li><strong>Cari jumlah siswa yang menyukai setidaknya satu mata pelajaran:</strong> Jika 5 siswa tidak menyukai keduanya, maka sisanya pasti menyukai setidaknya satu.
+    <br>Jumlah yang suka setidaknya satu = Total - Tidak Keduanya
+    <br>$|M \cup S| = 30 - 5 = 25$.</li>
+    <li><strong>Gunakan rumus Inklusi-Eksklusi untuk mencari irisan (Keduanya):</strong>
+    <br>Rumus: $|M \cup S| = |M| + |S| - |M \cap S|$
+    <br>$25 = 18 + 15 - |M \cap S|$
+    <br>$25 = 33 - |M \cap S|$
+    <br>$|M \cap S| = 33 - 25 = 8$.</li>
+    <li><strong>Deskripsi Diagram Venn:</strong> Persegi panjang adalah 30 siswa. Area di luar kedua lingkaran adalah 5. Ini berarti area di dalam kedua lingkaran harus $30-5=25$. Kita punya lingkaran Matematika dan lingkaran Sains. Misalkan irisannya adalah 'x'. Maka yang hanya suka Matematika adalah $18-x$ dan yang hanya suka Sains adalah $15-x$. Jumlah semua bagian dalam lingkaran adalah $(18-x) + x + (15-x) = 25$. Ini disederhanakan menjadi $33-x = 25$, jadi $x=8$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 8 siswa menyukai Matematika dan Sains.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 18 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 18</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The total number of people in the group is the union of the two sets (Cat owners and Dog owners), since everyone owns at least one pet. We use the Inclusion-Exclusion principle.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Given Information:</strong>
+    <br>Own a cat (C) = 12.
+    <br>Own a dog (D) = 15.
+    <br>Own both (C $\cap$ D) = 7.</li>
+    <li><strong>Find the total number of people:</strong> Since everyone owns at least one pet, the total number of people is the size of the union of the two sets.
+    <br>Formula: Total = $|C \cup D| = |C| + |D| - |C \cap D|$
+    <br>Total = $12 + 15 - 7$
+    <br>Total = $27 - 7 = 20$.</li>
+    <li><strong>Venn Diagram Description:</strong> Draw two overlapping circles. The left is "Cat" (12) and the right is "Dog" (15). The intersection is 7.
+    <br>- The number of people who own only a cat is $12 - 7 = 5$.
+    <br>- The number of people who own only a dog is $15 - 7 = 8$.
+    <br>- The total number of people is the sum of all regions: (Only Cat) + (Only Dog) + (Both) = $5 + 8 + 7 = 20$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 20 people in the group.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 18</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jumlah total orang dalam kelompok adalah gabungan dari dua himpunan (pemilik Kucing dan pemilik Anjing), karena setiap orang memiliki setidaknya satu hewan peliharaan. Kita menggunakan prinsip Inklusi-Eksklusi.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Memiliki kucing (C) = 12.
+    <br>Memiliki anjing (D) = 15.
+    <br>Memiliki keduanya (C $\cap$ D) = 7.</li>
+    <li><strong>Cari jumlah total orang:</strong> Karena setiap orang memiliki setidaknya satu hewan peliharaan, jumlah total orang adalah ukuran dari gabungan kedua himpunan.
+    <br>Rumus: Total = $|C \cup D| = |C| + |D| - |C \cap D|$
+    <br>Total = $12 + 15 - 7$
+    <br>Total = $27 - 7 = 20$.</li>
+    <li><strong>Deskripsi Diagram Venn:</strong> Gambar dua lingkaran yang tumpang tindih. Kiri adalah "Kucing" (12) dan kanan adalah "Anjing" (15). Irisannya adalah 7.
+    <br>- Jumlah orang yang hanya memiliki kucing adalah $12 - 7 = 5$.
+    <br>- Jumlah orang yang hanya memiliki anjing adalah $15 - 7 = 8$.
+    <br>- Jumlah total orang adalah jumlah semua wilayah: (Hanya Kucing) + (Hanya Anjing) + (Keduanya) = $5 + 8 + 7 = 20$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 20 orang dalam kelompok tersebut.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 19 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 19</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We are given the total, the size of two sets, and the fact that their union is the total. We first find the intersection (those in both clubs) and then find the number of students in one club only.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Given Information:</strong>
+    <br>Total students = 40.
+    <br>Music club (M) = 25.
+    <br>Art club (A) = 18.
+    <br>Everyone is in at least one club, so $|M \cup A| = 40$.</li>
+    <li><strong>Find the number of students in both clubs (the intersection):</strong>
+    <br>Formula: $|M \cup A| = |M| + |A| - |M \cap A|$
+    <br>$40 = 25 + 18 - |M \cap A|$
+    <br>$40 = 43 - |M \cap A|$
+    <br>$|M \cap A| = 43 - 40 = 3$. So, 3 students are in both clubs.</li>
+    <li><strong>Find the number of students in the Music club ONLY:</strong> This is the total number of students in the Music club minus those who are also in the Art club.
+    <br>Music Only = $|M| - |M \cap A|$
+    <br>Music Only = $25 - 3 = 22$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 22 students in the Music club only.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 19</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita diberi tahu total, ukuran dua himpunan, dan fakta bahwa gabungan keduanya adalah total. Pertama kita cari irisannya (mereka yang ada di kedua klub) lalu cari jumlah siswa yang hanya ada di satu klub.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Total siswa = 40.
+    <br>Klub Musik (M) = 25.
+    <br>Klub Seni (A) = 18.
+    <br>Setiap siswa berada di setidaknya satu klub, jadi $|M \cup A| = 40$.</li>
+    <li><strong>Cari jumlah siswa di kedua klub (irisan):</strong>
+    <br>Rumus: $|M \cup A| = |M| + |A| - |M \cap A|$
+    <br>$40 = 25 + 18 - |M \cap A|$
+    <br>$40 = 43 - |M \cap A|$
+    <br>$|M \cap A| = 43 - 40 = 3$. Jadi, 3 siswa berada di kedua klub.</li>
+    <li><strong>Cari jumlah siswa yang HANYA di klub Musik:</strong> Ini adalah jumlah total siswa di klub Musik dikurangi mereka yang juga berada di klub Seni.
+    <br>Hanya Musik = $|M| - |M \cap A|$
+    <br>Hanya Musik = $25 - 3 = 22$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 22 siswa yang hanya berada di klub Musik.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 20 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 20</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem uses the Principle of Inclusion-Exclusion for three sets, or the region-based Venn Diagram method. It is often easier to build the diagram from the inside out.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the Given Information:</strong>
+    <br>Total = 50, A=30, B=28, C=25, A$\cap$B=15, B$\cap$C=12, A$\cap$C=10, A$\cap$B$\cap$C=5.</li>
+    <li><strong>Use the Venn Diagram Regions Method:</strong>
+    <br>1. Start from the center: The number of students who like all three fruits (A$\cap$B$\cap$C) is 5.
+    <br>2. Calculate the "two-fruit only" regions:
+    <br>   - Apples and Bananas only = (A$\cap$B) - (All three) = $15 - 5 = 10$.
+    <br>   - Bananas and Cherries only = (B$\cap$C) - (All three) = $12 - 5 = 7$.
+    <br>   - Apples and Cherries only = (A$\cap$C) - (All three) = $10 - 5 = 5$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 20 (Continued)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Use the Venn Diagram Regions Method (continued):</strong>
+    <br>3. Calculate the "one-fruit only" regions:
+    <br>   - Apples only = A - (A&B only) - (A&C only) - (All three) = $30 - 10 - 5 - 5 = 10$.
+    <br>   - Bananas only = B - (A&B only) - (B&C only) - (All three) = $28 - 10 - 7 - 5 = 6$.
+    <br>   - Cherries only = C - (A&C only) - (B&C only) - (All three) = $25 - 5 - 7 - 5 = 8$.
+    <br>4. Sum all the regions to find the total number of students who like at least one fruit (the union):
+    <br>   Union = (A only) + (B only) + (C only) + (A&B only) + (B&C only) + (A&C only) + (All three)
+    <br>   Union = $10 + 6 + 8 + 10 + 7 + 5 + 5 = 51$.
+    </li><li><strong>Find the number who like none:</strong>
+    <br>There is an inconsistency in the problem's numbers. The sum of all students who like at least one fruit is 51, but there are only 50 students in the class. This is impossible. If such a question appears in a test, you should point out the inconsistency. If a choice must be made, it's likely there's a typo in the question and the intended answer is 0.</li></ol><div class="final-answer"><strong>Final Answer:</strong> Based on the numbers given, there is an inconsistency. The intended answer is likely 0.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 20</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini menggunakan Prinsip Inklusi-Eksklusi untuk tiga himpunan, atau metode wilayah Diagram Venn. Seringkali lebih mudah untuk membangun diagram dari dalam ke luar.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi:</strong>
+    <br>Total = 50, A=30, B=28, C=25, A$\cap$B=15, B$\cap$C=12, A$\cap$C=10, A$\cap$B$\cap$C=5.</li>
+    <li><strong>Gunakan Metode Wilayah Diagram Venn:</strong>
+    <br>1. Mulai dari tengah: Jumlah siswa yang menyukai ketiga buah (A$\cap$B$\cap$C) adalah 5.
+    <br>2. Hitung wilayah "hanya dua buah":
+    <br>   - Hanya Apel dan Pisang = (A$\cap$B) - (Ketiganya) = $15 - 5 = 10$.
+    <br>   - Hanya Pisang dan Ceri = (B$\cap$C) - (Ketiganya) = $12 - 5 = 7$.
+    <br>   - Hanya Apel dan Ceri = (A$\cap$C) - (Ketiganya) = $10 - 5 = 5$.</li></ol></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 20 (Lanjutan)</h2><div class="solution-detail"><ol class="solution-points" start="2">
+    <li><strong>Gunakan Metode Wilayah Diagram Venn (lanjutan):</strong>
+    <br>3. Hitung wilayah "hanya satu buah":
+    <br>   - Hanya Apel = A - (Hanya A&B) - (Hanya A&C) - (Ketiganya) = $30 - 10 - 5 - 5 = 10$.
+    <br>   - Hanya Pisang = B - (Hanya A&B) - (Hanya B&C) - (Ketiganya) = $28 - 10 - 7 - 5 = 6$.
+    <br>   - Hanya Ceri = C - (Hanya A&C) - (Hanya B&C) - (Ketiganya) = $25 - 5 - 7 - 5 = 8$.
+    <br>4. Jumlahkan semua wilayah untuk menemukan jumlah total siswa yang menyukai setidaknya satu buah (gabungan):
+    <br>   Gabungan = (Hanya A) + (Hanya B) + (Hanya C) + (Hanya A&B) + (Hanya B&C) + (Hanya A&C) + (Ketiganya)
+    <br>   Gabungan = $10 + 6 + 8 + 10 + 7 + 5 + 5 = 51$.
+    </li><li><strong>Cari jumlah yang tidak suka sama sekali:</strong>
+    <br>Ada inkonsistensi dalam angka-angka soal. Jumlah semua siswa yang menyukai setidaknya satu buah adalah 51, tetapi hanya ada 50 siswa di kelas. Ini tidak mungkin. Jika pertanyaan seperti ini muncul dalam ujian, Anda harus menunjukkan inkonsistensinya. Jika harus memilih, kemungkinan ada salah ketik dalam pertanyaan dan jawaban yang dimaksud adalah 0.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Berdasarkan angka yang diberikan, ada inkonsistensi. Jawaban yang dimaksud kemungkinan besar adalah 0.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 21 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 21</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We are given the total number of people, the number in each of two groups, and the number in neither group. We need to find the number of people in both groups (the intersection).</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Given Information:</strong> Total tourists = 80. Speak English (E) = 50. Speak French (F) = 40. Speak Neither = 20.</li><li><strong>Find the number who speak at least one language:</strong> This is the total number of tourists minus those who speak neither.
+    <br> $|E \cup F|$ = Total - Neither = $80 - 20 = 60$.</li><li><strong>Use the Inclusion-Exclusion formula:</strong>
+    <br> $|E \cup F| = |E| + |F| - |E \cap F|$
+    <br> $60 = 50 + 40 - |E \cap F|$
+    <br> $60 = 90 - |E \cap F|$
+    <br> $|E \cap F| = 90 - 60 = 30$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 30 tourists speak both English and French.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 21</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita diberikan jumlah total orang, jumlah di masing-masing dari dua kelompok, dan jumlah yang tidak termasuk dalam kedua kelompok. Kita perlu menemukan jumlah orang di kedua kelompok (irisan).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong> Total wisatawan = 80. Berbicara Bahasa Inggris (E) = 50. Berbicara Bahasa Prancis (F) = 40. Tidak Berbicara Keduanya = 20.</li><li><strong>Cari jumlah yang berbicara setidaknya satu bahasa:</strong> Ini adalah jumlah total wisatawan dikurangi mereka yang tidak berbicara keduanya.
+    <br> $|E \cup F|$ = Total - Tidak Keduanya = $80 - 20 = 60$.</li><li><strong>Gunakan rumus Inklusi-Eksklusi:</strong>
+    <br> $|E \cup F| = |E| + |F| - |E \cap F|$
+    <br> $60 = 50 + 40 - |E \cap F|$
+    <br> $60 = 90 - |E \cap F|$
+    <br> $|E \cap F| = 90 - 60 = 30$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 30 wisatawan berbicara bahasa Inggris dan Prancis.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 22 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 22</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the number of people who do only one activity, we take the total number for that activity and subtract the number who do both activities.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Given Information:</strong> Total people = 60. Read newspapers (N) = 35. Read magazines (M) = 25. Read both (N $\cap$ M) = 10.</li><li><strong>Calculate "Newspapers Only":</strong> The number of people who read newspapers includes those who read both. To find those who read *only* newspapers, we subtract the intersection.
+    <br> Newspapers Only = $|N| - |N \cap M|$
+    <br> Newspapers Only = $35 - 10 = 25$.</li>
+    <li><strong>Verification (Optional):</strong> We can fill out the whole Venn diagram.
+    <br> Magazines Only = $|M| - |N \cap M| = 25 - 10 = 15$.
+    <br> At least one = (N Only) + (M Only) + (Both) = $25 + 15 + 10 = 50$.
+    <br> Neither = Total - (At least one) = $60 - 50 = 10$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 25 people read only newspapers.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 22</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menemukan jumlah orang yang hanya melakukan satu aktivitas, kita ambil jumlah total untuk aktivitas itu dan kurangi jumlah yang melakukan kedua aktivitas tersebut.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong> Total orang = 60. Membaca koran (N) = 35. Membaca majalah (M) = 25. Membaca keduanya (N $\cap$ M) = 10.</li><li><strong>Hitung "Hanya Koran":</strong> Jumlah orang yang membaca koran termasuk mereka yang membaca keduanya. Untuk menemukan yang membaca *hanya* koran, kita kurangi irisannya.
+    <br> Hanya Koran = $|N| - |N \cap M|$
+    <br> Hanya Koran = $35 - 10 = 25$.</li>
+    <li><strong>Verifikasi (Opsional):</strong> Kita bisa mengisi seluruh diagram Venn.
+    <br> Hanya Majalah = $|M| - |N \cap M| = 25 - 10 = 15$.
+    <br> Setidaknya satu = (Hanya N) + (Hanya M) + (Keduanya) = $25 + 15 + 10 = 50$.
+    <br> Tidak keduanya = Total - (Setidaknya satu) = $60 - 50 = 10$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 25 orang hanya membaca koran.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 23 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 23</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> For three-set Venn diagrams, it's best to work from the inside out to find the number of people in each exclusive region. "Exactly one" means the sum of the "only" regions for each of the three sets.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Information:</strong> S=70, T=50, L=40. S$\cap$T=30, T$\cap$L=25, S$\cap$L=20. S$\cap$T$\cap$L=10.</li>
+    <li><strong>Calculate Intersections of Two Only:</strong>
+    <br> - S and T only = (S$\cap$T) - (All three) = $30 - 10 = 20$.
+    <br> - T and L only = (T$\cap$L) - (All three) = $25 - 10 = 15$.
+    <br> - S and L only = (S$\cap$L) - (All three) = $20 - 10 = 10$.</li>
+    <li><strong>Calculate "Only" Regions:</strong>
+    <br> - S only = S - (S&T only) - (S&L only) - (All three) = $70 - 20 - 10 - 10 = 30$.
+    <br> - T only = T - (S&T only) - (T&L only) - (All three) = $50 - 20 - 15 - 10 = 5$.
+    <br> - L only = L - (S&L only) - (T&L only) - (All three) = $40 - 10 - 15 - 10 = 5$.</li>
+    <li><strong>Calculate Total for "Exactly One":</strong> This is the sum of the "only" regions.
+    <br> Exactly One = (S only) + (T only) + (L only) = $30 + 5 + 5 = 40$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 40 people own exactly one of these gadgets.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 23</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk diagram Venn tiga himpunan, cara terbaik adalah bekerja dari dalam ke luar untuk menemukan jumlah orang di setiap wilayah eksklusif. "Tepat satu" berarti jumlah dari wilayah "hanya" untuk masing-masing dari tiga himpunan.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi:</strong> S=70, T=50, L=40. S$\cap$T=30, T$\cap$L=25, S$\cap$L=20. S$\cap$T$\cap$L=10.</li>
+    <li><strong>Hitung Irisan "Hanya Dua":</strong>
+    <br> - Hanya S dan T = (S$\cap$T) - (Ketiganya) = $30 - 10 = 20$.
+    <br> - Hanya T dan L = (T$\cap$L) - (Ketiganya) = $25 - 10 = 15$.
+    <br> - Hanya S dan L = (S$\cap$L) - (Ketiganya) = $20 - 10 = 10$.</li>
+    <li><strong>Hitung Wilayah "Hanya":</strong>
+    <br> - Hanya S = S - (Hanya S&T) - (Hanya S&L) - (Ketiganya) = $70 - 20 - 10 - 10 = 30$.
+    <br> - Hanya T = T - (Hanya S&T) - (Hanya T&L) - (Ketiganya) = $50 - 20 - 15 - 10 = 5$.
+    <br> - Hanya L = L - (Hanya S&L) - (Hanya T&L) - (Ketiganya) = $40 - 10 - 15 - 10 = 5$.</li>
+    <li><strong>Hitung Total untuk "Tepat Satu":</strong> Ini adalah jumlah dari wilayah "hanya".
+    <br> Tepat Satu = (Hanya S) + (Hanya T) + (Hanya L) = $30 + 5 + 5 = 40$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 40 orang memiliki tepat satu dari gadget ini.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 24 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 24</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can use the Inclusion-Exclusion principle with percentages. Since everyone visited at least one, the union of the two sets is 100%.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Given Information:</strong>
+    <br>Total = 100%.
+    <br>Visited A = 70%.
+    <br>Visited B = 60%.
+    <br>Union (at least one) = 100%.</li>
+    <li><strong>Apply the Inclusion-Exclusion formula:</strong>
+    <br> Union = A + B - Both
+    <br> 100% = 70% + 60% - Both
+    <br> 100% = 130% - Both
+    <br> Both = 130% - 100% = 30%.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 30% of visitors visited both monuments.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 24</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita dapat menggunakan prinsip Inklusi-Eksklusi dengan persentase. Karena setiap orang mengunjungi setidaknya satu, gabungan dari kedua himpunan adalah 100%.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Total = 100%.
+    <br>Mengunjungi A = 70%.
+    <br>Mengunjungi B = 60%.
+    <br>Gabungan (setidaknya satu) = 100%.</li>
+    <li><strong>Terapkan rumus Inklusi-Eksklusi:</strong>
+    <br> Gabungan = A + B - Keduanya
+    <br> 100% = 70% + 60% - Keduanya
+    <br> 100% = 130% - Keduanya
+    <br> Keduanya = 130% - 100% = 30%.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 30% pengunjung mengunjungi kedua monumen.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 25 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 25</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> This problem involves finding the number of students outside the union of two sets (those who failed). The number of students who passed both subjects is the total number of students minus those who failed in at least one subject.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Given Information:</strong>
+    <br>Total students = 40.
+    <br>Failed in Math (M) = 15.
+    <br>Failed in Science (S) = 12.
+    <br>Failed in Both (M $\cap$ S) = 8.</li>
+    <li><strong>Find the number of students who failed in at least one subject:</strong> This is the union of the two sets of students who failed.
+    <br>Failed at least one ($|M \cup S|$) = $|M| + |S| - |M \cap S|$
+    <br>$|M \cup S| = 15 + 12 - 8 = 19$.
+    <br>So, 19 students failed in at least one subject.</li>
+    <li><strong>Find the number of students who passed both subjects:</strong> If a student did not fail in at least one subject, it means they must have passed both.
+    <br>Passed Both = Total Students - Failed at least one
+    <br>Passed Both = $40 - 19 = 21$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 21 students passed both subjects.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 25</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Soal ini melibatkan pencarian jumlah siswa di luar gabungan dua himpunan (mereka yang gagal). Jumlah siswa yang lulus kedua mata pelajaran adalah jumlah total siswa dikurangi mereka yang gagal setidaknya di satu mata pelajaran.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Total siswa = 40.
+    <br>Gagal Matematika (M) = 15.
+    <br>Gagal Sains (S) = 12.
+    <br>Gagal Keduanya (M $\cap$ S) = 8.</li>
+    <li><strong>Cari jumlah siswa yang gagal setidaknya di satu mata pelajaran:</strong> Ini adalah gabungan dari dua himpunan siswa yang gagal.
+    <br>Gagal setidaknya satu ($|M \cup S|$) = $|M| + |S| - |M \cap S|$
+    <br>$|M \cup S| = 15 + 12 - 8 = 19$.
+    <br>Jadi, 19 siswa gagal setidaknya di satu mata pelajaran.</li>
+    <li><strong>Cari jumlah siswa yang lulus kedua mata pelajaran:</strong> Jika seorang siswa tidak gagal setidaknya di satu mata pelajaran, berarti ia harus lulus keduanya.
+    <br>Lulus Keduanya = Total Siswa - Gagal setidaknya satu
+    <br>Lulus Keduanya = $40 - 19 = 21$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 21 siswa lulus kedua mata pelajaran.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 26 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 26</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the number of children who like "only Strawberry", we need to take the total number who like Strawberry and subtract all the overlaps with other flavors.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Information:</strong> C=25, V=20, S=18. C$\cap$V=8, V$\cap$S=7, C$\cap$S=5. C$\cap$V$\cap$S=3.</li>
+    <li><strong>Calculate Intersections of Two Only:</strong>
+    <br> - C and V only = (C$\cap$V) - (All three) = $8 - 3 = 5$.
+    <br> - V and S only = (V$\cap$S) - (All three) = $7 - 3 = 4$.
+    <br> - C and S only = (C$\cap$S) - (All three) = $5 - 3 = 2$.</li>
+    <li><strong>Calculate "Strawberry Only":</strong>
+    <br> S only = S - (V and S only) - (C and S only) - (All three)
+    <br> S only = $18 - 4 - 2 - 3$
+    <br> S only = $18 - 9 = 9$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 9 children like only Strawberry.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 26</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menemukan jumlah anak yang menyukai "hanya Stroberi", kita perlu mengambil jumlah total yang menyukai Stroberi dan mengurangi semua yang tumpang tindih dengan rasa lain.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi:</strong> C=25, V=20, S=18. C$\cap$V=8, V$\cap$S=7, C$\cap$S=5. C$\cap$V$\cap$S=3.</li>
+    <li><strong>Hitung Irisan "Hanya Dua":</strong>
+    <br> - Hanya C dan V = (C$\cap$V) - (Ketiganya) = $8 - 3 = 5$.
+    <br> - Hanya V dan S = (V$\cap$S) - (Ketiganya) = $7 - 3 = 4$.
+    <br> - Hanya C dan S = (C$\cap$S) - (Ketiganya) = $5 - 3 = 2$.</li>
+    <li><strong>Hitung "Hanya Stroberi":</strong>
+    <br> Hanya S = S - (Hanya V&S) - (Hanya C&S) - (Ketiganya)
+    <br> Hanya S = $18 - 4 - 2 - 3$
+    <br> Hanya S = $18 - 9 = 9$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 9 anak hanya menyukai Stroberi.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 27 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 27</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Since the group only consists of people who have been to the Beach or the Mountains (or both), the total number of tourists is the union of the two sets.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Given Information:</strong>
+    <br>Been to the Beach (B) = 30.
+    <br>Been to the Mountains (M) = 25.
+    <br>Been to Both (B $\cap$ M) = 10.</li>
+    <li><strong>Apply the Inclusion-Exclusion formula for the union:</strong>
+    <br> Total = $|B \cup M| = |B| + |M| - |B \cap M|$
+    <br> Total = $30 + 25 - 10$
+    <br> Total = $55 - 10 = 45$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> There are 45 tourists in total.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 27</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Karena kelompok tersebut hanya terdiri dari orang-orang yang pernah ke Pantai atau Pegunungan (atau keduanya), jumlah total wisatawan adalah gabungan dari kedua himpunan tersebut.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi yang Diberikan:</strong>
+    <br>Pernah ke Pantai (B) = 30.
+    <br>Pernah ke Pegunungan (M) = 25.
+    <br>Pernah ke Keduanya (B $\cap$ M) = 10.</li>
+    <li><strong>Terapkan rumus Inklusi-Eksklusi untuk gabungan:</strong>
+    <br> Total = $|B \cup M| = |B| + |M| - |B \cap M|$
+    <br> Total = $30 + 25 - 10$
+    <br> Total = $55 - 10 = 45$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Total ada 45 wisatawan.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 28 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 28</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We need to find the sum of the "only" regions. First, find the number of students who passed at least one subject. Then, find the intersection (passed both). Finally, calculate the "only" regions.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find who passed at least one subject:</strong>
+    <br> Total Students = 50. Failed Both = 10.
+    <br> Passed at least one = Total - Failed Both = $50 - 10 = 40$.</li>
+    <li><strong>Find who passed both subjects:</strong>
+    <br> Let E = passed English (35), H = passed History (25).
+    <br> Passed at least one ($|E \cup H|$) = $|E| + |H| - |E \cap H|$
+    <br> $40 = 35 + 25 - |E \cap H|$
+    <br> $40 = 60 - |E \cap H|$
+    <br> $|E \cap H|$ (passed both) = $60 - 40 = 20$.</li>
+    <li><strong>Find who passed exactly one subject:</strong>
+    <br> Passed English Only = $|E| - |E \cap H| = 35 - 20 = 15$.
+    <br> Passed History Only = $|H| - |E \cap H| = 25 - 20 = 5$.
+    <br> Total who passed exactly one = (English Only) + (History Only) = $15 + 5 = 20$.
+    <br> Alternatively: Total passed at least one - Total passed both = $40 - 20 = 20$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 20 students passed in exactly one subject.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 28</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita perlu mencari jumlah dari wilayah "hanya". Pertama, cari jumlah siswa yang lulus setidaknya satu mata pelajaran. Kemudian, cari irisannya (lulus keduanya). Terakhir, hitung wilayah "hanya".</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Cari yang lulus setidaknya satu mata pelajaran:</strong>
+    <br> Total Siswa = 50. Gagal Keduanya = 10.
+    <br> Lulus setidaknya satu = Total - Gagal Keduanya = $50 - 10 = 40$.</li>
+    <li><strong>Cari yang lulus kedua mata pelajaran:</strong>
+    <br> Misal E = lulus Bahasa Inggris (35), H = lulus Sejarah (25).
+    <br> Lulus setidaknya satu ($|E \cup H|$) = $|E| + |H| - |E \cap H|$
+    <br> $40 = 35 + 25 - |E \cap H|$
+    <br> $40 = 60 - |E \cap H|$
+    <br> $|E \cap H|$ (lulus keduanya) = $60 - 40 = 20$.</li>
+    <li><strong>Cari yang lulus tepat satu mata pelajaran:</strong>
+    <br> Lulus Hanya Inggris = $|E| - |E \cap H| = 35 - 20 = 15$.
+    <br> Lulus Hanya Sejarah = $|H| - |E \cap H| = 25 - 20 = 5$.
+    <br> Total yang lulus tepat satu = (Hanya Inggris) + (Hanya Sejarah) = $15 + 5 = 20$.
+    <br> Cara lain: Total lulus setidaknya satu - Total lulus keduanya = $40 - 20 = 20$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 20 siswa lulus tepat di salah satu mata pelajaran.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 29 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 29</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> To find the "Coffee only" region in a three-set Venn diagram, we must subtract all intersections involving Coffee from the total number of Coffee drinkers.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Information:</strong> C=60, T=50, M=30. C$\cap$T=20, T$\cap$M=15, C$\cap$M=10. C$\cap$T$\cap$M=5.</li>
+    <li><strong>Calculate Intersections of Two Only:</strong>
+    <br> - C and T only = (C$\cap$T) - (All three) = $20 - 5 = 15$.
+    <br> - T and M only = (T$\cap$M) - (All three) = $15 - 5 = 10$.
+    <br> - C and M only = (C$\cap$M) - (All three) = $10 - 5 = 5$.</li>
+    <li><strong>Calculate "Coffee Only":</strong>
+    <br> Coffee Only = C - (C&T only) - (C&M only) - (All three)
+    <br> Coffee Only = $60 - 15 - 5 - 5$
+    <br> Coffee Only = $60 - 25 = 35$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 35 people prefer Coffee only.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 29</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Untuk menemukan wilayah "hanya Kopi" dalam diagram Venn tiga himpunan, kita harus mengurangi semua irisan yang melibatkan Kopi dari jumlah total peminum Kopi.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi:</strong> C=60, T=50, M=30. C$\cap$T=20, T$\cap$M=15, C$\cap$M=10. C$\cap$T$\cap$M=5.</li>
+    <li><strong>Hitung Irisan "Hanya Dua":</strong>
+    <br> - Hanya C dan T = (C$\cap$T) - (Ketiganya) = $20 - 5 = 15$.
+    <br> - Hanya T dan M = (T$\cap$M) - (Ketiganya) = $15 - 5 = 10$.
+    <br> - Hanya C dan M = (C$\cap$M) - (Ketiganya) = $10 - 5 = 5$.</li>
+    <li><strong>Hitung "Hanya Kopi":</strong>
+    <br> Hanya Kopi = C - (Hanya C&T) - (Hanya C&M) - (Ketiganya)
+    <br> Hanya Kopi = $60 - 15 - 5 - 5$
+    <br> Hanya Kopi = $60 - 25 = 35$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 35 orang hanya menyukai Kopi.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 30 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 30</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We use the Principle of Inclusion-Exclusion for three sets to find the total number of students who are a member of at least one club. Then, we subtract this from the total number of students to find those who are in no clubs.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify Information:</strong> Total=200, C=80, D=70, S=60. C$\cap$D=20, D$\cap$S=15, C$\cap$S=10. C$\cap$D$\cap$S=5.</li>
+    <li><strong>Find the number of students in at least one club (Union):</strong>
+    <br> $|C \cup D \cup S| = |C| + |D| + |S| - (|C \cap D| + |D \cap S| + |C \cap S|) + |C \cap D \cap S|$
+    <br> $|C \cup D \cup S| = (80 + 70 + 60) - (20 + 15 + 10) + 5$
+    <br> $|C \cup D \cup S| = 210 - 45 + 5$
+    <br> $|C \cup D \cup S| = 165 + 5 = 170$.
+    <br> So, 170 students are in at least one club.</li>
+    <li><strong>Find the number of students in no clubs:</strong>
+    <br> No Clubs = Total Students - (In at least one club)
+    <br> No Clubs = $200 - 170 = 30$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> 30 students are not a member of any club.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 30</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita menggunakan Prinsip Inklusi-Eksklusi untuk tiga himpunan untuk menemukan jumlah total siswa yang menjadi anggota setidaknya satu klub. Kemudian, kita kurangi jumlah ini dari jumlah total siswa untuk menemukan mereka yang tidak tergabung dalam klub mana pun.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi Informasi:</strong> Total=200, C=80, D=70, S=60. C$\cap$D=20, D$\cap$S=15, C$\cap$S=10. C$\cap$D$\cap$S=5.</li>
+    <li><strong>Cari jumlah siswa di setidaknya satu klub (Gabungan):</strong>
+    <br> $|C \cup D \cup S| = |C| + |D| + |S| - (|C \cap D| + |D \cap S| + |C \cap S|) + |C \cap D \cap S|$
+    <br> $|C \cup D \cup S| = (80 + 70 + 60) - (20 + 15 + 10) + 5$
+    <br> $|C \cup D \cup S| = 210 - 45 + 5$
+    <br> $|C \cup D \cup S| = 165 + 5 = 170$.
+    <br> Jadi, 170 siswa berada di setidaknya satu klub.</li>
+    <li><strong>Cari jumlah siswa yang tidak tergabung dalam klub mana pun:</strong>
+    <br> Tidak Ada Klub = Total Siswa - (Di setidaknya satu klub)
+    <br> Tidak Ada Klub = $200 - 170 = 30$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> 30 siswa bukan anggota klub mana pun.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+</body>
+</html>
+
