@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika - Kelas 7-9</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 12cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before,
+      .solutions-cover-page::before {
+        opacity: 0.1;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1, h2 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 20pt;
+        margin-top: 0;
+      }
+      .soal-latihan {
+        margin-bottom: 25px;
+        break-inside: avoid;
+      }
+      .soal-latihan b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+       .soal-konten img {
+         display: block;
+         margin: 15px auto;
+         max-width: 300px;
+         width: 100%;
+         height: auto;
+       }
+      .lang-id {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dotted #ccc;
+        color: #555;
+        font-style: italic;
+        font-size: 11pt;
+      }
+       .image-desc { /* Keep this style for potential future use */
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-style: italic;
+        color: #555;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+      .solution-detail {
+        margin-top: 20px;
+      }
+      .concept {
+        background-color: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+        text-align: justify;
+      }
+      .concept p {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      .steps-title {
+        font-weight: 700;
+        font-size: 14pt;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .solution-points {
+        padding-left: 20px;
+      }
+      .solution-points li {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.75rem 1.25rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <section class="page cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
+        <h1 class="cover-title">Math Competition Practice</h1>
+        <p class="cover-subtitle">Triangles, Angles, and Circles</p>
+        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 7 - 9</p>
+      </div>
+    </section>
+
+    <!-- Halaman Soal 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Triangles & Angles</h1>
+        <div class="soal-latihan">
+          <b>1. PARALLEL LINES AND ANGLES</b>
+          <div class="soal-konten">
+             In the figure, line $k$ is parallel to line $l$. If $\angle 1 = (3x + 15)^\circ$ and $\angle 2 = (5x - 25)^\circ$, find the measure of $\angle 3$.
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_o59s9l_1333.png" alt="Parallel lines k and l intersected by a transversal. Angle 1 is upper-left interior, Angle 2 is lower-right interior, Angle 3 is lower-left interior."/>
+            <div class="lang-id">
+              Pada gambar, garis $k$ sejajar dengan garis $l$. Jika $\angle 1 = (3x + 15)^\circ$ dan $\angle 2 = (5x - 25)^\circ$, tentukan besar $\angle 3$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>2. EXTERIOR ANGLE OF A TRIANGLE</b>
+          <div class="soal-konten">
+            In $\triangle PQR$, the measure of $\angle P$ is $50^\circ$. The exterior angle at vertex $Q$ is $115^\circ$. What is the measure of $\angle R$?
+            <div class="lang-id">
+              Pada $\triangle PQR$, besar $\angle P$ adalah $50^\circ$. Sudut luar pada titik sudut $Q$ adalah $115^\circ$. Berapakah besar $\angle R$?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>3. ISOSCELES TRIANGLE</b>
+          <div class="soal-konten">
+            In $\triangle ABC$, $AB = AC$. A point $D$ lies on $BC$ such that $AD = BD$. If $\angle DAC = 30^\circ$, find the measure of $\angle B$.
+            <div class="lang-id">
+              Pada $\triangle ABC$, $AB = AC$. Titik $D$ terletak pada $BC$ sedemikian sehingga $AD = BD$. Jika $\angle DAC = 30^\circ$, tentukan besar $\angle B$.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 2 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Triangles & Angles</h1>
+            <div class="soal-latihan">
+              <b>4. ANGLE BISECTOR THEOREM</b>
+              <div class="soal-konten">
+                In $\triangle ABC$, the angle bisector of $\angle A$ intersects $BC$ at point $D$. If $AB = 10$, $AC = 14$, and $BC = 18$, find the length of $BD$.
+                <div class="lang-id">
+                  Pada $\triangle ABC$, garis bagi sudut $\angle A$ memotong $BC$ di titik $D$. Jika $AB = 10$, $AC = 14$, dan $BC = 18$, tentukan panjang $BD$.
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+              <b>5. CONGRUENT TRIANGLES</b>
+              <div class="soal-konten">
+                In quadrilateral $ABCD$, it is given that $AB = AD$ and $CB = CD$. If $\angle BAD = 50^\circ$ and $\angle BCD = 100^\circ$, prove that $\triangle ABC \cong \triangle ADC$ and find the measure of $\angle ABC$.
+                <div class="lang-id">
+                  Pada segiempat $ABCD$, diketahui bahwa $AB = AD$ dan $CB = CD$. Jika $\angle BAD = 50^\circ$ dan $\angle BCD = 100^\circ$, buktikan bahwa $\triangle ABC \cong \triangle ADC$ dan tentukan besar $\angle ABC$.
+                </div>
+              </div>
+            </div>
+            <div class="soal-latihan">
+                <b>6. SIMILAR TRIANGLES</b>
+                <div class="soal-konten">
+                    In $\triangle ABC$, point $D$ is on $AB$ and point $E$ is on $AC$ such that $DE \parallel BC$. If $AD = 4$ cm, $DB = 6$ cm, and $BC = 15$ cm, find the length of $DE$.
+                    <div class="lang-id">
+                        Pada $\triangle ABC$, titik $D$ berada pada sisi $AB$ dan titik $E$ pada sisi $AC$ sehingga $DE \parallel BC$. Jika $AD = 4$ cm, $DB = 6$ cm, dan $BC = 15$ cm, tentukan panjang $DE$.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 3 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Triangles & Angles</h1>
+            <div class="soal-latihan">
+                <b>7. AREA OF SIMILAR TRIANGLES</b>
+                <div class="soal-konten">
+                    $\triangle ABC$ is similar to $\triangle PQR$. The area of $\triangle ABC$ is $16$ cm$^2$ and the area of $\triangle PQR$ is $100$ cm$^2$. If the length of side $AB$ is $6$ cm, what is the length of the corresponding side $PQ$?
+                    <div class="lang-id">
+                        $\triangle ABC$ sebangun dengan $\triangle PQR$. Luas $\triangle ABC$ adalah $16$ cm$^2$ dan luas $\triangle PQR$ adalah $100$ cm$^2$. Jika panjang sisi $AB$ adalah $6$ cm, berapakah panjang sisi $PQ$ yang bersesuaian?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>8. ALTITUDE ON HYPOTENUSE</b>
+                <div class="soal-konten">
+                    In right-angled $\triangle ABC$, $\angle B = 90^\circ$. Altitude $BD$ is drawn to the hypotenuse $AC$. If $AD = 4$ and $CD = 9$, find the length of the altitude $BD$.
+                    <div class="lang-id">
+                        Pada $\triangle ABC$ siku-siku di $B$, ditarik garis tinggi $BD$ ke hipotenusa $AC$. Jika $AD = 4$ dan $CD = 9$, tentukan panjang garis tinggi $BD$.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>9. MEDIANS AND CENTROID</b>
+                <div class="soal-konten">
+                    In $\triangle ABC$, $AD$ and $BE$ are medians intersecting at point $G$ (the centroid). If the length of median $AD$ is $12$ cm, what is the length of $AG$?
+                    <div class="lang-id">
+                        Pada $\triangle ABC$, $AD$ dan $BE$ adalah garis berat yang berpotongan di titik $G$ (titik berat). Jika panjang garis berat $AD$ adalah $12$ cm, berapakah panjang $AG$?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 4 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Triangles & Angles</h1>
+             <div class="soal-latihan">
+                <b>10. SINE RULE</b>
+                <div class="soal-konten">
+                    In $\triangle XYZ$, $\angle X = 45^\circ$, $\angle Y = 60^\circ$, and the length of side $YZ$ is $8\sqrt{2}$. Find the length of side $XZ$.
+                    <div class="lang-id">
+                        Pada $\triangle XYZ$, $\angle X = 45^\circ$, $\angle Y = 60^\circ$, dan panjang sisi $YZ$ adalah $8\sqrt{2}$. Tentukan panjang sisi $XZ$.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>11. SPECIAL LINES COMBINATION</b>
+                <div class="soal-konten">
+                    In $\triangle ABC$, $AB=AC=17$ and $BC=16$. Find the length of the altitude from $A$ to $BC$.
+                    <div class="lang-id">
+                         Pada $\triangle ABC$, $AB=AC=17$ dan $BC=16$. Tentukan panjang garis tinggi dari $A$ ke $BC$.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>12. PYTHAGORAS THEOREM</b>
+                <div class="soal-konten">
+                    In $\triangle ABC$, $\angle B = 90^\circ$. Point $D$ is on $BC$. If $AB = 12$, $AD = 13$, and $AC = 15$, find the length of $DC$.
+                    <div class="lang-id">
+                        Pada $\triangle ABC$, $\angle B = 90^\circ$. Titik $D$ berada pada $BC$. Jika $AB = 12$, $AD = 13$, dan $AC = 15$, tentukan panjang $DC$.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+    
+    <!-- Halaman Soal 5 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Triangles & Angles</h1>
+            <div class="soal-latihan">
+                <b>13. 30-60-90 TRIANGLE</b>
+                <div class="soal-konten">
+                   An equilateral triangle has an altitude of length $9\sqrt{3}$ cm. What is the perimeter of the triangle?
+                    <div class="lang-id">
+                       Sebuah segitiga sama sisi memiliki garis tinggi sepanjang $9\sqrt{3}$ cm. Berapakah keliling segitiga tersebut?
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>14. CONGRUENCE IN A SQUARE</b>
+                <div class="soal-konten">
+                    In square $ABCD$, point $E$ is on $BC$ and point $F$ is on $CD$ such that $AE \perp BF$. If the side length of the square is $s$, prove that $BE = CF$.
+                    <div class="lang-id">
+                       Pada persegi $ABCD$, titik $E$ berada pada $BC$ dan titik $F$ pada $CD$ sedemikian sehingga $AE \perp BF$. Jika panjang sisi persegi adalah $s$, buktikan bahwa $BE = CF$.
+                    </div>
+                </div>
+            </div>
+             <div class="soal-latihan">
+                <b>15. AREA OF A TRIANGLE</b>
+                <div class="soal-konten">
+                    The lengths of the sides of a triangle are 13, 14, and 15. Find the area of the triangle.
+                    <div class="lang-id">
+                       Panjang sisi-sisi sebuah segitiga adalah 13, 14, dan 15. Tentukan luas segitiga tersebut.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- Halaman Soal 6 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Circles</h1>
+        <div class="soal-latihan">
+          <b>16. ANGLE IN A SEMICIRCLE</b>
+          <div class="soal-konten">
+            $AB$ is the diameter of a circle with center $O$. Point $C$ is on the circumference. If $\angle CAB = 35^\circ$, find the measure of $\angle ABC$.
+            <div class="lang-id">
+              $AB$ adalah diameter sebuah lingkaran dengan pusat $O$. Titik $C$ berada pada keliling lingkaran. Jika $\angle CAB = 35^\circ$, tentukan besar $\angle ABC$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>17. CENTRAL AND INSCRIBED ANGLES</b>
+          <div class="soal-konten">
+             Points $A, B,$ and $C$ are on a circle with center $O$. If the measure of arc $AC$ is $110^\circ$, what is the measure of the inscribed angle $\angle ABC$?
+            <div class="lang-id">
+              Titik $A, B,$ dan $C$ berada pada sebuah lingkaran dengan pusat $O$. Jika besar busur $AC$ adalah $110^\circ$, berapakah besar sudut keliling $\angle ABC$?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>18. ANGLES SUBTENDED BY THE SAME ARC</b>
+          <div class="soal-konten">
+             In a circle, points $A, B, C,$ and $D$ lie on the circumference in that order. If $\angle CAD = 25^\circ$, what is the measure of $\angle CBD$?
+            <div class="lang-id">
+              Dalam sebuah lingkaran, titik $A, B, C,$ dan $D$ terletak pada keliling secara berurutan. Jika $\angle CAD = 25^\circ$, berapakah besar $\angle CBD$?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+    
+    <!-- Halaman Soal 7 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Circles</h1>
+        <div class="soal-latihan">
+          <b>19. CYCLIC QUADRILATERAL</b>
+          <div class="soal-konten">
+            $PQRS$ is a cyclic quadrilateral. If $\angle P = 80^\circ$ and $\angle Q = 110^\circ$, find the measures of $\angle R$ and $\angle S$.
+            <div class="lang-id">
+              $PQRS$ adalah sebuah segiempat tali busur. Jika $\angle P = 80^\circ$ dan $\angle Q = 110^\circ$, tentukan besar $\angle R$ dan $\angle S$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>20. TANGENT AND RADIUS</b>
+          <div class="soal-konten">
+            A line is tangent to a circle with center $O$ at point $P$. The radius of the circle is 5 cm. A point $Q$ is on the tangent line such that $OQ = 13$ cm. Find the length of the tangent segment $PQ$.
+            <div class="lang-id">
+              Sebuah garis menyinggung lingkaran dengan pusat $O$ di titik $P$. Jari-jari lingkaran adalah 5 cm. Titik $Q$ berada pada garis singgung sedemikian sehingga $OQ = 13$ cm. Tentukan panjang segmen garis singgung $PQ$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>21. TWO TANGENTS FROM AN EXTERNAL POINT</b>
+          <div class="soal-konten">
+            From an external point $P$, two tangent segments $PA$ and $PB$ are drawn to a circle with center $O$. If $PA = 15$ cm, what is the length of $PB$? If $\angle APB = 70^\circ$, what is the measure of $\angle AOB$?
+            <div class="lang-id">
+              Dari titik luar $P$, ditarik dua segmen garis singgung $PA$ dan $PB$ ke sebuah lingkaran dengan pusat $O$. Jika $PA = 15$ cm, berapakah panjang $PB$? Jika $\angle APB = 70^\circ$, berapakah besar $\angle AOB$?
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 8 -->
+     <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Circles</h1>
+        <div class="soal-latihan">
+          <b>22. INTERSECTING CHORDS THEOREM (POWER OF A POINT)</b>
+          <div class="soal-konten">
+            In a circle, two chords $AC$ and $BD$ intersect at point $P$. If $AP = 8$, $PC = 3$, and $BP = 6$, find the length of $PD$.
+            <div class="lang-id">
+              Dalam sebuah lingkaran, dua tali busur $AC$ dan $BD$ berpotongan di titik $P$. Jika $AP = 8$, $PC = 3$, dan $BP = 6$, tentukan panjang $PD$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>23. TANGENT-SECANT THEOREM (POWER OF A POINT)</b>
+          <div class="soal-konten">
+            From an external point $P$, a tangent segment $PT$ and a secant line $PAB$ are drawn to a circle, where $A$ and $B$ are points on the circle. If $PT = 12$ and $PA = 8$, find the length of $AB$.
+            <div class="lang-id">
+              Dari titik luar $P$, ditarik sebuah segmen singgung $PT$ dan sebuah garis sekan $PAB$ ke sebuah lingkaran, di mana $A$ dan $B$ adalah titik pada lingkaran. Jika $PT = 12$ dan $PA = 8$, tentukan panjang $AB$.
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+          <b>24. TWO-SECANTS THEOREM (POWER OF A POINT)</b>
+          <div class="soal-konten">
+            From an external point $P$, two secant lines $PAB$ and $PCD$ are drawn to a circle. If $PA = 5$, $PB = 12$, and $PC = 4$, find the length of $PD$.
+            <div class="lang-id">
+              Dari titik luar $P$, ditarik dua garis sekan $PAB$ dan $PCD$ ke sebuah lingkaran. Jika $PA = 5$, $PB = 12$, dan $PC = 4$, tentukan panjang $PD$.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 9 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Topic: Circles</h1>
+        <div class="soal-latihan">
+          <b>25. ANGLE BETWEEN TANGENT AND CHORD</b>
+          <div class="soal-konten">
+            Line $k$ is tangent to a circle at point $T$. A chord $TA$ is drawn. If the angle between the tangent line $k$ and the chord $TA$ is $65^\circ$, what is the measure of the arc $TA$?
+            <div class="lang-id">
+              Garis $k$ menyinggung sebuah lingkaran di titik $T$. Sebuah tali busur $TA$ ditarik. Jika sudut antara garis singgung $k$ dan tali busur $TA$ adalah $65^\circ$, berapakah besar busur $TA$?
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan">
+            <b>26. INSCRIBED CIRCLE (INCIRCLE)</b>
+            <div class="soal-konten">
+                A circle is inscribed in a right-angled triangle with sides 5, 12, and 13. What is the radius of the inscribed circle?
+                <div class="lang-id">
+                    Sebuah lingkaran dalam (incircle) digambarkan pada sebuah segitiga siku-siku dengan sisi 5, 12, dan 13. Berapakah jari-jari dari lingkaran dalam tersebut?
+                </div>
+            </div>
+        </div>
+        <div class="soal-latihan">
+            <b>27. COMMON TANGENTS</b>
+            <div class="soal-konten">
+                Two circles with centers $O_1$ and $O_2$ have radii 9 and 4, respectively. The distance between their centers is 13. Find the length of their direct common tangent.
+                <div class="lang-id">
+                    Dua lingkaran dengan pusat $O_1$ dan $O_2$ memiliki jari-jari 9 dan 4. Jarak antara kedua pusatnya adalah 13. Tentukan panjang garis singgung persekutuan luarnya.
+                </div>
+            </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 10 -->
+    <section class="page">
+        <div class="content-wrapper">
+            <h1>Topic: Circles</h1>
+            <div class="soal-latihan">
+                <b>28. PTOLEMY'S THEOREM</b>
+                <div class="soal-konten">
+                    A cyclic quadrilateral $ABCD$ has side lengths $AB=3$, $BC=4$, $CD=5$, and $DA=6$. Find the product of its diagonals, $AC \times BD$.
+                    <div class="lang-id">
+                        Sebuah segiempat tali busur $ABCD$ memiliki panjang sisi $AB=3$, $BC=4$, $CD=5$, dan $DA=6$. Tentukan hasil kali panjang kedua diagonalnya, $AC \times BD$.
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>29. AREA OF A CIRCULAR SEGMENT</b>
+                <div class="soal-konten">
+                    In a circle with radius 10 cm, a chord subtends a central angle of $90^\circ$. Find the area of the minor segment formed by this chord. (Use $\pi \approx 3.14$).
+                    <div class="lang-id">
+                        Pada sebuah lingkaran dengan jari-jari 10 cm, sebuah tali busur membentuk sudut pusat $90^\circ$. Tentukan luas tembereng minor yang dibentuk oleh tali busur ini. (Gunakan $\pi \approx 3.14$).
+                    </div>
+                </div>
+            </div>
+            <div class="soal-latihan">
+                <b>30. INTERSECTING CIRCLES</b>
+                <div class="soal-konten">
+                    Two circles with radii 10 cm and 17 cm intersect at two points. The length of their common chord is 16 cm. Find the distance between their centers.
+                    <div class="lang-id">
+                        Dua lingkaran dengan jari-jari 10 cm dan 17 cm berpotongan di dua titik. Panjang tali busur persekutuannya adalah 16 cm. Tentukan jarak antara kedua pusat lingkaran tersebut.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+            <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+            <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+    </section>
+
+    <!-- SOLUTIONS START HERE -->
+    
+    <!-- Cover Pembahasan -->
+    <section class="page cover-page solutions-cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1 class="cover-title" style="font-size: 32pt;">Solutions & Explanations</h1>
+        <p class="cover-subtitle" style="font-size: 16pt;">(Pembahasan & Penjelasan)</p>
+      </div>
+    </section>
+
+    <!-- Pembahasan 1 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 1</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> When two parallel lines are intersected by a transversal, the consecutive interior angles (angles on the same side of the transversal and between the parallel lines) are supplementary, meaning they add up to $180^\circ$. Also, alternate interior angles are equal.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the relationship:</strong> $\angle 1$ and the angle vertically opposite to $\angle 3$ are alternate interior angles. Therefore, their measures are equal. Let's call the angle vertically opposite to $\angle 3$ as $\angle 4$. So, $\angle 1 = \angle 4$. Since $\angle 3$ and $\angle 4$ are vertically opposite, $\angle 3 = \angle 4$. This means $\angle 1 = \angle 3$.</li><li><strong>Alternative relationship:</strong> Angles $\angle 1$ and $\angle 2$ are consecutive interior angles. Their sum must be $180^\circ$.</li><li><strong>Set up the equation:</strong> Using the consecutive interior angles property: $(3x + 15) + (5x - 25) = 180$.</li><li><strong>Solve for x:</strong> Combine like terms: $8x - 10 = 180$. Add 10 to both sides: $8x = 190$. Divide by 8: $x = \frac{190}{8} = 23.75$.</li><li><strong>Find the measure of $\angle 1$:</strong> $\angle 1 = 3x + 15 = 3(23.75) + 15 = 71.25 + 15 = 86.25^\circ$.</li><li><strong>Find the measure of $\angle 3$:</strong> As established in step 1, $\angle 3$ and $\angle 1$ are alternate interior angles (or can be seen as corresponding to the angle vertically opposite to $\angle 1$, etc.). Therefore, $\angle 3 = \angle 1$. So, $\angle 3 = 86.25^\circ$. We can also see that $\angle 2$ and $\angle 3$ are supplementary. $\angle 2 = 5(23.75) - 25 = 118.75-25 = 93.75^\circ$. Then $\angle 3 = 180 - 93.75 = 86.25^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle 3$ is $86.25^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 1</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ketika dua garis sejajar dipotong oleh sebuah garis transversal, sudut-sudut dalam sepihak (sudut yang berada di sisi yang sama dari transversal dan di antara garis sejajar) bersifat suplementer, artinya jumlahnya $180^\circ$. Selain itu, sudut-sudut dalam berseberangan besarnya sama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi hubungan:</strong> $\angle 1$ dan sudut yang bertolak belakang dengan $\angle 3$ adalah sudut dalam berseberangan. Oleh karena itu, ukurannya sama. Mari kita sebut sudut yang bertolak belakang dengan $\angle 3$ sebagai $\angle 4$. Jadi, $\angle 1 = \angle 4$. Karena $\angle 3$ dan $\angle 4$ bertolak belakang, maka $\angle 3 = \angle 4$. Ini berarti $\angle 1 = \angle 3$.</li><li><strong>Hubungan alternatif:</strong> Sudut $\angle 1$ dan $\angle 2$ adalah sudut dalam sepihak. Jumlah keduanya harus $180^\circ$.</li><li><strong>Buat persamaan:</strong> Menggunakan sifat sudut dalam sepihak: $(3x + 15) + (5x - 25) = 180$.</li><li><strong>Selesaikan untuk x:</strong> Gabungkan suku sejenis: $8x - 10 = 180$. Tambahkan 10 ke kedua sisi: $8x = 190$. Bagi dengan 8: $x = \frac{190}{8} = 23.75$.</li><li><strong>Tentukan besar $\angle 1$:</strong> $\angle 1 = 3x + 15 = 3(23.75) + 15 = 71.25 + 15 = 86.25^\circ$.</li><li><strong>Tentukan besar $\angle 3$:</strong> Sebagaimana ditetapkan pada langkah 1, $\angle 3$ dan $\angle 1$ adalah sudut dalam berseberangan. Oleh karena itu, $\angle 3 = \angle 1$. Jadi, $\angle 3 = 86.25^\circ$. Kita juga bisa melihat bahwa $\angle 2$ dan $\angle 3$ adalah sudut berpelurus. $\angle 2 = 5(23.75) - 25 = 118.75-25 = 93.75^\circ$. Maka $\angle 3 = 180 - 93.75 = 86.25^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle 3$ adalah $86.25^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 2 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 2</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The measure of an exterior angle of a triangle is equal to the sum of the measures of its two remote interior angles (the interior angles that are not adjacent to the exterior angle).</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the angles:</strong> The exterior angle at vertex $Q$ is given as $115^\circ$. The two remote interior angles are $\angle P$ and $\angle R$.</li><li><strong>Apply the Exterior Angle Theorem:</strong> According to the theorem, Exterior Angle at $Q = \angle P + \angle R$.</li><li><strong>Set up the equation:</strong> We are given the values for the exterior angle at $Q$ and for $\angle P$. So, $115^\circ = 50^\circ + \angle R$.</li><li><strong>Solve for $\angle R$:</strong> Subtract $50^\circ$ from both sides of the equation: $\angle R = 115^\circ - 50^\circ = 65^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle R$ is $65^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 2</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Besar sebuah sudut luar segitiga sama dengan jumlah dari dua sudut dalam yang tidak bersisian dengannya (sudut dalam yang jauh).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sudut-sudut:</strong> Sudut luar di titik sudut $Q$ diketahui sebesar $115^\circ$. Dua sudut dalam yang jauh adalah $\angle P$ dan $\angle R$.</li><li><strong>Terapkan Teorema Sudut Luar:</strong> Menurut teorema, Sudut Luar di $Q = \angle P + \angle R$.</li><li><strong>Buat persamaan:</strong> Kita diberi nilai untuk sudut luar di $Q$ dan untuk $\angle P$. Jadi, $115^\circ = 50^\circ + \angle R$.</li><li><strong>Selesaikan untuk $\angle R$:</strong> Kurangi $50^\circ$ dari kedua sisi persamaan: $\angle R = 115^\circ - 50^\circ = 65^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle R$ adalah $65^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 3 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 3</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> In an isosceles triangle, angles opposite to the equal sides are equal. The sum of angles in any triangle is $180^\circ$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze $\triangle ABD$:</strong> We are given $AD = BD$. This means $\triangle ABD$ is an isosceles triangle. Therefore, the angles opposite to these sides are equal: $\angle B = \angle BAD$. Let's call this angle $x$. So, $\angle B = \angle BAD = x$.</li><li><strong>Analyze $\triangle ABC$:</strong> We are given $AB = AC$. This means $\triangle ABC$ is an isosceles triangle. Therefore, the angles opposite to these sides are equal: $\angle B = \angle C$. Since $\angle B = x$, we have $\angle C = x$.</li><li><strong>Express angles in terms of x:</strong> We have $\angle B = x$ and $\angle C = x$. The entire angle $\angle BAC$ is the sum of $\angle BAD$ and $\angle DAC$. So, $\angle BAC = \angle BAD + \angle DAC = x + 30^\circ$.</li><li><strong>Apply the angle sum property to $\triangle ABC$:</strong> The sum of angles in $\triangle ABC$ is $180^\circ$. So, $\angle B + \angle C + \angle BAC = 180^\circ$.</li><li><strong>Set up and solve the equation:</strong> Substitute the expressions in terms of $x$: $x + x + (x + 30^\circ) = 180^\circ$.
+    <br>$3x + 30^\circ = 180^\circ$
+    <br>$3x = 150^\circ$
+    <br>$x = 50^\circ$.</li><li><strong>Conclusion:</strong> Since we defined $\angle B = x$, the measure of $\angle B$ is $50^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle B$ is $50^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 3</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Dalam segitiga sama kaki, sudut-sudut yang berhadapan dengan sisi yang sama panjang adalah sama besar. Jumlah sudut dalam segitiga adalah $180^\circ$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis $\triangle ABD$:</strong> Diberikan $AD = BD$. Ini berarti $\triangle ABD$ adalah segitiga sama kaki. Oleh karena itu, sudut-sudut yang berhadapan dengan sisi-sisi ini sama besar: $\angle B = \angle BAD$. Mari kita sebut sudut ini $x$. Jadi, $\angle B = \angle BAD = x$.</li><li><strong>Analisis $\triangle ABC$:</strong> Diberikan $AB = AC$. Ini berarti $\triangle ABC$ adalah segitiga sama kaki. Oleh karena itu, sudut-sudut yang berhadapan dengan sisi-sisi ini sama besar: $\angle B = \angle C$. Karena $\angle B = x$, maka $\angle C = x$.</li><li><strong>Ekspresikan sudut dalam x:</strong> Kita punya $\angle B = x$ dan $\angle C = x$. Sudut $\angle BAC$ secara keseluruhan adalah jumlah dari $\angle BAD$ dan $\angle DAC$. Jadi, $\angle BAC = \angle BAD + \angle DAC = x + 30^\circ$.</li><li><strong>Terapkan sifat jumlah sudut pada $\triangle ABC$:</strong> Jumlah sudut dalam $\triangle ABC$ adalah $180^\circ$. Jadi, $\angle B + \angle C + \angle BAC = 180^\circ$.</li><li><strong>Buat dan selesaikan persamaan:</strong> Substitusikan ekspresi dalam $x$: $x + x + (x + 30^\circ) = 180^\circ$.
+    <br>$3x + 30^\circ = 180^\circ$
+    <br>$3x = 150^\circ$
+    <br>$x = 50^\circ$.</li><li><strong>Kesimpulan:</strong> Karena kita mendefinisikan $\angle B = x$, maka besar $\angle B$ adalah $50^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle B$ adalah $50^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 4 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 4</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Angle Bisector Theorem states that if a ray bisects an angle of a triangle, then it divides the opposite side into two segments that are proportional to the other two sides of the triangle.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>State the Angle Bisector Theorem for $\triangle ABC$:</strong> Since $AD$ is the angle bisector of $\angle A$, the theorem gives the proportion: $\frac{AB}{AC} = \frac{BD}{DC}$.</li><li><strong>Define the segment lengths:</strong> We are given $AB=10$, $AC=14$, and $BC=18$. Let the length of $BD$ be $x$. Then the length of $DC$ must be the remainder of $BC$, which is $18 - x$.</li><li><strong>Set up the equation:</strong> Substitute the known values and expressions into the proportion: $\frac{10}{14} = \frac{x}{18-x}$.</li><li><strong>Solve for x:</strong> Simplify the fraction on the left: $\frac{5}{7} = \frac{x}{18-x}$. Cross-multiply: $5(18-x) = 7x$. Distribute on the left side: $90 - 5x = 7x$. Add $5x$ to both sides: $90 = 12x$. Divide by 12: $x = \frac{90}{12} = \frac{15}{2} = 7.5$.</li><li><strong>Conclusion:</strong> Since $x$ represents the length of $BD$, the length of $BD$ is 7.5.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $BD$ is 7.5.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 4</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Garis Bagi Sudut menyatakan bahwa jika sebuah sinar membagi sudut sebuah segitiga, maka ia membagi sisi yang berlawanan menjadi dua segmen yang sebanding dengan dua sisi lain dari segitiga tersebut.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Nyatakan Teorema Garis Bagi Sudut untuk $\triangle ABC$:</strong> Karena $AD$ adalah garis bagi sudut $\angle A$, teorema memberikan perbandingan: $\frac{AB}{AC} = \frac{BD}{DC}$.</li><li><strong>Definisikan panjang segmen:</strong> Diberikan $AB=10$, $AC=14$, dan $BC=18$. Misalkan panjang $BD$ adalah $x$. Maka panjang $DC$ pastilah sisa dari $BC$, yaitu $18 - x$.</li><li><strong>Buat persamaan:</strong> Substitusikan nilai-nilai dan ekspresi yang diketahui ke dalam perbandingan: $\frac{10}{14} = \frac{x}{18-x}$.</li><li><strong>Selesaikan untuk x:</strong> Sederhanakan pecahan di sebelah kiri: $\frac{5}{7} = \frac{x}{18-x}$. Lakukan perkalian silang: $5(18-x) = 7x$. Distribusikan di sisi kiri: $90 - 5x = 7x$. Tambahkan $5x$ ke kedua sisi: $90 = 12x$. Bagi dengan 12: $x = \frac{90}{12} = \frac{15}{2} = 7.5$.</li><li><strong>Kesimpulan:</strong> Karena $x$ mewakili panjang $BD$, maka panjang $BD$ adalah 7.5.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $BD$ adalah 7.5.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+        
+    <!-- Pembahasan 5 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 5</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Triangles are congruent if all three corresponding sides are equal in length (SSS Congruence Postulate). The sum of angles in a quadrilateral is $360^\circ$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Proof of Congruence:</strong> To prove $\triangle ABC \cong \triangle ADC$, we check the sides:
+    <br>1. $AB = AD$ (Given)
+    <br>2. $CB = CD$ (Given)
+    <br>3. $AC = AC$ (Common side)
+    <br>Since all three corresponding sides are equal, by the SSS (Side-Side-Side) postulate, $\triangle ABC \cong \triangle ADC$.</li>
+    <li><strong>Find Angles using Congruence:</strong> Because the triangles are congruent, their corresponding angles are equal.
+    <br>$\angle BAC = \angle DAC$. Since $\angle BAD = \angle BAC + \angle DAC = 50^\circ$, then $2 \times \angle BAC = 50^\circ$, so $\angle BAC = 25^\circ$.
+    <br>$\angle BCA = \angle DCA$. Since $\angle BCD = \angle BCA + \angle DCA = 100^\circ$, then $2 \times \angle BCA = 100^\circ$, so $\angle BCA = 50^\circ$.
+    <br>And most importantly for this question, $\angle ABC = \angle ADC$.</li>
+    <li><strong>Find the measure of $\angle ABC$:</strong> The sum of angles in quadrilateral $ABCD$ is $360^\circ$.
+    <br>$\angle BAD + \angle ABC + \angle BCD + \angle ADC = 360^\circ$.
+    <br>We know $\angle BAD = 50^\circ$, $\angle BCD = 100^\circ$, and $\angle ABC = \angle ADC$. Let's call this angle $y$.
+    <br>$50^\circ + y + 100^\circ + y = 360^\circ$.
+    <br>$2y + 150^\circ = 360^\circ$.
+    <br>$2y = 210^\circ$.
+    <br>$y = 105^\circ$.</li>
+    <li><strong>Conclusion:</strong> Therefore, the measure of $\angle ABC$ is $105^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> $\triangle ABC \cong \triangle ADC$ by SSS. The measure of $\angle ABC$ is $105^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 5</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Dua segitiga dikatakan kongruen jika ketiga sisi yang bersesuaian sama panjang (Postulat Kongruensi SSS - Sisi-Sisi-Sisi). Jumlah sudut dalam segiempat adalah $360^\circ$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Bukti Kongruensi:</strong> Untuk membuktikan $\triangle ABC \cong \triangle ADC$, kita periksa sisi-sisinya:
+    <br>1. $AB = AD$ (Diketahui)
+    <br>2. $CB = CD$ (Diketahui)
+    <br>3. $AC = AC$ (Sisi berimpit/sama)
+    <br>Karena ketiga sisi yang bersesuaian sama panjang, menurut postulat SSS, maka $\triangle ABC \cong \triangle ADC$.</li>
+    <li><strong>Mencari Sudut Menggunakan Kongruensi:</strong> Karena kedua segitiga kongruen, sudut-sudut yang bersesuaian sama besar.
+    <br>$\angle BAC = \angle DAC$. Karena $\angle BAD = \angle BAC + \angle DAC = 50^\circ$, maka $2 \times \angle BAC = 50^\circ$, sehingga $\angle BAC = 25^\circ$.
+    <br>$\angle BCA = \angle DCA$. Karena $\angle BCD = \angle BCA + \angle DCA = 100^\circ$, maka $2 \times \angle BCA = 100^\circ$, sehingga $\angle BCA = 50^\circ$.
+    <br>Dan yang terpenting untuk soal ini, $\angle ABC = \angle ADC$.</li>
+    <li><strong>Tentukan besar $\angle ABC$:</strong> Jumlah sudut dalam segiempat $ABCD$ adalah $360^\circ$.
+    <br>$\angle BAD + \angle ABC + \angle BCD + \angle ADC = 360^\circ$.
+    <br>Kita tahu $\angle BAD = 50^\circ$, $\angle BCD = 100^\circ$, dan $\angle ABC = \angle ADC$. Mari kita sebut sudut ini $y$.
+    <br>$50^\circ + y + 100^\circ + y = 360^\circ$.
+    <br>$2y + 150^\circ = 360^\circ$.
+    <br>$2y = 210^\circ$.
+    <br>$y = 105^\circ$.</li>
+    <li><strong>Kesimpulan:</strong> Jadi, besar $\angle ABC$ adalah $105^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> $\triangle ABC \cong \triangle ADC$ berdasarkan SSS. Besar $\angle ABC$ adalah $105^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 6 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 6</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> When a line parallel to one side of a triangle intersects the other two sides, it creates a smaller triangle that is similar to the original one. The ratio of corresponding sides in similar triangles is equal.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify similar triangles:</strong> Since $DE \parallel BC$, by the property of parallel lines, we have $\angle ADE = \angle ABC$ and $\angle AED = \angle ACB$ (corresponding angles). Also, $\angle DAE = \angle BAC$ (common angle). Therefore, by AAA similarity criterion, $\triangle ADE \sim \triangle ABC$.</li><li><strong>Find the length of the full side $AB$:</strong> The side $AB$ is composed of segments $AD$ and $DB$. So, $AB = AD + DB = 4 + 6 = 10$ cm.</li><li><strong>Set up the ratio of corresponding sides:</strong> The ratio of side $AD$ in the small triangle to side $AB$ in the large triangle is equal to the ratio of side $DE$ to side $BC$. This gives the proportion: $\frac{AD}{AB} = \frac{DE}{BC}$.</li><li><strong>Substitute the known values:</strong> We plug in the given lengths: $\frac{4}{10} = \frac{DE}{15}$.</li><li><strong>Solve for $DE$:</strong> To find $DE$, we multiply both sides by 15: $DE = \frac{4}{10} \times 15 = \frac{60}{10} = 6$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $DE$ is 6 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 6</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Ketika sebuah garis yang sejajar dengan salah satu sisi segitiga memotong dua sisi lainnya, ia membentuk segitiga yang lebih kecil yang sebangun dengan segitiga aslinya. Perbandingan sisi-sisi yang bersesuaian pada segitiga-segitiga yang sebangun adalah sama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi segitiga sebangun:</strong> Karena $DE \parallel BC$, menurut sifat garis sejajar, kita memiliki $\angle ADE = \angle ABC$ dan $\angle AED = \angle ACB$ (sudut sehadap). Juga, $\angle DAE = \angle BAC$ (sudut berimpit). Oleh karena itu, berdasarkan kriteria kesebangunan AAA (Sudut-Sudut-Sudut), $\triangle ADE \sim \triangle ABC$.</li><li><strong>Tentukan panjang sisi penuh $AB$:</strong> Sisi $AB$ terdiri dari segmen $AD$ dan $DB$. Jadi, $AB = AD + DB = 4 + 6 = 10$ cm.</li><li><strong>Buat perbandingan sisi-sisi yang bersesuaian:</strong> Perbandingan sisi $AD$ pada segitiga kecil terhadap sisi $AB$ pada segitiga besar sama dengan perbandingan sisi $DE$ terhadap sisi $BC$. Ini memberikan perbandingan: $\frac{AD}{AB} = \frac{DE}{BC}$.</li><li><strong>Substitusikan nilai yang diketahui:</strong> Kita masukkan panjang yang diberikan: $\frac{4}{10} = \frac{DE}{15}$.</li><li><strong>Selesaikan untuk $DE$:</strong> Untuk mencari $DE$, kita kalikan kedua sisi dengan 15: $DE = \frac{4}{10} \times 15 = \frac{60}{10} = 6$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $DE$ adalah 6 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 7 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 7</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> If two triangles are similar, the ratio of their areas is equal to the square of the ratio of their corresponding sides.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>State the theorem:</strong> For similar triangles $\triangle ABC \sim \triangle PQR$, we have: $\frac{\text{Area}(\triangle ABC)}{\text{Area}(\triangle PQR)} = \left(\frac{AB}{PQ}\right)^2$.</li><li><strong>Substitute the given values:</strong> We are given Area($\triangle ABC$) = 16, Area($\triangle PQR$) = 100, and $AB = 6$.
+    <br>$\frac{16}{100} = \left(\frac{6}{PQ}\right)^2$.</li><li><strong>Solve for the ratio of sides:</strong> To find the ratio of the sides, we take the square root of both sides of the area ratio.
+    <br>$\sqrt{\frac{16}{100}} = \frac{6}{PQ}$.
+    <br>$\frac{4}{10} = \frac{6}{PQ}$.</li><li><strong>Solve for PQ:</strong> Simplify the ratio on the left to $\frac{2}{5}$. So, $\frac{2}{5} = \frac{6}{PQ}$.
+    <br>Cross-multiply: $2 \times PQ = 5 \times 6$.
+    <br>$2 \times PQ = 30$.
+    <br>$PQ = \frac{30}{2} = 15$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of side $PQ$ is 15 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 7</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jika dua segitiga sebangun, perbandingan luasnya sama dengan kuadrat dari perbandingan sisi-sisi yang bersesuaian.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Nyatakan teoremanya:</strong> Untuk segitiga sebangun $\triangle ABC \sim \triangle PQR$, berlaku: $\frac{\text{Luas}(\triangle ABC)}{\text{Luas}(\triangle PQR)} = \left(\frac{AB}{PQ}\right)^2$.</li><li><strong>Substitusikan nilai yang diberikan:</strong> Diberikan Luas($\triangle ABC$) = 16, Luas($\triangle PQR$) = 100, dan $AB = 6$.
+    <br>$\frac{16}{100} = \left(\frac{6}{PQ}\right)^2$.</li><li><strong>Selesaikan untuk perbandingan sisi:</strong> Untuk menemukan perbandingan sisi, kita ambil akar kuadrat dari kedua sisi perbandingan luas.
+    <br>$\sqrt{\frac{16}{100}} = \frac{6}{PQ}$.
+    <br>$\frac{4}{10} = \frac{6}{PQ}$.</li><li><strong>Selesaikan untuk PQ:</strong> Sederhanakan perbandingan di sebelah kiri menjadi $\frac{2}{5}$. Jadi, $\frac{2}{5} = \frac{6}{PQ}$.
+    <br>Lakukan perkalian silang: $2 \times PQ = 5 \times 6$.
+    <br>$2 \times PQ = 30$.
+    <br>$PQ = \frac{30}{2} = 15$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang sisi $PQ$ adalah 15 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 8 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 8</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> In a right-angled triangle, the altitude drawn to the hypotenuse creates three similar triangles. The Geometric Mean Theorem states that the altitude is the geometric mean of the two segments it divides the hypotenuse into. That is, $BD^2 = AD \times CD$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the relevant theorem:</strong> The altitude $BD$ divides the hypotenuse $AC$ into two segments, $AD$ and $CD$. The relationship between them is given by the Geometric Mean Theorem (Altitude Rule).</li><li><strong>State the formula:</strong> $BD^2 = AD \times CD$.</li><li><strong>Substitute the given values:</strong> We are given $AD = 4$ and $CD = 9$.
+    <br>$BD^2 = 4 \times 9 = 36$.</li><li><strong>Solve for BD:</strong> Take the square root of both sides.
+    <br>$BD = \sqrt{36} = 6$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of the altitude $BD$ is 6.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 8</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Dalam segitiga siku-siku, garis tinggi yang ditarik ke hipotenusa menciptakan tiga segitiga yang sebangun. Teorema Rata-rata Geometris menyatakan bahwa panjang garis tinggi adalah rata-rata geometris dari dua segmen hasil pembagian hipotenusa. Yaitu, $BD^2 = AD \times CD$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi teorema yang relevan:</strong> Garis tinggi $BD$ membagi hipotenusa $AC$ menjadi dua segmen, $AD$ dan $CD$. Hubungan di antara mereka diberikan oleh Teorema Rata-rata Geometris (Aturan Garis Tinggi).</li><li><strong>Nyatakan rumusnya:</strong> $BD^2 = AD \times CD$.</li><li><strong>Substitusikan nilai yang diberikan:</strong> Diberikan $AD = 4$ dan $CD = 9$.
+    <br>$BD^2 = 4 \times 9 = 36$.</li><li><strong>Selesaikan untuk BD:</strong> Ambil akar kuadrat dari kedua sisi.
+    <br>$BD = \sqrt{36} = 6$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang garis tinggi $BD$ adalah 6.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 9 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 9</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The medians of a triangle intersect at a single point called the centroid. The centroid divides each median into two segments in a 2:1 ratio, with the longer segment being from the vertex to the centroid.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the segments:</strong> The median is $AD$, and the centroid is $G$. The centroid divides $AD$ into two segments, $AG$ and $GD$.</li><li><strong>Apply the centroid theorem:</strong> The theorem states that $AG:GD = 2:1$. This means that $AG$ is $\frac{2}{3}$ of the total length of the median $AD$, and $GD$ is $\frac{1}{3}$ of the total length.</li><li><strong>Set up the calculation:</strong> We need to find the length of $AG$. Using the ratio, $AG = \frac{2}{2+1} \times AD = \frac{2}{3} \times AD$.</li><li><strong>Substitute the value and solve:</strong> We are given $AD = 12$ cm.
+    <br>$AG = \frac{2}{3} \times 12 = 2 \times 4 = 8$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $AG$ is 8 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 9</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Garis-garis berat sebuah segitiga berpotongan di satu titik yang disebut titik berat (centroid). Titik berat membagi setiap garis berat menjadi dua segmen dengan perbandingan 2:1, dengan segmen yang lebih panjang adalah dari titik sudut ke titik berat.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi segmen-segmen:</strong> Garis beratnya adalah $AD$, dan titik beratnya adalah $G$. Titik berat membagi $AD$ menjadi dua segmen, $AG$ dan $GD$.</li><li><strong>Terapkan teorema titik berat:</strong> Teorema menyatakan bahwa $AG:GD = 2:1$. Ini berarti $AG$ adalah $\frac{2}{3}$ dari total panjang garis berat $AD$, dan $GD$ adalah $\frac{1}{3}$ dari total panjangnya.</li><li><strong>Lakukan perhitungan:</strong> Kita perlu mencari panjang $AG$. Menggunakan perbandingan, $AG = \frac{2}{2+1} \times AD = \frac{2}{3} \times AD$.</li><li><strong>Substitusikan nilai dan selesaikan:</strong> Diberikan $AD = 12$ cm.
+    <br>$AG = \frac{2}{3} \times 12 = 2 \times 4 = 8$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $AG$ adalah 8 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 10 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 10</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Sine Rule states that the ratio of the length of a side of a triangle to the sine of the angle opposite that side is the same for all three sides. For $\triangle XYZ$, it is $\frac{x}{\sin X} = \frac{y}{\sin Y} = \frac{z}{\sin Z}$, where $x=YZ$, $y=XZ$, and $z=XY$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the sides and opposite angles:</strong>
+    <br>- Side $YZ$ is opposite to $\angle X$.
+    <br>- Side $XZ$ is opposite to $\angle Y$.</li>
+    <li><strong>State the Sine Rule for the given sides:</strong> $\frac{YZ}{\sin X} = \frac{XZ}{\sin Y}$.</li>
+    <li><strong>Substitute the known values:</strong> We are given $YZ = 8\sqrt{2}$, $\angle X = 45^\circ$, and $\angle Y = 60^\circ$.
+    <br>$\frac{8\sqrt{2}}{\sin 45^\circ} = \frac{XZ}{\sin 60^\circ}$.</li>
+    <li><strong>Use the values of standard sines:</strong> We know that $\sin 45^\circ = \frac{\sqrt{2}}{2}$ and $\sin 60^\circ = \frac{\sqrt{3}}{2}$.
+    <br>$\frac{8\sqrt{2}}{\frac{\sqrt{2}}{2}} = \frac{XZ}{\frac{\sqrt{3}}{2}}$.</li>
+    <li><strong>Solve for XZ:</strong> First, simplify the left side: $\frac{8\sqrt{2}}{\frac{\sqrt{2}}{2}} = 8\sqrt{2} \times \frac{2}{\sqrt{2}} = 16$.
+    <br>Now the equation is $16 = \frac{XZ}{\frac{\sqrt{3}}{2}}$.
+    <br>Multiply both sides by $\frac{\sqrt{3}}{2}$: $XZ = 16 \times \frac{\sqrt{3}}{2} = 8\sqrt{3}$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of side $XZ$ is $8\sqrt{3}$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 10</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Aturan Sinus menyatakan bahwa perbandingan panjang sisi segitiga dengan sinus sudut di hadapannya adalah sama untuk ketiga sisinya. Untuk $\triangle XYZ$, berlaku $\frac{x}{\sin X} = \frac{y}{\sin Y} = \frac{z}{\sin Z}$, di mana $x=YZ$, $y=XZ$, dan $z=XY$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sisi dan sudut di hadapannya:</strong>
+    <br>- Sisi $YZ$ berhadapan dengan $\angle X$.
+    <br>- Sisi $XZ$ berhadapan dengan $\angle Y$.</li>
+    <li><strong>Nyatakan Aturan Sinus untuk sisi yang diberikan:</strong> $\frac{YZ}{\sin X} = \frac{XZ}{\sin Y}$.</li>
+    <li><strong>Substitusikan nilai yang diketahui:</strong> Diberikan $YZ = 8\sqrt{2}$, $\angle X = 45^\circ$, dan $\angle Y = 60^\circ$.
+    <br>$\frac{8\sqrt{2}}{\sin 45^\circ} = \frac{XZ}{\sin 60^\circ}$.</li>
+    <li><strong>Gunakan nilai sinus sudut istimewa:</strong> Kita tahu bahwa $\sin 45^\circ = \frac{\sqrt{2}}{2}$ dan $\sin 60^\circ = \frac{\sqrt{3}}{2}$.
+    <br>$\frac{8\sqrt{2}}{\frac{\sqrt{2}}{2}} = \frac{XZ}{\frac{\sqrt{3}}{2}}$.</li>
+    <li><strong>Selesaikan untuk XZ:</strong> Pertama, sederhanakan sisi kiri: $\frac{8\sqrt{2}}{\frac{\sqrt{2}}{2}} = 8\sqrt{2} \times \frac{2}{\sqrt{2}} = 16$.
+    <br>Sekarang persamaannya adalah $16 = \frac{XZ}{\frac{\sqrt{3}}{2}}$.
+    <br>Kalikan kedua sisi dengan $\frac{\sqrt{3}}{2}$: $XZ = 16 \times \frac{\sqrt{3}}{2} = 8\sqrt{3}$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang sisi $XZ$ adalah $8\sqrt{3}$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 11 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 11</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> In an isosceles triangle, the altitude to the base is also the median to the base, meaning it bisects the base. We can then use the Pythagorean theorem on the resulting right-angled triangles.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Draw the altitude:</strong> Let the altitude from $A$ meet $BC$ at point $D$. So, $AD \perp BC$.</li><li><strong>Use properties of isosceles triangles:</strong> Since $\triangle ABC$ is isosceles with $AB=AC$, the altitude $AD$ bisects the base $BC$. This means $BD = DC = \frac{1}{2} BC$.</li><li><strong>Calculate the length of the base segments:</strong> $BD = DC = \frac{16}{2} = 8$.</li><li><strong>Apply the Pythagorean theorem:</strong> Now consider the right-angled triangle $\triangle ADB$. The hypotenuse is $AB=17$, one leg is $BD=8$, and the other leg is the altitude $AD$.
+    <br>$AD^2 + BD^2 = AB^2$.</li><li><strong>Solve for AD:</strong> $AD^2 + 8^2 = 17^2$.
+    <br>$AD^2 + 64 = 289$.
+    <br>$AD^2 = 289 - 64 = 225$.
+    <br>$AD = \sqrt{225} = 15$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of the altitude from A to BC is 15.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 11</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Pada segitiga sama kaki, garis tinggi ke alas juga merupakan garis berat ke alas, yang berarti garis tinggi tersebut membagi alas menjadi dua bagian sama panjang. Kemudian kita bisa menggunakan teorema Pythagoras pada segitiga siku-siku yang terbentuk.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Gambarkan garis tinggi:</strong> Misalkan garis tinggi dari $A$ bertemu $BC$ di titik $D$. Maka, $AD \perp BC$.</li><li><strong>Gunakan sifat segitiga sama kaki:</strong> Karena $\triangle ABC$ adalah sama kaki dengan $AB=AC$, garis tinggi $AD$ membagi dua sama panjang alas $BC$. Ini berarti $BD = DC = \frac{1}{2} BC$.</li><li><strong>Hitung panjang segmen alas:</strong> $BD = DC = \frac{16}{2} = 8$.</li><li><strong>Terapkan teorema Pythagoras:</strong> Sekarang perhatikan segitiga siku-siku $\triangle ADB$. Hipotenusanya adalah $AB=17$, salah satu sisi siku-sikunya adalah $BD=8$, dan sisi siku-siku lainnya adalah garis tinggi $AD$.
+    <br>$AD^2 + BD^2 = AB^2$.</li><li><strong>Selesaikan untuk AD:</strong> $AD^2 + 8^2 = 17^2$.
+    <br>$AD^2 + 64 = 289$.
+    <br>$AD^2 = 289 - 64 = 225$.
+    <br>$AD = \sqrt{225} = 15$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang garis tinggi dari A ke BC adalah 15.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 12 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 12</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Pythagorean theorem ($a^2 + b^2 = c^2$) can be applied to right-angled triangles to find unknown side lengths.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Analyze $\triangle ABD$:</strong> This is a right-angled triangle with hypotenuse $AD$. We have $AB^2 + BD^2 = AD^2$.
+    <br>$12^2 + BD^2 = 13^2$.
+    <br>$144 + BD^2 = 169$.
+    <br>$BD^2 = 169 - 144 = 25$.
+    <br>$BD = \sqrt{25} = 5$.</li>
+    <li><strong>Analyze $\triangle ABC$:</strong> This is also a right-angled triangle with hypotenuse $AC$. We have $AB^2 + BC^2 = AC^2$.
+    <br>$12^2 + BC^2 = 15^2$.
+    <br>$144 + BC^2 = 225$.
+    <br>$BC^2 = 225 - 144 = 81$.
+    <br>$BC = \sqrt{81} = 9$.</li>
+    <li><strong>Find the length of $DC$:</strong> The side $BC$ is composed of segments $BD$ and $DC$. So, $BC = BD + DC$.
+    <br>$9 = 5 + DC$.
+    <br>$DC = 9 - 5 = 4$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $DC$ is 4.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 12</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Pythagoras ($a^2 + b^2 = c^2$) dapat diterapkan pada segitiga siku-siku untuk mencari panjang sisi yang tidak diketahui.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Analisis $\triangle ABD$:</strong> Ini adalah segitiga siku-siku dengan hipotenusa $AD$. Berlaku $AB^2 + BD^2 = AD^2$.
+    <br>$12^2 + BD^2 = 13^2$.
+    <br>$144 + BD^2 = 169$.
+    <br>$BD^2 = 169 - 144 = 25$.
+    <br>$BD = \sqrt{25} = 5$.</li>
+    <li><strong>Analisis $\triangle ABC$:</strong> Ini juga merupakan segitiga siku-siku dengan hipotenusa $AC$. Berlaku $AB^2 + BC^2 = AC^2$.
+    <br>$12^2 + BC^2 = 15^2$.
+    <br>$144 + BC^2 = 225$.
+    <br>$BC^2 = 225 - 144 = 81$.
+    <br>$BC = \sqrt{81} = 9$.</li>
+    <li><strong>Tentukan panjang $DC$:</strong> Sisi $BC$ terdiri dari segmen $BD$ dan $DC$. Jadi, $BC = BD + DC$.
+    <br>$9 = 5 + DC$.
+    <br>$DC = 9 - 5 = 4$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $DC$ adalah 4.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 13 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 13</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> An altitude in an equilateral triangle divides it into two congruent 30-60-90 right triangles. The sides of a 30-60-90 triangle are in the ratio $1 : \sqrt{3} : 2$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Relate altitude to the ratio:</strong> Let the side length of the equilateral triangle be $s$. The altitude divides the base into two segments of length $s/2$. The altitude is the side opposite the $60^\circ$ angle. The segment of length $s/2$ is opposite the $30^\circ$ angle.
+    <br>The ratio of (side opposite $60^\circ$) to (side opposite $30^\circ$) is $\sqrt{3} : 1$.
+    <br>So, $\frac{\text{altitude}}{s/2} = \frac{\sqrt{3}}{1}$.</li>
+    <li><strong>Solve for the side length s:</strong> We are given the altitude is $9\sqrt{3}$.
+    <br>$\frac{9\sqrt{3}}{s/2} = \sqrt{3}$.
+    <br>$9\sqrt{3} = \sqrt{3} \times (s/2)$.
+    <br>Divide by $\sqrt{3}$: $9 = s/2$.
+    <br>$s = 18$ cm.</li>
+    <li><strong>Calculate the perimeter:</strong> The perimeter of an equilateral triangle is $3 \times s$.
+    <br>Perimeter = $3 \times 18 = 54$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The perimeter of the triangle is 54 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 13</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Garis tinggi pada segitiga sama sisi membaginya menjadi dua segitiga siku-siku 30-60-90 yang kongruen. Sisi-sisi dari segitiga 30-60-90 memiliki perbandingan $1 : \sqrt{3} : 2$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hubungkan garis tinggi dengan perbandingan:</strong> Misalkan panjang sisi segitiga sama sisi adalah $s$. Garis tinggi membagi alas menjadi dua segmen dengan panjang $s/2$. Garis tinggi adalah sisi yang berhadapan dengan sudut $60^\circ$. Segmen dengan panjang $s/2$ berhadapan dengan sudut $30^\circ$.
+    <br>Perbandingan (sisi di hadapan $60^\circ$) terhadap (sisi di hadapan $30^\circ$) adalah $\sqrt{3} : 1$.
+    <br>Jadi, $\frac{\text{garis tinggi}}{s/2} = \frac{\sqrt{3}}{1}$.</li>
+    <li><strong>Selesaikan untuk panjang sisi s:</strong> Diberikan garis tinggi adalah $9\sqrt{3}$.
+    <br>$\frac{9\sqrt{3}}{s/2} = \sqrt{3}$.
+    <br>$9\sqrt{3} = \sqrt{3} \times (s/2)$.
+    <br>Bagi dengan $\sqrt{3}$: $9 = s/2$.
+    <br>$s = 18$ cm.</li>
+    <li><strong>Hitung keliling:</strong> Keliling segitiga sama sisi adalah $3 \times s$.
+    <br>Keliling = $3 \times 18 = 54$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Keliling segitiga tersebut adalah 54 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 14 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 14</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> We can use triangle congruence, specifically by rotating one triangle to show it matches another. The AAS (Angle-Angle-Side) or ASA (Angle-Side-Angle) congruence criteria are useful here.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify triangles to compare:</strong> Consider the right-angled triangles $\triangle ABE$ and $\triangle BCF$.</li><li><strong>Compare angles:</strong>
+    <br>- In a square, all angles are $90^\circ$. So, $\angle ABE = \angle BCF = 90^\circ$.
+    <br>- Let the intersection of $AE$ and $BF$ be $G$. We are given $AE \perp BF$, so $\angle AGB = 90^\circ$.
+    <br>- In $\triangle ABG$, $\angle GAB + \angle ABG = 90^\circ$.
+    <br>- Also, we know $\angle ABC = \angle ABG + \angle FBC = 90^\circ$.
+    <br>- Comparing the two equations, we get $\angle GAB = \angle FBC$. (Let's call this $\angle BAE = \angle CBF$).</li>
+    <li><strong>Compare sides:</strong> In a square, all sides are equal. So, $AB = BC = s$.</li>
+    <li><strong>Check for congruence:</strong> We now have the following for $\triangle ABE$ and $\triangle BCF$:
+    <br>1. $\angle BAE = \angle CBF$ (Proven above)
+    <br>2. $AB = BC$ (Sides of a square)
+    <br>3. $\angle ABE = \angle BCF = 90^\circ$ (Angles of a square)
+    <br>By the ASA (Angle-Side-Angle) congruence criterion, $\triangle ABE \cong \triangle BCF$.</li>
+    <li><strong>Conclusion:</strong> Since the triangles are congruent, their corresponding parts are equal. The side corresponding to $BE$ in $\triangle ABE$ is $CF$ in $\triangle BCF$. Therefore, $BE = CF$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The statement is proven by ASA congruence of $\triangle ABE$ and $\triangle BCF$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 14</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Kita dapat menggunakan kekongruenan segitiga, khususnya dengan memutar satu segitiga untuk menunjukkan bahwa ia cocok dengan yang lain. Kriteria kongruensi AAS (Sudut-Sudut-Sisi) atau ASA (Sudut-Sisi-Sudut) berguna di sini.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi segitiga yang akan dibandingkan:</strong> Perhatikan segitiga siku-siku $\triangle ABE$ dan $\triangle BCF$.</li><li><strong>Bandingkan sudut:</strong>
+    <br>- Pada persegi, semua sudut adalah $90^\circ$. Jadi, $\angle ABE = \angle BCF = 90^\circ$.
+    <br>- Misalkan perpotongan $AE$ dan $BF$ adalah $G$. Diberikan $AE \perp BF$, jadi $\angle AGB = 90^\circ$.
+    <br>- Pada $\triangle ABG$, $\angle GAB + \angle ABG = 90^\circ$.
+    <br>- Kita juga tahu $\angle ABC = \angle ABG + \angle FBC = 90^\circ$.
+    <br>- Membandingkan kedua persamaan tersebut, kita dapatkan $\angle GAB = \angle FBC$. (Mari kita sebut ini $\angle BAE = \angle CBF$).</li>
+    <li><strong>Bandingkan sisi:</strong> Pada persegi, semua sisinya sama. Jadi, $AB = BC = s$.</li>
+    <li><strong>Periksa kekongruenan:</strong> Kita sekarang memiliki hal berikut untuk $\triangle ABE$ dan $\triangle BCF$:
+    <br>1. $\angle BAE = \angle CBF$ (Telah dibuktikan di atas)
+    <br>2. $AB = BC$ (Sisi-sisi persegi)
+    <br>3. $\angle ABE = \angle BCF = 90^\circ$ (Sudut-sudut persegi)
+    <br>Berdasarkan kriteria kongruensi ASA (Sudut-Sisi-Sudut), $\triangle ABE \cong \triangle BCF$.</li>
+    <li><strong>Kesimpulan:</strong> Karena segitiga-segitiga tersebut kongruen, bagian-bagian yang bersesuaian adalah sama. Sisi yang bersesuaian dengan $BE$ pada $\triangle ABE$ adalah $CF$ pada $\triangle BCF$. Oleh karena itu, $BE = CF$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Pernyataan terbukti dengan kongruensi ASA dari $\triangle ABE$ dan $\triangle BCF$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 15 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 15</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Heron's formula can be used to find the area of a triangle when the lengths of all three sides are known. Area $= \sqrt{s(s-a)(s-b)(s-c)}$, where $a, b, c$ are the side lengths and $s$ is the semi-perimeter.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate the semi-perimeter (s):</strong> The semi-perimeter is half the perimeter.
+    <br>$s = \frac{a+b+c}{2} = \frac{13+14+15}{2} = \frac{42}{2} = 21$.</li>
+    <li><strong>Apply Heron's Formula:</strong> Area $= \sqrt{s(s-a)(s-b)(s-c)}$.
+    <br>Area $= \sqrt{21(21-13)(21-14)(21-15)}$.</li>
+    <li><strong>Calculate the terms inside the square root:</strong>
+    <br>Area $= \sqrt{21 \times 8 \times 7 \times 6}$.</li>
+    <li><strong>Simplify the expression:</strong> To make it easier, break down the numbers into prime factors.
+    <br>Area $= \sqrt{(3 \times 7) \times (2 \times 2 \times 2) \times 7 \times (2 \times 3)}$.
+    <br>Group the factors: Area $= \sqrt{(2^4) \times (3^2) \times (7^2)}$.</li>
+    <li><strong>Calculate the final area:</strong>
+    <br>Area $= \sqrt{2^4} \times \sqrt{3^2} \times \sqrt{7^2} = 2^2 \times 3 \times 7 = 4 \times 21 = 84$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The area of the triangle is 84.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 15</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Rumus Heron dapat digunakan untuk mencari luas segitiga ketika panjang ketiga sisinya diketahui. Luas $= \sqrt{s(s-a)(s-b)(s-c)}$, di mana $a, b, c$ adalah panjang sisi dan $s$ adalah semi-perimeter (setengah keliling).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung semi-perimeter (s):</strong> Semi-perimeter adalah setengah dari keliling.
+    <br>$s = \frac{a+b+c}{2} = \frac{13+14+15}{2} = \frac{42}{2} = 21$.</li>
+    <li><strong>Terapkan Rumus Heron:</strong> Luas $= \sqrt{s(s-a)(s-b)(s-c)}$.
+    <br>Luas $= \sqrt{21(21-13)(21-14)(21-15)}$.</li>
+    <li><strong>Hitung suku-suku di dalam akar kuadrat:</strong>
+    <br>Luas $= \sqrt{21 \times 8 \times 7 \times 6}$.</li>
+    <li><strong>Sederhanakan ekspresi:</strong> Untuk mempermudah, pecah bilangan menjadi faktor prima.
+    <br>Luas $= \sqrt{(3 \times 7) \times (2 \times 2 \times 2) \times 7 \times (2 \times 3)}$.
+    <br>Kelompokkan faktor-faktornya: Luas $= \sqrt{(2^4) \times (3^2) \times (7^2)}$.</li>
+    <li><strong>Hitung luas akhir:</strong>
+    <br>Luas $= \sqrt{2^4} \times \sqrt{3^2} \times \sqrt{7^2} = 2^2 \times 3 \times 7 = 4 \times 21 = 84$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Luas segitiga tersebut adalah 84.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 16 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 16</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> An angle inscribed in a semicircle is always a right angle ($90^\circ$). The sum of angles in a triangle is $180^\circ$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the key feature:</strong> Since $AB$ is the diameter, the arc $ACB$ is a semicircle.</li><li><strong>Apply the theorem:</strong> The angle subtended by the diameter at any point on the circumference is a right angle. Therefore, $\angle ACB = 90^\circ$.</li><li><strong>Use the angle sum property for $\triangle ABC$:</strong> The sum of the angles must be $180^\circ$.
+    <br>$\angle CAB + \angle ABC + \angle ACB = 180^\circ$.</li><li><strong>Substitute known values and solve:</strong>
+    <br>$35^\circ + \angle ABC + 90^\circ = 180^\circ$.
+    <br>$\angle ABC + 125^\circ = 180^\circ$.
+    <br>$\angle ABC = 180^\circ - 125^\circ = 55^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle ABC$ is $55^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 16</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Sudut keliling yang menghadap setengah lingkaran (diameter) selalu merupakan sudut siku-siku ($90^\circ$). Jumlah sudut dalam segitiga adalah $180^\circ$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi fitur kunci:</strong> Karena $AB$ adalah diameter, busur $ACB$ adalah setengah lingkaran.</li><li><strong>Terapkan teorema:</strong> Sudut yang dibentuk oleh diameter pada setiap titik di keliling lingkaran adalah sudut siku-siku. Oleh karena itu, $\angle ACB = 90^\circ$.</li><li><strong>Gunakan sifat jumlah sudut untuk $\triangle ABC$:</strong> Jumlah sudut-sudutnya harus $180^\circ$.
+    <br>$\angle CAB + \angle ABC + \angle ACB = 180^\circ$.</li><li><strong>Substitusikan nilai yang diketahui dan selesaikan:</strong>
+    <br>$35^\circ + \angle ABC + 90^\circ = 180^\circ$.
+    <br>$\angle ABC + 125^\circ = 180^\circ$.
+    <br>$\angle ABC = 180^\circ - 125^\circ = 55^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle ABC$ adalah $55^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 17 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 17</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The measure of an inscribed angle is half the measure of its intercepted arc. The measure of a central angle is equal to the measure of its intercepted arc.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the angle and arc:</strong> We need to find the inscribed angle $\angle ABC$. This angle intercepts the arc $AC$.</li><li><strong>Relate angle to arc:</strong> According to the theorem, the measure of the inscribed angle is half the measure of the intercepted arc.
+    <br>$\angle ABC = \frac{1}{2} \times \text{measure of arc } AC$.</li><li><strong>Substitute the given value and solve:</strong>
+    <br>$\angle ABC = \frac{1}{2} \times 110^\circ = 55^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle ABC$ is $55^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 17</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Besar sudut keliling adalah setengah dari besar busur yang dihadapinya. Besar sudut pusat sama dengan besar busur yang dihadapinya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sudut dan busur:</strong> Kita perlu mencari sudut keliling $\angle ABC$. Sudut ini menghadap busur $AC$.</li><li><strong>Hubungkan sudut dengan busur:</strong> Menurut teorema, besar sudut keliling adalah setengah dari besar busur yang dihadapinya.
+    <br>$\angle ABC = \frac{1}{2} \times \text{besar busur } AC$.</li><li><strong>Substitusikan nilai yang diberikan dan selesaikan:</strong>
+    <br>$\angle ABC = \frac{1}{2} \times 110^\circ = 55^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle ABC$ adalah $55^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 18 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 18</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Inscribed angles that subtend the same arc are equal in measure.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the angles and the arc they subtend:</strong>
+    <br>- The angle $\angle CAD$ is an inscribed angle. It subtends (opens up to) arc $CD$.
+    <br>- The angle $\angle CBD$ is also an inscribed angle. It also subtends arc $CD$.</li>
+    <li><strong>Apply the theorem:</strong> Since both angles subtend the same arc ($CD$), their measures must be equal.</li>
+    <li><strong>Conclusion:</strong> Therefore, $\angle CBD = \angle CAD = 25^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of $\angle CBD$ is $25^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 18</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Sudut-sudut keliling yang menghadap busur yang sama memiliki besar yang sama.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sudut-sudut dan busur yang dihadapinya:</strong>
+    <br>- Sudut $\angle CAD$ adalah sudut keliling. Ia menghadap busur $CD$.
+    <br>- Sudut $\angle CBD$ juga merupakan sudut keliling. Ia juga menghadap busur $CD$.</li>
+    <li><strong>Terapkan teorema:</strong> Karena kedua sudut menghadap busur yang sama ($CD$), maka besar kedua sudut tersebut harus sama.</li>
+    <li><strong>Kesimpulan:</strong> Oleh karena itu, $\angle CBD = \angle CAD = 25^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar $\angle CBD$ adalah $25^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 19 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 19</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A cyclic quadrilateral is a quadrilateral whose vertices all lie on a single circle. A property of cyclic quadrilaterals is that opposite angles are supplementary (add up to $180^\circ$).</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Apply the theorem for opposite angles:</strong>
+    <br>- Angles $\angle P$ and $\angle R$ are opposite. Therefore, $\angle P + \angle R = 180^\circ$.
+    <br>- Angles $\angle Q$ and $\angle S$ are opposite. Therefore, $\angle Q + \angle S = 180^\circ$.</li>
+    <li><strong>Calculate $\angle R$:</strong>
+    <br>$80^\circ + \angle R = 180^\circ$.
+    <br>$\angle R = 180^\circ - 80^\circ = 100^\circ$.</li>
+    <li><strong>Calculate $\angle S$:</strong>
+    <br>$110^\circ + \angle S = 180^\circ$.
+    <br>$\angle S = 180^\circ - 110^\circ = 70^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> $\angle R = 100^\circ$ and $\angle S = 70^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 19</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Segiempat tali busur adalah segiempat yang semua titik sudutnya terletak pada satu lingkaran. Sifat dari segiempat tali busur adalah sudut-sudut yang berhadapan bersifat suplementer (jumlahnya $180^\circ$).</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Terapkan teorema untuk sudut yang berhadapan:</strong>
+    <br>- Sudut $\angle P$ dan $\angle R$ berhadapan. Oleh karena itu, $\angle P + \angle R = 180^\circ$.
+    <br>- Sudut $\angle Q$ dan $\angle S$ berhadapan. Oleh karena itu, $\angle Q + \angle S = 180^\circ$.</li>
+    <li><strong>Hitung $\angle R$:</strong>
+    <br>$80^\circ + \angle R = 180^\circ$.
+    <br>$\angle R = 180^\circ - 80^\circ = 100^\circ$.</li>
+    <li><strong>Hitung $\angle S$:</strong>
+    <br>$110^\circ + \angle S = 180^\circ$.
+    <br>$\angle S = 180^\circ - 110^\circ = 70^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> $\angle R = 100^\circ$ dan $\angle S = 70^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 20 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 20</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> A tangent to a circle is perpendicular to the radius at the point of tangency. This creates a right-angled triangle, allowing the use of the Pythagorean theorem.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the right angle:</strong> The line containing $PQ$ is tangent to the circle at $P$. The radius is $OP$. Therefore, the radius $OP$ is perpendicular to the tangent line at $P$. This means $\angle OPQ = 90^\circ$.</li><li><strong>Identify the right-angled triangle:</strong> The points $O, P, Q$ form a right-angled triangle $\triangle OPQ$, with the right angle at $P$. The hypotenuse is the side opposite the right angle, which is $OQ$.</li><li><strong>Apply the Pythagorean theorem:</strong> $OP^2 + PQ^2 = OQ^2$.</li><li><strong>Substitute the known values:</strong> The radius $OP = 5$ cm, and $OQ = 13$ cm.
+    <br>$5^2 + PQ^2 = 13^2$.
+    <br>$25 + PQ^2 = 169$.</li><li><strong>Solve for PQ:</strong>
+    <br>$PQ^2 = 169 - 25 = 144$.
+    <br>$PQ = \sqrt{144} = 12$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of the tangent segment $PQ$ is 12 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 20</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Garis singgung pada lingkaran tegak lurus terhadap jari-jari di titik singgung. Ini menciptakan sebuah segitiga siku-siku, yang memungkinkan penggunaan teorema Pythagoras.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sudut siku-siku:</strong> Garis yang memuat $PQ$ menyinggung lingkaran di $P$. Jari-jarinya adalah $OP$. Oleh karena itu, jari-jari $OP$ tegak lurus terhadap garis singgung di $P$. Ini berarti $\angle OPQ = 90^\circ$.</li><li><strong>Identifikasi segitiga siku-siku:</strong> Titik $O, P, Q$ membentuk segitiga siku-siku $\triangle OPQ$, dengan sudut siku-siku di $P$. Hipotenusa adalah sisi yang berhadapan dengan sudut siku-siku, yaitu $OQ$.</li><li><strong>Terapkan teorema Pythagoras:</strong> $OP^2 + PQ^2 = OQ^2$.</li><li><strong>Substitusikan nilai yang diketahui:</strong> Jari-jari $OP = 5$ cm, dan $OQ = 13$ cm.
+    <br>$5^2 + PQ^2 = 13^2$.
+    <br>$25 + PQ^2 = 169$.</li><li><strong>Selesaikan untuk PQ:</strong>
+    <br>$PQ^2 = 169 - 25 = 144$.
+    <br>$PQ = \sqrt{144} = 12$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang segmen garis singgung $PQ$ adalah 12 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 21 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 21</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> 1. Two tangent segments drawn to a circle from the same external point are equal in length. 2. The sum of angles in a quadrilateral is $360^\circ$, and a radius is perpendicular to a tangent at the point of tangency.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Find the length of PB:</strong> According to the theorem, tangent segments from the same external point are equal. Since $PA$ and $PB$ are tangents from point $P$, we must have $PB = PA$.
+    <br>Given $PA = 15$ cm, so $PB = 15$ cm.</li>
+    <li><strong>Find the measure of $\angle AOB$:</strong> Consider the quadrilateral $AOBP$.
+    <br>- The radius $OA$ is perpendicular to the tangent $PA$, so $\angle OAP = 90^\circ$.
+    <br>- The radius $OB$ is perpendicular to the tangent $PB$, so $\angle OBP = 90^\circ$.
+    <br>- We are given $\angle APB = 70^\circ$.
+    <br>- The sum of angles in quadrilateral $AOBP$ is $360^\circ$.
+    <br>$\angle AOB + \angle OBP + \angle APB + \angle OAP = 360^\circ$.</li>
+    <li><strong>Substitute and solve:</strong>
+    <br>$\angle AOB + 90^\circ + 70^\circ + 90^\circ = 360^\circ$.
+    <br>$\angle AOB + 250^\circ = 360^\circ$.
+    <br>$\angle AOB = 360^\circ - 250^\circ = 110^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $PB$ is 15 cm. The measure of $\angle AOB$ is $110^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 21</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> 1. Dua segmen garis singgung yang ditarik ke lingkaran dari titik luar yang sama memiliki panjang yang sama. 2. Jumlah sudut dalam segiempat adalah $360^\circ$, dan jari-jari tegak lurus terhadap garis singgung di titik singgung.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Tentukan panjang PB:</strong> Menurut teorema, segmen garis singgung dari titik luar yang sama adalah sama panjang. Karena $PA$ dan $PB$ adalah garis singgung dari titik $P$, maka haruslah $PB = PA$.
+    <br>Diberikan $PA = 15$ cm, jadi $PB = 15$ cm.</li>
+    <li><strong>Tentukan besar $\angle AOB$:</strong> Perhatikan segiempat $AOBP$.
+    <br>- Jari-jari $OA$ tegak lurus dengan garis singgung $PA$, jadi $\angle OAP = 90^\circ$.
+    <br>- Jari-jari $OB$ tegak lurus dengan garis singgung $PB$, jadi $\angle OBP = 90^\circ$.
+    <br>- Diberikan $\angle APB = 70^\circ$.
+    <br>- Jumlah sudut dalam segiempat $AOBP$ adalah $360^\circ$.
+    <br>$\angle AOB + \angle OBP + \angle APB + \angle OAP = 360^\circ$.</li>
+    <li><strong>Substitusi dan selesaikan:</strong>
+    <br>$\angle AOB + 90^\circ + 70^\circ + 90^\circ = 360^\circ$.
+    <br>$\angle AOB + 250^\circ = 360^\circ$.
+    <br>$\angle AOB = 360^\circ - 250^\circ = 110^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $PB$ adalah 15 cm. Besar $\angle AOB$ adalah $110^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 22 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 22</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Power of a Point Theorem (specifically, the Intersecting Chords Theorem) states that if two chords intersect inside a circle, then the product of the segments of one chord is equal to the product of the segments of the other chord.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the intersecting chords and their segments:</strong> The chords are $AC$ and $BD$, intersecting at $P$.
+    <br>- The segments of chord $AC$ are $AP$ and $PC$.
+    <br>- The segments of chord $BD$ are $BP$ and $PD$.</li>
+    <li><strong>Apply the Intersecting Chords Theorem:</strong> The theorem states that $AP \times PC = BP \times PD$.</li>
+    <li><strong>Substitute the known values:</strong> We are given $AP=8$, $PC=3$, and $BP=6$.
+    <br>$8 \times 3 = 6 \times PD$.</li>
+    <li><strong>Solve for PD:</strong>
+    <br>$24 = 6 \times PD$.
+    <br>$PD = \frac{24}{6} = 4$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $PD$ is 4.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 22</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Kuasa Titik (Power of a Point), khususnya Teorema Tali Busur Berpotongan, menyatakan bahwa jika dua tali busur berpotongan di dalam lingkaran, maka hasil kali panjang segmen-segmen dari tali busur pertama sama dengan hasil kali panjang segmen-segmen dari tali busur kedua.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi tali busur yang berpotongan dan segmennya:</strong> Tali busurnya adalah $AC$ dan $BD$, berpotongan di $P$.
+    <br>- Segmen dari tali busur $AC$ adalah $AP$ dan $PC$.
+    <br>- Segmen dari tali busur $BD$ adalah $BP$ dan $PD$.</li>
+    <li><strong>Terapkan Teorema Tali Busur Berpotongan:</strong> Teorema menyatakan bahwa $AP \times PC = BP \times PD$.</li>
+    <li><strong>Substitusikan nilai yang diketahui:</strong> Diberikan $AP=8$, $PC=3$, dan $BP=6$.
+    <br>$8 \times 3 = 6 \times PD$.</li>
+    <li><strong>Selesaikan untuk PD:</strong>
+    <br>$24 = 6 \times PD$.
+    <br>$PD = \frac{24}{6} = 4$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $PD$ adalah 4.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 23 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 23</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Power of a Point Theorem (specifically, the Tangent-Secant Theorem) states that the square of the length of the tangent segment from the external point is equal to the product of the lengths of the external secant segment and the entire secant segment.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the tangent and secant parts:</strong>
+    <br>- Tangent segment: $PT$.
+    <br>- External secant segment: $PA$.
+    <br>- Entire secant segment: $PB$.</li>
+    <li><strong>Apply the Tangent-Secant Theorem:</strong> The theorem states that $PT^2 = PA \times PB$.</li>
+    <li><strong>Substitute the known values:</strong> We are given $PT=12$ and $PA=8$.
+    <br>$12^2 = 8 \times PB$.
+    <br>$144 = 8 \times PB$.</li>
+    <li><strong>Solve for the entire secant length PB:</strong>
+    <br>$PB = \frac{144}{8} = 18$.</li>
+    <li><strong>Find the length of AB:</strong> The entire secant $PB$ is made up of segments $PA$ and $AB$. So, $PB = PA + AB$.
+    <br>$18 = 8 + AB$.
+    <br>$AB = 18 - 8 = 10$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $AB$ is 10.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 23</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Kuasa Titik (Power of a Point), khususnya Teorema Garis Singgung-Garis Potong, menyatakan bahwa kuadrat dari panjang segmen garis singgung dari titik luar sama dengan hasil kali panjang segmen garis potong luar dan keseluruhan segmen garis potong.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi bagian garis singgung dan garis potong:</strong>
+    <br>- Segmen garis singgung: $PT$.
+    <br>- Segmen garis potong luar: $PA$.
+    <br>- Keseluruhan segmen garis potong: $PB$.</li>
+    <li><strong>Terapkan Teorema Garis Singgung-Garis Potong:</strong> Teorema menyatakan bahwa $PT^2 = PA \times PB$.</li>
+    <li><strong>Substitusikan nilai yang diketahui:</strong> Diberikan $PT=12$ dan $PA=8$.
+    <br>$12^2 = 8 \times PB$.
+    <br>$144 = 8 \times PB$.</li>
+    <li><strong>Selesaikan untuk panjang keseluruhan garis potong PB:</strong>
+    <br>$PB = \frac{144}{8} = 18$.</li>
+    <li><strong>Tentukan panjang AB:</strong> Keseluruhan garis potong $PB$ terdiri dari segmen $PA$ dan $AB$. Jadi, $PB = PA + AB$.
+    <br>$18 = 8 + AB$.
+    <br>$AB = 18 - 8 = 10$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $AB$ adalah 10.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 24 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 24</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Power of a Point Theorem (specifically, the Two-Secants Theorem) states that if two secant segments are drawn to a circle from an exterior point, then the product of the measures of one secant segment and its external part is equal to the product of the measures of the other secant segment and its external part.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the secant parts for the first line:</strong>
+    <br>- External part: $PA$.
+    <br>- Whole secant: $PB$.</li>
+    <li><strong>Identify the secant parts for the second line:</strong>
+    <br>- External part: $PC$.
+    <br>- Whole secant: $PD$.</li>
+    <li><strong>Apply the Two-Secants Theorem:</strong> The theorem states that $PA \times PB = PC \times PD$.</li>
+    <li><strong>Substitute the known values:</strong> We are given $PA=5$, $PB=12$, and $PC=4$.
+    <br>$5 \times 12 = 4 \times PD$.</li>
+    <li><strong>Solve for PD:</strong>
+    <br>$60 = 4 \times PD$.
+    <br>$PD = \frac{60}{4} = 15$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of $PD$ is 15.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 24</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Kuasa Titik (Power of a Point), khususnya Teorema Dua Garis Potong, menyatakan bahwa jika dua segmen garis potong ditarik ke lingkaran dari sebuah titik luar, maka hasil kali panjang satu segmen garis potong dengan bagian luarnya sama dengan hasil kali panjang segmen garis potong lainnya dengan bagian luarnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi bagian garis potong pertama:</strong>
+    <br>- Bagian luar: $PA$.
+    <br>- Keseluruhan garis potong: $PB$.</li>
+    <li><strong>Identifikasi bagian garis potong kedua:</strong>
+    <br>- Bagian luar: $PC$.
+    <br>- Keseluruhan garis potong: $PD$.</li>
+    <li><strong>Terapkan Teorema Dua Garis Potong:</strong> Teorema menyatakan bahwa $PA \times PB = PC \times PD$.</li>
+    <li><strong>Substitusikan nilai yang diketahui:</strong> Diberikan $PA=5$, $PB=12$, dan $PC=4$.
+    <br>$5 \times 12 = 4 \times PD$.</li>
+    <li><strong>Selesaikan untuk PD:</strong>
+    <br>$60 = 4 \times PD$.
+    <br>$PD = \frac{60}{4} = 15$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang $PD$ adalah 15.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+    <!-- Pembahasan 25 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 25</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The Tangent-Chord Theorem states that the measure of the angle formed by a tangent and a chord through the point of tangency is half the measure of the intercepted arc.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the angle and the intercepted arc:</strong> The angle is between tangent $k$ and chord $TA$, given as $65^\circ$. The arc intercepted by this angle is arc $TA$.</li><li><strong>Apply the Tangent-Chord Theorem:</strong> The theorem states: $\angle(\text{tangent, chord}) = \frac{1}{2} \times \text{measure of intercepted arc}$.</li><li><strong>Set up the equation:</strong>
+    <br>$65^\circ = \frac{1}{2} \times \text{measure of arc } TA$.</li>
+    <li><strong>Solve for the arc measure:</strong>
+    <br>Measure of arc $TA = 2 \times 65^\circ = 130^\circ$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The measure of arc $TA$ is $130^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 25</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Garis Singgung-Tali Busur menyatakan bahwa besar sudut yang dibentuk oleh sebuah garis singgung dan sebuah tali busur melalui titik singgung adalah setengah dari besar busur yang dipotongnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sudut dan busur yang dipotong:</strong> Sudutnya berada di antara garis singgung $k$ dan tali busur $TA$, diketahui sebesar $65^\circ$. Busur yang dipotong oleh sudut ini adalah busur $TA$.</li><li><strong>Terapkan Teorema Garis Singgung-Tali Busur:</strong> Teorema menyatakan: $\angle(\text{garis singgung, tali busur}) = \frac{1}{2} \times \text{besar busur yang dipotong}$.</li><li><strong>Buat persamaan:</strong>
+    <br>$65^\circ = \frac{1}{2} \times \text{besar busur } TA$.</li>
+    <li><strong>Selesaikan untuk besar busur:</strong>
+    <br>Besar busur $TA = 2 \times 65^\circ = 130^\circ$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Besar busur $TA$ adalah $130^\circ$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+        
+    <!-- Pembahasan 26 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 26</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The radius of the incircle of a right-angled triangle can be found using the formula $r = \frac{a+b-c}{2}$, where $a$ and $b$ are the lengths of the legs and $c$ is the length of the hypotenuse. Alternatively, Area = $r \times s$, where $r$ is the inradius and $s$ is the semi-perimeter.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the sides:</strong> The sides are 5, 12, and 13. This is a Pythagorean triple ($5^2 + 12^2 = 25 + 144 = 169 = 13^2$), so it's a right-angled triangle. The legs are $a=5$ and $b=12$. The hypotenuse is $c=13$.</li><li><strong>Apply the formula for inradius of a right triangle:</strong> $r = \frac{a+b-c}{2}$.</li><li><strong>Substitute and solve:</strong>
+    <br>$r = \frac{5+12-13}{2} = \frac{17-13}{2} = \frac{4}{2} = 2$.</li>
+    <li><strong>Alternative Method (Area = r * s):</strong>
+    <br>Area of triangle = $\frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 5 \times 12 = 30$.
+    <br>Semi-perimeter (s) = $\frac{5+12+13}{2} = \frac{30}{2} = 15$.
+    <br>Area = $r \times s \Rightarrow 30 = r \times 15$.
+    <br>$r = \frac{30}{15} = 2$. Both methods yield the same result.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The radius of the inscribed circle is 2.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 26</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Jari-jari lingkaran dalam (incircle) dari segitiga siku-siku dapat ditemukan menggunakan rumus $r = \frac{a+b-c}{2}$, di mana $a$ dan $b$ adalah panjang sisi siku-siku dan $c$ adalah panjang hipotenusa. Alternatifnya, Luas = $r \times s$, di mana $r$ adalah jari-jari lingkaran dalam dan $s$ adalah semi-perimeter.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi sisi-sisi:</strong> Sisi-sisinya adalah 5, 12, dan 13. Ini adalah triple Pythagoras ($5^2 + 12^2 = 25 + 144 = 169 = 13^2$), jadi ini adalah segitiga siku-siku. Sisi siku-sikunya adalah $a=5$ dan $b=12$. Hipotenusanya adalah $c=13$.</li><li><strong>Terapkan rumus jari-jari lingkaran dalam segitiga siku-siku:</strong> $r = \frac{a+b-c}{2}$.</li><li><strong>Substitusi dan selesaikan:</strong>
+    <br>$r = \frac{5+12-13}{2} = \frac{17-13}{2} = \frac{4}{2} = 2$.</li>
+    <li><strong>Metode Alternatif (Luas = r * s):</strong>
+    <br>Luas segitiga = $\frac{1}{2} \times \text{alas} \times \text{tinggi} = \frac{1}{2} \times 5 \times 12 = 30$.
+    <br>Semi-perimeter (s) = $\frac{5+12+13}{2} = \frac{30}{2} = 15$.
+    <br>Luas = $r \times s \Rightarrow 30 = r \times 15$.
+    <br>$r = \frac{30}{15} = 2$. Kedua metode memberikan hasil yang sama.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Jari-jari lingkaran dalam adalah 2.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 27 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 27</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The length of the direct (or external) common tangent, $L$, between two circles with radii $R$ and $r$ ($R>r$) and distance $d$ between their centers is given by the formula $L = \sqrt{d^2 - (R-r)^2}$.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Identify the given values:</strong>
+    <br>- Radius of the larger circle, $R = 9$.
+    <br>- Radius of the smaller circle, $r = 4$.
+    <br>- Distance between centers, $d = 13$.</li>
+    <li><strong>Apply the formula for the direct common tangent:</strong> $L = \sqrt{d^2 - (R-r)^2}$.</li>
+    <li><strong>Substitute the values into the formula:</strong>
+    <br>$L = \sqrt{13^2 - (9-4)^2}$.</li>
+    <li><strong>Calculate the result:</strong>
+    <br>$L = \sqrt{13^2 - 5^2}$.
+    <br>$L = \sqrt{169 - 25}$.
+    <br>$L = \sqrt{144} = 12$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The length of the direct common tangent is 12.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 27</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Panjang garis singgung persekutuan luar (direct common tangent), $L$, antara dua lingkaran dengan jari-jari $R$ dan $r$ ($R>r$) dan jarak $d$ antara pusatnya diberikan oleh rumus $L = \sqrt{d^2 - (R-r)^2}$.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Identifikasi nilai yang diberikan:</strong>
+    <br>- Jari-jari lingkaran besar, $R = 9$.
+    <br>- Jari-jari lingkaran kecil, $r = 4$.
+    <br>- Jarak antar pusat, $d = 13$.</li>
+    <li><strong>Terapkan rumus garis singgung persekutuan luar:</strong> $L = \sqrt{d^2 - (R-r)^2}$.</li>
+    <li><strong>Substitusikan nilai ke dalam rumus:</strong>
+    <br>$L = \sqrt{13^2 - (9-4)^2}$.</li>
+    <li><strong>Hitung hasilnya:</strong>
+    <br>$L = \sqrt{13^2 - 5^2}$.
+    <br>$L = \sqrt{169 - 25}$.
+    <br>$L = \sqrt{144} = 12$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Panjang garis singgung persekutuan luarnya adalah 12.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 28 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 28</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> Ptolemy's Theorem states that for any cyclic quadrilateral, the sum of the products of the lengths of the two pairs of opposite sides is equal to the product of the lengths of the diagonals.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>State Ptolemy's Theorem:</strong> For a cyclic quadrilateral $ABCD$, the theorem states:
+    <br>$(AB \times CD) + (BC \times DA) = AC \times BD$.</li>
+    <li><strong>Identify the side lengths:</strong>
+    <br>$AB=3$, $BC=4$, $CD=5$, $DA=6$.</li>
+    <li><strong>Substitute the values into the formula:</strong>
+    <br>$(3 \times 5) + (4 \times 6) = AC \times BD$.</li>
+    <li><strong>Calculate the product of the diagonals:</strong>
+    <br>$15 + 24 = AC \times BD$.
+    <br>$39 = AC \times BD$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The product of the diagonals, $AC \times BD$, is 39.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 28</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Teorema Ptolemy menyatakan bahwa untuk setiap segiempat tali busur, jumlah dari hasil kali panjang dua pasang sisi yang berhadapan sama dengan hasil kali panjang kedua diagonalnya.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Nyatakan Teorema Ptolemy:</strong> Untuk segiempat tali busur $ABCD$, teorema menyatakan:
+    <br>$(AB \times CD) + (BC \times DA) = AC \times BD$.</li>
+    <li><strong>Identifikasi panjang sisi:</strong>
+    <br>$AB=3$, $BC=4$, $CD=5$, $DA=6$.</li>
+    <li><strong>Substitusikan nilai-nilai ke dalam rumus:</strong>
+    <br>$(3 \times 5) + (4 \times 6) = AC \times BD$.</li>
+    <li><strong>Hitung hasil kali diagonal:</strong>
+    <br>$15 + 24 = AC \times BD$.
+    <br>$39 = AC \times BD$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Hasil kali panjang diagonalnya, $AC \times BD$, adalah 39.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 29 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 29</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The area of a circular segment is the area of the circular sector minus the area of the triangle formed by the radii and the chord.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Calculate the area of the sector:</strong> The formula for the area of a sector is $\frac{\theta}{360^\circ} \times \pi r^2$, where $\theta$ is the central angle and $r$ is the radius.
+    <br>Area of Sector = $\frac{90^\circ}{360^\circ} \times (3.14) \times 10^2 = \frac{1}{4} \times 3.14 \times 100 = \frac{314}{4} = 78.5$ cm$^2$.</li>
+    <li><strong>Calculate the area of the triangle:</strong> The triangle formed by the two radii and the chord is a right-angled isosceles triangle, since the central angle is $90^\circ$. The two radii are the legs of the right triangle.
+    <br>Area of Triangle = $\frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 10 \times 10 = 50$ cm$^2$.</li>
+    <li><strong>Calculate the area of the segment:</strong>
+    <br>Area of Segment = Area of Sector - Area of Triangle.
+    <br>Area of Segment = $78.5 - 50 = 28.5$ cm$^2$.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The area of the minor segment is 28.5 cm$^2$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 29</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Luas tembereng lingkaran adalah luas juring lingkaran dikurangi luas segitiga yang dibentuk oleh jari-jari dan tali busur.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Hitung luas juring:</strong> Rumus luas juring adalah $\frac{\theta}{360^\circ} \times \pi r^2$, di mana $\theta$ adalah sudut pusat dan $r$ adalah jari-jari.
+    <br>Luas Juring = $\frac{90^\circ}{360^\circ} \times (3.14) \times 10^2 = \frac{1}{4} \times 3.14 \times 100 = \frac{314}{4} = 78.5$ cm$^2$.</li>
+    <li><strong>Hitung luas segitiga:</strong> Segitiga yang dibentuk oleh dua jari-jari dan tali busur adalah segitiga siku-siku sama kaki, karena sudut pusatnya $90^\circ$. Kedua jari-jari adalah sisi-sisi siku-siku segitiga tersebut.
+    <br>Luas Segitiga = $\frac{1}{2} \times \text{alas} \times \text{tinggi} = \frac{1}{2} \times 10 \times 10 = 50$ cm$^2$.</li>
+    <li><strong>Hitung luas tembereng:</strong>
+    <br>Luas Tembereng = Luas Juring - Luas Segitiga.
+    <br>Luas Tembereng = $78.5 - 50 = 28.5$ cm$^2$.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Luas tembereng minor adalah 28.5 cm$^2$.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    
+    <!-- Pembahasan 30 -->
+    <section class="page"><div class="content-wrapper"><h2>Solution for Question 30</h2><div class="solution-detail"><div class="concept"><p><strong>Concept:</strong> The line connecting the centers of two intersecting circles is the perpendicular bisector of their common chord. This creates two right-angled triangles, allowing the use of the Pythagorean theorem.</p></div><p class="steps-title">Solution Steps:</p><ol class="solution-points"><li><strong>Draw a diagram:</strong> Draw two intersecting circles with centers $O_1$ and $O_2$. Let their common chord be $AB$. The line $O_1O_2$ intersects $AB$ at its midpoint, let's call it $M$. Therefore, $O_1O_2 \perp AB$.</li><li><strong>Use the bisection property:</strong> The chord $AB$ has length 16 cm. Since $M$ is the midpoint, $AM = MB = \frac{16}{2} = 8$ cm.</li><li><strong>Analyze the first triangle ($\triangle O_1MA$):</strong> This is a right-angled triangle with hypotenuse $O_1A$ (radius of the first circle, 10 cm) and legs $O_1M$ and $AM$.
+    <br>$O_1M^2 + AM^2 = O_1A^2$.
+    <br>$O_1M^2 + 8^2 = 10^2$.
+    <br>$O_1M^2 + 64 = 100$.
+    <br>$O_1M^2 = 36 \Rightarrow O_1M = 6$ cm.</li>
+    <li><strong>Analyze the second triangle ($\triangle O_2MA$):</strong> This is a right-angled triangle with hypotenuse $O_2A$ (radius of the second circle, 17 cm) and legs $O_2M$ and $AM$.
+    <br>$O_2M^2 + AM^2 = O_2A^2$.
+    <br>$O_2M^2 + 8^2 = 17^2$.
+    <br>$O_2M^2 + 64 = 289$.
+    <br>$O_2M^2 = 225 \Rightarrow O_2M = 15$ cm.</li>
+    <li><strong>Find the distance between centers:</strong> The distance between the centers, $O_1O_2$, is the sum of the lengths $O_1M$ and $O_2M$.
+    <br>$O_1O_2 = O_1M + O_2M = 6 + 15 = 21$ cm.</li></ol><div class="final-answer"><strong>Final Answer:</strong> The distance between their centers is 21 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+    <section class="page"><div class="content-wrapper"><h2>Pembahasan untuk Soal 30</h2><div class="solution-detail"><div class="concept"><p><strong>Konsep:</strong> Garis yang menghubungkan pusat dua lingkaran yang berpotongan adalah garis sumbu tegak lurus dari tali busur persekutuannya. Ini menciptakan dua segitiga siku-siku, yang memungkinkan penggunaan teorema Pythagoras.</p></div><p class="steps-title">Langkah Penyelesaian:</p><ol class="solution-points"><li><strong>Gambarkan diagram:</strong> Gambarkan dua lingkaran yang berpotongan dengan pusat $O_1$ dan $O_2$. Misalkan tali busur persekutuannya adalah $AB$. Garis $O_1O_2$ memotong $AB$ di titik tengahnya, sebut saja $M$. Oleh karena itu, $O_1O_2 \perp AB$.</li><li><strong>Gunakan sifat pembagian dua:</strong> Tali busur $AB$ memiliki panjang 16 cm. Karena $M$ adalah titik tengah, maka $AM = MB = \frac{16}{2} = 8$ cm.</li><li><strong>Analisis segitiga pertama ($\triangle O_1MA$):</strong> Ini adalah segitiga siku-siku dengan hipotenusa $O_1A$ (jari-jari lingkaran pertama, 10 cm) dan sisi siku-siku $O_1M$ dan $AM$.
+    <br>$O_1M^2 + AM^2 = O_1A^2$.
+    <br>$O_1M^2 + 8^2 = 10^2$.
+    <br>$O_1M^2 + 64 = 100$.
+    <br>$O_1M^2 = 36 \Rightarrow O_1M = 6$ cm.</li>
+    <li><strong>Analisis segitiga kedua ($\triangle O_2MA$):</strong> Ini adalah segitiga siku-siku dengan hipotenusa $O_2A$ (jari-jari lingkaran kedua, 17 cm) dan sisi siku-siku $O_2M$ dan $AM$.
+    <br>$O_2M^2 + AM^2 = O_2A^2$.
+    <br>$O_2M^2 + 8^2 = 17^2$.
+    <br>$O_2M^2 + 64 = 289$.
+    <br>$O_2M^2 = 225 \Rightarrow O_2M = 15$ cm.</li>
+    <li><strong>Tentukan jarak antar pusat:</strong> Jarak antara kedua pusat, $O_1O_2$, adalah jumlah dari panjang $O_1M$ dan $O_2M$.
+    <br>$O_1O_2 = O_1M + O_2M = 6 + 15 = 21$ cm.</li></ol><div class="final-answer"><strong>Jawaban Akhir:</strong> Jarak antara kedua pusatnya adalah 21 cm.</div></div></div><footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer></section>
+
+</body>
+</html>
+
