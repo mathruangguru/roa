@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan Soal Kompetisi Matematika (G1-2)</title>
+    <!-- Updated Title -->
+    <title>
+      Olympiad Math Practice (Grade 1-2) - Number & Counting, Basic Arithmetic (Competition Level)
+    </title>
+    <!-- Add Tailwind CSS script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
     <script>
       window.MathJax = {
         tex: {
@@ -22,2096 +34,1411 @@
       };
     </script>
     <script
-      id="MathJax-script"
+      id="Math-Jax-script"
       async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+
     <style>
-      :root {
-        --primary-text: #333333;
-        --secondary-text: #555555;
-        --border-color: #dddddd;
-        --grey-text: #8d8e8d;
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
       body {
-        font-family: "Nunito", sans-serif;
-        font-size: 12pt;
-        line-height: 1.6;
-        color: var(--primary-text);
-        background-color: #e0e0e0;
-        margin: 0;
-        padding: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
       }
-      .page {
-        background: white;
-        width: 21cm;
-        min-height: 29.7cm;
-        height: auto;
-        padding: 2.5cm;
-        margin: 1cm auto;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        page-break-after: always;
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
       }
-      .page:last-of-type {
-        page-break-after: avoid;
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
       }
-      .cover-page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
       }
-      .cover-image {
-        max-width: 12cm;
-        height: auto;
-        margin-bottom: 40px;
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
       }
-      .cover-title {
-        font-size: 38pt;
-        font-weight: 900;
-        margin: 0 0 15px 0;
-        line-height: 1.2;
-        color: #333;
+      .item-container:last-child {
         border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
-      .cover-subtitle {
-        font-size: 18pt;
-        color: var(--secondary-text);
-        font-weight: 700;
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
       }
-      .page::before {
-        content: "";
-        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 14cm;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        opacity: 0.05;
-        z-index: 1;
+      .solution-step {
+        margin-bottom: 0.75rem;
       }
-      .cover-page::before,
-      .solutions-cover-page::before {
-        opacity: 0;
+      .solution-step ul li {
+        line-height: 1.8;
+        padding-left: 0.5rem;
       }
-      .content-wrapper {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        flex-grow: 1;
-      }
-      h1, h2 {
-        font-size: 24pt;
-        text-align: center;
-        border-bottom: 2px solid var(--primary-text);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-      h2 {
-        font-size: 20pt;
-        margin-top: 0;
-      }
-      .soal-latihan {
-        margin-bottom: 25px;
-        break-inside: avoid;
-      }
-      .soal-latihan b {
-        display: block;
-        margin-bottom: 5px;
-      }
-      .soal-konten {
-        text-align: justify;
-      }
-      .soal-konten img {
-        display: block;
-        margin: 10px auto;
-        max-width: 80%;
-        height: auto;
-        border: 1px solid #eee;
-        padding: 5px;
-      }
-      .lang-id {
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px dotted #ccc;
-        color: #555;
-        font-style: italic;
-        font-size: 11pt;
-      }
-      .page-footer {
-        text-align: left;
-        font-size: 6pt;
-        color: var(--grey-text);
-        padding-top: 2px;
-        margin-top: auto;
-        border-top: 2.5px solid var(--grey-text);
-        z-index: 2;
-        position: relative;
-      }
-      .solution-detail {
-        margin-top: 20px;
-      }
-      .concept {
-        background-color: #eef2ff;
-        border-left: 4px solid #4f46e5;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 0.25rem;
-        text-align: justify;
-      }
-      .concept p {
-        margin: 0;
-        padding: 0;
-        border: none;
-      }
-      .steps-title {
-        font-weight: 700;
-        font-size: 14pt;
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
-      .solution-points {
-        padding-left: 20px;
-      }
-      .solution-points li {
-        margin-bottom: 15px;
-        text-align: justify;
+      .solution-step ul ul li {
+        padding-left: 1rem;
       }
       .final-answer {
         font-weight: 700;
-        color: #166534;
-        background-color: #dcfce7;
-        padding: 0.75rem 1.25rem;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
         border-radius: 6px;
         display: inline-block;
         margin-top: 1rem;
-        width: 100%;
-        text-align: center;
       }
-      .bar-model-desc {
-          font-style: italic;
-          color: var(--secondary-text);
-          background-color: #f9f9f9;
-          padding: 10px;
-          border-radius: 4px;
-          border: 1px dashed #ddd;
-          margin-top: 10px;
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
       }
-      @media print {
-        @page {
-          size: A4;
-          margin: 0;
-        }
-        body {
-          background-color: white;
-          margin: 0;
-        }
-        .page {
+
+      /* Kustom CSS untuk Ten Frame (Soal 5) - Dihapus karena menggunakan gambar */
+      /* .ten-frame-container, .ten-frame, .dot-cell, .dot { ... } */
+
+
+      /* Kustom CSS untuk Bar Model (Soal 6) */
+      .bar-model-wrapper {
+          margin: 1rem 0;
+          max-width: 400px; /* Increased width */
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 0.9rem; /* Adjusted font size for clarity */
+      }
+      .bar-model-label {
+          text-align: center;
+          font-weight: 600;
+          color: #1e3a8a; /* blue-900 */
+          margin-bottom: 0.25rem;
+      }
+      .bar-model {
+          display: flex;
           width: 100%;
-          min-height: 29.7cm;
-          height: 100%;
-          margin: 0;
-          box-shadow: none;
-        }
+          border: 2px solid #1e3a8a; /* blue-900 */
+          border-radius: 0.375rem;
+          overflow: hidden;
+          height: 40px;
+          font-weight: 600;
+          color: white;
+          text-align: center;
+          line-height: 40px; /* Adjusted line-height to match height */
+          margin-bottom: 0.5rem; /* Space between bars */
+      }
+       .bar-total {
+         background-color: #bfdbfe; /* Lighter blue for total */
+         color: #1e3a8a;
+         font-weight: 700;
+       }
+       .bar-part-1 {
+         background-color: #3b82f6; /* Medium blue */
+          /* Width determined by style inline */
+       }
+       .bar-part-2 {
+         background-color: #60a5fa; /* Lighter medium blue */
+         border-left: 2px dashed #1e3a8a; /* Dashed line */
+         /* Width determined by style inline */
+       }
+      /* Style for question text */
+      .question-text {
+         margin-bottom: 1rem;
       }
     </style>
-</head>
-<body>
-    <!-- Cover Page --><section class="page cover-page">
-      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
-        <h1 class="cover-title">Math Competition Practice 2</h1>
-        <p class="cover-subtitle">Basic Arithmetic & Patterns</p>
-        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 1 - 2</p>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Ruangguru Logo"
+          class="mx-auto h-20" <!-- Adjust height if needed -->
+        />
       </div>
-    </section>
+      <!-- Updated Header Section -->
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 2 (Revised)
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 1-2 | Topics: Number & Counting, Basic Arithmetic (Competition Level)
+        </p>
+      </header>
+      <!-- End of Updated Header Section -->
 
-    <!-- Halaman Soal 1 (Soal 1-3) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Arithmetic</h1>
-        
-        <div class="soal-latihan">
-          <b>Soal 1 / Question 1</b>
-          <div class="soal-konten">
-            Ali has 7 toy cars. His mother gives him 4 more toy cars. How many toy cars does Ali have now?
-            <div class="lang-id">
-              Ali punya 7 mobil mainan. Ibunya memberinya 4 mobil mainan lagi. Berapa banyak mobil mainan Ali sekarang?
-            </div>
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+          <!-- Updated Topic Title -->
+          <h3 class="topic-title">Part 1: Basic Arithmetic</h3>
+
+          <!-- Soal 1 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>1.</strong> Ali has 7 toy cars. Budi has 3 more toy cars than Ali. How many toy cars do they have altogether?<br /><br />Ali punya 7 mobil mainan. Budi punya 3 mobil mainan lebih banyak dari Ali. Berapa banyak mobil mainan yang mereka miliki jika digabungkan?
+            </p>
           </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 2 / Question 2</b>
-          <div class="soal-konten">
-            There are 10 birds sitting on a tree. 3 birds fly away. How many birds are left on the tree?
-            <div class="lang-id">
-              Ada 10 burung di atas pohon. 3 burung terbang pergi. Berapa banyak burung yang tersisa di pohon?
-            </div>
+          <!-- Soal 2 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>2.</strong> There are 10 birds sitting on a tree. 3 birds fly away, but then 2 new birds land on the tree. Are there more or fewer birds than when they started? By how much?<br /><br />Ada 10 burung di atas pohon. 3 burung terbang pergi, tetapi kemudian 2 burung baru hinggap di pohon itu. Apakah jumlah burung sekarang lebih banyak atau lebih sedikit dibandingkan awal? Berapa selisihnya?
+            </p>
           </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 3 / Question 3</b>
-          <div class="soal-konten">
-            Siti wants to buy a comic book that costs 10 dollars. She already has 6 dollars. How many more dollars does she need?
-            <div class="lang-id">
-              Siti ingin membeli buku komik seharga 10 dolar. Dia sudah punya 6 dolar. Berapa dolar lagi yang dia butuhkan?
-            </div>
+          <!-- Soal 3 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>3.</strong> Siti wants to buy a comic book that costs 10 dollars. She already has 6 dollars. She does chores and earns 2 more dollars. How many more dollars does she still need?<br /><br />Siti ingin membeli buku komik seharga 10 dolar. Dia sudah punya 6 dolar. Dia mengerjakan tugas rumah dan mendapat 2 dolar lagi. Berapa dolar lagi yang masih dia butuhkan?
+            </p>
           </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 2 (Soal 4-6) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Arithmetic</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 4 / Question 4</b>
-          <div class="soal-konten">
-            David has 9 marbles. Rian has 5 marbles. How many more marbles does David have than Rian?
-            <div class="lang-id">
-              David punya 9 kelereng. Rian punya 5 kelereng. Berapa lebih banyak kelereng David daripada Rian?
-            </div>
+          <!-- Soal 4 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>4.</strong> David has 15 marbles. Rian has 8 fewer marbles than David. Siti has 3 more marbles than Rian. How many marbles does Siti have?<br /><br />David punya 15 kelereng. Rian punya 8 kelereng lebih sedikit dari David. Siti punya 3 kelereng lebih banyak dari Rian. Berapa banyak kelereng yang dimiliki Siti?
+            </p>
           </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 5 / Question 5</b>
-          <div class="soal-konten">
-             A full <i>Ten Frame</i> has 10 dots, and a half-full <i>Ten Frame</i> has 5 dots, as shown below. How many dots are in one full <i>Ten Frame</i> and one half-full <i>Ten Frame</i> combined?
-             <img src="https://placehold.co/400x100/e0f2fe/3b82f6?text=Ten+Frames+(10+dots,+5+dots)" alt="Gambar satu Ten Frame penuh dengan 10 titik dan satu Ten Frame setengah penuh dengan 5 titik">
-            <div class="lang-id">
-              Sebuah "Ten Frame" penuh berisi 10 titik, dan "Ten Frame" setengah penuh berisi 5 titik, seperti gambar di bawah. Berapa banyak titik yang ada jika satu "Ten Frame" penuh dan satu "Ten Frame" setengah penuh digabungkan?
-              <img src="https://placehold.co/400x100/e0f2fe/3b82f6?text=Ten+Frames+(10+titik,+5+titik)" alt="Gambar satu Ten Frame penuh dengan 10 titik dan satu Ten Frame setengah penuh dengan 5 titik">
+          <!-- Soal 5 (Revised with Image - Corrected) -->
+           <div class="item-container">
+              <p class="question-text">
+                <strong>5.</strong> A full <i>Ten Frame</i> has 10 dots. How many dots are there in 2 full <i>Ten Frames</i> and 3 extra dots altogether?<br /><br />Sebuah "Ten Frame" penuh berisi 10 titik. Berapa banyak total titik jika ada 2 "Ten Frame" penuh dan 3 titik tambahan?
+              </p>
+              <!-- Image for Question 5 -->
+              <div class="my-4 flex justify-center"> <!-- Container for centering -->
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_b2ys3i_562.png"
+                  alt="Ilustrasi Dua Ten Frame Penuh dan Tiga Titik Tambahan"
+                  class="max-w-xs mx-auto rounded" <!-- Styling -->
+                  onerror="this.alt='Image failed to load: 2 full ten frames and 3 extra dots.'; this.src='https://placehold.co/300x100/eef2ff/4f46e5?text=2+Ten+Frames+%2B+3+Dots';" <!-- Fallback image -->
+                />
+              </div>
             </div>
+
+
+         <!-- Soal 6 (Revised - Corrected Bar Model Layout) -->
+         <div class="item-container">
+             <p class="question-text">
+                 <strong>6.</strong> Look at the <i>Bar Model</i> below. Part 1 is 9. Part 2 is 5 less than Part 1. What is the Total?<br /><br />Lihatlah "Bar Model" di bawah ini. Bagian 1 adalah 9. Bagian 2 adalah 5 lebih sedikit dari Bagian 1. Berapakah Totalnya?
+             </p>
+             <!-- Ilustrasi Bar Model -->
+             <div class="bar-model-wrapper">
+                  <!-- Total Bar -->
+                 <div class="bar-model-label">Total = ?</div>
+                 <div class="bar-model bar-total mb-2 flex justify-center items-center">?</div> <!-- Adjusted background and text color in style -->
+
+                 <!-- Parts Container -->
+                 <div class="bar-model flex w-full p-0 m-0"> <!-- Removed border, overflow, height, padding, margin -->
+                      <!-- Part 1 (Width 9/13 ~ 69.2%) -->
+                     <div class="bar-part-1 flex justify-center items-center text-white font-semibold" style="width: 69.2%; background-color: #3b82f6; border: 2px solid #1e3a8a; border-right: none; border-radius: 0.375rem 0 0 0.375rem;">
+                         9
+                     </div>
+                      <!-- Part 2 (Width 4/13 ~ 30.8%) -->
+                     <div class="bar-part-2 flex justify-center items-center text-blue-900 font-semibold" style="width: 30.8%; background-color: #93c5fd; border: 2px solid #1e3a8a; border-left: 2px dashed #1e3a8a; border-radius: 0 0.375rem 0.375rem 0;">
+                         <!-- Value 4 calculated (9-5) -->
+                         4
+                     </div>
+                 </div>
+                  <div class="flex w-full text-center text-sm mt-1">
+                       <div class="text-blue-700 font-medium" style="width: 69.2%;">(Part 1 = 9)</div>
+                       <div class="text-blue-600 font-medium" style="width: 30.8%;">(Part 2 = 4)</div>
+                  </div>
+                  <div class="text-center text-xs text-gray-500 mt-1">(Part 2 is calculated as 9 - 5 = 4)</div>
+             </div>
+         </div>
+
+
+         <!-- Soal 7 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>7.</strong> Find the missing number: $2 + ? + 5 = 15$. What number should replace the question mark?<br /><br />Temukan angka yang hilang: $2 + ? + 5 = 15$. Angka berapakah yang seharusnya menggantikan tanda tanya?
+            </p>
           </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 6 / Question 6</b>
-          <div class="soal-konten">
-            The <i>Bar Model</i> below shows a total of 15. One part is 8. What is the other part?
-            <img src="https://placehold.co/300x80/dcfce7/166534?text=Bar+Model:+Total=15,+Part1=8,+Part2=?" alt="Gambar Bar Model dengan total 15, satu bagian 8, dan bagian lainnya ditandai tanya">
-            <div class="lang-id">
-              "Bar Model" di bawah ini menunjukkan total 15. Satu bagian adalah 8. Berapakah bagian lainnya?
-              <img src="https://placehold.co/300x80/dcfce7/166534?text=Bar+Model:+Total=15,+Bagian1=8,+Bagian2=?" alt="Gambar Bar Model dengan total 15, satu bagian 8, dan bagian lainnya ditandai tanya">
-            </div>
+          <!-- Soal 8 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>8.</strong> I have 18 stickers. I put them into groups of 3 stickers each. I give 2 of these groups to my friend. How many stickers do I have left?<br /><br />Aku punya 18 stiker. Aku mengelompokkannya menjadi beberapa grup, setiap grup berisi 3 stiker. Aku memberikan 2 grup ini ke temanku. Berapa stiker yang tersisa padaku?
+            </p>
           </div>
-        </div>
-        
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 3 (Soal 7-9) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Arithmetic</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 7 / Question 7</b>
-          <div class="soal-konten">
-            What is the value of $2 + 3 + 5 + 8$?
-            <div class="lang-id">
-              Berapakah nilai dari $2 + 3 + 5 + 8$?
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 8 / Question 8</b>
-          <div class="soal-konten">
-            I have 18 stickers. I give 5 to my brother and 3 to my sister. How many stickers do I have left?
-            <div class="lang-id">
-              Aku punya 18 stiker. Aku berikan 5 ke kakakku dan 3 ke adikku. Berapa banyak stiker yang tersisa padaku?
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 9 / Question 9</b>
-          <div class="soal-konten">
-            Look at the following equations:
-            <ul style="font-size: 1.5em; list-style-type: none; padding-left: 0;">
-                <li>🍎 + 🍎 = 12</li>
-                <li>🍎 + 🍌 = 10</li>
-            </ul>
-            What is the value of 🍌?
-            <div class="lang-id">
-              Lihat persamaan berikut:
-              <ul style="font-size: 1.5em; list-style-type: none; padding-left: 0;">
-                  <li>🍎 + 🍎 = 12</li>
-                  <li>🍎 + 🍌 = 10</li>
-              </ul>
+          <!-- Soal 9 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>9.</strong> Look at the following equations:
+              <span class="block text-2xl my-2">
+                🍎 + 🍌 = 12<br />
+                🍎 + 🍎 = 14
+              </span>
+              What is the value of 🍌?<br /><br />Lihat persamaan berikut:
+              <span class="block text-2xl my-2">
+                🍎 + 🍌 = 12<br />
+                🍎 + 🍎 = 14
+              </span>
               Berapakah nilai dari 🍌?
-            </div>
+            </p>
           </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 4 (Soal 10-12) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Arithmetic</h1>
-        
-        <div class="soal-latihan">
-          <b>Soal 10 / Question 10</b>
-          <div class="soal-konten">
-            A bus has 16 people. At the first stop, 5 people get off. At the second stop, 3 new people get on. How many people are on the bus now?
-            <div class="lang-id">
-              Sebuah bus berisi 16 orang. Di pemberhentian pertama, 5 orang turun. Di pemberhentian kedua, 3 orang baru naik. Ada berapa orang di bus sekarang?
-            </div>
+          <!-- Soal 10 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>10.</strong> A bus starts empty. At the first stop, 10 adults get on. At the second stop, 3 adults get off and 5 children get on. At the third stop, 2 adults and 1 child get off. How many people (adults and children) are on the bus now?<br /><br />Sebuah bus mulai dalam keadaan kosong. Di pemberhentian pertama, 10 orang dewasa naik. Di pemberhentian kedua, 3 orang dewasa turun dan 5 anak-anak naik. Di pemberhentian ketiga, 2 orang dewasa dan 1 anak turun. Berapa banyak orang (dewasa dan anak-anak) di dalam bus sekarang?
+            </p>
           </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 11 / Question 11</b>
-          <div class="soal-konten">
-            What number is missing in the box?
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">$14 - ? = 6$</div>
-            <div class="lang-id">
-              Angka berapakah yang hilang di dalam kotak?
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">$14 - ? = 6$</div>
-            </div>
+          <!-- Soal 11 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>11.</strong> What number must be subtracted from 14 to get 6? Fill in the blank: $14 - \underline{\hspace{1cm}} = 6$<br /><br/>Angka berapakah yang harus dikurangkan dari 14 untuk mendapatkan 6? Isi bagian yang kosong: $14 - \underline{\hspace{1cm}} = 6$
+            </p>
           </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 12 / Question 12</b>
-          <div class="soal-konten">
-            Rara has 11 red beads and 7 blue beads. How many beads does she have in all?
-            <div class="lang-id">
-              Rara punya 11 manik-manik merah dan 7 manik-manik biru. Berapa banyak manik-manik yang dia miliki seluruhnya?
-            </div>
+          <!-- Soal 12 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>12.</strong> Rara has 11 red beads and 7 blue beads. She has 5 fewer green beads than blue beads. How many beads does Rara have in total?<br /><br />Rara punya 11 manik-manik merah dan 7 manik-manik biru. Dia punya 5 lebih sedikit manik-manik hijau dibandingkan manik-manik biru. Berapa banyak total manik-manik yang Rara miliki?
+            </p>
           </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 5 (Soal 13-15) --><section class="page">
-        <div class="content-wrapper">
-          <h1>Practice Problems - Arithmetic</h1>
-
-          <div class="soal-latihan">
-            <b>Soal 13 / Question 13</b>
-            <div class="soal-konten">
-              Find the value of $1 + 2 - 3 + 4 + 5 - 6$. <!-- Spacing adjusted -->
-              <div class="lang-id">
-                Cari nilai dari $1 + 2 - 3 + 4 + 5 - 6$. <!-- Spacing adjusted -->
-              </div>
-            </div>
+          <!-- Soal 13 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>13.</strong> Find the value of $15 - (5 + 3) + 2$. Remember to do the calculation inside the parentheses first.<br /><br />Cari nilai dari $15 - (5 + 3) + 2$. Ingatlah untuk mengerjakan perhitungan di dalam tanda kurung terlebih dahulu.
+            </p>
           </div>
-  
-          <div class="soal-latihan">
-            <b>Soal 14 / Question 14</b>
-            <div class="soal-konten">
-              Look at the following puzzle:
-              <ul style="font-size: 1.2em; list-style-type: none; padding-left: 0;">
-                  <li>$A + A = 10$</li>
-                  <li>$A + B = 8$</li>
+          <!-- Soal 14 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>14.</strong> Look at the following puzzle:
+              <span class="block text-xl my-2">
+                $A + A = 16$<br />
+                $A - B = 3$
+              </span>
+              What is the value of B?<br /><br />Lihat teka-teki berikut:
+              <span class="block text-xl my-2">
+                $A + A = 16$<br />
+                $A - B = 3$
+              </span>
+              Berapakah nilai B?
+            </p>
+          </div>
+          <!-- Soal 15 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>15.</strong> A farmer has some ducks. He has 4 more chickens than ducks. If he has 12 chickens in total, how many ducks does he have?<br /><br />Seorang petani memiliki beberapa bebek. Dia memiliki 4 ayam lebih banyak dari bebek. Jika dia memiliki total 12 ayam, berapa banyak bebek yang dia punya?
+            </p>
+          </div>
+
+          <!-- Updated Topic Title -->
+          <h3 class="topic-title">Part 2: Patterns (Number & Counting Focus)</h3>
+
+          <!-- Soal 16 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>16.</strong> Continue the growing pattern:
+              <span class="block text-xl font-bold my-2"
+                >A, B, AA, BB, AAA, BBB, ____, ____</span
+              >
+              <br />Lanjutkan pola yang bertumbuh ini:
+              <span class="block text-xl font-bold my-2"
+                >A, B, AA, BB, AAA, BBB, ____, ____</span
+              >
+            </p>
+          </div>
+          <!-- Soal 17 (Revised) -->
+           <div class="item-container">
+             <p class="question-text">
+               <strong>17.</strong> What comes next in this pattern?
+               <span class="block text-xl font-bold my-2"
+                 >R, RG, RGB, RGBR, ____</span
+               > (R=Red, G=Green, B=Blue)
+               <br />Apa selanjutnya dari pola ini?
+               <span class="block text-xl font-bold my-2"
+                 >M, MH, MHB, MHBM, ____</span
+               > (M=Merah, H=Hijau, B=Biru)
+             </p>
+           </div>
+          <!-- Soal 18 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>18.</strong> Continue the pattern of rotating arrows:
+              <span class="block text-2xl font-bold my-2"
+                >⬆️, ➡️, ⬇️, ⬅️, ⬆️, ➡️, ____</span
+              >
+              <br />Lanjutkan pola panah yang berputar ini:
+              <span class="block text-2xl font-bold my-2"
+                >⬆️, ➡️, ⬇️, ⬅️, ⬆️, ➡️, ____</span
+              >
+            </p>
+          </div>
+          <!-- Soal 19 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>19.</strong> Look at the pattern: A, A, B, C, A, A, B, C, ...
+              <br />What is the 25th letter in this pattern?<br /><br />Lihat
+              pola: A, A, B, C, A, A, B, C, ...
+              <br />Apa huruf ke-25 dari pola ini?
+            </p>
+          </div>
+          <!-- Soal 20 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>20.</strong> Continue the alternating pattern:
+              <span class="block text-xl font-bold my-2"
+                >Z, A, Y, B, X, C, ____, ____</span
+              >
+              <br />Lanjutkan pola selang-seling ini:
+              <span class="block text-xl font-bold my-2"
+                >Z, A, Y, B, X, C, ____, ____</span
+              >
+            </p>
+          </div>
+          <!-- Soal 21 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>21.</strong> What comes next in the pattern?
+              <span class="block text-xl font-bold my-2"
+                >O, O, 2, △, △, 3, □, □, 4, ____, ____, ____</span
+              >
+               (O=Circle, △=Triangle, □=Square)
+              <br />Apa selanjutnya dari pola ini?
+              <span class="block text-xl font-bold my-2"
+                >O, O, 2, △, △, 3, □, □, 4, ____, ____, ____</span
+              >
+               (O=Lingkaran, △=Segitiga, □=Persegi)
+            </p>
+          </div>
+          <!-- Soal 22 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>22.</strong> Continue the skip counting pattern:
+              <span class="block text-xl font-bold my-2"
+                >2, 5, 8, 11, ____, ____</span
+              >
+              <br />Lanjutkan pola loncat bilangan ini:
+              <span class="block text-xl font-bold my-2"
+                >2, 5, 8, 11, ____, ____</span
+              >
+            </p>
+          </div>
+          <!-- Soal 23 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>23.</strong> Look at the pattern: A, B, C, C, A, B, C, C, ...
+              <br />What is the 21st letter in this pattern?<br /><br />Lihat
+              pola: A, B, C, C, A, B, C, C, ...
+              <br />Apa huruf ke-21 dari pola ini?
+            </p>
+          </div>
+          <!-- Soal 24 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>24.</strong> A pattern repeats as P, Q, R, Q. What is the 15th letter in this pattern?<br/><br/> Sebuah pola berulang P, Q, R, Q. Apa huruf ke-15 dalam pola ini?
+              <span class="block text-xl font-bold my-2"
+                >P, Q, R, Q, P, Q, R, Q, ...</span
+              >
+            </p>
+          </div>
+          <!-- Soal 25 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>25.</strong> Look at the growing pattern of blocks: Figure 1 has 1 block. Figure 2 has $1+2=3$ blocks. Figure 3 has $1+2+3=6$ blocks. How many blocks will be in Figure 5?<br /><br />Lihat pola balok yang bertambah: Gambar 1 punya 1 balok. Gambar 2 punya $1+2=3$ balok. Gambar 3 punya $1+2+3=6$ balok. Berapa banyak balok yang akan ada di Gambar 5?
+            </p>
+             <!-- Simple text description or ASCII art can represent this -->
+             <pre class="bg-gray-100 p-2 rounded text-sm">
+Fig 1: # (1)
+Fig 2: #
+       ## (3)
+Fig 3: #
+       ##
+       ### (6) ...
+             </pre>
+          </div>
+          <!-- Soal 26 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>26.</strong> Continue the alternating pattern:
+              <span class="block text-xl font-bold my-2"
+                >1, Z, 3, Y, 5, X, ____, ____</span
+              >
+              <br />Lanjutkan pola selang-seling ini:
+              <span class="block text-xl font-bold my-2"
+                >1, Z, 3, Y, 5, X, ____, ____</span
+              >
+            </p>
+          </div>
+          <!-- Soal 27 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>27.</strong> A caterpillar crawls in a pattern: (Forward 5 cm, Backward 2 cm). If it starts at 0, where is it after 6 movements (3 pairs of forward and backward)?<br /><br />Seekor ulat bergerak dalam pola: (Maju 5 cm, Mundur 2 cm). Jika dia mulai dari 0, di manakah dia setelah 6 gerakan (3 pasang maju dan mundur)?
+            </p>
+          </div>
+          <!-- Soal 28 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>28.</strong> Look at the pattern: 10, 11, 13, 16, 20, ____. What number comes next? (Hint: Look at how much is added each time).<br /><br />Lihat pola angka: 10, 11, 13, 16, 20, ____. Angka berapa selanjutnya? (Petunjuk: Lihat berapa yang ditambahkan setiap kali).
+            </p>
+          </div>
+          <!-- Soal 29 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>29.</strong> The pattern △, ◻, O repeats. What is the 30th shape in this pattern?<br /><br />Pola △, ◻, O berulang. Apa bentuk ke-30 dalam pola ini?
+              <span class="block text-2xl font-bold my-2"
+                >△, ◻, O, △, ◻, O, ...</span
+              >
+            </p>
+          </div>
+          <!-- Soal 30 (Revised) -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>30.</strong> What is the 8th letter in the pattern of skipping letters: A, C, E, G, ...?<br /><br />Apa huruf ke-8 dalam pola loncat huruf ini: A, C, E, G, ...?
+            </p>
+          </div>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+
+          <!-- Updated Topic Title -->
+          <h3 class="topic-title">
+            Solutions Part 1: Basic Arithmetic
+          </h3>
+
+          <!-- Solution 1 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 1 / Pembahasan 1:</strong></p>
+            <div class="concept">
+              <p><strong>Concept:</strong> Multi-step problem involving "more than" and "altogether".</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Soal multi-langkah melibatkan "lebih banyak dari" dan "jika digabungkan".</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Find how many cars Budi has. Budi has 3 more than Ali's 7 cars. Budi has $7 + 3 = 10$ cars.</li>
+                <li><b>Step 2:</b> Find the total number of cars. Add Ali's cars and Budi's cars. Total = $7 + 10 = 17$ cars.</li>
               </ul>
-              What is the value of B?
-              <div class="lang-id">
-                Lihat teka-teki berikut:
-                <ul style="font-size: 1.2em; list-style-type: none; padding-left: 0;">
-                    <li>$A + A = 10$</li>
-                    <li>$A + B = 8$</li>
-                </ul>
-                Berapakah nilai B?
-              </div>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Cari jumlah mobil Budi. Budi punya 3 lebih banyak dari 7 mobil Ali. Budi punya $7 + 3 = 10$ mobil.</li>
+                <li><b>Langkah 2:</b> Cari jumlah total mobil. Tambahkan mobil Ali dan mobil Budi. Total = $7 + 10 = 17$ mobil.</li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: They have 17 toy cars altogether. / Jawaban: Mereka memiliki 17 mobil mainan jika digabungkan.
             </div>
           </div>
-  
-          <div class="soal-latihan">
-            <b>Soal 15 / Question 15</b>
-            <div class="soal-konten">
-              A farmer has 12 chickens. He has 4 fewer ducks than chickens. How many ducks does he have?
-              <div class="lang-id">
-                Seorang petani punya 12 ayam. Dia punya 4 lebih sedikit bebek daripada ayam. Berapa banyak bebek yang dia punya?
-              </div>
+
+          <!-- Solution 2 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 2 / Pembahasan 2:</strong></p>
+            <div class="concept">
+              <p><strong>Concept:</strong> Multi-step problem involving subtraction, addition, and comparison.</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Soal multi-langkah melibatkan pengurangan, penjumlahan, dan perbandingan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Find birds after 3 flew away. Start with 10. $10 - 3 = 7$ birds.</li>
+                <li><b>Step 2:</b> Find birds after 2 more landed. Current is 7. $7 + 2 = 9$ birds.</li>
+                <li><b>Step 3:</b> Compare the final number (9) to the start number (10). 9 is less than 10.</li>
+                <li><b>Step 4:</b> Find the difference. $10 - 9 = 1$.</li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Cari jumlah burung setelah 3 terbang. Mulai dari 10. $10 - 3 = 7$ burung.</li>
+                <li><b>Langkah 2:</b> Cari jumlah burung setelah 2 hinggap. Sekarang ada 7. $7 + 2 = 9$ burung.</li>
+                <li><b>Langkah 3:</b> Bandingkan jumlah akhir (9) dengan jumlah awal (10). 9 lebih sedikit dari 10.</li>
+                <li><b>Langkah 4:</b> Cari selisihnya. $10 - 9 = 1$.</li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: There are fewer birds now. There is 1 fewer bird. / Jawaban: Jumlah burung sekarang lebih sedikit. Ada 1 burung lebih sedikit.
             </div>
           </div>
-  
-        </div>
-        <footer class="page-footer">
-          Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-        </footer>
-      </section>
 
-    <!-- Halaman Soal 6 (Soal 16-18) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Patterns</h1>
+          <!-- Solution 3 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 3 / Pembahasan 3:</strong></p>
+            <div class="concept">
+             <p><strong>Concept:</strong> Multi-step "missing part" problem involving addition first.</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Soal "bagian yang hilang" multi-langkah yang melibatkan penjumlahan terlebih dahulu.</p>
+            </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Find how much money Siti has now. She started with 6 dollars and earned 2 more. $6 + 2 = 8$ dollars.</li>
+                 <li><b>Step 2:</b> Find how much more she still needs. The comic costs 10 dollars. She has 8 dollars. $10 - 8 = 2$ dollars.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Cari jumlah uang Siti sekarang. Dia mulai dengan 6 dolar dan mendapat 2 dolar lagi. $6 + 2 = 8$ dolar.</li>
+                 <li><b>Langkah 2:</b> Cari berapa banyak lagi yang masih dia butuhkan. Komik berharga 10 dolar. Dia punya 8 dolar. $10 - 8 = 2$ dolar.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: She still needs 2 dollars more. / Jawaban: Dia masih membutuhkan 2 dolar lagi.
+             </div>
+           </div>
 
-        <div class="soal-latihan">
-          <b>Soal 16 / Question 16</b>
-          <div class="soal-konten">
-            Continue the pattern:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">A, B, A, B, A, B, ___, ___</div>
-            <div class="lang-id">
-              Lanjutkan polanya:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">A, B, A, B, A, B, ___, ___</div>
+           <!-- Solution 4 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 4 / Pembahasan 4:</strong></p>
+            <div class="concept">
+              <p><strong>Concept:</strong> Multi-step comparison problem involving "fewer than" and "more than".</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Soal perbandingan multi-langkah yang melibatkan "lebih sedikit dari" dan "lebih banyak dari".</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Find how many marbles Rian has. Rian has 8 fewer than David's 15. $15 - 8 = 7$ marbles.</li>
+                <li><b>Step 2:</b> Find how many marbles Siti has. Siti has 3 more than Rian's 7. $7 + 3 = 10$ marbles.</li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Cari jumlah kelereng Rian. Rian punya 8 lebih sedikit dari 15 kelereng David. $15 - 8 = 7$ kelereng.</li>
+                <li><b>Langkah 2:</b> Cari jumlah kelereng Siti. Siti punya 3 lebih banyak dari 7 kelereng Rian. $7 + 3 = 10$ kelereng.</li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Answer: Siti has 10 marbles. / Jawaban: Siti memiliki 10 kelereng.
             </div>
           </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 17 / Question 17</b>
-          <div class="soal-konten">
-            What comes next in the pattern?
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Red, Green, Blue, Red, Green, Blue, Red, ___</div>
-            <div class="lang-id">
-              Apa selanjutnya dari pola ini?
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Merah, Hijau, Biru, Merah, Hijau, Biru, Merah, ___</div>
+          <!-- Solution 5 (Revised) -->
+          <div class="item-container">
+             <p><strong>Solution 5 / Pembahasan 5:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Understanding tens and ones, combining multiple groups.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Memahami puluhan dan satuan, menggabungkan beberapa kelompok.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Calculate dots in 2 full Ten Frames. Each has 10 dots. $10 + 10 = 20$ dots (or $2 \times 10 = 20$).</li>
+                 <li><b>Step 2:</b> Add the extra dots. There are 3 extra dots. $20 + 3 = 23$ dots.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Hitung titik dalam 2 Ten Frame penuh. Masing-masing punya 10 titik. $10 + 10 = 20$ titik (atau $2 \times 10 = 20$).</li>
+                 <li><b>Langkah 2:</b> Tambahkan titik ekstra. Ada 3 titik ekstra. $20 + 3 = 23$ titik.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: There are 23 dots altogether. / Jawaban: Ada 23 titik seluruhnya.
+             </div>
+           </div>
+
+
+           <!-- Solution 6 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 6 / Pembahasan 6:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Using a Bar Model for multi-step problems (finding a part, then finding the whole).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menggunakan Bar Model untuk soal multi-langkah (mencari satu bagian, lalu mencari keseluruhan).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Find the value of Part 2. Part 1 is 9. Part 2 is 5 less than Part 1. Part 2 = $9 - 5 = 4$.</li>
+                 <li><b>Step 2:</b> Find the Total. The Total is Part 1 + Part 2. Total = $9 + 4 = 13$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Cari nilai Bagian 2. Bagian 1 adalah 9. Bagian 2 adalah 5 lebih sedikit dari Bagian 1. Bagian 2 = $9 - 5 = 4$.</li>
+                 <li><b>Langkah 2:</b> Cari Totalnya. Total adalah Bagian 1 + Bagian 2. Total = $9 + 4 = 13$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: The Total is 13. / Jawaban: Totalnya adalah 13.
+             </div>
+           </div>
+
+          <!-- Solution 7 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 7 / Pembahasan 7:</strong></p>
+            <div class="concept">
+              <p><strong>Concept:</strong> Finding a missing addend in a multi-step addition.</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Mencari bilangan yang hilang dalam penjumlahan multi-langkah.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 18 / Question 18</b>
-          <div class="soal-konten">
-            Find the missing shape in the pattern:
-            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</div>
-            <div class="lang-id">
-              Temukan gambar yang hilang dari pola ini:
-              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                 <li><b>Method 1 (Combine known parts first):</b> $2 + 5 = 7$. The equation becomes $7 + ? = 15$. We need to find the difference between 15 and 7. $15 - 7 = 8$. So, $? = 8$.</li>
+                 <li><b>Method 2 (Subtract known parts from total):</b> Start with the total 15. Subtract the known parts. $15 - 2 = 13$. Then $13 - 5 = 8$. So, $? = 8$.</li>
+              </ul>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 7 (Soal 19-21) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Patterns</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 19 / Question 19</b>
-          <div class="soal-konten">
-            Look at the pattern: A, A, B, C, A, A, B, C, ...
-            <br>What is the 10th letter in this pattern?
-            <div class="lang-id">
-              Lihat pola: A, A, B, C, A, A, B, C, ...
-              <br>Apa huruf ke-10 dari pola ini?
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                 <li><b>Metode 1 (Gabungkan bagian yang diketahui dulu):</b> $2 + 5 = 7$. Persamaannya menjadi $7 + ? = 15$. Kita perlu mencari selisih antara 15 dan 7. $15 - 7 = 8$. Jadi, $? = 8$.</li>
+                 <li><b>Metode 2 (Kurangkan total dengan bagian yang diketahui):</b> Mulai dengan total 15. Kurangkan bagian yang diketahui. $15 - 2 = 13$. Lalu $13 - 5 = 8$. Jadi, $? = 8$.</li>
+              </ul>
             </div>
+            <div class="final-answer">Answer: The missing number is 8. / Jawaban: Angka yang hilang adalah 8.</div>
           </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 20 / Question 20</b>
-          <div class="soal-konten">
-            Continue the pattern:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Z, Y, X, Z, Y, X, ___, ___</div>
-            <div class="lang-id">
-              Lanjutkan polanya:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Z, Y, X, Z, Y, X, ___, ___</div>
+          <!-- Solution 8 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 8 / Pembahasan 8:</strong></p>
+            <div class="concept">
+               <p><strong>Concept:</strong> Multi-step problem involving division (grouping) and subtraction.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Soal multi-langkah yang melibatkan pembagian (pengelompokan) dan pengurangan.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 21 / Question 21</b>
-          <div class="soal-konten">
-            Look at the pattern:
-            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">↑, ↓, →, ↑, ↓, →, ↑, ___</div>
-            <div class="lang-id">
-              Lihat pola panah:
-              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">↑, ↓, →, ↑, ↓, →, ↑, ___</div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Find the number of groups. There are 18 stickers, grouped into 3s. $18 \div 3 = 6$ groups.</li>
+                <li><b>Step 2:</b> Find the number of stickers given away. 2 groups were given away. Each group has 3 stickers. $2 \times 3 = 6$ stickers given away.</li>
+                <li><b>Step 3:</b> Find the number of stickers left. Started with 18, gave away 6. $18 - 6 = 12$ stickers left.</li>
+              </ul>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 8 (Soal 22-24) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Patterns</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 22 / Question 22</b>
-          <div class="soal-konten">
-            What comes next in this pattern?
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, 2, 3, 1, 2, 3, 1, ___ , ___</div>
-            <div class="lang-id">
-              Apa selanjutnya dari pola ini?
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, 2, 3, 1, 2, 3, 1, ___ , ___</div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Cari jumlah grup. Ada 18 stiker, dikelompokkan per 3. $18 \div 3 = 6$ grup.</li>
+                <li><b>Langkah 2:</b> Cari jumlah stiker yang diberikan. 2 grup diberikan. Setiap grup punya 3 stiker. $2 \times 3 = 6$ stiker diberikan.</li>
+                <li><b>Langkah 3:</b> Cari jumlah stiker yang tersisa. Mulai dengan 18, diberikan 6. $18 - 6 = 12$ stiker tersisa.</li>
+              </ul>
             </div>
-          </div>
-        </div>
+             <div class="final-answer">
+               Answer: I have 12 stickers left. / Jawaban: Aku punya sisa 12 stiker.
+             </div>
+           </div>
 
-        <div class="soal-latihan">
-          <b>Soal 23 / Question 23</b>
-          <div class="soal-konten">
-            Look at the pattern:
-            A, B, C, C, A, B, C, C, ...
-            <br>What is the 13th letter in this pattern?
-            <div class="lang-id">
-              Lihat pola: A, B, C, C, A, B, C, C, ...
-              <br>Apa huruf ke-13 dari pola ini?
+           <!-- Solution 9 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 9 / Pembahasan 9:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Simple algebraic puzzle problem.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Soal teka-teki aljabar sederhana.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the second equation: 🍎 + 🍎 = 14. Find the value of 🍎. We know $7 + 7 = 14$. So, 🍎 = 7.</li>
+                 <li><b>Step 2:</b> Look at the first equation: 🍎 + 🍌 = 12.</li>
+                 <li><b>Step 3:</b> Substitute the value of 🍎: $7 + 🍌 = 12$.</li>
+                 <li><b>Step 4:</b> Find the value of 🍌. $12 - 7 = 5$. So, 🍌 = 5.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat persamaan kedua: 🍎 + 🍎 = 14. Cari nilai 🍎. Kita tahu $7 + 7 = 14$. Jadi, 🍎 = 7.</li>
+                 <li><b>Langkah 2:</b> Lihat persamaan pertama: 🍎 + 🍌 = 12.</li>
+                 <li><b>Langkah 3:</b> Ganti nilai 🍎: $7 + 🍌 = 12$.</li>
+                 <li><b>Langkah 4:</b> Cari nilai 🍌. $12 - 7 = 5$. Jadi, 🍌 = 5.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: The value of 🍌 is 5. / Jawaban: Nilai 🍌 adalah 5.
+             </div>
+           </div>
+
+           <!-- Solution 10 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 10 / Pembahasan 10:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Multi-step addition and subtraction tracking changes.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Penjumlahan dan pengurangan multi-langkah melacak perubahan.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Start:</b> 0 people.</li>
+                 <li><b>Stop 1:</b> 10 adults get on. Total = $0 + 10 = 10$ people.</li>
+                 <li><b>Stop 2:</b> 3 adults get off (-3), 5 children get on (+5). Change = $-3 + 5 = +2$. Total = $10 + 2 = 12$ people.</li>
+                 <li><b>Stop 3:</b> 2 adults get off (-2), 1 child gets off (-1). Change = $-2 - 1 = -3$. Total = $12 - 3 = 9$ people.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Mulai:</b> 0 orang.</li>
+                 <li><b>Pemberhentian 1:</b> 10 dewasa naik. Total = $0 + 10 = 10$ orang.</li>
+                 <li><b>Pemberhentian 2:</b> 3 dewasa turun (-3), 5 anak naik (+5). Perubahan = $-3 + 5 = +2$. Total = $10 + 2 = 12$ orang.</li>
+                 <li><b>Pemberhentian 3:</b> 2 dewasa turun (-2), 1 anak turun (-1). Perubahan = $-2 - 1 = -3$. Total = $12 - 3 = 9$ orang.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: There are 9 people on the bus now. / Jawaban: Ada 9 orang di bus sekarang.
+             </div>
+           </div>
+
+           <!-- Solution 11 (Revised) -->
+           <div class="item-container">
+            <p><strong>Solution 11 / Pembahasan 11:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Finding the missing subtrahend (understanding subtraction as difference or take away).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mencari bilangan pengurang yang hilang (memahami pengurangan sebagai selisih atau mengambil).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> The equation is $14 - ? = 6$.</li>
+                 <li><b>Step 2:</b> This means "14 take away what number gives 6?". We can also think "What is the difference between 14 and 6?".</li>
+                 <li><b>Step 3:</b> Calculate the difference: $14 - 6 = 8$.</li>
+                 <li><b>Step 4:</b> Check: $14 - 8 = 6$. This is correct.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Persamaannya adalah $14 - ? = 6$.</li>
+                 <li><b>Langkah 2:</b> Ini berarti "14 dikurangi berapa sama dengan 6?". Kita juga bisa berpikir "Berapa selisih antara 14 dan 6?".</li>
+                 <li><b>Langkah 3:</b> Hitung selisihnya: $14 - 6 = 8$.</li>
+                 <li><b>Langkah 4:</b> Cek: $14 - 8 = 6$. Ini benar.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: The missing number is 8. / Jawaban: Angka yang hilang adalah 8.
+             </div>
+           </div>
+
+           <!-- Solution 12 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 12 / Pembahasan 12:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Multi-step problem involving addition and "fewer than".</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Soal multi-langkah melibatkan penjumlahan dan "lebih sedikit dari".</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Find the number of green beads. There are 7 blue beads. Green beads are 5 fewer than blue. Green = $7 - 5 = 2$ beads.</li>
+                 <li><b>Step 2:</b> Find the total number of beads. Add red, blue, and green beads. Total = $11 (\text{red}) + 7 (\text{blue}) + 2 (\text{green})$.</li>
+                 <li><b>Step 3:</b> Calculate the total. $11 + 7 = 18$. $18 + 2 = 20$. Total = 20 beads.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Cari jumlah manik-manik hijau. Ada 7 manik-manik biru. Manik-manik hijau 5 lebih sedikit dari biru. Hijau = $7 - 5 = 2$ manik-manik.</li>
+                 <li><b>Langkah 2:</b> Cari jumlah total manik-manik. Tambahkan manik-manik merah, biru, dan hijau. Total = $11 (\text{merah}) + 7 (\text{biru}) + 2 (\text{hijau})$.</li>
+                 <li><b>Langkah 3:</b> Hitung totalnya. $11 + 7 = 18$. $18 + 2 = 20$. Total = 20 manik-manik.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: Rara has 20 beads in total. / Jawaban: Rara memiliki total 20 manik-manik.
+             </div>
+           </div>
+
+           <!-- Solution 13 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 13 / Pembahasan 13:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Order of operations (parentheses first).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Urutan operasi (kerjakan dalam kurung dulu).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Calculate the value inside the parentheses: $(5 + 3) = 8$.</li>
+                 <li><b>Step 2:</b> Substitute this value back into the expression: $15 - 8 + 2$.</li>
+                 <li><b>Step 3:</b> Calculate from left to right: $15 - 8 = 7$.</li>
+                 <li><b>Step 4:</b> Continue calculation: $7 + 2 = 9$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Hitung nilai di dalam tanda kurung: $(5 + 3) = 8$.</li>
+                 <li><b>Langkah 2:</b> Masukkan kembali nilai ini ke dalam ekspresi: $15 - 8 + 2$.</li>
+                 <li><b>Langkah 3:</b> Hitung dari kiri ke kanan: $15 - 8 = 7$.</li>
+                 <li><b>Langkah 4:</b> Lanjutkan perhitungan: $7 + 2 = 9$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: 9. / Jawaban: 9.</div>
+           </div>
+
+            <!-- Solution 14 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 14 / Pembahasan 14:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Simple algebraic puzzle involving subtraction.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Teka-teki aljabar sederhana yang melibatkan pengurangan.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the first equation: $A + A = 16$. Find the value of A. We know $8 + 8 = 16$. So, $A = 8$.</li>
+                 <li><b>Step 2:</b> Look at the second equation: $A - B = 3$.</li>
+                 <li><b>Step 3:</b> Substitute the value of A: $8 - B = 3$.</li>
+                 <li><b>Step 4:</b> Find the value of B. "8 minus what number equals 3?". We know $8 - 5 = 3$. So, $B = 5$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat persamaan pertama: $A + A = 16$. Cari nilai A. Kita tahu $8 + 8 = 16$. Jadi, $A = 8$.</li>
+                 <li><b>Langkah 2:</b> Lihat persamaan kedua: $A - B = 3$.</li>
+                 <li><b>Langkah 3:</b> Ganti nilai A: $8 - B = 3$.</li>
+                 <li><b>Langkah 4:</b> Cari nilai B. "8 dikurangi berapa sama dengan 3?". Kita tahu $8 - 5 = 3$. Jadi, $B = 5$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: The value of B is 5. / Jawaban: Nilai B adalah 5.
+             </div>
+           </div>
+
+           <!-- Solution 15 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 15 / Pembahasan 15:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Reverse comparison problem ("more than" information used to find the smaller amount).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Soal perbandingan terbalik (informasi "lebih banyak" digunakan untuk mencari jumlah yang lebih kecil).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Understand the relationship. Chickens = Ducks + 4.</li>
+                 <li><b>Step 2:</b> We know the number of chickens is 12. So, $12 = \text{Ducks} + 4$.</li>
+                 <li><b>Step 3:</b> Find the number of ducks. We need to find what number plus 4 equals 12. This is a subtraction: Ducks = $12 - 4$.</li>
+                 <li><b>Step 4:</b> Calculate: $12 - 4 = 8$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Pahami hubungannya. Ayam = Bebek + 4.</li>
+                 <li><b>Langkah 2:</b> Kita tahu jumlah ayam adalah 12. Jadi, $12 = \text{Bebek} + 4$.</li>
+                 <li><b>Langkah 3:</b> Cari jumlah bebek. Kita perlu mencari angka berapa yang jika ditambah 4 sama dengan 12. Ini adalah pengurangan: Bebek = $12 - 4$.</li>
+                 <li><b>Langkah 4:</b> Hitung: $12 - 4 = 8$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: He has 8 ducks. / Jawaban: Dia punya 8 bebek.
+             </div>
+           </div>
+
+
+          <!-- Updated Topic Title -->
+          <h3 class="topic-title">
+             Solutions Part 2: Patterns (Number & Counting Focus)
+          </h3>
+
+           <!-- Solution 16 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 16 / Pembahasan 16:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying a growing pattern where elements repeat and increase in count.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola bertumbuh di mana elemen berulang dan bertambah jumlahnya.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: A, B, AA, BB, AAA, BBB, ...</li>
+                 <li><b>Step 2:</b> The pattern alternates between A's and B's. The number of A's or B's increases by one each time: 1 A, 1 B, 2 A's, 2 B's, 3 A's, 3 B's.</li>
+                 <li><b>Step 3:</b> The last group shown is BBB (3 B's).</li>
+                 <li><b>Step 4:</b> The next group should be A's, and the count should increase to 4: AAAA.</li>
+                 <li><b>Step 5:</b> The group after that should be B's, with a count of 4: BBBB.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: A, B, AA, BB, AAA, BBB, ...</li>
+                 <li><b>Langkah 2:</b> Pola ini bergantian antara A dan B. Jumlah A atau B bertambah satu setiap kali: 1 A, 1 B, 2 A, 2 B, 3 A, 3 B.</li>
+                 <li><b>Langkah 3:</b> Kelompok terakhir yang ditunjukkan adalah BBB (3 B).</li>
+                 <li><b>Langkah 4:</b> Kelompok berikutnya seharusnya A, dan jumlahnya harus bertambah menjadi 4: AAAA.</li>
+                 <li><b>Langkah 5:</b> Kelompok setelah itu seharusnya B, dengan jumlah 4: BBBB.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: AAAA, BBBB. / Jawaban: AAAA, BBBB.</div>
+           </div>
+
+           <!-- Solution 17 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 17 / Pembahasan 17:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying a growing pattern where elements are added sequentially.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola bertumbuh di mana elemen ditambahkan secara berurutan.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: R, RG, RGB, RGBR, ...</li>
+                 <li><b>Step 2:</b> Each term adds the next letter in the sequence (R, G, B, repeat).</li>
+                 <li><b>Step 3:</b> Term 1: R. Term 2: R + G = RG. Term 3: RG + B = RGB. Term 4: RGB + R = RGBR.</li>
+                 <li><b>Step 4:</b> The next letter after R in the sequence (R, G, B) is G.</li>
+                 <li><b>Step 5:</b> The next term is the previous term (RGBR) plus G: RGBRG.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: M, MH, MHB, MHBM, ...</li>
+                 <li><b>Langkah 2:</b> Setiap suku menambahkan huruf berikutnya dalam urutan (M, H, B, ulang).</li>
+                 <li><b>Langkah 3:</b> Suku 1: M. Suku 2: M + H = MH. Suku 3: MH + B = MHB. Suku 4: MHB + M = MHBM.</li>
+                 <li><b>Langkah 4:</b> Huruf berikutnya setelah M dalam urutan (M, H, B) adalah H.</li>
+                 <li><b>Langkah 5:</b> Suku berikutnya adalah suku sebelumnya (MHBM) ditambah H: MHBMH.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: RGBRG. / Jawaban: MHBMH.</div>
+           </div>
+
+           <!-- Solution 18 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 18 / Pembahasan 18:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying a repeating pattern involving rotation or direction.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola berulang yang melibatkan rotasi atau arah.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: ⬆️, ➡️, ⬇️, ⬅️, ⬆️, ➡️, ...</li>
+                 <li><b>Step 2:</b> The pattern cycles through four directions: Up, Right, Down, Left. The cycle length is 4.</li>
+                 <li><b>Step 3:</b> The pattern shown is ⬆️ (1), ➡️ (2), ⬇️ (3), ⬅️ (4), ⬆️ (1), ➡️ (2).</li>
+                 <li><b>Step 4:</b> The next item in the cycle after ➡️ (Right, position 2) is ⬇️ (Down, position 3).</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: ⬆️, ➡️, ⬇️, ⬅️, ⬆️, ➡️, ...</li>
+                 <li><b>Langkah 2:</b> Pola ini berputar melalui empat arah: Atas, Kanan, Bawah, Kiri. Panjang siklusnya adalah 4.</li>
+                 <li><b>Langkah 3:</b> Pola yang ditunjukkan adalah ⬆️ (1), ➡️ (2), ⬇️ (3), ⬅️ (4), ⬆️ (1), ➡️ (2).</li>
+                 <li><b>Langkah 4:</b> Item berikutnya dalam siklus setelah ➡️ (Kanan, posisi 2) adalah ⬇️ (Bawah, posisi 3).</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: ⬇️. / Jawaban: ⬇️.</div>
+           </div>
+
+           <!-- Solution 19 (Revised) -->
+           <div class="item-container">
+            <p><strong>Solution 19 / Pembahasan 19:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Finding a specific term in a repeating pattern using division with remainder.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menemukan suku tertentu dalam pola berulang menggunakan pembagian dengan sisa.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Identify the repeating unit and its length. The unit is (A, A, B, C). The length is 4.</li>
+                 <li><b>Step 2:</b> Divide the desired position (25) by the length of the unit (4). $25 \div 4$.</li>
+                 <li><b>Step 3:</b> Find the remainder. $4 \times 6 = 24$. $25 - 24 = 1$. The remainder is 1.</li>
+                 <li><b>Step 4:</b> The remainder corresponds to the position within the unit. Remainder 1 is the 1st item (A), remainder 2 is the 2nd item (A), remainder 3 is the 3rd item (B), remainder 0 (or 4) is the 4th item (C).</li>
+                 <li><b>Step 5:</b> Since the remainder is 1, the 25th letter is the 1st letter in the unit.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Identifikasi unit yang berulang dan panjangnya. Unitnya adalah (A, A, B, C). Panjangnya adalah 4.</li>
+                 <li><b>Langkah 2:</b> Bagi posisi yang diinginkan (25) dengan panjang unit (4). $25 \div 4$.</li>
+                 <li><b>Langkah 3:</b> Cari sisanya. $4 \times 6 = 24$. $25 - 24 = 1$. Sisanya adalah 1.</li>
+                 <li><b>Langkah 4:</b> Sisa pembagian menunjukkan posisi di dalam unit. Sisa 1 adalah item ke-1 (A), sisa 2 adalah item ke-2 (A), sisa 3 adalah item ke-3 (B), sisa 0 (atau 4) adalah item ke-4 (C).</li>
+                 <li><b>Langkah 5:</b> Karena sisanya 1, huruf ke-25 adalah huruf pertama dalam unit.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: A. / Jawaban: A.</div>
+           </div>
+
+
+          <!-- Solution 20 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 20 / Pembahasan 20:</strong></p>
+            <div class="concept">
+              <p><strong>Concept:</strong> Identifying an alternating pattern involving sequences moving in opposite directions.</p>
+              <hr class="my-2 border-indigo-100" />
+              <p><strong>Konsep:</strong> Mengidentifikasi pola selang-seling yang melibatkan urutan bergerak ke arah berlawanan.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 24 / Question 24</b>
-          <div class="soal-konten">
-            What are the two missing letters in the pattern?
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">P, Q, Q, P, Q, Q, P, ___ , ___</div>
-            <div class="lang-id">
-              Apa dua huruf yang hilang dari pola ini?
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">P, Q, Q, P, Q, Q, P, ___ , ___</div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Look at the pattern: Z, A, Y, B, X, C, ...</li>
+                <li><b>Step 2:</b> Separate the pattern into two alternating sequences. Sequence 1 (positions 1, 3, 5...): Z, Y, X, ... (letters going backwards). Sequence 2 (positions 2, 4, 6...): A, B, C, ... (letters going forwards).</li>
+                <li><b>Step 3:</b> Find the next term in Sequence 1. After X comes W. This will be the 7th term overall.</li>
+                <li><b>Step 4:</b> Find the next term in Sequence 2. After C comes D. This will be the 8th term overall.</li>
+              </ul>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 9 (Soal 25-27) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Patterns</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 25 / Question 25</b>
-          <div class="soal-konten">
-            Look at the pattern of shapes:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">(Circle, Circle, Triangle), (Circle, Circle, Triangle), (Circle, ___ , Triangle)</div>
-            What is the missing shape?
-            <div class="lang-id">
-              Lihat pola gambar:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">(Lingkaran, Lingkaran, Segitiga), (Lingkaran, Lingkaran, Segitiga), (Lingkaran, ___ , Segitiga)</div>
-              Apa gambar yang hilang?
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Lihat polanya: Z, A, Y, B, X, C, ...</li>
+                <li><b>Langkah 2:</b> Pisahkan pola menjadi dua urutan selang-seling. Urutan 1 (posisi 1, 3, 5...): Z, Y, X, ... (huruf mundur). Urutan 2 (posisi 2, 4, 6...): A, B, C, ... (huruf maju).</li>
+                <li><b>Langkah 3:</b> Cari suku berikutnya di Urutan 1. Setelah X adalah W. Ini akan menjadi suku ke-7 secara keseluruhan.</li>
+                <li><b>Langkah 4:</b> Cari suku berikutnya di Urutan 2. Setelah C adalah D. Ini akan menjadi suku ke-8 secara keseluruhan.</li>
+              </ul>
             </div>
+            <div class="final-answer">Answer: W, D. / Jawaban: W, D.</div>
           </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 26 / Question 26</b>
-          <div class="soal-konten">
-            Continue the pattern:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, A, 2, B, 3, C, ___ , ___</div>
-            <div class="lang-id">
-              Lanjutkan polanya:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, A, 2, B, 3, C, ___ , ___</div>
+          <!-- Solution 21 (Revised) -->
+          <div class="item-container">
+            <p><strong>Solution 21 / Pembahasan 21:</strong></p>
+            <div class="concept">
+               <p><strong>Concept:</strong> Identifying a repeating pattern involving groups of shapes and numbers.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola berulang yang melibatkan kelompok bentuk dan angka.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>Soal 27 / Question 27</b>
-          <div class="soal-konten">
-            A caterpillar crawls in a pattern:
-            Forward 3 cm, Backward 1 cm, Forward 3 cm, Backward 1 cm, ...
-            <br>If it starts at 0, where is it after the first 4 movements?
-            <div class="lang-id">
-              Seekor ulat bergerak dalam pola:
-              (Maju 3 cm, Mundur 1 cm, Maju 3 cm, Mundur 1 cm, ...)
-              <br>Jika dia mulai dari 0, di manakah dia setelah 4 gerakan pertama?
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li><b>Step 1:</b> Look at the pattern: O, O, 2, △, △, 3, □, □, 4, ...</li>
+                <li><b>Step 2:</b> Identify the repeating structure: (Shape, Shape, Number).</li>
+                <li><b>Step 3:</b> Identify the sequence of shapes: O, △, □, ... The next shape seems to follow a simple cycle O, △, □, O, ...</li>
+                <li><b>Step 4:</b> Identify the sequence of numbers: 2, 3, 4, ... The next number is 5.</li>
+                <li><b>Step 5:</b> The last group shown is (□, □, 4).</li>
+                <li><b>Step 6:</b> The next group should start with the next shape (O), repeated twice, followed by the next number (5). So: O, O, 5.</li>
+              </ul>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 10 (Soal 28-30) --><section class="page">
-      <div class="content-wrapper">
-        <h1>Practice Problems - Patterns</h1>
-
-        <div class="soal-latihan">
-          <b>Soal 28 / Question 28</b>
-          <div class="soal-konten">
-            Look at the pattern:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">10, 20, 30, 10, 20, 30, 10, ___</div>
-            <div class="lang-id">
-              Lihat pola angka:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">10, 20, 30, 10, 20, 30, 10, ___</div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li><b>Langkah 1:</b> Lihat polanya: O, O, 2, △, △, 3, □, □, 4, ...</li>
+                <li><b>Langkah 2:</b> Identifikasi struktur berulang: (Bentuk, Bentuk, Angka).</li>
+                <li><b>Langkah 3:</b> Identifikasi urutan bentuk: O, △, □, ... Bentuk berikutnya tampaknya mengikuti siklus sederhana O, △, □, O, ...</li>
+                <li><b>Langkah 4:</b> Identifikasi urutan angka: 2, 3, 4, ... Angka berikutnya adalah 5.</li>
+                <li><b>Langkah 5:</b> Kelompok terakhir yang ditunjukkan adalah (□, □, 4).</li>
+                <li><b>Langkah 6:</b> Kelompok berikutnya harus dimulai dengan bentuk berikutnya (O), diulang dua kali, diikuti oleh angka berikutnya (5). Jadi: O, O, 5.</li>
+              </ul>
             </div>
+            <div class="final-answer">Answer: O, O, 5 (Circle, Circle, 5). / Jawaban: O, O, 5 (Lingkaran, Lingkaran, 5).</div>
           </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 29 / Question 29</b>
-          <div class="soal-konten">
-            What is the 11th shape in this pattern?
-            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">△, ◻, O, △, ◻, O, ...</div>
-            <div class="lang-id">
-              Apa bentuk ke-11 dari pola ini?
-              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">△, ◻, O, △, ◻, O, ...</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="soal-latihan">
-          <b>Soal 30 / Question 30</b>
-          <div class="soal-konten">
-            Find the missing letters in the pattern:
-            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">G, H, H, I, J, J, G, H, H, I, J, J, G, H, ___ , I, ___ , J</div>
-            <div class="lang-id">
-              Temukan huruf yang hilang dari pola ini:
-              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">G, H, H, I, J, J, G, H, H, I, J, J, G, H, ___ , I, ___ , J</div>
-            </div>
-          </div>
-        </div>
+          <!-- Solution 22 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 22 / Pembahasan 22:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying an arithmetic sequence (skip counting by a constant difference).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi barisan aritmetika (loncat bilangan dengan beda konstan).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: 2, 5, 8, 11, ...</li>
+                 <li><b>Step 2:</b> Find the difference between consecutive terms. $5 - 2 = 3$. $8 - 5 = 3$. $11 - 8 = 3$. The pattern is adding 3 each time.</li>
+                 <li><b>Step 3:</b> Find the next term after 11. $11 + 3 = 14$.</li>
+                 <li><b>Step 4:</b> Find the term after 14. $14 + 3 = 17$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: 2, 5, 8, 11, ...</li>
+                 <li><b>Langkah 2:</b> Cari selisih antara suku yang berurutan. $5 - 2 = 3$. $8 - 5 = 3$. $11 - 8 = 3$. Polanya adalah menambahkan 3 setiap kali.</li>
+                 <li><b>Langkah 3:</b> Cari suku setelah 11. $11 + 3 = 14$.</li>
+                 <li><b>Langkah 4:</b> Cari suku setelah 14. $14 + 3 = 17$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: 14, 17. / Jawaban: 14, 17.</div>
+           </div>
 
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
 
-    <!-- SOLUTIONS START HERE --><!-- Pembahasan 1 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 1</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> This is a "combining" problem. We are combining two groups into one.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Pictorial:</strong> Imagine 7 toy cars in one hand. Then, imagine 4 toy cars in the other hand.</li>
-            <li><strong>Abstract (Counting):</strong> We need to find the total. We start from 7 and count forward 4 steps: 8, 9, 10, 11.</li>
-            <li><strong>Equation:</strong> $7 + 4 = 11$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> Ali has 11 toy cars.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 1</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Ini adalah soal "menggabungkan" (combining). Kita menggabungkan dua kelompok menjadi satu.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Pictorial (Gambar):</strong> Bayangkan 7 mobil mainan di satu tangan. Lalu, bayangkan 4 mobil mainan di tangan yang lain.</li>
-            <li><strong>Abstract (Hitungan):</strong> Kita harus menghitung totalnya. Kita mulai dari 7 dan menghitung maju 4 langkah: 8, 9, 10, 11.</li>
-            <li><strong>Persamaan (Equation):</strong> $7 + 4 = 11$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ali memiliki 11 mobil mainan.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+           <!-- Solution 23 (Revised) -->
+            <div class="item-container">
+             <p><strong>Solution 23 / Pembahasan 23:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Finding a specific term in a repeating pattern using division with remainder.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menemukan suku tertentu dalam pola berulang menggunakan pembagian dengan sisa.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Identify the repeating unit and its length. The unit is (A, B, C, C). The length is 4.</li>
+                 <li><b>Step 2:</b> Divide the desired position (21) by the length of the unit (4). $21 \div 4$.</li>
+                 <li><b>Step 3:</b> Find the remainder. $4 \times 5 = 20$. $21 - 20 = 1$. The remainder is 1.</li>
+                 <li><b>Step 4:</b> The remainder corresponds to the position within the unit. Remainder 1 is A, remainder 2 is B, remainder 3 is C, remainder 0 (or 4) is C.</li>
+                 <li><b>Step 5:</b> Since the remainder is 1, the 21st letter is the 1st letter in the unit.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Identifikasi unit yang berulang dan panjangnya. Unitnya adalah (A, B, C, C). Panjangnya adalah 4.</li>
+                 <li><b>Langkah 2:</b> Bagi posisi yang diinginkan (21) dengan panjang unit (4). $21 \div 4$.</li>
+                 <li><b>Langkah 3:</b> Cari sisanya. $4 \times 5 = 20$. $21 - 20 = 1$. Sisanya adalah 1.</li>
+                 <li><b>Langkah 4:</b> Sisa pembagian menunjukkan posisi di dalam unit. Sisa 1 adalah A, sisa 2 adalah B, sisa 3 adalah C, sisa 0 (atau 4) adalah C.</li>
+                 <li><b>Langkah 5:</b> Karena sisanya 1, huruf ke-21 adalah huruf pertama dalam unit.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: A. / Jawaban: A.</div>
+           </div>
 
-    <!-- Pembahasan 2 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 2</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> This is a "separating" problem. A number of items are "taken away" or "go away" from the total.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Using a Ten Frame:</strong> Imagine a <i>Ten Frame</i> (a frame with 10 boxes) that is full with 10 dots (representing 10 birds).</li>
-            <li>We "separate" 3 dots. We cross out 3 dots from the frame.</li>
-            <li>We count the remaining dots in the frame: 1, 2, 3, 4, 5, 6, 7.</li>
-            <li><strong>Equation:</strong> $10 - 3 = 7$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> There are 7 birds left.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 2</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Ini adalah soal "memisahkan" (separating). Sejumlah benda "diambil" atau "pergi" dari total.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Menggunakan Ten Frame:</strong> Bayangkan sebuah <i>Ten Frame</i> (bingkai 10 kotak) yang terisi penuh dengan 10 titik (mewakili 10 burung).</li>
-            <li>Kita "memisahkan" 3 titik. Kita hapus 3 titik dari bingkai tersebut.</li>
-            <li>Kita hitung sisa titik di dalam bingkai: 1, 2, 3, 4, 5, 6, 7.</li>
-            <li><strong>Persamaan (Equation):</strong> $10 - 3 = 7$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 7 burung yang tersisa.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+           <!-- Solution 24 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 24 / Pembahasan 24:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Finding a specific term in a repeating pattern using division with remainder.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menemukan suku tertentu dalam pola berulang menggunakan pembagian dengan sisa.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Identify the repeating unit and its length. The unit is (P, Q, R, Q). The length is 4.</li>
+                 <li><b>Step 2:</b> Divide the desired position (15) by the length of the unit (4). $15 \div 4$.</li>
+                 <li><b>Step 3:</b> Find the remainder. $4 \times 3 = 12$. $15 - 12 = 3$. The remainder is 3.</li>
+                 <li><b>Step 4:</b> The remainder corresponds to the position within the unit. Remainder 1 is P, remainder 2 is Q, remainder 3 is R, remainder 0 (or 4) is Q.</li>
+                 <li><b>Step 5:</b> Since the remainder is 3, the 15th letter is the 3rd letter in the unit.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Identifikasi unit yang berulang dan panjangnya. Unitnya adalah (P, Q, R, Q). Panjangnya adalah 4.</li>
+                 <li><b>Langkah 2:</b> Bagi posisi yang diinginkan (15) dengan panjang unit (4). $15 \div 4$.</li>
+                 <li><b>Langkah 3:</b> Cari sisanya. $4 \times 3 = 12$. $15 - 12 = 3$. Sisanya adalah 3.</li>
+                 <li><b>Langkah 4:</b> Sisa pembagian menunjukkan posisi di dalam unit. Sisa 1 adalah P, sisa 2 adalah Q, sisa 3 adalah R, sisa 0 (atau 4) adalah Q.</li>
+                 <li><b>Langkah 5:</b> Karena sisanya 3, huruf ke-15 adalah huruf ke-3 dalam unit.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: R. / Jawaban: R.</div>
+           </div>
 
-    <!-- Pembahasan 3 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 3</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> This is a "finding the missing part" problem. We know the total (10) and one part (6).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Using a Ten Frame:</strong> Imagine a <i>Ten Frame</i> (10 boxes) representing the 10 dollars price.</li>
-            <li>Siti already has 6 dollars, so we fill 6 boxes in the frame.</li>
-            <li>The question is "how many more does she need?". This is the same as "how many boxes are still empty?"</li>
-            <li>We count the empty boxes: 1, 2, 3, 4.</li>
-            <li><strong>Equation:</strong> $6 + ? = 10$, or $10 - 6 = 4$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> She needs 4 dollars more.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 3</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Ini adalah soal "mencari bagian yang hilang" (missing part). Kita tahu totalnya (10) dan satu bagian (6).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Menggunakan Ten Frame:</strong> Bayangkan <i>Ten Frame</i> (bingkai 10 kotak) mewakili harga 10 dolar.</li>
-            <li>Siti sudah punya 6 dolar, jadi kita isi 6 kotak di bingkai itu.</li>
-            <li>Soalnya adalah "berapa banyak lagi yang dia butuhkan?". Ini sama dengan "berapa banyak kotak yang masih kosong?"</li>
-            <li>Kita hitung kotak yang kosong: 1, 2, 3, 4.</li>
-            <li><strong>Persamaan (Equation):</strong> $6 + ? = 10$, atau $10 - 6 = 4$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membutuhkan 4 dolar lagi.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+          <!-- Solution 25 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 25 / Pembahasan 25:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying a growing visual pattern related to triangular numbers.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola visual bertumbuh yang berhubungan dengan bilangan segitiga.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Analyze the pattern. Figure 1: 1 block. Figure 2: $1+2=3$ blocks. Figure 3: $1+2+3=6$ blocks.</li>
+                 <li><b>Step 2:</b> Identify the rule. Figure $n$ has $1+2+3+...+n$ blocks (the $n$-th triangular number).</li>
+                 <li><b>Step 3:</b> Apply the rule for Figure 5. We need $1+2+3+4+5$.</li>
+                 <li><b>Step 4:</b> Calculate. $1+2=3$, $3+3=6$, $6+4=10$, $10+5=15$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Analisis pola. Gambar 1: 1 balok. Gambar 2: $1+2=3$ balok. Gambar 3: $1+2+3=6$ balok.</li>
+                 <li><b>Langkah 2:</b> Identifikasi aturan. Gambar $n$ memiliki $1+2+3+...+n$ balok (bilangan segitiga ke-$n$).</li>
+                 <li><b>Langkah 3:</b> Terapkan aturan untuk Gambar 5. Kita perlu $1+2+3+4+5$.</li>
+                 <li><b>Langkah 4:</b> Hitung. $1+2=3$, $3+3=6$, $6+4=10$, $10+5=15$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: Figure 5 will have 15 blocks. / Jawaban: Gambar 5 akan memiliki 15 balok.
+             </div>
+           </div>
 
-    <!-- Pembahasan 4 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 4</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> This is a "comparison" problem. We compare two amounts and find the "difference".</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Using a Bar Model:</strong>
-                <br>Draw one long bar for David worth 9.
-                <br>Draw a shorter bar underneath for Rian, worth 5.
-                <div class="bar-model-desc">
-                    [Image Description: Top bar "David [ 9 ]". Bottom bar "Rian [ 5 ] [ ? ]". The question mark [?] is the part of David's bar that is longer than Rian's bar.]
-                </div>
-            </li>
-            <li>We want to find the difference, which is the "extra" part David has.</li>
-            <li><strong>Equation:</strong> $9 - 5 = 4$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> David has 4 more marbles.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 4</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Ini adalah soal "perbandingan" (comparison). Kita membandingkan dua jumlah dan mencari "selisih"-nya.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Menggunakan Bar Model (Model Balok):</strong>
-                <br>Gambarkan satu balok panjang untuk David yang bernilai 9.
-                <br>Gambarkan satu balok yang lebih pendek di bawahnya untuk Rian, yang bernilai 5.
-                <div class="bar-model-desc">
-                    [DESKRIPSI GAMBAR: Balok atas "David [ 9 ]". Balok bawah "Rian [ 5 ] [ ? ]". Tanda tanya [?] adalah bagian balok David yang lebih panjang dari balok Rian.]
-                </div>
-            </li>
-            <li>Kita ingin mencari selisihnya, yaitu bagian "ekstra" yang dimiliki David.</li>
-            <li><strong>Persamaan (Equation):</strong> $9 - 5 = 4$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> David memiliki 4 kelereng lebih banyak.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+           <!-- Solution 26 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 26 / Pembahasan 26:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying an alternating pattern with odd numbers and letters going backwards.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola selang-seling dengan bilangan ganjil dan huruf mundur.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: 1, Z, 3, Y, 5, X, ...</li>
+                 <li><b>Step 2:</b> Separate into two sequences. Sequence 1 (positions 1, 3, 5...): 1, 3, 5, ... (odd numbers). Sequence 2 (positions 2, 4, 6...): Z, Y, X, ... (letters backwards).</li>
+                 <li><b>Step 3:</b> Find the next term in Sequence 1. After 5 comes the next odd number, 7. This is the 7th term overall.</li>
+                 <li><b>Step 4:</b> Find the next term in Sequence 2. After X comes W. This is the 8th term overall.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: 1, Z, 3, Y, 5, X, ...</li>
+                 <li><b>Langkah 2:</b> Pisahkan menjadi dua urutan. Urutan 1 (posisi 1, 3, 5...): 1, 3, 5, ... (bilangan ganjil). Urutan 2 (posisi 2, 4, 6...): Z, Y, X, ... (huruf mundur).</li>
+                 <li><b>Langkah 3:</b> Cari suku berikutnya di Urutan 1. Setelah 5 adalah bilangan ganjil berikutnya, 7. Ini adalah suku ke-7 secara keseluruhan.</li>
+                 <li><b>Langkah 4:</b> Cari suku berikutnya di Urutan 2. Setelah X adalah W. Ini adalah suku ke-8 secara keseluruhan.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: 7, W. / Jawaban: 7, W.</div>
+           </div>
 
-    <!-- Pembahasan 5 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 5</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Combining based on place value understanding (tens and ones).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>One full <i>Ten Frame</i> has 10 dots. This is like 1 ten.</li>
-            <li>One half-full <i>Ten Frame</i> has 5 dots. This is like 5 ones.</li>
-            <li>We combine 1 ten (10) and 5 ones (5).</li>
-            <li><strong>Equation:</strong> $10 + 5 = 15$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> There are 15 dots in total.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 5</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menggabungkan berdasarkan pemahaman nilai tempat (puluhan dan satuan).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Satu <i>Ten Frame</i> penuh memiliki 10 titik. Ini seperti 1 puluhan (one ten).</li>
-            <li>Setengah <i>Ten Frame</i> memiliki 5 titik. Ini seperti 5 satuan (five ones).</li>
-            <li>Kita menggabungkan 1 puluhan (10) dan 5 satuan (5).</li>
-            <li><strong>Persamaan (Equation):</strong> $10 + 5 = 15$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 15 titik seluruhnya.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+            <!-- Solution 27 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 27 / Pembahasan 27:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Calculating net displacement from a repeating pattern of movements.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menghitung perpindahan bersih dari pola pergerakan yang berulang.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Find the net change for one pair of movements (Forward 5, Backward 2). Net change = $+5 - 2 = +3$ cm per pair.</li>
+                 <li><b>Step 2:</b> Determine how many pairs are in 6 movements. 6 movements = 3 pairs.</li>
+                 <li><b>Step 3:</b> Calculate the total displacement. 3 pairs, each with a net change of +3 cm. Total change = $3 \times (+3) = +9$ cm.</li>
+                 <li><b>Step 4:</b> Find the final position. Started at 0, total change is +9 cm. Final position = $0 + 9 = 9$ cm.</li>
+                 <li><i>Alternatively (step-by-step):</i> 0 -> +5=5 -> -2=3 -> +5=8 -> -2=6 -> +5=11 -> -2=9. Final position is 9 cm.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Cari perubahan bersih untuk satu pasang gerakan (Maju 5, Mundur 2). Perubahan bersih = $+5 - 2 = +3$ cm per pasang.</li>
+                 <li><b>Langkah 2:</b> Tentukan berapa pasang dalam 6 gerakan. 6 gerakan = 3 pasang.</li>
+                 <li><b>Langkah 3:</b> Hitung total perpindahan. 3 pasang, masing-masing dengan perubahan bersih +3 cm. Total perubahan = $3 \times (+3) = +9$ cm.</li>
+                 <li><b>Langkah 4:</b> Cari posisi akhir. Mulai dari 0, total perubahan +9 cm. Posisi akhir = $0 + 9 = 9$ cm.</li>
+                 <li><i>Alternatif (langkah demi langkah):</i> 0 -> +5=5 -> -2=3 -> +5=8 -> -2=6 -> +5=11 -> -2=9. Posisi akhir adalah 9 cm.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: It is at 9 cm. / Jawaban: Ulat ada di 9 cm.
+             </div>
+           </div>
 
-    <!-- Pembahasan 6 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 6</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Understanding a <i>Bar Model</i>. Total = Part 1 + Part 2.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>The bar model shows that if we combine two parts (Part 1 and Part 2), we get the Total.</li>
-            <li>
-                <div class="bar-model-desc">
-                    [Image Description: One long bar with "15" labeled above it. The bar is split into two parts, the left part is "8" and the right part is "?".]
-                </div>
-            </li>
-            <li>We know the Total (15) and one part (8).</li>
-            <li>To find the missing part (?), we take the Total and separate (subtract) the part we know.</li>
-            <li><strong>Equation:</strong> $8 + ? = 15$, or $15 - 8 = 7$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> The other part is 7.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 6</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Memahami <i>Bar Model</i> (Model Balok). Total = Bagian 1 + Bagian 2.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Model balok menunjukkan bahwa jika kita menggabungkan dua bagian (Part 1 dan Part 2), kita akan mendapatkan Total (Total).</li>
-            <li>
-                <div class="bar-model-desc">
-                    [DESKRIPSI GAMBAR: Satu balok panjang dengan label "15" di atasnya. Balok itu dibagi dua, bagian kiri "8" dan bagian kanan "?".]
-                </div>
-            </li>
-            <li>Kita tahu Total (15) dan satu bagian (8).</li>
-            <li>Untuk mencari bagian yang hilang (?), kita ambil Total dan pisahkan (kurangi) dengan bagian yang kita tahu.</li>
-            <li><strong>Persamaan (Equation):</strong> $8 + ? = 15$, atau $15 - 8 = 7$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Bagian lainnya adalah 7.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+          <!-- Solution 28 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 28 / Pembahasan 28:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying a pattern where the difference increases by 1 each time.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi pola di mana selisihnya bertambah 1 setiap kali.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: 10, 11, 13, 16, 20, ...</li>
+                 <li><b>Step 2:</b> Find the differences between consecutive terms. $11-10=+1$. $13-11=+2$. $16-13=+3$. $20-16=+4$.</li>
+                 <li><b>Step 3:</b> Identify the pattern in the differences. The amount added increases by 1 each time (+1, +2, +3, +4).</li>
+                 <li><b>Step 4:</b> Determine the next amount to add. After adding +4, the next amount should be +5.</li>
+                 <li><b>Step 5:</b> Calculate the next term. The last term is 20. Add 5. $20 + 5 = 25$.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: 10, 11, 13, 16, 20, ...</li>
+                 <li><b>Langkah 2:</b> Cari selisih antar suku berurutan. $11-10=+1$. $13-11=+2$. $16-13=+3$. $20-16=+4$.</li>
+                 <li><b>Langkah 3:</b> Identifikasi pola pada selisihnya. Jumlah yang ditambahkan bertambah 1 setiap kali (+1, +2, +3, +4).</li>
+                 <li><b>Langkah 4:</b> Tentukan jumlah berikutnya yang akan ditambahkan. Setelah menambahkan +4, jumlah berikutnya seharusnya +5.</li>
+                 <li><b>Langkah 5:</b> Hitung suku berikutnya. Suku terakhir adalah 20. Tambahkan 5. $20 + 5 = 25$.</li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: 25. / Jawaban: 25.</div>
+           </div>
 
-    <!-- Pembahasan 7 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 7</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Combining more than two numbers. We can look for "partners to 10" (making 10).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>We need to calculate: $2 + 3 + 5 + 8$.</li>
-            <li>We can add in order: $2 + 3 = 5$. Then $5 + 5 = 10$. Then $10 + 8 = 18$.</li>
-            <li><strong>Smart Way (Making 10):</strong> Look at the numbers. Do any of them combine to make 10? Yes! 2 and 8. ($2 + 8 = 10$).</li>
-            <li>Now combine the rest: $3 + 5 = 8$.</li>
-            <li>Finally, combine the two results: $10 + 8 = 18$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> 18.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 7</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menggabungkan lebih dari dua angka. Kita bisa mencari "pasangan 10" (making 10).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Kita harus menghitung: $2 + 3 + 5 + 8$.</li>
-            <li>Kita bisa hitung urut: $2 + 3 = 5$. Lalu $5 + 5 = 10$. Lalu $10 + 8 = 18$.</li>
-            <li><strong>Cara Cerdas (Making 10):</strong> Lihat angka-angka itu. Apakah ada yang jika digabung menjadi 10? Ya! 2 dan 8. ($2 + 8 = 10$).</li>
-            <li>Sekarang kita gabungkan sisanya: $3 + 5 = 8$.</li>
-            <li>Terakhir, gabungkan kedua hasil tadi: $10 + 8 = 18$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> 18.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+           <!-- Solution 29 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 29 / Pembahasan 29:</strong></p>
+              <div class="concept">
+               <p><strong>Concept:</strong> Finding a specific term in a repeating pattern using division with remainder.</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Menemukan suku tertentu dalam pola berulang menggunakan pembagian dengan sisa.</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Identify the repeating unit and its length. The unit is (△, ◻, O). The length is 3.</li>
+                 <li><b>Step 2:</b> Divide the desired position (30) by the length of the unit (3). $30 \div 3$.</li>
+                 <li><b>Step 3:</b> Find the remainder. $30 \div 3 = 10$ with a remainder of 0.</li>
+                 <li><b>Step 4:</b> The remainder corresponds to the position within the unit. Remainder 1 is △, remainder 2 is ◻, remainder 0 (or 3) is O.</li>
+                 <li><b>Step 5:</b> Since the remainder is 0, the 30th shape is the 3rd (last) shape in the unit.</li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Identifikasi unit yang berulang dan panjangnya. Unitnya adalah (△, ◻, O). Panjangnya adalah 3.</li>
+                 <li><b>Langkah 2:</b> Bagi posisi yang diinginkan (30) dengan panjang unit (3). $30 \div 3$.</li>
+                 <li><b>Langkah 3:</b> Cari sisanya. $30 \div 3 = 10$ dengan sisa 0.</li>
+                 <li><b>Langkah 4:</b> Sisa pembagian menunjukkan posisi di dalam unit. Sisa 1 adalah △, sisa 2 adalah ◻, sisa 0 (atau 3) adalah O.</li>
+                 <li><b>Langkah 5:</b> Karena sisanya 0, bentuk ke-30 adalah bentuk ke-3 (terakhir) dalam unit.</li>
+               </ul>
+             </div>
+             <div class="final-answer">
+               Answer: O (Circle). / Jawaban: O (Lingkaran).
+             </div>
+           </div>
 
-    <!-- Pembahasan 8 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 8</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Separating in two steps (two-step separating).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Step 1:</strong> We start with 18 stickers. Give 5 to brother.
-                <br>$18 - 5 = 13$. Now I have 13 stickers.
-            </li>
-            <li><strong>Step 2:</strong> From the 13 remaining stickers, give 3 to sister.
-                <br>$13 - 3 = 10$.
-            </li>
-            <li><strong>Alternative Way:</strong> We can first combine everything given away ($5 + 3 = 8$), then subtract from the total: $18 - 8 = 10$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> I have 10 stickers left.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 8</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Memisahkan dalam dua langkah (two-step separating).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Langkah 1:</strong> Kita mulai dengan 18 stiker. Berikan 5 ke kakak.
-                <br>$18 - 5 = 13$. Sekarang aku punya 13 stiker.
-            </li>
-            <li><strong>Langkah 2:</strong> Dari 13 stiker sisa, berikan 3 ke adik.
-                <br>$13 - 3 = 10$.
-            </li>
-            <li><strong>Cara Alternatif:</strong> Kita juga bisa gabungkan dulu semua yang diberikan ($5 + 3 = 8$), lalu kurangi dari total: $18 - 8 = 10$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Aku punya sisa 10 stiker.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
 
-    <!-- Pembahasan 9 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 9</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Simple algebraic puzzle problem.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the first equation: 🍎 + 🍎 = 12.</li>
-            <li>Two identical pictures add up to 12. This means we are looking for a number that, added to itself, makes 12 (the "doubles" concept). $6 + 6 = 12$. So, 🍎 = 6.</li>
-            <li>Look at the second equation: 🍎 + 🍌 = 10.</li>
-            <li>We already know 🍎 = 6, so we replace 🍎 with 6: $6 + 🍌 = 10$.</li>
-            <li>This is like a "Ten Frame" problem: We have 6, how many more to make 10? The answer is 4.</li>
-            <li><strong>Equation:</strong> $10 - 6 = 4$. So, 🍌 = 4.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> The value of 🍌 is 4.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 9</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Soal teka-teki aljabar sederhana.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat persamaan pertama: 🍎 + 🍎 = 12.</li>
-            <li>Dua gambar yang sama jika dijumlahkan hasilnya 12. Ini artinya kita mencari angka yang jika ditambah dirinya sendiri jadi 12 (konsep "doubles"). $6 + 6 = 12$. Jadi, 🍎 = 6.</li>
-            <li>Lihat persamaan kedua: 🍎 + 🍌 = 10.</li>
-            <li>Kita sudah tahu 🍎 = 6, jadi kita ganti 🍎 dengan 6: $6 + 🍌 = 10$.</li>
-            <li>Ini seperti soal "Ten Frame": Kita punya 6, butuh berapa lagi untuk jadi 10? Jawabannya 4.</li>
-            <li><strong>Persamaan (Equation):</strong> $10 - 6 = 4$. Jadi, 🍌 = 4.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Nilai 🍌 adalah 4.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
+          <!-- Solution 30 (Revised) -->
+           <div class="item-container">
+             <p><strong>Solution 30 / Pembahasan 30:</strong></p>
+             <div class="concept">
+               <p><strong>Concept:</strong> Identifying an arithmetic sequence of letters (skipping letters).</p>
+               <hr class="my-2 border-indigo-100" />
+               <p><strong>Konsep:</strong> Mengidentifikasi barisan aritmetika huruf (melompati huruf).</p>
+             </div>
+             <div class="solution-step">
+               <p class="font-bold text-indigo-600">Solution:</p>
+               <ul>
+                 <li><b>Step 1:</b> Look at the pattern: A, C, E, G, ...</li>
+                 <li><b>Step 2:</b> Identify the rule. The pattern skips one letter each time (A, skip B, C, skip D, E, skip F, G, ...). This is like counting by 2s in the alphabet.</li>
+                 <li><b>Step 3:</b> List the letters to find the 8th term.
+                    1st: A
+                    2nd: C
+                    3rd: E
+                    4th: G
+                    5th: I (skip H)
+                    6th: K (skip J)
+                    7th: M (skip L)
+                    8th: O (skip N)
+                 </li>
+               </ul>
+             </div>
+             <div class="solution-step mt-4">
+               <p class="font-bold text-indigo-600">Penyelesaian:</p>
+               <ul>
+                 <li><b>Langkah 1:</b> Lihat polanya: A, C, E, G, ...</li>
+                 <li><b>Langkah 2:</b> Identifikasi aturan. Pola ini melompati satu huruf setiap kali (A, lewati B, C, lewati D, E, lewati F, G, ...). Ini seperti menghitung loncat 2 di alfabet.</li>
+                 <li><b>Langkah 3:</b> Daftarkan huruf-hurufnya untuk menemukan suku ke-8.
+                    Ke-1: A
+                    Ke-2: C
+                    Ke-3: E
+                    Ke-4: G
+                    Ke-5: I (lewati H)
+                    Ke-6: K (lewati J)
+                    Ke-7: M (lewati L)
+                    Ke-8: O (lewati N)
+                 </li>
+               </ul>
+             </div>
+             <div class="final-answer">Answer: O. / Jawaban: O.</div>
+           </div>
 
-    <!-- Pembahasan 10 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 10</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Combining and separating in one problem (multi-step).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Start: There are 16 people.</li>
-            <li>Stop 1: 5 people get off (separating).
-                <br>$16 - 5 = 11$. There are now 11 people on the bus.
-            </li>
-            <li>Stop 2: 3 new people get on (combining).
-                <br>$11 + 3 = 14$.
-            </li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> There are 14 people on the bus now.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 10</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menggabungkan dan memisahkan dalam satu soal (multi-step).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Mulai (Start): Ada 16 orang.</li>
-            <li>Pemberhentian 1 (Stop 1): 5 orang turun (memisahkan).
-                <br>$16 - 5 = 11$. Sekarang ada 11 orang di bus.
-            </li>
-            <li>Pemberhentian 2 (Stop 2): 3 orang naik (menggabungkan).
-                <br>$11 + 3 = 14$.
-            </li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 14 orang di bus sekarang.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
 
-    <!-- Pembahasan 11 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 11</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding the missing part in a subtraction (missing subtrahend).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li><strong>Using a Bar Model:</strong> The total (the whole) is 14.</li>
-            <li>After we "separate" (subtract) one part (the ? number), the part left is 6.</li>
-            <li>
-                <div class="bar-model-desc">
-                    [Image Description: A bar model with a total of "14". It is split into two parts, one "6" and one "?".]
-                </div>
-            </li>
-            <li>To find the ? part, we find the difference between 14 and 6.</li>
-            <li><strong>Equation:</strong> $14 - 6 = 8$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> The missing number is 8.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 11</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mencari bagian yang hilang dalam pengurangan (missing subtrahend).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li><strong>Menggunakan Bar Model:</strong> Totalnya (the whole) adalah 14.</li>
-            <li>Setelah kita "pisahkan" (kurangi) satu bagian (angka ?), sisanya (the part left) adalah 6.</li>
-            <li>
-                <div class="bar-model-desc">
-                    [DESKRIPSI GAMBAR: Bar model dengan total "14". Dibagi jadi dua bagian, satu "6" dan satu "?".]
-                </div>
-            </li>
-            <li>Untuk mencari bagian ?, kita hitung selisih antara 14 dan 6.</li>
-            <li><strong>Persamaan (Equation):</strong> $14 - 6 = 8$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Angka yang hilang adalah 8.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 12 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 12</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Combining.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>We want to find the "total" or "in all".</li>
-            <li>We combine 11 red beads and 7 blue beads.</li>
-            <li><strong>Decomposing Method:</strong> 11 is $10 + 1$.</li>
-            <li>So, $(10 + 1) + 7$. We can calculate $1 + 7 = 8$. Then $10 + 8 = 18$.</li>
-            <li><strong>Equation:</strong> $11 + 7 = 18$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> She has 18 beads.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 12</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menggabungkan (combining).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Kita ingin mencari "total" atau "semuanya".</li>
-            <li>Kita gabungkan 11 manik-manik merah dan 7 manik-manik biru.</li>
-            <li><strong>Metode Pecah (Decomposing):</strong> 11 adalah $10 + 1$.</li>
-            <li>Jadi, $(10 + 1) + 7$. Kita bisa hitung $1 + 7 = 8$. Lalu $10 + 8 = 18$.</li>
-            <li><strong>Persamaan (Equation):</strong> $11 + 7 = 18$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia punya 18 manik-manik.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 13 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 13</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Calculating in order from left to right.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>$1 + 2 = 3$</li>
-            <li>$3 - 3 = 0$</li>
-            <li>$0 + 4 = 4$</li>
-            <li>$4 + 5 = 9$</li>
-            <li>$9 - 6 = 3$</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 13</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menghitung secara urut dari kiri ke kanan.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>$1 + 2 = 3$</li>
-            <li>$3 - 3 = 0$</li>
-            <li>$0 + 4 = 4$</li>
-            <li>$4 + 5 = 9$</li>
-            <li>$9 - 6 = 3$</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 14 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 14</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Simple algebraic puzzle problem.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the first equation: $A + A = 10$.</li>
-            <li>This means a number added to itself is 10 (doubles). We know $5 + 5 = 10$. So, $A = 5$.</li>
-            <li>Look at the second equation: $A + B = 8$.</li>
-            <li>We replace $A$ with 5: $5 + B = 8$.</li>
-            <li>We need to find the missing part. How many more from 5 to get to 8? (Count up: 6, 7, 8. That's 3 steps).</li>
-            <li><strong>Equation:</strong> $8 - 5 = 3$. So, $B = 3$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> The value of B is 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 14</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Soal teka-teki aljabar sederhana.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat persamaan pertama: $A + A = 10$.</li>
-            <li>Ini artinya sebuah angka jika ditambah dirinya sendiri hasilnya 10 (doubles). Kita tahu $5 + 5 = 10$. Jadi, $A = 5$.</li>
-            <li>Lihat persamaan kedua: $A + B = 8$.</li>
-            <li>Kita ganti $A$ dengan 5: $5 + B = 8$.</li>
-            <li>Kita harus mencari bagian yang hilang. Butuh berapa lagi dari 5 untuk jadi 8? (Hitung maju: 6, 7, 8. Itu 3 langkah).</li>
-            <li><strong>Persamaan (Equation):</strong> $8 - 5 = 3$. Jadi, $B = 3$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Nilai B adalah 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- ===== START OF NEW SOLUTIONS (15-30) ===== -->
-
-    <!-- Pembahasan 15 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 15</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> This is a "fewer than" comparison problem. We are given the larger amount and the difference.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>We know the farmer has 12 chickens.</li>
-            <li>The number of ducks is "4 fewer than" the chickens. "Fewer than" means we subtract.</li>
-            <li>
-                <div class="bar-model-desc">
-                    [Image Description: Top bar "Chickens [ 12 ]". Bottom bar "Ducks [ ? ] [ 4 ]". The "4" represents the difference, showing the Duck bar is 4 shorter than the Chicken bar.]
-                </div>
-            </li>
-            <li>We need to find the value of $12 - 4$.</li>
-            <li><strong>Equation:</strong> $12 - 4 = 8$.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> He has 8 ducks.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 15</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Ini adalah soal perbandingan "lebih sedikit dari" (fewer than). Kita diberi jumlah yang lebih besar dan selisihnya.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Kita tahu petani punya 12 ayam.</li>
-            <li>Jumlah bebek "4 lebih sedikit dari" ayam. "Lebih sedikit" berarti kita mengurangi (subtract).</li>
-            <li>
-                <div class="bar-model-desc">
-                    [DESKRIPSI GAMBAR: Balok atas "Ayam [ 12 ]". Balok bawah "Bebek [ ? ] [ 4 ]". Angka "4" mewakili selisih, menunjukkan balok Bebek 4 lebih pendek dari balok Ayam.]
-                </div>
-            </li>
-            <li>Kita harus mencari nilai dari $12 - 4$.</li>
-            <li><strong>Persamaan (Equation):</strong> $12 - 4 = 8$.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia punya 8 bebek.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 16 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 16</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a simple repeating pattern (AB pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: A, B, A, B, A, B, ...</li>
-            <li>The "unit" that repeats is (A, B).</li>
-            <li>The pattern shows this unit (A, B) three times.</li>
-            <li>After the last 'B', the pattern must start over.</li>
-            <li>The next item is A. The item after that is B.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> A, B.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 16</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang sederhana (pola AB).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: A, B, A, B, A, B, ...</li>
-            <li>"Unit" yang berulang adalah (A, B).</li>
-            <li>Pola ini menunjukkan unit (A, B) sebanyak tiga kali.</li>
-            <li>Setelah 'B' terakhir, pola pasti dimulai lagi dari awal.</li>
-            <li>Item berikutnya adalah A. Item setelah itu adalah B.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> A, B.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 17 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 17</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (ABC pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: Red, Green, Blue, Red, Green, Blue, Red, ___</li>
-            <li>The "unit" that repeats is (Red, Green, Blue).</li>
-            <li>The pattern shows this unit two full times, and then starts a new unit with "Red".</li>
-            <li>After "Red", the next item in the unit is "Green".</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> Green.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 17</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola ABC).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: Merah, Hijau, Biru, Merah, Hijau, Biru, Merah, ___</li>
-            <li>"Unit" yang berulang adalah (Merah, Hijau, Biru).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali penuh, lalu memulai unit baru dengan "Merah".</li>
-            <li>Setelah "Merah", item berikutnya dalam unit adalah "Hijau".</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Hijau.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 18 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 18</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding a missing item in a repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: ⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</li>
-            <li>The "unit" that repeats is (⭐, 🌙, ☀️).</li>
-            <li>The pattern shows this unit twice. Then, it shows a third unit where the first item is missing: (___, 🌙, ☀️).</li>
-            <li>By comparing with the full unit, we see the missing first item is ⭐.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> ⭐</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 18</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan item yang hilang dalam pola berulang.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: ⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</li>
-            <li>"Unit" yang berulang adalah (⭐, 🌙, ☀️).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali. Lalu, ia menunjukkan unit ketiga di mana item pertamanya hilang: (___, 🌙, ☀️).</li>
-            <li>Dengan membandingkan dengan unit lengkap, kita lihat item pertama yang hilang adalah ⭐.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> ⭐</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 19 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 19</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding a specific position in a repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: A, A, B, C, A, A, B, C, ...</li>
-            <li>The "unit" that repeats is (A, A, B, C). This unit has 4 letters.</li>
-            <li>We need to find the 10th letter. We can write out the pattern:</li>
-            <li>1st(A), 2nd(A), 3rd(B), 4th(C) - (End of 1st unit)</li>
-            <li>5th(A), 6th(A), 7th(B), 8th(C) - (End of 2nd unit)</li>
-            <li>9th(A), 10th(A), 11th(B), 12th(C) - (Start of 3rd unit)</li>
-            <li>The 10th letter is A.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> A.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 19</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan posisi tertentu dalam pola berulang.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: A, A, B, C, A, A, B, C, ...</li>
-            <li>"Unit" yang berulang adalah (A, A, B, C). Unit ini punya 4 huruf.</li>
-            <li>Kita harus mencari huruf ke-10. Kita bisa tuliskan polanya:</li>
-            <li>ke-1(A), ke-2(A), ke-3(B), ke-4(C) - (Akhir unit 1)</li>
-            <li>ke-5(A), ke-6(A), ke-7(B), ke-8(C) - (Akhir unit 2)</li>
-            <li>ke-9(A), ke-10(A), ke-11(B), ke-12(C) - (Awal unit 3)</li>
-            <li>Huruf ke-10 adalah A.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> A.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 20 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 20</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (ZYX pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: Z, Y, X, Z, Y, X, ...</li>
-            <li>The "unit" that repeats is (Z, Y, X).</li>
-            <li>The pattern shows this unit twice. We need to continue it.</li>
-            <li>After 'X', the pattern starts over with Z.</li>
-            <li>After 'Z', the next item is Y.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> Z, Y.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 20</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola ZYX).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: Z, Y, X, Z, Y, X, ...</li>
-            <li>"Unit" yang berulang adalah (Z, Y, X).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali. Kita harus melanjutkannya.</li>
-            <li>Setelah 'X', pola dimulai lagi dengan Z.</li>
-            <li>Setelah 'Z', item berikutnya adalah Y.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Z, Y.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 21 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 21</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (ABC pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: ↑, ↓, →, ↑, ↓, →, ↑, ___</li>
-            <li>The "unit" that repeats is (↑, ↓, →).</li>
-            <li>The pattern shows this unit two full times, then starts a new unit with "↑".</li>
-            <li>After "↑", the next item in the unit is "↓".</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> ↓</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 21</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola ABC).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: ↑, ↓, →, ↑, ↓, →, ↑, ___</li>
-            <li>"Unit" yang berulang adalah (↑, ↓, →).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali penuh, lalu memulai unit baru dengan "↑".</li>
-            <li>Setelah "↑", item berikutnya dalam unit adalah "↓".</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> ↓</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 22 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 22</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (123 pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: 1, 2, 3, 1, 2, 3, 1, ___ , ___</li>
-            <li>The "unit" that repeats is (1, 2, 3).</li>
-            <li>The pattern shows this unit twice, and then starts a new unit with "1".</li>
-            <li>After "1", the next item is 2. After "2", the next item is 3.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> 2, 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 22</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola 123).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: 1, 2, 3, 1, 2, 3, 1, ___ , ___</li>
-            <li>"Unit" yang berulang adalah (1, 2, 3).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali, lalu memulai unit baru dengan "1".</li>
-            <li>Setelah "1", item berikutnya adalah 2. Setelah "2", item berikutnya adalah 3.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> 2, 3.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 23 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 23</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding a specific position in a repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: A, B, C, C, A, B, C, C, ...</li>
-            <li>The "unit" that repeats is (A, B, C, C). This unit has 4 letters.</li>
-            <li>We need to find the 13th letter. We can write out the pattern or use division.</li>
-            <li><strong>Listing Method:</strong>
-                <br>1(A), 2(B), 3(C), 4(C) - (Unit 1)
-                <br>5(A), 6(B), 7(C), 8(C) - (Unit 2)
-                <br>9(A), 10(B), 11(C), 12(C) - (Unit 3)
-                <br>13(A), ... - (Start of Unit 4)
-            </li>
-            <li>The 13th letter is A.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> A.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 23</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan posisi tertentu dalam pola berulang.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: A, B, C, C, A, B, C, C, ...</li>
-            <li>"Unit" yang berulang adalah (A, B, C, C). Unit ini punya 4 huruf.</li>
-            <li>Kita harus mencari huruf ke-13. Kita bisa tuliskan polanya atau pakai pembagian.</li>
-            <li><strong>Metode Mendaftar:</strong>
-                <br>ke-1(A), ke-2(B), ke-3(C), ke-4(C) - (Unit 1)
-                <br>ke-5(A), ke-6(B), ke-7(C), ke-8(C) - (Unit 2)
-                <br>ke-9(A), ke-10(B), ke-11(C), ke-12(C) - (Unit 3)
-                <br>ke-13(A), ... - (Awal Unit 4)
-            </li>
-            <li>Huruf ke-13 adalah A.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> A.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 24 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 24</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (AAB pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: P, Q, Q, P, Q, Q, P, ___ , ___</li>
-            <li>The "unit" that repeats is (P, Q, Q).</li>
-            <li>The pattern shows this unit twice, and then starts a new unit with "P".</li>
-            <li>After "P", the next item is Q. After "Q", the next item is Q.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> Q, Q.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 24</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola AAB).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: P, Q, Q, P, Q, Q, P, ___ , ___</li>
-            <li>"Unit" yang berulang adalah (P, Q, Q).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali, lalu memulai unit baru dengan "P".</li>
-            <li>Setelah "P", item berikutnya adalah Q. Setelah "Q", item berikutnya adalah Q.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Q, Q.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 25 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 25</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding a missing item in a grouped repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: (Circle, Circle, Triangle), (Circle, Circle, Triangle), (Circle, ___ , Triangle)</li>
-            <li>The "unit" that repeats is the group (Circle, Circle, Triangle).</li>
-            <li>The third group is missing its middle item.</li>
-            <li>By comparing with the full unit, we see the missing middle item is Circle.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> Circle.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 25</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan item yang hilang dalam pola berulang yang dikelompokkan.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: (Lingkaran, Lingkaran, Segitiga), (Lingkaran, Lingkaran, Segitiga), (Lingkaran, ___ , Segitiga)</li>
-            <li>"Unit" yang berulang adalah grup (Lingkaran, Lingkaran, Segitiga).</li>
-            <li>Grup ketiga kehilangan item tengahnya.</li>
-            <li>Dengan membandingkan dengan unit lengkap, kita lihat item tengah yang hilang adalah Lingkaran.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Lingkaran.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 26 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 26</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying an alternating pattern (two patterns in one).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: 1, A, 2, B, 3, C, ___ , ___</li>
-            <li>This is two patterns mixed together.</li>
-            <li><strong>Pattern 1 (Numbers):</strong> 1, 2, 3, ... The next number is 4.</li>
-            <li><strong>Pattern 2 (Letters):</strong> A, B, C, ... The next letter is D.</li>
-            <li>Putting them back together, the next item is 4, and the one after is D.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> 4, D.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 26</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola selang-seling (dua pola dalam satu).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: 1, A, 2, B, 3, C, ___ , ___</li>
-            <li>Ini adalah dua pola yang digabung menjadi satu.</li>
-            <li><strong>Pola 1 (Angka):</strong> 1, 2, 3, ... Angka selanjutnya adalah 4.</li>
-            <li><strong>Pola 2 (Huruf):</strong> A, B, C, ... Huruf selanjutnya adalah D.</li>
-            <li>Jika digabungkan, item berikutnya adalah 4, dan setelahnya adalah D.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> 4, D.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 27 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 27</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> A pattern of movements (combining and separating).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>The caterpillar starts at 0.</li>
-            <li><strong>Movement 1 (Forward 3):</strong> $0 + 3 = 3$. It is now at 3 cm.</li>
-            <li><strong>Movement 2 (Backward 1):</strong> $3 - 1 = 2$. It is now at 2 cm.</li>
-            <li><strong>Movement 3 (Forward 3):</strong> $2 + 3 = 5$. It is now at 5 cm.</li>
-            <li><strong>Movement 4 (Backward 1):</strong> $5 - 1 = 4$. It is now at 4 cm.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> It is at 4 cm.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 27</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Pola pergerakan (menggabungkan dan memisahkan).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Ulat mulai dari 0.</li>
-            <li><strong>Gerakan 1 (Maju 3):</strong> $0 + 3 = 3$. Sekarang di posisi 3 cm.</li>
-            <li><strong>Gerakan 2 (Mundur 1):</strong> $3 - 1 = 2$. Sekarang di posisi 2 cm.</li>
-            <li><strong>Gerakan 3 (Maju 3):</strong> $2 + 3 = 5$. Sekarang di posisi 5 cm.</li>
-            <li><strong>Gerakan 4 (Mundur 1):</strong> $5 - 1 = 4$. Sekarang di posisi 4 cm.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ulat ada di 4 cm.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 28 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 28</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Identifying a repeating pattern (ABC pattern).</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: 10, 20, 30, 10, 20, 30, 10, ___</li>
-            <li>The "unit" that repeats is (10, 20, 30).</li>
-            <li>The pattern shows this unit two full times, and then starts a new unit with "10".</li>
-            <li>After "10", the next item in the unit is "20".</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> 20.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 28</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Mengidentifikasi pola berulang (pola ABC).</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: 10, 20, 30, 10, 20, 30, 10, ___</li>
-            <li>"Unit" yang berulang adalah (10, 20, 30).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali penuh, lalu memulai unit baru dengan "10".</li>
-            <li>Setelah "10", item berikutnya dalam unit adalah "20".</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> 20.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 29 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 29</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding a specific position in a repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: △, ◻, O, △, ◻, O, ...</li>
-            <li>The "unit" that repeats is (△, ◻, O). This unit has 3 shapes.</li>
-            <li>We need to find the 11th shape. We can list them:</li>
-            <li>1(△), 2(◻), 3(O) - (Unit 1)</li>
-            <li>4(△), 5(◻), 6(O) - (Unit 2)</li>
-            <li>7(△), 8(◻), 9(O) - (Unit 3)</li>
-            <li>10(△), 11(◻), 12(O) - (Unit 4)</li>
-            <li>The 11th shape is ◻.</li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> ◻ (Square).</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 29</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan posisi tertentu dalam pola berulang.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: △, ◻, O, △, ◻, O, ...</li>
-            <li>"Unit" yang berulang adalah (△, ◻, O). Unit ini punya 3 bentuk.</li>
-            <li>Kita harus mencari bentuk ke-11. Kita bisa mendaftarnya:</li>
-            <li>ke-1(△), ke-2(◻), ke-3(O) - (Unit 1)</li>
-            <li>ke-4(△), ke-5(◻), ke-6(O) - (Unit 2)</li>
-            <li>ke-7(△), ke-8(◻), ke-9(O) - (Unit 3)</li>
-            <li>ke-10(△), ke-11(◻), ke-12(O) - (Unit 4)</li>
-            <li>Bentuk ke-11 adalah ◻.</li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> ◻ (Persegi).</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-    <!-- Pembahasan 30 --><section class="page">
-      <div class="content-wrapper">
-        <h2>Solution for Question 30</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Concept:</strong> Finding missing items in a repeating pattern.</p>
-          </div>
-          <p class="steps-title">Solution Steps:</p>
-          <ol class="solution-points">
-            <li>Look at the pattern: G, H, H, I, J, J, G, H, H, I, J, J, ...</li>
-            <li>The "unit" that repeats is (G, H, H, I, J, J).</li>
-            <li>The pattern shows this unit twice. Then, it shows a third unit that is missing items: G, H, ___ , I, ___ , J</li>
-            <li>Let's compare to the full unit (G, H, H, I, J, J):
-                <br>G -> G
-                <br>H -> H
-                <br>H -> ___ (The first missing letter is H)
-                <br>I -> I
-                <br>J -> ___ (The second missing letter is J)
-                <br>J -> J
-            </li>
-          </ol>
-          <div class="final-answer"><strong>Final Answer:</strong> H, J.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-    <section class="page">
-      <div class="content-wrapper">
-        <h2>Pembahasan untuk Soal 30</h2>
-        <div class="solution-detail">
-          <div class="concept">
-            <p><strong>Konsep:</strong> Menemukan item yang hilang dalam pola berulang.</p>
-          </div>
-          <p class="steps-title">Langkah Penyelesaian:</p>
-          <ol class="solution-points">
-            <li>Lihat polanya: G, H, H, I, J, J, G, H, H, I, J, J, ...</li>
-            <li>"Unit" yang berulang adalah (G, H, H, I, J, J).</li>
-            <li>Pola ini menunjukkan unit tersebut dua kali. Lalu, ia menunjukkan unit ketiga yang itemnya hilang: G, H, ___ , I, ___ , J</li>
-            <li>Mari kita bandingkan dengan unit lengkap (G, H, H, I, J, J):
-                <br>G -> G
-                <br>H -> H
-                <br>H -> ___ (Huruf pertama yang hilang adalah H)
-                <br>I -> I
-                <br>J -> ___ (Huruf kedua yang hilang adalah J)
-                <br>J -> J
-            </li>
-          </ol>
-          <div class="final-answer"><strong>Jawaban Akhir:</strong> H, J.</div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved. Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.
-      </footer>
-    </section>
-
-</body>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
 
