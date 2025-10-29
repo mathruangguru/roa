@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Latihan Soal Olimpiade Matematika - Geometri (Volume Bangun Ruang)
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          processEscapes: true,
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+        color: #1f2937;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .image-desc {
+        background-color: #f9fafb; /* gray-50 */
+        border: 1px dashed #d1d5db; /* gray-300 */
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+        border-radius: 0.25rem;
+        font-style: italic;
+        color: #4b5563; /* gray-600 */
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+      }
+      .solution-step p {
+        margin: 0.2rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      /* Ensure display math takes full width */
+      mjx-container[jax="SVG"][display="true"] {
+        display: block;
+        text-align: center;
+        margin: 1em 0;
+        width: 100%;
+      }
+      /* Align equations to the left within aligned environment */
+      .MathJax_Display .aligned {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 9 - Geometry (Volume)
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 5 - 6 | Volume of Prisms, Cylinders, Pyramids, Cones, and
+          Spheres
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Competition Problems (Soal Kompetisi)</h2>
+
+          <!-- ================================================== -->
+          <!-- Bagian 1: Prisma (Kubus dan Balok) -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">
+            Part 1: Prisms (Cubes and Rectangular Prisms)
+          </h3>
+
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> The surface area of a large cube is 150 cm².
+              This cube is cut into 125 smaller identical cubes. What is the
+              total volume of the small cubes? <br /><br />
+              Luas permukaan sebuah kubus besar adalah 150 cm². Kubus ini
+              dipotong menjadi 125 kubus kecil yang identik. Berapa volume dari
+              kubus kecil tersebut?
+            </p>
+          </div>
+
+          <!-- SOAL 2 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> The dimensions of a rectangular prism are in
+              the ratio 1:2:3. If its volume is 48 cm³, what is its longest
+              side? <br /><br />
+              Dimensi sebuah balok memiliki rasio 1:2:3. Jika volumenya 48 cm³,
+              berapa sisi terpanjangnya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> A rectangular tank has a base area of 200 cm²
+              and a height of 30 cm. It is $\frac{3}{5}$ filled with water. How
+              much more water, in cm³, is needed to fill the tank completely?
+              <br /><br />
+              Sebuah tangki balok memiliki luas alas 200 cm² dan tinggi 30 cm.
+              Tangki ini terisi air $\frac{3}{5}$ bagian. Berapa banyak air
+              lagi, dalam cm³, yang dibutuhkan untuk mengisi tangki sampai
+              penuh?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> A large cube with a side length of 6 cm is
+              made up of 216 small 1-cm cubes. The large cube is painted on all
+              its outer faces. How many small cubes have exactly two faces
+              painted? <br /><br />
+              Sebuah kubus besar dengan panjang sisi 6 cm terbuat dari 216 kubus
+              kecil 1-cm. Kubus besar dicat di semua sisi luarnya. Berapa banyak
+              kubus kecil yang memiliki tepat dua sisi tercat?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> A rectangular box has dimensions of 10 cm, 12
+              cm, and 16 cm. What is the maximum number of 2-cm cubes that can
+              be packed into this box? <br /><br />
+              Sebuah kotak balok memiliki ukuran 10 cm, 12 cm, dan 16 cm. Berapa
+              jumlah maksimum kubus 2-cm yang dapat dimasukkan ke dalam kotak
+              ini?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> A solid metal cuboid (rectangular prism) with
+              dimensions 16 cm, 20 cm, and 25 cm is melted down and recast into
+              a cube. What is the side length of the new cube? <br /><br />
+              Sebuah balok logam padat dengan ukuran 16 cm, 20 cm, dan 25 cm
+              dileburkan dan dicetak ulang menjadi sebuah kubus. Berapa panjang
+              sisi kubus yang baru?
+            </p>
+          </div>
+
+          <!-- SOAL 7 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> The net of an open-top cubical box (a cube
+              missing one face) has a total area of 320 cm². What is the volume
+              of the box? <br /><br />
+              Jaring-jaring sebuah kotak kubus tanpa tutup (kubus yang
+              kehilangan satu sisi) memiliki total luas 320 cm². Berapa volume
+              kotak tersebut?
+            </p>
+            <div style="display: flex; justify-content: center">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_7xz9zk_8658.png"
+                style="width: 150px"
+              />
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> A rectangular tank with a base of 25 cm by 40
+              cm is filled with water to a height of 15 cm. If 5 identical solid
+              cubes with a side length of 10 cm are placed into the tank, what
+              is the new water level? <br /><br />
+              Sebuah tangki balok dengan alas 25 cm x 40 cm diisi air setinggi
+              15 cm. Jika 5 kubus padat identik dengan panjang sisi 10 cm
+              dimasukkan ke dalam tangki, berapa ketinggian air yang baru?
+            </p>
+          </div>
+
+          <!-- SOAL 9 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> A solid is built with 1-cm cubes in layers.
+              The top layer is 1x1, the second layer is 2x2, the third layer is
+              3x3, and so on. What is the total volume of a solid with 7 layers?
+              <br /><br />
+              Sebuah benda padat dibangun dengan kubus 1-cm berlapis. Lapis
+              teratas 1x1, lapis kedua 2x2, lapis ketiga 3x3, dan seterusnya.
+              Berapa total volume benda padat dengan 7 lapis?
+            </p>
+            <div style="display: flex; justify-content: center">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_wd7w1x_7600.png"
+                style="width: 250px"
+              />
+            </div>
+          </div>
+
+          <!-- SOAL 10 BARU (DARI GAMBAR) -->
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> A solid is formed by gluing 3 identical cubes
+              together as shown. The volume of the solid is 375 cm³. What is the
+              surface area of the solid? <br /><br />
+              Sebuah benda padat dibentuk dengan menempelkan 3 kubus identik
+              seperti pada gambar. Volume benda padat tersebut adalah 375 cm³.
+              Berapa luas permukaan benda padat tersebut?
+            </p>
+            <div style="display: flex; justify-content: center">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_b9kblh_8161.png"
+                style="width: 100px"
+              />
+            </div>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Bagian 2: Tabung -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Part 2: Cylinders (Tabung)</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> A cylindrical tank has a radius of 7 m and a
+              height of 5 m. How much water can it hold if it is completely
+              full? (Use $\pi = \frac{22}{7}$) <br /><br />
+              Sebuah tangki silinder memiliki jari-jari 7 m dan tinggi 5 m.
+              Berapa banyak air yang dapat ditampungnya jika terisi penuh?
+              (Gunakan $\pi = \frac{22}{7}$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> A cylindrical can has a volume of 1232 cm³.
+              Its height is 8 cm. What is the radius of its base? (Use $\pi =
+              \frac{22}{7}$) <br /><br />
+              Sebuah kaleng silinder memiliki volume 1232 cm³. Tingginya 8 cm.
+              Berapa jari-jari alasnya? (Gunakan $\pi = \frac{22}{7}$)
+            </p>
+          </div>
+
+          <!-- SOAL 13 BARU (DARI GAMBAR) -->
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> A cylindrical container with a radius of 10
+              cm is filled with water to a height of 14 cm. A solid metal
+              cylinder with a radius of 5 cm and height of 10 cm is lowered into
+              the container until it stands on the base. What is the new water
+              level? <br /><br />
+              Sebuah wadah silinder dengan jari-jari 10 cm diisi air setinggi 14
+              cm. Sebuah silinder logam padat dengan jari-jari 5 cm dan tinggi
+              10 cm diturunkan ke dalam wadah hingga berdiri di alas. Berapa
+              ketinggian air yang baru?
+            </p>
+            <div style="display: flex; justify-content: center">
+              <img
+                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_txeqfl_7556.png"
+                style="width: 150px"
+              />
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> Water flows into an empty cylindrical tank at
+              a rate of 1.54 liters per minute. The base radius of the tank is
+              70 cm. What will be the height of the water in the tank after 5
+              minutes? (1 liter = 1000 cm³, use $\pi = \frac{22}{7}$)
+              <br /><br />
+              Air mengalir ke tangki silinder kosong dengan laju 1,54 liter per
+              menit. Jari-jari alas tangki adalah 70 cm. Berapa ketinggian air
+              di dalam tangki setelah 5 menit? (1 liter = 1000 cm³, gunakan $\pi
+              = \frac{22}{7}$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> A solid cylinder of radius 4 cm and height 10
+              cm is cut in half along its diameter. What is the volume of one
+              half-cylinder? <br /><br />
+              Sebuah silinder padat dengan jari-jari 4 cm dan tinggi 10 cm
+              dipotong menjadi dua bagian sepanjang diameternya. Berapa volume
+              dari satu setengah-silinder?
+            </p>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Bagian 3: Limas dan Kerucut -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">
+            Part 3: Pyramids and Cones (Limas dan Kerucut)
+          </h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> A square pyramid has a base side length of 9
+              cm and a height of 10 cm. What is its volume? <br /><br />
+              Sebuah limas persegi memiliki panjang sisi alas 9 cm dan tinggi 10
+              cm. Berapa volumenya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> A cone has a radius of 7 cm and a height of
+              12 cm. A cylinder has the same base radius and the same volume as
+              the cone. What is the height of the cylinder? (Use $\pi =
+              \frac{22}{7}$) <br /><br />
+              Sebuah kerucut memiliki jari-jari 7 cm dan tinggi 12 cm. Sebuah
+              tabung memiliki jari-jari alas yang sama dan volume yang sama
+              dengan kerucut. Berapa tinggi tabung tersebut? (Gunakan $\pi =
+              \frac{22}{7}$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> The volume of a square pyramid is 320 cm³. If
+              its height is 15 cm, what is the side length of its base?
+              <br /><br />
+              Volume sebuah limas persegi adalah 320 cm³. Jika tingginya 15 cm,
+              berapa panjang sisi alasnya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> A cone-shaped container is filled with water.
+              Its base radius is 6 cm and its height is 14 cm. The water is then
+              poured into an empty cylindrical container with a base radius of 3
+              cm. What will be the height of the water in the cylindrical
+              container? (Use $\pi$) <br /><br />
+              Wadah berbentuk kerucut diisi dengan air. Jari-jari alasnya 6 cm
+              dan tingginya 14 cm. Air tersebut kemudian dituangkan ke dalam
+              wadah silinder kosong dengan jari-jari alas 3 cm. Berapa
+              ketinggian air di dalam wadah silinder? (Gunakan $\pi$)
+            </p>
+          </div>
+
+          <!-- SOAL 20 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> A large solid cube has a side length of 10
+              cm. A cylindrical hole with a radius of 3 cm is drilled all the
+              way through the center of the cube, from the top face to the
+              bottom face. What is the volume of the remaining solid? (Express
+              the volume in $\pi$) <br /><br />
+              Sebuah kubus padat besar memiliki panjang sisi 10 cm. Sebuah
+              lubang berbentuk silinder dengan jari-jari 3 cm dibor menembus
+              pusat kubus, dari sisi atas ke sisi bawah. Berapa volume benda
+              padat yang tersisa? (Nyatakan volume dalam $\pi$)
+            </p>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Bagian 4: Bola -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Part 4: Spheres (Bola)</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> Find the volume of a sphere with a radius of
+              3 cm. (Use $\pi$) <br /><br />
+              Tentukan volume bola dengan jari-jari 3 cm. (Gunakan $\pi$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> A solid metal sphere with a radius of 6 cm is
+              melted down and recast into 27 smaller identical spheres. What is
+              the radius of one small sphere? <br /><br />
+              Sebuah bola logam padat dengan jari-jari 6 cm dileburkan dan
+              dicetak ulang menjadi 27 bola kecil identik. Berapa jari-jari satu
+              bola kecil?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> A solid is in the shape of a hemisphere (half
+              a sphere) with a radius of 6 cm. Find the volume of the solid.
+              (Use $\pi$) <br /><br />
+              Sebuah benda padat berbentuk setengah bola (hemisfer) dengan
+              jari-jari 6 cm. Tentukan volume benda padat tersebut. (Gunakan
+              $\pi$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> A cylindrical glass with a radius of 4 cm and
+              height of 10 cm is half-full of water. A solid sphere with a
+              radius of 3 cm is dropped into the glass. What is the new water
+              level? (Use $\pi$) <br /><br />
+              Sebuah gelas silinder dengan jari-jari 4 cm dan tinggi 10 cm
+              terisi air setengahnya. Sebuah bola padat dengan jari-jari 3 cm
+              dijatuhkan ke dalam gelas. Berapa ketinggian air yang baru?
+              (Gunakan $\pi$)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> A cone and a hemisphere have the same radius
+              $r$. If they also have the same volume, find the height of the
+              cone in terms of $r$. <br /><br />
+              Sebuah kerucut dan setengah bola memiliki jari-jari $r$ yang sama.
+              Jika keduanya juga memiliki volume yang sama, tentukan tinggi
+              kerucut dalam $r$.
+            </p>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Bagian 5: Soal Campuran -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">
+            Part 5: Mixed and Advanced Problems (Soal Campuran dan Lanjutan)
+          </h3>
+
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> A rectangular tank, 50 cm long, 40 cm wide,
+              and 30 cm high, is half-filled with water. Water is then poured
+              from the tank into an empty cubical tank with a side length of 20
+              cm until the cubical tank is full. What is the final water level
+              in the rectangular tank? <br /><br />
+              Sebuah tangki balok, panjang 50 cm, lebar 40 cm, dan tinggi 30 cm,
+              terisi air setengahnya. Air kemudian dituangkan dari tangki
+              tersebut ke tangki kubus kosong dengan panjang sisi 20 cm hingga
+              tangki kubus penuh. Berapa ketinggian air akhir di tangki balok?
+            </p>
+          </div>
+
+          <!-- SOAL 27 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> A large square pyramid (Pyramid A) has a base
+              10 cm $\times$ 10 cm and a height of 15 cm. A smaller pyramid
+              (Pyramid B) is cut from its top by a plane parallel to the base.
+              The cut is made 5 cm from the top vertex (10 cm from the base).
+              What is the volume of the remaining solid (frustum)? <br /><br />
+              Sebuah limas persegi besar (Limas A) memiliki alas 10 cm $\times$
+              10 cm dan tinggi 15 cm. Limas yang lebih kecil (Limas B) dipotong
+              dari puncaknya oleh bidang yang sejajar dengan alas. Potongan
+              dibuat 5 cm dari puncak (10 cm dari alas). Berapa volume benda
+              padat yang tersisa (frustum)?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> A tank has dimensions $13 \text{ cm} \times 8
+              \text{ cm} \times 4 \text{ cm}$. What is the greatest number of $3
+              \text{ cm} \times 3 \text{ cm} \times 2 \text{ cm}$ bricks that
+              can fit into the tank? (The bricks cannot be cut.) <br /><br />
+              Sebuah kotak memiliki dimensi $13 \text{ cm} \times 8 \text{ cm}
+              \times 4 \text{ cm}$. Berapa jumlah maksimum batu bata berukuran
+              $3 \text{ cm} \times 3 \text{ cm} \times 2 \text{ cm}$ yang dapat
+              dimasukkan ke dalam kotak? (Batu bata tidak dapat dipotong.)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> A rectangular tank (Tank A) measuring 20 cm
+              by 7 cm by 23 cm is filled with water to the brim. $\frac{5}{8}$
+              of the water from Tank A is poured into an empty Tank B, filling
+              $\frac{1}{5}$ of Tank B. What is the total volume of Tank B?
+              <br /><br />
+              Tangki balok (Tangki A) berukuran 20 cm x 7 cm x 23 cm diisi air
+              hingga penuh. $\frac{5}{8}$ air dari Tangki A dituangkan ke Tangki
+              B yang kosong, mengisi $\frac{1}{5}$ dari Tangki B. Berapa volume
+              total Tangki B?
+            </p>
+          </div>
+
+          <!-- SOAL 30 BARU -->
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> A solid toy is made from a cylinder and a
+              hemisphere joined at one of the cylinder's circular bases. The
+              radius of both shapes is 7 cm. The height of the cylinder part is
+              10 cm. What is the total volume of the toy? (Use $\pi =
+              \frac{22}{7}$) <br /><br />
+              Sebuah mainan padat terbuat dari tabung dan setengah bola yang
+              digabungkan pada salah satu alas lingkaran tabung. Jari-jari kedua
+              bangun adalah 7 cm. Tinggi bagian tabung adalah 10 cm. Berapa
+              volume total mainan tersebut? (Gunakan $\pi = \frac{22}{7}$)
+            </p>
+          </div>
+        </section>
+
+        <!-- ================================================== -->
+        <!-- Bagian Pembahasan -->
+        <!-- ================================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions (Pembahasan)</h2>
+
+          <!-- ================================================== -->
+          <!-- Pembahasan Bagian 1 -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Solutions for Part 1: Prisms</h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The total volume of all the small
+                cubes is equal to the volume of the large cube from which they
+                were cut. The volume of the large cube must be found from its
+                surface area. <br /><br />
+                <strong>Konsep:</strong> Total volume dari semua kubus kecil
+                sama dengan volume kubus besar tempat mereka dipotong. Volume
+                kubus besar harus dicari dari luas permukaannya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • A cube has 6 identical square faces. <br />• Area of one
+                  face: $$ \text{Area}_{face} = \frac{\text{Total Surface
+                  Area}}{6} = \frac{150 \text{ cm}^2}{6} = 25 \text{ cm}^2 $$ •
+                  Side length ($s$) of the large cube: $$ s = \sqrt{25 \text{
+                  cm}^2} = 5 \text{ cm} $$ • Volume of the large cube: $$
+                  V_{large} = s^3 = 5^3 = 125 \text{ cm}^3 $$ • Since the large
+                  cube is cut into 125 smaller cubes, then the smaller cube has
+                  volume that is equal to $\frac{125 \text{ cm}^3}{125}=1 \text{
+                  cm}^3$. <br />
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kubus memiliki 6 sisi persegi yang identik. <br />• Luas
+                  satu sisi: $$ \text{Luas}_{sisi} = \frac{\text{Total Luas
+                  Permukaan}}{6} = \frac{150 \text{ cm}^2}{6} = 25 \text{ cm}^2
+                  $$ • Panjang sisi ($s$) kubus besar: $$ s = \sqrt{25 \text{
+                  cm}^2} = 5 \text{ cm} $$ • Volume kubus besar: $$ V_{besar} =
+                  s^3 = 5^3 = 125 \text{ cm}^3 $$ • Kemudian kubus besar
+                  tersebut dipotong menjadi 125 kubus-kubus kecil. Akibatnya,
+                  volume kubus kecil sama dengan $\frac{125 \text{ cm}^3}{125}=1
+                  \text{ cm}^3$.<br />
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 1 cm³. / Jawaban: 1 cm³.</div>
+          </div>
+
+          <!-- PEMBAHASAN 2 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Represent the dimensions using the
+                ratio (e.g., $x$, $2x$, $3x$). Use the volume formula to solve
+                for $x$, then find the longest dimension. <br /><br />
+                <strong>Konsep:</strong> Nyatakan dimensi menggunakan rasio
+                (misalnya $x$, $2x$, $3x$). Gunakan rumus volume untuk mencari
+                $x$, lalu temukan dimensi terpanjang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Let the dimensions be $L = x$, $W = 2x$, and $H = 3x$.
+                  <br />• Volume $V = L \times W \times H = (x)(2x)(3x) = 6x^3$.
+                  <br />• We are given $V = 48 \text{ cm}^3$. $$ 6x^3 = 48 $$ $$
+                  x^3 = \frac{48}{6} = 8 $$ $$ x = \sqrt[3]{8} = 2 \text{ cm} $$
+                  • The dimensions are $x=2$ cm, $2x=4$ cm, and $3x=6$ cm.
+                  <br />• The longest side is $3x = 6 \text{ cm}$.
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Misalkan dimensinya $P = x$, $L = 2x$, dan $T = 3x$. <br />•
+                  Volume $V = P \times L \times T = (x)(2x)(3x) = 6x^3$. <br />•
+                  Diketahui $V = 48 \text{ cm}^3$. $$ 6x^3 = 48 $$ $$ x^3 =
+                  \frac{48}{6} = 8 $$ $$ x = \sqrt[3]{8} = 2 \text{ cm} $$ •
+                  Dimensinya adalah $x=2$ cm, $2x=4$ cm, dan $3x=6$ cm. <br />•
+                  Sisi terpanjang adalah $3x = 6 \text{ cm}$.
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 6 cm. / Jawaban: 6 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Volume of a rectangular prism = Base
+                Area $\times$ Height. If $\frac{3}{5}$ is full, the empty
+                portion is $1 - \frac{3}{5} = \frac{2}{5}$. <br /><br />
+                <strong>Konsep:</strong> Volume balok = Luas Alas $\times$
+                Tinggi. Jika $\frac{3}{5}$ terisi, bagian yang kosong adalah $1
+                - \frac{3}{5} = \frac{2}{5}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total volume of the tank: $$ V_{total} = \text{Base Area}
+                  \times \text{Height} = 200 \text{ cm}^2 \times 30 \text{ cm} =
+                  6000 \text{ cm}^3 $$ • Fraction of the tank that is empty: $$
+                  \text{Fraction}_{empty} = 1 - \frac{3}{5} = \frac{2}{5} $$ •
+                  Volume of water needed (empty part): $$ V_{needed} =
+                  \text{Fraction}_{empty} \times V_{total} = \frac{2}{5} \times
+                  6000 \text{ cm}^3 $$ $$ V_{needed} = 2 \times 1200 \text{
+                  cm}^3 = 2400 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume total tangki: $$ V_{total} = \text{Luas Alas} \times
+                  \text{Tinggi} = 200 \text{ cm}^2 \times 30 \text{ cm} = 6000
+                  \text{ cm}^3 $$ • Bagian tangki yang kosong: $$
+                  \text{Bagian}_{kosong} = 1 - \frac{3}{5} = \frac{2}{5} $$ •
+                  Volume air yang dibutuhkan (bagian kosong): $$ V_{dibutuhkan}
+                  = \text{Bagian}_{kosong} \times V_{total} = \frac{2}{5} \times
+                  6000 \text{ cm}^3 $$ $$ V_{dibutuhkan} = 2 \times 1200 \text{
+                  cm}^3 = 2400 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 2400 cm³. / Jawaban: 2400 cm³.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A 6x6x6 cube is made of 216 1-cm
+                cubes. The small cubes with two faces painted are the ones along
+                the edges, but not at the corners. <br /><br />
+                <strong>Konsep:</strong> Kubus 6x6x6 terbuat dari 216 kubus
+                1-cm. Kubus kecil dengan dua sisi tercat adalah kubus yang
+                berada di sepanjang rusuk, tetapi bukan di sudut.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • A large cube with side $n=6$ cm is made of $n \times n
+                  \times n$ small cubes. <br />• Small cubes with exactly two
+                  faces painted are located along the edges, excluding the
+                  corners. <br />• Each edge has $n$ small cubes. The 2 corner
+                  cubes have 3 faces painted. The remaining $n-2$ cubes on each
+                  edge have 2 faces painted. <br />• Number of edge-only cubes
+                  per edge = $6 - 2 = 4$. <br />• A cube has 12 edges. <br />•
+                  Total cubes with 2 faces painted: $$ \text{Total}_{2 faces} =
+                  (\text{Cubes per edge}) \times (\text{Number of edges}) $$ $$
+                  \text{Total}_{2 faces} = 4 \times 12 = 48 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kubus besar dengan sisi $n=6$ cm terbuat dari $n \times n
+                  \times n$ kubus kecil. <br />• Kubus kecil dengan tepat dua
+                  sisi tercat terletak di sepanjang rusuk, kecuali sudut.
+                  <br />• Setiap rusuk memiliki $n$ kubus kecil. 2 kubus sudut
+                  memiliki 3 sisi tercat. Sisa $n-2$ kubus di setiap rusuk
+                  memiliki 2 sisi tercat. <br />• Jumlah kubus hanya-rusuk per
+                  rusuk = $6 - 2 = 4$. <br />• Kubus memiliki 12 rusuk. <br />•
+                  Total kubus dengan 2 sisi tercat: $$ \text{Total}_{2 sisi} =
+                  (\text{Kubus per rusuk}) \times (\text{Jumlah rusuk}) $$ $$
+                  \text{Total}_{2 sisi} = 4 \times 12 = 48 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 48. / Jawaban: 48.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a packing problem. We cannot
+                just divide the total volume. We must see how many cubes fit
+                along each dimension. <br /><br />
+                <strong>Konsep:</strong> Ini adalah soal "packing" (menyusun).
+                Kita tidak bisa hanya membagi total volume. Kita harus melihat
+                berapa banyak kubus yang muat di sepanjang setiap dimensi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Box dimensions: 10 cm, 12 cm, 16 cm. Cube side: 2 cm.
+                  <br />• Number of cubes along the 10 cm dimension: $$ N_{10} =
+                  \lfloor \frac{10 \text{ cm}}{2 \text{ cm}} \rfloor = 5 $$ •
+                  Number of cubes along the 12 cm dimension: $$ N_{12} = \lfloor
+                  \frac{12 \text{ cm}}{2 \text{ cm}} \rfloor = 6 $$ • Number of
+                  cubes along the 16 cm dimension: $$ N_{16} = \lfloor \frac{16
+                  \text{ cm}}{2 \text{ cm}} \rfloor = 8 $$ • Total number of
+                  cubes: $$ N_{total} = N_{10} \times N_{12} \times N_{16} = 5
+                  \times 6 \times 8 = 240 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Dimensi kotak: 10 cm, 12 cm, 16 cm. Sisi kubus: 2 cm.
+                  <br />• Jumlah kubus sepanjang dimensi 10 cm: $$ J_{10} =
+                  \lfloor \frac{10 \text{ cm}}{2 \text{ cm}} \rfloor = 5 $$ •
+                  Jumlah kubus sepanjang dimensi 12 cm: $$ J_{12} = \lfloor
+                  \frac{12 \text{ cm}}{2 \text{ cm}} \rfloor = 6 $$ • Jumlah
+                  kubus sepanjang dimensi 16 cm: $$ J_{16} = \lfloor \frac{16
+                  \text{ cm}}{2 \text{ cm}} \rfloor = 8 $$ • Total jumlah kubus:
+                  $$ J_{total} = J_{10} \times J_{12} \times J_{16} = 5 \times 6
+                  \times 8 = 240 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 240. / Jawaban: 240.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When an object is melted and recast,
+                its volume remains the same. <br /><br />
+                <strong>Konsep:</strong> Ketika sebuah benda dilebur dan dicetak
+                ulang, volumenya tetap sama.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of the cuboid: $$ V_{cuboid} = 16 \text{ cm} \times
+                  20 \text{ cm} \times 25 \text{ cm} $$ $$ V_{cuboid} = 16
+                  \times 500 = 8000 \text{ cm}^3 $$ • The volume of the new cube
+                  is also 8000 cm³. <br />• Let the side of the new cube be $s$.
+                  $$ s^3 = 8000 \text{ cm}^3 $$ $$ s = \sqrt[3]{8000} =
+                  \sqrt[3]{20^3} = 20 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume balok: $$ V_{balok} = 16 \text{ cm} \times 20 \text{
+                  cm} \times 25 \text{ cm} $$ $$ V_{balok} = 16 \times 500 =
+                  8000 \text{ cm}^3 $$ • Volume kubus yang baru juga 8000 cm³.
+                  <br />• Misalkan sisi kubus baru adalah $s$. $$ s^3 = 8000
+                  \text{ cm}^3 $$ $$ s = \sqrt[3]{8000} = \sqrt[3]{20^3} = 20
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 20 cm. / Jawaban: 20 cm.</div>
+          </div>
+
+          <!-- PEMBAHASAN 7 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> An open-top cubical box has 5
+                identical square faces. Find the area of one face, then its side
+                length, then the volume. <br /><br />
+                <strong>Konsep:</strong> Kotak kubus tanpa tutup memiliki 5 sisi
+                persegi yang identik. Cari luas satu sisi, lalu panjang sisinya,
+                lalu volumenya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • The net of an open-top box consists of 5 identical squares.
+                  <br />• Total Area = $5 \times \text{Area of one square}$. $$
+                  320 \text{ cm}^2 = 5 \times s^2 $$ • Area of one square face
+                  ($s^2$): $$ s^2 = \frac{320}{5} = 64 \text{ cm}^2 $$ • Side
+                  length ($s$) of the cube: $$ s = \sqrt{64} = 8 \text{ cm} $$ •
+                  Volume of the box: $$ V = s^3 = 8^3 = 512 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Jaring-jaring kotak tanpa tutup terdiri dari 5 persegi
+                  identik. <br />• Total Luas = $5 \times \text{Luas satu
+                  persegi}$. $$ 320 \text{ cm}^2 = 5 \times s^2 $$ • Luas satu
+                  sisi persegi ($s^2$): $$ s^2 = \frac{320}{5} = 64 \text{ cm}^2
+                  $$ • Panjang sisi ($s$) kubus: $$ s = \sqrt{64} = 8 \text{ cm}
+                  $$ • Volume kotak: $$ V = s^3 = 8^3 = 512 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 512 cm³. / Jawaban: 512 cm³.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When solid objects are submerged, they
+                displace a volume of water equal to their own volume. This
+                causes the water level to rise. $\text{Rise in height} =
+                \text{Volume of objects} / \text{Base Area of tank}$.
+                <br /><br />
+                <strong>Konsep:</strong> Ketika benda padat ditenggelamkan,
+                mereka memindahkan volume air yang sama dengan volume mereka
+                sendiri. Ini menyebabkan ketinggian air naik. $\text{Kenaikan
+                tinggi} = \text{Volume benda} / \text{Luas Alas tangki}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Base Area of the tank: $$ A_{base} = 25 \text{ cm} \times 40
+                  \text{ cm} = 1000 \text{ cm}^2 $$ • Volume of one cube: $$
+                  V_{cube} = (10 \text{ cm})^3 = 1000 \text{ cm}^3 $$ • Total
+                  volume of 5 cubes: $$ V_{total\_cubes} = 5 \times 1000 \text{
+                  cm}^3 = 5000 \text{ cm}^3 $$ • Rise in water level due to
+                  submerged cubes: $$ \text{Rise} =
+                  \frac{V_{total\_cubes}}{A_{base}} = \frac{5000 \text{
+                  cm}^3}{1000 \text{ cm}^2} = 5 \text{ cm} $$ • Original water
+                  level = 15 cm. <br />• New water level: $$ h_{new} =
+                  \text{Original level} + \text{Rise} = 15 \text{ cm} + 5 \text{
+                  cm} = 20 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Luas Alas tangki: $$ A_{alas} = 25 \text{ cm} \times 40
+                  \text{ cm} = 1000 \text{ cm}^2 $$ • Volume satu kubus: $$
+                  V_{kubus} = (10 \text{ cm})^3 = 1000 \text{ cm}^3 $$ • Total
+                  volume 5 kubus: $$ V_{total\_kubus} = 5 \times 1000 \text{
+                  cm}^3 = 5000 \text{ cm}^3 $$ • Kenaikan tinggi air karena
+                  kubus tercelup: $$ \text{Kenaikan} =
+                  \frac{V_{total\_kubus}}{A_{alas}} = \frac{5000 \text{
+                  cm}^3}{1000 \text{ cm}^2} = 5 \text{ cm} $$ • Tinggi air awal
+                  = 15 cm. <br />• Tinggi air baru: $$ t_{baru} = \text{Tinggi
+                  awal} + \text{Kenaikan} = 15 \text{ cm} + 5 \text{ cm} = 20
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 20 cm. / Jawaban: 20 cm.</div>
+          </div>
+
+          <!-- PEMBAHASAN 9 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The total volume is the sum of the
+                volumes of each layer. The volume of the $n^{th}$ layer is
+                $n^2$. We need to find the sum $1^2 + 2^2 + ... + 7^2$.
+                <br /><br />
+                <strong>Konsep:</strong> Volume total adalah jumlah volume
+                setiap lapisan. Volume lapisan ke-$n$ adalah $n^2$. Kita perlu
+                mencari jumlah $1^2 + 2^2 + ... + 7^2$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • The volume of each layer (from top) is $1^2, 2^2, 3^2, ...$
+                  <br />• Volume of Layer 1 (top) = $1^2 = 1$ <br />• Volume of
+                  Layer 2 = $2^2 = 4$ <br />• Volume of Layer 3 = $3^2 = 9$
+                  <br />• Volume of Layer 4 = $4^2 = 16$ <br />• Volume of Layer
+                  5 = $5^2 = 25$ <br />• Volume of Layer 6 = $6^2 = 36$ <br />•
+                  Volume of Layer 7 (base) = $7^2 = 49$ <br />• Total Volume is
+                  the sum: $$ V_{total} = 1 + 4 + 9 + 16 + 25 + 36 + 49 $$ $$
+                  V_{total} = (1 + 49) + (4 + 36) + (9 + 16) + 25 $$ $$
+                  V_{total} = 50 + 40 + 25 + 25 = 140 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume setiap lapisan (dari atas) adalah $1^2, 2^2, 3^2,
+                  ...$ <br />• Volume Lapis 1 (atas) = $1^2 = 1$ <br />• Volume
+                  Lapis 2 = $2^2 = 4$ <br />• Volume Lapis 3 = $3^2 = 9$ <br />•
+                  Volume Lapis 4 = $4^2 = 16$ <br />• Volume Lapis 5 = $5^2 =
+                  25$ <br />• Volume Lapis 6 = $6^2 = 36$ <br />• Volume Lapis 7
+                  (alas) = $7^2 = 49$ <br />• Total Volume adalah jumlahnya: $$
+                  V_{total} = 1 + 4 + 9 + 16 + 25 + 36 + 49 $$ $$ V_{total} = (1
+                  + 49) + (4 + 36) + (9 + 16) + 25 $$ $$ V_{total} = 50 + 40 +
+                  25 + 25 = 140 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 140 cm³. / Jawaban: 140 cm³.</div>
+          </div>
+
+          <!-- PEMBAHASAN 10 BARU (DARI GAMBAR) -->
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> First, find the volume of one cube.
+                Then, calculate the surface area. When cubes are glued, faces
+                are hidden. Total Surface Area = (Total SA of all cubes) - 2
+                $\times$ (Area of glued faces). Or count exposed faces.
+                <br /><br />
+                <strong>Konsep:</strong> Pertama, cari volume satu kubus. Lalu,
+                hitung luas permukaan. Saat kubus dilem, ada sisi yang
+                tersembunyi. Total Luas Permukaan = (Total LP semua kubus) - 2
+                $\times$ (Luas sisi yang menempel). Atau hitung sisi yang
+                terekspos.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total Volume = 375 cm³. Solid is made of 3 identical cubes.
+                  <br />• Volume of one cube: $$ V_{cube} = \frac{375}{3} = 125
+                  \text{ cm}^3 $$ • Side length of one cube: $$ s =
+                  \sqrt[3]{125} = 5 \text{ cm} $$ • Area of one face = $s^2 =
+                  5^2 = 25 \text{ cm}^2$. <br />• Count exposed faces: <br />
+                  - Cube 1 (bottom left): 5 faces (bottom, front, back, left,
+                  top hidden) <br />
+                  - Cube 2 (bottom right): 4 faces (bottom, front, back, right,
+                  top hidden, left hidden) <br />
+                  - Cube 3 (top left): 5 faces (top, front, back, left, bottom
+                  hidden) <br />
+                  Total Exposed Faces: Let's re-examine the L-shape connections.
+                  There are 2 connection points. <br />
+                  Total faces if separate = $3 \times 6 = 18$. <br />
+                  Number of connections = 2. Each hides 2 faces. <br />
+                  Total hidden faces = $2 \times 2 = 4$. <br />
+                  Total exposed faces = $18 - 4 = 14$. <br />
+                  • Surface area of the solid: $$ SA_{solid} = (\text{Number of
+                  exposed faces}) \times (\text{Area of one face}) $$ $$
+                  SA_{solid} = 14 \times 25 = 350 \text{ cm}^2 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total Volume = 375 cm³. Benda padat terbuat dari 3 kubus
+                  identik. <br />• Volume satu kubus: $$ V_{kubus} =
+                  \frac{375}{3} = 125 \text{ cm}^3 $$ • Panjang sisi satu kubus:
+                  $$ s = \sqrt[3]{125} = 5 \text{ cm} $$ • Luas satu sisi = $s^2
+                  = 5^2 = 25 \text{ cm}^2$. <br />• Hitung sisi yang terekspos:
+                  Ada 2 titik sambungan antar kubus. <br />
+                  Total sisi jika terpisah = $3 \times 6 = 18$. <br />
+                  Jumlah sambungan = 2. Setiap sambungan menyembunyikan 2 sisi.
+                  <br />
+                  Total sisi tersembunyi = $2 \times 2 = 4$. <br />
+                  Total sisi terekspos = $18 - 4 = 14$. <br />
+                  • Luas permukaan benda padat: $$ LP_{solid} = (\text{Jumlah
+                  sisi terekspos}) \times (\text{Luas satu sisi}) $$ $$
+                  LP_{solid} = 14 \times 25 = 350 \text{ cm}^2 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 350 cm². / Jawaban: 350 cm².</div>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Pembahasan Bagian 2 -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Solutions for Part 2: Cylinders</h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of a cylinder is $V = \pi
+                r^2 h$. <br /><br />
+                <strong>Konsep:</strong> Volume tabung adalah $V = \pi r^2 t$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $r=7$ m, $h=5$ m, $\pi = \frac{22}{7}$. $$
+                  \begin{aligned} V &= \pi r^2 h \\ &= \left(\frac{22}{7}\right)
+                  \times (7)^2 \times 5 \\ &= \left(\frac{22}{7}\right) \times
+                  49 \times 5 \\ &= 22 \times 7 \times 5 \\ &= 154 \times 5 \\
+                  &= 770 \text{ m}^3 \end{aligned} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $r=7$ m, $t=5$ m, $\pi = \frac{22}{7}$. $$
+                  \begin{aligned} V &= \pi r^2 t \\ &= \left(\frac{22}{7}\right)
+                  \times (7)^2 \times 5 \\ &= \left(\frac{22}{7}\right) \times
+                  49 \times 5 \\ &= 22 \times 7 \times 5 \\ &= 154 \times 5 \\
+                  &= 770 \text{ m}^3 \end{aligned} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 770 m³. / Jawaban: 770 m³.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Rearrange the volume formula to solve
+                for the radius: $r^2 = \frac{V}{\pi h}$. <br /><br />
+                <strong>Konsep:</strong> Ubah rumus volume untuk mencari
+                jari-jari: $r^2 = \frac{V}{\pi t}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $V=1232 \text{ cm}^3$, $h=8$ cm, $\pi = \frac{22}{7}$.
+                  $$ \begin{aligned} V &= \pi r^2 h \\ 1232 &=
+                  \left(\frac{22}{7}\right) \times r^2 \times 8 \\ 1232 &=
+                  \frac{176}{7} r^2 \\ r^2 &= \frac{1232 \times 7}{176} \\ r^2
+                  &= 7 \times 7 \quad (\text{since } 1232 \div 176 = 7) \\ r^2
+                  &= 49 \\ r &= \sqrt{49} = 7 \text{ cm} \end{aligned} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $V=1232 \text{ cm}^3$, $t=8$ cm, $\pi =
+                  \frac{22}{7}$. $$ \begin{aligned} V &= \pi r^2 t \\ 1232 &=
+                  \left(\frac{22}{7}\right) \times r^2 \times 8 \\ 1232 &=
+                  \frac{176}{7} r^2 \\ r^2 &= \frac{1232 \times 7}{176} \\ r^2
+                  &= 7 \times 7 \quad (\text{karena } 1232 \div 176 = 7) \\ r^2
+                  &= 49 \\ r &= \sqrt{49} = 7 \text{ cm} \end{aligned} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7 cm. / Jawaban: 7 cm.</div>
+          </div>
+
+          <!-- PEMBAHASAN 13 BARU (DARI GAMBAR) -->
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of the submerged part of
+                the object causes the water level to rise. $\text{Rise in
+                height} = \text{Volume of object} / \text{Base Area of
+                container}$. <br /><br />
+                <strong>Konsep:</strong> Volume benda yang tercelup menyebabkan
+                ketinggian air naik. $\text{Kenaikan tinggi} = \text{Volume
+                benda} / \text{Luas Alas wadah}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Container radius $R=10$ cm, water height $h_{initial}=14$
+                  cm. <br />• Metal cylinder radius $r=5$ cm, height
+                  $h_{metal}=10$ cm. <br />• Base Area of container: $$ A_{base}
+                  = \pi R^2 = \pi (10^2) = 100\pi \text{ cm}^2 $$ • Volume of
+                  metal cylinder: $$ V_{metal} = \pi r^2 h_{metal} = \pi (5^2)
+                  \times 10 = \pi \times 25 \times 10 = 250\pi \text{ cm}^3 $$ •
+                  The metal cylinder is fully submerged ($h_{metal} = 10 \text{
+                  cm} < h_{initial} = 14 \text{ cm}$). <br />• Rise in water
+                  level: $$ \text{Rise} = \frac{V_{metal}}{A_{base}} =
+                  \frac{250\pi \text{ cm}^3}{100\pi \text{ cm}^2} = 2.5 \text{
+                  cm} $$ • New water level: $$ h_{new} = h_{initial} +
+                  \text{Rise} = 14 \text{ cm} + 2.5 \text{ cm} = 16.5 \text{ cm}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Jari-jari wadah $R=10$ cm, tinggi air $t_{awal}=14$ cm.
+                  <br />• Jari-jari silinder logam $r=5$ cm, tinggi
+                  $t_{logam}=10$ cm. <br />• Luas Alas wadah: $$ A_{alas} = \pi
+                  R^2 = \pi (10^2) = 100\pi \text{ cm}^2 $$ • Volume silinder
+                  logam: $$ V_{logam} = \pi r^2 t_{logam} = \pi (5^2) \times 10
+                  = \pi \times 25 \times 10 = 250\pi \text{ cm}^3 $$ • Silinder
+                  logam tercelup penuh ($t_{logam} = 10 \text{ cm} < t_{awal} =
+                  14 \text{ cm}$). <br />• Kenaikan tinggi air: $$
+                  \text{Kenaikan} = \frac{V_{logam}}{A_{alas}} = \frac{250\pi
+                  \text{ cm}^3}{100\pi \text{ cm}^2} = 2,5 \text{ cm} $$ •
+                  Tinggi air baru: $$ t_{baru} = t_{awal} + \text{Kenaikan} = 14
+                  \text{ cm} + 2,5 \text{ cm} = 16,5 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 16.5 cm. / Jawaban: 16.5 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> $\text{Total Volume added} =
+                \text{Rate} \times \text{Time}$. This added volume fills the
+                cylindrical tank, so $\text{Total Volume added} = \text{Base
+                Area} \times \text{Height}$. <br /><br />
+                <strong>Konsep:</strong> $\text{Total Volume ditambah} =
+                \text{Laju} \times \text{Waktu}$. Volume tambahan ini mengisi
+                tangki silinder, jadi $\text{Total Volume ditambah} = \text{Luas
+                Alas} \times \text{Tinggi}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Convert rate to cm³/min: $$ \text{Rate} = 1.54 \text{ L/min}
+                  \times 1000 \text{ cm}^3/\text{L} = 1540 \text{
+                  cm}^3/\text{min} $$ • Total Volume added in 5 minutes: $$
+                  V_{added} = \text{Rate} \times \text{Time} = 1540 \text{
+                  cm}^3/\text{min} \times 5 \text{ min} = 7700 \text{ cm}^3 $$ •
+                  Base Area of the tank: $$ A_{base} = \pi r^2 =
+                  \left(\frac{22}{7}\right) \times (70 \text{ cm})^2 $$ $$
+                  A_{base} = \left(\frac{22}{7}\right) \times 4900 = 22 \times
+                  700 = 15400 \text{ cm}^2 $$ • Height of water ($h$): $$
+                  V_{added} = A_{base} \times h $$ $$ 7700 = 15400 \times h $$
+                  $$ h = \frac{7700}{15400} = \frac{77}{154} = \frac{1}{2} = 0.5
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Ubah laju ke cm³/menit: $$ \text{Laju} = 1,54 \text{
+                  L/menit} \times 1000 \text{ cm}^3/\text{L} = 1540 \text{
+                  cm}^3/\text{menit} $$ • Total Volume ditambah dalam 5 menit:
+                  $$ V_{ditambah} = \text{Laju} \times \text{Waktu} = 1540
+                  \text{ cm}^3/\text{menit} \times 5 \text{ menit} = 7700 \text{
+                  cm}^3 $$ • Luas Alas tangki: $$ A_{alas} = \pi r^2 =
+                  \left(\frac{22}{7}\right) \times (70 \text{ cm})^2 $$ $$
+                  A_{alas} = \left(\frac{22}{7}\right) \times 4900 = 22 \times
+                  700 = 15400 \text{ cm}^2 $$ • Tinggi air ($t$): $$
+                  V_{ditambah} = A_{alas} \times t $$ $$ 7700 = 15400 \times t
+                  $$ $$ t = \frac{7700}{15400} = \frac{77}{154} = \frac{1}{2} =
+                  0,5 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 0.5 cm. / Jawaban: 0.5 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of the half-cylinder is
+                simply half the volume of the full cylinder. <br /><br />
+                <strong>Konsep:</strong> Volume setengah-silinder adalah
+                setengah dari volume silinder penuh.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of the full cylinder: $$ V_{full} = \pi r^2 h = \pi
+                  \times (4 \text{ cm})^2 \times (10 \text{ cm}) $$ $$ V_{full}
+                  = \pi \times 16 \times 10 = 160\pi \text{ cm}^3 $$ • Volume of
+                  the half-cylinder: $$ V_{half} = \frac{1}{2} \times V_{full} =
+                  \frac{1}{2} \times 160\pi \text{ cm}^3 = 80\pi \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume silinder penuh: $$ V_{penuh} = \pi r^2 t = \pi \times
+                  (4 \text{ cm})^2 \times (10 \text{ cm}) $$ $$ V_{penuh} = \pi
+                  \times 16 \times 10 = 160\pi \text{ cm}^3 $$ • Volume
+                  setengah-silinder: $$ V_{setengah} = \frac{1}{2} \times
+                  V_{penuh} = \frac{1}{2} \times 160\pi \text{ cm}^3 = 80\pi
+                  \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 80$\pi$ cm³. / Jawaban: 80$\pi$ cm³.
+            </div>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Pembahasan Bagian 3 -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Solutions for Part 3: Pyramids and Cones</h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Volume of a pyramid = $\frac{1}{3}
+                \times \text{Base Area} \times \text{Height}$. <br /><br />
+                <strong>Konsep:</strong> Volume limas = $\frac{1}{3} \times
+                \text{Luas Alas} \times \text{Tinggi}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Base is a square with side $s=9$ cm. <br />• Base Area: $$
+                  A_{base} = s^2 = 9^2 = 81 \text{ cm}^2 $$ • Height $h=10$ cm.
+                  <br />• Volume: $$ V = \frac{1}{3} \times A_{base} \times h =
+                  \frac{1}{3} \times 81 \times 10 $$ $$ V = 27 \times 10 = 270
+                  \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Alasnya persegi dengan sisi $s=9$ cm. <br />• Luas Alas: $$
+                  A_{alas} = s^2 = 9^2 = 81 \text{ cm}^2 $$ • Tinggi $t=10$ cm.
+                  <br />• Volume: $$ V = \frac{1}{3} \times A_{alas} \times t =
+                  \frac{1}{3} \times 81 \times 10 $$ $$ V = 27 \times 10 = 270
+                  \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 270 cm³. / Jawaban: 270 cm³.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> $V_{cone} = \frac{1}{3} \pi r^2
+                h_{cone}$. $V_{cylinder} = \pi r^2 h_{cylinder}$. We are given
+                $V_{cone} = V_{cylinder}$ and $r_{cone} = r_{cylinder}$.
+                <br /><br />
+                <strong>Konsep:</strong> $V_{kerucut} = \frac{1}{3} \pi r^2
+                t_{kerucut}$. $V_{tabung} = \pi r^2 t_{tabung}$. Diketahui
+                $V_{kerucut} = V_{tabung}$ dan $r_{kerucut} = r_{tabung}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $V_{cone} = V_{cylinder}$ and $r_{cone} = r_{cylinder}
+                  = r$. $$ V_{cone} = \frac{1}{3} \pi r^2 h_{cone} $$ $$
+                  V_{cylinder} = \pi r^2 h_{cylinder} $$ • Set them equal: $$
+                  \frac{1}{3} \pi r^2 h_{cone} = \pi r^2 h_{cylinder} $$ •
+                  Cancel $\pi r^2$ from both sides: $$ \frac{1}{3} h_{cone} =
+                  h_{cylinder} $$ • Given $h_{cone} = 12$ cm. $$ h_{cylinder} =
+                  \frac{1}{3} \times 12 \text{ cm} = 4 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $V_{kerucut} = V_{tabung}$ dan $r_{kerucut} =
+                  r_{tabung} = r$. $$ V_{kerucut} = \frac{1}{3} \pi r^2
+                  t_{kerucut} $$ $$ V_{tabung} = \pi r^2 t_{tabung} $$ • Samakan
+                  keduanya: $$ \frac{1}{3} \pi r^2 t_{kerucut} = \pi r^2
+                  t_{tabung} $$ • Coret $\pi r^2$ dari kedua sisi: $$
+                  \frac{1}{3} t_{kerucut} = t_{tabung} $$ • Diketahui
+                  $t_{kerucut} = 12$ cm. $$ t_{tabung} = \frac{1}{3} \times 12
+                  \text{ cm} = 4 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 4 cm. / Jawaban: 4 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Rearrange the pyramid volume formula
+                to solve for the Base Area: $\text{Base Area} = \frac{3 \times
+                V}{\text{Height}}$. Then find the side length from the base
+                area. <br /><br />
+                <strong>Konsep:</strong> Ubah rumus volume limas untuk mencari
+                Luas Alas: $\text{Luas Alas} = \frac{3 \times
+                V}{\text{Tinggi}}$. Kemudian cari panjang sisi dari luas alas.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $V = 320 \text{ cm}^3$, $h = 15$ cm. $$ V =
+                  \frac{1}{3} \times A_{base} \times h $$ $$ 320 = \frac{1}{3}
+                  \times A_{base} \times 15 $$ $$ 320 = 5 \times A_{base} $$ $$
+                  A_{base} = \frac{320}{5} = 64 \text{ cm}^2 $$ • Since the base
+                  is square, let the side be $s$. $$ s^2 = A_{base} = 64 \text{
+                  cm}^2 $$ $$ s = \sqrt{64} = 8 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $V = 320 \text{ cm}^3$, $t = 15$ cm. $$ V =
+                  \frac{1}{3} \times A_{alas} \times t $$ $$ 320 = \frac{1}{3}
+                  \times A_{alas} \times 15 $$ $$ 320 = 5 \times A_{alas} $$ $$
+                  A_{alas} = \frac{320}{5} = 64 \text{ cm}^2 $$ • Karena alasnya
+                  persegi, misalkan sisinya $s$. $$ s^2 = A_{alas} = 64 \text{
+                  cm}^2 $$ $$ s = \sqrt{64} = 8 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 8 cm. / Jawaban: 8 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of water remains constant.
+                Find the volume of water in the cone and then use that volume to
+                find the height in the cylinder. <br /><br />
+                <strong>Konsep:</strong> Volume air tetap konstan. Cari volume
+                air di kerucut, lalu gunakan volume itu untuk mencari tinggi di
+                tabung.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of water in the cone: $$ V_{cone} = \frac{1}{3} \pi
+                  r_{cone}^2 h_{cone} $$ $$ V_{cone} = \frac{1}{3} \pi (6^2)
+                  (14) = \frac{1}{3} \pi (36)(14) $$ $$ V_{cone} = 12 \times 14
+                  \pi = 168\pi \text{ cm}^3 $$ • This volume fills the cylinder
+                  to height $h_{cyl}$. $$ V_{cylinder} = \pi r_{cyl}^2 h_{cyl}
+                  $$ $$ 168\pi = \pi (3^2) h_{cyl} $$ $$ 168\pi = 9\pi h_{cyl}
+                  $$ • Cancel $\pi$: $$ h_{cyl} = \frac{168}{9} = \frac{56}{3}
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume air di kerucut: $$ V_{kerucut} = \frac{1}{3} \pi
+                  r_{kerucut}^2 t_{kerucut} $$ $$ V_{kerucut} = \frac{1}{3} \pi
+                  (6^2) (14) = \frac{1}{3} \pi (36)(14) $$ $$ V_{kerucut} = 12
+                  \times 14 \pi = 168\pi \text{ cm}^3 $$ • Volume ini mengisi
+                  tabung setinggi $t_{tabung}$. $$ V_{tabung} = \pi r_{tabung}^2
+                  t_{tabung} $$ $$ 168\pi = \pi (3^2) t_{tabung} $$ $$ 168\pi =
+                  9\pi t_{tabung} $$ • Coret $\pi$: $$ t_{tabung} =
+                  \frac{168}{9} = \frac{56}{3} \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{56}{3}$ cm (or $18 \frac{2}{3}$ cm). / Jawaban:
+              $\frac{56}{3}$ cm (atau $18 \frac{2}{3}$ cm).
+            </div>
+          </div>
+
+          <!-- PEMBAHASAN 20 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of the remaining solid is
+                the volume of the original cube minus the volume of the
+                cylindrical hole. <br /><br />
+                <strong>Konsep:</strong> Volume benda yang tersisa adalah volume
+                kubus awal dikurangi volume lubang silinder.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of the large cube: $$ V_{cube} = s^3 = (10 \text{
+                  cm})^3 = 1000 \text{ cm}^3 $$ • The cylindrical hole has
+                  radius $r=3$ cm and its height $h$ is the full height of the
+                  cube, so $h=10$ cm. <br />• Volume of the cylindrical hole: $$
+                  V_{hole} = \pi r^2 h = \pi (3^2)(10) $$ $$ V_{hole} = \pi
+                  \times 9 \times 10 = 90\pi \text{ cm}^3 $$ • Volume of the
+                  remaining solid: $$ V_{remaining} = V_{cube} - V_{hole} $$ $$
+                  V_{remaining} = (1000 - 90\pi) \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume kubus besar: $$ V_{kubus} = s^3 = (10 \text{ cm})^3 =
+                  1000 \text{ cm}^3 $$ • Lubang silinder memiliki jari-jari
+                  $r=3$ cm dan tingginya $t$ sama dengan tinggi kubus, jadi
+                  $t=10$ cm. <br />• Volume lubang silinder: $$ V_{lubang} = \pi
+                  r^2 t = \pi (3^2)(10) $$ $$ V_{lubang} = \pi \times 9 \times
+                  10 = 90\pi \text{ cm}^3 $$ • Volume benda padat yang tersisa:
+                  $$ V_{tersisa} = V_{kubus} - V_{lubang} $$ $$ V_{tersisa} =
+                  (1000 - 90\pi) \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $(1000 - 90\pi)$ cm³. / Jawaban: $(1000 - 90\pi)$ cm³.
+            </div>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Pembahasan Bagian 4 -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">Solutions for Part 4: Spheres</h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Volume of a sphere = $V =
+                \frac{4}{3}\pi r^3$. <br /><br />
+                <strong>Konsep:</strong> Volume bola = $V = \frac{4}{3}\pi r^3$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $r=3$ cm. $$ V = \frac{4}{3}\pi r^3 = \frac{4}{3}\pi
+                  (3)^3 $$ $$ V = \frac{4}{3}\pi (27) = 4 \times 9 \pi = 36\pi
+                  \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $r=3$ cm. $$ V = \frac{4}{3}\pi r^3 =
+                  \frac{4}{3}\pi (3)^3 $$ $$ V = \frac{4}{3}\pi (27) = 4 \times
+                  9 \pi = 36\pi \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 36$\pi$ cm³. / Jawaban: 36$\pi$ cm³.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The total volume of the metal is
+                conserved. $V_{large} = 27 \times V_{small}$. <br /><br />
+                <strong>Konsep:</strong> Total volume logam tetap sama.
+                $V_{besar} = 27 \times V_{kecil}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Large radius $R=6$ cm. Small radius $r$. <br />• Volume of
+                  large sphere: $$ V_{large} = \frac{4}{3}\pi R^3 =
+                  \frac{4}{3}\pi (6^3) = \frac{4}{3}\pi (216) $$ • Total volume
+                  of 27 small spheres: $$ V_{total\_small} = 27 \times V_{small}
+                  = 27 \times \left(\frac{4}{3}\pi r^3\right) $$ • Set volumes
+                  equal: $$ V_{large} = V_{total\_small} $$ $$ \frac{4}{3}\pi
+                  (216) = 27 \times \frac{4}{3}\pi r^3 $$ • Cancel
+                  $\frac{4}{3}\pi$: $$ 216 = 27 r^3 $$ $$ r^3 = \frac{216}{27} =
+                  8 $$ $$ r = \sqrt[3]{8} = 2 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Jari-jari besar $R=6$ cm. Jari-jari kecil $r$. <br />•
+                  Volume bola besar: $$ V_{besar} = \frac{4}{3}\pi R^3 =
+                  \frac{4}{3}\pi (6^3) = \frac{4}{3}\pi (216) $$ • Total volume
+                  27 bola kecil: $$ V_{total\_kecil} = 27 \times V_{kecil} = 27
+                  \times \left(\frac{4}{3}\pi r^3\right) $$ • Samakan volume: $$
+                  V_{besar} = V_{total\_kecil} $$ $$ \frac{4}{3}\pi (216) = 27
+                  \times \frac{4}{3}\pi r^3 $$ • Coret $\frac{4}{3}\pi$: $$ 216
+                  = 27 r^3 $$ $$ r^3 = \frac{216}{27} = 8 $$ $$ r = \sqrt[3]{8}
+                  = 2 \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 2 cm. / Jawaban: 2 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> A hemisphere is half a sphere. Its
+                volume is $\frac{1}{2} \times V_{sphere} = \frac{1}{2} \times
+                \frac{4}{3}\pi r^3 = \frac{2}{3}\pi r^3$. <br /><br />
+                <strong>Konsep:</strong> Setengah bola (hemisfer) adalah
+                setengah dari bola. Volumenya adalah $\frac{1}{2} \times
+                V_{bola} = \frac{1}{2} \times \frac{4}{3}\pi r^3 =
+                \frac{2}{3}\pi r^3$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given radius $r=6$ cm. $$ V_{hemisphere} = \frac{2}{3}\pi
+                  r^3 = \frac{2}{3}\pi (6)^3 $$ $$ V_{hemisphere} =
+                  \frac{2}{3}\pi (216) = 2 \times 72 \pi = 144\pi \text{ cm}^3
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui jari-jari $r=6$ cm. $$ V_{hemisfer} =
+                  \frac{2}{3}\pi r^3 = \frac{2}{3}\pi (6)^3 $$ $$ V_{hemisfer} =
+                  \frac{2}{3}\pi (216) = 2 \times 72 \pi = 144\pi \text{ cm}^3
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 144$\pi$ cm³. / Jawaban: 144$\pi$ cm³.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of the submerged sphere
+                causes the water level to rise. $\text{Rise in height} =
+                \text{Volume of sphere} / \text{Base Area of cylinder}$.
+                <br /><br />
+                <strong>Konsep:</strong> Volume bola yang tercelup menyebabkan
+                ketinggian air naik. $\text{Kenaikan tinggi} = \text{Volume
+                bola} / \text{Luas Alas silinder}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Cylinder radius $R=4$ cm, height $H=10$ cm. Sphere radius
+                  $r=3$ cm. <br />• Original water level: $$ h_{initial} =
+                  \frac{1}{2} H = \frac{1}{2} \times 10 = 5 \text{ cm} $$ •
+                  Volume of the sphere: $$ V_{sphere} = \frac{4}{3}\pi r^3 =
+                  \frac{4}{3}\pi (3^3) = \frac{4}{3}\pi (27) = 36\pi \text{
+                  cm}^3 $$ • Base Area of the cylinder: $$ A_{base} = \pi R^2 =
+                  \pi (4^2) = 16\pi \text{ cm}^2 $$ • Rise in water level due to
+                  the sphere: $$ \text{Rise} = \frac{V_{sphere}}{A_{base}} =
+                  \frac{36\pi \text{ cm}^3}{16\pi \text{ cm}^2} = \frac{36}{16}
+                  = \frac{9}{4} = 2.25 \text{ cm} $$ • New water level: $$
+                  h_{new} = h_{initial} + \text{Rise} = 5 \text{ cm} + 2.25
+                  \text{ cm} = 7.25 \text{ cm} $$ • Check: New height (7.25 cm)
+                  is less than cylinder height (10 cm). Sphere diameter (6 cm)
+                  is less than new height, so it is fully submerged.
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Jari-jari silinder $R=4$ cm, tinggi $T=10$ cm. Jari-jari
+                  bola $r=3$ cm. <br />• Tinggi air awal: $$ t_{awal} =
+                  \frac{1}{2} T = \frac{1}{2} \times 10 = 5 \text{ cm} $$ •
+                  Volume bola: $$ V_{bola} = \frac{4}{3}\pi r^3 = \frac{4}{3}\pi
+                  (3^3) = \frac{4}{3}\pi (27) = 36\pi \text{ cm}^3 $$ • Luas
+                  Alas silinder: $$ A_{alas} = \pi R^2 = \pi (4^2) = 16\pi
+                  \text{ cm}^2 $$ • Kenaikan tinggi air karena bola: $$
+                  \text{Kenaikan} = \frac{V_{bola}}{A_{alas}} = \frac{36\pi
+                  \text{ cm}^3}{16\pi \text{ cm}^2} = \frac{36}{16} =
+                  \frac{9}{4} = 2,25 \text{ cm} $$ • Tinggi air baru: $$
+                  t_{baru} = t_{awal} + \text{Kenaikan} = 5 \text{ cm} + 2,25
+                  \text{ cm} = 7,25 \text{ cm} $$ • Cek: Tinggi baru (7,25 cm)
+                  kurang dari tinggi silinder (10 cm). Diameter bola (6 cm)
+                  kurang dari tinggi baru, jadi tercelup penuh.
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7.25 cm. / Jawaban: 7.25 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Set the two volume formulas equal to
+                each other and solve for the unknown height, $h$.
+                $V_{hemisphere} = \frac{2}{3}\pi r^3$. $V_{cone} =
+                \frac{1}{3}\pi r^2 h$. <br /><br />
+                <strong>Konsep:</strong> Samakan kedua rumus volume dan cari
+                tinggi yang tidak diketahui, $t$. $V_{hemisfer} = \frac{2}{3}\pi
+                r^3$. $V_{kerucut} = \frac{1}{3}\pi r^2 t$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Given $V_{cone} = V_{hemisphere}$ and radius is $r$ for
+                  both. $$ V_{cone} = \frac{1}{3}\pi r^2 h $$ $$ V_{hemisphere}
+                  = \frac{2}{3}\pi r^3 $$ • Set them equal: $$ \frac{1}{3}\pi
+                  r^2 h = \frac{2}{3}\pi r^3 $$ • Divide both sides by
+                  $\frac{1}{3}\pi r^2$ (assuming $r \ne 0$): $$ h = 2r $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Diketahui $V_{kerucut} = V_{hemisfer}$ dan jari-jari $r$
+                  untuk keduanya. $$ V_{kerucut} = \frac{1}{3}\pi r^2 t $$ $$
+                  V_{hemisfer} = \frac{2}{3}\pi r^3 $$ • Samakan keduanya: $$
+                  \frac{1}{3}\pi r^2 t = \frac{2}{3}\pi r^3 $$ • Bagi kedua sisi
+                  dengan $\frac{1}{3}\pi r^2$ (asumsi $r \ne 0$): $$ t = 2r $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $h = 2r$. / Jawaban: $t = 2r$.
+            </div>
+          </div>
+
+          <!-- ================================================== -->
+          <!-- Pembahasan Bagian 5 -->
+          <!-- ================================================== -->
+          <h3 class="topic-title">
+            Solutions for Part 5: Mixed and Advanced Problems
+          </h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Calculate the initial volume of water.
+                Calculate the volume of water removed (volume of the full
+                cubical tank). Find the remaining volume and use it to find the
+                new height in the rectangular tank. <br /><br />
+                <strong>Konsep:</strong> Hitung volume air awal. Hitung volume
+                air yang dipindahkan (volume tangki kubus penuh). Cari volume
+                yang tersisa dan gunakan untuk mencari ketinggian baru di tangki
+                balok.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Rectangular tank dimensions: $50 \times 40 \times 30$.
+                  Cubical tank side: 20 cm. <br />• Initial water height in
+                  rectangular tank: $$ h_{initial} = \frac{1}{2} \times 30 = 15
+                  \text{ cm} $$ • Initial water volume in rectangular tank: $$
+                  V_{initial} = 50 \times 40 \times 15 = 2000 \times 15 = 30000
+                  \text{ cm}^3 $$ • Volume of water removed (to fill cubical
+                  tank): $$ V_{removed} = V_{cubical} = 20^3 = 8000 \text{ cm}^3
+                  $$ • Remaining water volume in rectangular tank: $$
+                  V_{remaining} = V_{initial} - V_{removed} = 30000 - 8000 =
+                  22000 \text{ cm}^3 $$ • Base area of rectangular tank: $$
+                  A_{base\_rect} = 50 \times 40 = 2000 \text{ cm}^2 $$ • Final
+                  water level in rectangular tank: $$ h_{final} =
+                  \frac{V_{remaining}}{A_{base\_rect}} = \frac{22000}{2000} = 11
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Dimensi tangki balok: $50 \times 40 \times 30$. Sisi tangki
+                  kubus: 20 cm. <br />• Tinggi air awal di tangki balok: $$
+                  t_{awal} = \frac{1}{2} \times 30 = 15 \text{ cm} $$ • Volume
+                  air awal di tangki balok: $$ V_{awal} = 50 \times 40 \times 15
+                  = 2000 \times 15 = 30000 \text{ cm}^3 $$ • Volume air yang
+                  dipindahkan (untuk mengisi tangki kubus): $$ V_{pindah} =
+                  V_{kubus} = 20^3 = 8000 \text{ cm}^3 $$ • Volume air tersisa
+                  di tangki balok: $$ V_{sisa} = V_{awal} - V_{pindah} = 30000 -
+                  8000 = 22000 \text{ cm}^3 $$ • Luas alas tangki balok: $$
+                  A_{alas\_balok} = 50 \times 40 = 2000 \text{ cm}^2 $$ • Tinggi
+                  air akhir di tangki balok: $$ t_{akhir} =
+                  \frac{V_{sisa}}{A_{alas\_balok}} = \frac{22000}{2000} = 11
+                  \text{ cm} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 11 cm. / Jawaban: 11 cm.</div>
+          </div>
+
+          <!-- PEMBAHASAN 27 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The volume of a frustum is the volume
+                of the large pyramid minus the volume of the small pyramid cut
+                from the top. Use similar solids: the ratio of volumes is the
+                cube of the ratio of heights. <br /><br />
+                <strong>Konsep:</strong> Volume frustum adalah volume limas
+                besar dikurangi volume limas kecil yang dipotong dari atas.
+                Gunakan kesebangunan: rasio volume adalah pangkat tiga dari
+                rasio tinggi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of the large pyramid (A): $$ V_A = \frac{1}{3} \times
+                  \text{Base Area} \times \text{Height} $$ $$ V_A = \frac{1}{3}
+                  \times (10 \times 10) \times 15 = \frac{1}{3} \times 100
+                  \times 15 = 500 \text{ cm}^3 $$ • The small pyramid (B) has
+                  height $h_B = 5$ cm. The large pyramid (A) has $h_A = 15$ cm.
+                  <br />• Ratio of heights: $$ \frac{h_B}{h_A} = \frac{5}{15} =
+                  \frac{1}{3} $$ • The pyramids are similar. The ratio of their
+                  volumes is the cube of the ratio of their heights. $$
+                  \frac{V_B}{V_A} = \left(\frac{h_B}{h_A}\right)^3 =
+                  \left(\frac{1}{3}\right)^3 = \frac{1}{27} $$ • Volume of the
+                  small pyramid (B): $$ V_B = V_A \times \frac{1}{27} = 500
+                  \times \frac{1}{27} = \frac{500}{27} \text{ cm}^3 $$ • Volume
+                  of the frustum (remaining solid): $$ V_{frustum} = V_A - V_B =
+                  500 - \frac{500}{27} $$ $$ V_{frustum} = \frac{500 \times
+                  27}{27} - \frac{500}{27} = \frac{13500 - 500}{27} =
+                  \frac{13000}{27} \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume limas besar (A): $$ V_A = \frac{1}{3} \times
+                  \text{Luas Alas} \times \text{Tinggi} $$ $$ V_A = \frac{1}{3}
+                  \times (10 \times 10) \times 15 = \frac{1}{3} \times 100
+                  \times 15 = 500 \text{ cm}^3 $$ • Limas kecil (B) memiliki
+                  tinggi $t_B = 5$ cm. Limas besar (A) memiliki $t_A = 15$ cm.
+                  <br />• Rasio tinggi: $$ \frac{t_B}{t_A} = \frac{5}{15} =
+                  \frac{1}{3} $$ • Kedua limas sebangun. Rasio volumenya adalah
+                  pangkat tiga dari rasio tingginya. $$ \frac{V_B}{V_A} =
+                  \left(\frac{t_B}{t_A}\right)^3 = \left(\frac{1}{3}\right)^3 =
+                  \frac{1}{27} $$ • Volume limas kecil (B): $$ V_B = V_A \times
+                  \frac{1}{27} = 500 \times \frac{1}{27} = \frac{500}{27} \text{
+                  cm}^3 $$ • Volume frustum (benda sisa): $$ V_{frustum} = V_A -
+                  V_B = 500 - \frac{500}{27} $$ $$ V_{frustum} = \frac{500
+                  \times 27}{27} - \frac{500}{27} = \frac{13500 - 500}{27} =
+                  \frac{13000}{27} \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{13000}{27}$ cm³. / Jawaban: $\frac{13000}{27}$ cm³.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a 3D packing problem. Check
+                how many bricks fit along each dimension for different
+                orientations. Maximize the product. <br /><br />
+                <strong>Konsep:</strong> Ini adalah soal "packing" 3D. Cek
+                berapa banyak bata yang muat di sepanjang setiap dimensi untuk
+                orientasi yang berbeda. Maksimalkan hasilnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Tank: $13 \times 8 \times 4$. Brick: $3 \times 3 \times 2$.
+                  <br />• <strong>Orientation 1:</strong> Base $3 \times 3$,
+                  Height 2. <br />
+                  Fit along 13: $\lfloor 13/3 \rfloor = 4$. <br />
+                  Fit along 8: $\lfloor 8/3 \rfloor = 2$. <br />
+                  Fit along 4 (Height): $\lfloor 4/2 \rfloor = 2$. <br />
+                  Total = $4 \times 2 \times 2 = 16$. <br />•
+                  <strong>Orientation 2:</strong> Base $3 \times 2$, Height 3.
+                  <br />
+                  Fit along 13: $\lfloor 13/3 \rfloor = 4$. <br />
+                  Fit along 8: $\lfloor 8/2 \rfloor = 4$. <br />
+                  Fit along 4 (Height): $\lfloor 4/3 \rfloor = 1$. <br />
+                  Total = $4 \times 4 \times 1 = 16$. <br />•
+                  <strong>Orientation 3:</strong> Base $2 \times 3$, Height 3.
+                  <br />
+                  Fit along 13: $\lfloor 13/2 \rfloor = 6$. <br />
+                  Fit along 8: $\lfloor 8/3 \rfloor = 2$. <br />
+                  Fit along 4 (Height): $\lfloor 4/3 \rfloor = 1$. <br />
+                  Total = $6 \times 2 \times 1 = 12$. <br />• The maximum number
+                  of bricks is 16.
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kotak: $13 \times 8 \times 4$. Bata: $3 \times 3 \times 2$.
+                  <br />• <strong>Orientasi 1:</strong> Alas $3 \times 3$,
+                  Tinggi 2. <br />
+                  Muat sepanjang 13: $\lfloor 13/3 \rfloor = 4$. <br />
+                  Muat sepanjang 8: $\lfloor 8/3 \rfloor = 2$. <br />
+                  Muat sepanjang 4 (Tinggi): $\lfloor 4/2 \rfloor = 2$. <br />
+                  Total = $4 \times 2 \times 2 = 16$. <br />•
+                  <strong>Orientasi 2:</strong> Alas $3 \times 2$, Tinggi 3.
+                  <br />
+                  Muat sepanjang 13: $\lfloor 13/3 \rfloor = 4$. <br />
+                  Muat sepanjang 8: $\lfloor 8/2 \rfloor = 4$. <br />
+                  Muat sepanjang 4 (Tinggi): $\lfloor 4/3 \rfloor = 1$. <br />
+                  Total = $4 \times 4 \times 1 = 16$. <br />•
+                  <strong>Orientasi 3:</strong> Alas $2 \times 3$, Tinggi 3.
+                  <br />
+                  Muat sepanjang 13: $\lfloor 13/2 \rfloor = 6$. <br />
+                  Muat sepanjang 8: $\lfloor 8/3 \rfloor = 2$. <br />
+                  Muat sepanjang 4 (Tinggi): $\lfloor 4/3 \rfloor = 1$. <br />
+                  Total = $6 \times 2 \times 1 = 12$. <br />• Jumlah bata
+                  maksimum adalah 16.
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 16. / Jawaban: 16.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Calculate volume of Tank A, find the
+                volume poured, then use the fraction it fills in Tank B to find
+                Tank B's total volume. <br /><br />
+                <strong>Konsep:</strong> Hitung volume Tangki A, cari volume
+                yang dituangkan, lalu gunakan fraksi yang diisinya di Tangki B
+                untuk mencari volume total Tangki B.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume of Tank A: $$ V_A = 20 \times 7 \times 23 = 140
+                  \times 23 = 3220 \text{ cm}^3 $$ • Volume of water poured from
+                  A to B: $$ V_{poured} = \frac{5}{8} \times V_A = \frac{5}{8}
+                  \times 3220 $$ $$ V_{poured} = 5 \times (3220 / 8) = 5 \times
+                  402.5 = 2012.5 \text{ cm}^3 $$ • This volume fills
+                  $\frac{1}{5}$ of Tank B. Let $V_B$ be the total volume of Tank
+                  B. $$ \frac{1}{5} V_B = V_{poured} = 2012.5 \text{ cm}^3 $$ •
+                  Total Volume of Tank B: $$ V_B = 5 \times 2012.5 = 10062.5
+                  \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Volume Tangki A: $$ V_A = 20 \times 7 \times 23 = 140 \times
+                  23 = 3220 \text{ cm}^3 $$ • Volume air yang dituangkan dari A
+                  ke B: $$ V_{dituang} = \frac{5}{8} \times V_A = \frac{5}{8}
+                  \times 3220 $$ $$ V_{dituang} = 5 \times (3220 / 8) = 5 \times
+                  402,5 = 2012,5 \text{ cm}^3 $$ • Volume ini mengisi
+                  $\frac{1}{5}$ dari Tangki B. Misalkan $V_B$ adalah volume
+                  total Tangki B. $$ \frac{1}{5} V_B = V_{dituang} = 2012,5
+                  \text{ cm}^3 $$ • Volume Total Tangki B: $$ V_B = 5 \times
+                  2012,5 = 10062,5 \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: 10062.5 cm³. / Jawaban: 10062,5 cm³.
+            </div>
+          </div>
+
+          <!-- PEMBAHASAN 30 BARU -->
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The total volume is the sum of the
+                volume of the cylinder and the volume of the hemisphere.
+                <br /><br />
+                <strong>Konsep:</strong> Volume total adalah jumlah dari volume
+                tabung dan volume setengah bola.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <div class="solution-step">
+                <p>
+                  • Radius of both parts $r=7$ cm. Height of cylinder $h=10$ cm.
+                  <br />• Volume of Cylinder: $$ V_{cyl} = \pi r^2 h =
+                  \left(\frac{22}{7}\right) \times (7^2) \times 10 $$ $$ V_{cyl}
+                  = \left(\frac{22}{7}\right) \times 49 \times 10 = 22 \times 7
+                  \times 10 = 1540 \text{ cm}^3 $$ • Volume of Hemisphere: $$
+                  V_{hemi} = \frac{2}{3}\pi r^3 = \frac{2}{3} \times
+                  \left(\frac{22}{7}\right) \times (7^3) $$ $$ V_{hemi} =
+                  \frac{2}{3} \times \frac{22}{7} \times 343 = \frac{2}{3}
+                  \times 22 \times 49 = \frac{2156}{3} \text{ cm}^3 $$ • Total
+                  Volume: $$ V_{total} = V_{cyl} + V_{hemi} = 1540 +
+                  \frac{2156}{3} $$ $$ V_{total} = \frac{4620}{3} +
+                  \frac{2156}{3} = \frac{6776}{3} \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Jari-jari kedua bagian $r=7$ cm. Tinggi tabung $t=10$ cm.
+                  <br />• Volume Tabung: $$ V_{tabung} = \pi r^2 t =
+                  \left(\frac{22}{7}\right) \times (7^2) \times 10 $$ $$
+                  V_{tabung} = \left(\frac{22}{7}\right) \times 49 \times 10 =
+                  22 \times 7 \times 10 = 1540 \text{ cm}^3 $$ • Volume Hemisfer
+                  (Setengah Bola): $$ V_{hemi} = \frac{2}{3}\pi r^3 =
+                  \frac{2}{3} \times \left(\frac{22}{7}\right) \times (7^3) $$
+                  $$ V_{hemi} = \frac{2}{3} \times \frac{22}{7} \times 343 =
+                  \frac{2}{3} \times 22 \times 49 = \frac{2156}{3} \text{ cm}^3
+                  $$ • Total Volume: $$ V_{total} = V_{tabung} + V_{hemi} = 1540
+                  + \frac{2156}{3} $$ $$ V_{total} = \frac{4620}{3} +
+                  \frac{2156}{3} = \frac{6776}{3} \text{ cm}^3 $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{6776}{3}$ cm³ (or $2258 \frac{2}{3}$ cm³). /
+              Jawaban: $\frac{6776}{3}$ cm³ (atau $2258 \frac{2}{3}$ cm³).
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
