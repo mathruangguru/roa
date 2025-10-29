@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto; /* Ensure horizontal scroll for wide content */
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      /* Adjusted style for p inside item-container */
+      .item-container p {
+        line-height: 1.7; /* Adjusted line height slightly for better readability */
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem; /* Reduced margin between paragraphs */
+      }
+       /* Ensure last paragraph in item container has no bottom margin */
+       .item-container > p:last-child {
+           margin-bottom: 0;
+       }
+      /* Style specifically for paragraphs within solution steps for better control */
+      .solution-step p {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+       .solution-step ul {
+           margin-top: 0.5rem;
+           margin-bottom: 1rem;
+       }
+      .solution-step ul li {
+        line-height: 1.7;
+        padding-left: 0.5rem;
+        margin-bottom: 0.3rem; /* Space between list items */
+      }
+      .solution-step ul ul {
+           margin-top: 0.3rem;
+           margin-bottom: 0.5rem;
+       }
+      .solution-step ul ul li {
+        padding-left: 1rem;
+        margin-bottom: 0.2rem;
+      }
+       /* Ensure last list item has less or no margin */
+       .solution-step ul li:last-child {
+           margin-bottom: 0;
+       }
+
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+       /* Specific styling for p inside concept */
+       .concept p {
+           font-size: 1rem;
+           line-height: 1.6;
+           margin-bottom: 0.5rem;
+       }
+       .concept p:last-child {
+           margin-bottom: 0;
+       }
+      .image-desc {
+        background-color: #f8f8f8;
+        border: 1px dashed #ccc;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 4px;
+        font-style: italic;
+        color: #555555;
+        text-align: center;
+        font-size: 10pt;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 8
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Kelas 7 - 9 | Teorema Pythagoras, Luas, Geometri Koordinat & Ruang
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // ### DATA SOAL YANG TELAH DIREVISI ###
+      const questions = [
+        // --- Part 1: Pythagorean Theorem & Area (15 Soal) ---
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en:
+            "In $\\vartriangle ABC$, $a=BC=8$, $b=AC=7$ and $c=AB=5$. Find the value of $\\frac{\\cos A}{\\cos B}$.",
+          question_id:
+            "Di $\\vartriangle ABC$, $a=BC=8$, $b=AC=7$ dan $c=AB=5$. Tentukan nilai $\\frac{\\cos A}{\\cos B}$.",
+          image_desc: null,
+          answer: "2/7",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Use the Law of Cosines to find expressions for $\\cos A$ and $\\cos B$.<br/> Law of Cosines: $a^2 = b^2 + c^2 - 2bc \\cos A \\implies \\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$.<br/> Similarly, $\\cos B = \\frac{a^2 + c^2 - b^2}{2ac}$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Gunakan Aturan Kosinus untuk mencari ekspresi $\\cos A$ dan $\\cos B$.<br/> Aturan Kosinus: $a^2 = b^2 + c^2 - 2bc \\cos A \\implies \\cos A = \\frac{b^2 + c^2 - a^2}{2bc}$.<br/> Demikian pula, $\\cos B = \\frac{a^2 + c^2 - b^2}{2ac}$.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                               <li><b>Step 1:</b> Identify the sides: $a=8$, $b=7$, $c=5$.</li>
+                               <li><b>Step 2:</b> Find $\\cos A$: $$ \\cos A = \\frac{b^2 + c^2 - a^2}{2bc} = \\frac{7^2 + 5^2 - 8^2}{2(7)(5)} = \\frac{49 + 25 - 64}{70} = \\frac{10}{70} = \\frac{1}{7} $$</li>
+                               <li><b>Step 3:</b> Find $\\cos B$: $$ \\cos B = \\frac{a^2 + c^2 - b^2}{2ac} = \\frac{8^2 + 5^2 - 7^2}{2(8)(5)} = \\frac{64 + 25 - 49}{80} = \\frac{40}{80} = \\frac{1}{2} $$</li>
+                               <li><b>Step 4:</b> Find the ratio: $$ \\frac{\\cos A}{\\cos B} = \\frac{1/7}{1/2} = \\frac{1}{7} \\times \\frac{2}{1} = \\frac{2}{7} $$</li>
+                            </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                           <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                           <ul>
+                               <li><b>Langkah 1:</b> Identifikasi sisi: $a=8$, $b=7$, $c=5$.</li>
+                               <li><b>Langkah 2:</b> Cari $\\cos A$: $$ \\cos A = \\frac{b^2 + c^2 - a^2}{2bc} = \\frac{7^2 + 5^2 - 8^2}{2(7)(5)} = \\frac{49 + 25 - 64}{70} = \\frac{10}{70} = \\frac{1}{7} $$</li>
+                               <li><b>Langkah 3:</b> Cari $\\cos B$: $$ \\cos B = \\frac{a^2 + c^2 - b^2}{2ac} = \\frac{8^2 + 5^2 - 7^2}{2(8)(5)} = \\frac{64 + 25 - 49}{80} = \\frac{40}{80} = \\frac{1}{2} $$</li>
+                               <li><b>Langkah 4:</b> Cari rasio: $$ \\frac{\\cos A}{\\cos B} = \\frac{1/7}{1/2} = \\frac{1}{7} \\times \\frac{2}{1} = \\frac{2}{7} $$</li>
+                           </ul>
+                        </div>`,
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en:
+            "In $\\vartriangle ABC$, $D$ is on $AB$ such that $AD:DB = 2:3$. $E$ is on $AC$ such that $AE:EC = 3:1$. What is the ratio of the area of $\\vartriangle ADE$ to the area of trapezium $DECB$?",
+          question_id:
+            "Pada $\\vartriangle ABC$, $D$ adalah titik pada $AB$ sehingga $AD:DB = 2:3$. $E$ adalah titik pada $AC$ sehingga $AE:EC = 3:1$. Berapakah rasio luas $\\vartriangle ADE$ terhadap luas trapesium $DECB$?",
+          image_desc: null,
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_frnihk_8225.png",
+          answer: "3:7",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The ratio of the areas of two triangles that share a common angle (like $\\angle A$) is the ratio of the product of the adjacent sides. $\\frac{\\text{Area}(\\vartriangle ADE)}{\\text{Area}(\\vartriangle ABC)} = \\frac{AD \\times AE}{AB \\times AC}$. The area of the trapezium is the difference between the large triangle and the small triangle.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Rasio luas dua segitiga yang berbagi satu sudut yang sama (misal $\\angle A$) adalah rasio dari hasil kali sisi-sisi yang mengapit sudut tersebut. $\\frac{\\text{Luas}(\\vartriangle ADE)}{\\text{Luas}(\\vartriangle ABC)} = \\frac{AD \\times AE}{AB \\times AC}$. Luas trapesium adalah selisih antara luas segitiga besar dan segitiga kecil.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find ratios of segments to whole sides. $AD:DB=2:3 \implies AB = AD+DB = 2+3=5$ parts. So $\\frac{AD}{AB} = \\frac{2}{5}$.</li>
+                                <li><b>Step 2:</b> $AE:EC=3:1 \implies AC = AE+EC = 3+1=4$ parts. So $\\frac{AE}{AC} = \\frac{3}{4}$.</li>
+                                <li><b>Step 3:</b> Find the ratio of Area($\\vartriangle ADE$) to Area($\\vartriangle ABC$):<br/> $\\frac{\\text{Area}(\\vartriangle ADE)}{\\text{Area}(\\vartriangle ABC)} = ( \\frac{AD}{AB} ) \\times ( \\frac{AE}{AC} ) = ( \\frac{2}{5} ) \\times ( \\frac{3}{4} ) = \\frac{6}{20} = \\frac{3}{10}$.</li>
+                                <li><b>Step 4:</b> This means Area($\\vartriangle ADE$) = 3 units and Area($\\vartriangle ABC$) = 10 units (relative units).</li>
+                                <li><b>Step 5:</b> Area(Trapezium $DECB$) = Area($\\vartriangle ABC$) - Area($\\vartriangle ADE$) = $10 - 3 = 7$ units.</li>
+                                <li><b>Step 6:</b> The ratio of Area($\\vartriangle ADE$) to Area($DECB$) is $3:7$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                               <li><b>Langkah 1:</b> Cari rasio segmen terhadap sisi utuh. $AD:DB=2:3 \implies AB = AD+DB = 2+3=5$ bagian. Jadi $\\frac{AD}{AB} = \\frac{2}{5}$.</li>
+                               <li><b>Langkah 2:</b> $AE:EC=3:1 \implies AC = AE+EC = 3+1=4$ bagian. Jadi $\\frac{AE}{AC} = \\frac{3}{4}$.</li>
+                               <li><b>Langkah 3:</b> Cari rasio Luas($\\vartriangle ADE$) terhadap Luas($\\vartriangle ABC$):<br/> $\\frac{\\text{Luas}(\\vartriangle ADE)}{\\text{Luas}(\\vartriangle ABC)} = ( \\frac{AD}{AB} ) \\times ( \\frac{AE}{AC} ) = ( \\frac{2}{5} ) \\times ( \\frac{3}{4} ) = \\frac{6}{20} = \\frac{3}{10}$.</li>
+                               <li><b>Langkah 4:</b> Ini berarti Luas($\\vartriangle ADE$) = 3 bagian dan Luas($\\vartriangle ABC$) = 10 bagian (bagian relatif).</li>
+                               <li><b>Langkah 5:</b> Luas(Trapesium $DECB$) = Luas($\\vartriangle ABC$) - Luas($\\vartriangle ADE$) = $10 - 3 = 7$ bagian.</li>
+                               <li><b>Langkah 6:</b> Rasio Luas($\\vartriangle ADE$) terhadap Luas($DECB$) adalah $3:7$.</li>
+                            </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A square $CDEF$ is inscribed in a right-angled triangle $ABC$ ($\angle C = 90^\\circ$), such that D is on AC, F is on BC, and E is on the hypotenuse $AB$. If $AD = 8$ cm and $BF = 10$ cm, find the area of the square.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sebuah persegi $CDEF$ dibuat di dalam segitiga siku-siku $\\vartriangle ABC$ ($\angle C = 90^\\circ$), dengan D pada AC, F pada BC, dan E pada hipotenusa $AB$. Jika $AD = 8$ cm dan $BF = 10$ cm, tentukan luas persegi tersebut.",
+          image_desc: null,
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_o5wf1l_7245.png",
+          answer: "80 cm$^2$",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> Let the side length of the square be $x$. This setup creates two smaller right-angled triangles, $\\vartriangle ADE$ and $\\vartriangle EFB$. These two triangles are similar to each other ($\\vartriangle ADE \\sim \\vartriangle EFB$) because they share angles with the larger triangle $\\vartriangle ACB$. We can use the ratios of corresponding sides (height to base) to find $x$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Misalkan panjang sisi persegi adalah $x$. Susunan ini menciptakan dua segitiga siku-siku kecil, $\\vartriangle ADE$ dan $\\vartriangle EFB$. Kedua segitiga ini sebangun satu sama lain ($\\vartriangle ADE \\sim \\vartriangle EFB$) karena sudut-sudutnya sama dengan sudut-sudut segitiga besar $\\vartriangle ACB$. Kita dapat menggunakan rasio sisi-sisi yang bersesuaian (tinggi : alas) untuk mencari $x$.</p>
+                          </div>
+                          <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Let the side length of the square $CDEF$ be $x$. Then $CD = CF = DE = EF = x$.</li>
+                                 <li><b>Step 2:</b> We are given $AD = 8$ cm and $BF = 10$ cm.</li>
+                                 <li><b>Step 3:</b> Consider the triangles $\\vartriangle ADE$ (right-angled at D) and $\\vartriangle EFB$ (right-angled at F).</li>
+                                 <li><b>Step 4:</b> Because DE is parallel to BC and EF is parallel to AC, $\\angle DAE = \\angle FEB$ and $\\angle AED = \\angle FBE$. Since both are right-angled triangles, they are similar by AA similarity ($\\vartriangle ADE \\sim \\vartriangle EFB$).</li>
+                                 <li><b>Step 5:</b> Set up the ratio of corresponding sides (height to base): $$ \\frac{AD}{EF} = \\frac{DE}{FB} $$</li>
+                                 <li><b>Step 6:</b> Substitute the known values: $AD=8$, $EF=x$, $DE=x$, $FB=10$. $$ \\frac{8}{x} = \\frac{x}{10} $$</li>
+                                 <li><b>Step 7:</b> Solve for $x$: Cross-multiply to get $x^2 = 8 \\times 10 = 80$.</li>
+                                 <li><b>Step 8:</b> The area of the square is $x^2$. Area = $80$ cm$^2$.</li>
+                              </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                              <ul>
+                                 <li><b>Langkah 1:</b> Misalkan panjang sisi persegi $CDEF$ adalah $x$. Maka $CD = CF = DE = EF = x$.</li>
+                                 <li><b>Langkah 2:</b> Diketahui $AD = 8$ cm dan $BF = 10$ cm.</li>
+                                 <li><b>Langkah 3:</b> Perhatikan segitiga $\\vartriangle ADE$ (siku-siku di D) dan $\\vartriangle EFB$ (siku-siku di F).</li>
+                                 <li><b>Langkah 4:</b> Karena DE sejajar BC dan EF sejajar AC, maka $\\angle DAE = \\angle FEB$ dan $\\angle AED = \\angle FBE$. Karena keduanya segitiga siku-siku, maka keduanya sebangun berdasarkan kesamaan AA ($\\vartriangle ADE \\sim \\vartriangle EFB$).</li>
+                                 <li><b>Langkah 5:</b> Buat rasio sisi-sisi yang bersesuaian (tinggi : alas): $$ \\frac{AD}{EF} = \\frac{DE}{FB} $$</li>
+                                 <li><b>Langkah 6:</b> Substitusi nilai yang diketahui: $AD=8$, $EF=x$, $DE=x$, $FB=10$. $$ \\frac{8}{x} = \\frac{x}{10} $$</li>
+                                 <li><b>Langkah 7:</b> Selesaikan untuk $x$: Kali silang $x^2 = 8 \\times 10 = 80$.</li>
+                                 <li><b>Langkah 8:</b> Luas persegi adalah $x^2$. Luas = $80$ cm$^2$.</li>
+                              </ul>
+                          </div>`,
+        },
+        { // SAYA MENGHAPUS SOAL DUPLIKAT (Q4) DI SINI
+            topic: "Bagian 1: Teorema Pythagoras & Luas",
+            question_en: "A rhombus has diagonals of length 18 cm and 24 cm. Find its area.",
+            question_id: "Sebuah belah ketupat memiliki diagonal dengan panjang 18 cm dan 24 cm. Tentukan luasnya.",
+            image_desc: null,
+            answer: "216 cm$^2$",
+            explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The area of an equilateral triangle with side length 's' can be calculated using the formula Area = $\\frac{s^2 \\sqrt{3}}{4}$. Alternatively, find the height using Pythagoras ($h^2 + (s/2)^2 = s^2$) and then use Area = $\\frac{1}{2} \\times \\text{base} \\times \\text{height}$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Luas segitiga sama sisi dengan panjang sisi 's' dapat dihitung menggunakan rumus Luas = $\\frac{s^2 \\sqrt{3}}{4}$. Alternatifnya, cari tinggi menggunakan Pythagoras ($t^2 + (s/2)^2 = s^2$) lalu gunakan Luas = $\\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi}$.</p>
+                          </div>
+                          <div class="solution-step">
+                              <p class="font-bold text-indigo-600">Solution:</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Identify the lengths of the diagonals: $d_1 = 18$ cm and $d_2 = 24$ cm.</li>
+                                 <li><b>Step 2:</b> Apply the area formula: Area = $\\frac{1}{2} \\times 18 \\times 24$.</li>
+                                 <li><b>Step 3:</b> Calculate the area: Area = $9 \\times 24 = 216$ cm$^2$.</li>
+                              </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                              <ul>
+                                 <li><b>Langkah 1:</b> Identifikasi panjang diagonal: $d_1 = 18$ cm dan $d_2 = 24$ cm.</li>
+                                 <li><b>Langkah 2:</b> Terapkan rumus luas: Luas = $\\frac{1}{2} \\times 18 \\times 24$.</li>
+                                 <li><b>Langkah 3:</b> Hitung luasnya: Luas = $9 \\times 24 = 216$ cm$^2$.</li>
+                              </ul>
+                          </div>`
+        },
+        {
+            topic: "Bagian 1: Teorema Pythagoras & Luas",
+            question_en: "Find the area of an equilateral triangle with a side length of 10 cm.",
+            question_id: "Tentukan luas segitiga sama sisi dengan panjang sisi 10 cm.",
+            image_desc: null,
+            answer: "$25\\sqrt{3}$ cm$^2$",
+            explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The area of an equilateral triangle with side length 's' can be calculated using the formula Area = $\\frac{s^2 \\sqrt{3}}{4}$. Alternatively, find the height using Pythagoras ($h^2 + (s/2)^2 = s^2$) and then use Area = $\\frac{1}{2} \\times \text{base} \\times \text{height}$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Luas segitiga sama sisi dengan panjang sisi 's' dapat dihitung menggunakan rumus Luas = $\\frac{s^2 \\sqrt{3}}{4}$. Alternatifnya, cari tinggi menggunakan Pythagoras ($t^2 + (s/2)^2 = s^2$) lalu gunakan Luas = $\\frac{1}{2} \\times \text{alas} \\times \text{tinggi}$.</p>
+                          </div>
+                          <div class="solution-step">
+                              <p class="font-bold text-indigo-600">Solution (Using formula):</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Identify the side length: $s = 10$ cm.</li>
+                                 <li><b>Step 2:</b> Apply the area formula: Area = $\\frac{s^2 \\sqrt{3}}{4} = \\frac{10^2 \\sqrt{3}}{4}$.</li>
+                                 <li><b>Step 3:</b> Calculate: Area = $\\frac{100 \\sqrt{3}}{4} = 25\\sqrt{3}$ cm$^2$.</li>
+                              </ul>
+                          </div>
+                           <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Solution (Using height):</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Base = 10 cm. Half-base = 5 cm.</li>
+                                 <li><b>Step 2:</b> Find height $h$: $h^2 + 5^2 = 10^2 \\Rightarrow h^2 + 25 = 100 \\Rightarrow h^2 = 75 \\Rightarrow h = \\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$ cm.</li>
+                                 <li><b>Step 3:</b> Calculate Area: Area = $\\frac{1}{2} \\times \\text{base} \\times h = \\frac{1}{2} \\times 10 \\times 5\\sqrt{3} = 5 \\times 5\\sqrt{3} = 25\\sqrt{3}$ cm$^2$.</li>
+                              </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Penyelesaian (Menggunakan rumus):</p>
+                              <ul>
+                                 <li><b>Langkah 1:</b> Identifikasi panjang sisi: $s = 10$ cm.</li>
+                                 <li><b>Langkah 2:</b> Terapkan rumus luas: Luas = $\\frac{s^2 \\sqrt{3}}{4} = \\frac{10^2 \\sqrt{3}}{4}$.</li>
+                                 <li><b>Langkah 3:</b> Hitung: Luas = $\\frac{100 \\sqrt{3}}{4} = 25\\sqrt{3}$ cm$^2$.</li>
+                              </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Penyelesaian (Menggunakan tinggi):</p>
+                              <ul>
+                                 <li><b>Langkah 1:</b> Alas = 10 cm. Setengah alas = 5 cm.</li>
+                                 <li><b>Langkah 2:</b> Cari tinggi $t$: $t^2 + 5^2 = 10^2 \\Rightarrow t^2 + 25 = 100 \\Rightarrow t^2 = 75 \\Rightarrow t = \\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$ cm.</li>
+                                 <li><b>Langkah 3:</b> Hitung Luas: Luas = $\\frac{1}{2} \\times \\text{alas} \\times t = \\frac{1}{2} \\times 10 \\times 5\\sqrt{3} = 5 \\times 5\\sqrt{3} = 25\\sqrt{3}$ cm$^2$.</li>
+                              </ul>
+                          </div>`
+        },
+        {
+            topic: "Bagian 1: Teorema Pythagoras & Luas",
+            question_en: "A ladder 13 meters long leans against a vertical wall. The foot of the ladder is 5 meters away from the base of the wall. How high up the wall does the ladder reach?",
+            question_id: "Sebuah tangga sepanjang 13 meter bersandar pada dinding vertikal. Kaki tangga berjarak 5 meter dari dasar dinding. Berapa tinggi dinding yang dicapai oleh tangga?",
+            image_desc: null,
+            image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_vcur2a_7134.png",
+            answer: "12 meter",
+            explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The ladder, the wall, and the ground form a right-angled triangle. The ladder is the hypotenuse, the distance from the wall is one leg, and the height reached on the wall is the other leg. Use the Pythagorean theorem: $a^2 + b^2 = c^2$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Tangga, dinding, dan tanah membentuk segitiga siku-siku. Tangga adalah hipotenusa, jarak dari dinding adalah satu sisi tegak, dan ketinggian yang dicapai di dinding adalah sisi tegak lainnya. Gunakan teorema Pythagoras: $a^2 + b^2 = c^2$.</p>
+                          </div>
+                          <div class="solution-step">
+                              <p class="font-bold text-indigo-600">Solution:</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Identify the sides. Hypotenuse (ladder length) $c = 13$ m. One leg (distance from wall) $a = 5$ m. We need to find the other leg (height on wall) $b$.</li>
+                                 <li><b>Step 2:</b> Apply the Pythagorean theorem: $a^2 + b^2 = c^2 \\Rightarrow 5^2 + b^2 = 13^2$.</li>
+                                 <li><b>Step 3:</b> Calculate: $25 + b^2 = 169$.</li>
+                                 <li><b>Step 4:</b> Solve for $b^2$: $b^2 = 169 - 25 = 144$.</li>
+                                 <li><b>Step 5:</b> Find $b$: $b = \\sqrt{144} = 12$ meters. (Pythagorean Triple 5-12-13).</li>
+                              </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                              <ul>
+                                 <li><b>Langkah 1:</b> Identifikasi sisi-sisi. Hipotenusa (panjang tangga) $c = 13$ m. Satu sisi tegak (jarak dari dinding) $a = 5$ m. Kita perlu mencari sisi tegak lain (tinggi di dinding) $b$.</li>
+                                 <li><b>Langkah 2:</b> Terapkan teorema Pythagoras: $a^2 + b^2 = c^2 \\Rightarrow 5^2 + b^2 = 13^2$.</li>
+                                 <li><b>Langkah 3:</b> Hitung: $25 + b^2 = 169$.</li>
+                                 <li><b>Langkah 4:</b> Selesaikan untuk $b^2$: $b^2 = 169 - 25 = 144$.</li>
+                                 <li><b>Langkah 5:</b> Cari $b$: $b = \\sqrt{144} = 12$ meter. (Tripel Pythagoras 5-12-13).</li>
+                              </ul>
+                          </div>`
+        },
+        // <!-- PENAMBAHAN 9 SOAL BARU UNTUK BAGIAN 1 -->
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "A car moves 35 km towards East, and then 12 km towards South. How many km is the car now from the original position?",
+          question_id: "Sebuah mobil bergerak ke timur sejauh 35 km, kemudian bergerak ke selatan sejauh 12 km. Berapa km jarak mobil sekarang dari posisi semula?",
+          image_desc: null,
+          answer: "37 km",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The movement forms a right-angled triangle. The distance from the start is the hypotenuse. Use $a^2 + b^2 = c^2$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Pergerakan ini membentuk segitiga siku-siku. Jarak dari posisi semula adalah hipotenusa. Gunakan $a^2 + b^2 = c^2$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Legs are $a = 35$ km and $b = 12$ km.</li>
+                                <li><b>Step 2:</b> $c^2 = 35^2 + 12^2 = 1225 + 144 = 1369$.</li>
+                                <li><b>Step 3:</b> $c = \\sqrt{1369} = 37$ km. (Pythagorean Triple 12-35-37).</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Sisi tegak adalah $a = 35$ km dan $b = 12$ km.</li>
+                                <li><b>Langkah 2:</b> $c^2 = 35^2 + 12^2 = 1225 + 144 = 1369$.</li>
+                                <li><b>Langkah 3:</b> $c = \\sqrt{1369} = 37$ km. (Tripel Pythagoras 12-35-37).</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "You combine 720 identical unit squares to form a rectangle. Find the minimum possible perimeter of such a rectangle.",
+          question_id: "Anda menggabungkan 720 persegi satuan yang identik untuk membentuk sebuah persegi panjang. Tentukan keliling minimum yang mungkin dari persegi panjang tersebut.",
+          image_desc: null,
+          answer: "108 satuan",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Area $A = 720$. Perimeter $P = 2(l+w)$. The perimeter is minimized when the length $l$ and width $w$ are as close to each other as possible, i.e., closest to $\\sqrt{A}$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Luas $A = 720$. Keliling $K = 2(p+l)$. Keliling akan minimum ketika panjang $p$ dan lebar $l$ nilainya sedekat mungkin satu sama lain, yaitu paling dekat dengan $\\sqrt{A}$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Area $A = 720$. Estimate $\\sqrt{720}$. $26^2=676$, $27^2=729$. The value is very close to 27.</li>
+                                <li><b>Step 2:</b> Find integer factor pairs of 720 closest to 27: $1\\times720$, $2\\times360$, ... $20\\times36$, $24\\times30$.</li>
+                                <li><b>Step 3:</b> The pair (24, 30) is closest to 27.</li>
+                                <li><b>Step 4:</b> Minimum perimeter: $P = 2(l+w) = 2(24+30) = 2(54) = 108$ units.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Luas $A = 720$. Estimasi $\\sqrt{720}$. $26^2=676$, $27^2=729$. Nilainya sangat dekat dengan 27.</li>
+                                <li><b>Langkah 2:</b> Cari pasangan faktor bilangan bulat dari 720 yang paling dekat dengan 27: $1\\times720$, $2\\times360$, ... $20\\times36$, $24\\times30$.</li>
+                                <li><b>Langkah 3:</b> Pasangan (24, 30) adalah yang paling dekat dengan 27.</li>
+                                <li><b>Langkah 4:</b> Keliling minimum: $K = 2(p+l) = 2(24+30) = 2(54) = 108$ satuan.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "The radius of a circular sector is 10 cm and its perimeter is 40 cm. Find the area of this sector.",
+          question_id: "Jari-jari dari sebuah juring lingkaran adalah 10 cm dan kelilingnya adalah 40 cm. Carilah luas dari juring ini.",
+          image_desc: null,
+          answer: "100 cm$^2$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The perimeter of a sector is composed of two radii and one arc length ($P = 2r + L$). The area of a sector is $A = \\frac{1}{2} L r$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Keliling juring terdiri dari dua jari-jari dan satu panjang busur ($K = 2r + L$). Luas juring adalah $A = \\frac{1}{2} L r$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find the arc length ($L$): $P = 2r + L \implies 40 = 2(10) + L \implies 40 = 20 + L \implies L = 20$ cm.</li>
+                                <li><b>Step 2:</b> Calculate the area ($A$): $A = \\frac{1}{2} L r = \\frac{1}{2} \\times 20 \\times 10 = 10 \\times 10 = 100$ cm$^2$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Cari panjang busur ($L$): $K = 2r + L \implies 40 = 2(10) + L \implies 40 = 20 + L \implies L = 20$ cm.</li>
+                                <li><b>Langkah 2:</b> Hitung luas ($A$): $A = \\frac{1}{2} L r = \\frac{1}{2} \\times 20 \\times 10 = 10 \\times 10 = 100$ cm$^2$.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "Find the area of a triangle with vertices at (0,0), (8,6), and (12,4).",
+          question_id: "Tentukan luas segitiga dengan titik sudut di (0,0), (8,6), dan (12,4).",
+          image_desc: null,
+          answer: "20 satuan luas",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Use the Shoelace Formula. For vertices $(x_1, y_1), (x_2, y_2), (x_3, y_3)$, Area $= \\frac{1}{2} |(x_1y_2 + x_2y_3 + x_3y_1) - (y_1x_2 + y_2x_3 + y_3x_1)|$. It simplifies if one vertex is (0,0).</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Gunakan Rumus Shoelace. Untuk titik sudut $(x_1, y_1), (x_2, y_2), (x_3, y_3)$, Luas $= \\frac{1}{2} |(x_1y_2 + x_2y_3 + x_3y_1) - (y_1x_2 + y_2x_3 + y_3x_1)|$. Rumus lebih sederhana jika satu titik sudut (0,0).</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Vertices: $(0,0), (8,6), (12,4)$.</li>
+                                <li><b>Step 2:</b> Apply Shoelace (simplified): Area = $\\frac{1}{2} |(x_2y_3) - (y_2x_3)|$ ... No, that's for (0,0), (x2,y2), (x3,y3) $\implies \frac{1}{2} |x_1y_2 - y_1x_2|$... wait.</li>
+                                <li><b>Step 2 (Correct):</b> Area = $\\frac{1}{2} |(0\\cdot6 + 8\\cdot4 + 12\\cdot0) - (0\\cdot8 + 6\\cdot12 + 4\\cdot0)|$.</li>
+                                <li><b>Step 3:</b> Calculate: Area = $\\frac{1}{2} |(0 + 32 + 0) - (0 + 72 + 0)| = \\frac{1}{2} |32 - 72| = \\frac{1}{2} |-40| = 20$ sq units.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Titik sudut: $(0,0), (8,6), (12,4)$.</li>
+                                <li><b>Langkah 2:</b> Terapkan Shoelace: Luas = $\\frac{1}{2} |(0\\cdot6 + 8\\cdot4 + 12\\cdot0) - (0\\cdot8 + 6\\cdot12 + 4\\cdot0)|$.</li>
+                                <li><b>Langkah 3:</b> Hitung: Luas = $\\frac{1}{2} |(0 + 32 + 0) - (0 + 72 + 0)| = \\frac{1}{2} |32 - 72| = \\frac{1}{2} |-40| = 20$ satuan luas.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "Find the area of a triangle with side lengths 10, 17, and 21.",
+          question_id: "Tentukan luas segitiga dengan panjang sisi 10, 17, dan 21.",
+          image_desc: null,
+          answer: "84 satuan luas",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Use Heron's formula for a scalene triangle. Area $= \\sqrt{s(s-a)(s-b)(s-c)}$, where $s = \\frac{a+b+c}{2}$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Gunakan rumus Heron untuk segitiga sembarang. Luas $= \\sqrt{s(s-a)(s-b)(s-c)}$, di mana $s = \\frac{a+b+c}{2}$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Calculate semi-perimeter $s$: $s = \\frac{10+17+21}{2} = \\frac{48}{2} = 24$.</li>
+                                <li><b>Step 2:</b> Apply Heron's formula: Area $= \\sqrt{24(24-10)(24-17)(24-21)} = \\sqrt{24 \\times 14 \\times 7 \\times 3}$.</li>
+                                <li><b>Step 3:</b> Simplify: Area $= \\sqrt{(8 \\times 3) \\times (2 \\times 7) \\times 7 \\times 3} = \\sqrt{(2^3 \\times 3) \\times (2 \\times 7) \\times 7 \\times 3} = \\sqrt{2^4 \\times 3^2 \\times 7^2}$.</li>
+                                <li><b>Step 4:</b> Calculate: Area $= 2^2 \\times 3 \\times 7 = 4 \\times 21 = 84$ sq units.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Hitung semi-perimeter $s$: $s = \\frac{10+17+21}{2} = \\frac{48}{2} = 24$.</li>
+                                <li><b>Langkah 2:</b> Terapkan rumus Heron: Luas $= \\sqrt{24(24-10)(24-17)(24-21)} = \\sqrt{24 \\times 14 \\times 7 \\times 3}$.</li>
+                                <li><b>Langkah 3:</b> Sederhanakan: Luas $= \\sqrt{(8 \\times 3) \\times (2 \\times 7) \\times 7 \\times 3} = \\sqrt{(2^3 \\times 3) \\times (2 \\times 7) \\times 7 \\times 3} = \\sqrt{2^4 \\times 3^2 \\times 7^2}$.</li>
+                                <li><b>Langkah 4:</b> Hitung: Luas $= 2^2 \\times 3 \\times 7 = 4 \\times 21 = 84$ satuan luas.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "A right-angled triangle has legs 15 and 20. An altitude is drawn to the hypotenuse. Find the length of this altitude.",
+          question_id: "Sebuah segitiga siku-siku memiliki sisi tegak 15 dan 20. Sebuah garis tinggi ditarik ke hipotenusa. Tentukan panjang garis tinggi ini.",
+          image_desc: null,
+          answer: "12",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The area can be calculated as $\\frac{1}{2}(\\text{leg1})(\\text{leg2})$ or $\\frac{1}{2}(\\text{hypotenuse})(\\text{altitude})$. By equating these, we find the altitude.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Luas dapat dihitung sebagai $\\frac{1}{2}(\\text{sisi tegak 1})(\\text{sisi tegak 2})$ atau $\\frac{1}{2}(\\text{hipotenusa})(\\text{tinggi})$. Dengan menyamakan keduanya, kita temukan tinggi.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find hypotenuse $c$: $c^2 = 15^2 + 20^2 = 225 + 400 = 625$. $c = \\sqrt{625} = 25$. (Triple 15-20-25 or 3-4-5 $\times$ 5).</li>
+                                <li><b>Step 2:</b> Area (using legs): $A = \\frac{1}{2} \\times 15 \\times 20 = 150$.</li>
+                                <li><b>Step 3:</b> Area (using hypotenuse $c$ and altitude $h$): $A = \\frac{1}{2} \\times c \\times h = \\frac{1}{2} \\times 25 \\times h$.</li>
+                                <li><b>Step 4:</b> Equate areas: $150 = \\frac{1}{2} \\times 25 \times h \\Rightarrow 300 = 25h \\Rightarrow h = 12$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Cari hipotenusa $c$: $c^2 = 15^2 + 20^2 = 225 + 400 = 625$. $c = \\sqrt{625} = 25$. (Tripel 15-20-25 atau 3-4-5 $\times$ 5).</li>
+                                <li><b>Langkah 2:</b> Luas (pakai sisi tegak): $A = \\frac{1}{2} \\times 15 \\times 20 = 150$.</li>
+                                <li><b>Langkah 3:</b> Luas (pakai hipotenusa $c$ dan tinggi $t$): $A = \\frac{1}{2} \\times c \\times t = \\frac{1}{2} \\times 25 \\times t$.</li>
+                                <li><b>Langkah 4:</b> Samakan luas: $150 = \\frac{1}{2} \\times 25 \times t \\Rightarrow 300 = 25t \\Rightarrow t = 12$.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "Find the area of an isosceles trapezium with parallel sides 10 and 22, and diagonal 20.",
+          question_id: "Tentukan luas trapesium sama kaki dengan sisi sejajar 10 dan 22, dan panjang diagonal 20.",
+          image_desc: null,
+          answer: "192 satuan luas",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Area = $\\frac{1}{2}(b_1+b_2)h$. Find height $h$ using Pythagoras on a right triangle formed by the diagonal, the height, and a portion of the longer base ($b_2 - x$, where $x = (b_2-b_1)/2$).</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Luas = $\\frac{1}{2}(b_1+b_2)t$. Cari tinggi $t$ menggunakan Pythagoras pada segitiga siku-siku yang dibentuk oleh diagonal, tinggi, dan sebagian alas panjang ($b_2 - x$, di mana $x = (b_2-b_1)/2$).</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> $b_1=10, b_2=22, d=20$.</li>
+                                <li><b>Step 2:</b> Find segment $x$: $x = \\frac{b_2-b_1}{2} = \\frac{22-10}{2} = 6$.</li>
+                                <li><b>Step 3:</b> The base of the right triangle (using diagonal) is $b_2 - x = 22 - 6 = 16$.</li>
+                                <li><b>Step 4:</b> Find height $h$: $h^2 + 16^2 = d^2 \\Rightarrow h^2 + 256 = 20^2 = 400$.</li>
+                                <li><b>Step 5:</b> $h^2 = 400 - 256 = 144 \\Rightarrow h = 12$.</li>
+                                <li><b>Step 6:</b> Area = $\\frac{1}{2}(b_1+b_2)h = \\frac{1}{2}(10+22)(12) = \\frac{1}{2}(32)(12) = 192$ sq units.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> $b_1=10, b_2=22, d=20$.</li>
+                                <li><b>Langkah 2:</b> Cari segmen $x$: $x = \\frac{b_2-b_1}{2} = \\frac{22-10}{2} = 6$.</li>
+                                <li><b>Langkah 3:</b> Alas segitiga siku-siku (pakai diagonal) adalah $b_2 - x = 22 - 6 = 16$.</li>
+                                <li><b>Langkah 4:</b> Cari tinggi $t$: $t^2 + 16^2 = d^2 \\Rightarrow t^2 + 256 = 20^2 = 400$.</li>
+                                <li><b>Langkah 5:</b> $t^2 = 400 - 256 = 144 \\Rightarrow t = 12$.</li>
+                                <li><b>Langkah 6:</b> Luas = $\\frac{1}{2}(b_1+b_2)t = \\frac{1}{2}(10+22)(12) = \\frac{1}{2}(32)(12) = 192$ satuan luas.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "A triangle $ABC$ has side lengths $AB=20, AC=13$, and $BC=21$. Find the length of the altitude from vertex $A$ to the side $BC$.",
+          question_id: "Sebuah segitiga $ABC$ memiliki panjang sisi $AB=20, AC=13$, dan $BC=21$. Tentukan panjang garis tinggi dari vertex $A$ ke sisi $BC$.",
+          image_desc: null,
+          answer: "12",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Find the area using Heron's Formula. Then use the formula $Area = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$ to find the altitude.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Cari luas menggunakan Rumus Heron. Lalu gunakan rumus $Luas = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi}$ untuk mencari tinggi.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Sides $a=21, b=13, c=20$. Find semi-perimeter $s = \\frac{21+13+20}{2} = \\frac{54}{2} = 27$.</li>
+                                <li><b>Step 2:</b> Area (Heron's) = $\\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{27(27-21)(27-13)(27-20)}$.</li>
+                                <li><b>Step 3:</b> Area = $\\sqrt{27 \\times 6 \\times 14 \\times 7} = \\sqrt{(3^3) \\times (2 \\times 3) \\times (2 \\times 7) \\times 7} = \\sqrt{2^2 \\times 3^4 \\times 7^2} = 2 \\times 3^2 \\times 7 = 126$.</li>
+                                <li><b>Step 4:</b> Use $Area = \\frac{1}{2} \\times BC \\times h_a$. We want $h_a$ (altitude to BC).</li>
+                                <li><b>Step 5:</b> $126 = \\frac{1}{2} \\times 21 \times h_a \\Rightarrow 252 = 21 \times h_a \\Rightarrow h_a = 12$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Sisi $a=21, b=13, c=20$. Cari semi-perimeter $s = \\frac{21+13+20}{2} = \\frac{54}{2} = 27$.</li>
+                                <li><b>Langkah 2:</b> Luas (Heron) = $\\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{27(27-21)(27-13)(27-20)}$.</li>
+                                <li><b>Langkah 3:</b> Luas = $\\sqrt{27 \\times 6 \\times 14 \\times 7} = \\sqrt{(3^3) \\times (2 \\times 3) \\times (2 \\times 7) \\times 7} = \\sqrt{2^2 \\times 3^4 \\times 7^2} = 2 \\times 3^2 \\times 7 = 126$.</li>
+                                <li><b>Langkah 4:</b> Gunakan $Luas = \\frac{1}{2} \\times BC \\times h_a$. Kita mau $h_a$ (tinggi ke BC).</li>
+                                <li><b>Langkah 5:</b> $126 = \\frac{1}{2} \\times 21 \times h_a \\Rightarrow 252 = 21 \times h_a \\Rightarrow h_a = 12$.</li>
+                             </ul>
+                         </div>`
+        },
+        {
+          topic: "Bagian 1: Teorema Pythagoras & Luas",
+          question_en: "Two circles with radii 10 cm and 17 cm intersect. The length of their common chord is 16 cm. Find the distance between their centers.",
+          question_id: "Dua lingkaran dengan jari-jari 10 cm dan 17 cm berpotongan. Panjang tali busur persekutuannya adalah 16 cm. Tentukan jarak antara kedua pusat lingkaran.",
+          image_desc: null,
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_pup6wa_5681.png",
+          answer: "21 cm",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The line connecting the centers ($O_1O_2$) is the perpendicular bisector of the common chord (AB). This creates two right-angled triangles back-to-back.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Garis yang menghubungkan kedua pusat ($O_1O_2$) adalah sumbu simetri tegak lurus dari tali busur persekutuan (AB). Ini menciptakan dua segitiga siku-siku yang saling membelakangi.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Chord AB = 16 cm. Midpoint M. $AM = MB = 16/2 = 8$ cm.</li>
+                                <li><b>Step 2:</b> Triangle 1 ($r_1=10$): $O_1M^2 + AM^2 = r_1^2 \\Rightarrow O_1M^2 + 8^2 = 10^2 \\Rightarrow O_1M^2 + 64 = 100 \\Rightarrow O_1M^2 = 36 \\Rightarrow O_1M = 6$.</li>
+                                <li><b>Step 3:</b> Triangle 2 ($r_2=17$): $O_2M^2 + AM^2 = r_2^2 \\Rightarrow O_2M^2 + 8^2 = 17^2 \\Rightarrow O_2M^2 + 64 = 289 \\Rightarrow O_2M^2 = 225 \\Rightarrow O_2M = 15$.</li>
+                                <li><b>Step 4:</b> Distance $O_1O_2 = O_1M + O_2M = 6 + 15 = 21$ cm. (Triple 6-8-10 and 8-15-17).</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Tali busur AB = 16 cm. Titik tengah M. $AM = MB = 16/2 = 8$ cm.</li>
+                                <li><b>Langkah 2:</b> Segitiga 1 ($r_1=10$): $O_1M^2 + AM^2 = r_1^2 \implies O_1M^2 + 8^2 = 10^2 \implies O_1M^2 + 64 = 100 \implies O_1M^2 = 36 \implies O_1M = 6$.</li>
+                                <li><b>Langkah 3:</b> Segitiga 2 ($r_2=17$): $O_2M^2 + AM^2 = r_2^2 \implies O_2M^2 + 8^2 = 17^2 \implies O_2M^2 + 64 = 289 \implies O_2M^2 = 225 \implies O_2M = 15$.</li>
+                                <li><b>Langkah 4:</b> Jarak $O_1O_2 = O_1M + O_2M = 6 + 15 = 21$ cm. (Tripel 6-8-10 dan 8-15-17).</li>
+                             </ul>
+                         </div>`
+        },
+        // <!-- AKHIR DARI 9 SOAL TAMBAHAN -->
+        // --- Part 2: Coordinate Geometry & Space (15 Soal) ---
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the equation of the perpendicular bisector of the line segment joining points A(3, 7) and B(9, -1).",
+          question_id:
+            "Tentukan persamaan garis sumbu (perpendicular bisector) dari ruas garis yang menghubungkan titik A(3, 7) dan B(9, -1).",
+          image_desc: null,
+          answer: "3x - 4y - 6 = 0",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The perpendicular bisector is a line that (1) passes through the midpoint of the segment and (2) has a gradient that is the negative reciprocal of the segment's gradient.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Garis sumbu adalah garis yang (1) melalui titik tengah segmen dan (2) memiliki gradien yang tegak lurus (negatif kebalikan) dari gradien segmen tersebut.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find Midpoint M: $M = \\left( \\frac{3+9}{2}, \\frac{7+(-1)}{2} \\right) = \\left( \\frac{12}{2}, \\frac{6}{2} \\right) = (6, 3)$.</li>
+                                <li><b>Step 2:</b> Find Gradient of AB ($m_1$): $m_1 = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{-1 - 7}{9 - 3} = \\frac{-8}{6} = -\\frac{4}{3}$.</li>
+                                <li><b>Step 3:</b> Find Gradient of Bisector ($m_2$): $m_2 = -\\frac{1}{m_1} = -\\frac{1}{-4/3} = \\frac{3}{4}$.</li>
+                                <li><b>Step 4:</b> Find Equation using point-slope form ($y-y_M = m_2(x-x_M)$):<br/> $y - 3 = \\frac{3}{4}(x - 6)$.</li>
+                                <li><b>Step 5:</b> Rearrange to standard form: $4(y - 3) = 3(x - 6) \implies 4y - 12 = 3x - 18 \implies 3x - 4y - 6 = 0$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                             <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Tali busur AB = 16 cm. Titik tengah M. $AM = MB = 16/2 = 8$ cm.</li>
+                                <li><b>Langkah 2:</b> Segitiga 1 ($r_1=10$): $O_1M^2 + AM^2 = r_1^2 \\Rightarrow O_1M^2 + 8^2 = 10^2 \\Rightarrow O_1M^2 + 64 = 100 \\Rightarrow O_1M^2 = 36 \\Rightarrow O_1M = 6$.</li>
+                                <li><b>Langkah 3:</b> Segitiga 2 ($r_2=17$): $O_2M^2 + AM^2 = r_2^2 \\Rightarrow O_2M^2 + 8^2 = 17^2 \\Rightarrow O_2M^2 + 64 = 289 \\Rightarrow O_2M^2 = 225 \\Rightarrow O_2M = 15$.</li>
+                                <li><b>Langkah 4:</b> Jarak $O_1O_2 = O_1M + O_2M = 6 + 15 = 21$ cm. (Tripel 6-8-10 dan 8-15-17).</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A sphere has a surface area of $324\\pi$ cm$^2$. Find its radius and its volume. (Leave volume in terms of $\\pi$)",
+          question_id:
+            "Sebuah bola memiliki luas permukaan $324\\pi$ cm$^2$. Tentukan jari-jarinya dan volumenya. (Biarkan volume dalam $\\pi$)",
+          image_desc: null,
+          answer: "Radius = 9 cm, Volume = $972\\pi$ cm$^3$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Surface Area of Sphere $A = 4\\pi r^2$. Volume of Sphere $V = \\frac{4}{3}\\pi r^3$. Use the surface area to find the radius first.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Luas Permukaan Bola $L = 4\\pi r^2$. Volume Bola $V = \\frac{4}{3}\\pi r^3$. Gunakan luas permukaan untuk mencari jari-jari terlebih dahulu.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find radius $r$ from Surface Area: $A = 4\\pi r^2 = 324\\pi$.</li>
+                                <li><b>Step 2:</b> Divide by $4\\pi$: $r^2 = \\frac{324\\pi}{4\\pi} = 81$.</li>
+                                <li><b>Step 3:</b> Find $r$: $r = \\sqrt{81} = 9$ cm.</li>
+                                <li><b>Step 4:</b> Calculate Volume $V$: $V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi (9)^3 = \\frac{4}{3}\\pi (729)$.</li>
+                                <li><b>Step 5:</b> Simplify: $V = 4 \\times \\pi \\times (729/3) = 4 \\times \\pi \\times 243 = 972\\pi$ cm$^3$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                               <li><b>Langkah 1:</b> Cari jari-jari $r$ dari Luas Permukaan: $L = 4\\pi r^2 = 324\\pi$.</li>
+                               <li><b>Langkah 2:</b> Bagi dengan $4\\pi$: $r^2 = \\frac{324\\pi}{4\\pi} = 81$.</li>
+                               <li><b>Langkah 3:</b> Cari $r$: $r = \\sqrt{81} = 9$ cm.</li>
+                               <li><b>Langkah 4:</b> Hitung Volume $V$: $V = \\frac{4}{3}\\pi r^3 = \\frac{4}{3}\\pi (9)^3 = \\frac{4}{3}\\pi (729)$.</li>
+                               <li><b>Langkah 5:</b> Sederhanakan: $V = 4 \\times \\pi \\times (729/3) = 4 \\times \\pi \\times 243 = 972\\pi$ cm$^3$.</li>
+                            </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Line $L_1$ has equation $4x - 3y = -10$. Line $L_2$ has equation $5x + 2y = 22$. Find the coordinates of the point of intersection.",
+          question_id:
+            "Garis $L_1$ memiliki persamaan $4x - 3y = -10$. Garis $L_2$ memiliki persamaan $5x + 2y = 22$. Tentukan koordinat titik potongnya.",
+          image_desc: null,
+          answer: "(2, 6)",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> To find the intersection point, solve the system of linear equations. The elimination method is suitable here.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Untuk mencari titik potong, selesaikan sistem persamaan linear. Metode eliminasi cocok digunakan di sini.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Write down the equations:<br/> (1) $4x - 3y = -10$<br/> (2) $5x + 2y = 22$</li>
+                                <li><b>Step 2:</b> Eliminate $y$. Multiply (1) by 2 and (2) by 3:<br/> (1) $\\times 2 \implies 8x - 6y = -20$<br/> (2) $\\times 3 \implies 15x + 6y = 66$</li>
+                                <li><b>Step 3:</b> Add the two new equations: $(8x + 15x) + (-6y + 6y) = -20 + 66$.</li>
+                                <li><b>Step 4:</b> Solve for x: $23x = 46 \implies x = 2$.</li>
+                                <li><b>Step 5:</b> Substitute $x=2$ back into equation (2): $5(2) + 2y = 22 \implies 10 + 2y = 22 \implies 2y = 12 \implies y = 6$.</li>
+                                <li><b>Step 6:</b> The intersection point is (2, 6).</li>
+                            </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Tuliskan persamaan:<br/> (1) $4x - 3y = -10$<br/> (2) $5x + 2y = 22$</li>
+                                <li><b>Langkah 2:</b> Eliminasi $y$. Kalikan (1) dengan 2, dan (2) dengan 3:<br/> (1) $\\times 2 \implies 8x - 6y = -20$<br/> (2) $\\times 3 \implies 15x + 6y = 66$</li>
+                                <li><b>Langkah 3:</b> Tambahkan kedua persamaan baru: $(8x + 15x) + (-6y + 6y) = -20 + 66$.</li>
+                                <li><b>Langkah 4:</b> Selesaikan untuk x: $23x = 46 \implies x = 2$.</li>
+                                <li><b>Langkah 5:</b> Substitusi $x=2$ ke persamaan (2): $5(2) + 2y = 22 \implies 10 + 2y = 22 \implies 2y = 12 \implies y = 6$.</li>
+                                <li><b>Langkah 6:</b> Titik potong adalah (2, 6).</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A right square pyramid has a base side of 16 cm and a slant height of 17 cm. Find the perpendicular height and the volume of the pyramid.",
+          question_id:
+            "Sebuah limas persegi tegak memiliki sisi alas 16 cm dan tinggi sisi tegak (slant height) 17 cm. Tentukan tinggi tegak dan volume limas tersebut.",
+          image_desc: null,
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_ztskx6_930.png",
+          answer: "Tinggi = 15 cm, Volume = 1280 cm$^3$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The perpendicular height ($h$), the apothem of the base ($a$, half the base side), and the slant height ($l$) form a right-angled triangle: $h^2 + a^2 = l^2$. The volume of a pyramid is $V = \\frac{1}{3} \\times \text{Base Area} \\times h$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Tinggi tegak limas ($t$), apotema alas ($a$, setengah sisi alas), dan tinggi sisi tegak ($s$) membentuk segitiga siku-siku: $t^2 + a^2 = s^2$. Volume limas adalah $V = \\frac{1}{3} \\times \\text{Luas Alas} \\times t$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Base side = 16 cm, so apothem of base $a = 16 / 2 = 8$ cm. Slant height $l = 17$ cm.</li>
+                                <li><b>Step 2:</b> Find perpendicular height $h$: $h^2 + a^2 = l^2 \\Rightarrow h^2 + 8^2 = 17^2$.</li>
+                                <li><b>Step 3:</b> Calculate: $h^2 + 64 = 289 \\Rightarrow h^2 = 225 \\Rightarrow h = \\sqrt{225} = 15$ cm. (Pythagorean Triple 8-15-17).</li>
+                                <li><b>Step 4:</b> Calculate Base Area: $A_{base} = (\\text{side})^2 = 16^2 = 256$ cm$^2$.</li>
+                                <li><b>Step 5:</b> Calculate Volume: $V = \\frac{1}{3} \\times A_{base} \\times h = \\frac{1}{3} \\times 256 \\times 15$.</li>
+                                <li><b>Step 6:</b> Simplify: $V = 256 \\times (15/3) = 256 \\times 5 = 1280$ cm$^3$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Sisi alas = 16 cm, maka apotema alas $a = 16 / 2 = 8$ cm. Tinggi sisi tegak $s = 17$ cm.</li>
+                                <li><b>Langkah 2:</b> Cari tinggi tegak $t$: $t^2 + a^2 = s^2 \implies t^2 + 8^2 = 17^2$.</li>
+                                <li><b>Langkah 3:</b> Hitung: $t^2 + 64 = 289 \implies t^2 = 225 \implies t = \\sqrt{225} = 15$ cm. (Tripel Pythagoras 8-15-17).</li>
+                                <li><b>Langkah 4:</b> Hitung Luas Alas: $A_{alas} = (\text{sisi})^2 = 16^2 = 256$ cm$^2$.</li>
+                                <li><b>Langkah 5:</b> Hitung Volume: $V = \\frac{1}{3} \\times A_{alas} \\times t = \\frac{1}{3} \\times 256 \\times 15$.</li>
+                                <li><b>Langkah 6:</b> Sederhanakan: $V = 256 \\times (15/3) = 256 \\times 5 = 1280$ cm$^3$.</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A cone has a volume of $800\\pi$ cm$^3$ and a perpendicular height of 24 cm. Find its base radius and its total surface area. (Leave surface area in terms of $\\pi$)",
+          question_id:
+            "Sebuah kerucut memiliki volume $800\\pi$ cm$^3$ dan tinggi tegak 24 cm. Tentukan jari-jari alasnya dan luas permukaan totalnya. (Biarkan luas permukaan dalam $\\pi$)",
+          image_desc: null,
+          answer: "Radius = 10 cm, Luas Permukaan = $360\\pi$ cm$^2$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Volume of Cone $V = \\frac{1}{3}\\pi r^2 h$. Total Surface Area $A = \\pi r^2 + \\pi r l = \\pi r(r+l)$, where $l$ is the slant height. Find $r$ from $V$, then find $l$ using Pythagoras: $l^2 = h^2 + r^2$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Volume Kerucut $V = \\frac{1}{3}\\pi r^2 t$. Luas Permukaan Total $L = \\pi r^2 + \\pi r s = \\pi r(r+s)$, di mana $s$ adalah garis pelukis. Cari $r$ dari $V$, lalu cari $s$ menggunakan Pythagoras: $s^2 = t^2 + r^2$.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find radius $r$ from volume: $V = \\frac{1}{3}\\pi r^2 h \implies 800\\pi = \\frac{1}{3}\\pi r^2 (24)$.</li>
+                                <li><b>Step 2:</b> Simplify: $800\\pi = 8\\pi r^2$.</li>
+                                <li><b>Step 3:</b> Solve for $r^2$: $r^2 = \\frac{800\\pi}{8\\pi} = 100$. So, $r = \\sqrt{100} = 10$ cm.</li>
+                                <li><b>Step 4:</b> Find slant height $l$: $l^2 = h^2 + r^2 = 24^2 + 10^2 = 576 + 100 = 676$.</li>
+                                <li><b>Step 5:</b> Solve for $l$: $l = \\sqrt{676} = 26$ cm. (Pythagorean Triple 10-24-26).</li>
+                                <li><b>Step 6:</b> Find Total Surface Area $A$: $A = \\pi r(r+l) = \\pi (10)(10+26) = 10\\pi(36) = 360\\pi$ cm$^2$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                               <li><b>Langkah 1:</b> Cari jari-jari $r$ dari volume: $V = \\frac{1}{3}\\pi r^2 t \implies 800\\pi = \\frac{1}{3}\\pi r^2 (24)$.</li>
+                               <li><b>Langkah 2:</b> Sederhanakan: $800\\pi = 8\\pi r^2$.</li>
+                               <li><b>Langkah 3:</b> Selesaikan untuk $r^2$: $r^2 = \\frac{800\\pi}{8\\pi} = 100$. Jadi, $r = \\sqrt{100} = 10$ cm.</li>
+                               <li><b>Langkah 4:</b> Cari garis pelukis $s$: $s^2 = t^2 + r^2 = 24^2 + 10^2 = 576 + 100 = 676$.</li>
+                               <li><b>Langkah 5:</b> Selesaikan untuk $s$: $s = \\sqrt{676} = 26$ cm. (Tripel Pythagoras 10-24-26).</li>
+                               <li><b>Langkah 6:</b> Cari Luas Permukaan Total $L$: $L = \\pi r(r+s) = \\pi (10)(10+26) = 10\\pi(36) = 360\\pi$ cm$^2$.</li>
+                            </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Three vertices of a parallelogram ABCD are A(-2, 3), B(3, 8), and C(8, 7). Find the coordinates of the fourth vertex, D.",
+          question_id:
+            "Tiga titik sudut jajar genjang ABCD adalah A(-2, 3), B(3, 8), dan C(8, 7). Tentukan koordinat titik sudut keempat, D.",
+          image_desc: null,
+          answer: "(3, 2)",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> In a parallelogram ABCD (vertices in order), the diagonals AC and BD bisect each other. This means they share the same midpoint.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Pada jajar genjang ABCD (titik sudut berurutan), diagonal AC dan BD saling membagi dua sama panjang. Ini berarti mereka memiliki titik tengah yang sama.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Let D have coordinates $(x, y)$.</li>
+                                 <li><b>Step 2:</b> Find the midpoint of diagonal AC: $M_{AC} = \\left( \\frac{x_A+x_C}{2}, \\frac{y_A+y_C}{2} \\right) = \\left( \\frac{-2+8}{2}, \\frac{3+7}{2} \\right) = \\left( \\frac{6}{2}, \\frac{10}{2} \\right) = (3, 5)$.</li>
+                                 <li><b>Step 3:</b> Find the midpoint of diagonal BD: $M_{BD} = \\left( \\frac{x_B+x_D}{2}, \\frac{y_B+y_D}{2} \\right) = \\left( \\frac{3+x}{2}, \\frac{8+y}{2} \\right)$.</li>
+                                 <li><b>Step 4:</b> Equate the midpoints: $M_{AC} = M_{BD}$.</li>
+                                 <li><b>Step 5:</b> Equate x-coordinates: $\\frac{3+x}{2} = 3 \implies 3+x = 6 \implies x=3$.</li>
+                                 <li><b>Step 6:</b> Equate y-coordinates: $\\frac{8+y}{2} = 5 \implies 8+y = 10 \implies y=2$.</li>
+                                 <li><b>Step 7:</b> Therefore, D = (3, 2).</li>
+                              </ul>
+                         </div>`,
+        }, // SAYA MENGHAPUS SOAL NOMOR 16 (PERPENDICULAR BISECTOR)
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the ratio in which the line $2x + y = 4$ divides the line segment joining points A(2, -2) and B(3, 7).",
+          question_id:
+            "Tentukan rasio perbandingan di mana garis $2x + y = 4$ membagi ruas garis yang menghubungkan titik A(2, -2) dan B(3, 7).",
+          image_desc: null,
+          answer: "2:9",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Let the line divide the segment AB in the ratio $k:1$. Use the section formula to find the coordinates of the intersection point P in terms of $k$. Since P must lie on the line $2x+y=4$, substitute its coordinates into the line equation to solve for $k$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Misalkan garis membagi segmen AB dengan rasio $k:1$. Gunakan rumus pembagian (section formula) untuk mencari koordinat titik potong P dalam $k$. Karena P harus terletak pada garis $2x+y=4$, substitusikan koordinatnya ke persamaan garis untuk mencari $k$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                              <ul>
+                                 <li><b>Step 1:</b> Section Formula (for ratio $k:1$ dividing A to B): $P(x,y) = \\left( \\frac{k \\cdot x_B + 1 \\cdot x_A}{k+1}, \\frac{k \\cdot y_B + 1 \cdot y_A}{k+1} \\right)$.</li>
+                                 <li><b>Step 2:</b> Substitute coordinates of A(2, -2) and B(3, 7):<br/> $P = ( \\frac{3k+2}{k+1}, \\frac{7k-2}{k+1} )$.</li>
+                                 <li><b>Step 3:</b> Substitute the coordinates of $P(x,y)$ into the line equation $2x + y = 4$:<br/> $$ 2(\\frac{3k+2}{k+1}) + (\\frac{7k-2}{k+1}) = 4 $$</li>
+                                 <li><b>Step 4:</b> Multiply the entire equation by $(k+1)$ to clear the denominator: $2(3k+2) + (7k-2) = 4(k+1)$.</li>
+                                 <li><b>Step 5:</b> Expand and solve for $k$:<br/> $6k + 4 + 7k - 2 = 4k + 4$<br/> $13k + 2 = 4k + 4$<br/> $9k = 2 \implies k = \\frac{2}{9}$.</li>
+                                 <li><b>Step 6:</b> The ratio $k:1$ is $\\frac{2}{9}:1$. Multiply by 9 to get integer ratio: $2:9$.</li>
+                              </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Rumus Pembagian (untuk rasio $k:1$ membagi A ke B): $P(x,y) = \\left( \\frac{k \\cdot x_B + 1 \\cdot x_A}{k+1}, \\frac{k \\cdot y_B + 1 \cdot y_A}{k+1} \\right)$.</li>
+                                <li><b>Langkah 2:</b> Substitusi koordinat A(2, -2) dan B(3, 7):<br/> $P = \\left( \\frac{k(3) + 1(2)}{k+1}, \\frac{k(7) + 1(-2)}{k+1} \\right) = \\left( \\frac{3k+2}{k+1}, \\frac{7k-2}{k+1} \\right)$.</li>
+                                <li><b>Langkah 3:</b> Substitusi koordinat $P(x,y)$ ke persamaan garis $2x + y = 4$:<br/> $$ 2\\left( \\frac{3k+2}{k+1} \\right) + \\left( \\frac{7k-2}{k+1} \\right) = 4 $$</li>
+                                <li><b>Langkah 4:</b> Kalikan seluruh persamaan dengan $(k+1)$ untuk menghilangkan penyebut: $2(3k+2) + (7k-2) = 4(k+1)$.</li>
+                                <li><b>Langkah 5:</b> Jabarkan dan selesaikan untuk $k$:<br/> $6k + 4 + 7k - 2 = 4k + 4$<br/> $13k + 2 = 4k + 4$<br/> $9k = 2 \implies k = \\frac{2}{9}$.</li>
+                                <li><b>Langkah 6:</b> Rasio $k:1$ adalah $\\frac{2}{9}:1$. Kalikan dengan 9 untuk mendapatkan rasio bilangan bulat: $2:9$.</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A large cone has radius 12 cm and height 18 cm. It is truncated (cut) parallel to its base, removing a small cone of height 6 cm from the top. Find the volume of the remaining frustum. (Leave in terms of $\\pi$)",
+          question_id:
+            "Sebuah kerucut besar memiliki jari-jari 12 cm dan tinggi 18 cm. Kerucut ini dipotong sejajar alasnya, membuang kerucut kecil dengan tinggi 6 cm dari atasnya. Tentukan volume frustum (kerucut terpancung) yang tersisa. (Biarkan dalam $\\pi$)",
+          image_desc: null,
+          answer: "$832\\pi$ cm$^3$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Volume(Frustum) = Volume(Large Cone) - Volume(Small Cone). We need to find the radius $r$ of the small cone using similar triangles formed by the heights and radii.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Volume(Frustum) = Volume(Kerucut Besar) - Volume(Kerucut Kecil). Kita perlu mencari jari-jari $r$ dari kerucut kecil menggunakan segitiga sebangun yang dibentuk oleh tinggi dan jari-jari.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Calculate Volume of Large Cone ($V_L$): Radius $R=12$, Height $H=18$.<br/> $V_L = \\frac{1}{3}\\pi R^2 H = \\frac{1}{3}\\pi (12^2)(18) = \\frac{1}{3}\\pi (144)(18) = 864\\pi$.</li>
+                                <li><b>Step 2:</b> Identify height of Small Cone ($V_S$): Height $h = 6$ cm.</li>
+                                <li><b>Step 3:</b> Find radius $r$ of small cone using similar triangles: $\\frac{r}{h} = \\frac{R}{H}$.<br/> $\\frac{r}{6} = \\frac{12}{18} \implies \\frac{r}{6} = \\frac{2}{3} \implies r = 6 \\times \\frac{2}{3} = 4$ cm.</li>
+                                <li><b>Step 4:</b> Calculate Volume of Small Cone ($V_S$): $V_S = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3}\\pi (4^2)(6) = \\frac{1}{3}\\pi (16)(6) = 32\\pi$.</li>
+                                <li><b>Step 5:</b> Calculate Volume of Frustum: Volume(Frustum) = $V_L - V_S = 864\\pi - 32\\pi = 832\\pi$ cm$^3$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                             <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Sisi alas = 16 cm, maka apotema alas $a = 16 / 2 = 8$ cm. Tinggi sisi tegak $s = 17$ cm.</li>
+                                <li><b>Langkah 2:</b> Cari tinggi tegak $t$: $t^2 + a^2 = s^2 \\Rightarrow t^2 + 8^2 = 17^2$.</li>
+                                <li><b>Langkah 3:</b> Hitung: $t^2 + 64 = 289 \\Rightarrow t^2 = 225 \\Rightarrow t = \\sqrt{225} = 15$ cm. (Tripel Pythagoras 8-15-17).</li>
+                                <li><b>Langkah 4:</b> Hitung Luas Alas: $A_{alas} = (\\text{sisi})^2 = 16^2 = 256$ cm$^2$.</li>
+                                <li><b>Langkah 5:</b> Hitung Volume: $V = \\frac{1}{3} \\times A_{alas} \\times t = \\frac{1}{3} \\times 256 \\times 15$.</li>
+                                <li><b>Step 6:</b> Simplify: $V = 256 \\times (15/3) = 256 \\times 5 = 1280$ cm$^3$.</li>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the total surface area of a frustum with height 12 cm, lower base radius 15 cm, and upper base radius 10 cm. (Leave in terms of $\\pi$)",
+          question_id:
+            "Tentukan luas permukaan total sebuah frustum dengan tinggi 12 cm, jari-jari alas bawah 15 cm, dan jari-jari alas atas 10 cm. (Biarkan dalam $\\pi$)",
+          image_desc: null,
+          answer: "$650\\pi$ cm$^2$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Total Surface Area(Frustum) = Area(Top Circle) + Area(Bottom Circle) + Area(Lateral Surface).<br/> $A = \\pi r^2 + \\pi R^2 + \\pi(R+r)L$, where $L$ is the slant height of the frustum. $L$ can be found using Pythagoras on the right triangle formed by the height, the difference in radii, and the slant height: $L^2 = h^2 + (R-r)^2$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Luas Permukaan Total(Frustum) = Luas(Lingkaran Atas) + Luas(Lingkaran Bawah) + Luas(Selimut).<br/> $L = \\pi r^2 + \\pi R^2 + \\pi(R+r)S$, di mana $S$ adalah garis pelukis frustum. $S$ dapat dicari dengan Pythagoras pada segitiga siku-siku yang dibentuk oleh tinggi, selisih jari-jari, dan garis pelukis: $S^2 = t^2 + (R-r)^2$.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Identify radii and height: $R=15, r=10, h=12$.</li>
+                                <li><b>Step 2:</b> Find slant height $L$: $L^2 = h^2 + (R-r)^2 = 12^2 + (15-10)^2 = 12^2 + 5^2 = 144 + 25 = 169$. So $L = \\sqrt{169} = 13$ cm. (Pythagorean Triple 5-12-13).</li>
+                                <li><b>Step 3:</b> Area(Top Circle) = $\\pi r^2 = \\pi(10^2) = 100\\pi$.</li>
+                                <li><b>Step 4:</b> Area(Bottom Circle) = $\\pi R^2 = \\pi(15^2) = 225\\pi$.</li>
+                                <li><b>Step 5:</b> Area(Lateral Surface) = $\\pi(R+r)L = \\pi(15+10)(13) = \\pi(25)(13) = 325\\pi$.</li>
+                                <li><b>Step 6:</b> Total Surface Area = Area(Top) + Area(Bottom) + Area(Lateral) = $100\\pi + 225\\pi + 325\\pi = 650\\pi$ cm$^2$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                             <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Identifikasi jari-jari dan tinggi: $R=15, r=10, t=12$.</li>
+                                <li><b>Langkah 2:</b> Cari garis pelukis $S$: $S^2 = t^2 + (R-r)^2 = 12^2 + (15-10)^2 = 12^2 + 5^2 = 144 + 25 = 169$. Jadi $S = \\sqrt{169} = 13$ cm. (Tripel Pythagoras 5-12-13).</li>
+                                <li><b>Langkah 3:</b> Luas(Lingkaran Atas) = $\\pi r^2 = \\pi(10^2) = 100\\pi$.</li>
+                                <li><b>Langkah 4:</b> Luas(Lingkaran Bawah) = $\\pi R^2 = \\pi(15^2) = 225\\pi$.</li>
+                                <li><b>Langkah 5:</b> Luas(Selimut) = $\\pi(R+r)S = \\pi(15+10)(13) = \\pi(25)(13) = 325\\pi$.</li>
+                                <li><b>Langkah 6:</b> Luas Permukaan Total = Luas(Atas) + Luas(Bawah) + Luas(Selimut) = $100\\pi + 225\\pi + 325\\pi = 650\\pi$ cm$^2$.</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A hemisphere has radius $r=6$ cm. A cone has radius $r=6$ cm and height $h=8$ cm. Find the total volume of the composite solid formed by placing the cone on top of the hemisphere.",
+          question_id:
+            "Sebuah setengah bola memiliki jari-jari $r=6$ cm. Sebuah kerucut memiliki jari-jari $r=6$ cm dan tinggi $t=8$ cm. Tentukan volume total bangun gabungan yang terbentuk dengan meletakkan kerucut di atas setengah bola.",
+          image_desc: null,
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_kky6kn_8462.png",
+          answer: "$240\\pi$ cm$^3$",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Total Volume = Volume(Hemisphere) + Volume(Cone).<br/> Volume(Hemisphere) $V_{hemi} = \\frac{1}{2}(\\frac{4}{3}\\pi r^3) = \\frac{2}{3}\\pi r^3$.<br/> Volume(Cone) $V_{cone} = \\frac{1}{3}\\pi r^2 h$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Volume Total = Volume(Setengah Bola) + Volume(Kerucut).<br/> Volume(Setengah Bola) $V_{hemi} = \\frac{1}{2}(\\frac{4}{3}\\pi r^3) = \\frac{2}{3}\\pi r^3$.<br/> Volume(Kerucut) $V_{cone} = \\frac{1}{3}\\pi r^2 t$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Identify given values: $r=6$ cm (for both) and $h_{cone}=8$ cm.</li>
+                                <li><b>Step 2:</b> Calculate Volume(Hemisphere): $V_{hemi} = \\frac{2}{3}\\pi r^3 = \\frac{2}{3}\\pi (6^3) = \\frac{2}{3}\\pi (216) = 2 \\times 72\\pi = 144\\pi$.</li>
+                                <li><b>Step 3:</b> Calculate Volume(Cone): $V_{cone} = \\frac{1}{3}\\pi r^2 h = \\frac{1}{3}\\pi (6^2)(8) = \\frac{1}{3}\\pi (36)(8) = 12 \\times 8\\pi = 96\\pi$.</li>
+                                <li><b>Step 4:</b> Calculate Total Volume: Total Volume = $V_{hemi} + V_{cone} = 144\\pi + 96\\pi = 240\\pi$ cm$^3$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Identifikasi nilai yang diberikan: $r=6$ cm (untuk keduanya) dan $t_{kerucut}=8$ cm.</li>
+                                <li><b>Langkah 2:</b> Hitung Volume(Setengah Bola): $V_{hemi} = \\frac{2}{3}\\pi r^3 = \\frac{2}{3}\\pi (6^3) = \\frac{2}{3}\\pi (216) = 2 \\times 72\\pi = 144\\pi$.</li>
+                                <li><b>Langkah 3:</b> Hitung Volume(Kerucut): $V_{cone} = \\frac{1}{3}\\pi r^2 t = \\frac{1}{3}\\pi (6^2)(8) = \\frac{1}{3}\\pi (36)(8) = 12 \\times 8\\pi = 96\\pi$.</li>
+                                <li><b>Langkah 4:</b> Hitung Volume Total: Volume Total = $V_{hemi} + V_{cone} = 144\\pi + 96\\pi = 240\\pi$ cm$^3$.</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the area of the triangle formed by the intersection of the lines $y = x+1$, $y = -x+7$, and $y = 2x-8$.",
+          question_id:
+            "Tentukan luas segitiga yang dibentuk oleh perpotongan garis $y = x+1$, $y = -x+7$, dan $y = 2x-8$.",
+          image_desc: null,
+          answer: "12 satuan luas",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Find the three vertices of the triangle by finding the intersection points of the lines taken two at a time. Then use the Shoelace Formula or another method (like base times height if applicable, or determinant formula) to find the area.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Cari tiga titik sudut segitiga dengan mencari titik potong antar pasang garis. Kemudian gunakan Rumus Shoelace atau metode lain (seperti alas kali tinggi jika memungkinkan, atau rumus determinan) untuk mencari luasnya.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Find vertex A (Intersection of $y=x+1$ and $y=-x+7$):<br/> $x+1 = -x+7 \implies 2x=6 \implies x=3$.<br/> $y=3+1=4 \implies A=(3,4)$.</li>
+                                <li><b>Step 2:</b> Find vertex B (Intersection of $y=x+1$ and $y=2x-8$):<br/> $x+1 = 2x-8 \implies 9=x$.<br/> $y=9+1=10 \implies B=(9,10)$.</li>
+                                <li><b>Step 3:</b> Find vertex C (Intersection of $y=-x+7$ and $y=2x-8$):<br/> $-x+7 = 2x-8 \implies 15=3x \implies x=5$.<br/> $y=-5+7=2 \implies C=(5,2)$.</li>
+                                <li><b>Step 4:</b> Use the Shoelace Formula for Area with vertices A(3,4), B(9,10), C(5,2):<br/> $S_1 = (x_1y_2 + x_2y_3 + x_3y_1) = (3 \\times 10) + (9 \\times 2) + (5 \\times 4) = 30 + 18 + 20 = 68$.<br/> $S_2 = (y_1x_2 + y_2x_3 + y_3x_1) = (4 \\times 9) + (10 \\times 5) + (2 \\times 3) = 36 + 50 + 6 = 92$.</li>
+                                <li><b>Step 5:</b> Area = $\\frac{1}{2}|S_1 - S_2| = \\frac{1}{2}|68 - 92| = \\frac{1}{2}|-24| = 12$.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Cari titik sudut A (Potongan $y=x+1$ dan $y=-x+7$):<br/> $x+1 = -x+7 \implies 2x=6 \implies x=3$.<br/> $y=3+1=4 \implies A=(3,4)$.</li>
+                                <li><b>Langkah 2:</b> Cari titik sudut B (Potongan $y=x+1$ dan $y=2x-8$):<br/> $x+1 = 2x-8 \implies 9=x$.<br/> $y=9+1=10 \implies B=(9,10)$.</li>
+                                <li><b>Langkah 3:</b> Cari titik sudut C (Potongan $y=-x+7$ dan $y=2x-8$):<br/> $-x+7 = 2x-8 \implies 15=3x \implies x=5$.<br/> $y=-5+7=2 \implies C=(5,2)$.</li>
+                                <li><b>Langkah 4:</b> Gunakan Rumus Shoelace untuk Luas dengan titik A(3,4), B(9,10), C(5,2):<br/> $S_1 = (x_1y_2 + x_2y_3 + x_3y_1) = (3 \\times 10) + (9 \\times 2) + (5 \\times 4) = 30 + 18 + 20 = 68$.<br/> $S_2 = (y_1x_2 + y_2x_3 + y_3x_1) = (4 \\times 9) + (10 \\times 5) + (2 \\times 3) = 36 + 50 + 6 = 92$.</li>
+                                <li><b>Langkah 5:</b> Luas = $\\frac{1}{2}|S_1 - S_2| = \\frac{1}{2}|68 - 92| = \\frac{1}{2}|-24| = 12$.</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the coordinates of the circumcenter of the triangle with vertices A(1, 1), B(7, 1), and C(1, 9).",
+          question_id:
+            "Tentukan koordinat circumcenter (pusat lingkaran luar) dari segitiga dengan titik sudut A(1, 1), B(7, 1), dan C(1, 9).",
+          image_desc: null,
+          answer: "(4, 5)",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The circumcenter is the intersection of the perpendicular bisectors of the sides. For a right-angled triangle, the circumcenter is conveniently located at the midpoint of the hypotenuse.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Circumcenter adalah titik potong dari garis-garis sumbu sisi-sisi segitiga. Untuk segitiga siku-siku, circumcenter terletak tepat di titik tengah dari hipotenusa.</p>
+                         </div>
+                         <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Identify the type of triangle. Vertices are A(1, 1), B(7, 1), C(1, 9).</li>
+                                <li><b>Step 2:</b> Side AB connects (1,1) and (7,1). It is horizontal (constant y-coordinate). Length = $7-1=6$.</li>
+                                <li><b>Step 3:</b> Side AC connects (1,1) and (1,9). It is vertical (constant x-coordinate). Length = $9-1=8$.</li>
+                                <li><b>Step 4:</b> Since AB is horizontal and AC is vertical, they are perpendicular. The $\\vartriangle ABC$ is a right-angled triangle with the right angle at A(1, 1).</li>
+                                <li><b>Step 5:</b> The hypotenuse is the side opposite the right angle, which is BC, connecting (7, 1) and (1, 9).</li>
+                                <li><b>Step 6:</b> The circumcenter of a right-angled triangle is the midpoint of its hypotenuse. Find the midpoint of BC: <br/> $M = \\left( \\frac{x_B+x_C}{2}, \\frac{y_B+y_C}{2} \\right) = \\left( \\frac{7+1}{2}, \\frac{1+9}{2} \\right) = \\left( \\frac{8}{2}, \\frac{10}{2} \\right) = (4, 5)$.</li>
+                                <li><b>Step 7:</b> The circumcenter is (4, 5).</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Identifikasi jenis segitiga. Titik sudut A(1, 1), B(7, 1), C(1, 9).</li>
+                                <li><b>Langkah 2:</b> Sisi AB menghubungkan (1,1) dan (7,1). Sisi ini horizontal (koordinat y konstan). Panjang = $7-1=6$.</li>
+                                <li><b>Langkah 3:</b> Sisi AC menghubungkan (1,1) dan (1,9). Sisi ini vertikal (koordinat x konstan). Panjang = $9-1=8$.</li>
+                                <li><b>Langkah 4:</b> Karena AB horizontal dan AC vertikal, keduanya tegak lurus. $\\vartriangle ABC$ adalah segitiga siku-siku dengan sudut siku-siku di A(1, 1).</li>
+                                <li><b>Langkah 5:</b> Hipotenusa adalah sisi di depan sudut siku-siku, yaitu BC, yang menghubungkan (7, 1) dan (1, 9).</li>
+                                <li><b>Langkah 6:</b> Circumcenter dari segitiga siku-siku adalah titik tengah hipotenusanya. Cari titik tengah BC: <br/> $M = \\left( \\frac{x_B+x_C}{2}, \\frac{y_B+y_C}{2} \\right) = \\left( \\frac{7+1}{2}, \\frac{1+9}{2} \\right) = \\left( \\frac{8}{2}, \\frac{10}{2} \\right) = (4, 5)$.</li>
+                                <li><b>Langkah 7:</b> Circumcenter-nya adalah (4, 5).</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "Find the coordinates of the centroid of the triangle with vertices P(2, -1), Q(8, 6), and R(-1, 7).",
+          question_id:
+            "Tentukan koordinat centroid (titik berat) dari segitiga dengan titik sudut P(2, -1), Q(8, 6), dan R(-1, 7).",
+          image_desc: null,
+          answer: "(3, 4)",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The centroid (or center of mass) of a triangle is the intersection point of its medians. Its coordinates are the average of the coordinates of the vertices: $G = \\left( \\frac{x_1+x_2+x_3}{3}, \\frac{y_1+y_2+y_3}{3} \\right)$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Centroid (titik berat) segitiga adalah titik potong garis-garis beratnya. Koordinatnya adalah rata-rata dari koordinat titik-titik sudutnya: $G = \\left( \\frac{x_1+x_2+x_3}{3}, \\frac{y_1+y_2+y_3}{3} \\right)$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Identify the coordinates of the vertices: P(2, -1), Q(8, 6), R(-1, 7).</li>
+                                <li><b>Step 2:</b> Calculate the x-coordinate of the centroid ($x_G$):<br/> $x_G = \\frac{x_P+x_Q+x_R}{3} = \\frac{2+8+(-1)}{3} = \\frac{9}{3} = 3$.</li>
+                                <li><b>Step 3:</b> Calculate the y-coordinate of the centroid ($y_G$):<br/> $y_G = \\frac{y_P+y_Q+y_R}{3} = \\frac{-1+6+7}{3} = \\frac{12}{3} = 4$.</li>
+                                <li><b>Step 4:</b> The coordinates of the centroid are (3, 4).</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Identifikasi koordinat titik sudut: P(2, -1), Q(8, 6), R(-1, 7).</li>
+                                <li><b>Langkah 2:</b> Hitung koordinat x dari centroid ($x_G$):<br/> $x_G = \\frac{x_P+x_Q+x_R}{3} = \\frac{2+8+(-1)}{3} = \\frac{9}{3} = 3$.</li>
+                                <li><b>Langkah 3:</b> Hitung koordinat y dari centroid ($y_G$):<br/> $y_G = \\frac{y_P+y_Q+y_R}{3} = \\frac{-1+6+7}{3} = \\frac{12}{3} = 4$.</li>
+                                <li><b>Langkah 4:</b> Koordinat centroid-nya adalah (3, 4).</li>
+                             </ul>
+                         </div>`,
+        },
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en:
+            "A solid metal ball of radius 10 cm is melted down to form 125 identical smaller spherical balls. Find the radius of the smaller balls.",
+          question_id:
+            "Sebuah bola logam padat dengan jari-jari 10 cm dilebur untuk membuat 125 bola identik yang lebih kecil. Tentukan jari-jari dari bola-bola kecil tersebut.",
+          image_desc: null,
+          answer: "2 cm",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> The total volume of the metal remains constant during the melting and recasting process. Volume(Large Ball) = N $\\times$ Volume(Small Ball). The volume of a sphere is $V = \\frac{4}{3}\\pi r^3$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Total volume logam tetap sama selama proses peleburan dan pencetakan ulang. Volume(Bola Besar) = N $\\times$ Volume(Bola Kecil). Volume bola adalah $V = \\frac{4}{3}\\pi r^3$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Let R be the radius of the large ball (R=10 cm) and r be the radius of the small balls. N = 125.</li>
+                                <li><b>Step 2:</b> Set up the volume equality: $V_{large} = N \\times V_{small}$.<br/> $ \\frac{4}{3}\\pi R^3 = 125 \\times \\left( \\frac{4}{3}\\pi r^3 \\right) $.</li>
+                                <li><b>Step 3:</b> Cancel the constant term $\\frac{4}{3}\\pi$ from both sides: $R^3 = 125 \\times r^3$.</li>
+                                <li><b>Step 4:</b> Substitute R=10: $10^3 = 125 \\times r^3$.<br/> $1000 = 125 r^3$.</li>
+                                <li><b>Step 5:</b> Solve for $r^3$: $r^3 = \\frac{1000}{125} = 8$.</li>
+                                <li><b>Step 6:</b> Find r by taking the cube root: $r = \\sqrt[3]{8} = 2$ cm.</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                             <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Misal R adalah jari-jari bola besar (R=10 cm) dan r adalah jari-jari bola kecil. N = 125.</li>
+                                <li><b>Langkah 2:</b> Buat persamaan kesamaan volume: $V_{besar} = N \\times V_{kecil}$.<br/> $ \\frac{4}{3}\\pi R^3 = 125 \\times \\left( \\frac{4}{3}\\pi r^3 \\right) $.</li>
+                                <li><b>Langkah 3:</b> Coret suku konstan $\\frac{4}{3}\\pi$ dari kedua sisi: $R^3 = 125 \\times r^3$.</li>
+                                <li><b>Langkah 4:</b> Substitusi R=10: $10^3 = 125 \\times r^3$.<br/> $1000 = 125 r^3$.</li>
+                                <li><b>Langkah 5:</b> Selesaikan untuk $r^3$: $r^3 = \\frac{1000}{125} = 8$.</li>
+                                <li><b>Langkah 6:</b> Cari r dengan mengambil akar pangkat tiga: $r = \\sqrt[3]{8} = 2$ cm.</li>
+                             </ul>
+                         </div>`,
+        },
+        // <!-- SOAL TAMBAHAN UNTUK BAGIAN 2 -->
+        {
+          topic: "Bagian 2: Geometri Koordinat & Ruang",
+          question_en: "Find the distance between point A(-5, 2) and point B(3, -4).",
+          question_id: "Tentukan jarak antara titik A(-5, 2) dan titik B(3, -4).",
+          image_desc: null,
+          answer: "10 satuan",
+          explanation: `<div class="concept">
+                           <p><strong>Concept:</strong> Use the Distance Formula, which is derived from the Pythagorean theorem: $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</p>
+                           <hr class="my-2 border-indigo-100" />
+                           <p><strong>Konsep:</strong> Gunakan Rumus Jarak, yang merupakan turunan dari teorema Pythagoras: $d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</p>
+                         </div>
+                         <div class="solution-step">
+                             <p class="font-bold text-indigo-600">Solution:</p>
+                             <ul>
+                                <li><b>Step 1:</b> Identify coordinates: $(x_1, y_1) = (-5, 2)$ and $(x_2, y_2) = (3, -4)$.</li>
+                                <li><b>Step 2:</b> Calculate the difference in x ($\\Delta x$): $x_2 - x_1 = 3 - (-5) = 8$.</li>
+                                <li><b>Step 3:</b> Calculate the difference in y ($\\Delta y$): $y_2 - y_1 = -4 - 2 = -6$.</li>
+                                <li><b>Step 4:</b> Apply the formula: $d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{8^2 + (-6)^2}$.</li>
+                                <li><b>Step 5:</b> Calculate: $d = \\sqrt{64 + 36} = \\sqrt{100} = 10$ units. (This forms a 6-8-10 right triangle).</li>
+                             </ul>
+                         </div>
+                         <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                             <ul>
+                                <li><b>Langkah 1:</b> Identifikasi koordinat: $(x_1, y_1) = (-5, 2)$ dan $(x_2, y_2) = (3, -4)$.</li>
+                                <li><b>Langkah 2:</b> Hitung selisih x ($\\Delta x$): $x_2 - x_1 = 3 - (-5) = 8$.</li>
+                                <li><b>Langkah 3:</b> Hitung selisih y ($\\Delta y$): $y_2 - y_1 = -4 - 2 = -6$.</li>
+                                <li><b>Langkah 4:</b> Terapkan rumus: $d = \\sqrt{(\\Delta x)^2 + (\\Delta y)^2} = \\sqrt{8^2 + (-6)^2}$.</li>
+                                <li><b>Langkah 5:</b> Hitung: $d = \\sqrt{64 + 36} = \\sqrt{100} = 10$ satuan. (Ini membentuk segitiga siku-siku 6-8-10).</li>
+                             </ul>
+                         </div>`,
+        }
+      ];
+
+      // Fungsi ini mengelompokkan soal berdasarkan topik dan memberi nomor urut
+      function getOrderedQuestions() {
+        const topics = [...new Set(questions.map((q) => q.topic))];
+        let ordered = [];
+        let questionCounter = 0; // Counter independent of topic changes
+
+        topics.forEach((topic) => {
+          const questionsForTopic = questions.filter(
+            (q) => q.topic === topic
+          );
+          questionsForTopic.forEach(q => {
+             questionCounter++; // Increment counter for each question
+             q.id = questionCounter; // Assign sequential ID
+             ordered.push(q); // Add question to the ordered list
+          });
+        });
+        return ordered;
+      }
+
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            // Add topic title only if it hasn't been added yet for problems
+             problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+          problemsHTML += `
+                    <div class="item-container">
+                        <p><strong>${q.id}.</strong> ${q.question_en}`;
+          if (q.image_desc) {
+            problemsHTML += `<div class="image-desc">${q.image_desc}</div>`;
+          } else if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Gambar untuk Soal ${q.id}" class="problem-image" onerror="this.style.display='none'">`;
+          }
+          if (q.question_id) {
+            problemsHTML += `<br/><br/><span class="lang-id">${q.question_id}</span>`;
+          }
+          problemsHTML += `</p></div>`;
+
+          // Render Solusi
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             // Add topic title for solutions section, adjust text slightly
+             solutionsHTML += `<h3 class="topic-title">Pembahasan ${currentSolutionTopic}</h3>`;
+          }
+
+          // Reference q.id which is now correctly numbered sequentially
+          solutionsHTML += `
+                    <div class="item-container">
+                        <p><strong>Pembahasan Soal ${q.id} / Solution ${q.id}:</strong></p>
+                        ${q.explanation}
+                        <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+                    </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Re-run MathJax typesetting after content is loaded
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        } else if (
+          typeof MathJax !== "undefined" &&
+          MathJax.Hub &&
+          MathJax.Hub.Queue
+        ) {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      }
+
+      // Call renderContent when the DOM is ready
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
