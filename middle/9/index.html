@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Olympiad Math Practice (Grade 3-4) - Speed & Patterns
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step ul li {
+        line-height: 1.8;
+        padding-left: 0.5rem;
+      }
+      .solution-step ul ul li {
+        padding-left: 1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 9
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 3-4 | Topics: Speed, Distance, Time & Number Patterns
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Practice Problems / Soal Latihan</h2>
+
+          <!-- Topik 1: Kecepatan, Jarak, Waktu -->
+          <h3 class="topic-title">
+            Topic 1: Speed, Distance, Time (Kecepatan, Jarak, Waktu)
+          </h3>
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> A train travels at a constant speed. It travels 30 km in 20 minutes. How far will it travel in 1.5 hours?
+              <br /><br />Sebuah kereta api berjalan dengan kecepatan konstan. Kereta itu menempuh jarak 30 km dalam 20 menit. Seberapa jauh kereta itu akan berjalan dalam 1,5 jam?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> David cycles from his house to the park with a
+              speed of 15 km/h. The journey takes 20 minutes. If he cycles back
+              from the park to his house along the same route in 30 minutes, what
+              is his speed on the way back?<br /><br />David bersepeda dari
+              rumahnya ke taman dengan kecepatan 15 km/jam. Perjalanan memakan
+              waktu 20 menit. Jika ia bersepeda kembali dari taman ke rumahnya
+              melalui rute yang sama dalam 30 menit, berapa kecepatannya saat
+              perjalanan kembali?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> A car travels 120 km at a speed of 60 km/h. It then travels the next 120 km at a speed of 40 km/h. What is the average speed for the entire 240 km journey?
+              <br /><br />Sebuah mobil menempuh jarak 120 km dengan kecepatan 60 km/jam. Mobil itu kemudian menempuh 120 km berikutnya dengan kecepatan 40 km/jam. Berapakah kecepatan rata-rata untuk seluruh perjalanan sejauh 240 km tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> Andy starts walking from Point A at a speed of 4 km/h. 30
+              minutes later, Ben starts cycling from the same Point A, in the
+              same direction, at a speed of 10 km/h. How long will it take for
+              Ben to catch up with Andy?<br /><br />Andy mulai berjalan dari
+              Titik A dengan kecepatan 4 km/jam. 30 menit kemudian, Ben mulai
+              bersepeda dari Titik A yang sama, ke arah yang sama, dengan
+              kecepatan 10 km/jam. Berapa lama waktu yang dibutuhkan Ben untuk
+              menyusul Andy?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> Town A and Town B are 210 km apart. A motorcycle leaves Town A for Town B at 50 km/h. At the same time, a truck leaves Town B for Town A at 55 km/h. How far from Town A will they meet?
+              <br /><br />Kota A dan Kota B berjarak 210 km. Sebuah sepeda motor meninggalkan Kota A menuju Kota B dengan kecepatan 50 km/jam. Pada saat yang sama, sebuah truk meninggalkan Kota B menuju Kota A dengan kecepatan 55 km/jam. Berapa jarak dari Kota A mereka akan berpapasan?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> A bus and a car travel the same distance. The bus takes 3 hours. The car's speed is twice the bus's speed. How many minutes does the car take?
+              <br /><br />Sebuah bus dan sebuah mobil menempuh jarak yang sama. Bus membutuhkan waktu 3 jam. Kecepatan mobil adalah dua kali kecepatan bus. Berapa menit waktu yang dibutuhkan mobil?
+            </p>
+          </div>
+           <div class="item-container">
+            <p>
+              <strong>7.</strong> Ryan runs at 10 km/h. Tom runs at 8 km/h. They start at the same time and run in the same direction. How long will it take (in minutes) for Ryan to be 1.5 km ahead of Tom?
+              <br /><br />Ryan berlari dengan kecepatan 10 km/jam. Tom berlari dengan kecepatan 8 km/jam. Mereka mulai pada waktu yang sama dan berlari ke arah yang sama. Berapa lama waktu yang dibutuhkan (dalam menit) agar Ryan berada 1,5 km di depan Tom?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> A cat is 30 meters away from a mouse. The mouse starts
+              running away at a speed of 2 meters per second. At the same time,
+              the cat starts chasing it at a speed of 5 meters per second. How
+              long will it take for the cat to catch the mouse?<br /><br />Seekor
+              kucing berjarak 30 meter dari seekor tikus. Tikus itu mulai berlari
+              menjauh dengan kecepatan 2 meter per detik. Pada saat yang sama,
+              kucing itu mulai mengejarnya dengan kecepatan 5 meter per detik.
+              Berapa lama waktu yang dibutuhkan kucing untuk menangkap tikus?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> Two friends, Leo and Mia, live 600 meters apart. They
+              decide to walk towards each other. Leo walks at 70 meters per
+              minute. Mia walks at 80 meters per minute. If they both start at
+              the same time, how far from Leo's house will they meet?<br /><br />Dua
+              teman, Leo dan Mia, tinggal terpisah sejauh 600 meter. Mereka
+              memutuskan untuk berjalan mendekati satu sama lain. Leo berjalan
+              dengan kecepatan 70 meter per menit. Mia berjalan dengan kecepatan
+              80 meter per menit. Jika mereka berdua mulai pada saat yang sama,
+              berapa jarak dari rumah Leo mereka akan bertemu?
+            </p>
+          </div>
+           <div class="item-container">
+            <p>
+              <strong>10.</strong> Anna usually takes 45 minutes to walk 3 km to school. Today, she walked the first 1 km in 15 minutes. What speed (in km/h) must she walk the remaining 2 km to arrive in a total time of only 35 minutes?
+              <br /><br />Anna biasanya membutuhkan 45 menit untuk berjalan 3 km ke sekolah. Hari ini, ia berjalan 1 km pertama dalam 15 menit. Berapa kecepatan (dalam km/jam) yang ia perlukan untuk berjalan 2 km sisanya agar tiba dalam total waktu 35 menit saja?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> A cheetah can run at a speed of 108 km/h. What is its speed in meters per second (m/s)?
+              <br /><br />Seekor cheetah dapat berlari dengan kecepatan 108 km/jam. Berapakah kecepatannya dalam meter per detik (m/s)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> A plane travels 10 times faster than a car. If the car takes 5 hours to travel a certain distance, how many minutes will the plane take to travel the same distance?
+              <br /><br />Sebuah pesawat terbang 10 kali lebih cepat dari sebuah mobil. Jika mobil membutuhkan waktu 5 jam untuk menempuh jarak tertentu, berapa menit waktu yang dibutuhkan pesawat untuk menempuh jarak yang sama?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> A bus leaves City P for City Q at 10:00 AM, traveling at 60 km/h. An hour
+              later, a car leaves City Q for City P, traveling at 90 km/h. The
+              distance between City P and City Q is 360 km. At what time will
+              they meet?<br /><br />Sebuah bus meninggalkan Kota P menuju Kota Q
+              pada pukul 10:00 pagi, dengan kecepatan 60 km/jam. Satu jam
+              kemudian, sebuah mobil meninggalkan Kota Q menuju Kota P, dengan
+              kecepatan 90 km/jam. Jarak antara Kota P dan Kota Q adalah 360 km.
+              Pukul berapa mereka akan bertemu?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> Mount Everest is about 8800 meters high. A
+              snail decides to climb it at a speed of 2 meters per hour. How many
+              days would it take the snail to reach the top, assuming it never
+              stops?<br /><br />Gunung Everest tingginya sekitar 8800 meter.
+              Seekor siput memutuskan untuk mendakinya dengan kecepatan 2 meter
+              per jam. Berapa hari yang dibutuhkan siput untuk mencapai puncak,
+              dengan asumsi ia tidak pernah berhenti?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> A girl cycles to her grandma's house. If she
+              cycles at 12 km/h, she arrives in 2 hours. If she wants to arrive
+              in 1 hour and 30 minutes, what speed must she cycle at?<br /><br />Seorang
+              gadis bersepeda ke rumah neneknya. Jika dia bersepeda dengan
+              kecepatan 12 km/jam, dia tiba dalam 2 jam. Jika dia ingin tiba
+              dalam 1 jam 30 menit, dengan kecepatan berapa dia harus bersepeda?
+            </p>
+          </div>
+
+          <!-- Topik 2: Pola Bilangan Lanjutan -->
+          <h3 class="topic-title">
+            Topic 2: Advanced Number Patterns (Pola Bilangan Lanjutan)
+          </h3>
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> The sum of two consecutive triangular numbers is always a square number. What square number is the sum of the 9th and 10th triangular numbers?
+              <br /><br />Jumlah dari dua bilangan segitiga berurutan selalu menghasilkan bilangan persegi. Bilangan persegi berapakah yang merupakan hasil penjumlahan dari bilangan segitiga ke-9 dan ke-10?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> What is the difference between the 12th square number and the 11th square number?
+              <br /><br />Berapakah selisih antara bilangan persegi ke-12 dan bilangan persegi ke-11?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> Consider the sequence: 5, 8, 11, 14, 17, ...
+              What is the 100th term in this sequence?<br /><br />Perhatikan
+              barisan: 5, 8, 11, 14, 17, ... Berapakah suku ke-100 dari barisan
+              ini?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> What is the sum of the first 20 odd numbers?
+              ($1 + 3 + 5 + ...$)<br /><br />Berapakah jumlah dari 20 bilangan
+              ganjil pertama? ($1 + 3 + 5 + ...$)
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> A pattern of shapes repeats in the following
+              order: Circle, Square, Triangle, Star, Heart, Circle, Square,
+              Triangle, Star, Heart, ... What is the 83rd shape in this
+              pattern?<br /><br />Sebuah pola bentuk berulang dengan urutan
+              sebagai berikut: Lingkaran, Persegi, Segitiga, Bintang, Hati,
+              Lingkaran, Persegi, Segitiga, Bintang, Hati, ... Apakah bentuk
+              ke-83 dalam pola ini?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> Find the value of $1 + 2 + 3 + ... + 49 +
+              50$.<br /><br />Carilah nilai dari $1 + 2 + 3 + ... + 49 + 50$.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> Look at the visual pattern of squares. Figure 1 is 1 square. Figure 2 is a 2x2 square with the 1x1 inner square removed (3 squares). Figure 3 is a 3x3 square with the 2x2 inner square removed (5 squares). How many small squares are in Figure 10?
+              <br /><br />Lihatlah pola gambar persegi di bawah ini. Gambar 1 adalah 1 kotak. Gambar 2 adalah kotak 2x2 dengan bagian dalam 1x1 dihilangkan (3 kotak). Gambar 3 adalah kotak 3x3 dengan bagian dalam 2x2 dihilangkan (5 kotak). Ada berapa banyak kotak kecil di Gambar 10?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> Look at the visual pattern below. This pattern
+              is made of dots. How many dots are in Figure 8?<br /><br />Lihatlah
+              pola gambar di bawah ini. Pola ini terbuat dari titik-titik. Ada
+              berapa banyak titik di Gambar 8?<br /><br />[Image Description: A pattern of figures.
+              Figure 1 is 1 dot. Figure 2 is 3 dots (1 dot on top, 2 dots below,
+              forming a triangle). Figure 3 is 6 dots (1 on top, 2 in middle, 3
+              on bottom, forming a triangle). Figure 4 is 10 dots (1, 2, 3, 4,
+              forming a triangle). / Deskripsi Gambar:
+              Sebuah pola gambar. Gambar 1 adalah 1 titik. Gambar 2 adalah 3
+              titik (1 titik di atas, 2 titik di bawah, membentuk segitiga).
+              Gambar 3 adalah 6 titik (1 di atas, 2 di tengah, 3 di bawah,
+              membentuk segitiga). Gambar 4 adalah 10 titik (1, 2, 3, 4,
+              membentuk segitiga).]
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> What is the 50th number in this sequence? 1,
+              4, 7, 10, 1, 4, 7, 10, 1, 4, ...<br /><br />Berapakah bilangan
+              ke-50 dalam barisan ini? 1, 4, 7, 10, 1, 4, 7, 10, 1, 4, ...
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> What is the units digit (last digit) of
+              $7^{30}$?<br /><br />Apakah digit satuan (angka terakhir) dari
+              $7^{30}$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> Find the value of $100 - 99 + 98 - 97 + 96 -
+              95 + ... + 4 - 3 + 2 - 1$.<br /><br />Carilah nilai dari $100 - 99 +
+              98 - 97 + 96 - 95 + ... + 4 - 3 + 2 - 1$.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> Look at this pattern made of rows of odd
+              numbers:
+            </p>
+            <pre class="bg-gray-50 p-3 rounded-md text-sm">
+Row 1: 1
+Row 2: 3, 5
+Row 3: 7, 9, 11
+Row 4: 13, 15, 17, 19
+...
+</pre
+            >
+            <p class="mt-2">
+              What is the first number in Row 10?<br /><br />Berapakah bilangan pertama di Baris 10?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> The sum of two consecutive square numbers is 145. What are the two square numbers?
+              <br /><br />Jumlah dari dua bilangan persegi yang berurutan adalah 145. Berapakah kedua bilangan persegi tersebut?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> The first few Fibonacci numbers are 1, 1, 2, 3, 5, 8, 13, 21, ... (where each number is the sum of the two preceding ones). What is the 12th number in this sequence?
+              <br /><br />Beberapa bilangan Fibonacci pertama adalah 1, 1, 2, 3, 5, 8, 13, 21, ... (di mana setiap bilangan adalah jumlah dari dua bilangan sebelumnya). Berapakah bilangan ke-12 dalam barisan ini?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> A large cube is painted red on all its faces.
+              It is then cut into 64 smaller, identical cubes. How many of these
+              small cubes have exactly 0 faces painted?<br /><br />Sebuah kubus
+              besar dicat merah di semua sisinya. Kubus itu kemudian dipotong
+              menjadi 64 kubus kecil yang identik. Berapa banyak dari kubus-kubus
+              kecil ini yang memiliki tepat 0 sisi dicat?
+            </p>
+          </div>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions / Pembahasan</h2>
+
+          <!-- Pembahasan Topik 1 -->
+          <h3 class="topic-title">
+            Solutions for Topic 1: Speed, Distance, Time / Pembahasan Topik 1: Kecepatan, Jarak, Waktu
+          </h3>
+
+          <!-- Solution 1 -->
+          <div class="item-container">
+            <p><strong>Solution 1 / Pembahasan 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a two-step problem. First, find the speed of the train using the given information. Then, use that speed to find the distance traveled in the new time.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal dua langkah. Pertama, cari kecepatan kereta menggunakan informasi yang diberikan. Kemudian, gunakan kecepatan itu untuk mencari jarak yang ditempuh dalam waktu yang baru.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the speed in km per minute. $\text{Speed} = 30 \text{ km} \div 20 \text{ minutes} = 1.5 \text{ km/minute}$.
+                </li>
+                 <li>
+                  <b>Step 2:</b> Find the speed in km per hour (optional, but good to know). $1.5 \text{ km/minute} \times 60 \text{ minutes/hour} = 90 \text{ km/h}$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Convert the new time to minutes. $1.5 \text{ hours} = 1 \text{ hour} + 0.5 \text{ hours} = 60 \text{ min} + 30 \text{ min} = 90 \text{ minutes}$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Calculate the new distance. $\text{Distance} = \text{Speed} \times \text{Time} = 1.5 \text{ km/minute} \times 90 \text{ minutes} = 135 \text{ km}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari kecepatan dalam km per menit. $\text{Kecepatan} = 30 \text{ km} \div 20 \text{ menit} = 1,5 \text{ km/menit}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari kecepatan dalam km per jam (opsional). $1,5 \text{ km/menit} \times 60 \text{ menit/jam} = 90 \text{ km/jam}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Ubah waktu baru ke menit. $1,5 \text{ jam} = 1 \text{ jam} + 0,5 \text{ jam} = 60 \text{ mnt} + 30 \text{ mnt} = 90 \text{ menit}$.
+                </li>
+                 <li>
+                  <b>Langkah 4:</b> Hitung jarak baru. $\text{Jarak} = \text{Kecepatan} \times \text{Waktu} = 1,5 \text{ km/menit} \times 90 \text{ menit} = 135 \text{ km}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The train will travel 135 km. / Jawaban Akhir: Kereta api akan menempuh jarak 135 km.
+            </div>
+          </div>
+
+          <!-- Solution 2 -->
+          <div class="item-container">
+            <p><strong>Solution 2 / Pembahasan 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a two-part problem.
+                First, we find the distance from the house to the park. Then, we
+                use that distance to find the speed for the return trip.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal dua bagian.
+                Pertama, kita cari jarak dari rumah ke taman. Lalu, kita gunakan
+                jarak tersebut untuk mencari kecepatan perjalanan pulang.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Part 1:</b> Find the distance to the park.
+                  $\text{Speed} = 15 \text{ km/h}$. $\text{Time} = 20 \text{
+                  minutes}$. We must convert this to hours: $\frac{20}{60} \text{
+                  hours} = \frac{1}{3} \text{ hours}$. $\text{Distance} =
+                  \text{Speed} \times \text{Time} = 15 \text{ km/h} \times
+                  \frac{1}{3} \text{ hours} = 5 \text{ km}$. So, the distance
+                  from the house to the park is 5 km.
+                </li>
+                <li>
+                  <b>Part 2:</b> Find the speed on the way back. The distance is
+                  the same: $\text{Distance} = 5 \text{ km}$. The time for the
+                  return trip is 30 minutes. We must convert this to hours:
+                  $\frac{30}{60} \text{ hours} = \frac{1}{2} \text{ hours}$ (or
+                  0.5 hours). The formula for speed is $\text{Speed} =
+                  \text{Distance} \div \text{Time}$. $\text{Speed} = 5 \text{ km}
+                  \div \frac{1}{2} \text{ hours}$. Dividing by $\frac{1}{2}$ is
+                  the same as multiplying by 2. $\text{Speed} = 5 \times 2 = 10
+                  \text{ km/h}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Bagian 1:</b> Cari jarak ke taman. $\text{Kecepatan} = 15
+                  \text{ km/jam}$. $\text{Waktu} = 20 \text{ menit}$. Kita harus
+                  ubah ke jam: $\frac{20}{60} \text{ jam} = \frac{1}{3} \text{
+                  jam}$. $\text{Jarak} = \text{Kecepatan} \times \text{Waktu} = 15
+                  \text{ km/jam} \times \frac{1}{3} \text{ jam} = 5 \text{ km}$.
+                  Jadi, jarak dari rumah ke taman adalah 5 km.
+                </li>
+                <li>
+                  <b>Bagian 2:</b> Cari kecepatan saat perjalanan kembali.
+                  Jaraknya sama: $\text{Jarak} = 5 \text{ km}$. Waktu perjalanan
+                  pulang adalah 30 menit. Kita harus ubah ke jam: $\frac{30}{60}
+                  \text{ jam} = \frac{1}{2} \text{ jam}$ (atau 0.5 jam). Rumus
+                  kecepatan adalah $\text{Kecepatan} = \text{Jarak} \div
+                  \text{Waktu}$. $\text{Kecepatan} = 5 \text{ km} \div
+                  \frac{1}{2} \text{ jam}$. Membagi dengan $\frac{1}{2}$ sama
+                  dengan mengalikan dengan 2. $\text{Kecepatan} = 5 \times 2 = 10
+                  \text{ km/jam}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: His speed on the way back is 10 km/h. / Jawaban
+              Akhir: Kecepatannya saat perjalanan kembali adalah 10 km/jam.
+            </div>
+          </div>
+
+          <!-- Solution 3 -->
+          <div class="item-container">
+            <p><strong>Solution 3 / Pembahasan 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> Average speed is $\text{Total Distance} \div \text{Total Time}$. It is *not* the average of the speeds. We must find the total time for the journey first.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kecepatan rata-rata adalah $\text{Total Jarak} \div \text{Total Waktu}$. Ini *bukan* rata-rata dari kecepatan. Kita harus mencari total waktu perjalanan terlebih dahulu.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Calculate the time for the first part. $\text{Time}_1 = \text{Distance} \div \text{Speed} = 120 \text{ km} \div 60 \text{ km/h} = 2 \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the time for the second part. $\text{Time}_2 = \text{Distance} \div \text{Speed} = 120 \text{ km} \div 40 \text{ km/h} = 3 \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the total distance and total time. $\text{Total Distance} = 120 \text{ km} + 120 \text{ km} = 240 \text{ km}$. $\text{Total Time} = 2 \text{ hours} + 3 \text{ hours} = 5 \text{ hours}$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Calculate the average speed. $\text{Average Speed} = \text{Total Distance} \div \text{Total Time} = 240 \text{ km} \div 5 \text{ hours} = 48 \text{ km/h}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Hitung waktu untuk bagian pertama. $\text{Waktu}_1 = \text{Jarak} \div \text{Kecepatan} = 120 \text{ km} \div 60 \text{ km/jam} = 2 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung waktu untuk bagian kedua. $\text{Waktu}_2 = \text{Jarak} \div \text{Kecepatan} = 120 \text{ km} \div 40 \text{ km/jam} = 3 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung total jarak dan total waktu. $\text{Total Jarak} = 120 \text{ km} + 120 \text{ km} = 240 \text{ km}$. $\text{Total Waktu} = 2 \text{ jam} + 3 \text{ jam} = 5 \text{ jam}$.
+                </li>
+                 <li>
+                  <b>Langkah 4:</b> Hitung kecepatan rata-rata. $\text{Kecepatan Rata-rata} = \text{Total Jarak} \div \text{Total Waktu} = 240 \text{ km} \div 5 \text{ jam} = 48 \text{ km/jam}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The average speed for the entire journey is 48 km/h. /
+              Jawaban Akhir: Kecepatan rata-rata untuk seluruh perjalanan adalah 48 km/jam.
+            </div>
+          </div>
+
+          <!-- Solution 4 -->
+          <div class="item-container">
+            <p><strong>Solution 4 / Pembahasan 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "catch-up" problem.
+                First, we find out how far Andy is ahead (his "head start").
+                Then, we find the "catch-up speed" (the difference in speeds).
+                Finally, we calculate the time to catch up.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal "menyusul".
+                Pertama, kita cari seberapa jauh Andy sudah di depan (jarak
+                "start" duluan). Lalu, kita cari "kecepatan menyusul" (selisih
+                kecepatan). Terakhir, kita hitung waktu untuk menyusul.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find Andy's head start distance. Ben starts 30
+                  minutes later. 30 minutes = 0.5 hours. In this 0.5 hours, Andy
+                  has been walking. $\text{Distance} = \text{Andy's Speed} \times
+                  \text{Andy's Head Start Time}$. $\text{Distance} = 4 \text{
+                  km/h} \times 0.5 \text{ hours} = 2 \text{ km}$. So, when Ben
+                  starts, Andy is already 2 km ahead.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the "catch-up speed". Ben is faster than
+                  Andy. The catch-up speed is the difference between their
+                  speeds. $\text{Catch-up Speed} = \text{Ben's Speed} -
+                  \text{Andy's Speed}$. $\text{Catch-up Speed} = 10 \text{ km/h} -
+                  4 \text{ km/h} = 6 \text{ km/h}$. This means every hour, Ben
+                  gets 6 km closer to Andy.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the time to catch up. Ben needs to
+                  cover the 2 km head start distance at the catch-up speed of 6
+                  km/h. $\text{Time} = \text{Distance} \div \text{Speed}$.
+                  $\text{Time} = 2 \text{ km} \div 6 \text{ km/h} = \frac{2}{6}
+                  \text{ hours} = \frac{1}{3} \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Convert the time (optional but good).
+                  $\frac{1}{3}$ of an hour = $\frac{1}{3} \times 60 \text{
+                  minutes} = 20 \text{ minutes}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari jarak "start" duluan Andy. Ben mulai 30
+                  menit kemudian. 30 menit = 0,5 jam. Dalam 0,5 jam ini, Andy
+                  sudah berjalan. $\text{Jarak} = \text{Kecepatan Andy} \times
+                  \text{Waktu "Start" Duluan Andy}$. $\text{Jarak} = 4 \text{
+                  km/jam} \times 0,5 \text{ jam} = 2 \text{ km}$. Jadi, saat Ben
+                  mulai, Andy sudah 2 km di depan.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari "kecepatan menyusul". Ben lebih cepat
+                  dari Andy. Kecepatan menyusul adalah selisih kecepatan mereka.
+                  $\text{Kecepatan Menyusul} = \text{Kecepatan Ben} -
+                  \text{Kecepatan Andy}$. $\text{Kecepatan Menyusul} = 10 \text{
+                  km/jam} - 4 \text{ km/jam} = 6 \text{ km/jam}$. Ini artinya
+                  setiap jam, Ben menjadi 6 km lebih dekat dengan Andy.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung waktu untuk menyusul. Ben perlu
+                  menempuh jarak 2 km (yang Andy di depan) dengan kecepatan
+                  menyusul 6 km/jam. $\text{Waktu} = \text{Jarak} \div
+                  \text{Kecepatan}$. $\text{Waktu} = 2 \text{ km} \div 6 \text{
+                  km/jam} = \frac{2}{6} \text{ jam} = \frac{1}{3} \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Ubah waktu (opsional tapi bagus).
+                  $\frac{1}{3} \text{ jam} = \frac{1}{3} \times 60 \text{ menit} =
+                  20 \text{ menit}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: It will take Ben $\frac{1}{3}$ hours, or 20 minutes,
+              to catch up with Andy. / Jawaban Akhir: Ben membutuhkan waktu
+              $\frac{1}{3}$ jam, atau 20 menit, untuk menyusul Andy.
+            </div>
+          </div>
+
+          <!-- Solution 5 -->
+          <div class="item-container">
+            <p><strong>Solution 5 / Pembahasan 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "meeting" problem. First, find the "combined speed". Then, find the time it takes to meet. Finally, use that time to find the distance one of them has traveled.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal "berpapasan". Pertama, cari "kecepatan gabungan". Lalu, cari waktu yang dibutuhkan untuk bertemu. Terakhir, gunakan waktu itu untuk mencari jarak yang telah ditempuh salah satu dari mereka.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the combined speed. $\text{Combined Speed} = 50 \text{ km/h} + 55 \text{ km/h} = 105 \text{ km/h}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the time to meet. $\text{Time} = \text{Total Distance} \div \text{Combined Speed}$. $\text{Time} = 210 \text{ km} \div 105 \text{ km/h} = 2 \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the distance from Town A. This is the distance the motorcycle traveled. $\text{Distance} = \text{Motorcycle's Speed} \times \text{Time} = 50 \text{ km/h} \times 2 \text{ hours} = 100 \text{ km}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari kecepatan gabungan. $\text{Kecepatan Gabungan} = 50 \text{ km/jam} + 55 \text{ km/jam} = 105 \text{ km/jam}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung waktu untuk berpapasan. $\text{Waktu} = \text{Jarak Total} \div \text{Kecepatan Gabungan}$. $\text{Waktu} = 210 \text{ km} \div 105 \text{ km/jam} = 2 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari jarak dari Kota A. Ini adalah jarak yang ditempuh sepeda motor. $\text{Jarak} = \text{Kecepatan Motor} \times \text{Waktu} = 50 \text{ km/jam} \times 2 \text{ jam} = 100 \text{ km}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: They will meet 100 km from Town A. / Jawaban Akhir: Mereka akan berpapasan 100 km dari Kota A.
+            </div>
+          </div>
+
+          <!-- Solution 6 -->
+          <div class="item-container">
+            <p><strong>Solution 6 / Pembahasan 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> Speed and time are inversely proportional. If the speed is doubled (2 times faster), the time taken will be halved (1/2 of the time).
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kecepatan dan waktu berbanding terbalik. Jika kecepatan menjadi dua kali lipat (2 kali lebih cepat), waktu yang dibutuhkan akan menjadi setengahnya (1/2 dari waktu).
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Identify the relationship. $\text{Car's Speed} = 2 \times \text{Bus's Speed}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the time relationship. $\text{Car's Time} = \text{Bus's Time} \div 2$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the car's time in hours. $\text{Car's Time} = 3 \text{ hours} \div 2 = 1.5 \text{ hours}$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Convert the car's time to minutes. $1.5 \text{ hours} \times 60 \text{ minutes/hour} = 90 \text{ minutes}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Identifikasi hubungan. $\text{Kecepatan Mobil} = 2 \times \text{Kecepatan Bus}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari hubungan waktu. $\text{Waktu Mobil} = \text{Waktu Bus} \div 2$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung waktu mobil dalam jam. $\text{Waktu Mobil} = 3 \text{ jam} \div 2 = 1,5 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Ubah waktu mobil ke menit. $1,5 \text{ jam} \times 60 \text{ menit/jam} = 90 \text{ menit}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The car takes 90 minutes. / Jawaban Akhir: Mobil membutuhkan waktu 90 menit.
+            </div>
+          </div>
+
+          <!-- Solution 7 -->
+          <div class="item-container">
+            <p><strong>Solution 7 / Pembahasan 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "getting ahead" problem, which is similar to a catch-up problem. We find the difference in their speeds (the "get-ahead speed") and use it to find the time.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal "menjauh", yang mirip dengan soal "menyusul". Kita cari selisih kecepatan mereka ("kecepatan menjauh") dan gunakan itu untuk mencari waktu.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the "get-ahead speed". $\text{Difference in Speed} = 10 \text{ km/h} - 8 \text{ km/h} = 2 \text{ km/h}$. This means Ryan gains 2 km on Tom every hour.
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the time needed to get 1.5 km ahead. $\text{Time} = \text{Distance} \div \text{Speed} = 1.5 \text{ km} \div 2 \text{ km/h} = 0.75 \text{ hours}$.
+                </li>
+                 <li>
+                  <b>Step 3:</b> Convert the time to minutes. $0.75 \text{ hours} \times 60 \text{ minutes/hour} = 45 \text{ minutes}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari "kecepatan menjauh". $\text{Selisih Kecepatan} = 10 \text{ km/jam} - 8 \text{ km/jam} = 2 \text{ km/jam}$. Ini artinya Ryan menjauh 2 km dari Tom setiap jam.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung waktu yang dibutuhkan untuk unggul 1,5 km. $\text{Waktu} = \text{Jarak} \div \text{Kecepatan} = 1,5 \text{ km} \div 2 \text{ km/jam} = 0,75 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Ubah waktu ke menit. $0,75 \text{ jam} \times 60 \text{ menit/jam} = 45 \text{ menit}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: It will take 45 minutes. / Jawaban Akhir: Butuh waktu 45 menit.
+            </div>
+          </div>
+
+          <!-- Solution 8 -->
+          <div class="item-container">
+            <p><strong>Solution 8 / Pembahasan 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "catch-up" problem.
+                The units are meters and seconds, which are
+                already consistent.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal "menyusul".
+                Satuannya adalah meter dan detik, yang sudah
+                konsisten.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the head start distance. The mouse is
+                  already 30 meters ahead. So, $\text{Distance} = 30 \text{
+                  meters}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the "catch-up speed". The cat is faster
+                  than the mouse. $\text{Catch-up Speed} = \text{Cat's Speed} -
+                  \text{Mouse's Speed}$. $\text{Catch-up Speed} = 5 \text{ m/s} -
+                  2 \text{ m/s} = 3 \text{ m/s}$. This means the cat closes the
+                  distance by 3 meters every second.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the time to catch up. The cat needs to
+                  cover the 30-meter gap at a catch-up speed of 3 m/s.
+                  $\text{Time} = \text{Distance} \div \text{Catch-up Speed}$.
+                  $\text{Time} = 30 \text{ meters} \div 3 \text{ m/s} = 10 \text{
+                  seconds}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari jarak "start" duluan. Tikus sudah 30
+                  meter di depan. Jadi, $\text{Jarak} = 30 \text{ meter}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari "kecepatan menyusul". Kucing lebih cepat
+                  dari tikus. $\text{Kecepatan Menyusul} = \text{Kecepatan Kucing}
+                  - \text{Kecepatan Tikus}$. $\text{Kecepatan Menyusul} = 5 \text{
+                  m/s} - 2 \text{ m/s} = 3 \text{ m/s}$. Ini artinya kucing
+                  menutup jarak 3 meter setiap detik.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung waktu untuk menyusul. Kucing perlu
+                  menutup celah 30 meter dengan kecepatan menyusul 3 m/s.
+                  $\text{Waktu} = \text{Jarak} \div \text{Kecepatan Menyusul}$.
+                  $\text{Waktu} = 30 \text{ meter} \div 3 \text{ m/s} = 10 \text{
+                  detik}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: It will take the cat 10 seconds to catch the mouse. /
+              Jawaban Akhir: Kucing membutuhkan waktu 10 detik untuk menangkap
+              tikus.
+            </div>
+          </div>
+
+          <!-- Solution 9 -->
+          <div class="item-container">
+            <p><strong>Solution 9 / Pembahasan 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "meeting" problem.
+                First, we find the time it takes for them to meet. Then, we use
+                that time to find how far Leo has walked.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal
+                "berpapasan". Pertama, kita cari waktu yang dibutuhkan mereka
+                untuk bertemu. Kemudian, kita gunakan waktu itu untuk mencari
+                seberapa jauh Leo telah berjalan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the combined speed. Since they are walking
+                  towards each other, we add their speeds. $\text{Combined Speed}
+                  = \text{Leo's Speed} + \text{Mia's Speed}$. $\text{Combined
+                  Speed} = 70 \text{ m/min} + 80 \text{ m/min} = 150 \text{
+                  m/min}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the time to meet. The total distance
+                  is 600 meters. $\text{Time} = \text{Total Distance} \div
+                  \text{Combined Speed}$. $\text{Time} = 600 \text{ meters} \div
+                  150 \text{ m/min} = 4 \text{ minutes}$. So, they will meet
+                  after 4 minutes.
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the distance Leo walked. The question asks
+                  for the distance from Leo's house. We use Leo's speed and the
+                  time they met. $\text{Distance} = \text{Leo's Speed} \times
+                  \text{Time}$. $\text{Distance} = 70 \text{ m/min} \times 4
+                  \text{ minutes} = 280 \text{ meters}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari kecepatan gabungan. Karena mereka
+                  berjalan saling mendekat, kita jumlahkan kecepatan mereka.
+                  $\text{Kecepatan Gabungan} = \text{Kecepatan Leo} +
+                  \text{Kecepatan Mia}$. $\text{Kecepatan Gabungan} = 70 \text{
+                  m/menit} + 80 \text{ m/menit} = 150 \text{ m/menit}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung waktu untuk bertemu. Jarak totalnya
+                  adalah 600 meter. $\text{Waktu} = \text{Jarak Total} \div
+                  \text{Kecepatan Gabungan}$. $\text{Waktu} = 600 \text{ meter}
+                  \div 150 \text{ m/menit} = 4 \text{ menit}$. Jadi, mereka akan
+                  bertemu setelah 4 menit.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari jarak yang ditempuh Leo. Pertanyaannya
+                  adalah jarak dari rumah Leo. Kita gunakan kecepatan Leo dan
+                  waktu mereka bertemu. $\text{Jarak} = \text{Kecepatan Leo}
+                  \times \text{Waktu}$. $\text{Jarak} = 70 \text{ m/menit} \times
+                  4 \text{ menit} = 280 \text{ meter}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: They will meet 280 meters from Leo's house. / Jawaban
+              Akhir: Mereka akan bertemu 280 meter dari rumah Leo.
+            </div>
+          </div>
+
+          <!-- Solution 10 -->
+          <div class="item-container">
+            <p><strong>Solution 10 / Pembahasan 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a multi-step problem. We must find the remaining distance and the remaining time, then use those two values to calculate the required speed.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal multi-langkah. Kita harus mencari sisa jarak dan sisa waktu, kemudian gunakan kedua nilai tersebut untuk menghitung kecepatan yang diperlukan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the remaining distance. $\text{Distance} = 3 \text{ km} - 1 \text{ km} = 2 \text{ km}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the remaining time. $\text{Time} = 35 \text{ minutes} - 15 \text{ minutes} = 20 \text{ minutes}$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Convert the remaining time to hours. $20 \text{ minutes} = \frac{20}{60} \text{ hours} = \frac{1}{3} \text{ hours}$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Calculate the required speed. $\text{Speed} = \text{Remaining Distance} \div \text{Remaining Time} = 2 \text{ km} \div \frac{1}{3} \text{ h} = 2 \times 3 = 6 \text{ km/h}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari sisa jarak. $\text{Jarak} = 3 \text{ km} - 1 \text{ km} = 2 \text{ km}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari sisa waktu. $\text{Waktu} = 35 \text{ menit} - 15 \text{ menit} = 20 \text{ menit}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Ubah sisa waktu ke jam. $20 \text{ menit} = \frac{20}{60} \text{ jam} = \frac{1}{3} \text{ jam}$.
+                </li>
+                 <li>
+                  <b>Langkah 4:</b> Hitung kecepatan yang diperlukan. $\text{Kecepatan} = \text{Sisa Jarak} \div \text{Sisa Waktu} = 2 \text{ km} \div \frac{1}{3} \text{ jam} = 2 \times 3 = 6 \text{ km/jam}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: She must walk at a speed of 6 km/h. / Jawaban Akhir: Dia harus berjalan dengan kecepatan 6 km/jam.
+            </div>
+          </div>
+
+          <!-- Solution 11 -->
+          <div class="item-container">
+            <p><strong>Solution 11 / Pembahasan 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> To convert km/h to m/s, we need to know that 1 km = 1000 meters and 1 hour = 3600 seconds. A useful shortcut is to multiply by $\frac{5}{18}$.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Untuk mengubah km/jam ke m/s, kita perlu tahu bahwa 1 km = 1000 meter dan 1 jam = 3600 detik. Cara cepat yang berguna adalah mengalikan dengan $\frac{5}{18}$.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                 <li>
+                  <b>Method 1: Full Conversion</b>
+                  <ul>
+                    <li><b>Step 1:</b> Convert km to meters: $108 \text{ km} = 108,000 \text{ m}$.</li>
+                    <li><b>Step 2:</b> Convert hours to seconds: $1 \text{ hour} = 60 \text{ min} \times 60 \text{ s/min} = 3600 \text{ s}$.</li>
+                    <li><b>Step 3:</b> Calculate speed: $\text{Speed} = 108,000 \text{ m} \div 3600 \text{ s} = 1080 \div 36 = 30 \text{ m/s}$.</li>
+                  </ul>
+                 </li>
+                 <li>
+                  <b>Method 2: Shortcut</b>
+                  <ul>
+                    <li>$\text{Speed} = 108 \times \frac{5}{18}$.</li>
+                    <li>$(108 \div 18) \times 5 = 6 \times 5 = 30 \text{ m/s}$.</li>
+                  </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                 <li>
+                  <b>Metode 1: Konversi Penuh</b>
+                  <ul>
+                    <li><b>Langkah 1:</b> Ubah km ke meter: $108 \text{ km} = 108.000 \text{ m}$.</li>
+                    <li><b>Langkah 2:</b> Ubah jam ke detik: $1 \text{ jam} = 60 \text{ mnt} \times 60 \text{ dtk/mnt} = 3600 \text{ s}$.</li>
+                    <li><b>Langkah 3:</b> Hitung kecepatan: $\text{Kecepatan} = 108.000 \text{ m} \div 3600 \text{ s} = 1080 \div 36 = 30 \text{ m/s}$.</li>
+                  </ul>
+                 </li>
+                 <li>
+                  <b>Metode 2: Cara Cepat</b>
+                  <ul>
+                    <li>$\text{Kecepatan} = 108 \times \frac{5}{18}$.</li>
+                    <li>$(108 \div 18) \times 5 = 6 \times 5 = 30 \text{ m/s}$.</li>
+                  </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The cheetah's speed is 30 m/s. / Jawaban Akhir: Kecepatan cheetah adalah 30 m/s.
+            </div>
+          </div>
+
+          <!-- Solution 12 -->
+          <div class="item-container">
+            <p><strong>Solution 12 / Pembahasan 12:</strong></p>
+             <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> Speed and time are inversely proportional when the distance is constant. If speed increases by a factor, time decreases by the same factor.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kecepatan dan waktu berbanding terbalik jika jaraknya konstan. Jika kecepatan meningkat sekian kali, waktu akan berkurang sekian kali juga.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Identify the relationship. The plane is 10 times faster than the car.
+                </li>
+                 <li>
+                  <b>Step 2:</b> Since the distance is the same, the plane will take $\frac{1}{10}$ of the time the car takes.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the plane's time in hours. $\text{Plane's Time} = \text{Car's Time} \div 10 = 5 \text{ hours} \div 10 = 0.5 \text{ hours}$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Convert the plane's time to minutes. There are 60 minutes in an hour. $0.5 \text{ hours} = 0.5 \times 60 \text{ minutes} = 30 \text{ minutes}$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Identifikasi hubungan. Pesawat 10 kali lebih cepat dari mobil.
+                </li>
+                 <li>
+                  <b>Langkah 2:</b> Karena jaraknya sama, pesawat akan membutuhkan $\frac{1}{10}$ dari waktu yang dibutuhkan mobil.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung waktu pesawat dalam jam. $\text{Waktu Pesawat} = \text{Waktu Mobil} \div 10 = 5 \text{ jam} \div 10 = 0,5 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Ubah waktu pesawat ke menit. Ada 60 menit dalam satu jam. $0,5 \text{ jam} = 0,5 \times 60 \text{ menit} = 30 \text{ menit}$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The plane will take 30 minutes. / Jawaban Akhir: Pesawat akan membutuhkan waktu 30 menit.
+            </div>
+          </div>
+
+          <!-- Solution 13 -->
+          <div class="item-container">
+            <p><strong>Solution 13 / Pembahasan 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a "meeting" problem,
+                but one person starts later. We first let the bus travel for 1
+                hour, then calculate the meeting time for the remaining distance.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah soal
+                "berpapasan", tetapi satu orang mulai lebih lambat. Kita biarkan
+                bus berjalan dulu selama 1 jam, lalu hitung waktu bertemu untuk
+                sisa jarak.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Calculate the bus's head start. The bus travels
+                  for 1 hour (from 10:00 AM to 11:00 AM) before the car starts.
+                  $\text{Distance} = \text{Bus's Speed} \times \text{Time} = 60
+                  \text{ km/h} \times 1 \text{ h} = 60 \text{ km}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the remaining distance. At 11:00 AM, the
+                  bus has traveled 60 km. The total distance is 360 km.
+                  $\text{Remaining Distance} = 360 \text{ km} - 60 \text{ km} =
+                  300 \text{ km}$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the combined speed. At 11:00 AM, both
+                  are moving towards each other. $\text{Combined Speed} =
+                  \text{Bus's Speed} + \text{Car's Speed} = 60 \text{ km/h} + 90
+                  \text{ km/h} = 150 \text{ km/h}$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Calculate the time to meet (from 11:00 AM). They
+                  need to cover the remaining 300 km at a combined speed of 150
+                  km/h. $\text{Time} = \text{Remaining Distance} \div
+                  \text{Combined Speed}$. $\text{Time} = 300 \text{ km} \div 150
+                  \text{ km/h} = 2 \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 5:</b> Find the meeting time. The time is 2 hours after
+                  11:00 AM (which is when the car started). 11:00 AM + 2 hours =
+                  1:00 PM (or 13:00).
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Hitung "start" duluan si bus. Bus berjalan
+                  selama 1 jam (dari 10:00 pagi ke 11:00 pagi) sebelum mobil
+                  mulai. $\text{Jarak} = \text{Kecepatan Bus} \times \text{Waktu}
+                  = 60 \text{ km/jam} \times 1 \text{ jam} = 60 \text{ km}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari sisa jarak. Pada pukul 11:00, bus telah
+                  menempuh 60 km. Jarak totalnya 360 km. $\text{Sisa Jarak} = 360
+                  \text{ km} - 60 \text{ km} = 300 \text{ km}$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung kecepatan gabungan. Pada pukul 11:00,
+                  keduanya bergerak saling mendekat. $\text{Kecepatan Gabungan} =
+                  \text{Kecepatan Bus} + \text{Kecepatan Mobil} = 60 \text{
+                  km/jam} + 90 \text{ km/jam} = 150 \text{ km/jam}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Hitung waktu untuk bertemu (dari pukul
+                  11:00). Mereka perlu menutup sisa jarak 300 km dengan kecepatan
+                  gabungan 150 km/jam. $\text{Waktu} = \text{Sisa Jarak} \div
+                  \text{Kecepatan Gabungan}$. $\text{Waktu} = 300 \text{ km} \div
+                  150 \text{ km/jam} = 2 \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Cari waktu berpapasan. Waktunya adalah 2 jam
+                  setelah pukul 11:00 (yaitu saat mobil mulai). 11:00 + 2 jam =
+                  13:00 (atau 1:00 PM).
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: They will meet at 1:00 PM. / Jawaban Akhir: Mereka
+              akan bertemu pada pukul 13:00.
+            </div>
+          </div>
+
+          <!-- Solution 14 -->
+          <div class="item-container">
+            <p><strong>Solution 14 / Pembahasan 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> First, find the total time in
+                hours. Then, convert the total hours into days.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Pertama, cari total waktu
+                dalam jam. Kemudian, ubah total jam tersebut menjadi hari.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Calculate the total time in hours. $\text{Distance}
+                  = 8800 \text{ meters}$. $\text{Speed} = 2 \text{
+                  meters/hour}$. $\text{Time} = \text{Distance} \div
+                  \text{Speed}$. $\text{Time} = 8800 \text{ m} \div 2 \text{ m/h}
+                  = 4400 \text{ hours}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Convert hours to days. There are 24 hours in 1
+                  day. $\text{Number of days} = \text{Total hours} \div 24$.
+                  $\text{Number of days} = 4400 \div 24$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Perform the division. $4400 \div 24$ (We can
+                  simplify by dividing both by 8) $550 \div 3 = 183.33... \text{
+                  days}$. <br />
+                  Long division: $4400 \div 24 = 183$ with a remainder of 8. This
+                  is $183 \frac{8}{24}$ days, or $183 \frac{1}{3}$ days.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Hitung total waktu dalam jam. $\text{Jarak} =
+                  8800 \text{ meter}$. $\text{Kecepatan} = 2 \text{ meter/jam}$.
+                  $\text{Waktu} = \text{Jarak} \div \text{Kecepatan}$.
+                  $\text{Waktu} = 8800 \text{ m} \div 2 \text{ m/jam} = 4400
+                  \text{ jam}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Ubah jam ke hari. Ada 24 jam dalam 1 hari.
+                  $\text{Jumlah hari} = \text{Total jam} \div 24$. $\text{Jumlah
+                  hari} = 4400 \div 24$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Lakukan pembagian. $4400 \div 24$ (Kita bisa
+                  sederhanakan dengan membagi keduanya dengan 8) $550 \div 3 =
+                  183,33... \text{ hari}$. <br />
+                  Pembagian bersusun: $4400 \div 24 = 183$ dengan sisa 8. Ini
+                  adalah $183 \frac{8}{24}$ hari, atau $183 \frac{1}{3}$ hari.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: It would take $183 \frac{1}{3}$ days. / Jawaban
+              Akhir: Ini akan memakan waktu $183 \frac{1}{3}$ hari.
+            </div>
+          </div>
+
+          <!-- Solution 15 -->
+          <div class="item-container">
+            <p><strong>Solution 15 / Pembahasan 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> First, find the distance to
+                grandma's house. Then, use that distance and the new time to find
+                the new required speed.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Pertama, cari jarak ke rumah
+                nenek. Kemudian, gunakan jarak itu dan waktu yang baru untuk
+                mencari kecepatan baru yang diperlukan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the distance. $\text{Speed} = 12 \text{
+                  km/h}$. $\text{Time} = 2 \text{ hours}$. $\text{Distance} =
+                  \text{Speed} \times \text{Time} = 12 \text{ km/h} \times 2
+                  \text{ h} = 24 \text{ km}$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Convert the new time to hours. $\text{New Time}
+                  = 1 \text{ hour and } 30 \text{ minutes}$. 30 minutes is 0.5
+                  hours. So, $\text{New Time} = 1.5 \text{ hours}$ (or
+                  $\frac{3}{2}$ hours).
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the new speed. $\text{Distance} = 24
+                  \text{ km}$. $\text{New Time} = 1.5 \text{ hours}$. $\text{New
+                  Speed} = \text{Distance} \div \text{New Time}$. $\text{New
+                  Speed} = 24 \text{ km} \div 1.5 \text{ h} = 16 \text{ km/h}$.
+                  (Calculation check: $24 \div \frac{3}{2} = 24 \times \frac{2}{3}
+                  = 8 \times 2 = 16$).
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari jarak. $\text{Kecepatan} = 12 \text{
+                  km/jam}$. $\text{Waktu} = 2 \text{ jam}$. $\text{Jarak} =
+                  \text{Kecepatan} \times \text{Waktu} = 12 \text{ km/jam} \times
+                  2 \text{ jam} = 24 \text{ km}$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Ubah waktu baru ke jam. $\text{Waktu Baru} = 1
+                  \text{ jam } 30 \text{ menit}$. 30 menit adalah 0,5 jam. Jadi,
+                  $\text{Waktu Baru} = 1,5 \text{ jam}$ (atau $\frac{3}{2}$ jam).
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung kecepatan baru. $\text{Jarak} = 24
+                  \text{ km}$. $\text{Waktu Baru} = 1,5 \text{ jam}$. $\text{Kecepatan
+                  Baru} = \text{Jarak} \div \text{Waktu Baru}$. $\text{Kecepatan
+                  Baru} = 24 \text{ km} \div 1,5 \text{ jam} = 16 \text{ km/jam}$.
+                  (Cek perhitungan: $24 \div \frac{3}{2} = 24 \times \frac{2}{3} =
+                  8 \times 2 = 16$).
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: She must cycle at 16 km/h. / Jawaban Akhir: Dia harus
+              bersepeda dengan kecepatan 16 km/jam.
+            </div>
+          </div>
+
+          <!-- Pembahasan Topik 2 -->
+          <h3 class="topic-title">
+            Solutions for Topic 2: Advanced Number Patterns / Pembahasan Topik 2: Pola Bilangan Lanjutan
+          </h3>
+
+          <!-- Solution 16 -->
+          <div class="item-container">
+            <p><strong>Solution 16 / Pembahasan 16:</strong></p>
+             <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> The $n$-th triangular number ($T_n$) is $1+2+...+n = \frac{n(n+1)}{2}$. The sum of the $(n-1)$-th and $n$-th triangular numbers is $T_{n-1} + T_n = n^2$.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Bilangan segitiga ke-$n$ ($T_n$) adalah $1+2+...+n = \frac{n(n+1)}{2}$. Jumlah dari bilangan segitiga ke-$(n-1)$ dan ke-$n$ adalah $T_{n-1} + T_n = n^2$.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                 <li>
+                  <b>Step 1:</b> Identify the required triangular numbers. We need the 9th ($T_9$) and 10th ($T_{10}$).
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the 9th triangular number. $T_9 = \frac{9 \times (9+1)}{2} = \frac{9 \times 10}{2} = 45$.
+                </li>
+                 <li>
+                  <b>Step 3:</b> Calculate the 10th triangular number. $T_{10} = \frac{10 \times (10+1)}{2} = \frac{10 \times 11}{2} = 55$.
+                </li>
+                 <li>
+                  <b>Step 4:</b> Add them together. $T_9 + T_{10} = 45 + 55 = 100$.
+                </li>
+                 <li>
+                  <b>Step 5:</b> Recognize the result as a square number. $100 = 10 \times 10 = 10^2$. (Alternatively, using the concept: $T_9 + T_{10} = 10^2 = 100$).
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                 <li>
+                  <b>Langkah 1:</b> Identifikasi bilangan segitiga yang dibutuhkan. Kita perlu yang ke-9 ($T_9$) dan ke-10 ($T_{10}$).
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung bilangan segitiga ke-9. $T_9 = \frac{9 \times (9+1)}{2} = \frac{9 \times 10}{2} = 45$.
+                </li>
+                 <li>
+                  <b>Langkah 3:</b> Hitung bilangan segitiga ke-10. $T_{10} = \frac{10 \times (10+1)}{2} = \frac{10 \times 11}{2} = 55$.
+                </li>
+                 <li>
+                  <b>Langkah 4:</b> Jumlahkan keduanya. $T_9 + T_{10} = 45 + 55 = 100$.
+                </li>
+                 <li>
+                  <b>Langkah 5:</b> Kenali hasilnya sebagai bilangan persegi. $100 = 10 \times 10 = 10^2$. (Alternatif, menggunakan konsep: $T_9 + T_{10} = 10^2 = 100$).
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+             Final Answer: The square number is 100. / Jawaban Akhir: Bilangan perseginya adalah 100.
+            </div>
+          </div>
+
+          <!-- Solution 17 -->
+          <div class="item-container">
+            <p><strong>Solution 17 / Pembahasan 17:</strong></p>
+             <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> A square number $S_n$ is $n \times n = n^2$. The difference between consecutive square numbers $S_n - S_{n-1}$ is $(2n - 1)$, which is an odd number.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Bilangan persegi $S_n$ adalah $n \times n = n^2$. Selisih antara dua bilangan persegi berurutan $S_n - S_{n-1}$ adalah $(2n - 1)$, yang merupakan bilangan ganjil.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                 <li>
+                  <b>Method 1: Direct Calculation</b>
+                   <ul>
+                     <li><b>Step 1:</b> Calculate the 12th square number: $12 \times 12 = 144$.</li>
+                     <li><b>Step 2:</b> Calculate the 11th square number: $11 \times 11 = 121$.</li>
+                     <li><b>Step 3:</b> Find the difference: $144 - 121 = 23$.</li>
+                   </ul>
+                </li>
+                 <li>
+                  <b>Method 2: Using the Concept</b>
+                   <ul>
+                    <li><b>Step 1:</b> Identify n. We need the difference between the 12th and 11th square numbers, so $n=12$.</li>
+                    <li><b>Step 2:</b> Apply the formula for the difference: $2n - 1 = (2 \times 12) - 1 = 24 - 1 = 23$.</li>
+                   </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                 <li>
+                  <b>Metode 1: Perhitungan Langsung</b>
+                   <ul>
+                     <li><b>Langkah 1:</b> Hitung bilangan persegi ke-12: $12 \times 12 = 144$.</li>
+                     <li><b>Langkah 2:</b> Hitung bilangan persegi ke-11: $11 \times 11 = 121$.</li>
+                     <li><b>Langkah 3:</b> Cari selisihnya: $144 - 121 = 23$.</li>
+                   </ul>
+                 </li>
+                 <li>
+                  <b>Metode 2: Menggunakan Konsep</b>
+                   <ul>
+                    <li><b>Langkah 1:</b> Identifikasi n. Kita perlu selisih antara bilangan persegi ke-12 dan ke-11, jadi $n=12$.</li>
+                    <li><b>Langkah 2:</b> Gunakan rumus selisih: $2n - 1 = (2 \times 12) - 1 = 24 - 1 = 23$.</li>
+                   </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The difference is 23. / Jawaban Akhir: Selisihnya adalah 23.
+            </div>
+          </div>
+
+          <!-- Solution 18 -->
+          <div class="item-container">
+            <p><strong>Solution 18 / Pembahasan 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is an arithmetic
+                sequence, where the same number is added each time.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah barisan
+                aritmetika, di mana bilangan yang sama ditambahkan setiap kali.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the common difference. From 5 to 8, we add
+                  3. From 8 to 11, we add 3. The common difference is 3.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the 100th term. To get to the 2nd term, we
+                  add 3 one time ($5 + 3 = 8$). To get to the 3rd term, we add 3
+                  two times ($5 + 3 + 3 = 11$). To get to the 4th term, we add 3
+                  three times ($5 + 3 + 3 + 3 = 14$). The pattern is: To get to
+                  the $n$-th term, we add the difference $(n-1)$ times.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate for the 100th term. We need to add 3
+                  $(100 - 1) = 99$ times. $\text{Value} = \text{First Term} + (99
+                  \times \text{Difference})$. $\text{Value} = 5 + (99 \times 3)$.
+                  $\text{Value} = 5 + 297$. $\text{Value} = 302$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari beda (selisih) antar suku. Dari 5 ke 8,
+                  kita tambah 3. Dari 8 ke 11, kita tambah 3. Beda antar sukunya
+                  adalah 3.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari suku ke-100. Untuk mendapatkan suku
+                  ke-2, kita menambahkan 3 satu kali ($5 + 3 = 8$). Untuk
+                  mendapatkan suku ke-3, kita menambahkan 3 dua kali ($5 + 3 + 3
+                  = 11$). Untuk mendapatkan suku ke-4, kita menambahkan 3 tiga
+                  kali ($5 + 3 + 3 + 3 = 14$). Polanya adalah: Untuk mendapatkan
+                  suku ke-$n$, kita menambahkan bedanya sebanyak $(n-1)$ kali.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung untuk suku ke-100. Kita perlu
+                  menambahkan 3 sebanyak $(100 - 1) = 99$ kali. $\text{Nilai} =
+                  \text{Suku Pertama} + (99 \times \text{Beda})$. $\text{Nilai} =
+                  5 + (99 \times 3)$. $\text{Nilai} = 5 + 297$. $\text{Nilai} =
+                  302$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The 100th term is 302. / Jawaban Akhir: Suku ke-100
+              adalah 302.
+            </div>
+          </div>
+
+          <!-- Solution 19 -->
+          <div class="item-container">
+            <p><strong>Solution 19 / Pembahasan 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> The sum of the first $n$ odd
+                numbers is always a square number, $n \times n$ (or $n^2$).
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Jumlah dari $n$ bilangan
+                ganjil pertama selalu merupakan bilangan persegi, $n \times n$
+                (atau $n^2$).
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Observe the pattern. Sum of first 1 odd number:
+                  1. ($1^2$). Sum of first 2 odd numbers: $1 + 3 = 4$. ($2^2$).
+                  Sum of first 3 odd numbers: $1 + 3 + 5 = 9$. ($3^2$). Sum of
+                  first 4 odd numbers: $1 + 3 + 5 + 7 = 16$. ($4^2$).
+                </li>
+                <li>
+                  <b>Step 2:</b> Apply the pattern. The sum of the first $n$ odd
+                  numbers is $n^2$. The question asks for the sum of the first 20
+                  odd numbers, so $n=20$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate. $\text{Sum} = 20^2 = 20 \times 20 =
+                  400$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Amati polanya. Jumlah 1 bilangan ganjil
+                  pertama: 1. ($1^2$). Jumlah 2 bilangan ganjil pertama: $1 + 3 =
+                  4$. ($2^2$). Jumlah 3 bilangan ganjil pertama: $1 + 3 + 5 = 9$.
+                  ($3^2$). Jumlah 4 bilangan ganjil pertama: $1 + 3 + 5 + 7 =
+                  16$. ($4^2$).
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Terapkan polanya. Jumlah $n$ bilangan ganjil
+                  pertama adalah $n^2$. Pertanyaan ini menanyakan jumlah 20
+                  bilangan ganjil pertama, jadi $n=20$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung. $\text{Jumlah} = 20^2 = 20 \times 20
+                  = 400$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The sum is 400. / Jawaban Akhir: Jumlahnya adalah
+              400.
+            </div>
+          </div>
+
+          <!-- Solution 20 -->
+          <div class="item-container">
+            <p><strong>Solution 20 / Pembahasan 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a repeating (cyclic)
+                pattern. We need to find the length of the cycle and then use
+                division with a remainder.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah pola berulang
+                (siklus). Kita perlu mencari panjang siklusnya dan kemudian
+                menggunakan pembagian dengan sisa.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the length of the cycle. The pattern is: 1.
+                  Circle, 2. Square, 3. Triangle, 4. Star, 5. Heart. Then it
+                  repeats. The length of the cycle is 5.
+                </li>
+                <li>
+                  <b>Step 2:</b> Divide the position number by the cycle length.
+                  We want the 83rd shape. We divide 83 by 5. $83 \div 5 = 16$
+                  with a remainder. $16 \times 5 = 80$. $83 - 80 = 3$. So, $83
+                  \div 5 = 16 \text{ remainder } 3$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Use the remainder to find the shape. A remainder
+                  of 1 would be the 1st shape (Circle). A remainder of 2 would be
+                  the 2nd shape (Square). A remainder of 3 would be the 3rd shape
+                  (Triangle). A remainder of 4 would be the 4th shape (Star). A
+                  remainder of 0 (or 5) would be the 5th shape (Heart).
+                </li>
+                <li>
+                  <b>Step 4:</b> Conclude. The remainder is 3, so the 83rd shape
+                  is the 3rd shape in the pattern.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari panjang siklus. Polanya adalah: 1.
+                  Lingkaran, 2. Persegi, 3. Segitiga, 4. Bintang, 5. Hati.
+                  Kemudian berulang. Panjang siklusnya adalah 5.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Bagi nomor posisi dengan panjang siklus. Kita
+                  ingin bentuk ke-83. Kita bagi 83 dengan 5. $83 \div 5 = 16$
+                  dengan sisa. $16 \times 5 = 80$. $83 - 80 = 3$. Jadi, $83 \div 5
+                  = 16 \text{ sisa } 3$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Gunakan sisa untuk menemukan bentuk. Sisa 1
+                  adalah bentuk ke-1 (Lingkaran). Sisa 2 adalah bentuk ke-2
+                  (Persegi). Sisa 3 adalah bentuk ke-3 (Segitiga). Sisa 4 adalah
+                  bentuk ke-4 (Bintang). Sisa 0 (atau 5) adalah bentuk ke-5
+                  (Hati).
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Simpulkan. Sisanya adalah 3, jadi bentuk
+                  ke-83 adalah bentuk ke-3 dalam pola.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The 83rd shape is the Triangle. / Jawaban Akhir:
+              Bentuk ke-83 adalah Segitiga.
+            </div>
+          </div>
+
+          <!-- Solution 21 -->
+          <div class="item-container">
+            <p><strong>Solution 21 / Pembahasan 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is the sum of the first
+                50 positive integers. We can find the sum by pairing numbers.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah jumlah dari 50
+                bilangan bulat positif pertama. Kita bisa mencari jumlahnya
+                dengan memasangkan bilangan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Pair the numbers. Pair the first and last
+                  number: $1 + 50 = 51$. Pair the second and second-to-last
+                  number: $2 + 49 = 51$. Pair the third and third-to-last number:
+                  $3 + 48 = 51$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the number of pairs. We have 50 numbers in
+                  total. Since we are making pairs, we will have $50 \div 2 = 25$
+                  pairs.
+                </li>
+                <li>
+                  <b>Step 3:</b> Calculate the total sum. Each pair adds up to
+                  51. We have 25 pairs. $\text{Total Sum} = \text{Sum of one
+                  pair} \times \text{Number of pairs}$. $\text{Total Sum} = 51
+                  \times 25$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Solve. $51 \times 25 = 1275$. (You can do $50
+                  \times 25 = 1250$ and $1 \times 25 = 25$. $1250 + 25 = 1275$).
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Pasangkan bilangan. Pasangkan bilangan
+                  pertama dan terakhir: $1 + 50 = 51$. Pasangkan bilangan kedua
+                  dan kedua dari terakhir: $2 + 49 = 51$. Pasangkan bilangan
+                  ketiga dan ketiga dari terakhir: $3 + 48 = 51$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari jumlah pasangan. Kita memiliki total 50
+                  bilangan. Karena kita membuat pasangan, kita akan memiliki $50
+                  \div 2 = 25$ pasangan.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Hitung jumlah total. Setiap pasangan
+                  berjumlah 51. Kita memiliki 25 pasangan. $\text{Jumlah Total} =
+                  \text{Jumlah satu pasangan} \times \text{Jumlah pasangan}$.
+                  $\text{Jumlah Total} = 51 \times 25$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Selesaikan. $51 \times 25 = 1275$. (Anda bisa
+                  hitung $50 \times 25 = 1250$ dan $1 \times 25 = 25$. $1250 + 25
+                  = 1275$).
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The value is 1275. / Jawaban Akhir: Nilainya adalah
+              1275.
+            </div>
+          </div>
+
+          <!-- Solution 22 -->
+          <div class="item-container">
+            <p><strong>Solution 22 / Pembahasan 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This pattern represents the odd numbers. Figure $n$ is an $n \times n$ grid with an $(n-1) \times (n-1)$ grid removed.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Pola ini mewakili bilangan ganjil. Gambar $n$ adalah kotak $n \times n$ dengan kotak $(n-1) \times (n-1)$ dihilangkan.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Analyze the pattern.
+                  <ul>
+                    <li>Figure 1: 1 square.</li>
+                    <li>Figure 2: $2 \times 2 - 1 \times 1 = 4 - 1 = 3$ squares.</li>
+                    <li>Figure 3: $3 \times 3 - 2 \times 2 = 9 - 4 = 5$ squares.</li>
+                    <li>Figure 4: $4 \times 4 - 3 \times 3 = 16 - 9 = 7$ squares.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the rule. The pattern is 1, 3, 5, 7, ... This is the sequence of odd numbers. The $n$-th odd number is $2n - 1$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Apply the rule for Figure 10. We need the 10th number in this pattern, so $n=10$. $\text{Number of squares} = (2 \times 10) - 1 = 20 - 1 = 19$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Analisis pola.
+                  <ul>
+                    <li>Gambar 1: 1 kotak.</li>
+                    <li>Gambar 2: $2 \times 2 - 1 \times 1 = 4 - 1 = 3$ kotak.</li>
+                    <li>Gambar 3: $3 \times 3 - 2 \times 2 = 9 - 4 = 5$ kotak.</li>
+                    <li>Gambar 4: $4 \times 4 - 3 \times 3 = 16 - 9 = 7$ kotak.</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Temukan aturan. Polanya adalah 1, 3, 5, 7, ... Ini adalah barisan bilangan ganjil. Bilangan ganjil ke-$n$ adalah $2n - 1$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Terapkan aturan untuk Gambar 10. Kita perlu bilangan ke-10 dalam pola ini, jadi $n=10$. $\text{Jumlah kotak} = (2 \times 10) - 1 = 20 - 1 = 19$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: 19 small squares are needed to build Figure 10. /
+              Jawaban Akhir: 19 kotak kecil dibutuhkan untuk membangun Gambar 10.
+            </div>
+          </div>
+
+          <!-- Solution 23 -->
+          <div class="item-container">
+            <p><strong>Solution 23 / Pembahasan 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This pattern represents the
+                triangular numbers.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Pola ini mewakili bilangan
+                segitiga.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Analyze the pattern. Figure 1 has 1 dot. Figure 2
+                  has $1 + 2 = 3$ dots. Figure 3 has $1 + 2 + 3 = 6$ dots. Figure
+                  4 has $1 + 2 + 3 + 4 = 10$ dots.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the rule. The rule is that Figure $n$ has $1
+                  + 2 + 3 + ... + n$ dots. This is the $n$-th triangular number.
+                </li>
+                <li>
+                  <b>Step 3:</b> Apply the rule for Figure 8. We need to find the
+                  number of dots for Figure 8, so $n=8$. $\text{Number of dots} =
+                  1 + 2 + 3 + 4 + 5 + 6 + 7 + 8$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Calculate. $(1+8) + (2+7) + (3+6) + (4+5) = 9 + 9
+                  + 9 + 9 = 4 \times 9 = 36$. (Or using the formula: $\frac{8
+                  \times (8+1)}{2} = \frac{8 \times 9}{2} = \frac{72}{2} = 36$).
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Analisis pola. Gambar 1 memiliki 1 titik.
+                  Gambar 2 memiliki $1 + 2 = 3$ titik. Gambar 3 memiliki $1 + 2 +
+                  3 = 6$ titik. Gambar 4 memiliki $1 + 2 + 3 + 4 = 10$ titik.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Temukan aturan. Aturannya adalah Gambar $n$
+                  memiliki $1 + 2 + 3 + ... + n$ titik. Ini adalah bilangan
+                  segitiga ke-$n$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Terapkan aturan untuk Gambar 8. Kita perlu
+                  mencari jumlah titik untuk Gambar 8, jadi $n=8$. $\text{Jumlah
+                  titik} = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Hitung. $(1+8) + (2+7) + (3+6) + (4+5) = 9 + 9
+                  + 9 + 9 = 4 \times 9 = 36$. (Atau pakai rumus: $\frac{8 \times
+                  (8+1)}{2} = \frac{8 \times 9}{2} = \frac{72}{2} = 36$).
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: There are 36 dots in Figure 8. / Jawaban Akhir: Ada
+              36 titik di Gambar 8.
+            </div>
+          </div>
+
+          <!-- Solution 24 -->
+          <div class="item-container">
+            <p><strong>Solution 24 / Pembahasan 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This is a repeating (cyclic)
+                pattern.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Ini adalah pola berulang
+                (siklus).
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the length of the cycle. The pattern is: 1,
+                  4, 7, 10. Then it repeats. The length of the cycle is 4.
+                </li>
+                <li>
+                  <b>Step 2:</b> Divide the position number by the cycle length.
+                  We want the 50th number. We divide 50 by 4. $50 \div 4 = 12$
+                  with a remainder. $12 \times 4 = 48$. $50 - 48 = 2$. So, $50
+                  \div 4 = 12 \text{ remainder } 2$.
+                </li>
+                <li>
+                  <b>Step 3:</b> Use the remainder to find the number. A
+                  remainder of 1 would be the 1st number (1). A remainder of 2
+                  would be the 2nd number (4). A remainder of 3 would be the 3rd
+                  number (7). A remainder of 0 (or 4) would be the 4th number
+                  (10).
+                </li>
+                <li>
+                  <b>Step 4:</b> Conclude. The remainder is 2, so the 50th number
+                  is the 2nd number in the pattern.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari panjang siklus. Polanya adalah: 1, 4, 7,
+                  10. Kemudian berulang. Panjang siklusnya adalah 4.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Bagi nomor posisi dengan panjang siklus. Kita
+                  ingin bilangan ke-50. Kita bagi 50 dengan 4. $50 \div 4 = 12$
+                  dengan sisa. $12 \times 4 = 48$. $50 - 48 = 2$. Jadi, $50 \div 4
+                  = 12 \text{ sisa } 2$.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Gunakan sisa untuk menemukan bilangan. Sisa 1
+                  adalah bilangan ke-1 (1). Sisa 2 adalah bilangan ke-2 (4). Sisa
+                  3 adalah bilangan ke-3 (7). Sisa 0 (atau 4) adalah bilangan
+                  ke-4 (10).
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Simpulkan. Sisanya adalah 2, jadi bilangan
+                  ke-50 adalah bilangan ke-2 dalam pola.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The 50th number is 4. / Jawaban Akhir: Bilangan
+              ke-50 adalah 4.
+            </div>
+          </div>
+
+          <!-- Solution 25 -->
+          <div class="item-container">
+            <p><strong>Solution 25 / Pembahasan 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> The units digits of powers of
+                7 repeat in a cycle. We need to find that cycle.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Digit satuan dari pangkat 7
+                berulang dalam satu siklus. Kita perlu menemukan siklus itu.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the units digit cycle for 7. $7^1 = 7$
+                  (Units digit: 7). $7^2 = 49$ (Units digit: 9). $7^3 = 343$
+                  (Units digit: 3). $7^4 = 2401$ (Units digit: 1). $7^5 = ...7$
+                  (Units digit: 7). The pattern is: 7, 9, 3, 1.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the length of the cycle. The pattern 7, 9,
+                  3, 1 repeats. The length of the cycle is 4.
+                </li>
+                <li>
+                  <b>Step 3:</b> Divide the exponent by the cycle length. We want
+                  $7^{30}$. The exponent is 30. We divide 30 by 4. $30 \div 4 = 7
+                  \text{ remainder } 2$. ($7 \times 4 = 28$. $30 - 28 = 2$).
+                </li>
+                <li>
+                  <b>Step 4:</b> Use the remainder to find the digit. A remainder
+                  of 1 would be the 1st digit (7). A remainder of 2 would be the
+                  2nd digit (9). A remainder of 3 would be the 3rd digit (3). A
+                  remainder of 0 (or 4) would be the 4th digit (1).
+                </li>
+                <li>
+                  <b>Step 5:</b> Conclude. The remainder is 2, so the units digit
+                  is the 2nd digit in the cycle.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari siklus digit satuan untuk 7. $7^1 = 7$
+                  (Digit satuan: 7). $7^2 = 49$ (Digit satuan: 9). $7^3 = 343$
+                  (Digit satuan: 3). $7^4 = 2401$ (Digit satuan: 1). $7^5 = ...7$
+                  (Digit satuan: 7). Polanya adalah: 7, 9, 3, 1.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari panjang siklus. Pola 7, 9, 3, 1
+                  berulang. Panjang siklusnya adalah 4.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Bagi pangkat dengan panjang siklus. Kita
+                  ingin $7^{30}$. Pangkatnya adalah 30. Kita bagi 30 dengan 4.
+                  $30 \div 4 = 7 \text{ sisa } 2$. ($7 \times 4 = 28$. $30 - 28 =
+                  2$).
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Gunakan sisa untuk menemukan digit. Sisa 1
+                  adalah digit ke-1 (7). Sisa 2 adalah digit ke-2 (9). Sisa 3
+                  adalah digit ke-3 (3). Sisa 0 (atau 4) adalah digit ke-4 (1).
+                </li>
+                <li>
+                  <b>Langkah 5:</b> Simpulkan. Sisanya adalah 2, jadi digit
+                  satuannya adalah digit ke-2 dalam siklus.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The units digit is 9. / Jawaban Akhir: Digit
+              satuannya adalah 9.
+            </div>
+          </div>
+
+          <!-- Solution 26 -->
+          <div class="item-container">
+            <p><strong>Solution 26 / Pembahasan 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> We can group the numbers into
+                pairs to make the calculation much simpler.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kita bisa mengelompokkan
+                bilangan-bilangan ini menjadi pasangan-pasangan untuk membuat
+                perhitungan lebih mudah.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Group the numbers. Let's group them like this:
+                  $(100 - 99) + (98 - 97) + (96 - 95) + ... + (4 - 3) + (2 - 1)$.
+                </li>
+                <li>
+                  <b>Step 2:</b> Calculate the value of each pair. $(100 - 99) =
+                  1$. $(98 - 97) = 1$. $(96 - 95) = 1$. ... $(4 - 3) = 1$. $(2 -
+                  1) = 1$. Each pair has a value of 1.
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the number of pairs. The sequence goes from
+                  1 to 100, so there are 100 numbers. Since we are pairing 2
+                  numbers at a time, we have: $100 \text{ numbers} \div 2 = 50
+                  \text{ pairs}$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Calculate the total sum. We have 50 pairs, and
+                  each pair is equal to 1. $\text{Total Sum} = 50 \times 1 = 50$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Kelompokkan bilangan. Mari kita kelompokkan
+                  seperti ini: $(100 - 99) + (98 - 97) + (96 - 95) + ... + (4 -
+                  3) + (2 - 1)$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Hitung nilai setiap pasangan. $(100 - 99) =
+                  1$. $(98 - 97) = 1$. $(96 - 95) = 1$. ... $(4 - 3) = 1$. $(2 -
+                  1) = 1$. Setiap pasangan memiliki nilai 1.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari jumlah pasangan. Barisan ini dari 1
+                  sampai 100, jadi ada 100 bilangan. Karena kita memasangkan 2
+                  bilangan setiap kali, kita punya: $100 \text{ bilangan} \div 2 =
+                  50 \text{ pasangan}$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Hitung jumlah total. Kita punya 50 pasangan,
+                  dan setiap pasangan bernilai 1. $\text{Jumlah Total} = 50
+                  \times 1 = 50$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The value is 50. / Jawaban Akhir: Nilainya adalah 50.
+            </div>
+          </div>
+
+          <!-- Solution 27 -->
+          <div class="item-container">
+            <p><strong>Solution 27 / Pembahasan 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> This pattern is related to
+                triangular numbers. The number of terms in Row 1 is 1. In Row 2
+                is 2. In Row 3 is 3. To find the first number in Row 10, we must
+                find out how many numbers came before it (in Rows 1 to 9).
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Pola ini berhubungan dengan
+                bilangan segitiga. Jumlah bilangan di Baris 1 adalah 1. Di Baris
+                2 adalah 2. Di Baris 3 adalah 3. Untuk mencari bilangan pertama
+                di Baris 10, kita harus mencari tahu berapa banyak bilangan yang
+                ada sebelumnya (di Baris 1 sampai 9).
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the total count of numbers before Row 10.
+                  We need to find the total numbers in Row 1, Row 2, ..., Row 9.
+                  $\text{Count} = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$. This is the
+                  9th triangular number. Using the pairing method: $(1+9) +
+                  (2+8) + (3+7) + (4+6) + 5 = 10 + 10 + 10 + 10 + 5 = 45$. So,
+                  there are 45 odd numbers in the first 9 rows.
+                </li>
+                <li>
+                  <b>Step 2:</b> Find the position of the first number in Row 10.
+                  The first number in Row 10 will be the next odd number after
+                  the first 45 odd numbers. This means it is the 46th odd number
+                  in the full list (1, 3, 5, 7, ...).
+                </li>
+                <li>
+                  <b>Step 3:</b> Find the 46th odd number. The formula for the
+                  $n$-th odd number is $(2 \times n) - 1$. $\text{Value} = (2
+                  \times 46) - 1$. $\text{Value} = 92 - 1 = 91$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari total bilangan sebelum Baris 10. Kita
+                  perlu mencari total bilangan di Baris 1, Baris 2, ..., Baris
+                  9. $\text{Jumlah} = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$. Ini
+                  adalah bilangan segitiga ke-9. Menggunakan metode pasangan:
+                  $(1+9) + (2+8) + (3+7) + (4+6) + 5 = 10 + 10 + 10 + 10 + 5 =
+                  45$. Jadi, ada 45 bilangan ganjil di 9 baris pertama.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Cari posisi bilangan pertama di Baris 10.
+                  Bilangan pertama di Baris 10 akan menjadi bilangan ganjil
+                  berikutnya setelah 45 bilangan ganjil pertama. Ini artinya
+                  bilangan itu adalah bilangan ganjil ke-46 dalam daftar lengkap
+                  (1, 3, 5, 7, ...).
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Cari bilangan ganjil ke-46. Rumus untuk
+                  bilangan ganjil ke-$n$ adalah $(2 \times n) - 1$. $\text{Nilai}
+                  = (2 \times 46) - 1$. $\text{Nilai} = 92 - 1 = 91$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The first number in Row 10 is 91. / Jawaban Akhir:
+              Bilangan pertama di Baris 10 adalah 91.
+            </div>
+          </div>
+
+          <!-- Solution 28 -->
+          <div class="item-container">
+            <p><strong>Solution 28 / Pembahasan 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> We need to test pairs of consecutive square numbers (like $1^2+2^2$, $2^2+3^2$, ...) until we find a sum of 145.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kita perlu menguji pasangan bilangan persegi yang berurutan (seperti $1^2+2^2$, $2^2+3^2$, ...) sampai kita menemukan jumlah 145.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> List the square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, ...
+                </li>
+                <li>
+                  <b>Step 2:</b> Test sums of consecutive pairs:
+                  <ul>
+                    <li>$5^2 + 6^2 = 25 + 36 = 61$ (Too small)</li>
+                    <li>$6^2 + 7^2 = 36 + 49 = 85$ (Too small)</li>
+                    <li>$7^2 + 8^2 = 49 + 64 = 113$ (Too small)</li>
+                    <li>$8^2 + 9^2 = 64 + 81 = 145$ (Correct)</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Step 3:</b> Identify the two square numbers. The two square numbers are 64 and 81.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Buat daftar bilangan persegi: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, ...
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Uji jumlah dari pasangan berurutan:
+                  <ul>
+                    <li>$5^2 + 6^2 = 25 + 36 = 61$ (Terlalu kecil)</li>
+                    <li>$6^2 + 7^2 = 36 + 49 = 85$ (Terlalu kecil)</li>
+                    <li>$7^2 + 8^2 = 49 + 64 = 113$ (Terlalu kecil)</li>
+                    <li>$8^2 + 9^2 = 64 + 81 = 145$ (Tepat)</li>
+                  </ul>
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Identifikasi kedua bilangan persegi. Kedua bilangan persegi tersebut adalah 64 dan 81.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The two square numbers are 64 and 81. / Jawaban Akhir: Kedua bilangan persegi tersebut adalah 64 dan 81.
+            </div>
+          </div>
+
+          <!-- Solution 29 -->
+          <div class="item-container">
+            <p><strong>Solution 29 / Pembahasan 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> The Fibonacci sequence rule is $F_n = F_{n-1} + F_{n-2}$, where $F_n$ is the n-th term. We need to continue the sequence until the 12th term.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Aturan barisan Fibonacci adalah $F_n = F_{n-1} + F_{n-2}$, di mana $F_n$ adalah suku ke-n. Kita perlu melanjutkan barisan hingga suku ke-12.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                 <li>
+                  <b>Step 1:</b> List the known terms:
+                  <ul>
+                    <li>$F_1=1, F_2=1, F_3=2, F_4=3, F_5=5, F_6=8, F_7=13, F_8=21$.</li>
+                  </ul>
+                 </li>
+                 <li>
+                  <b>Step 2:</b> Calculate the next terms using the rule:
+                  <ul>
+                    <li>$F_9 = F_8 + F_7 = 21 + 13 = 34$.</li>
+                    <li>$F_{10} = F_9 + F_8 = 34 + 21 = 55$.</li>
+                    <li>$F_{11} = F_{10} + F_9 = 55 + 34 = 89$.</li>
+                    <li>$F_{12} = F_{11} + F_{10} = 89 + 55 = 144$.</li>
+                  </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                 <li>
+                  <b>Langkah 1:</b> Tuliskan suku-suku yang diketahui:
+                   <ul>
+                    <li>$F_1=1, F_2=1, F_3=2, F_4=3, F_5=5, F_6=8, F_7=13, F_8=21$.</li>
+                   </ul>
+                 </li>
+                 <li>
+                  <b>Langkah 2:</b> Hitung suku-suku berikutnya menggunakan aturan:
+                  <ul>
+                    <li>$F_9 = F_8 + F_7 = 21 + 13 = 34$.</li>
+                    <li>$F_{10} = F_9 + F_8 = 34 + 21 = 55$.</li>
+                    <li>$F_{11} = F_{10} + F_9 = 55 + 34 = 89$.</li>
+                    <li>$F_{12} = F_{11} + F_{10} = 89 + 55 = 144$.</li>
+                  </ul>
+                 </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: The 12th number is 144. / Jawaban Akhir: Bilangan ke-12 adalah 144.
+            </div>
+          </div>
+
+          <!-- Solution 30 -->
+          <div class="item-container">
+            <p><strong>Solution 30 / Pembahasan 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>(English) Concept:</strong> We need to find the
+                dimensions of the large cube. A cube cut into 64 smaller cubes
+                means we need to find a number $n$ such that $n \times n \times n
+                = 64$. The unpainted cubes form a smaller cube in the center.
+              </p>
+              <hr class="my-2 border-indigo-100" />
+              <p>
+                <strong>(Indonesia) Konsep:</strong> Kita perlu mencari dimensi
+                kubus besar. Kubus yang dipotong menjadi 64 kubus kecil berarti
+                kita perlu mencari bilangan $n$ sehingga $n \times n \times n =
+                64$. Kubus yang tidak dicat membentuk kubus yang lebih kecil di bagian tengah.
+              </p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution:</p>
+              <ul>
+                <li>
+                  <b>Step 1:</b> Find the dimensions of the large cube. Since $4 \times 4 \times 4 = 64$, the large cube was a $4 \times 4
+                  \times 4$ cube.
+                </li>
+                <li>
+                  <b>Step 2:</b> Identify the unpainted cubes. These are the cubes in the interior, not touching any outer face. Imagine removing the outer layer (1 cube thick) from all sides.
+                </li>
+                <li>
+                  <b>Step 3:</b> Determine the dimensions of the inner, unpainted cube. For a $n \times n \times n$ cube, the inner core is $(n-2) \times (n-2) \times (n-2)$. Here $n=4$, so the inner core is $(4-2) \times (4-2) \times (4-2) = 2 \times 2 \times 2$.
+                </li>
+                <li>
+                  <b>Step 4:</b> Calculate the number of cubes in the inner core. Number of unpainted cubes = $2 \times 2 \times 2 = 8$.
+                </li>
+              </ul>
+            </div>
+            <div class="solution-step mt-4">
+              <p class="font-bold text-indigo-600">Penyelesaian:</p>
+              <ul>
+                <li>
+                  <b>Langkah 1:</b> Cari dimensi kubus besar. Karena $4
+                  \times 4 \times 4 = 64$. Jadi, kubus besar itu adalah kubus $4
+                  \times 4 \times 4$.
+                </li>
+                <li>
+                  <b>Langkah 2:</b> Identifikasi kubus yang tidak dicat. Ini adalah kubus-kubus di bagian dalam yang tidak menyentuh sisi luar manapun. Bayangkan membuang lapisan terluar (setebal 1 kubus) dari semua sisi.
+                </li>
+                <li>
+                  <b>Langkah 3:</b> Tentukan dimensi kubus bagian dalam yang tidak dicat. Untuk kubus $n \times n \times n$, inti bagian dalamnya adalah $(n-2) \times (n-2) \times (n-2)$. Di sini $n=4$, jadi inti bagian dalamnya adalah $(4-2) \times (4-2) \times (4-2) = 2 \times 2 \times 2$.
+                </li>
+                <li>
+                  <b>Langkah 4:</b> Hitung jumlah kubus di inti bagian dalam. Jumlah kubus yang tidak dicat = $2 \times 2 \times 2 = 8$.
+                </li>
+              </ul>
+            </div>
+            <div class="final-answer">
+              Final Answer: There are 8 small cubes with 0 faces painted. /
+              Jawaban Akhir: Ada 8 kubus kecil dengan 0 sisi dicat.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
