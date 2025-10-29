@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika (G1-2)</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 12cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before,
+      .solutions-cover-page::before {
+        opacity: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1, h2 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 20pt;
+        margin-top: 0;
+      }
+      .soal-latihan {
+        margin-bottom: 25px;
+        break-inside: avoid;
+      }
+      .soal-latihan b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .lang-id {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dotted #ccc;
+        color: #555;
+        font-style: italic;
+        font-size: 11pt;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+      .solution-detail {
+        margin-top: 20px;
+      }
+      .concept {
+        background-color: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+        text-align: justify;
+      }
+      .concept p {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      .steps-title {
+        font-weight: 700;
+        font-size: 14pt;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .solution-points {
+        padding-left: 20px;
+      }
+      .solution-points li {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.75rem 1.25rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      .bar-model-desc {
+          font-style: italic;
+          color: var(--secondary-text);
+          background-color: #f9f9f9;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px dashed #ddd;
+          margin-top: 10px;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <section class="page cover-page">
+      <div class="content-wrapper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png" alt="Math Champs Logo" class="cover-image" />
+        <h1 class="cover-title">Latihan Soal Kompetisi Matematika</h1>
+        <p class="cover-subtitle">Aritmetika Dasar & Pola</p>
+        <p class="cover-subtitle" style="font-size: 16pt; margin-top: 5px;">Grade 1 - 2</p>
+      </div>
+    </section>
+
+    <!-- Halaman Soal Aritmetika 1 (Soal 1-4) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Arithmetic</h1>
+        
+        <div class="soal-latihan">
+          <b>Soal 1 / Question 1</b>
+          <div class="soal-konten">
+            Ali has 7 toy cars. His mother gives him 4 more toy cars. How many toy cars does Ali have now?
+            <div class="lang-id">
+              Ali punya 7 mobil mainan. Ibunya memberinya 4 mobil mainan lagi. Berapa banyak mobil mainan Ali sekarang?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 2 / Question 2</b>
+          <div class="soal-konten">
+            There are 10 birds sitting on a tree. 3 birds fly away. How many birds are left on the tree?
+            <div class="lang-id">
+              Ada 10 burung di atas pohon. 3 burung terbang pergi. Berapa banyak burung yang tersisa di pohon?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 3 / Question 3</b>
+          <div class="soal-konten">
+            Siti wants to buy a comic book that costs $10. She already has $6. How many more dollars does she need?
+            <div class="lang-id">
+              Siti ingin membeli buku komik seharga $10. Dia sudah punya $6. Berapa dolar lagi yang dia butuhkan?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 4 / Question 4</b>
+          <div class="soal-konten">
+            David has 9 marbles. Rian has 5 marbles. How many more marbles does David have than Rian?
+            <div class="lang-id">
+              David punya 9 kelereng. Rian punya 5 kelereng. Berapa lebih banyak kelereng David daripada Rian?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Aritmetika 2 (Soal 5-8) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Arithmetic</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 5 / Question 5</b>
+          <div class="soal-konten">
+            A full <i>Ten Frame</i> (bingkai sepuluh) has 10 dots. How many dots are in one full <i>Ten Frame</i> and one half-full <i>Ten Frame</i> (which has 5 dots)?
+            <div class="lang-id">
+              Sebuah "Ten Frame" penuh berisi 10 titik. Berapa banyak titik yang ada di satu "Ten Frame" penuh dan satu "Ten Frame" yang terisi setengah (berisi 5 titik)?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 6 / Question 6</b>
+          <div class="soal-konten">
+            A <i>Bar Model</i> shows a total of 15. One part is 8. What is the other part?
+            <div class="lang-id">
+              Sebuah "Bar Model" menunjukkan total 15. Satu bagian adalah 8. Berapakah bagian lainnya?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 7 / Question 7</b>
+          <div class="soal-konten">
+            What is the value of $2 + 3 + 5 + 8$?
+            <div class="lang-id">
+              Berapakah nilai dari $2 + 3 + 5 + 8$?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 8 / Question 8</b>
+          <div class="soal-konten">
+            I have 18 stickers. I give 5 to my brother and 3 to my sister. How many stickers do I have left?
+            <div class="lang-id">
+              Aku punya 18 stiker. Aku berikan 5 ke kakakku dan 3 ke adikku. Berapa banyak stiker yang tersisa padaku?
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Aritmetika 3 (Soal 9-11) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Arithmetic</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 9 / Question 9</b>
+          <div class="soal-konten">
+            Look at the following equations:
+            <ul style="font-size: 1.5em; list-style-type: none; padding-left: 0;">
+                <li>🍎 + 🍎 = 12</li>
+                <li>🍎 + 🍌 = 10</li>
+            </ul>
+            What is the value of 🍌?
+            <div class="lang-id">
+              Lihat persamaan berikut:
+              <ul style="font-size: 1.5em; list-style-type: none; padding-left: 0;">
+                  <li>🍎 + 🍎 = 12</li>
+                  <li>🍎 + 🍌 = 10</li>
+              </ul>
+              Berapakah nilai dari 🍌?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 10 / Question 10</b>
+          <div class="soal-konten">
+            A bus has 16 people. At the first stop, 5 people get off. At the second stop, 3 new people get on. How many people are on the bus now?
+            <div class="lang-id">
+              Sebuah bus berisi 16 orang. Di pemberhentian pertama, 5 orang turun. Di pemberhentian kedua, 3 orang baru naik. Ada berapa orang di bus sekarang?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 11 / Question 11</b>
+          <div class="soal-konten">
+            What number is missing in the box?
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">$14 - ? = 6$</div>
+            <div class="lang-id">
+              Angka berapakah yang hilang di dalam kotak?
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">$14 - ? = 6$</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Aritmetika 4 (Soal 12-15) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Arithmetic</h1>
+        
+        <div class="soal-latihan">
+          <b>Soal 12 / Question 12</b>
+          <div class="soal-konten">
+            Rara has 11 red beads and 7 blue beads. How many beads does she have in all?
+            <div class="lang-id">
+              Rara punya 11 manik-manik merah dan 7 manik-manik biru. Berapa banyak manik-manik yang dia miliki seluruhnya?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 13 / Question 13</b>
+          <div class="soal-konten">
+            Find the value of $1 + 2 – 3 + 4 + 5 – 6$.
+            <div class="lang-id">
+              Cari nilai dari $1 + 2 – 3 + 4 + 5 – 6$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 14 / Question 14</b>
+          <div class="soal-konten">
+            Look at the following puzzle:
+            <ul style="font-size: 1.2em; list-style-type: none; padding-left: 0;">
+                <li>$A + A = 10$</li>
+                <li>$A + B = 8$</li>
+            </ul>
+            What is the value of B?
+            <div class="lang-id">
+              Lihat teka-teki berikut:
+              <ul style="font-size: 1.2em; list-style-type: none; padding-left: 0;">
+                  <li>$A + A = 10$</li>
+                  <li>$A + B = 8$</li>
+              </ul>
+              Berapakah nilai B?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 15 / Question 15</b>
+          <div class="soal-konten">
+            A farmer has 12 chickens. He has 4 fewer ducks than chickens. How many ducks does he have?
+            <div class="lang-id">
+              Seorang petani punya 12 ayam. Dia punya 4 lebih sedikit bebek daripada ayam. Berapa banyak bebek yang dia punya?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Pola 1 (Soal 16-19) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Patterns</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 16 / Question 16</b>
+          <div class="soal-konten">
+            Continue the pattern:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">A, B, A, B, A, B, ___, ___</div>
+            <div class="lang-id">
+              Lanjutkan polanya:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">A, B, A, B, A, B, ___, ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 17 / Question 17</b>
+          <div class="soal-konten">
+            What comes next in the pattern?
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Red, Green, Blue, Red, Green, Blue, Red, ___</div>
+            <div class="lang-id">
+              Apa selanjutnya dari pola ini?
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Merah, Hijau, Biru, Merah, Hijau, Biru, Merah, ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 18 / Question 18</b>
+          <div class="soal-konten">
+            Find the missing shape in the pattern:
+            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</div>
+            <div class="lang-id">
+              Temukan gambar yang hilang dari pola ini:
+              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">⭐, 🌙, ☀️, ⭐, 🌙, ☀️, ___ , 🌙, ☀️</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 19 / Question 19</b>
+          <div class="soal-konten">
+            Look at the pattern: A, A, B, C, A, A, B, C, ...
+            <br>What is the 10th letter in this pattern?
+            <div class="lang-id">
+              Lihat pola: A, A, B, C, A, A, B, C, ...
+              <br>Apa huruf ke-10 dari pola ini?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Pola 2 (Soal 20-23) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Patterns</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 20 / Question 20</b>
+          <div class="soal-konten">
+            Continue the pattern:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Z, Y, X, Z, Y, X, ___, ___</div>
+            <div class="lang-id">
+              Lanjutkan polanya:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">Z, Y, X, Z, Y, X, ___, ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 21 / Question 21</b>
+          <div class="soal-konten">
+            Look at the pattern:
+            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">↑, ↓, →, ↑, ↓, →, ↑, ___</div>
+            <div class="lang-id">
+              Lihat pola panah:
+              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">↑, ↓, →, ↑, ↓, →, ↑, ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 22 / Question 22</b>
+          <div class="soal-konten">
+            What comes next in this pattern?
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, 2, 3, 1, 2, 3, 1, ___ , ___</div>
+            <div class="lang-id">
+              Apa selanjutnya dari pola ini?
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, 2, 3, 1, 2, 3, 1, ___ , ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 23 / Question 23</b>
+          <div class="soal-konten">
+            Look at the pattern:
+            A, B, C, C, A, B, C, C, ...
+            <br>What is the 13th letter in this pattern?
+            <div class="lang-id">
+              Lihat pola: A, B, C, C, A, B, C, C, ...
+              <br>Apa huruf ke-13 dari pola ini?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Pola 3 (Soal 24-27) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Patterns</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 24 / Question 24</b>
+          <div class="soal-konten">
+            What are the two missing letters in the pattern?
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">P, Q, Q, P, Q, Q, P, ___ , ___</div>
+            <div class="lang-id">
+              Apa dua huruf yang hilang dari pola ini?
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">P, Q, Q, P, Q, Q, P, ___ , ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 25 / Question 25</b>
+          <div class="soal-konten">
+            Look at the pattern of shapes:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">(Circle, Circle, Triangle), (Circle, Circle, Triangle), (Circle, ___ , Triangle)</div>
+            What is the missing shape?
+            <div class="lang-id">
+              Lihat pola gambar:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">(Lingkaran, Lingkaran, Segitiga), (Lingkaran, Lingkaran, Segitiga), (Lingkaran, ___ , Segitiga)</div>
+              Apa gambar yang hilang?
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 26 / Question 26</b>
+          <div class="soal-konten">
+            Continue the pattern:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, A, 2, B, 3, C, ___ , ___</div>
+            <div class="lang-id">
+              Lanjutkan polanya:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">1, A, 2, B, 3, C, ___ , ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 27 / Question 27</b>
+          <div class="soal-konten">
+            A caterpillar crawls in a pattern:
+            Forward 3 cm, Backward 1 cm, Forward 3 cm, Backward 1 cm, ...
+            <br>If it starts at 0, where is it after the first 4 movements?
+            <div class="lang-id">
+              Seekor ulat bergerak dalam pola:
+              (Maju 3 cm, Mundur 1 cm, Maju 3 cm, Mundur 1 cm, ...)
+              <br>Jika dia mulai dari 0, di manakah dia setelah 4 gerakan pertama?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal Pola 4 (Soal 28-30) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Practice Problems - Patterns</h1>
+
+        <div class="soal-latihan">
+          <b>Soal 28 / Question 28</b>
+          <div class="soal-konten">
+            Look at the pattern:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">10, 20, 30, 10, 20, 30, 10, ___</div>
+            <div class="lang-id">
+              Lihat pola angka:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">10, 20, 30, 10, 20, 30, 10, ___</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 29 / Question 29</b>
+          <div class="soal-konten">
+            What is the 11th shape in this pattern?
+            <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">△, ◻, O, △, ◻, O, ...</div>
+            <div class="lang-id">
+              Apa bentuk ke-11 dari pola ini?
+              <div style="font-size: 1.5em; font-weight: bold; margin: 10px 0;">△, ◻, O, △, ◻, O, ...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>Soal 30 / Question 30</b>
+          <div class="soal-konten">
+            Find the missing letters in the pattern:
+            <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">G, H, H, I, J, J, G, H, H, I, J, J, G, H, ___ , I, ___ , J</div>
+            <div class="lang-id">
+              Temukan huruf yang hilang dari pola ini:
+              <div style="font-size: 1.2em; font-weight: bold; margin: 10px 0;">G, H, H, I, J, J, G, H, H, I, J, J, G, H, ___ , I, ___ , J</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- SOLUTIONS START HERE -->
+
+    <!-- Pembahasan 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 1</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> This is a "combining" problem. We are combining two groups into one.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Pictorial:</strong> Imagine 7 toy cars in one hand. Then, imagine 4 toy cars in the other hand.</li>
+            <li><strong>Abstract (Counting):</strong> We need to find the total. We start from 7 and count forward 4 steps: 8, 9, 10, 11.</li>
+            <li><strong>Equation:</strong> $7 + 4 = 11$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> Ali has 11 toy cars.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 1</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Ini adalah soal "menggabungkan" (combining). Kita menggabungkan dua kelompok menjadi satu.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Pictorial (Gambar):</strong> Bayangkan 7 mobil mainan di satu tangan. Lalu, bayangkan 4 mobil mainan di tangan yang lain.</li>
+            <li><strong>Abstract (Hitungan):</strong> Kita harus menghitung totalnya. Kita mulai dari 7 dan menghitung maju 4 langkah: 8, 9, 10, 11.</li>
+            <li><strong>Persamaan (Equation):</strong> $7 + 4 = 11$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ali memiliki 11 mobil mainan.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 2</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> This is a "separating" problem. A number of items are "taken away" or "go away" from the total.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Using a Ten Frame:</strong> Imagine a <i>Ten Frame</i> (a frame with 10 boxes) that is full with 10 dots (representing 10 birds).</li>
+            <li>We "separate" 3 dots. We cross out 3 dots from the frame.</li>
+            <li>We count the remaining dots in the frame: 1, 2, 3, 4, 5, 6, 7.</li>
+            <li><strong>Equation:</strong> $10 - 3 = 7$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> There are 7 birds left.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 2</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Ini adalah soal "memisahkan" (separating). Sejumlah benda "diambil" atau "pergi" dari total.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Menggunakan Ten Frame:</strong> Bayangkan sebuah <i>Ten Frame</i> (bingkai 10 kotak) yang terisi penuh dengan 10 titik (mewakili 10 burung).</li>
+            <li>Kita "memisahkan" 3 titik. Kita hapus 3 titik dari bingkai tersebut.</li>
+            <li>Kita hitung sisa titik di dalam bingkai: 1, 2, 3, 4, 5, 6, 7.</li>
+            <li><strong>Persamaan (Equation):</strong> $10 - 3 = 7$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 7 burung yang tersisa.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 3 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 3</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> This is a "finding the missing part" problem. We know the total (10) and one part (6).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Using a Ten Frame:</strong> Imagine a <i>Ten Frame</i> (10 boxes) representing the $10 price.</li>
+            <li>Siti already has $6, so we fill 6 boxes in the frame.</li>
+            <li>The question is "how many more does she need?". This is the same as "how many boxes are still empty?"</li>
+            <li>We count the empty boxes: 1, 2, 3, 4.</li>
+            <li><strong>Equation:</strong> $6 + ? = 10$, or $10 - 6 = 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> She needs $4 more.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 3</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Ini adalah soal "mencari bagian yang hilang" (missing part). Kita tahu totalnya (10) dan satu bagian (6).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Menggunakan Ten Frame:</strong> Bayangkan <i>Ten Frame</i> (bingkai 10 kotak) mewakili harga $10.</li>
+            <li>Siti sudah punya $6, jadi kita isi 6 kotak di bingkai itu.</li>
+            <li>Soalnya adalah "berapa banyak lagi yang dia butuhkan?". Ini sama dengan "berapa banyak kotak yang masih kosong?"</li>
+            <li>Kita hitung kotak yang kosong: 1, 2, 3, 4.</li>
+            <li><strong>Persamaan (Equation):</strong> $6 + ? = 10$, atau $10 - 6 = 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia membutuhkan $4 lagi.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 4 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 4</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> This is a "comparison" problem. We compare two amounts and find the "difference".</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Using a Bar Model:</strong>
+                <br>Draw one long bar for David worth 9.
+                <br>Draw a shorter bar underneath for Rian, worth 5.
+                <div class="bar-model-desc">
+                    [Image Description: Top bar "David [ 9 ]". Bottom bar "Rian [ 5 ] [ ? ]". The question mark [?] is the part of David's bar that is longer than Rian's bar.]
+                </div>
+            </li>
+            <li>We want to find the difference, which is the "extra" part David has.</li>
+            <li><strong>Equation:</strong> $9 - 5 = 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> David has 4 more marbles.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 4</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Ini adalah soal "perbandingan" (comparison). Kita membandingkan dua jumlah dan mencari "selisih"-nya.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Menggunakan Bar Model (Model Balok):</strong>
+                <br>Gambarkan satu balok panjang untuk David yang bernilai 9.
+                <br>Gambarkan satu balok yang lebih pendek di bawahnya untuk Rian, yang bernilai 5.
+                <div class="bar-model-desc">
+                    [DESKRIPSI GAMBAR: Balok atas "David [ 9 ]". Balok bawah "Rian [ 5 ] [ ? ]". Tanda tanya [?] adalah bagian balok David yang lebih panjang dari balok Rian.]
+                </div>
+            </li>
+            <li>Kita ingin mencari selisihnya, yaitu bagian "ekstra" yang dimiliki David.</li>
+            <li><strong>Persamaan (Equation):</strong> $9 - 5 = 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> David memiliki 4 kelereng lebih banyak.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 5 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 5</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Combining based on place value understanding (tens and ones).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>One full <i>Ten Frame</i> has 10 dots. This is like 1 ten.</li>
+            <li>One half-full <i>Ten Frame</i> has 5 dots. This is like 5 ones.</li>
+            <li>We combine 1 ten (10) and 5 ones (5).</li>
+            <li><strong>Equation:</strong> $10 + 5 = 15$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> There are 15 dots in total.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 5</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menggabungkan berdasarkan pemahaman nilai tempat (puluhan dan satuan).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Satu <i>Ten Frame</i> penuh memiliki 10 titik. Ini seperti 1 puluhan (one ten).</li>
+            <li>Setengah <i>Ten Frame</i> memiliki 5 titik. Ini seperti 5 satuan (five ones).</li>
+            <li>Kita menggabungkan 1 puluhan (10) dan 5 satuan (5).</li>
+            <li><strong>Persamaan (Equation):</strong> $10 + 5 = 15$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 15 titik seluruhnya.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 6 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 6</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Understanding a <i>Bar Model</i>. Total = Part 1 + Part 2.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The bar model shows that if we combine two parts (Part 1 and Part 2), we get the Total.</li>
+            <li>
+                <div class="bar-model-desc">
+                    [Image Description: One long bar with "15" labeled above it. The bar is split into two parts, the left part is "8" and the right part is "?".]
+                </div>
+            </li>
+            <li>We know the Total (15) and one part (8).</li>
+            <li>To find the missing part (?), we take the Total and separate (subtract) the part we know.</li>
+            <li><strong>Equation:</strong> $8 + ? = 15$, or $15 - 8 = 7$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The other part is 7.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 6</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Memahami <i>Bar Model</i> (Model Balok). Total = Bagian 1 + Bagian 2.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Model balok menunjukkan bahwa jika kita menggabungkan dua bagian (Part 1 dan Part 2), kita akan mendapatkan Total (Total).</li>
+            <li>
+                <div class="bar-model-desc">
+                    [DESKRIPSI GAMBAR: Satu balok panjang dengan label "15" di atasnya. Balok itu dibagi dua, bagian kiri "8" dan bagian kanan "?".]
+                </div>
+            </li>
+            <li>Kita tahu Total (15) dan satu bagian (8).</li>
+            <li>Untuk mencari bagian yang hilang (?), kita ambil Total dan pisahkan (kurangi) dengan bagian yang kita tahu.</li>
+            <li><strong>Persamaan (Equation):</strong> $8 + ? = 15$, atau $15 - 8 = 7$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Bagian lainnya adalah 7.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 7 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 7</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Combining more than two numbers. We can look for "partners to 10" (making 10).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>We need to calculate: $2 + 3 + 5 + 8$.</li>
+            <li>We can add in order: $2 + 3 = 5$. Then $5 + 5 = 10$. Then $10 + 8 = 18$.</li>
+            <li><strong>Smart Way (Making 10):</strong> Look at the numbers. Do any of them combine to make 10? Yes! 2 and 8. ($2 + 8 = 10$).</li>
+            <li>Now combine the rest: $3 + 5 = 8$.</li>
+            <li>Finally, combine the two results: $10 + 8 = 18$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> 18.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 7</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menggabungkan lebih dari dua angka. Kita bisa mencari "pasangan 10" (making 10).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Kita harus menghitung: $2 + 3 + 5 + 8$.</li>
+            <li>Kita bisa hitung urut: $2 + 3 = 5$. Lalu $5 + 5 = 10$. Lalu $10 + 8 = 18$.</li>
+            <li><strong>Cara Cerdas (Making 10):</strong> Lihat angka-angka itu. Apakah ada yang jika digabung menjadi 10? Ya! 2 dan 8. ($2 + 8 = 10$).</li>
+            <li>Sekarang kita gabungkan sisanya: $3 + 5 = 8$.</li>
+            <li>Terakhir, gabungkan kedua hasil tadi: $10 + 8 = 18$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> 18.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 8 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 8</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Separating in two steps (two-step separating).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Step 1:</strong> We start with 18 stickers. Give 5 to brother.
+                <br>$18 - 5 = 13$. Now I have 13 stickers.
+            </li>
+            <li><strong>Step 2:</strong> From the 13 remaining stickers, give 3 to sister.
+                <br>$13 - 3 = 10$.
+            </li>
+            <li><strong>Alternative Way:</strong> We can first combine everything given away ($5 + 3 = 8$), then subtract from the total: $18 - 8 = 10$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> I have 10 stickers left.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 8</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Memisahkan dalam dua langkah (two-step separating).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Langkah 1:</strong> Kita mulai dengan 18 stiker. Berikan 5 ke kakak.
+                <br>$18 - 5 = 13$. Sekarang aku punya 13 stiker.
+            </li>
+            <li><strong>Langkah 2:</strong> Dari 13 stiker sisa, berikan 3 ke adik.
+                <br>$13 - 3 = 10$.
+            </li>
+            <li><strong>Cara Alternatif:</strong> Kita juga bisa gabungkan dulu semua yang diberikan ($5 + 3 = 8$), lalu kurangi dari total: $18 - 8 = 10$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Aku punya sisa 10 stiker.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 9 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 9</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Simple algebraic puzzle problem.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>Look at the first equation: 🍎 + 🍎 = 12.</li>
+            <li>Two identical pictures add up to 12. This means we are looking for a number that, added to itself, makes 12 (the "doubles" concept). $6 + 6 = 12$. So, 🍎 = 6.</li>
+            <li>Look at the second equation: 🍎 + 🍌 = 10.</li>
+            <li>We already know 🍎 = 6, so we replace 🍎 with 6: $6 + 🍌 = 10$.</li>
+            <li>This is like a "Ten Frame" problem: We have 6, how many more to make 10? The answer is 4.</li>
+            <li><strong>Equation:</strong> $10 - 6 = 4$. So, 🍌 = 4.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The value of 🍌 is 4.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 9</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Soal teka-teki aljabar sederhana.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Lihat persamaan pertama: 🍎 + 🍎 = 12.</li>
+            <li>Dua gambar yang sama jika dijumlahkan hasilnya 12. Ini artinya kita mencari angka yang jika ditambah dirinya sendiri jadi 12 (konsep "doubles"). $6 + 6 = 12$. Jadi, 🍎 = 6.</li>
+            <li>Lihat persamaan kedua: 🍎 + 🍌 = 10.</li>
+            <li>Kita sudah tahu 🍎 = 6, jadi kita ganti 🍎 dengan 6: $6 + 🍌 = 10$.</li>
+            <li>Ini seperti soal "Ten Frame": Kita punya 6, butuh berapa lagi untuk jadi 10? Jawabannya 4.</li>
+            <li><strong>Persamaan (Equation):</strong> $10 - 6 = 4$. Jadi, 🍌 = 4.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Nilai 🍌 adalah 4.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 10 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 10</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Combining and separating in one problem (multi-step).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>Start: There are 16 people.</li>
+            <li>Stop 1: 5 people get off (separating).
+                <br>$16 - 5 = 11$. There are now 11 people on the bus.
+            </li>
+            <li>Stop 2: 3 new people get on (combining).
+                <br>$11 + 3 = 14$.
+            </li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> There are 14 people on the bus now.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 10</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menggabungkan dan memisahkan dalam satu soal (multi-step).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Mulai (Start): Ada 16 orang.</li>
+            <li>Pemberhentian 1 (Stop 1): 5 orang turun (memisahkan).
+                <br>$16 - 5 = 11$. Sekarang ada 11 orang di bus.
+            </li>
+            <li>Pemberhentian 2 (Stop 2): 3 orang naik (menggabungkan).
+                <br>$11 + 3 = 14$.
+            </li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ada 14 orang di bus sekarang.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 11 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 11</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Finding the missing part in a subtraction (missing subtrahend).</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li><strong>Using a Bar Model:</strong> The total (the whole) is 14.</li>
+            <li>After we "separate" (subtract) one part (the ? number), the part left is 6.</li>
+            <li>
+                <div class="bar-model-desc">
+                    [Image Description: A bar model with a total of "14". It is split into two parts, one "6" and one "?".]
+                </div>
+            </li>
+            <li>To find the ? part, we find the difference between 14 and 6.</li>
+            <li><strong>Equation:</strong> $14 - 6 = 8$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The missing number is 8.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 11</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Mencari bagian yang hilang dalam pengurangan (missing subtrahend).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li><strong>Menggunakan Bar Model:</strong> Totalnya (the whole) adalah 14.</li>
+            <li>Setelah kita "pisahkan" (kurangi) satu bagian (angka ?), sisanya (the part left) adalah 6.</li>
+            <li>
+                <div class="bar-model-desc">
+                    [DESKRIPSI GAMBAR: Bar model dengan total "14". Dibagi jadi dua bagian, satu "6" dan satu "?".]
+                </div>
+            </li>
+            <li>Untuk mencari bagian ?, kita hitung selisih antara 14 dan 6.</li>
+            <li><strong>Persamaan (Equation):</strong> $14 - 6 = 8$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Angka yang hilang adalah 8.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 12 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 12</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Combining.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>We want to find the "total" or "in all".</li>
+            <li>We combine 11 red beads and 7 blue beads.</li>
+            <li><strong>Decomposing Method:</strong> 11 is $10 + 1$.</li>
+            <li>So, $(10 + 1) + 7$. We can calculate $1 + 7 = 8$. Then $10 + 8 = 18$.</li>
+            <li><strong>Equation:</strong> $11 + 7 = 18$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> She has 18 beads.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 12</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menggabungkan (combining).</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Kita ingin mencari "total" atau "semuanya".</li>
+            <li>Kita gabungkan 11 manik-manik merah dan 7 manik-manik biru.</li>
+            <li><strong>Metode Pecah (Decomposing):</strong> 11 adalah $10 + 1$.</li>
+            <li>Jadi, $(10 + 1) + 7$. Kita bisa hitung $1 + 7 = 8$. Lalu $10 + 8 = 18$.</li>
+            <li><strong>Persamaan (Equation):</strong> $11 + 7 = 18$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia punya 18 manik-manik.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 13 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 13</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Calculating in order from left to right.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>$1 + 2 = 3$</li>
+            <li>$3 - 3 = 0$</li>
+            <li>$0 + 4 = 4$</li>
+            <li>$4 + 5 = 9$</li>
+            <li>$9 - 6 = 3$</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 13</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menghitung secara urut dari kiri ke kanan.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>$1 + 2 = 3$</li>
+            <li>$3 - 3 = 0$</li>
+            <li>$0 + 4 = 4$</li>
+            <li>$4 + 5 = 9$</li>
+            <li>$9 - 6 = 3$</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 14 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 14</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Simple algebraic puzzle.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>Equation 1: $A + A = 10$. Two identical numbers add up to 10. This means $A = 5$.</li>
+            <li>Equation 2: $A + B = 8$.</li>
+            <li>Replace A with 5 (from Equation 1): $5 + B = 8$.</li>
+            <li>5 plus what number equals 8? We can count on from 5: 6, 7, 8. (That's 3 steps).</li>
+            <li>So, $B = 3$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> B = 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 14</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Teka-teki aljabar sederhana.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Persamaan 1: $A + A = 10$. Dua angka yang sama dijumlahkan jadi 10. Berarti $A = 5$.</li>
+            <li>Persamaan 2: $A + B = 8$.</li>
+            <li>Kita ganti A dengan 5 (dari Persamaan 1): $5 + B = 8$.</li>
+            <li>5 ditambah berapa agar jadi 8? Kita hitung maju dari 5: 6, 7, 8. (Itu 3 langkah).</li>
+            <li>Jadi, $B = 3$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> B = 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 15 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 15</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Comparison. "Fewer than".</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>We know the number of chickens = 12.</li>
+            <li>The number of ducks is "4 fewer THAN chickens". This means we take the number of chickens and subtract 4.</li>
+            <li><strong>Equation:</strong> $12 - 4 = 8$.</li>
+            <li><strong>Using a Bar Model:</strong>
+                <br>Chicken Bar (long): 12
+                <br>Duck Bar (short): ?
+                <br>Difference: 4
+                <div class="bar-model-desc">
+                    [Image Description: Top bar "Chicken [ 12 ]". Bottom bar "Duck [ ? ]" and "Difference [ 4 ]" which combine to the same length as the Chicken bar.]
+                </div>
+            </li>
+            <li>To find ?, we calculate $12 - 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> He has 8 ducks.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 15</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Perbandingan (comparison). "Fewer than" / "Lebih sedikit dari".</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Kita tahu jumlah ayam = 12.</li>
+            <li>Jumlah bebek "4 lebih sedikit DARI ayam". Ini berarti kita ambil jumlah ayam dan kurangi 4.</li>
+            <li><strong>Persamaan (Equation):</strong> $12 - 4 = 8$.</li>
+            <li><strong>Menggunakan Bar Model:</strong>
+                <br>Balok Ayam (panjang): 12
+                <br>Balok Bebek (pendek): ?
+                <br>Selisih (difference): 4
+                <div class="bar-model-desc">
+                    [DESKRIPSI GAMBAR: Balok atas "Ayam [ 12 ]". Balok bawah "Bebek [ ? ]" dan "Selisih [ 4 ]" yang jika digabung panjangnya sama dengan balok Ayam.]
+                </div>
+            </li>
+            <li>Untuk mencari ?, kita hitung $12 - 4$.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Dia punya 8 bebek.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN POLA -->
+
+    <!-- Pembahasan 16 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 16</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>This pattern has a "core pattern" of 2 letters: (A, B).</li>
+            <li>The full pattern is (A, B), (A, B), (A, B), ...</li>
+            <li>We see the last sequence is A, B, A, B, A, B.</li>
+            <li>After B, the core pattern starts over with A.</li>
+            <li>After A, the pattern continues to B.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> A, B.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 16</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Pola ini memiliki "unit inti" (core pattern) yang terdiri dari 2 huruf: (A, B).</li>
+            <li>Pola lengkapnya adalah (A, B), (A, B), (A, B), ...</li>
+            <li>Kita melihat urutan terakhir adalah A, B, A, B, A, B.</li>
+            <li>Setelah B, unit inti dimulai lagi dari A.</li>
+            <li>Setelah A, pola berlanjut ke B.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> A, B.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 17 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 17</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (Red, Green, Blue).</li>
+            <li>The full pattern: (Red, Green, Blue), (Red, Green, Blue), ...</li>
+            <li>The last item seen is "Red".</li>
+            <li>After "Red" (A), the pattern continues to "Green" (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> Green.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 17</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (Merah, Hijau, Biru).</li>
+            <li>Pola lengkapnya: (Merah, Hijau, Biru), (Merah, Hijau, Biru), ...</li>
+            <li>Urutan terakhir yang terlihat adalah "Merah".</li>
+            <li>Setelah "Merah" (A), pola berlanjut ke "Hijau" (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Green (Hijau).</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 18 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 18</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (⭐, 🌙, ☀️).</li>
+            <li>The full pattern: (⭐, 🌙, ☀️), (⭐, 🌙, ☀️), (___, 🌙, ☀️).</li>
+            <li>We can see the missing part is at the beginning of the third unit. The start of the pattern unit is ⭐.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> ⭐.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 18</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (⭐, 🌙, ☀️).</li>
+            <li>Pola lengkapnya: (⭐, 🌙, ☀️), (⭐, 🌙, ☀️), (___, 🌙, ☀️).</li>
+            <li>Kita bisa lihat bagian yang hilang adalah di awal unit ketiga. Bagian awal dari unit pola adalah ⭐.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> ⭐.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 19 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 19</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Finding the nth item in an A-A-B-C pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (A, A, B, C). This unit has 4 letters.</li>
+            <li>We want to find the 10th letter.</li>
+            <li>Let's write out the pattern to 10 letters:
+                <br>(A, A, B, C) - this is 4 letters
+                <br>(A, A, B, C) - this is 8 letters (total 4+4=8)
+            </li>
+            <li>We need 2 more letters to get to 10. We start the core unit again: A, A.</li>
+            <li>Combined: A, A, B, C, A, A, B, C, A, <strong>A</strong></li>
+            <li>1st(A), 2nd(A), 3rd(B), 4th(C), 5th(A), 6th(A), 7th(B), 8th(C), 9th(A), 10th(<strong>A</strong>).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The 10th letter is A.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 19</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menemukan elemen ke-n (nth item) dalam pola A-A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (A, A, B, C). Unit ini memiliki 4 huruf.</li>
+            <li>Kita ingin mencari huruf ke-10.</li>
+            <li>Mari kita tulis polanya sampai 10 huruf:
+                <br>(A, A, B, C) - ini 4 huruf
+                <br>(A, A, B, C) - ini 8 huruf (total 4+4=8)
+            </li>
+            <li>Kita butuh 2 huruf lagi untuk jadi 10. Kita mulai lagi unit intinya: A, A.</li>
+            <li>Jika digabung: A, A, B, C, A, A, B, C, A, <strong>A</strong></li>
+            <li>Huruf ke-1 (A), ke-2 (A), ke-3 (B), ke-4 (C), ke-5 (A), ke-6 (A), ke-7 (B), ke-8 (C), ke-9 (A), ke-10 (<strong>A</strong>).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Huruf ke-10 adalah A.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 20 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 20</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (Z, Y, X).</li>
+            <li>The full pattern: (Z, Y, X), (Z, Y, X), ...</li>
+            <li>The last item seen is X. After X, the core unit starts over.</li>
+            <li>The first one is Z, the second is Y.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> Z, Y.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 20</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (Z, Y, X).</li>
+            <li>Pola lengkapnya: (Z, Y, X), (Z, Y, X), ...</li>
+            <li>Urutan terakhir yang terlihat adalah X. Setelah X, unit inti dimulai lagi.</li>
+            <li>Yang pertama adalah Z, yang kedua adalah Y.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Z, Y.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 21 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 21</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (↑, ↓, →).</li>
+            <li>The full pattern: (↑, ↓, →), (↑, ↓, →), ...</li>
+            <li>The last item seen is ↑.</li>
+            <li>After ↑ (A), the pattern continues to ↓ (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> ↓.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 21</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (↑, ↓, →).</li>
+            <li>Pola lengkapnya: (↑, ↓, →), (↑, ↓, →), ...</li>
+            <li>Urutan terakhir yang terlihat adalah ↑.</li>
+            <li>Setelah ↑ (A), pola berlanjut ke ↓ (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> ↓.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 22 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 22</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (1, 2, 3).</li>
+            <li>The full pattern: (1, 2, 3), (1, 2, 3), (1, ...).</li>
+            <li>The last item seen is 1.</li>
+            <li>After 1 (A), the pattern continues to 2 (B).</li>
+            <li>After 2 (B), the pattern continues to 3 (C).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> 2, 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 22</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (1, 2, 3).</li>
+            <li>Pola lengkapnya: (1, 2, 3), (1, 2, 3), (1, ...).</li>
+            <li>Urutan terakhir yang terlihat adalah 1.</li>
+            <li>Setelah 1 (A), pola berlanjut ke 2 (B).</li>
+            <li>Setelah 2 (B), pola berlanjut ke 3 (C).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> 2, 3.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 23 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 23</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Finding the nth item in an A-B-C-C pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (A, B, C, C). This unit has 4 letters.</li>
+            <li>We want to find the 13th letter.</li>
+            <li>Let's find how many full units are in 13.
+                <br>Unit 1: (A, B, C, C) - 4 letters
+                <br>Unit 2: (A, B, C, C) - 8 letters
+                <br>Unit 3: (A, B, C, C) - 12 letters
+            </li>
+            <li>We have reached the 12th letter (which is C). We need the 13th letter.</li>
+            <li>The 13th letter is the first letter in the next unit. The first letter is A.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The 13th letter is A.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 23</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menemukan elemen ke-n (nth item) dalam pola A-B-C-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (A, B, C, C). Unit ini memiliki 4 huruf.</li>
+            <li>Kita ingin mencari huruf ke-13.</li>
+            <li>Mari kita cari berapa banyak unit penuh yang ada di 13.
+                <br>Unit 1: (A, B, C, C) - 4 huruf
+                <br>Unit 2: (A, B, C, C) - 8 huruf
+                <br>Unit 3: (A, B, C, C) - 12 huruf
+            </li>
+            <li>Kita sudah sampai di huruf ke-12 (yaitu C). Kita butuh huruf ke-13.</li>
+            <li>Huruf ke-13 adalah huruf pertama di unit berikutnya. Huruf pertama adalah A.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Huruf ke-13 adalah A.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 24 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 24</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-B repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (P, Q, Q).</li>
+            <li>The full pattern: (P, Q, Q), (P, Q, Q), (P, ...).</li>
+            <li>The last item seen is P.</li>
+            <li>After P (A), the pattern continues to Q (B).</li>
+            <li>After Q (B), the pattern continues to Q (B) again.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> Q, Q.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 24</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-B.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (P, Q, Q).</li>
+            <li>Pola lengkapnya: (P, Q, Q), (P, Q, Q), (P, ...).</li>
+            <li>Urutan terakhir yang terlihat adalah P.</li>
+            <li>Setelah P (A), pola berlanjut ke Q (B).</li>
+            <li>Setelah Q (B), pola berlanjut ke Q (B) lagi.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Q, Q.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 25 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 25</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-A-B repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (Circle, Circle, Triangle).</li>
+            <li>This pattern is repeated.</li>
+            <li>(Circle, Circle, Triangle), (Circle, Circle, Triangle), (Circle, ___ , Triangle).</li>
+            <li>We can see that the missing item is the second element of the pattern unit. The second element is Circle.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> Circle.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 25</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-A-B.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (Lingkaran, Lingkaran, Segitiga).</li>
+            <li>Pola ini diulang-ulang.</li>
+            <li>(Lingkaran, Lingkaran, Segitiga), (Lingkaran, Lingkaran, Segitiga), (Lingkaran, ___ , Segitiga).</li>
+            <li>Kita bisa lihat bahwa yang hilang adalah elemen kedua dari unit pola. Elemen kedua adalah Lingkaran.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Circle (Lingkaran).</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 26 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 26</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>This is a combined pattern, but the core unit is (Number, Letter).</li>
+            <li>The number pattern: 1, 2, 3, ... (adds 1). After 3 comes 4.</li>
+            <li>The letter pattern: A, B, C, ... (next letter). After C comes D.</li>
+            <li>So, (1, A), (2, B), (3, C), ...</li>
+            <li>The next pair is (4, D).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> 4, D.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 26</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Ini adalah pola gabungan, tapi unit intinya adalah (Angka, Huruf).</li>
+            <li>Pola angka: 1, 2, 3, ... (bertambah 1). Setelah 3 adalah 4.</li>
+            <li>Pola huruf: A, B, C, ... (huruf berikutnya). Setelah C adalah D.</li>
+            <li>Jadi, (1, A), (2, B), (3, C), ...</li>
+            <li>Pasangan berikutnya adalah (4, D).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> 4, D.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 27 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 27</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B repeating pattern that affects position.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of movement is (Forward 3, Backward 1).</li>
+            <li>Movement 1 (Forward 3): Caterpillar is at position 3. ($0 + 3 = 3$)</li>
+            <li>Movement 2 (Backward 1): Caterpillar is at position 2. ($3 - 1 = 2$)</li>
+            <li>Movement 3 (Forward 3): Caterpillar is at position 5. ($2 + 3 = 5$)</li>
+            <li>Movement 4 (Backward 1): Caterpillar is at position 4. ($5 - 1 = 4$)</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> The caterpillar is at 4 cm.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 27</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B yang memengaruhi posisi.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti gerakan adalah (Maju 3, Mundur 1).</li>
+            <li>Gerakan 1 (Maju 3): Ulat di posisi 3. ($0 + 3 = 3$)</li>
+            <li>Gerakan 2 (Mundur 1): Ulat di posisi 2. ($3 - 1 = 2$)</li>
+            <li>Gerakan 3 (Maju 3): Ulat di posisi 5. ($2 + 3 = 5$)</li>
+            <li>Gerakan 4 (Mundur 1): Ulat di posisi 4. ($5 - 1 = 4$)</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> Ulat ada di posisi 4 cm.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 28 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 28</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-C repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (10, 20, 30).</li>
+            <li>The full pattern: (10, 20, 30), (10, 20, 30), ...</li>
+            <li>The last item seen is 10.</li>
+            <li>After 10 (A), the pattern continues to 20 (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> 20.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 28</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (10, 20, 30).</li>
+            <li>Pola lengkapnya: (10, 20, 30), (10, 20, 30), ...</li>
+            <li>Urutan terakhir yang terlihat adalah 10.</li>
+            <li>Setelah 10 (A), pola berlanjut ke 20 (B).</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> 20.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 29 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 29</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> Finding the nth item in an A-B-C pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (△, ◻, O). This unit has 3 shapes.</li>
+            <li>We want to find the 11th shape.</li>
+            <li>Let's find how many full units are in 11.
+                <br>3 (Unit 1) + 3 (Unit 2) + 3 (Unit 3) = 9.
+            </li>
+            <li>The 9th shape is O (the last element of the unit).</li>
+            <li>The 10th shape is the first element of the next unit: △.</li>
+            <li>The 11th shape is the second element of the next unit: ◻.</li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> ◻ (Square).</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 29</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Menemukan elemen ke-n (nth item) dalam pola A-B-C.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (△, ◻, O). Unit ini memiliki 3 bentuk.</li>
+            <li>Kita ingin mencari bentuk ke-11.</li>
+            <li>Mari kita cari berapa banyak unit penuh yang ada di 11.
+                <br>3 (Unit 1) + 3 (Unit 2) + 3 (Unit 3) = 9.
+            </li>
+            <li>Bentuk ke-9 adalah O (elemen terakhir unit).</li>
+            <li>Bentuk ke-10 adalah elemen pertama unit berikutnya: △.</li>
+            <li>Bentuk ke-11 adalah elemen kedua unit berikutnya: ◻.</li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> ◻ (Kotak/Square).</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+    <!-- Pembahasan 30 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Solution for Question 30</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Concept:</strong> A-B-B-C-D-D repeating pattern.</p>
+          </div>
+          <p class="steps-title">Solution Steps:</p>
+          <ol class="solution-points">
+            <li>The core unit of this pattern is (G, H, H, I, J, J).</li>
+            <li>This pattern is repeated: (G, H, H, I, J, J), (G, H, H, I, J, J), ...</li>
+            <li>Let's look at the missing part: G, H, ___ , I, ___ , J</li>
+            <li>If we compare this to the core unit:
+                <br>G -> G
+                <br>H -> H
+                <br>H -> ___ (First blank is H)
+                <br>I -> I
+                <br>J -> ___ (Second blank is J)
+                <br>J -> J
+            </li>
+          </ol>
+          <div class="final-answer"><strong>Final Answer:</strong> H, J.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+    <section class="page">
+      <div class="content-wrapper">
+        <h2>Pembahasan untuk Soal 30</h2>
+        <div class="solution-detail">
+          <div class="concept">
+            <p><strong>Konsep:</strong> Pola berulang A-B-B-C-D-D.</p>
+          </div>
+          <p class="steps-title">Langkah Penyelesaian:</p>
+          <ol class="solution-points">
+            <li>Unit inti dari pola ini adalah (G, H, H, I, J, J).</li>
+            <li>Pola ini diulang-ulang: (G, H, H, I, J, J), (G, H, H, I, J, J), ...</li>
+            <li>Mari kita lihat bagian yang hilang: G, H, ___ , I, ___ , J</li>
+            <li>Jika kita bandingkan dengan unit inti:
+                <br>G -> G
+                <br>H -> H
+                <br>H -> ___ (Yang hilang pertama adalah H)
+                <br>I -> I
+                <br>J -> ___ (Yang hilang kedua adalah J)
+                <br>J -> J
+            </li>
+          </ol>
+          <div class="final-answer"><strong>Jawaban Akhir:</strong> H, J.</div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Latihan Soal Kompetisi G1-2 - Aritmetika & Pola</b>
+        <i>Dokumen ini dibuat untuk penggunaan pribadi.</i>
+      </footer>
+    </section>
+
+</body>
+</html>
