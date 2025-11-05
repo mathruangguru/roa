@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika - Barisan & Basis Bilangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .image-desc {
+        background-color: #f9fafb; /* gray-50 */
+        border: 1px dashed #d1d5db; /* gray-300 */
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+        border-radius: 0.25rem;
+        font-style: italic;
+        color: #4b5563; /* gray-600 */
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step p {
+        margin: 0.2rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .solution-step div {
+        padding-left: 1.5rem; /* Indent calculation */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 10
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 5-6 | Geometric Sequence & Number Base System
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Soal Latihan (Competition Problems)</h2>
+
+          <!-- TOPIK 1: BARISAN GEOMETRI -->
+          <h3 class="topic-title">
+            Bagian 1: Barisan Geometri (Geometric Sequences)
+          </h3>
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> A geometric sequence starts with 3, 6, 12, ...
+              What is the 7th term of this sequence?
+              <br /><br />
+              Sebuah barisan geometri dimulai dengan 3, 6, 12, ... Berapakah suku
+              ke-7 dari barisan ini?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> In a geometric sequence, the 3rd term is 20 and
+              the 5th term is 80. What is the first term ($U_1$)?
+              <br /><br />
+              Dalam sebuah barisan geometri, suku ke-3 adalah 20 dan suku ke-5
+              adalah 80. Berapakah suku pertamanya ($U_1$)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> A geometric sequence has a second term ($U_2$)
+              of 100 and a common ratio ($r$) of $\frac{1}{2}$. What is the 6th
+              term ($U_6$)?
+              <br /><br />
+              Sebuah barisan geometri memiliki suku kedua ($U_2$) 100 dan rasio
+              ($r$) $\frac{1}{2}$. Berapakah suku ke-6 ($U_6$)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> Find the sum of the first 5 terms of the
+              geometric sequence: 2, 6, 18, ...
+              <br /><br />
+              Tentukan jumlah 5 suku pertama dari barisan geometri: 2, 6, 18, ...
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> A colony of bacteria triples its population
+              every hour. If the colony starts with 50 bacteria, how many
+              bacteria will there be after 4 hours?
+              <br /><br />
+              Sebuah koloni bakteri melipatgandakan populasinya menjadi tiga kali
+              lipat setiap jam. Jika koloni dimulai dengan 50 bakteri, berapa
+              banyak bakteri yang akan ada setelah 4 jam?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> Find the sum of the first 8 terms of the
+              sequence 80, 40, 20, ...
+              <br /><br />
+              Tentukan jumlah 8 suku pertama dari barisan 80, 40, 20, ...
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> A ball is dropped from a height of 10 meters.
+              Each time it hits the ground, it bounces back to $\frac{3}{4}$ of
+              its previous height. What is the total distance the ball has
+              traveled when it hits the ground for the 3rd time?
+              <br /><br />
+              Sebuah bola dijatuhkan dari ketinggian 10 meter. Setiap kali
+              memantul, bola kembali ke $\frac{3}{4}$ dari ketinggian
+              sebelumnya. Berapakah total jarak yang ditempuh bola saat menyentuh
+              tanah untuk ke-3 kalinya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> In a geometric sequence, the 3rd term is 18
+              and the common ratio is 3. What is the sum of the first 4 terms
+              ($S_4$)?
+              <br /><br />
+              Pada barisan geometri, suku ke-3 adalah 18 dan rasionya adalah 3.
+              Berapakah jumlah 4 suku pertamanya ($S_4$)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> Budi saves money in a geometric pattern. He
+              saves \$2 on Monday, \$6 on Tuesday, \$18 on Wednesday, and so on.
+              How much money has he saved in total after 5 days (Monday to
+              Friday)?
+              <br /><br />
+              Budi menabung dengan pola geometri. Ia menabung \$2 pada hari Senin,
+              \$6 pada hari Selasa, \$18 pada hari Rabu, dan seterusnya. Berapa
+              total uang yang telah ia tabung setelah 5 hari (Senin sampai
+              Jumat)?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> A pattern of figures is made of squares.
+              Figure 1 has a side length of 64 cm. Figure 2 is a square whose
+              side length is half of Figure 1. Figure 3 is a square whose side
+              length is half of Figure 2, and so on. What is the side length of
+              Figure 6?
+              <br /><br />
+              Sebuah pola bangun terbuat dari persegi. Bangun 1 memiliki panjang
+              sisi 64 cm. Bangun 2 adalah persegi dengan sisi setengah dari
+              Bangun 1. Bangun 3 adalah persegi dengan sisi setengah dari Bangun
+              2, dan seterusnya. Berapa panjang sisi Bangun 6?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> What is the last digit of the 20th term of the
+              sequence 3, 9, 27, 81, ...?
+              <br /><br />
+              Berapakah angka satuan dari suku ke-20 pada barisan 3, 9, 27, 81,
+              ...?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> The sum of the first 2 terms of a geometric
+              sequence is 12, and the sum of the first 4 terms is 120. If the
+              common ratio is positive, what is the first term?
+              <br /><br />
+              Jumlah 2 suku pertama barisan geometri adalah 12, dan jumlah 4 suku
+              pertama adalah 120. Jika rasio bernilai positif, berapakah suku
+              pertamanya?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> The first term of a geometric sequence is 5
+              and the common ratio is 2. Which term ($n$) of the sequence is
+              equal to 320?
+              <br /><br />
+              Suku pertama barisan geometri adalah 5 dan rasionya adalah 2. Suku
+              keberapa ($n$) dari barisan tersebut yang nilainya 320?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> A square has an area of 256 cm². A second
+              square is drawn by connecting the midpoints of the sides of the
+              first square. A third square is drawn by connecting the midpoints
+              of the second square. What is the area of the 4th square?
+              <br /><br />
+              Sebuah persegi memiliki luas 256 cm². Persegi kedua digambar dengan
+              menghubungkan titik-titik tengah sisi persegi pertama. Persegi
+              ketiga digambar dengan menghubungkan titik-titik tengah persegi
+              kedua. Berapakah luas persegi ke-4?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> A piece of paper is 0.1 mm thick. It is
+              folded in half, then folded in half again, and so on. What is the
+              total thickness after 10 folds?
+              <br /><br />
+              Selembar kertas memiliki tebal 0,1 mm. Kertas itu dilipat menjadi
+              dua, lalu dilipat lagi, dan seterusnya. Berapakah tebal totalnya
+              setelah 10 kali lipatan?
+            </p>
+          </div>
+
+          <!-- TOPIK 2: BASIS BILANGAN -->
+          <h3 class="topic-title">
+            Bagian 2: Sistem Basis Bilangan (Number Base Systems)
+          </h3>
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> Convert the binary number $1011_2$ to base 10.
+              <br /><br />
+              Ubahlah bilangan biner $1011_2$ ke basis 10.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> Convert the base 5 number $234_5$ to base 10.
+              <br /><br />
+              Ubahlah bilangan basis 5, $234_5$, ke basis 10.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> Convert the base 10 number $29_{10}$ to base
+              2 (binary).
+              <br /><br />
+              Ubahlah bilangan basis 10, $29_{10}$, ke basis 2 (biner).
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> Convert the base 10 number $53_{10}$ to base
+              5.
+              <br /><br />
+              Ubahlah bilangan basis 10, $53_{10}$, ke basis 5.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> Calculate $110_2 + 101_2$. Give your answer
+              in base 2.
+              <br /><br />
+              Hitunglah $110_2 + 101_2$. Berikan jawabanmu dalam basis 2.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> Calculate $34_5 + 13_5$. Give your answer in
+              base 5.
+              <br /><br />
+              Hitunglah $34_5 + 13_5$. Berikan jawabanmu dalam basis 5.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> If $13_b = 10_{10}$, what is the value of the
+              base $b$?
+              <br /><br />
+              Jika $13_b = 10_{10}$, berapakah nilai dari basis $b$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> If $43_x = 27_{10}$, what is the value of the
+              base $x$?
+              <br /><br />
+              Jika $43_x = 27_{10}$, berapakah nilai dari basis $x$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> What is the number that comes immediately
+              after $144_5$ in base 5?
+              <br /><br />
+              Berapakah bilangan yang tepat setelah $144_5$ dalam basis 5?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> What is the largest 3-digit number in base 4?
+              Convert this number to base 10.
+              <br /><br />
+              Berapakah bilangan 3-digit terbesar dalam basis 4? Ubahlah bilangan
+              ini ke basis 10.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> Calculate $202_3 - 110_3$. Give your answer
+              in base 3.
+              <br /><br />
+              Hitunglah $202_3 - 110_3$. Berikan jawabanmu dalam basis 3.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> A number is written as $25_b$. If the number
+              is doubled, the result is $52_b$. Find the base $b$.
+              <br /><br />
+              Sebuah bilangan ditulis $25_b$. Jika bilangan tersebut dikali dua,
+              hasilnya adalah $52_b$. Tentukan basis $b$.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> Which number is larger: $1000_3$ or $100_5$?
+              <br /><br />
+              Manakah bilangan yang lebih besar: $1000_3$ atau $100_5$?
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> Convert the base 10 number $100_{10}$ to base
+              7.
+              <br /><br />
+              Ubahlah bilangan basis 10, $100_{10}$, ke basis 7.
+            </p>
+          </div>
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> The number 2024 is written in base 10. What
+              is the last digit of this number when written in base 5?
+              <br /><br />
+              Bilangan 2024 ditulis dalam basis 10. Berapakah digit terakhir dari
+              bilangan ini jika ditulis dalam basis 5?
+            </p>
+          </div>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Pembahasan (Solutions)</h2>
+
+          <!-- SOLUSI TOPIK 1 -->
+          <h3 class="topic-title">
+            Solutions for Part 1: Geometric Sequences
+          </h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find the common ratio ($r$) by dividing
+                a term by the previous term. Use the formula for the $n$-th term:
+                $U_n = a \times r^{n-1}$, where $a$ is the first term.
+                <br /><br />
+                <strong>Konsep:</strong> Cari rasio ($r$) dengan membagi suatu
+                suku dengan suku sebelumnya. Gunakan rumus suku ke-$n$: $U_n = a
+                \times r^{n-1}$, di mana $a$ adalah suku pertama.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• The first term ($a$) is 3.</p>
+                <p>• The common ratio ($r$) is $6 \div 3 = 2$.</p>
+                <p>• We need to find the 7th term ($U_7$), so $n=7$.</p>
+                <p>• Use the formula $U_n = a \times r^{n-1}$:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_7 &= 3 \times (2)^{7-1} \\
+                    &= 3 \times 2^6 \\
+                    &= 3 \times 64 \\
+                    &= 192
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Suku pertama ($a$) adalah 3.</p>
+                <p>• Rasio ($r$) adalah $6 \div 3 = 2$.</p>
+                <p>• Kita mencari suku ke-7 ($U_7$), jadi $n=7$.</p>
+                <p>• Gunakan rumus $U_n = a \times r^{n-1}$:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_7 &= 3 \times (2)^{7-1} \\
+                    &= 3 \times 2^6 \\
+                    &= 3 \times 64 \\
+                    &= 192
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 192.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> $U_5 = U_3 \times r^2$. We can find $r$
+                first, then work backward to find $a$.
+                <br /><br />
+                <strong>Konsep:</strong> $U_5 = U_3 \times r^2$. Kita bisa cari
+                $r$ terlebih dahulu, lalu hitung mundur untuk mencari $a$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• We know $U_n = ar^{n-1}$.</p>
+                <p>• $U_3 = ar^2 = 20$</p>
+                <p>• $U_5 = ar^4 = 80$</p>
+                <p>• Divide $U_5$ by $U_3$: $\frac{ar^4}{ar^2} = \frac{80}{20}$</p>
+                <p>• This simplifies to $r^2 = 4$. So, $r = 2$ (ratio is
+                  usually positive in such problems unless stated).</p>
+                <p>• Now use $U_3$: $a \times (2)^2 = 20 \implies a \times 4 =
+                  20$.</p>
+                <p>• $a = 20 \div 4 = 5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Kita tahu $U_n = ar^{n-1}$.</p>
+                <p>• $U_3 = ar^2 = 20$</p>
+                <p>• $U_5 = ar^4 = 80$</p>
+                <p>• Bagi $U_5$ dengan $U_3$: $\frac{ar^4}{ar^2} = \frac{80}{20}$</p>
+                <p>• Ini menjadi $r^2 = 4$. Jadi, $r = 2$ (rasio biasanya
+                  positif jika tidak disebutkan).</p>
+                <p>• Sekarang gunakan $U_3$: $a \times (2)^2 = 20 \implies a
+                  \times 4 = 20$.</p>
+                <p>• $a = 20 \div 4 = 5$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 5.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> First, find the first term ($a$) using
+                $U_2$. Then, use $a$ and $r$ to find $U_6$.
+                <br /><br />
+                <strong>Konsep:</strong> Pertama, cari suku pertama ($a$)
+                menggunakan $U_2$. Lalu, gunakan $a$ dan $r$ untuk mencari $U_6$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• We know $U_2 = a \times r^{2-1} = a \times r$.</p>
+                <p>• $100 = a \times (\frac{1}{2})$.</p>
+                <p>• $a = 100 \times 2 = 200$.</p>
+                <p>• Now find $U_6$ using $a=200$ and $r=\frac{1}{2}$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_6 &= 200 \times (\frac{1}{2})^{6-1} \\
+                    &= 200 \times (\frac{1}{2})^5 \\
+                    &= 200 \times \frac{1}{32} \\
+                    &= \frac{200}{32} = \frac{100}{16} = \frac{50}{8} =
+                    \frac{25}{4} = 6.25
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Kita tahu $U_2 = a \times r^{2-1} = a \times r$.</p>
+                <p>• $100 = a \times (\frac{1}{2})$.</p>
+                <p>• $a = 100 \times 2 = 200$.</p>
+                <p>• Sekarang cari $U_6$ menggunakan $a=200$ dan $r=\frac{1}{2}$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_6 &= 200 \times (\frac{1}{2})^{6-1} \\
+                    &= 200 \times (\frac{1}{2})^5 \\
+                    &= 200 \times \frac{1}{32} \\
+                    &= \frac{200}{32} = \frac{100}{16} = \frac{50}{8} =
+                    \frac{25}{4} = 6,25
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 6.25 (or 25/4).</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use the sum formula for $r > 1$: $S_n =
+                \frac{a(r^n - 1)}{r - 1}$.
+                <br /><br />
+                <strong>Konsep:</strong> Gunakan rumus jumlah untuk $r > 1$: $S_n
+                = \frac{a(r^n - 1)}{r - 1}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• First term $a = 2$.</p>
+                <p>• Common ratio $r = 6 \div 2 = 3$.</p>
+                <p>• Number of terms $n = 5$.</p>
+                <p>• Use the sum formula:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_5 &= \frac{2(3^5 - 1)}{3 - 1} \\
+                    &= \frac{2(243 - 1)}{2} \\
+                    &= 242
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Suku pertama $a = 2$.</p>
+                <p>• Rasio $r = 6 \div 2 = 3$.</p>
+                <p>• Banyak suku $n = 5$.</p>
+                <p>• Gunakan rumus jumlah:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_5 &= \frac{2(3^5 - 1)}{3 - 1} \\
+                    &= \frac{2(243 - 1)}{2} \\
+                    &= 242
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 242.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is finding a term $U_n$. "Starts
+                with 50" is $U_0$ or $a$. "After 1 hour" is $U_1$. "After 4
+                hours" is $U_4$.
+                <br /><br />
+                <strong>Konsep:</strong> Ini mencari suku $U_n$. "Dimulai dengan
+                50" adalah $U_0$ atau $a$. "Setelah 1 jam" adalah $U_1$. "Setelah
+                4 jam" adalah $U_4$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Let the initial population be $a = 50$.</p>
+                <p>• The ratio $r = 3$ (triples).</p>
+                <p>• Population after 1 hour: $U_1 = 50 \times 3 = 150$.</p>
+                <p>• Population after 2 hours: $U_2 = 150 \times 3 = 450$.</p>
+                <p>• Population after 3 hours: $U_3 = 450 \times 3 = 1350$.</p>
+                <p>• Population after 4 hours: $U_4 = 1350 \times 3 = 4050$.</p>
+                <p>• Using the formula (note $n=4$): $U_n = a \times r^n$ (if
+                  $a$ is $U_0$).</p>
+                <p>• $U_4 = 50 \times 3^4 = 50 \times 81 = 4050$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Misal populasi awal $a = 50$.</p>
+                <p>• Rasio $r = 3$ (tiga kali lipat).</p>
+                <p>• Populasi setelah 1 jam: $U_1 = 50 \times 3 = 150$.</p>
+                <p>• Populasi setelah 2 jam: $U_2 = 150 \times 3 = 450$.</p>
+                <p>• Populasi setelah 3 jam: $U_3 = 450 \times 3 = 1350$.</p>
+                <p>• Populasi setelah 4 jam: $U_4 = 1350 \times 3 = 4050$.</p>
+                <p>• Pakai rumus (catatan $n=4$): $U_n = a \times r^n$ (jika $a$
+                  adalah $U_0$).</p>
+                <p>• $U_4 = 50 \times 3^4 = 50 \times 81 = 4050$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 4050.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The ratio $r < 1$. Use the sum
+                formula: $S_n = \frac{a(1 - r^n)}{1 - r}$.
+                <br /><br />
+                <strong>Konsep:</strong> Rasio $r < 1$. Gunakan rumus jumlah:
+                $S_n = \frac{a(1 - r^n)}{1 - r}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• First term $a = 80$.</p>
+                <p>• Common ratio $r = 40 \div 80 = \frac{1}{2}$.</p>
+                <p>• Number of terms $n = 8$.</p>
+                <p>• Use the sum formula:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_8 &= \frac{80(1 - (\frac{1}{2})^8)}{1 - \frac{1}{2}} \\
+                    &= \frac{80(1 - \frac{1}{256})}{\frac{1}{2}} \\
+                    &= 160 \times (1 - \frac{1}{256}) \\
+                    &= 160 \times (\frac{255}{256}) \\
+                    &= \frac{160 \times 255}{256} = \frac{5 \times 255}{8} =
+                    \frac{1275}{8}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Suku pertama $a = 80$.</p>
+                <p>• Rasio $r = 40 \div 80 = \frac{1}{2}$.</p>
+                <p>• Banyak suku $n = 8$.</p>
+                <p>• Gunakan rumus jumlah:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_8 &= \frac{80(1 - (\frac{1}{2})^8)}{1 - \frac{1}{2}} \\
+                    &= \frac{80(1 - \frac{1}{256})}{\frac{1}{2}} \\
+                    &= 160 \times (1 - \frac{1}{256}) \\
+                    &= 160 \times (\frac{255}{256}) \\
+                    &= \frac{160 \times 255}{256} = \frac{5 \times 255}{8} =
+                    \frac{1275}{8}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">
+              Answer / Jawaban: 1275/8 (or 159.375).
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The total distance is the first drop +
+                (first bounce up + first bounce down) + (second bounce up +
+                second bounce down).
+                <br /><br />
+                <strong>Konsep:</strong> Total jarak adalah jatuhan pertama +
+                (pantulan pertama naik + pantulan pertama turun) + (pantulan
+                kedua naik + pantulan kedua turun).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• 1st Drop: 10 m. (Hits ground 1st time)</p>
+                <p>• 1st Bounce (Up): $10 \times \frac{3}{4} = 7.5$ m.</p>
+                <p>• 1st Bounce (Down): 7.5 m. (Hits ground 2nd time)</p>
+                <p>• 2nd Bounce (Up): $7.5 \times \frac{3}{4} = 5.625$ m.</p>
+                <p>• 2nd Bounce (Down): 5.625 m. (Hits ground 3rd time)</p>
+                <p>• Total distance = $10 + (7.5 + 7.5) + (5.625 + 5.625)$</p>
+                <p>• Total = $10 + 15 + 11.25 = 36.25$ m.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Jatuh ke-1: 10 m. (Menyentuh tanah ke-1)</p>
+                <p>• Pantulan ke-1 (Naik): $10 \times \frac{3}{4} = 7,5$ m.</p>
+                <p>• Pantulan ke-1 (Turun): 7,5 m. (Menyentuh tanah ke-2)</p>
+                <p>• Pantulan ke-2 (Naik): $7,5 \times \frac{3}{4} = 5,625$ m.</p>
+                <p>• Pantulan ke-2 (Turun): 5,625 m. (Menyentuh tanah ke-3)</p>
+                <p>• Total jarak = $10 + (7,5 + 7,5) + (5,625 + 5,625)$</p>
+                <p>• Total = $10 + 15 + 11,25 = 36,25$ m.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 36.25 m.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Find $a$ using $U_3$. Then use $a$ and
+                $r$ to find $S_4$.
+                <br /><br />
+                <strong>Konsep:</strong> Cari $a$ menggunakan $U_3$. Lalu gunakan
+                $a$ dan $r$ untuk mencari $S_4$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $U_3 = ar^2 = 18$.</p>
+                <p>• $a \times (3)^2 = 18 \implies a \times 9 = 18$.</p>
+                <p>• First term $a = 2$.</p>
+                <p>• Now find $S_4$ with $a=2, r=3, n=4$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_4 &= \frac{2(3^4 - 1)}{3 - 1} \\
+                    &= \frac{2(81 - 1)}{2} \\
+                    &= 80
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $U_3 = ar^2 = 18$.</p>
+                <p>• $a \times (3)^2 = 18 \implies a \times 9 = 18$.</p>
+                <p>• Suku pertama $a = 2$.</p>
+                <p>• Sekarang cari $S_4$ dengan $a=2, r=3, n=4$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_4 &= \frac{2(3^4 - 1)}{3 - 1} \\
+                    &= \frac{2(81 - 1)}{2} \\
+                    &= 80
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 80.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a geometric sum $S_n$. Find $a,
+                r, n$ and use the sum formula.
+                <br /><br />
+                <strong>Konsep:</strong> Ini adalah jumlah geometri $S_n$. Cari
+                $a, r, n$ dan gunakan rumus jumlah.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• The sequence is 2, 6, 18, ...</p>
+                <p>• First term $a = 2$.</p>
+                <p>• Common ratio $r = 6 \div 2 = 3$.</p>
+                <p>• Number of days (terms) $n = 5$.</p>
+                <p>• Find the sum $S_5$:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_5 &= \frac{2(3^5 - 1)}{3 - 1} \\
+                    &= \frac{2(243 - 1)}{2} \\
+                    &= 242
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Barisannya adalah 2, 6, 18, ...</p>
+                <p>• Suku pertama $a = 2$.</p>
+                <p>• Rasio $r = 6 \div 2 = 3$.</p>
+                <p>• Jumlah hari (suku) $n = 5$.</p>
+                <p>• Cari jumlah $S_5$:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    S_5 &= \frac{2(3^5 - 1)}{3 - 1} \\
+                    &= \frac{2(243 - 1)}{2} \\
+                    &= 242
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $242.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The side lengths form a geometric
+                sequence. Find the 6th term, $U_6$.
+                <br /><br />
+                <strong>Konsep:</strong> Panjang sisi membentuk barisan geometri.
+                Cari suku ke-6, $U_6$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• The sequence of side lengths is 64, 32, 16, ...</p>
+                <p>• First term $a = 64$.</p>
+                <p>• Common ratio $r = 32 \div 64 = \frac{1}{2}$.</p>
+                <p>• We need to find the 6th term ($n=6$).</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_6 &= 64 \times (\frac{1}{2})^{6-1} \\
+                    &= 64 \times (\frac{1}{2})^5 \\
+                    &= 64 \times \frac{1}{32} \\
+                    &= 2
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Barisan panjang sisinya adalah 64, 32, 16, ...</p>
+                <p>• Suku pertama $a = 64$.</p>
+                <p>• Rasio $r = 32 \div 64 = \frac{1}{2}$.</p>
+                <p>• Kita perlu mencari suku ke-6 ($n=6$).</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    U_6 &= 64 \times (\frac{1}{2})^{6-1} \\
+                    &= 64 \times (\frac{1}{2})^5 \\
+                    &= 64 \times \frac{1}{32} \\
+                    &= 2
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 2 cm.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The last digits of powers of 3 follow
+                a repeating pattern (cycle). Find the pattern and apply it to the
+                20th term.
+                <br /><br />
+                <strong>Konsep:</strong> Angka satuan dari perpangkatan 3
+                mengikuti pola berulang (siklus). Cari polanya dan terapkan pada
+                suku ke-20.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• The sequence is $3^1, 3^2, 3^3, 3^4, ...$</p>
+                <p>• Look at the last digits:</p>
+                <p>$U_1 = 3 \implies$ last digit is 3</p>
+                <p>$U_2 = 9 \implies$ last digit is 9</p>
+                <p>$U_3 = 27 \implies$ last digit is 7</p>
+                <p>$U_4 = 81 \implies$ last digit is 1</p>
+                <p>$U_5 = 243 \implies$ last digit is 3</p>
+                <p>• The pattern of last digits is 3, 9, 7, 1 (repeats every 4
+                  terms).</p>
+                <p>• We want the 20th term. Divide 20 by the cycle length (4):
+                  $20 \div 4 = 5$ with a remainder of 0.</p>
+                <p>• A remainder of 0 means it's the 4th item in the pattern.</p>
+                <p>• The 4th item in the pattern is 1.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Barisannya adalah $3^1, 3^2, 3^3, 3^4, ...$</p>
+                <p>• Lihat angka satuannya:</p>
+                <p>$U_1 = 3 \implies$ angka satuan 3</p>
+                <p>$U_2 = 9 \implies$ angka satuan 9</p>
+                <p>$U_3 = 27 \implies$ angka satuan 7</p>
+                <p>$U_4 = 81 \implies$ angka satuan 1</p>
+                <p>$U_5 = 243 \implies$ angka satuan 3</p>
+                <p>• Pola angka satuannya adalah 3, 9, 7, 1 (berulang setiap 4
+                  suku).</p>
+                <p>• Kita ingin suku ke-20. Bagi 20 dengan panjang siklus (4):
+                  $20 \div 4 = 5$ sisa 0.</p>
+                <p>• Sisa 0 berarti itu adalah item ke-4 dalam pola.</p>
+                <p>• Item ke-4 dalam pola adalah 1.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 1.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Set up two equations using the sum
+                formula and solve them. $S_2 = a + ar$. $S_4 = a + ar + ar^2 +
+                ar^3$.
+                <br /><br />
+                <strong>Konsep:</strong> Buat dua persamaan menggunakan rumus
+                jumlah dan selesaikan. $S_2 = a + ar$. $S_4 = a + ar + ar^2 +
+                ar^3$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $S_2 = a(1+r) = 12$</p>
+                <p>• $S_4 = \frac{a(r^4-1)}{r-1} = \frac{a(r^2-1)(r^2+1)}{r-1} =
+                  a(r+1)(r^2+1) = 120$</p>
+                <p>• We can substitute $a(1+r)$ from the first equation into the
+                  second:</p>
+                <p>• $(12)(r^2+1) = 120$</p>
+                <p>• $r^2 + 1 = 10 \implies r^2 = 9$.</p>
+                <p>• Since $r$ is positive, $r = 3$.</p>
+                <p>• Sub back into $S_2$: $a(1+3) = 12 \implies 4a = 12 \implies
+                  a = 3$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $S_2 = a(1+r) = 12$</p>
+                <p>• $S_4 = \frac{a(r^4-1)}{r-1} = \frac{a(r^2-1)(r^2+1)}{r-1} =
+                  a(r+1)(r^2+1) = 120$</p>
+                <p>• Kita bisa substitusi $a(1+r)$ dari persamaan pertama ke
+                  kedua:</p>
+                <p>• $(12)(r^2+1) = 120$</p>
+                <p>• $r^2 + 1 = 10 \implies r^2 = 9$.</p>
+                <p>• Karena $r$ positif, $r = 3$.</p>
+                <p>• Substitusi kembali ke $S_2$: $a(1+3) = 12 \implies 4a = 12
+                  \implies a = 3$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 3.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Set $U_n = 320$ in the formula $U_n =
+                ar^{n-1}$ and solve for $n$.
+                <br /><br />
+                <strong>Konsep:</strong> Atur $U_n = 320$ dalam rumus $U_n =
+                ar^{n-1}$ dan cari $n$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $a = 5$, $r = 2$. We want $U_n = 320$.</p>
+                <p>• $5 \times (2)^{n-1} = 320$</p>
+                <p>• $2^{n-1} = 320 \div 5$</p>
+                <p>• $2^{n-1} = 64$</p>
+                <p>• We know $2^6 = 64$.</p>
+                <p>• So, $n-1 = 6$.</p>
+                <p>• $n = 7$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $a = 5$, $r = 2$. Kita ingin $U_n = 320$.</p>
+                <p>• $5 \times (2)^{n-1} = 320$</p>
+                <p>• $2^{n-1} = 320 \div 5$</p>
+                <p>• $2^{n-1} = 64$</p>
+                <p>• Kita tahu $2^6 = 64$.</p>
+                <p>• Jadi, $n-1 = 6$.</p>
+                <p>• $n = 7$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 7.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When connecting midpoints, the new
+                square's area is exactly half of the previous square's area. This
+                forms a geometric sequence of areas.
+                <br /><br />
+                <strong>Konsep:</strong> Saat menghubungkan titik tengah, luas
+                persegi baru adalah tepat setengah dari luas persegi sebelumnya.
+                Ini membentuk barisan geometri pada luas.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Area of 1st square: $A_1 = 256$.</p>
+                <p>• The sequence of areas is a geometric sequence with $a =
+                  256$ and $r = \frac{1}{2}$.</p>
+                <p>• Area of 2nd square: $A_2 = 256 \times \frac{1}{2} = 128$.</p>
+                <p>• Area of 3rd square: $A_3 = 128 \times \frac{1}{2} = 64$.</p>
+                <p>• Area of 4th square: $A_4 = 64 \times \frac{1}{2} = 32$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Luas persegi ke-1: $A_1 = 256$.</p>
+                <p>• Barisan luasnya adalah barisan geometri dengan $a = 256$
+                  dan $r = \frac{1}{2}$.</p>
+                <p>• Luas persegi ke-2: $A_2 = 256 \times \frac{1}{2} = 128$.</p>
+                <p>• Luas persegi ke-3: $A_3 = 128 \times \frac{1}{2} = 64$.</p>
+                <p>• Luas persegi ke-4: $A_4 = 64 \times \frac{1}{2} = 32$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 32 cm².</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Each fold doubles the thickness. This
+                is a geometric sequence.
+                <br /><br />
+                <strong>Konsep:</strong> Setiap lipatan menggandakan ketebalan.
+                Ini adalah barisan geometri.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Initial thickness (0 folds): $U_0 = 0.1$ mm.</p>
+                <p>• Thickness after 1 fold: $U_1 = 0.1 \times 2$.</p>
+                <p>• Thickness after 2 folds: $U_2 = 0.1 \times 2 \times 2 = 0.1
+                  \times 2^2$.</p>
+                <p>• Thickness after 10 folds: $U_{10} = 0.1 \times 2^{10}$.</p>
+                <p>• We know $2^{10} = 1024$.</p>
+                <p>• Thickness = $0.1 \times 1024 = 102.4$ mm.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Tebal awal (0 lipatan): $U_0 = 0,1$ mm.</p>
+                <p>• Tebal setelah 1 lipatan: $U_1 = 0,1 \times 2$.</p>
+                <p>• Tebal setelah 2 lipatan: $U_2 = 0,1 \times 2 \times 2 = 0,1
+                  \times 2^2$.</p>
+                <p>• Tebal setelah 10 lipatan: $U_{10} = 0,1 \times 2^{10}$.</p>
+                <p>• Kita tahu $2^{10} = 1024$.</p>
+                <p>• Tebal = $0,1 \times 1024 = 102,4$ mm.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 102.4 mm.</div>
+          </div>
+
+          <!-- SOLUSI TOPIK 2 -->
+          <h3 class="topic-title">
+            Solutions for Part 2: Number Base Systems
+          </h3>
+
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert from base $b$ to base 10 by
+                multiplying each digit by $b$ raised to the power of its place
+                value.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah dari basis $b$ ke basis 10 dengan
+                mengalikan setiap digit dengan $b$ pangkat nilai tempatnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>$1011_2$ has 4 digits. The place values (from right) are
+                  $2^0, 2^1, 2^2, 2^3$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    1011_2 &= (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) +
+                    (1 \times 2^0) \\
+                    &= (1 \times 8) + (0 \times 4) + (1 \times 2) + (1 \times 1)
+                    \\
+                    &= 8 + 0 + 2 + 1 \\
+                    &= 11_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>$1011_2$ punya 4 digit. Nilai tempatnya (dari kanan) adalah
+                  $2^0, 2^1, 2^2, 2^3$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    1011_2 &= (1 \times 2^3) + (0 \times 2^2) + (1 \times 2^1) +
+                    (1 \times 2^0) \\
+                    &= (1 \times 8) + (0 \times 4) + (1 \times 2) + (1 \times 1)
+                    \\
+                    &= 8 + 0 + 2 + 1 \\
+                    &= 11_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 11.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert from base 5 to base 10 using
+                place values $5^0, 5^1, 5^2, ...$
+                <br /><br />
+                <strong>Konsep:</strong> Ubah dari basis 5 ke basis 10
+                menggunakan nilai tempat $5^0, 5^1, 5^2, ...$
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>The place values (from right) are $5^0, 5^1, 5^2$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    234_5 &= (2 \times 5^2) + (3 \times 5^1) + (4 \times 5^0) \\
+                    &= (2 \times 25) + (3 \times 5) + (4 \times 1) \\
+                    &= 50 + 15 + 4 \\
+                    &= 69_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>Nilai tempatnya (dari kanan) adalah $5^0, 5^1, 5^2$.</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    234_5 &= (2 \times 5^2) + (3 \times 5^1) + (4 \times 5^0) \\
+                    &= (2 \times 25) + (3 \times 5) + (4 \times 1) \\
+                    &= 50 + 15 + 4 \\
+                    &= 69_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 69.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert from base 10 to base 2 by
+                repeatedly dividing by 2 and recording the remainders.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah dari basis 10 ke basis 2 dengan
+                membagi berulang kali dengan 2 dan mencatat sisanya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $29 \div 2 = 14$ remainder 1</p>
+                <p>• $14 \div 2 = 7$ remainder 0</p>
+                <p>• $7 \div 2 = 3$ remainder 1</p>
+                <p>• $3 \div 2 = 1$ remainder 1</p>
+                <p>• $1 \div 2 = 0$ remainder 1</p>
+                <p>• Read the remainders from bottom to top: $11101_2$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $29 \div 2 = 14$ sisa 1</p>
+                <p>• $14 \div 2 = 7$ sisa 0</p>
+                <p>• $7 \div 2 = 3$ sisa 1</p>
+                <p>• $3 \div 2 = 1$ sisa 1</p>
+                <p>• $1 \div 2 = 0$ sisa 1</p>
+                <p>• Baca sisa dari bawah ke atas: $11101_2$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $11101_2$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert from base 10 to base 5 by
+                repeatedly dividing by 5 and recording the remainders.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah dari basis 10 ke basis 5 dengan
+                membagi berulang kali dengan 5 dan mencatat sisanya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $53 \div 5 = 10$ remainder 3</p>
+                <p>• $10 \div 5 = 2$ remainder 0</p>
+                <p>• $2 \div 5 = 0$ remainder 2</p>
+                <p>• Read the remainders from bottom to top: $203_5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $53 \div 5 = 10$ sisa 3</p>
+                <p>• $10 \div 5 = 2$ sisa 0</p>
+                <p>• $2 \div 5 = 0$ sisa 2</p>
+                <p>• Baca sisa dari bawah ke atas: $203_5$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $203_5$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Add the numbers using binary addition
+                rules (1+0=1, 1+1=0 carry 1).
+                <br /><br />
+                <strong>Konsep:</strong> Jumlahkan bilangan menggunakan aturan
+                penjumlahan biner (1+0=1, 1+1=0 simpan 1).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Align the numbers:</p>
+                <p>  110</p>
+                <p>+ 101</p>
+                <p>-----</p>
+                <p>• Right column: $0 + 1 = 1$.</p>
+                <p>• Middle column: $1 + 0 = 1$.</p>
+                <p>• Left column: $1 + 1 = 10$ (0, carry 1).</p>
+                <p>• Result: $1011_2$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Sejajarkan bilangannya:</p>
+                <p>  110</p>
+                <p>+ 101</p>
+                <p>-----</p>
+                <p>• Kolom kanan: $0 + 1 = 1$.</p>
+                <p>• Kolom tengah: $1 + 0 = 1$.</p>
+                <p>• Kolom kiri: $1 + 1 = 10$ (tulis 0, simpan 1).</p>
+                <p>• Hasil: $1011_2$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $1011_2$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Add using base 5 rules. If a sum is 5
+                or more, divide by 5, write the remainder, and carry the
+                quotient.
+                <br /><br />
+                <strong>Konsep:</strong> Jumlahkan pakai aturan basis 5. Jika
+                jumlahnya 5 atau lebih, bagi 5, tulis sisanya, dan simpan hasil
+                baginya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Align the numbers:</p>
+                <p>  34</p>
+                <p>+ 13</p>
+                <p>----</p>
+                <p>• Right column: $4 + 3 = 7$. $7 \div 5 = 1$ remainder 2. Write
+                  2, carry 1.</p>
+                <p>• Left column: $3 + 1 + (\text{carry 1}) = 5$. $5 \div 5 = 1$
+                  remainder 0. Write 0, carry 1.</p>
+                <p>• Result: $102_5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Sejajarkan bilangannya:</p>
+                <p>  34</p>
+                <p>+ 13</p>
+                <p>----</p>
+                <p>• Kolom kanan: $4 + 3 = 7$. $7 \div 5 = 1$ sisa 2. Tulis 2,
+                  simpan 1.</p>
+                <p>• Kolom kiri: $3 + 1 + (\text{simpanan 1}) = 5$. $5 \div 5 =
+                  1$ sisa 0. Tulis 0, simpan 1.</p>
+                <p>• Hasil: $102_5$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $102_5$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert the base $b$ number to a base
+                10 expression and set it equal to 10.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah bilangan basis $b$ ke ekspresi
+                basis 10 dan samakan dengan 10.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $13_b = (1 \times b^1) + (3 \times b^0)$</p>
+                <p>• $13_b = b + 3$</p>
+                <p>• Set this equal to 10: $b + 3 = 10$.</p>
+                <p>• Solve for $b$: $b = 7$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $13_b = (1 \times b^1) + (3 \times b^0)$</p>
+                <p>• $13_b = b + 3$</p>
+                <p>• Samakan dengan 10: $b + 3 = 10$.</p>
+                <p>• Cari $b$: $b = 7$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 7.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert $43_x$ to a base 10 expression
+                and set it equal to 27.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah $43_x$ ke ekspresi basis 10 dan
+                samakan dengan 27.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $43_x = (4 \times x^1) + (3 \times x^0)$</p>
+                <p>• $43_x = 4x + 3$</p>
+                <p>• Set this equal to 27: $4x + 3 = 27$.</p>
+                <p>• $4x = 24$.</p>
+                <p>• $x = 6$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $43_x = (4 \times x^1) + (3 \times x^0)$</p>
+                <p>• $43_x = 4x + 3$</p>
+                <p>• Samakan dengan 27: $4x + 3 = 27$.</p>
+                <p>• $4x = 24$.</p>
+                <p>• $x = 6$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 6.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is like asking what is after 144
+                in base 10. We just add 1, using base 5 addition rules.
+                <br /><br />
+                <strong>Konsep:</strong> Ini seperti bertanya angka setelah 144
+                di basis 10. Kita hanya perlu tambah 1, menggunakan aturan
+                penjumlahan basis 5.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• We calculate $144_5 + 1_5$.</p>
+                <p>  144</p>
+                <p>+   1</p>
+                <p>-----</p>
+                <p>• Right column: $4 + 1 = 5$. $5 \div 5 = 1$ remainder 0. Write
+                  0, carry 1.</p>
+                <p>• Middle column: $4 + (\text{carry 1}) = 5$. $5 \div 5 = 1$
+                  remainder 0. Write 0, carry 1.</p>
+                <p>• Left column: $1 + (\text{carry 1}) = 2$.</p>
+                <p>• Result: $200_5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Kita hitung $144_5 + 1_5$.</p>
+                <p>  144</p>
+                <p>+   1</p>
+                <p>-----</p>
+                <p>• Kolom kanan: $4 + 1 = 5$. $5 \div 5 = 1$ sisa 0. Tulis 0,
+                  simpan 1.</p>
+                <p>• Kolom tengah: $4 + (\text{simpanan 1}) = 5$. $5 \div 5 =
+                  1$ sisa 0. Tulis 0, simpan 1.</p>
+                <p>• Kolom kiri: $1 + (\text{simpanan 1}) = 2$.</p>
+                <p>• Hasil: $200_5$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $200_5$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The largest digit in base 4 is 3. The
+                largest 3-digit number is $333_4$. Then, convert to base 10.
+                <br /><br />
+                <strong>Konsep:</strong> Digit terbesar di basis 4 adalah 3.
+                Bilangan 3-digit terbesar adalah $333_4$. Lalu, ubah ke basis
+                10.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• The largest 3-digit number in base 4 is $333_4$.</p>
+                <p>• Convert $333_4$ to base 10:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    333_4 &= (3 \times 4^2) + (3 \times 4^1) + (3 \times 4^0) \\
+                    &= (3 \times 16) + (3 \times 4) + (3 \times 1) \\
+                    &= 48 + 12 + 3 \\
+                    &= 63_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Bilangan 3-digit terbesar di basis 4 adalah $333_4$.</p>
+                <p>• Ubah $333_4$ ke basis 10:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    333_4 &= (3 \times 4^2) + (3 \times 4^1) + (3 \times 4^0) \\
+                    &= (3 \times 16) + (3 \times 4) + (3 \times 1) \\
+                    &= 48 + 12 + 3 \\
+                    &= 63_{10}
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 63.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Subtract using base 3 rules, which
+                involves "borrowing" 3 from the next place value.
+                <br /><br />
+                <strong>Konsep:</strong> Kurangkan pakai aturan basis 3, yang
+                melibatkan "meminjam" 3 dari nilai tempat berikutnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Align the numbers:</p>
+                <p>  202</p>
+                <p>- 110</p>
+                <p>-----</p>
+                <p>• Right column: $2 - 0 = 2$.</p>
+                <p>• Middle column: $0 - 1$. Need to borrow. Borrow from 2
+                  (becomes 1), the 0 becomes 3.</p>
+                <p>• Middle column is now $3 - 1 = 2$.</p>
+                <p>• Left column: $1 - 1 = 0$.</p>
+                <p>• Result: $22_3$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Sejajarkan bilangannya:</p>
+                <p>  202</p>
+                <p>- 110</p>
+                <p>-----</p>
+                <p>• Kolom kanan: $2 - 0 = 2$.</p>
+                <p>• Kolom tengah: $0 - 1$. Perlu meminjam. Pinjam 1 dari 2
+                  (jadi 1), angka 0 menjadi 3.</p>
+                <p>• Kolom tengah sekarang $3 - 1 = 2$.</p>
+                <p>• Kolom kiri: $1 - 1 = 0$.</p>
+                <p>• Hasil: $22_3$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $22_3$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert both numbers to base 10
+                expressions involving $b$, set up the equation, and solve for
+                $b$.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah kedua bilangan ke ekspresi basis 10
+                yang mengandung $b$, buat persamaannya, dan cari $b$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Convert $25_b$ to base 10: $(2 \times b) + (5 \times 1) =
+                  2b + 5$.</p>
+                <p>• Convert $52_b$ to base 10: $(5 \times b) + (2 \times 1) =
+                  5b + 2$.</p>
+                <p>• Set up the equation: $2 \times (2b + 5) = 5b + 2$.</p>
+                <p>• Solve the algebra:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    4b + 10 &= 5b + 2 \\
+                    10 - 2 &= 5b - 4b \\
+                    8 &= b
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Ubah $25_b$ ke basis 10: $(2 \times b) + (5 \times 1) = 2b +
+                  5$.</p>
+                <p>• Ubah $52_b$ ke basis 10: $(5 \times b) + (2 \times 1) = 5b +
+                  2$.</p>
+                <p>• Buat persamaan: $2 \times (2b + 5) = 5b + 2$.</p>
+                <p>• Selesaikan aljabarnya:</p>
+                <div>
+                  $
+                  \begin{aligned}
+                    4b + 10 &= 5b + 2 \\
+                    10 - 2 &= 5b - 4b \\
+                    8 &= b
+                  \end{aligned}
+                  $
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 8.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To compare numbers in different bases,
+                convert them both to base 10.
+                <br /><br />
+                <strong>Konsep:</strong> Untuk membandingkan bilangan dalam basis
+                berbeda, ubah keduanya ke basis 10.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• Convert $1000_3$ to base 10:</p>
+                <p>• $(1 \times 3^3) + (0 \times 3^2) + (0 \times 3^1) + (0
+                  \times 3^0) = 27 + 0 + 0 + 0 = 27_{10}$.</p>
+                <p>• Convert $100_5$ to base 10:</p>
+                <p>• $(1 \times 5^2) + (0 \times 5^1) + (0 \times 5^0) = 25 + 0 +
+                  0 = 25_{10}$.</p>
+                <p>• Compare: $27 > 25$.</p>
+                <p>• Therefore, $1000_3$ is larger.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Ubah $1000_3$ ke basis 10:</p>
+                <p>• $(1 \times 3^3) + (0 \times 3^2) + (0 \times 3^1) + (0
+                  \times 3^0) = 27 + 0 + 0 + 0 = 27_{10}$.</p>
+                <p>• Ubah $100_5$ ke basis 10:</p>
+                <p>• $(1 \times 5^2) + (0 \times 5^1) + (0 \times 5^0) = 25 + 0 +
+                  0 = 25_{10}$.</p>
+                <p>• Bandingkan: $27 > 25$.</p>
+                <p>• Jadi, $1000_3$ lebih besar.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $1000_3$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Convert from base 10 to base 7 by
+                repeatedly dividing by 7 and recording the remainders.
+                <br /><br />
+                <strong>Konsep:</strong> Ubah dari basis 10 ke basis 7 dengan
+                membagi berulang kali dengan 7 dan mencatat sisanya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• $100 \div 7 = 14$ remainder 2</p>
+                <p>• $14 \div 7 = 2$ remainder 0</p>
+                <p>• $2 \div 7 = 0$ remainder 2</p>
+                <p>• Read the remainders from bottom to top: $202_7$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• $100 \div 7 = 14$ sisa 2</p>
+                <p>• $14 \div 7 = 2$ sisa 0</p>
+                <p>• $2 \div 7 = 0$ sisa 2</p>
+                <p>• Baca sisa dari bawah ke atas: $202_7$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: $202_7$.</div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The last digit of a number in base $b$
+                is the remainder when the number (in base 10) is divided by $b$.
+                <br /><br />
+                <strong>Konsep:</strong> Digit terakhir dari sebuah bilangan
+                dalam basis $b$ adalah sisa ketika bilangan tersebut (dalam basis
+                10) dibagi dengan $b$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>English Solution:</strong>
+              <div class="solution-step">
+                <p>• We need to find the remainder of $2024 \div 5$.</p>
+                <p>• A number is divisible by 5 if its last digit is 0 or 5.</p>
+                <p>• The last digit of 2024 is 4.</p>
+                <p>• $2024 \div 5 = 404$ with a remainder of 4.</p>
+                <p>• Therefore, the last digit in base 5 is 4.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian (Bahasa Indonesia):</strong>
+              <div class="solution-step">
+                <p>• Kita perlu mencari sisa dari $2024 \div 5$.</p>
+                <p>• Sebuah bilangan habis dibagi 5 jika angka terakhirnya 0
+                  atau 5.</p>
+                <p>• Angka terakhir dari 2024 adalah 4.</p>
+                <p>• $2024 \div 5 = 404$ dengan sisa 4.</p>
+                <p>• Oleh karena itu, digit terakhir dalam basis 5 adalah 4.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer / Jawaban: 4.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
