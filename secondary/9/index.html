@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 9</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto; /* Ensure horizontal scroll for wide content */
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      /* Adjusted style for p inside item-container */
+      .item-container p {
+        line-height: 1.7; /* Adjusted line height slightly for better readability */
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem; /* Reduced margin between paragraphs */
+      }
+      /* Ensure last paragraph in item container has no bottom margin */
+      .item-container > p:last-child {
+        margin-bottom: 0;
+      }
+      /* Style specifically for paragraphs within solution steps for better control */
+      .solution-step p {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+      .solution-step ul {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        list-style-type: disc;
+        list-style-position: inside;
+        padding-left: 0.5rem;
+      }
+      .solution-step ul li {
+        line-height: 1.7;
+        padding-left: 0.5rem;
+        margin-bottom: 0.3rem; /* Space between list items */
+      }
+      .solution-step ul ul {
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
+      }
+      .solution-step ul ul li {
+        padding-left: 1rem;
+        margin-bottom: 0.2rem;
+      }
+      /* Ensure last list item has less or no margin */
+      .solution-step ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      /* Specific styling for p inside concept */
+      .concept p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+      .concept p:last-child {
+        margin-bottom: 0;
+      }
+      .image-desc {
+        background-color: #f8f8f8;
+        border: 1px dashed #ccc;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 4px;
+        font-style: italic;
+        color: #555555;
+        text-align: center;
+        font-size: 10pt;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      }
+      .lang-id {
+        color: #374151; /* gray-700 */
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo"
+          class="mx-auto h-28"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 9
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Kelas 7 - 9 | Barisan, Deret, & Fungsi
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // ### DATA SOAL TAHAP 3 (TOTAL 30 SOAL) ###
+      const questions = [
+        // --- Bagian 1: Barisan & Deret (15 Soal) ---
+        // Q1
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "In an arithmetic sequence, the 5th term is 15 and the 12th term is 36. Find the sum of the first 20 terms.",
+          question_id:
+            "Dalam suatu barisan aritmetika, suku ke-5 adalah 15 dan suku ke-12 adalah 36. Tentukan jumlah 20 suku pertama.",
+          image_desc: null,
+          answer: "630",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> An arithmetic sequence has a general term $u_n = a + (n-1)b$, where $a$ is the first term and $b$ is the common difference. The sum of the first $n$ terms is $S_n = \\frac{n}{2}(2a + (n-1)b)$. We will use the two given terms to form a system of linear equations to find $a$ and $b$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Barisan aritmetika memiliki suku umum $u_n = a + (n-1)b$, di mana $a$ adalah suku pertama dan $b$ adalah beda. Jumlah $n$ suku pertama adalah $S_n = \\frac{n}{2}(2a + (n-1)b)$. Kita akan menggunakan dua suku yang diketahui untuk membentuk sistem persamaan linear untuk mencari $a$ dan $b$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Set up the equations based on the given terms.
+                                    <br/>$u_5 = a + (5-1)b$, so $a + 4b = 15$  (Eq. 1)
+                                    <br/>$u_{12} = a + (12-1)b$, so $a + 11b = 36$ (Eq. 2)
+                                </li>
+                                <li><b>Step 2:</b> Solve the system of equations. Subtract Eq. 1 from Eq. 2 to find $b$.
+                                    <br/>$(a + 11b) - (a + 4b) = 36 - 15$
+                                    <br/>$7b = 21$, which means $b = 3$.
+                                </li>
+                                <li><b>Step 3:</b> Substitute $b=3$ back into Eq. 1 to find $a$.
+                                    <br/>$a + 4(3) = 15$
+                                    <br/>$a + 12 = 15$, so $a = 3$.
+                                </li>
+                                <li><b>Step 4:</b> Now we have $a=3$ and $b=3$. We can find $S_{20}$.
+                                    <br/>$S_n = \\frac{n}{2}(2a + (n-1)b)$
+                                    <br/>$S_{20} = \\frac{20}{2}(2(3) + (20-1)3)$
+                                </li>
+                                <li><b>Step 5:</b> Calculate the sum.
+                                    <br/>$S_{20} = 10(6 + (19)3)$
+                                    <br/>$S_{20} = 10(6 + 57)$
+                                    <br/>$S_{20} = 10(63) = 630$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Buat persamaan berdasarkan suku-suku yang diketahui.
+                                    <br/>$u_5 = a + (5-1)b$, maka $a + 4b = 15$  (Pers. 1)
+                                    <br/>$u_{12} = a + (12-1)b$, maka $a + 11b = 36$ (Pers. 2)
+                                </li>
+                                <li><b>Langkah 2:</b> Selesaikan sistem persamaan. Kurangkan Pers. 1 dari Pers. 2 untuk mencari $b$.
+                                    <br/>$(a + 11b) - (a + 4b) = 36 - 15$
+                                    <br/>$7b = 21$, yang berarti $b = 3$.
+                                </li>
+                                <li><b>Langkah 3:</b> Substitusikan $b=3$ kembali ke Pers. 1 untuk mencari $a$.
+                                    <br/>$a + 4(3) = 15$
+                                    <br/>$a + 12 = 15$, sehingga $a = 3$.
+                                </li>
+                                <li><b>Langkah 4:</b> Sekarang kita punya $a=3$ dan $b=3$. Kita bisa mencari $S_{20}$.
+                                    <br/>$S_n = \\frac{n}{2}(2a + (n-1)b)$
+                                    <br/>$S_{20} = \\frac{20}{2}(2(3) + (20-1)3)$
+                                </li>
+                                <li><b>Langkah 5:</b> Hitung jumlahnya.
+                                    <br/>$S_{20} = 10(6 + (19)3)$
+                                    <br/>$S_{20} = 10(6 + 57)$
+                                    <br/>$S_{20} = 10(63) = 630$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q2
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "In a geometric sequence, the 3rd term is 24 and the 6th term is 192. Find the 10th term.",
+          question_id:
+            "Dalam suatu barisan geometri, suku ke-3 adalah 24 dan suku ke-6 adalah 192. Tentukan suku ke-10.",
+          image_desc: null,
+          answer: "3072",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> A geometric sequence has a general term $u_n = ar^{n-1}$, where $a$ is the first term and $r$ is the common ratio. We will use the two given terms to find $a$ and $r$ by dividing the equations.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Barisan geometri memiliki suku umum $u_n = ar^{n-1}$, di mana $a$ adalah suku pertama dan $r$ adalah rasio. Kita akan menggunakan dua suku yang diketahui untuk mencari $a$ dan $r$ dengan membagi kedua persamaan.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Set up the equations.
+                                    <br/>$u_3 = ar^{(3-1)}$, so $ar^2 = 24$ (Eq. 1)
+                                    <br/>$u_6 = ar^{(6-1)}$, so $ar^5 = 192$ (Eq. 2)
+                                </li>
+                                <li><b>Step 2:</b> Divide Eq. 2 by Eq. 1 to find $r$.
+                                    <br/>$\\frac{ar^5}{ar^2} = \\frac{192}{24}$
+                                    <br/>$r^3 = 8$, so $r = \\sqrt[3]{8} = 2$.
+                                </li>
+                                <li><b>Step 3:</b> Substitute $r=2$ back into Eq. 1 to find $a$.
+                                    <br/>$a(2)^2 = 24$
+                                    <br/>$a(4) = 24$, which means $a = 6$.
+                                </li>
+                                <li><b>Step 4:</b> Now we have $a=6$ and $r=2$. Find the 10th term ($u_{10}$).
+                                    <br/>$u_{10} = ar^{(10-1)} = ar^9$
+                                    <br/>$u_{10} = 6 \\times (2)^9$
+                                </li>
+                                <li><b>Step 5:</b> Calculate the value.
+                                    <br/>$u_{10} = 6 \\times 512$
+                                    <br/>$u_{10} = 3072$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Buat persamaan.
+                                    <br/>$u_3 = ar^{(3-1)}$, maka $ar^2 = 24$ (Pers. 1)
+                                    <br/>$u_6 = ar^{(6-1)}$, maka $ar^5 = 192$ (Pers. 2)
+                                </li>
+                                <li><b>Langkah 2:</b> Bagi Pers. 2 dengan Pers. 1 untuk mencari $r$.
+                                    <br/>$\\frac{ar^5}{ar^2} = \\frac{192}{24}$
+                                    <br/>$r^3 = 8$, sehingga $r = \\sqrt[3]{8} = 2$.
+                                </li>
+                                <li><b>Langkah 3:</b> Substitusikan $r=2$ kembali ke Pers. 1 untuk mencari $a$.
+                                    <br/>$a(2)^2 = 24$
+                                    <br/>$a(4) = 24$, yang berarti $a = 6$.
+                                </li>
+                                <li><b>Langkah 4:</b> Sekarang kita punya $a=6$ dan $r=2$. Cari suku ke-10 ($u_{10}$).
+                                    <br/>$u_{10} = ar^{(10-1)} = ar^9$
+                                    <br/>$u_{10} = 6 \\times (2)^9$
+                                </li>
+                                <li><b>Langkah 5:</b> Hitung nilainya.
+                                    <br/>$u_{10} = 6 \\times 512$
+                                    <br/>$u_{10} = 3072$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q3 (IMAGE URL UPDATED)
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "Small unit squares are arranged to form larger squares in a sequence. The 1st pattern is a $1 \\times 1$ square. The 2nd pattern is a $2 \\times 2$ square. The 3rd pattern is a $3 \\times 3$ square, and so on. How many *new* small squares are added to form the 10th pattern from the 9th pattern?",
+          question_id:
+            "Persegi-persegi satuan kecil disusun membentuk persegi yang lebih besar dalam sebuah barisan. Pola ke-1 adalah persegi $1 \\times 1$. Pola ke-2 adalah persegi $2 \\times 2$. Pola ke-3 adalah persegi $3 \\times 3$, dan seterusnya. Berapa banyak persegi satuan *baru* yang ditambahkan untuk membentuk pola ke-10 dari pola ke-9?",
+          image_url:
+            "https://imgix3.ruangguru.com/assets/miscellaneous/png_sngapw_2636.png",
+          image_desc: null,
+          answer: "19",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The total number of squares in the $n$-th pattern, $u_n$, is $n \\times n = n^2$. The question asks for the number of *new* squares added, which is the difference between the total squares in the 10th pattern and the total squares in the 9th pattern. This is $u_{10} - u_9$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Jumlah total persegi pada pola ke-$n$, $u_n$, adalah $n \\times n = n^2$. Pertanyaan ini menanyakan jumlah persegi *baru* yang ditambahkan, yang merupakan selisih antara total persegi pada pola ke-10 dan total persegi pada pola ke-9. Ini adalah $u_{10} - u_9$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Find the total number of small squares in the 9th pattern ($u_9$).
+                                    <br/>$u_9 = 9 \\times 9 = 81$.
+                                </li>
+                                <li><b>Step 2:</b> Find the total number of small squares in the 10th pattern ($u_{10}$).
+                                    <br/>$u_{10} = 10 \\times 10 = 100$.
+                                </li>
+                                <li><b>Step 3:</b> Find the number of new squares added by subtracting $u_9$ from $u_{10}$.
+                                    <br/>New squares = $u_{10} - u_9 = 100 - 81 = 19$.
+                                </li>
+                                <li><b>Alternative Method (using $d_n = 2n-1$):</b>
+                                    The number of squares added to pattern $n-1$ to get pattern $n$ forms an arithmetic sequence itself:
+                                    <br/>$u_2 - u_1 = 4 - 1 = 3$
+                                    <br/>$u_3 - u_2 = 9 - 4 = 5$
+                                    <br/>$u_4 - u_3 = 16 - 9 = 7$
+                                    <br/>This sequence of differences is $d_n = 2n-1$. We want the new squares for the 10th pattern, so $n=10$.
+                                    <br/>$d_{10} = 2(10) - 1 = 20 - 1 = 19$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Cari jumlah total persegi kecil pada pola ke-9 ($u_9$).
+                                    <br/>$u_9 = 9 \\times 9 = 81$.
+                                </li>
+                                <li><b>Langkah 2:</b> Cari jumlah total persegi kecil pada pola ke-10 ($u_{10}$).
+                                    <br/>$u_{10} = 10 \\times 10 = 100$.
+                                </li>
+                                <li><b>Langkah 3:</b> Cari jumlah persegi baru yang ditambahkan dengan mengurangkan $u_9$ dari $u_{10}$.
+                                    <br/>Persegi baru = $u_{10} - u_9 = 100 - 81 = 19$.
+                                </li>
+                                <li><b>Metode Alternatif (menggunakan $d_n = 2n-1$):</b>
+                                    Jumlah persegi yang ditambahkan ke pola $n-1$ untuk mendapatkan pola $n$ membentuk barisan aritmetika:
+                                    <br/>$u_2 - u_1 = 4 - 1 = 3$
+                                    <br/>$u_3 - u_2 = 9 - 4 = 5$
+                                    <br/>$u_4 - u_3 = 16 - 9 = 7$
+                                    <br/>Barisan selisih ini adalah $d_n = 2n-1$. Kita ingin persegi baru untuk pola ke-10, jadi $n=10$.
+                                    <br/>$d_{10} = 2(10) - 1 = 20 - 1 = 19$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q4
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "A ball is dropped from a height of 10 meters. It bounces back to $\\frac{3}{4}$ of its previous height after each bounce. Find the total distance the ball travels until it comes to rest.",
+          question_id:
+            "Sebuah bola dijatuhkan dari ketinggian 10 meter. Bola memantul kembali $\\frac{3}{4}$ dari ketinggian sebelumnya setelah setiap pantulan. Tentukan total jarak yang ditempuh bola sampai berhenti.",
+          image_desc: null,
+          answer: "70 meters",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This problem involves two parts: the initial drop and the sum of the bounces (up and down). The bounces form an infinite geometric series. The sum of an infinite geometric series $a + ar + ar^2 + ...$ is $S_{\\infty} = \\frac{a}{1-r}$, where $a$ is the first term and $|r| < 1$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Soal ini melibatkan dua bagian: jarak jatuh awal dan jumlah jarak pantulan (naik dan turun). Pantulan membentuk deret geometri tak hingga. Jumlah deret geometri tak hingga $a + ar + ar^2 + ...$ adalah $S_{\\infty} = \\frac{a}{1-r}$, di mana $a$ adalah suku pertama dan $|r| < 1$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> The initial drop is $10$ meters.
+                                </li>
+                                <li><b>Step 2:</b> Calculate the distance of the first bounce (up and down).
+                                    <br/>Height of first bounce = $10 \\times \\frac{3}{4} = 7.5$ meters.
+                                    <br/>Distance traveled for first bounce (up + down) = $7.5 + 7.5 = 15$ meters.
+                                </li>
+                                <li><b>Step 3:</b> Calculate the distance of the second bounce.
+                                    <br/>Height = $7.5 \\times \\frac{3}{4} = 5.625$ meters.
+                                    <br/>Distance (up + down) = $5.625 + 5.625 = 11.25$ meters.
+                                </li>
+                                <li><b>Step 4:</b> The total distance of all bounces (up and down) forms an infinite geometric series: $15 + 11.25 + ...$
+                                    <br/>The first term $a = 15$.
+                                    <br/>The common ratio $r = \\frac{11.25}{15} = \\frac{3}{4}$.
+                                </li>
+                                <li><b>Step 5:</b> Calculate the sum of the distances of all bounces using $S_{\\infty} = \\frac{a}{1-r}$.
+                                    <br/>$S_{bounces} = \\frac{15}{1 - \\frac{3}{4}} = \\frac{15}{\\frac{1}{4}} = 15 \\times 4 = 60$ meters.
+                                </li>
+                                <li><b>Step 6:</b> The total distance traveled is the initial drop plus the sum of all bounces.
+                                    <br/>Total Distance = Initial Drop + $S_{bounces}$
+                                    <br/>Total Distance = $10 + 60 = 70$ meters.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Jarak jatuh awal adalah $10$ meter.
+                                </li>
+                                <li><b>Langkah 2:</b> Hitung jarak pantulan pertama (naik dan turun).
+                                    <br/>Ketinggian pantulan pertama = $10 \\times \\frac{3}{4} = 7.5$ meter.
+                                    <br/>Jarak tempuh pantulan pertama (naik + turun) = $7.5 + 7.5 = 15$ meter.
+                                </li>
+                                <li><b>Langkah 3:</b> Hitung jarak pantulan kedua.
+                                    <br/>Ketinggian = $7.5 \\times \\frac{3}{4} = 5.625$ meter.
+                                    <br/>Jarak (naik + turun) = $5.625 + 5.625 = 11.25$ meter.
+                                </li>
+                                <li><b>Langkah 4:</b> Total jarak semua pantulan (naik dan turun) membentuk deret geometri tak hingga: $15 + 11.25 + ...$
+                                    <br/>Suku pertama $a = 15$.
+                                    <br/>Rasio $r = \\frac{11.25}{15} = \\frac{3}{4}$.
+                                </li>
+                                <li><b>Langkah 5:</b> Hitung jumlah jarak semua pantulan menggunakan $S_{\\infty} = \\frac{a}{1-r}$.
+                                    <br/>$S_{pantulan} = \\frac{15}{1 - \\frac{3}{4}} = \\frac{15}{\\frac{1}{4}} = 15 \\times 4 = 60$ meter.
+                                </li>
+                                <li><b>Langkah 6:</b> Total jarak yang ditempuh adalah jarak jatuh awal ditambah jumlah semua pantulan.
+                                    <br/>Total Jarak = Jarak Awal + $S_{pantulan}$
+                                    <br/>Total Jarak = $10 + 60 = 70$ meter.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q5 (FINAL LATEX FIX)
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "<strong>(Non-Rutin)</strong> Find the sum of the series: $S = \\frac{1}{1 \\times 3} + \\frac{1}{3 \\times 5} + \\frac{1}{5 \\times 7} + \\dots + \\frac{1}{99 \\times 101}$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Tentukan jumlah dari deret: $S = \\frac{1}{1 \\times 3} + \\frac{1}{3 \\times 5} + \\frac{1}{5 \\times 7} + \\dots + \\frac{1}{99 \\times 101}$.",
+          image_desc: null,
+          answer: "50/101",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a telescoping series. Each term can be split into the difference of two fractions using partial fraction decomposition. The general term $\\frac{1}{(2n-1)(2n+1)}$ can be written as $\\frac{A}{2n-1} + \\frac{B}{2n+1}$.
+                            <br/>We can use the identity: $\\frac{1}{a \\times b} = \\frac{1}{b-a} ( \\frac{1}{a} - \\frac{1}{b} )$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah deret teleskopik. Setiap suku dapat dipecah menjadi selisih dua pecahan menggunakan dekomposisi pecahan parsial. Suku umum $\\frac{1}{(2n-1)(2n+1)}$ dapat ditulis sebagai $\\frac{A}{2n-1} + \\frac{B}{2n+1}$.
+                            <br/>Kita bisa gunakan identitas: $\\frac{1}{a \\times b} = \\frac{1}{b-a} ( \\frac{1}{a} - \\frac{1}{b} )$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Look at the general term $\\frac{1}{(2n-1)(2n+1)}$. Let $a = 2n-1$ and $b = 2n+1$. The difference $b-a = (2n+1) - (2n-1) = 2$.</li>
+                                <li><b>Step 2:</b> Apply the partial fraction identity:
+                                    <br/>$\\frac{1}{(2n-1)(2n+1)} = \\frac{1}{2} ( \\frac{1}{2n-1} - \\frac{1}{2n+1} )$.
+                                </li>
+                                <li><b>Step 3:</b> Rewrite the entire sum $S$ using this identity. We can factor out the $\\frac{1}{2}$ from all terms.
+                                    $$ \\begin{aligned} S = \\frac{1}{2} \\Biggl[ \\biggl( \\frac{1}{1} - \\frac{1}{3} \\biggr) & + \\biggl( \\frac{1}{3} - \\frac{1}{5} \\biggr) + \\biggl( \\frac{1}{5} - \\frac{1}{7} \\biggr) \\\\
+                                                        & + \\dots + \\biggl( \\frac{1}{99} - \\frac{1}{101} \\biggr) \\Biggr]
+                                       \\end{aligned} $$
+                                </li>
+                                <li><b>Step 4:</b> Observe the "telescoping" effect. The negative part of one term cancels the positive part of the next term.
+                                    <br/>$-\\frac{1}{3}$ cancels with $+\\frac{1}{3}$.
+                                    <br/>$-\\frac{1}{5}$ cancels with $+\\frac{1}{5}$.
+                                    <br/>This continues until the last term.
+                                </li>
+                                <li><b>Step 5:</b> After all cancellations, only the very first and the very last parts remain.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{1}{1} - \\frac{1}{101} \\right)$.
+                                </li>
+                                <li><b>Step 6:</b> Calculate the final value.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{101}{101} - \\frac{1}{101} \\right)$
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{100}{101} \\right) = \\frac{100}{202} = \\frac{50}{101}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Lihat suku umum $\\frac{1}{(2n-1)(2n+1)}$. Misal $a = 2n-1$ dan $b = 2n+1$. Selisihnya $b-a = (2n+1) - (2n-1) = 2$.</li>
+                                <li><b>Langkah 2:</b> Terapkan identitas pecahan parsial:
+                                    <br/>$\\frac{1}{(2n-1)(2n+1)} = \\frac{1}{2} ( \\frac{1}{2n-1} - \\frac{1}{2n+1} )$.
+                                </li>
+                                <li><b>Langkah 3:</b> Tulis ulang seluruh jumlah $S$ menggunakan identitas ini. Kita bisa faktorkan $\\frac{1}{2}$ keluar dari semua suku.
+                                    $$ \\begin{aligned} S = \\frac{1}{2} \\Biggl[ \\biggl( \\frac{1}{1} - \\frac{1}{3} \\biggr) & + \\biggl( \\frac{1}{3} - \\frac{1}{5} \\biggr) + \\biggl( \\frac{1}{5} - \\frac{1}{7} \\biggr) \\\\
+                                                        & + \\dots + \\biggl( \\frac{1}{99} - \\frac{1}{101} \\biggr) \\Biggr]
+                                       \\end{aligned} $$
+                                </li>
+                                <li><b>Langkah 4:</b> Amati efek "teleskopik". Bagian negatif dari satu suku menghapus bagian positif dari suku berikutnya.
+                                    <br/>$-\\frac{1}{3}$ saling hapus dengan $+\\frac{1}{3}$.
+                                    <br/>$-\\frac{1}{5}$ saling hapus dengan $+\\frac{1}{5}$.
+                                    <br/>Ini berlanjut sampai suku terakhir.
+                                </li>
+                                <li><b>Langkah 5:</b> Setelah semua saling hapus, hanya bagian paling awal dan paling akhir yang tersisa.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{1}{1} - \\frac{1}{101} \\right)$.
+                                </li>
+                                <li><b>Langkah 6:</b> Hitung nilai akhirnya.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{101}{101} - \\frac{1}{101} \\right)$
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{100}{101} \\right) = \\frac{100}{202} = \\frac{50}{101}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q6
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "The sum of three numbers in an arithmetic progression is 18. The sum of their squares is 140. Find the largest number.",
+          question_id:
+            "Jumlah tiga bilangan dalam barisan aritmetika adalah 18. Jumlah kuadratnya adalah 140. Tentukan bilangan terbesar.",
+          image_desc: null,
+          answer: "8",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> When dealing with three terms in an arithmetic progression (AP), it's strategic to represent them as $(a-b)$, $a$, and $(a+b)$. This simplifies the calculations for the sum.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Saat mengerjakan soal tiga suku barisan aritmetika (AP), strategis untuk merepresentasikannya sebagai $(a-b)$, $a$, dan $(a+b)$. Ini menyederhanakan perhitungan untuk jumlahnya.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Let the three numbers be $(a-b)$, $a$, and $(a+b)$.</li>
+                                <li><b>Step 2:</b> Use the sum of the numbers.
+                                    <br/>$(a-b) + a + (a+b) = 18$
+                                    <br/>$3a = 18$, which means $a = 6$.
+                                </li>
+                                <li><b>Step 3:</b> Now we know the numbers are $(6-b)$, $6$, and $(6+b)$. Use the sum of their squares.
+                                    <br/>$(6-b)^2 + 6^2 + (6+b)^2 = 140$
+                                </li>
+                                <li><b>Step 4:</b> Expand the squares.
+                                    <br/>$(36 - 12b + b^2) + 36 + (36 + 12b + b^2) = 140$
+                                </li>
+                                <li><b>Step 5:</b> Simplify the equation. The $-12b$ and $+12b$ cancel out.
+                                    <br/>$36 + 36 + 36 + b^2 + b^2 = 140$
+                                    <br/>$108 + 2b^2 = 140$
+                                </li>
+                                <li><b>Step 6:</b> Solve for $b$.
+                                    <br/>$2b^2 = 140 - 108$
+                                    <br/>$2b^2 = 32$
+                                    <br/>$b^2 = 16$, so $b = 4$ or $b = -4$.
+                                </li>
+                                <li><b>Step 7:</b> Find the numbers.
+                                    <br/>If $a=6$ and $b=4$: The numbers are $(6-4), 6, (6+4)$, which are $2, 6, 8$.
+                                    <br/>If $a=6$ and $b=-4$: The numbers are $(6-(-4)), 6, (6+(-4))$, which are $10, 6, 2$.
+                                    <br/>In both cases, the set of numbers is $\{2, 6, 8\}$. The largest number is 8.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Misalkan ketiga bilangan itu adalah $(a-b)$, $a$, dan $(a+b)$.</li>
+                                <li><b>Langkah 2:</b> Gunakan jumlah ketiga bilangan.
+                                    <br/>$(a-b) + a + (a+b) = 18$
+                                    <br/>$3a = 18$, yang berarti $a = 6$.
+                                </li>
+                                <li><b>Langkah 3:</b> Sekarang kita tahu bilangan-bilangannya adalah $(6-b)$, $6$, dan $(6+b)$. Gunakan jumlah kuadratnya.
+                                    <br/>$(6-b)^2 + 6^2 + (6+b)^2 = 140$
+                                </li>
+                                <li><b>Langkah 4:</b> Jabarkan kuadratnya.
+                                    <br/>$(36 - 12b + b^2) + 36 + (36 + 12b + b^2) = 140$
+                                </li>
+                                <li><b>Langkah 5:</b> Sederhanakan persamaan. Suku $-12b$ dan $+12b$ saling menghapus.
+                                    <br/>$36 + 36 + 36 + b^2 + b^2 = 140$
+                                    <br/>$108 + 2b^2 = 140$
+                                </li>
+                                <li><b>Langkah 6:</b> Selesaikan untuk $b$.
+                                    <br/>$2b^2 = 140 - 108$
+                                    <br/>$2b^2 = 32$
+                                    <br/>$b^2 = 16$, sehingga $b = 4$ atau $b = -4$.
+                                </li>
+                                <li><b>Langkah 7:</b> Tentukan bilangan-bilangannya.
+                                    <br/>Jika $a=6$ dan $b=4$: Bilangannya adalah $(6-4), 6, (6+4)$, yaitu $2, 6, 8$.
+                                    <br/>Jika $a=6$ dan $b=-4$: Bilangannya adalah $(6-(-4)), 6, (6+(-4))$, yaitu $10, 6, 2$.
+                                    <br/>Dalam kedua kasus, himpunan bilangannya adalah $\{2, 6, 8\}$. Bilangan terbesarnya adalah 8.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q7
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "The sum of an infinite geometric series is 12. The sum of its first two terms is 9. Find the common ratio, $r$.",
+          question_id:
+            "Jumlah suatu deret geometri tak hingga adalah 12. Jumlah dua suku pertamanya adalah 9. Tentukan rasio deret tersebut, $r$.",
+          image_desc: null,
+          answer: "0.5 or -0.5 (1/2 or -1/2)",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> Sum of infinite series $S_{\\infty} = \\frac{a}{1-r}$. The first term is $u_1 = a$, and the second term is $u_2 = ar$. The sum of the first two terms is $a + ar = a(1+r)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Jumlah deret tak hingga $S_{\\infty} = \\frac{a}{1-r}$. Suku pertama adalah $u_1 = a$, dan suku kedua adalah $u_2 = ar$. Jumlah dua suku pertama adalah $a + ar = a(1+r)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Set up the two given equations.
+                                    <br/>(1) $S_{\\infty} = \\frac{a}{1-r} = 12$
+                                    <br/>(2) $u_1 + u_2 = a + ar = a(1+r) = 9$
+                                </li>
+                                <li><b>Step 2:</b> Solve for $a$ in both equations.
+                                    <br/>From (1): $a = 12(1-r)$
+                                    <br/>From (2): $a = \\frac{9}{1+r}$
+                                </li>
+                                <li><b>Step 3:</b> Set the two expressions for $a$ equal to each other.
+                                    <br/>$12(1-r) = \\frac{9}{1+r}$
+                                </li>
+                                <li><b>Step 4:</b> Solve for $r$.
+                                    <br/>$12(1-r)(1+r) = 9$
+                                    <br/>$12(1-r^2) = 9$
+                                </li>
+                                <li><b>Step 5:</b> Isolate $r^2$.
+                                    <br/>$1 - r^2 = \\frac{9}{12} = \\frac{3}{4}$
+                                    <br/>$r^2 = 1 - \\frac{3}{4} = \\frac{1}{4}$
+                                </li>
+                                <li><b>Step 6:</b> Take the square root.
+                                    <br/>$r = \\sqrt{\\frac{1}{4}}$ or $r = -\\sqrt{\\frac{1}{4}}$
+                                    <br/>$r = \\frac{1}{2}$ or $r = -\\frac{1}{2}$. Both are valid since $|r| < 1$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Buat dua persamaan yang diberikan.
+                                    <br/>(1) $S_{\\infty} = \\frac{a}{1-r} = 12$
+                                    <br/>(2) $u_1 + u_2 = a + ar = a(1+r) = 9$
+                                </li>
+                                <li><b>Langkah 2:</b> Selesaikan $a$ dari kedua persamaan.
+                                    <br/>Dari (1): $a = 12(1-r)$
+                                    <br/>Dari (2): $a = \\frac{9}{1+r}$
+                                </li>
+                                <li><b>Langkah 3:</b> Samakan kedua ekspresi untuk $a$.
+                                    <br/>$12(1-r) = \\frac{9}{1+r}$
+                                </li>
+                                <li><b>Langkah 4:</b> Selesaikan untuk $r$.
+                                    <br/>$12(1-r)(1+r) = 9$
+                                    <br/>$12(1-r^2) = 9$ (menggunakan identitas selisih dua kuadrat)
+                                </li>
+                                <li><b>Langkah 5:</b> Isolasi $r^2$.
+                                    <br/>$1 - r^2 = \\frac{9}{12} = \\frac{3}{4}$
+                                    <br/>$r^2 = 1 - \\frac{3}{4} = \\frac{1}{4}$
+                                </li>
+                                <li><b>Langkah 6:</b> Ambil akar kuadrat.
+                                    <br/>$r = \\sqrt{\\frac{1}{4}}$ atau $r = -\\sqrt{\\frac{1}{4}}$
+                                    <br/>$r = \\frac{1}{2}$ atau $r = -\\frac{1}{2}$. Keduanya valid karena $|r| < 1$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q8
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "A sequence follows the rule $u_n = 2u_{n-1} + 1$ for $n > 1$. If $u_1 = 2$, what is the value of $u_6$?",
+          question_id:
+            "Sebuah barisan mengikuti aturan $u_n = 2u_{n-1} + 1$ untuk $n > 1$. Jika $u_1 = 2$, berapakah nilai $u_6$?",
+          image_desc: null,
+          answer: "95",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a recurrence relation. To find the $n$-th term, we must calculate all the preceding terms one by one, starting from the given $u_1$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah relasi rekurensi. Untuk mencari suku ke-$n$, kita harus menghitung semua suku sebelumnya satu per satu, dimulai dari $u_1$ yang diberikan.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> We are given $u_1 = 2$.</li>
+                                <li><b>Step 2:</b> Find $u_2$ using $n=2$.
+                                    <br/>$u_2 = 2u_1 + 1 = 2(2) + 1 = 5$.
+                                </li>
+                                <li><b>Step 3:</b> Find $u_3$ using $n=3$.
+                                    <br/>$u_3 = 2u_2 + 1 = 2(5) + 1 = 11$.
+                                </li>
+                                <li><b>Step 4:</b> Find $u_4$ using $n=4$.
+                                    <br/>$u_4 = 2u_3 + 1 = 2(11) + 1 = 23$.
+                                </li>
+                                <li><b>Step 5:</b> Find $u_5$ using $n=5$.
+                                    <br/>$u_5 = 2u_4 + 1 = 2(23) + 1 = 47$.
+                                </li>
+                                <li><b>Step 6:</b> Find $u_6$ using $n=6$.
+                                    <br/>$u_6 = 2u_5 + 1 = 2(47) + 1 = 94 + 1 = 95$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita diberikan $u_1 = 2$.</li>
+                                <li><b>Langkah 2:</b> Cari $u_2$ menggunakan $n=2$.
+                                    <br/>$u_2 = 2u_1 + 1 = 2(2) + 1 = 5$.
+                                </li>
+                                <li><b>Langkah 3:</b> Cari $u_3$ menggunakan $n=3$.
+                                    <br/>$u_3 = 2u_2 + 1 = 2(5) + 1 = 11$.
+                                </li>
+                                <li><b>Langkah 4:</b> Cari $u_4$ menggunakan $n=4$.
+                                    <br/>$u_4 = 2u_3 + 1 = 2(11) + 1 = 23$.
+                                </li>
+                                <li><b>Langkah 5:</b> Cari $u_5$ menggunakan $n=5$.
+                                    <br/>$u_5 = 2u_4 + 1 = 2(23) + 1 = 47$.
+                                </li>
+                                <li><b>Langkah 6:</b> Cari $u_6$ menggunakan $n=6$.
+                                    <br/>$u_6 = 2u_5 + 1 = 2(47) + 1 = 94 + 1 = 95$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q9
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "Find the sum $S = 1 \\times 2 + 2 \\times 3 + 3 \\times 4 + \\dots + 10 \\times 11$.",
+          question_id:
+            "Tentukan jumlah $S = 1 \\times 2 + 2 \\times 3 + 3 \\times 4 + \\dots + 10 \\times 11$.",
+          image_desc: null,
+          answer: "440",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The sum is of the form $\\sum_{k=1}^{n} k(k+1)$. There is a standard formula for this sum: $S_n = \\frac{n(n+1)(n+2)}{3}$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Jumlah ini berbentuk $\\sum_{k=1}^{n} k(k+1)$. Terdapat rumus standar untuk jumlah ini: $S_n = \\frac{n(n+1)(n+2)}{3}$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Identify the form of the sum. Each term is $k(k+1)$.
+                                    <br/>The sum goes from $k=1$ to $n=10$.
+                                </li>
+                                <li><b>Step 2:</b> Apply the formula $S_n = \\frac{n(n+1)(n+2)}{3}$ with $n=10$.
+                                    <br/>$S_{10} = \\frac{10(10+1)(10+2)}{3}$
+                                    <br/>$S_{10} = \\frac{10(11)(12)}{3}$
+                                </li>
+                                <li><b>Step 3:</b> Calculate the value.
+                                    <br/>$S_{10} = \\frac{10 \\times 11 \\times 12}{3} = 10 \\times 11 \\times 4$
+                                    <br/>$S_{10} = 110 \\times 4 = 440$.
+                                </li>
+                                <li><b>Alternative (Derivation):</b>
+                                    <br/>$S = \\sum_{k=1}^{10} (k^2+k) = \\sum_{k=1}^{10} k^2 + \\sum_{k=1}^{10} k$
+                                    <br/>Using $\\sum k^2 = \\frac{n(n+1)(2n+1)}{6}$ and $\\sum k = \\frac{n(n+1)}{2}$:
+                                    <br/>$S = \\frac{10(11)(21)}{6} + \\frac{10(11)}{2}$
+                                    <br/>$S = (5)(11)(7) + (5)(11) = 385 + 55 = 440$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Identifikasi bentuk jumlah. Setiap suku adalah $k(k+1)$.
+                                    <br/>Jumlahnya berlangsung dari $k=1$ hingga $n=10$.
+                                </li>
+                                <li><b>Langkah 2:</b> Terapkan rumus $S_n = \\frac{n(n+1)(n+2)}{3}$ dengan $n=10$.
+                                    <br/>$S_{10} = \\frac{10(10+1)(10+2)}{3}$
+                                    <br/>$S_{10} = \\frac{10(11)(12)}{3}$
+                                </li>
+                                <li><b>Langkah 3:</b> Hitung nilainya.
+                                    <br/>$S_{10} = \\frac{10 \\times 11 \\times 12}{3} = 10 \\times 11 \\times 4$
+                                    <br/>$S_{10} = 110 \\times 4 = 440$.
+                                </li>
+                                <li><b>Alternatif (Penurunan Rumus):</b>
+                                    <br/>$S = \\sum_{k=1}^{10} (k^2+k) = \\sum_{k=1}^{10} k^2 + \\sum_{k=1}^{10} k$
+                                    <br/>Menggunakan $\\sum k^2 = \\frac{n(n+1)(2n+1)}{6}$ dan $\\sum k = \\frac{n(n+1)}{2}$:
+                                    <br/>$S = \\frac{10(11)(21)}{6} + \\frac{10(11)}{2}$
+                                    <br/>$S = (5)(11)(7) + (5)(11) = 385 + 55 = 440$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q10
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "<strong>(Non-Rutin)</strong> Find the exact value of the infinite nested radical: $x = \\sqrt{12 + \\sqrt{12 + \\sqrt{12 + \\dots}}}$",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Tentukan nilai eksak dari akar bersarang tak hingga: $x = \\sqrt{12 + \\sqrt{12 + \\sqrt{12 + \\dots}}}$",
+          image_desc: null,
+          answer: "4",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> Since the expression is infinite, the part of the expression inside the first square root is identical to the whole expression $x$. This allows us to create a quadratic equation.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Karena ekspresi ini tak hingga, bagian ekspresi di dalam akar kuadrat pertama identik dengan keseluruhan ekspresi $x$. Ini memungkinkan kita membuat persamaan kuadrat.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> We are given $x = \\sqrt{12 + \\sqrt{12 + \\dots}}$</li>
+                                <li><b>Step 2:</b> Notice that the part under the first radical is the same as $x$ itself.
+                                    <br/>$x = \\sqrt{12 + x}$
+                                </li>
+                                <li><b>Step 3:</b> Square both sides to eliminate the square root.
+                                    <br/>$x^2 = 12 + x$
+                                </li>
+                                <li><b>Step 4:</b> Rearrange this into a standard quadratic equation (set to zero).
+                                    <br/>$x^2 - x - 12 = 0$
+                                </li>
+                                <li><b>Step 5:</b> Factor the quadratic equation.
+                                    <br/>$(x-4)(x+3) = 0$
+                                </li>
+                                <li><b>Step 6:</b> The possible solutions are $x = 4$ or $x = -3$.
+                                </li>
+                                <li><b>Step 7:</b> Since $x$ is the result of a principal square root, its value must be positive. Therefore, we discard the negative solution.
+                                    <br/>The only valid answer is $x = 4$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita diberikan $x = \\sqrt{12 + \\sqrt{12 + \\dots}}$</li>
+                                <li><b>Langkah 2:</b> Perhatikan bahwa bagian di bawah akar pertama sama dengan $x$ itu sendiri.
+                                    <br/>$x = \\sqrt{12 + x}$
+                                </li>
+                                <li><b>Langkah 3:</b> Kuadratkan kedua sisi untuk menghilangkan akar kuadrat.
+                                    <br/>$x^2 = 12 + x$
+                                </li>
+                                <li><b>Langkah 4:</b> Susun ulang menjadi persamaan kuadrat standar (buat sama dengan nol).
+                                    <br/>$x^2 - x - 12 = 0$
+                                </li>
+                                <li><b>Langkah 5:</b> Faktorkan persamaan kuadrat tersebut.
+                                    <br/>$(x-4)(x+3) = 0$
+                                </li>
+                                <li><b>Langkah 6:</b> Solusi yang mungkin adalah $x = 4$ atau $x = -3$.
+                                </li>
+                                <li><b>Langkah 7:</b> Karena $x$ adalah hasil dari akar kuadrat utama, nilainya harus positif. Oleh karena itu, kita membuang solusi negatif.
+                                    <br/>Satu-satunya jawaban yang valid adalah $x = 4$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // --- Bagian 2: Fungsi & Persamaan Fungsional (15 Soal) ---
+        // Q11
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x) = 2x+1$ and $g(x) = x^2 - 3$. Find the value of $(g \\circ f)(3)$.",
+          question_id:
+            "Diketahui $f(x) = 2x+1$ dan $g(x) = x^2 - 3$. Tentukan nilai dari $(g \\circ f)(3)$.",
+          image_desc: null,
+          answer: "46",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The composition $(g \\circ f)(x)$ means $g(f(x))$. To find $(g \\circ f)(3)$, we first calculate the value of the inner function, $f(3)$, and then plug that result into the outer function, $g(x)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Komposisi $(g \\circ f)(x)$ berarti $g(f(x))$. Untuk mencari $(g \\circ f)(3)$, kita pertama-tama menghitung nilai fungsi dalam, $f(3)$, lalu masukkan hasilnya ke fungsi luar, $g(x)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Find the value of the inner function, $f(3)$.
+                                    <br/>$f(x) = 2x+1$
+                                    <br/>$f(3) = 2(3) + 1 = 6 + 1 = 7$.
+                                </li>
+                                <li><b>Step 2:</b> Use the result from Step 1 (which is 7) as the input for the outer function, $g(x)$.
+                                    <br/>$(g \\circ f)(3) = g(f(3)) = g(7)$.
+                                </li>
+                                <li><b>Step 3:</b> Calculate $g(7)$.
+                                    <br/>$g(x) = x^2 - 3$
+                                    <br/>$g(7) = (7)^2 - 3 = 49 - 3 = 46$.
+                                </li>
+                                <li><b>Step 4:</b> Therefore, $(g \\circ f)(3) = 46$.</li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Cari nilai fungsi dalam, $f(3)$.
+                                    <br/>$f(x) = 2x+1$
+                                    <br/>$f(3) = 2(3) + 1 = 6 + 1 = 7$.
+                                </li>
+                                <li><b>Langkah 2:</b> Gunakan hasil dari Langkah 1 (yaitu 7) sebagai masukan untuk fungsi luar, $g(x)$.
+                                    <br/>$(g \\circ f)(3) = g(f(3)) = g(7)$.
+                                </li>
+                                <li><b>Langkah 3:</b> Hitung $g(7)$.
+                                    <br/>$g(x) = x^2 - 3$
+                                    <br/>$g(7) = (7)^2 - 3 = 49 - 3 = 46$.
+                                </li>
+                                <li><b>Langkah 4:</b> Jadi, $(g \\circ f)(3) = 46$.</li>
+                            </ul>
+                          </div>`,
+        },
+        // Q12
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x) = \\frac{3x - 1}{2x + 5}$, where $x \\neq -\\frac{5}{2}$. Find the value of $f^{-1}(2)$.",
+          question_id:
+            "Diketahui $f(x) = \\frac{3x - 1}{2x + 5}$, di mana $x \\neq -\\frac{5}{2}$. Tentukan nilai dari $f^{-1}(2)$.",
+          image_desc: null,
+          answer: "-11",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The expression $f^{-1}(2) = a$ is equivalent to $f(a) = 2$. Instead of finding the inverse function $f^{-1}(x)$ first, it is much easier to set $f(x) = 2$ and solve for $x$. The value of $x$ we find will be the answer.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ekspresi $f^{-1}(2) = a$ ekuivalen dengan $f(a) = 2$. Daripada mencari fungsi invers $f^{-1}(x)$ terlebih dahulu, jauh lebih mudah untuk mengatur $f(x) = 2$ dan selesaikan untuk $x$. Nilai $x$ yang kita temukan adalah jawabannya.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> We want to find $x$ such that $f(x) = 2$.
+                                    <br/>Set the function equal to 2: $\\frac{3x - 1}{2x + 5} = 2$.
+                                </li>
+                                <li><b>Step 2:</b> Solve for $x$. Multiply both sides by the denominator $(2x + 5)$.
+                                    <br/>$3x - 1 = 2(2x + 5)$
+                                </li>
+                                <li><b>Step 3:</b> Distribute the 2 on the right side.
+                                    <br/>$3x - 1 = 4x + 10$
+                                </li>
+                                <li><b>Step 4:</b> Rearrange the equation to gather $x$ terms on one side and constant terms on the other.
+                                    <br/>Subtract $3x$ from both sides: $-1 = x + 10$
+                                    <br/>Subtract $10$ from both sides: $-1 - 10 = x$
+                                </li>
+                                <li><b>Step 5:</b> Find the final value of $x$.
+                                    <br/>$x = -11$.
+                                </li>
+                                <li><b>Step 6:</b> Since $f(-11) = 2$, by definition $f^{-1}(2) = -11$.</li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita ingin mencari $x$ sehingga $f(x) = 2$.
+                                    <br/>Atur fungsi sama dengan 2: $\\frac{3x - 1}{2x + 5} = 2$.
+                                </li>
+                                <li><b>Langkah 2:</b> Selesaikan untuk $x$. Kalikan kedua sisi dengan penyebut $(2x + 5)$.
+                                    <br/>$3x - 1 = 2(2x + 5)$
+                                </li>
+                                <li><b>Langkah 3:</b> Distribusikan 2 di sisi kanan.
+                                    <br/>$3x - 1 = 4x + 10$
+                                </li>
+                                <li><b>Langkah 4:</b> Susun ulang persamaan untuk mengumpulkan suku $x$ di satu sisi dan suku konstanta di sisi lain.
+                                    <br/>Kurangkan $3x$ dari kedua sisi: $-1 = x + 10$
+                                    <br/>Kurangkan $10$ dari kedua sisi: $-1 - 10 = x$
+                                </li>
+                                <li><b>Langkah 5:</b> Temukan nilai akhir $x$.
+                                    <br/>$x = -11$.
+                                </li>
+                                <li><b>Langkah 6:</b> Karena $f(-11) = 2$, maka menurut definisi $f^{-1}(2) = -11$.</li>
+                            </ul>
+                          </div>`,
+        },
+        // Q13
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x-1) = 2x^2 + 3$. Find the function $f(x)$.",
+          question_id:
+            "Diketahui $f(x-1) = 2x^2 + 3$. Tentukan fungsi $f(x)$.",
+          image_desc: null,
+          answer: "$f(x) = 2x^2 + 4x + 5$",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> To find $f(x)$ from $f(x-1)$, we use a substitution. Let $u = x-1$. Then, solve for $x$ in terms of $u$, which gives $x = u+1$. Substitute this expression for $x$ back into the right side of the equation. Finally, replace $u$ with $x$ to get the function in terms of $x$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Untuk mencari $f(x)$ dari $f(x-1)$, kita gunakan substitusi. Misalkan $u = x-1$. Lalu, selesaikan $x$ dalam $u$, yang menghasilkan $x = u+1$. Substitusikan ekspresi $x$ ini ke sisi kanan persamaan. Terakhir, ganti $u$ dengan $x$ untuk mendapatkan fungsi dalam $x$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Let $u = x-1$.
+                                </li>
+                                <li><b>Step 2:</b> Solve for $x$ in terms of $u$.
+                                    <br/>$x = u+1$.
+                                </li>
+                                <li><b>Step 3:</b> Substitute $u$ for $(x-1)$ on the left side and $(u+1)$ for $x$ on the right side of the given equation.
+                                    <br/>$f(u) = 2(u+1)^2 + 3$.
+                                </li>
+                                <li><b>Step 4:</b> Expand the expression $(u+1)^2$.
+                                    <br/>$(u+1)^2 = u^2 + 2u + 1$.
+                                </li>
+                                <li><b>Step 5:</b> Substitute this expansion back into the function.
+                                    <br/>$f(u) = 2(u^2 + 2u + 1) + 3$.
+                                </li>
+                                <li><b>Step 6:</b> Distribute the 2 and simplify.
+                                    <br/>$f(u) = 2u^2 + 4u + 2 + 3$
+                                    <br/>$f(u) = 2u^2 + 4u + 5$.
+                                </li>
+                                <li><b>Step 7:</b> Since $f(u) = 2u^2 + 4u + 5$, the function $f(x)$ is found by replacing $u$ with $x$.
+                                    <br/>$f(x) = 2x^2 + 4x + 5$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Misalkan $u = x-1$.
+                                </li>
+                                <li><b>Langkah 2:</b> Selesaikan $x$ dalam $u$.
+                                    <br/>$x = u+1$.
+                                </li>
+                                <li><b>Langkah 3:</b> Substitusikan $u$ untuk $(x-1)$ di sisi kiri dan $(u+1)$ untuk $x$ di sisi kanan persamaan yang diberikan.
+                                    <br/>$f(u) = 2(u+1)^2 + 3$.
+                                </li>
+                                <li><b>Langkah 4:</b> Jabarkan ekspresi $(u+1)^2$.
+                                    <br/>$(u+1)^2 = u^2 + 2u + 1$.
+                                </li>
+                                <li><b>Langkah 5:</b> Substitusikan hasil penjabaran ini kembali ke fungsi.
+                                    <br/>$f(u) = 2(u^2 + 2u + 1) + 3$.
+                                </li>
+                                <li><b>Langkah 6:</b> Distribusikan 2 dan sederhanakan.
+                                    <br/>$f(u) = 2u^2 + 4u + 2 + 3$
+                                    <br/>$f(u) = 2u^2 + 4u + 5$.
+                                </li>
+                                <li><b>Langkah 7:</b> Karena $f(u) = 2u^2 + 4u + 5$, fungsi $f(x)$ ditemukan dengan mengganti $u$ dengan $x$.
+                                    <br/>$f(x) = 2x^2 + 4x + 5$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q14
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Let $f(x) = ax^2 + bx + c$. If $f(-2) = 10$, $f(2) = 4$, and $f(0) = 6$, find the value of $f(3)$.",
+          question_id:
+            "Misal $f(x) = ax^2 + bx + c$. Jika $f(-2) = 10$, $f(2) = 4$, dan $f(0) = 6$, tentukan nilai $f(3)$.",
+          image_desc: null,
+          answer: "15/4 or 3.75",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> We are given three points that the quadratic function passes through. We can use these three points to create a system of three linear equations to solve for the coefficients $a$, $b$, and $c$. The point $(0, 6)$ directly gives us the value of $c$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Kita diberi tiga titik yang dilewati oleh fungsi kuadrat. Kita bisa gunakan tiga titik ini untuk membuat sistem tiga persamaan linear untuk menyelesaikan koefisien $a$, $b$, dan $c$. Titik $(0, 6)$ secara langsung memberi kita nilai $c$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Use $f(0) = 6$ to find $c$.
+                                    <br/>$f(0) = a(0)^2 + b(0) + c = 6$, so $c = 6$.
+                                    <br/>The function is $f(x) = ax^2 + bx + 6$.
+                                </li>
+                                <li><b>Step 2:</b> Use $f(2) = 4$ to create an equation for $a$ and $b$.
+                                    <br/>$f(2) = a(2)^2 + b(2) + 6 = 4$
+                                    <br/>$4a + 2b + 6 = 4$, which simplifies to $2a + b = -1$ (Eq. 1)
+                                </li>
+                                <li><b>Step 3:</b> Use $f(-2) = 10$ to create a second equation.
+                                    <br/>$f(-2) = a(-2)^2 + b(-2) + 6 = 10$
+                                    <br/>$4a - 2b + 6 = 10$, which simplifies to $2a - b = 2$ (Eq. 2)
+                                </li>
+                                <li><b>Step 4:</b> Solve the system of equations (Eq. 1 and Eq. 2).
+                                    <br/>Add Eq. 1 and Eq. 2: $(2a + b) + (2a - b) = -1 + 2$, so $4a = 1$, which means $a = \\frac{1}{4}$.
+                                </li>
+                                <li><b>Step 5:</b> Substitute $a = \\frac{1}{4}$ back into Eq. 1.
+                                    <br/>$2(\\frac{1}{4}) + b = -1$, so $\\frac{1}{2} + b = -1$, which means $b = -\\frac{3}{2}$.
+                                </li>
+                                <li><b>Step 6:</b> We have found the function: $f(x) = \\frac{1}{4}x^2 - \\frac{3}{2}x + 6$.
+                                </li>
+                                <li><b>Step 7:</b> Calculate $f(3)$.
+                                    <br/>$f(3) = \\frac{1}{4}(3)^2 - \\frac{3}{2}(3) + 6 = \\frac{9}{4} - \\frac{9}{2} + 6$
+                                    <br/>$f(3) = \\frac{9}{4} - \\frac{18}{4} + \\frac{24}{4} = \\frac{9 - 18 + 24}{4} = \\frac{15}{4}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Gunakan $f(0) = 6$ untuk mencari $c$.
+                                    <br/>$f(0) = a(0)^2 + b(0) + c = 6$, sehingga $c = 6$.
+                                    <br/>Jadi fungsinya $f(x) = ax^2 + bx + 6$.
+                                </li>
+                                <li><b>Langkah 2:</b> Gunakan $f(2) = 4$ untuk membuat persamaan $a$ dan $b$.
+                                    <br/>$f(2) = a(2)^2 + b(2) + 6 = 4$
+                                    <br/>$4a + 2b + 6 = 4$, yang bisa disederhanakan menjadi $2a + b = -1$ (Pers. 1)
+                                </li>
+                                <li><b>Langkah 3:</b> Gunakan $f(-2) = 10$ untuk membuat persamaan kedua.
+                                    <br/>$f(-2) = a(-2)^2 + b(-2) + 6 = 10$
+                                    <br/>$4a - 2b + 6 = 10$, yang bisa disederhanakan menjadi $2a - b = 2$ (Pers. 2)
+                                </li>
+                                <li><b>Langkah 4:</b> Selesaikan sistem persamaan (Pers. 1 dan Pers. 2).
+                                    <br/>Tambahkan Pers. 1 dan Pers. 2: $(2a + b) + (2a - b) = -1 + 2$, didapat $4a = 1$, maka $a = \\frac{1}{4}$.
+                                </li>
+                                <li><b>Langkah 5:</b> Substitusikan $a = \\frac{1}{4}$ kembali ke Pers. 1.
+                                    <br/>$2(\\frac{1}{4}) + b = -1$, didapat $\\frac{1}{2} + b = -1$, sehingga $b = -1 - \\frac{1}{2} = -\\frac{3}{2}$.
+                                </li>
+                                <li><b>Langkah 6:</b> Kita telah menemukan fungsinya: $f(x) = \\frac{1}{4}x^2 - \\frac{3}{2}x + 6$.
+                                </li>
+                                <li><b>Langkah 7:</b> Hitung $f(3)$.
+                                    <br/>$f(3) = \\frac{1}{4}(3)^2 - \\frac{3}{2}(3) + 6 = \\frac{9}{4} - \\frac{9}{2} + 6$
+                                    <br/>$f(3) = \\frac{9}{4} - \\frac{18}{4} + \\frac{24}{4} = \\frac{9 - 18 + 24}{4} = \\frac{15}{4}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q15
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A function $f(x)$ satisfies the equation $f(x) + 2f\\left(\\frac{1}{x}\\right) = 3x$ for all $x \\neq 0$. Find the value of $f(2)$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sebuah fungsi $f(x)$ memenuhi persamaan $f(x) + 2f\\left(\\frac{1}{x}\\right) = 3x$ untuk semua $x \\neq 0$. Tentukan nilai $f(2)$.",
+          image_desc: null,
+          answer: "-1",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a functional equation where the function's value at $x$ is related to its value at $\\frac{1}{x}$. To solve this, we create a system of two equations. First, we use the given equation. Second, we substitute $x$ with $\\frac{1}{x}$ in the original equation to get a new equation. Then we solve the system for $f(x)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah persamaan fungsional di mana nilai fungsi di $x$ terkait dengan nilainya di $\\frac{1}{x}$. Untuk menyelesaikannya, kita membuat sistem dua persamaan. Pertama, kita gunakan persamaan yang diberikan. Kedua, kita substitusi $x$ dengan $\\frac{1}{x}$ di persamaan asli untuk mendapatkan persamaan baru. Lalu kita selesaikan sistem tersebut untuk $f(x)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Write the original equation. We want to find $f(2)$.
+                                    <br/>Let's plug in $x=2$:
+                                    <br/>$f(2) + 2f\\left(\\frac{1}{2}\\right) = 3(2)$, which gives $f(2) + 2f\\left(\\frac{1}{2}\\right) = 6$ (Eq. 1)
+                                </li>
+                                <li><b>Step 2:</b> We have an unknown $f(\\frac{1}{2})$. To find it, let's plug $x = \\frac{1}{2}$ into the original equation.
+                                    <br/>$f\\left(\\frac{1}{2}\\right) + 2f\\left(\\frac{1}{\\frac{1}{2}}\\right) = 3\\left(\\frac{1}{2}\\right)$
+                                    <br/>$f\\left(\\frac{1}{2}\\right) + 2f(2) = \\frac{3}{2}$ (Eq. 2)
+                                </li>
+                                <li><b>Step 3:</b> Now we have a system of two linear equations with two variables, $f(2)$ and $f(\\frac{1}{2})$.
+                                    <br/>(1) $f(2) + 2f\\left(\\frac{1}{2}\\right) = 6$
+                                    <br/>(2) $2f(2) + f\\left(\\frac{1}{2}\\right) = \\frac{3}{2}$
+                                </li>
+                                <li><b>Step 4:</b> Solve the system. Let's isolate $f(\\frac{1}{2})$ from Eq. 2.
+                                    <br/>$f\\left(\\frac{1}{2}\\right) = \\frac{3}{2} - 2f(2)$.
+                                </li>
+                                <li><b>Step 5:</b> Substitute this expression for $f(\\frac{1}{2})$ into Eq. 1 and solve for $f(2)$.
+                                    $$\\begin{aligned} f(2) + 2\\left( \\frac{3}{2} - 2f(2) \\right) &= 6 \\\\ f(2) + 3 - 4f(2) &= 6 \\\\ -3f(2) + 3 &= 6 \\\\ -3f(2) &= 3 \\\\ f(2) &= -1 \\end{aligned}$$
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Tulis persamaan aslinya. Kita ingin mencari $f(2)$.
+                                    <br/>Mari kita masukkan $x=2$:
+                                    <br/>$f(2) + 2f\\left(\\frac{1}{2}\\right) = 3(2)$, didapat $f(2) + 2f\\left(\\frac{1}{2}\\right) = 6$ (Pers. 1)
+                                </li>
+                                <li><b>Langkah 2:</b> Kita memiliki $f(\\frac{1}{2})$ yang tidak diketahui. Untuk menemukannya, mari kita masukkan $x = \\frac{1}{2}$ ke persamaan asli.
+                                    <br/>$f\\left(\\frac{1}{2}\\right) + 2f\\left(\\frac{1}{\\frac{1}{2}}\\right) = 3\\left(\\frac{1}{2}\\right)$
+                                    <br/>$f\\left(\\frac{1}{2}\\right) + 2f(2) = \\frac{3}{2}$ (Pers. 2)
+                                </li>
+                                <li><b>Langkah 3:</b> Sekarang kita punya sistem dua persamaan linear dengan dua variabel, $f(2)$ dan $f(\\frac{1}{2})$.
+                                    <br/>(1) $f(2) + 2f\\left(\\frac{1}{2}\\right) = 6$
+                                    <br/>(2) $2f(2) + f\\left(\\frac{1}{2}\\right) = \\frac{3}{2}$
+                                </li>
+                                <li><b>Langkah 4:</b> Selesaikan sistem. Mari kita isolasi $f(\\frac{1}{2})$ dari Pers. 2.
+                                    <br/>$f\\left(\\frac{1}{2}\\right) = \\frac{3}{2} - 2f(2)$.
+                                </li>
+                                <li><b>Langkah 5:</b> Substitusikan ekspresi untuk $f(\\frac{1}{2})$ ini ke Pers. 1 dan selesaikan untuk $f(2)$.
+                                    $$\\begin{aligned} f(2) + 2\\left( \\frac{3}{2} - 2f(2) \\right) &= 6 \\\\ f(2) + 3 - 4f(2) &= 6 \\\\ -3f(2) + 3 &= 6 \\\\ -3f(2) &= 3 \\\\ f(2) &= -1 \\end{aligned}$$
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q16
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x) = \\frac{x+1}{x-2}$, for $x \\neq 2$. Find the inverse function, $f^{-1}(x)$.",
+          question_id:
+            "Diketahui $f(x) = \\frac{x+1}{x-2}$, untuk $x \\neq 2$. Tentukan fungsi inversnya, $f^{-1}(x)$.",
+          image_desc: null,
+          answer: "$f^{-1}(x) = \\frac{2x+1}{x-1}$",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> To find the inverse function $f^{-1}(x)$, we set $y = f(x)$, then swap $x$ and $y$. Finally, we solve the new equation for $y$. The resulting expression for $y$ is $f^{-1}(x)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Untuk mencari fungsi invers $f^{-1}(x)$, kita atur $y = f(x)$, lalu tukar $x$ dan $y$. Terakhir, kita selesaikan persamaan baru tersebut untuk $y$. Ekspresi $y$ yang dihasilkan adalah $f^{-1}(x)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Let $y = f(x)$.
+                                    <br/>$y = \\frac{x+1}{x-2}$
+                                </li>
+                                <li><b>Step 2:</b> Swap $x$ and $y$.
+                                    <br/>$x = \\frac{y+1}{y-2}$
+                                </li>
+                                <li><b>Step 3:</b> Solve for $y$. Multiply both sides by $(y-2)$.
+                                    <br/>$x(y-2) = y+1$
+                                    <br/>$xy - 2x = y + 1$
+                                </li>
+                                <li><b>Step 4:</b> Gather all terms involving $y$ on one side and all other terms on the other side.
+                                    <br/>$xy - y = 2x + 1$
+                                </li>
+                                <li><b>Step 5:</b> Factor out $y$.
+                                    <br/>$y(x - 1) = 2x + 1$
+                                </li>
+                                <li><b>Step 6:</b> Isolate $y$ by dividing by $(x-1)$.
+                                    <br/>$y = \\frac{2x+1}{x-1}$
+                                </li>
+                                <li><b>Step 7:</b> This new expression for $y$ is the inverse function.
+                                    <br/>$f^{-1}(x) = \\frac{2x+1}{x-1}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Misalkan $y = f(x)$.
+                                    <br/>$y = \\frac{x+1}{x-2}$
+                                </li>
+                                <li><b>Langkah 2:</b> Tukar $x$ dan $y$.
+                                    <br/>$x = \\frac{y+1}{y-2}$
+                                </li>
+                                <li><b>Langkah 3:</b> Selesaikan untuk $y$. Kalikan kedua sisi dengan $(y-2)$.
+                                    <br/>$x(y-2) = y+1$
+                                    <br/>$xy - 2x = y + 1$
+                                </li>
+                                <li><b>Langkah 4:</b> Kumpulkan semua suku yang mengandung $y$ di satu sisi dan suku lainnya di sisi lain.
+                                    <br/>$xy - y = 2x + 1$
+                                </li>
+                                <li><b>Langkah 5:</b> Faktorkan $y$.
+                                    <br/>$y(x - 1) = 2x + 1$
+                                </li>
+                                <li><b>Langkah 6:</b> Isolasi $y$ dengan membagi dengan $(x-1)$.
+                                    <br/>$y = \\frac{2x+1}{x-1}$
+                                </li>
+                                <li><b>Langkah 7:</b> Ekspresi baru untuk $y$ ini adalah fungsi inversnya.
+                                    <br/>$f^{-1}(x) = \\frac{2x+1}{x-1}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q17
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x) = 2x - 3$ and $(f \\circ g)(x) = 6x + 7$. Find the function $g(x)$.",
+          question_id:
+            "Diketahui $f(x) = 2x - 3$ dan $(f \\circ g)(x) = 6x + 7$. Tentukan fungsi $g(x)$.",
+          image_desc: null,
+          answer: "$g(x) = 3x + 5$",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The composition $(f \\circ g)(x)$ means $f(g(x))$. We substitute the entire function $g(x)$ into the variable $x$ of the function $f(x)$, and then solve for $g(x)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Komposisi $(f \\circ g)(x)$ berarti $f(g(x))$. Kita substitusikan seluruh fungsi $g(x)$ ke dalam variabel $x$ dari fungsi $f(x)$, lalu selesaikan untuk $g(x)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Write the definition of the composition.
+                                    <br/>$f(g(x)) = (f \\circ g)(x)$
+                                </li>
+                                <li><b>Step 2:</b> Substitute the known functions.
+                                    <br/>$f(g(x)) = 2(g(x)) - 3$
+                                    <br/>$(f \\circ g)(x) = 6x + 7$
+                                </li>
+                                <li><b>Step 3:</b> Set the two expressions equal to each other.
+                                    <br/>$2(g(x)) - 3 = 6x + 7$
+                                </li>
+                                <li><b>Step 4:</b> Solve for $g(x)$. First, add 3 to both sides.
+                                    <br/>$2(g(x)) = 6x + 10$
+                                </li>
+                                <li><b>Step 5:</b> Divide both sides by 2.
+                                    <br/>$g(x) = \\frac{6x + 10}{2} = 3x + 5$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Tuliskan definisi komposisi.
+                                    <br/>$f(g(x)) = (f \\circ g)(x)$
+                                </li>
+                                <li><b>Langkah 2:</b> Substitusikan fungsi-fungsi yang diketahui.
+                                    <br/>$f(g(x)) = 2(g(x)) - 3$
+                                    <br/>$(f \\circ g)(x) = 6x + 7$
+                                </li>
+                                <li><b>Langkah 3:</b> Samakan kedua ekspresi tersebut.
+                                    <br/>$2(g(x)) - 3 = 6x + 7$
+                                </li>
+                                <li><b>Langkah 4:</b> Selesaikan untuk $g(x)$. Pertama, tambahkan 3 ke kedua sisi.
+                                    <br/>$2(g(x)) = 6x + 10$
+                                </li>
+                                <li><b>Langkah 5:</b> Bagi kedua sisi dengan 2.
+                                    <br/>$g(x) = \\frac{6x + 10}{2} = 3x + 5$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q18
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "A function is defined as $f(x) = \\begin{cases} 2x + 8 & \\text{if } x \\le -2 \\\\ x^2 & \\text{if } -2 < x < 3 \\\\ 10 - x & \\text{if } x \\ge 3 \\end{cases}$. Find the value of $f(-5) + f(0) + f(3)$.",
+          question_id:
+            "Sebuah fungsi didefinisikan sebagai $f(x) = \\begin{cases} 2x + 8 & \\text{jika } x \\le -2 \\\\ x^2 & \\text{jika } -2 < x < 3 \\\\ 10 - x & \\text{jika } x \\ge 3 \\end{cases}$. Tentukan nilai dari $f(-5) + f(0) + f(3)$.",
+          image_desc: null,
+          answer: "5",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a piecewise function. To evaluate the function for a specific input, we must first check which condition (or "piece") the input value satisfies, and then use the corresponding formula.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah fungsi sepotong-sepotong (piecewise). Untuk mengevaluasi fungsi pada masukan tertentu, kita harus periksa dulu kondisi ("potongan") mana yang dipenuhi oleh nilai masukan tersebut, lalu gunakan rumus yang sesuai.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Calculate $f(-5)$.
+                                    <br/>The input $x = -5$ satisfies $x \\le -2$. So, we use the first formula: $f(x) = 2x + 8$.
+                                    <br/>$f(-5) = 2(-5) + 8 = -10 + 8 = -2$.
+                                </li>
+                                <li><b>Step 2:</b> Calculate $f(0)$.
+                                    <br/>The input $x = 0$ satisfies $-2 < x < 3$. So, we use the second formula: $f(x) = x^2$.
+                                    <br/>$f(0) = (0)^2 = 0$.
+                                </li>
+                                <li><b>Step 3:</b> Calculate $f(3)$.
+                                    <br/>The input $x = 3$ satisfies $x \\ge 3$. So, we use the third formula: $f(x) = 10 - x$.
+                                    <br/>$f(3) = 10 - 3 = 7$.
+                                </li>
+                                <li><b>Step 4:</b> Add the results.
+                                    <br/>$f(-5) + f(0) + f(3) = -2 + 0 + 7 = 5$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Hitung $f(-5)$.
+                                    <br/>Masukan $x = -5$ memenuhi $x \\le -2$. Jadi, kita gunakan rumus pertama: $f(x) = 2x + 8$.
+                                    <br/>$f(-5) = 2(-5) + 8 = -10 + 8 = -2$.
+                                </li>
+                                <li><b>Langkah 2:</b> Hitung $f(0)$.
+                                    <br/>Masukan $x = 0$ memenuhi $-2 < x < 3$. Jadi, kita gunakan rumus kedua: $f(x) = x^2$.
+                                    <br/>$f(0) = (0)^2 = 0$.
+                                </li>
+                                <li><b>Langkah 3:</b> Hitung $f(3)$.
+                                    <br/>Masukan $x = 3$ memenuhi $x \\ge 3$. Jadi, kita gunakan rumus ketiga: $f(x) = 10 - x$.
+                                    <br/>$f(3) = 10 - 3 = 7$.
+                                </li>
+                                <li><b>Langkah 4:</b> Jumlahkan hasilnya.
+                                    <br/>$f(-5) + f(0) + f(3) = -2 + 0 + 7 = 5$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q19
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $f(x) = \\frac{9^x}{9^x + 3}$. Find the sum $S = f(\\frac{1}{100}) + f(\\frac{2}{100}) + \\dots + f(\\frac{99}{100})$.",
+          question_id:
+            "Diketahui $f(x) = \\frac{9^x}{9^x + 3}$. Tentukan jumlah $S = f(\\frac{1}{100}) + f(\\frac{2}{100}) + \\dots + f(\\frac{99}{100})$.",
+          image_desc: null,
+          answer: "49.5",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This problem uses a symmetry property of the function $f(x)$. We check if there is a relationship between $f(x)$ and $f(1-x)$. This allows us to pair terms in the sum that add up to a simple constant.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Soal ini menggunakan sifat simetri dari fungsi $f(x)$. Kita periksa apakah ada hubungan antara $f(x)$ dan $f(1-x)$. Ini memungkinkan kita memasangkan suku-suku dalam penjumlahan yang hasilnya adalah konstanta sederhana.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Analyze the function $f(x) = \\frac{9^x}{9^x + 3}$.</li>
+                                <li><b>Step 2:</b> Find the expression for $f(1-x)$.
+                                    <br/>$f(1-x) = \\frac{9^{1-x}}{9^{1-x} + 3} = \\frac{9 \\cdot 9^{-x}}{9 \\cdot 9^{-x} + 3}$
+                                    <br/>Multiply numerator and denominator by $9^x$ to simplify:
+                                    <br/>$f(1-x) = \\frac{(9 \\cdot 9^{-x}) \\cdot 9^x}{(9 \\cdot 9^{-x} + 3) \\cdot 9^x} = \\frac{9}{9 + 3 \\cdot 9^x}$
+                                    <br/>Divide numerator and denominator by 3: $f(1-x) = \\frac{3}{3 + 9^x}$.
+                                </li>
+                                <li><b>Step 3:</b> Add $f(x)$ and $f(1-x)$.
+                                    <br/>$f(x) + f(1-x) = \\frac{9^x}{9^x + 3} + \\frac{3}{9^x + 3} = \\frac{9^x + 3}{9^x + 3} = 1$.
+                                </li>
+                                <li><b>Step 4:</b> Apply this property to the sum $S$. The sum has 99 terms.
+                                    <br/>$S = f(\\frac{1}{100}) + f(\\frac{2}{100}) + \\dots + f(\\frac{49}{100}) + f(\\frac{50}{100}) + f(\\frac{51}{100}) + \\dots + f(\\frac{99}{100})$.
+                                </li>
+                                <li><b>Step 5:</b> Pair the terms.
+                                    <br/>Pair 1: $f(\\frac{1}{100}) + f(\\frac{99}{100}) = f(\\frac{1}{100}) + f(1 - \\frac{1}{100}) = 1$.
+                                    <br/>Pair 2: $f(\\frac{2}{100}) + f(\\frac{98}{100}) = f(\\frac{2}{100}) + f(1 - \\frac{2}{100}) = 1$.
+                                    <br/>...
+                                    <br/>Pair 49: $f(\\frac{49}{100}) + f(\\frac{51}{100}) = f(\\frac{49}{100}) + f(1 - \\frac{49}{100}) = 1$.
+                                </li>
+                                <li><b>Step 6:</b> We have 49 pairs that each sum to 1. There is one term left in the middle: $f(\\frac{50}{100}) = f(\\frac{1}{2})$.
+                                </li>
+                                <li><b>Step 7:</b> Calculate the middle term.
+                                    <br/>$f(\\frac{1}{2}) = \\frac{9^{1/2}}{9^{1/2} + 3} = \\frac{\\sqrt{9}}{\\sqrt{9} + 3} = \\frac{3}{3 + 3} = \\frac{3}{6} = 0.5$.
+                                </li>
+                                <li><b>Step 8:</b> Find the total sum.
+                                    <br/>$S = (49 \\text{ pairs} \\times 1) + f(\\frac{1}{2}) = 49 + 0.5 = 49.5$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Analisis fungsi $f(x) = \\frac{9^x}{9^x + 3}$.</li>
+                                <li><b>Langkah 2:</b> Cari ekspresi untuk $f(1-x)$.
+                                    <br/>$f(1-x) = \\frac{9^{1-x}}{9^{1-x} + 3} = \\frac{9 \\cdot 9^{-x}}{9 \\cdot 9^{-x} + 3}$
+                                    <br/>Kalikan pembilang dan penyebut dengan $9^x$ untuk menyederhanakan:
+                                    <br/>$f(1-x) = \\frac{(9 \\cdot 9^{-x}) \\cdot 9^x}{(9 \\cdot 9^{-x} + 3) \\cdot 9^x} = \\frac{9}{9 + 3 \\cdot 9^x}$
+                                    <br/>Bagi pembilang dan penyebut dengan 3: $f(1-x) = \\frac{3}{3 + 9^x}$.
+                                </li>
+                                <li><b>Langkah 3:</b> Jumlahkan $f(x)$ dan $f(1-x)$.
+                                    <br/>$f(x) + f(1-x) = \\frac{9^x}{9^x + 3} + \\frac{3}{9^x + 3} = \\frac{9^x + 3}{9^x + 3} = 1$.
+                                </li>
+                                <li><b>Langkah 4:</b> Terapkan sifat ini pada jumlah $S$. Jumlah tersebut memiliki 99 suku.
+                                    <br/>$S = f(\\frac{1}{100}) + f(\\frac{2}{100}) + \\dots + f(\\frac{49}{100}) + f(\\frac{50}{100}) + f(\\frac{51}{100}) + \\dots + f(\\frac{99}{100})$.
+                                </li>
+                                <li><b>Langkah 5:</b> Pasangkan suku-sukunya.
+                                    <br/>Pasangan 1: $f(\\frac{1}{100}) + f(\\frac{99}{100}) = f(\\frac{1}{100}) + f(1 - \\frac{1}{100}) = 1$.
+                                    <br/>Pasangan 2: $f(\\frac{2}{100}) + f(\\frac{98}{100}) = f(\\frac{2}{100}) + f(1 - \\frac{2}{100}) = 1$.
+                                    <br/>...
+                                    <br/>Pasangan 49: $f(\\frac{49}{100}) + f(\\frac{51}{100}) = f(\\frac{49}{100}) + f(1 - \\frac{49}{100}) = 1$.
+                                </li>
+                                <li><b>Langkah 6:</b> Kita memiliki 49 pasangan yang masing-masing berjumlah 1. Ada satu suku tersisa di tengah: $f(\\frac{50}{100}) = f(\\frac{1}{2})$.
+                                </li>
+                                <li><b>Langkah 7:</b> Hitung suku tengah.
+                                    <br/>$f(\\frac{1}{2}) = \\frac{9^{1/2}}{9^{1/2} + 3} = \\frac{\\sqrt{9}}{\\sqrt{9} + 3} = \\frac{3}{3 + 3} = \\frac{3}{6} = 0.5$.
+                                </li>
+                                <li><b>Langkah 8:</b> Cari jumlah totalnya.
+                                    <br/>$S = (49 \\text{ pasangan} \\times 1) + f(\\frac{1}{2}) = 49 + 0.5 = 49.5$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q20
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A function $f$ satisfies $f(x+y) = f(x) + f(y)$ for all integers $x, y$. If $f(1) = 7$, find $f(10)$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sebuah fungsi $f$ memenuhi $f(x+y) = f(x) + f(y)$ untuk semua bilangan bulat $x, y$. Jika $f(1) = 7$, tentukan $f(10)$.",
+          image_desc: null,
+          answer: "70",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is Cauchy's Functional Equation over integers. It defines a linear function of the form $f(x) = cx$. We can prove this by induction, or simply by repeated addition.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah Persamaan Fungsional Cauchy pada bilangan bulat. Ini mendefinisikan fungsi linear berbentuk $f(x) = cx$. Kita dapat membuktikannya dengan induksi, atau hanya dengan penjumlahan berulang.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> We are given $f(1) = 7$ and $f(x+y) = f(x) + f(y)$.</li>
+                                <li><b>Step 2:</b> Find $f(2)$.
+                                    <br/>$f(2) = f(1+1) = f(1) + f(1) = 7 + 7 = 14$.
+                                </li>
+                                <li><b>Step 3:</b> Find $f(3)$.
+                                    <br/>$f(3) = f(2+1) = f(2) + f(1) = 14 + 7 = 21$.
+                                </li>
+                                <li><b>Step 4:</b> Find $f(4)$.
+                                    <br/>$f(4) = f(3+1) = f(3) + f(1) = 21 + 7 = 28$.
+                                </li>
+                                <li><b>Step 5:</b> We observe a pattern: $f(n) = n \\times f(1)$.
+                                    <br/>$f(2) = 2 \\times 7 = 14$
+                                    <br/>$f(3) = 3 \\times 7 = 21$
+                                    <br/>$f(4) = 4 \\times 7 = 28$
+                                </li>
+                                <li><b>Step 6:</b> Apply this pattern to find $f(10)$.
+                                    <br/>$f(10) = 10 \\times f(1) = 10 \\times 7 = 70$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita diberikan $f(1) = 7$ dan $f(x+y) = f(x) + f(y)$.</li>
+                                <li><b>Langkah 2:</b> Cari $f(2)$.
+                                    <br/>$f(2) = f(1+1) = f(1) + f(1) = 7 + 7 = 14$.
+                                </li>
+                                <li><b>Langkah 3:</b> Cari $f(3)$.
+                                    <br/>$f(3) = f(2+1) = f(2) + f(1) = 14 + 7 = 21$.
+                                </li>
+                                <li><b>Langkah 4:</b> Cari $f(4)$.
+                                    <br/>$f(4) = f(3+1) = f(3) + f(1) = 21 + 7 = 28$.
+                                </li>
+                                <li><b>Langkah 5:</b> Kita mengamati sebuah pola: $f(n) = n \\times f(1)$.
+                                    <br/>$f(2) = 2 \\times 7 = 14$
+                                    <br/>$f(3) = 3 \\times 7 = 21$
+                                    <br/>$f(4) = 4 \\times 7 = 28$
+                                </li>
+                                <li><b>Langkah 6:</b> Terapkan pola ini untuk mencari $f(10)$.
+                                    <br/>$f(10) = 10 \\times f(1) = 10 \\times 7 = 70$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // --- Soal Tambahan Tahap 3 (Q21-Q30) ---
+        // Q21
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "Find the sum of the first 50 odd positive integers.",
+          question_id:
+            "Tentukan jumlah dari 50 bilangan bulat ganjil positif pertama.",
+          image_desc: null,
+          answer: "2500",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The sequence of odd positive integers (1, 3, 5, ...) is an arithmetic sequence with first term $a=1$ and common difference $b=2$. The sum of the first $n$ terms is $S_n = \\frac{n}{2}(2a + (n-1)b)$. A shortcut formula for the sum of the first $n$ odd numbers is $S_n = n^2$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Barisan bilangan bulat ganjil positif (1, 3, 5, ...) adalah barisan aritmetika dengan suku pertama $a=1$ dan beda $b=2$. Jumlah $n$ suku pertama adalah $S_n = \\frac{n}{2}(2a + (n-1)b)$. Rumus cepat untuk jumlah $n$ bilangan ganjil pertama adalah $S_n = n^2$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution (Using Formula $S_n = n^2$):</p>
+                            <ul>
+                                <li><b>Step 1:</b> We want the sum of the first 50 odd numbers, so $n=50$.</li>
+                                <li><b>Step 2:</b> Apply the formula $S_n = n^2$.
+                                    <br/>$S_{50} = 50^2 = 2500$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Solution (Using AP Sum Formula):</p>
+                            <ul>
+                                <li><b>Step 1:</b> Identify $a$, $b$, and $n$.
+                                    <br/>$a = 1$, $b = 2$, $n = 50$.
+                                </li>
+                                <li><b>Step 2:</b> Apply the $S_n$ formula.
+                                    <br/>$S_{50} = \\frac{50}{2}(2(1) + (50-1)2)$
+                                    <br/>$S_{50} = 25(2 + (49)2)$
+                                    <br/>$S_{50} = 25(2 + 98)$
+                                    <br/>$S_{50} = 25(100) = 2500$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian (Menggunakan Rumus $S_n = n^2$):</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita ingin mencari jumlah 50 bilangan ganjil pertama, jadi $n=50$.</li>
+                                <li><b>Langkah 2:</b> Terapkan rumus $S_n = n^2$.
+                                    <br/>$S_{50} = 50^2 = 2500$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian (Menggunakan Rumus Jumlah AP):</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Identifikasi $a$, $b$, dan $n$.
+                                    <br/>$a = 1$, $b = 2$, $n = 50$.
+                                </li>
+                                <li><b>Langkah 2:</b> Terapkan rumus $S_n$.
+                                    <br/>$S_{50} = \\frac{50}{2}(2(1) + (50-1)2)$
+                                    <br/>$S_{50} = 25(2 + (49)2)$
+                                    <br/>$S_{50} = 25(2 + 98)$
+                                    <br/>$S_{50} = 25(100) = 2500$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q22
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "Four arithmetic means are inserted between 5 and 25. Find the common difference of the new sequence.",
+          question_id:
+            "Empat bilangan sisipan aritmetika (arithmetic means) disisipkan di antara 5 dan 25. Tentukan beda dari barisan baru tersebut.",
+          image_desc: null,
+          answer: "4",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> When $k$ arithmetic means are inserted between $x$ and $y$, a new AP is formed. The first term is $a = x$. The last term, $y$, becomes the $(k+2)$-th term of the new sequence. We use $u_n = a + (n-1)b$ to find the new common difference $b$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ketika $k$ bilangan sisipan aritmetika disisipkan di antara $x$ dan $y$, sebuah barisan AP baru terbentuk. Suku pertama adalah $a = x$. Suku terakhir, $y$, menjadi suku ke-$(k+2)$ dari barisan baru. Kita gunakan $u_n = a + (n-1)b$ untuk mencari beda $b$ yang baru.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Identify the terms.
+                                    <br/>The first term $a = 5$.
+                                    <br/>We insert $k=4$ means.
+                                    <br/>The last term $y = 25$ is the $n$-th term. $n = k+2 = 4+2 = 6$.
+                                    <br/>So, $u_1 = 5$ and $u_6 = 25$.
+                                </li>
+                                <li><b>Step 2:</b> Use the formula $u_n = a + (n-1)b$ for the new sequence.
+                                    <br/>$u_6 = u_1 + (6-1)b$
+                                    <br/>$25 = 5 + 5b$
+                                </li>
+                                <li><b>Step 3:</b> Solve for $b$.
+                                    <br/>$20 = 5b$
+                                    <br/>$b = 4$.
+                                </li>
+                                <li><b>Step 4:</b> The new sequence is 5, 9, 13, 17, 21, 25. The common difference is 4.</li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Identifikasi suku-sukunya.
+                                    <br/>Suku pertama $a = 5$.
+                                    <br/>Kita menyisipkan $k=4$ bilangan.
+                                    <br/>Suku terakhir $y = 25$ adalah suku ke-$n$. $n = k+2 = 4+2 = 6$.
+                                    <br/>Jadi, $u_1 = 5$ dan $u_6 = 25$.
+                                </li>
+                                <li><b>Langkah 2:</b> Gunakan rumus $u_n = a + (n-1)b$ untuk barisan baru.
+                                    <br/>$u_6 = u_1 + (6-1)b$
+                                    <br/>$25 = 5 + 5b$
+                                </li>
+                                <li><b>Langkah 3:</b> Selesaikan untuk $b$.
+                                    <br/>$20 = 5b$
+                                    <br/>$b = 4$.
+                                </li>
+                                <li><b>Langkah 4:</b> Barisan barunya adalah 5, 9, 13, 17, 21, 25. Bedanya adalah 4.</li>
+                            </ul>
+                          </div>`,
+        },
+        // Q23
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "A city's population is 10,000. It increases at a rate of 5% per year. What will the population be after 3 years? (Round to the nearest whole number).",
+          question_id:
+            "Populasi sebuah kota adalah 10.000 jiwa. Populasi meningkat dengan laju 5% per tahun. Berapakah populasi kota tersebut setelah 3 tahun? (Bulatkan ke bilangan bulat terdekat).",
+          image_desc: null,
+          answer: "11576",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a geometric progression problem. The initial population is $a$. If it increases by $r$ percent, the common ratio is $(1 + r/100)$. The population after $n$ years (which is the $(n+1)$-th term) is $P_n = a(1 + r/100)^n$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah soal barisan geometri. Populasi awal adalah $a$. Jika meningkat sebesar $r$ persen, rasio umumnya adalah $(1 + r/100)$. Populasi setelah $n$ tahun (yang merupakan suku ke-$(n+1)$) adalah $P_n = a(1 + r/100)^n$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Identify the initial value $a$, ratio $R$, and time $n$.
+                                    <br/>$a = 10,000$.
+                                    <br/>The rate is 5%, so the common ratio is $1 + 0.05 = 1.05$.
+                                    <br/>The time is $n = 3$ years.
+                                </li>
+                                <li><b>Step 2:</b> Apply the formula $P_n = a \\times R^n$.
+                                    <br/>$P_3 = 10,000 \\times (1.05)^3$
+                                </li>
+                                <li><b>Step 3:</b> Calculate $(1.05)^3$.
+                                    <br/>$(1.05)^2 = 1.1025$
+                                    <br/>$(1.05)^3 = 1.1025 \\times 1.05 = 1.157625$.
+                                </li>
+                                <li><b>Step 4:</b> Calculate the final population.
+                                    <br/>$P_3 = 10,000 \\times 1.157625 = 11576.25$.
+                                </li>
+                                <li><b>Step 5:</b> Round to the nearest whole number.
+                                    <br/>Population = 11576.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Identifikasi nilai awal $a$, rasio $R$, dan waktu $n$.
+                                    <br/>$a = 10.000$.
+                                    <br/>Laju peningkatannya 5%, jadi rasio umumnya $R = 1 + 0.05 = 1.05$.
+                                    <br/>Waktunya adalah $n = 3$ tahun.
+                                </li>
+                                <li><b>Langkah 2:</b> Terapkan rumus $P_n = a \\times R^n$.
+                                    <br/>$P_3 = 10.000 \\times (1.05)^3$
+                                </li>
+                                <li><b>Langkah 3:</b> Hitung $(1.05)^3$.
+                                    <br/>$(1.05)^2 = 1.1025$
+                                    <br/>$(1.05)^3 = 1.1025 \\times 1.05 = 1.157625$.
+                                </li>
+                                <li><b>Langkah 4:</b> Hitung populasi akhir.
+                                    <br/>$P_3 = 10.000 \\times 1.157625 = 11576.25$.
+                                </li>
+                                <li><b>Langkah 5:</b> Bulatkan ke bilangan bulat terdekat.
+                                    <br/>Populasi = 11576.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q24
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "<strong>(Non-Rutin)</strong> Let $S(n)$ be the sum of the digits of $n$. Define a sequence $a_1 = 2025$ and $a_{n+1} = S(a_n)$ for $n \\ge 1$. Find the value of $a_{10}$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Misalkan $S(n)$ adalah jumlah digit-digit dari $n$. Sebuah barisan didefinisikan sebagai $a_1 = 2025$ dan $a_{n+1} = S(a_n)$ untuk $n \\ge 1$. Tentukan nilai dari $a_{10}$.",
+          image_desc: null,
+          answer: "9",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This is a recursive sequence based on the sum of digits. This type of sequence eventually converges to a single-digit number, which then repeats indefinitely. This single-digit number is the digital root.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Ini adalah barisan rekursif berdasarkan jumlah digit. Barisan semacam ini pada akhirnya akan konvergen ke satu bilangan satu digit, yang kemudian berulang tanpa henti. Bilangan satu digit ini disebut sebagai digital root.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Find $a_2$ from $a_1$.
+                                    <br/>$a_1 = 2025$
+                                    <br/>$a_2 = S(a_1) = S(2025) = 2 + 0 + 2 + 5 = 9$.
+                                </li>
+                                <li><b>Step 2:</b> Find $a_3$ from $a_2$.
+                                    <br/>$a_2 = 9$
+                                    <br/>$a_3 = S(a_2) = S(9) = 9$.
+                                </li>
+                                <li><b>Step 3:</b> Find $a_4$ from $a_3$.
+                                    <br/>$a_3 = 9$
+                                    <br/>$a_4 = S(a_3) = S(9) = 9$.
+                                </li>
+                                <li><b>Step 4:</b> Observe the pattern.
+                                    <br/>The sequence becomes 2025, 9, 9, 9, ...
+                                    <br/>For all $n \\ge 2$, the term $a_n$ will be 9.
+                                </li>
+                                <li><b>Step 5:</b> Therefore, $a_{10}$ must also be 9.</li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Cari $a_2$ dari $a_1$.
+                                    <br/>$a_1 = 2025$
+                                    <br/>$a_2 = S(a_1) = S(2025) = 2 + 0 + 2 + 5 = 9$.
+                                </li>
+                                <li><b>Langkah 2:</b> Cari $a_3$ dari $a_2$.
+                                    <br/>$a_2 = 9$
+                                    <br/>$a_3 = S(a_2) = S(9) = 9$.
+                                </li>
+                                <li><b>Langkah 3:</b> Cari $a_4$ dari $a_3$.
+                                    <br/>$a_3 = 9$
+                                    <br/>$a_4 = S(a_3) = S(9) = 9$.
+                                </li>
+                                <li><b>Langkah 4:</b> Amati polanya.
+                                    <br/>Barisannya menjadi 2025, 9, 9, 9, ...
+                                    <br/>Untuk semua $n \\ge 2$, suku $a_n$ akan bernilai 9.
+                                </li>
+                                <li><b>Langkah 5:</b> Oleh karena itu, $a_{10}$ pastilah 9.</li>
+                            </ul>
+                          </div>`,
+        },
+        // Q25
+        {
+          topic: "Bagian 1: Barisan & Deret",
+          question_en:
+            "<strong>(Non-Rutin)</strong> Find the sum $S = \\sum_{k=1}^{10} \\frac{1}{k(k+1)(k+2)}$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Tentukan jumlah $S = \\sum_{k=1}^{10} \\frac{1}{k(k+1)(k+2)}$.",
+          image_desc: null,
+          answer: "65/264", // Jawaban diperbaiki
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> We use partial fraction decomposition for a telescoping sum. We can use the identity $\\frac{1}{k(k+1)(k+2)} = \\frac{1}{2} \\left( \\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} \\right)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Kita menggunakan dekomposisi pecahan parsial untuk deret teleskopik. Kita bisa gunakan identitas $\\frac{1}{k(k+1)(k+2)} = \\frac{1}{2} \\left( \\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} \\right)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Let's use the identity $\\frac{1}{k(k+1)(k+2)} = \\frac{1}{2} \\left( \\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} \\right)$.
+                                    <br/>(This is derived from $\\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} = \\frac{(k+2) - k}{k(k+1)(k+2)} = \\frac{2}{k(k+1)(k+2)}$)
+                                </li>
+                                <li><b>Step 2:</b> Let $T_k = \\frac{1}{k(k+1)}$. The $k$-th term of our sum is $\\frac{1}{2}(T_k - T_{k+1})$.
+                                </li>
+                                <li><b>Step 3:</b> Write out the sum $S$.
+                                    <br/>$S = \\sum_{k=1}^{10} \\frac{1}{2} (T_k - T_{k+1}) = \\frac{1}{2} \\sum_{k=1}^{10} (T_k - T_{k+1})$
+                                </li>
+                                <li><b>Step 4:</b> Expand the sum to see the telescoping effect.
+                                    $$ \\begin{aligned} S = \\frac{1}{2} [ (T_1 - T_2) & + (T_2 - T_3) + (T_3 - T_4) + \\dots \\\\
+                                                        & + (T_{10} - T_{11}) ] \\end{aligned} $$
+                                </li>
+                                <li><b>Step 5:</b> All terms cancel out except the first and the last.
+                                    <br/>$S = \\frac{1}{2} [ T_1 - T_{11} ]$
+                                </li>
+                                <li><b>Step 6:</b> Calculate $T_1$ and $T_{11}$ using $T_k = \\frac{1}{k(k+1)}$.
+                                    <br/>$T_1 = \\frac{1}{1(1+1)} = \\frac{1}{2}$
+                                    <br/>$T_{11} = \\frac{1}{11(11+1)} = \\frac{1}{11 \\times 12} = \\frac{1}{132}$
+                                </li>
+                                <li><b>Step 7:</b> Substitute these values back into the expression for $S$.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{1}{2} - \\frac{1}{132} \\right) = \\frac{1}{2} \\left( \\frac{66}{132} - \\frac{1}{132} \\right)$
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{65}{132} \\right) = \\frac{65}{264}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Mari gunakan identitas $\\frac{1}{k(k+1)(k+2)} = \\frac{1}{2} \\left( \\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} \\right)$.
+                                    <br/>(Ini didapat dari $\\frac{1}{k(k+1)} - \\frac{1}{(k+1)(k+2)} = \\frac{(k+2) - k}{k(k+1)(k+2)} = \\frac{2}{k(k+1)(k+2)}$)
+                                </li>
+                                <li><b>Langkah 2:</b> Misalkan $T_k = \\frac{1}{k(k+1)}$. Suku ke-$k$ dari jumlah kita adalah $\\frac{1}{2}(T_k - T_{k+1})$.
+                                </li>
+                                <li><b>Langkah 3:</b> Tuliskan jumlah $S$.
+                                    <br/>$S = \\sum_{k=1}^{10} \\frac{1}{2} (T_k - T_{k+1}) = \\frac{1}{2} \\sum_{k=1}^{10} (T_k - T_{k+1})$
+                                </li>
+                                <li><b>Langkah 4:</b> Jabarkan jumlahnya untuk melihat efek teleskopik.
+                                    $$ \\begin{aligned} S = \\frac{1}{2} [ (T_1 - T_2) & + (T_2 - T_3) + (T_3 - T_4) + \\dots \\\\
+                                                        & + (T_{10} - T_{11}) ] \\end{aligned} $$
+                                </li>
+                                <li><b>Langkah 5:</b> Semua suku saling menghapus kecuali suku pertama dan terakhir.
+                                    <br/>$S = \\frac{1}{2} [ T_1 - T_{11} ]$
+                                </li>
+                                <li><b>Langkah 6:</b> Hitung $T_1$ dan $T_{11}$ menggunakan $T_k = \\frac{1}{k(k+1)}$.
+                                    <br/>$T_1 = \\frac{1}{1(1+1)} = \\frac{1}{2}$
+                                    <br/>$T_{11} = \\frac{1}{11(11+1)} = \\frac{1}{11 \\times 12} = \\frac{1}{132}$
+                                </li>
+                                <li><b>Langkah 7:</b> Substitusikan nilai-nilai ini kembali ke ekspresi $S$.
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{1}{2} - \\frac{1}{132} \\right) = \\frac{1}{2} \\left( \\frac{66}{132} - \\frac{1}{132} \\right)$
+                                    <br/>$S = \\frac{1}{2} \\left( \\frac{65}{132} \\right) = \\frac{65}{264}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q26
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "Given $g(x) = x+3$ and $(g \\circ f)(x) = 2x^2 - 5$. Find the function $f(x)$.",
+          question_id:
+            "Diketahui $g(x) = x+3$ dan $(g \\circ f)(x) = 2x^2 - 5$. Tentukan fungsi $f(x)$.",
+          image_desc: null,
+          answer: "$f(x) = 2x^2 - 8$",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> The composition $(g \\circ f)(x)$ means $g(f(x))$. We substitute $f(x)$ into $g(x)$ and set the result equal to the given composite function, then solve for $f(x)$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Komposisi $(g \\circ f)(x)$ berarti $g(f(x))$. Kita substitusikan $f(x)$ ke dalam $g(x)$ dan samakan hasilnya dengan fungsi komposisi yang diberikan, lalu selesaikan untuk $f(x)$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Write the definition of the composition.
+                                    <br/>$g(f(x)) = (g \\circ f)(x)$
+                                </li>
+                                <li><b>Step 2:</b> Substitute $f(x)$ into $g(x)$.
+                                    <br/>$g(x) = x+3 \\implies g(f(x)) = f(x) + 3$.
+                                </li>
+                                <li><b>Step 3:</b> Set this equal to the given $(g \\circ f)(x)$.
+                                    <br/>$f(x) + 3 = 2x^2 - 5$
+                                </li>
+                                <li><b>Step 4:</b> Solve for $f(x)$ by subtracting 3 from both sides.
+                                    <br/>$f(x) = 2x^2 - 5 - 3$
+                                    <br/>$f(x) = 2x^2 - 8$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Tuliskan definisi komposisi.
+                                    <br/>$g(f(x)) = (g \\circ f)(x)$
+                                </li>
+                                <li><b>Langkah 2:</b> Substitusikan $f(x)$ ke dalam $g(x)$.
+                                    <br/>$g(x) = x+3 \\implies g(f(x)) = f(x) + 3$.
+                                </li>
+                                <li><b>Langkah 3:</b> Samakan ini dengan $(g \\circ f)(x)$ yang diberikan.
+                                    <br/>$f(x) + 3 = 2x^2 - 5$
+                                </li>
+                                <li><b>Langkah 4:</b> Selesaikan untuk $f(x)$ dengan mengurangi 3 dari kedua sisi.
+                                    <br/>$f(x) = 2x^2 - 5 - 3$
+                                    <br/>$f(x) = 2x^2 - 8$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q27
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "A function is given by $f(x) = \\sqrt{ax+b}$. If $f(1) = 3$ and $f(5) = 5$, find the value of $a+b$.",
+          question_id:
+            "Sebuah fungsi diberikan oleh $f(x) = \\sqrt{ax+b}$. Jika $f(1) = 3$ dan $f(5) = 5$, tentukan nilai dari $a+b$.",
+          image_desc: null,
+          answer: "9", // Jawaban diperbaiki
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> Use the two given points to create a system of two linear equations for $a$ and $b$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Gunakan dua titik yang diketahui untuk membuat sistem dua persamaan linear untuk $a$ dan $b$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Use $f(1) = 3$.
+                                    <br/>$\\sqrt{a(1)+b} = 3$. Square both sides: $a+b = 9$ (Eq. 1).
+                                </li>
+                                <li><b>Step 2:</b> Use $f(5) = 5$.
+                                    <br/>$\\sqrt{a(5)+b} = 5$. Square both sides: $5a+b = 25$ (Eq. 2).
+                                </li>
+                                <li><b>Step 3:</b> Solve the system. Subtract (Eq. 1) from (Eq. 2).
+                                    <br/>$(5a+b) - (a+b) = 25 - 9$
+                                    <br/>$4a = 16$, which means $a = 4$.
+                                </li>
+                                <li><b>Step 4:</b> Substitute $a=4$ into (Eq. 1).
+                                    <br/>$4+b = 9$, which means $b = 5$.
+                                </li>
+                                <li><b>Step 5:</b> The question asks for the value of $a+b$.
+                                    <br/>$a+b = 4+5 = 9$.
+                                    <br/>(We can also see this directly from Step 1).
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Gunakan $f(1) = 3$.
+                                    <br/>$\\sqrt{a(1)+b} = 3$. Kuadratkan kedua sisi: $a+b = 9$ (Pers. 1).
+                                </li>
+                                <li><b>Langkah 2:</b> Gunakan $f(5) = 5$.
+                                    <br/>$\\sqrt{a(5)+b} = 5$. Kuadratkan kedua sisi: $5a+b = 25$ (Pers. 2).
+                                </li>
+                                <li><b>Langkah 3:</b> Selesaikan sistem. Kurangkan (Pers. 1) dari (Pers. 2).
+                                    <br/>$(5a+b) - (a+b) = 25 - 9$
+                                    <br/>$4a = 16$, yang berarti $a = 4$.
+                                </li>
+                                <li><b>Langkah 4:</b> Substitusikan $a=4$ ke (Pers. 1).
+                                    <br/>$4+b = 9$, yang berarti $b = 5$.
+                                </li>
+                                <li><b>Langkah 5:</b> Pertanyaannya adalah nilai dari $a+b$.
+                                    <br/>$a+b = 4+5 = 9$.
+                                    <br/>(Kita juga bisa melihat ini langsung dari Langkah 1).
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q28
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "A function $f$ is periodic with period 5. If $f(3) = 10$, find $f(23)$.",
+          question_id:
+            "Sebuah fungsi $f$ periodik dengan periode 5. Jika $f(3) = 10$, tentukan $f(23)$.",
+          image_desc: null,
+          answer: "10",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> A function $f$ is periodic with period $T$ if $f(x + T) = f(x)$ for all $x$. This also implies $f(x + nT) = f(x)$ for any integer $n$. We can use the modulo operator to find the equivalent input value within the first period.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Sebuah fungsi $f$ periodik dengan periode $T$ jika $f(x + T) = f(x)$ untuk semua $x$. Ini juga berarti $f(x + nT) = f(x)$ untuk $n$ bilangan bulat apa pun. Kita dapat menggunakan operator modulo untuk menemukan nilai masukan yang ekuivalen dalam periode pertama.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> We are given the period $T = 5$. This means $f(x) = f(x + 5) = f(x + 2 \cdot 5) = \dots$</li>
+                                <li><b>Step 2:</b> We want to find $f(23)$. We can write 23 in terms of its period.
+                                    <br/>$23 = 3 + 20 = 3 + (4 \\times 5)$.
+                                </li>
+                                <li><b>Step 3:</b> Apply the periodicity property.
+                                    <br/>$f(23) = f(3 + 4 \cdot 5)$
+                                    <br/>Because $f(x + nT) = f(x)$, we have $f(3 + 4 \cdot 5) = f(3)$.
+                                </li>
+                                <li><b>Step 4:</b> We are given $f(3) = 10$.
+                                    <br/>Therefore, $f(23) = 10$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Kita diberikan periode $T = 5$. Ini berarti $f(x) = f(x + 5) = f(x + 2 \cdot 5) = \dots$</li>
+                                <li><b>Langkah 2:</b> Kita ingin mencari $f(23)$. Kita bisa menulis 23 dalam hubungannya dengan periodenya.
+                                    <br/>$23 = 3 + 20 = 3 + (4 \\times 5)$.
+                                </li>
+                                <li><b>Langkah 3:</b> Terapkan sifat periodik.
+                                    <br/>$f(23) = f(3 + 4 \cdot 5)$
+                                    <br/>Karena $f(x + nT) = f(x)$, maka $f(3 + 4 \cdot 5) = f(3)$.
+                                </li>
+                                <li><b>Langkah 4:</b> Kita diberikan $f(3) = 10$.
+                                    <br/>Oleh karena itu, $f(23) = 10$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q29
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "<strong>(Non-Rutin)</strong> Given $f(x) = 1 - \\frac{1}{x}$. Let $f^n(x)$ denote the $n$-th iteration of $f(x)$. For example, $f^2(x) = f(f(x))$. Find $f^{20}(x)$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Diketahui $f(x) = 1 - \\frac{1}{x}$. Misalkan $f^n(x)$ adalah iterasi ke-$n$ dari $f(x)$. Contohnya, $f^2(x) = f(f(x))$. Tentukan $f^{20}(x)$.",
+          image_desc: null,
+          answer: "$\\frac{-1}{x-1}$ (or $\\frac{1}{1-x}$)",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> Iterated functions sometimes fall into a cycle. We should calculate $f^2(x)$, $f^3(x)$, $f^4(x)$, etc., until we find a pattern or the function returns to $x$.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Fungsi iterasi terkadang jatuh ke dalam sebuah siklus. Kita harus menghitung $f^2(x)$, $f^3(x)$, $f^4(x)$, dan seterusnya, sampai kita menemukan pola atau fungsinya kembali ke $x$.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Find $f^2(x)$.
+                                    <br/>$f^2(x) = f(f(x)) = f(1 - \\frac{1}{x}) = 1 - \\frac{1}{1 - \\frac{1}{x}}$
+                                    <br/>$f^2(x) = 1 - \\frac{1}{\\frac{x-1}{x}} = 1 - \\frac{x}{x-1}$
+                                    <br/>$f^2(x) = \\frac{x-1}{x-1} - \\frac{x}{x-1} = \\frac{x-1-x}{x-1} = \\frac{-1}{x-1}$.
+                                </li>
+                                <li><b>Step 2:</b> Find $f^3(x)$.
+                                    <br/>$f^3(x) = f(f^2(x)) = f\\left(\\frac{-1}{x-1}\\right) = 1 - \\frac{1}{\\frac{-1}{x-1}}$
+                                    <br/>$f^3(x) = 1 - (-(x-1)) = 1 + (x-1) = x$.
+                                </li>
+                                <li><b>Step 3:</b> We found a cycle of period 3.
+                                    <br/>$f^1(x) = 1 - \\frac{1}{x}$
+                                    <br/>$f^2(x) = \\frac{-1}{x-1}$
+                                    <br/>$f^3(x) = x$
+                                    <br/>$f^4(x) = f(f^3(x)) = f(x)$, and the cycle repeats.
+                                </li>
+                                <li><b>Step 4:</b> We need to find $f^{20}(x)$. We can use the modulo operator on the exponent.
+                                    <br/>We need to find the remainder of $20 \div 3$.
+                                    <br/>$20 = 6 \times 3 + 2$. The remainder is 2.
+                                </li>
+                                <li><b>Step 5:</b> Therefore, $f^{20}(x)$ is the same as $f^2(x)$.
+                                    <br/>$f^{20}(x) = f^2(x) = \\frac{-1}{x-1}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Cari $f^2(x)$.
+                                    <br/>$f^2(x) = f(f(x)) = f(1 - \\frac{1}{x}) = 1 - \\frac{1}{1 - \\frac{1}{x}}$
+                                    <br/>$f^2(x) = 1 - \\frac{1}{\\frac{x-1}{x}} = 1 - \\frac{x}{x-1}$
+                                    <br/>$f^2(x) = \\frac{x-1}{x-1} - \\frac{x}{x-1} = \\frac{x-1-x}{x-1} = \\frac{-1}{x-1}$.
+                                </li>
+                                <li><b>Langkah 2:</b> Cari $f^3(x)$.
+                                    <br/>$f^3(x) = f(f^2(x)) = f\\left(\\frac{-1}{x-1}\\right) = 1 - \\frac{1}{\\frac{-1}{x-1}}$
+                                    <br/>$f^3(x) = 1 - (-(x-1)) = 1 + (x-1) = x$.
+                                </li>
+                                <li><b>Langkah 3:</b> Kita menemukan siklus dengan periode 3.
+                                    <br/>$f^1(x) = 1 - \\frac{1}{x}$
+                                    <br/>$f^2(x) = \\frac{-1}{x-1}$
+                                    <br/>$f^3(x) = x$
+                                    <br/>$f^4(x) = f(f^3(x)) = f(x)$, dan siklus berulang.
+                                </li>
+                                <li><b>Langkah 4:</b> Kita perlu mencari $f^{20}(x)$. Kita bisa gunakan operator modulo pada pangkatnya.
+                                    <br/>Kita perlu mencari sisa dari $20 \div 3$.
+                                    <br/>$20 = 6 \times 3 + 2$. Sisanya adalah 2.
+                                </li>
+                                <li><b>Langkah 5:</b> Oleh karena itu, $f^{20}(x)$ sama dengan $f^2(x)$.
+                                    <br/>$f^{20}(x) = f^2(x) = \\frac{-1}{x-1}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+        // Q30
+        {
+          topic: "Bagian 2: Fungsi & Persamaan Fungsional",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A function $f$ satisfies $f(x) + f\\left(\\frac{x-1}{x}\\right) = 1+x$ for all $x \\neq 0, 1$. Find $f(2)$.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sebuah fungsi $f$ memenuhi $f(x) + f\\left(\\frac{x-1}{x}\\right) = 1+x$ untuk semua $x \\neq 0, 1$. Tentukan $f(2)$.",
+          image_desc: null,
+          answer: "3/4 or 0.75",
+          explanation: `<div class="concept">
+                            <p><strong>Concept:</strong> This functional equation involves a cyclic substitution. Let $g(x) = \\frac{x-1}{x}$. If we apply $g$ repeatedly, $g(x) \to g(g(x)) \to g(g(g(x)))$, it will cycle back to $x$. This allows us to create a system of 3 linear equations.</p>
+                            <hr class="my-2 border-indigo-100" />
+                            <p><strong>Konsep:</strong> Persamaan fungsional ini melibatkan substitusi siklik. Misalkan $g(x) = \\frac{x-1}{x}$. Jika kita terapkan $g$ berulang kali, $g(x) \to g(g(x)) \to g(g(g(x)))$, ia akan kembali ke $x$. Ini memungkinkan kita membuat sistem 3 persamaan linear.</p>
+                          </div>
+                          <div class="solution-step">
+                            <p class="font-bold text-indigo-600">Solution:</p>
+                            <ul>
+                                <li><b>Step 1:</b> Let the original equation be (1). We want to find $f(2)$.
+                                    <br/>(1) $f(x) + f\\left(\\frac{x-1}{x}\\right) = 1+x$.
+                                </li>
+                                <li><b>Step 2:</b> Substitute $x=2$ into (1).
+                                    <br/>$f(2) + f\\left(\\frac{2-1}{2}\\right) = 1+2$
+                                    <br/>$f(2) + f(\\frac{1}{2}) = 3$ (Eq. A)
+                                </li>
+                                <li><b>Step 3:</b> We have an unknown $f(\\frac{1}{2})$. Let's find it by substituting $x=\\frac{1}{2}$ into (1).
+                                    <br/>$f(\\frac{1}{2}) + f\\left(\\frac{\\frac{1}{2}-1}{\\frac{1}{2}}\\right) = 1+\\frac{1}{2}$
+                                    <br/>$f(\\frac{1}{2}) + f\\left(\\frac{-1/2}{1/2}\\right) = \\frac{3}{2}$
+                                    <br/>$f(\\frac{1}{2}) + f(-1) = \\frac{3}{2}$ (Eq. B)
+                                </li>
+                                <li><b>Step 4:</b> We have a new unknown $f(-1)$. Let's find it by substituting $x=-1$ into (1).
+                                    <br/>$f(-1) + f\\left(\\frac{-1-1}{-1}\\right) = 1+(-1)$
+                                    <br/>$f(-1) + f\\left(\\frac{-2}{-1}\\right) = 0$
+                                    <br/>$f(-1) + f(2) = 0$ (Eq. C)
+                                </li>
+                                <li><b>Step 5:</b> We now have a system of 3 equations with 3 variables ($f(2), f(1/2), f(-1)$).
+                                    <br/>(A) $f(2) + f(\\frac{1}{2}) = 3$
+                                    <br/>(B) $f(\\frac{1}{2}) + f(-1) = \\frac{3}{2}$
+                                    <br/>(C) $f(-1) + f(2) = 0$
+                                </li>
+                                <li><b>Step 6:</b> Solve the system. From (C), $f(-1) = -f(2)$.
+                                    <br/>Substitute this into (B): $f(\\frac{1}{2}) - f(2) = \\frac{3}{2}$. (This is Eq. B')
+                                </li>
+                                <li><b>Step 7:</b> Now we have a system of 2 equations for $f(2)$ and $f(1/2)$:
+                                    <br/>(A) $f(2) + f(\\frac{1}{2}) = 3$
+                                    <br/>(B') $-f(2) + f(\\frac{1}{2}) = \\frac{3}{2}$
+                                </li>
+                                <li><b>Step 8:</b> Subtract (B') from (A):
+                                    <br/>$(f(2) + f(\\frac{1}{2})) - (-f(2) + f(\\frac{1}{2})) = 3 - \\frac{3}{2}$
+                                    <br/>$f(2) - (-f(2)) = \\frac{3}{2}$
+                                    <br/>$2f(2) = \\frac{3}{2}$
+                                    <br/>$f(2) = \\frac{3}{4}$.
+                                </li>
+                            </ul>
+                          </div>
+                          <div class="solution-step mt-4">
+                            <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                            <ul>
+                                <li><b>Langkah 1:</b> Misalkan persamaan aslinya adalah (1). Kita ingin mencari $f(2)$.
+                                    <br/>(1) $f(x) + f\\left(\\frac{x-1}{x}\\right) = 1+x$.
+                                </li>
+                                <li><b>Langkah 2:</b> Substitusikan $x=2$ ke (1).
+                                    <br/>$f(2) + f\\left(\\frac{2-1}{2}\\right) = 1+2$
+                                    <br/>$f(2) + f(\\frac{1}{2}) = 3$ (Pers. A)
+                                </li>
+                                <li><b>Langkah 3:</b> Kita punya $f(\\frac{1}{2})$ yang tidak diketahui. Mari kita cari dengan substitusi $x=\\frac{1}{2}$ ke (1).
+                                    <br/>$f(\\frac{1}{2}) + f\\left(\\frac{\\frac{1}{2}-1}{\\frac{1}{2}}\\right) = 1+\\frac{1}{2}$
+                                    <br/>$f(\\frac{1}{2}) + f\\left(\\frac{-1/2}{1/2}\\right) = \\frac{3}{2}$
+                                    <br/>$f(\\frac{1}{2}) + f(-1) = \\frac{3}{2}$ (Pers. B)
+                                </li>
+                                <li><b>Langkah 4:</b> Kita punya $f(-1)$ yang tidak diketahui. Mari kita cari dengan substitusi $x=-1$ ke (1).
+                                    <br/>$f(-1) + f\\left(\\frac{-1-1}{-1}\\right) = 1+(-1)$
+                                    <br/>$f(-1) + f\\left(\\frac{-2}{-1}\\right) = 0$
+                                    <br/>$f(-1) + f(2) = 0$ (Pers. C)
+                                </li>
+                                <li><b>Langkah 5:</b> Kita sekarang memiliki sistem 3 persamaan dengan 3 variabel ($f(2), f(1/2), f(-1)$).
+                                    <br/>(A) $f(2) + f(\\frac{1}{2}) = 3$
+                                    <br/>(B) $f(\\frac{1}{2}) + f(-1) = \\frac{3}{2}$
+                                    <br/>(C) $f(-1) + f(2) = 0$
+                                </li>
+                                <li><b>Langkah 6:</b> Selesaikan sistem. Dari (C), kita dapat $f(-1) = -f(2)$.
+                                    <br/>Substitusikan ini ke (B): $f(\\frac{1}{2}) - f(2) = \\frac{3}{2}$. (Pers. B')
+                                </li>
+                                <li><b>Langkah 7:</b> Sekarang kita punya sistem 2 persamaan untuk $f(2)$ dan $f(1/2)$:
+                                    <br/>(A) $f(2) + f(\\frac{1}{2}) = 3$
+                                    <br/>(B') $-f(2) + f(\\frac{1}{2}) = \\frac{3}{2}$
+                                </li>
+                                <li><b>Langkah 8:</b> Kurangkan (B') dari (A):
+                                    <br/>$(f(2) + f(\\frac{1}{2})) - (-f(2) + f(\\frac{1}{2})) = 3 - \\frac{3}{2}$
+                                    <br/>$f(2) - (-f(2)) = \\frac{3}{2}$
+                                    <br/>$2f(2) = \\frac{3}{2}$
+                                    <br/>$f(2) = \\frac{3}{4}$.
+                                </li>
+                            </ul>
+                          </div>`,
+        },
+      ];
+
+      // Fungsi ini mengelompokkan soal berdasarkan topik dan memberi nomor urut
+      function getOrderedQuestions() {
+        const topics = [...new Set(questions.map((q) => q.topic))];
+        let ordered = [];
+        let questionCounter = 0; // Counter independent of topic changes
+
+        topics.forEach((topic) => {
+          const questionsForTopic = questions.filter(
+            (q) => q.topic === topic
+          );
+          questionsForTopic.forEach((q) => {
+            questionCounter++; // Increment counter for each question
+            q.id = questionCounter; // Assign sequential ID
+            ordered.push(q); // Add question to the ordered list
+          });
+        });
+        return ordered;
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            // Add topic title only if it hasn't been added yet for problems
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+          problemsHTML += `
+                        <div class="item-container">
+                            <p><strong>${q.id}.</strong> ${q.question_en}`;
+          if (q.image_desc) {
+            problemsHTML += `<div class="image-desc">${q.image_desc}</div>`;
+          } else if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Gambar untuk Soal ${q.id}" class="problem-image" onerror="this.style.display='none'">`;
+          }
+          if (q.question_id) {
+            problemsHTML += `<br/><br/><span class="lang-id">${q.question_id}</span>`;
+          }
+          problemsHTML += `</p></div>`;
+
+          // Render Solusi
+          if (q.topic !== currentSolutionTopic) {
+            currentSolutionTopic = q.topic;
+            // Add topic title for solutions section, adjust text slightly
+            solutionsHTML += `<h3 class="topic-title">Pembahasan ${currentSolutionTopic}</h3>`;
+          }
+
+          // Reference q.id which is now correctly numbered sequentially
+          solutionsHTML += `
+                        <div class="item-container">
+                            <p><strong>Pembahasan Soal ${q.id} / Solution ${q.id}:</strong></p>
+                            ${q.explanation}
+                            <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+                        </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Re-run MathJax typesetting after content is loaded
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        } else if (
+          typeof MathJax !== "undefined" &&
+          MathJax.Hub &&
+          MathJax.Hub.Queue
+        ) {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      }
+
+      // Call renderContent when the DOM is ready
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
