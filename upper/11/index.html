@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal Kompetisi Matematika - Peluang & Geometri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .image-desc {
+        background-color: #f9fafb; /* gray-50 */
+        border: 1px dashed #d1d5db; /* gray-300 */
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+        margin-bottom: 1rem;
+        border-radius: 0.25rem;
+        font-style: italic;
+        color: #4b5563; /* gray-600 */
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+      }
+      .solution-text {
+        margin: 0.2rem 0 0.75rem 0; /* Menggabungkan margin p dan margin-bottom div */
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 11
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Grade 5-6 | Probability & Geometry (Angles & Parallel Lines)
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+
+          <h3 class="topic-title">Bagian 1: Peluang (Probability)</h3>
+          <!-- Soal 1 -->
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> A spinner has 10 equal sectors numbered 1 to
+              10. What is the probability of *not* landing on a multiple of
+              4?<br /><br />Sebuah pemutar memiliki 10 sektor yang sama besar
+              bernomor 1 sampai 10. Berapa peluang pemutar *tidak* mendarat di
+              angka kelipatan 4?
+            </p>
+          </div>
+          <!-- Soal 2 -->
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> Two standard six-sided dice are rolled. What
+              is the probability of rolling two identical numbers (doubles)?<br /><br />Dua
+              dadu enam-sisi standar dilempar. Berapa peluang munculnya dua
+              angka yang identik (kembar)?
+            </p>
+          </div>
+          <!-- Soal 3 -->
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> A bag contains 4 red marbles and 6 blue
+              marbles. Two marbles are drawn one after another *without
+              replacement*. What is the probability that both marbles are
+              red?<br /><br />Sebuah kantong berisi 4 kelereng merah dan 6
+              kelereng biru. Dua kelereng diambil satu per satu *tanpa
+              pengembalian*. Berapa peluang kedua kelereng yang terambil adalah
+              merah?
+            </p>
+          </div>
+          <!-- Soal 4 -->
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> The letters of the word 'SASMO' are written on
+              five cards. If one card is chosen at random, what is the
+              probability of choosing the letter 'S'?<br /><br />Huruf-huruf
+              dari kata 'SASMO' ditulis pada lima kartu. Jika satu kartu dipilih
+              secara acak, berapa peluang terpilihnya huruf 'S'?
+            </p>
+          </div>
+          <!-- Soal 5 -->
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> A spinner has 8 equal sectors numbered 1 to 8.
+              What is the probability of the spinner landing on a number greater
+              than 6?<br /><br />Sebuah pemutar memiliki 8 sektor yang sama
+              besar bernomor 1 sampai 8. Berapa peluang pemutar mendarat di
+              angka yang lebih besar dari 6?
+            </p>
+          </div>
+          <!-- Soal 6 -->
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> Two coins are tossed together. What is the
+              probability of getting at least one 'Tail'?<br /><br />Dua koin
+              dilempar bersamaan. Berapa peluang munculnya setidaknya satu
+              'Gambar'?
+            </p>
+          </div>
+          <!-- Soal 7 -->
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> A standard six-sided die is rolled. What is
+              the probability of rolling a number that is NOT a prime number?<br /><br />Sebuah
+              dadu enam-sisi standar dilempar. Berapa peluang munculnya angka
+              yang BUKAN bilangan prima? (Catatan: 1 bukan bilangan prima).
+            </p>
+          </div>
+          <!-- Soal 8 -->
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> In a class of 30 students, 12 are boys. If a
+              student is chosen to be the class leader, what is the probability
+              that a girl is chosen?<br /><br />Di kelas yang terdiri dari 30
+              siswa, 12 di antaranya adalah laki-laki. Jika seorang siswa
+              dipilih menjadi ketua kelas, berapa peluang siswa perempuan yang
+              terpilih?
+            </p>
+          </div>
+          <!-- Soal 9 -->
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> Two standard six-sided dice are rolled. What
+              is the probability that the sum of the two numbers is 5?<br /><br />Dua
+              dadu enam-sisi standar dilempar. Berapa peluang jumlah kedua angka
+              yang muncul adalah 5?
+            </p>
+          </div>
+          <!-- Soal 10 -->
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> A bag contains 10 cards numbered from 1 to
+              10. If one card is drawn, what is the probability of drawing a
+              card with a number that is a multiple of 3?<br /><br />Sebuah
+              kantong berisi 10 kartu bernomor 1 sampai 10. Jika satu kartu
+              diambil, berapa peluang terambilnya kartu dengan nomor kelipatan
+              3?
+            </p>
+          </div>
+          <!-- Soal 11 -->
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> A bag contains 3 red balls, 2 green balls,
+              and 5 white balls. What is the probability of picking a ball that
+              is RED or GREEN?<br /><br />Sebuah kantong berisi 3 bola merah, 2
+              bola hijau, dan 5 bola putih. Berapa peluang terambilnya bola yang
+              berwarna MERAH atau HIJAU?
+            </p>
+          </div>
+          <!-- Soal 12 -->
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> Three coins are tossed simultaneously. What
+              is the probability of getting exactly two 'Heads'?<br /><br />Tiga
+              koin dilempar secara bersamaan. Berapa peluang munculnya tepat dua
+              'Angka'?
+            </p>
+          </div>
+          <!-- Soal 13 -->
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> A coin is tossed and a six-sided die is
+              rolled. What is the probability of getting a 'Head' on the coin
+              AND an even number on the die?<br /><br />Sebuah koin dilempar dan
+              sebuah dadu enam-sisi digulirkan. Berapa peluang mendapatkan
+              'Angka' pada koin DAN angka genap pada dadu?
+            </p>
+          </div>
+          <!-- Soal 14 -->
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> There are 20 balls in a box. The probability
+              of picking a red ball is $2/5$. How many red balls are in the
+              box?<br /><br />Ada 20 bola di dalam kotak. Peluang terambilnya
+              bola merah adalah $2/5$. Berapa banyak bola merah di dalam kotak
+              itu?
+            </p>
+          </div>
+          <!-- Soal 15 -->
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> Two dice are rolled. What is the probability
+              that the product of the two numbers is 12?<br /><br />Dua dadu
+              dilempar. Berapa peluang hasil kali kedua angka yang muncul adalah
+              12?
+            </p>
+          </div>
+
+          <h3 class="topic-title">
+            Bagian 2: Geometri (Sudut & Garis Sejajar) / Part 2: Geometry
+            (Angles & Parallel Lines)
+          </h3>
+          <!-- Soal 16 -->
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> Two parallel lines are cut by a transversal.
+              If one of the corresponding angles is $65^{\circ}$, what is the
+              measure of the other corresponding angle?<br /><br />Dua garis
+              sejajar dipotong oleh sebuah garis transversal. Jika salah satu
+              sudut sehadap adalah $65^{\circ}$, berapa besar sudut sehadap
+              lainnya?
+            </p>
+          </div>
+          <!-- Soal 17 -->
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> In the figure, $L_1 \parallel L_2$. A point
+              $P$ is located between the lines. Given $\angle PAB = 140^{\circ}$
+              and $\angle PCD = 35^{\circ}$. Find the value of $\angle APC$.<br /><br />Pada
+              gambar, $L_1 \parallel L_2$. Titik $P$ berada di antara kedua
+              garis. Diketahui $\angle PAB = 140^{\circ}$ dan $\angle PCD =
+              35^{\circ}$ . Tentukan nilai dari $\angle APC$.
+            </p>
+            <div class="image-desc">
+              <div style="display: flex; justify-content: center">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_lxdn9b_1527.png"
+                  style="width: 300px"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Soal 18 -->
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> In the figure, $AB \parallel CD$. Two
+              transversals intersect at point $P$ between the parallel lines.
+              Given $\angle AEP = 40^{\circ}$ and $\angle GHD = 75^{\circ}$.
+              Find the value of $\angle EPG$.<br /><br />Pada gambar, $AB
+              \parallel CD$. Dua garis transversal berpotongan di titik $P$ di
+              antara garis sejajar. Diketahui $\angle AEP = 40^{\circ}$ dan
+              $\angle GHD = 75^{\circ}$. Tentukan nilai dari $\angle EPG$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Garis transversal
+              EF (E di AB, F di CD) dan GH (G di AB, H di CD) berpotongan di P.
+              $\angle AEP = 40^{\circ}$. $\angle GHD = 75^{\circ}$. Cari $\angle
+              EPG$.] / [Image Description: Two parallel lines AB and CD.
+              Transversals EF (E on AB, F on CD) and GH (G on AB, H on CD)
+              intersect at P. $\angle AEP = 40^{\circ}$. $\angle GHD =
+              75^{\circ}$. Find $\angle EPG$.]
+            </div>
+          </div>
+          <!-- Soal 19 -->
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> In the figure, line $m \parallel n$. Point
+              $P$ is located *outside* the parallel lines. Given $\angle APm =
+              110^{\circ}$ (exterior angle) and $\angle BPn = 120^{\circ}$
+              (exterior angle). Find the value of $\angle APB$.<br /><br />Pada
+              gambar, garis $m \parallel n$. Titik $P$ berada *di luar* garis
+              sejajar. Diketahui $\angle APm = 110^{\circ}$ (sudut luar) dan
+              $\angle BPn = 120^{\circ}$ (sudut luar). Tentukan nilai dari
+              $\angle APB$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar m (atas) dan n (bawah). Titik
+              P ada di atas m. Garis PA (A di m) dan PB (B di n) bertemu di P.
+              $\angle APm$ adalah $110^{\circ}$. $\angle BPn$ adalah
+              $120^{\circ}$. Cari $\angle APB$.] / [Image Description: Two
+              parallel lines m (top) and n (bottom). Point P is above m. Lines
+              PA (A on m) and PB (B on n) meet at P. $\angle APm$ is
+              $110^{\circ}$. $\angle BPn$ is $120^{\circ}$. Find $\angle APB$.]
+            </div>
+          </div>
+          <!-- Soal 20 -->
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> In the figure, $AB \parallel CD$. Given that
+              $\angle EAB = 115^{\circ}$ and $\angle AEF = 30^{\circ}$, find the
+              value of $\angle EFC$.<br /><br />Pada gambar, $AB \parallel CD$.
+              Diketahui $\angle EAB = 115^{\circ}$ dan $\angle AEF =
+              30^{\circ}$, tentukan nilai dari $\angle EFC$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan CD (bawah).
+              Sebuah titik E berada di antara dua garis. Sebuah titik F berada
+              di garis CD. Garis A-E-F membentuk sudut. $\angle EAB$ adalah
+              sudut tumpul $115^{\circ}$. $\angle AEF$ adalah sudut lancip
+              $30^{\circ}$.] / [Image Description: Two parallel lines AB (top)
+              and CD (bottom). A point E is between the lines. A point F is on
+              line CD. The line A-E-F forms angles. $\angle EAB$ is an obtuse
+              angle of $115^{\circ}$. $\angle AEF$ is an acute angle of
+              $30^{\circ}$.]
+            </div>
+          </div>
+          <!-- Soal 21 -->
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> In the figure, line $L_1 \parallel L_2$.
+              $\triangle ABC$ is an isosceles triangle with $AB = AC$. Given
+              $\angle CAE = (4x - 5)^{\circ}$ (where E is on $L_1$ to the right
+              of A) and $\angle ABC = (3x + 10)^{\circ}$. Find the value of
+              $\angle BAC$.<br /><br />Pada gambar, $L_1 \parallel L_2$.
+              $\triangle ABC$ adalah segitiga sama kaki dengan $AB = AC$.
+              Diketahui $\angle CAE = (4x - 5)^{\circ}$ (E di $L_1$ di kanan A)
+              dan $\angle ABC = (3x + 10)^{\circ}$. Tentukan nilai dari $\angle
+              BAC$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Segitiga sama kaki
+              ABC dengan puncak A di L1 dan alas BC di L2. $AB = AC$. Sudut
+              $\angle CAE$ (luar) adalah $(4x-5)^{\circ}$. Sudut $\angle ABC$
+              (alas) adalah $(3x+10)^{\circ}$.] / [Image Description: Two
+              parallel lines L1 and L2. Isosceles triangle ABC with vertex A on
+              L1 and base BC on L2. $AB = AC$. Exterior angle $\angle CAE$ is
+              $(4x-5)^{\circ}$. Base angle $\angle ABC$ is $(3x+10)^{\circ}$.]
+            </div>
+          </div>
+          <!-- Soal 22 -->
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> In the figure, $PQ \parallel RS$. Find the
+              value of $x$.<br /><br />Pada gambar, $PQ \parallel RS$. Tentukan
+              nilai $x$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar PQ dan RS. Sebuah garis
+              transversal memotongnya. Sudut $(2x + 10)^{\circ}$ adalah sudut
+              dalam di kiri. Sudut $(3x - 20)^{\circ}$ adalah sudut dalam di
+              kanan. Keduanya adalah sudut dalam berseberangan.] / [Image
+              Description: Two parallel lines PQ and RS. A transversal cuts
+              them. Angle $(2x + 10)^{\circ}$ is an interior angle on the left.
+              Angle $(3x - 20)^{\circ}$ is an interior angle on the right. They
+              are alternate interior angles.]
+            </div>
+          </div>
+          <!-- Soal 23 -->
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> In the figure, $AB \parallel CD$. Find the
+              value of $y$.<br /><br />Pada gambar, $AB \parallel CD$. Tentukan
+              nilai $y$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Garis transversal
+              memotongnya. Sudut $y$ adalah sudut di kiri atas (pada AB). Sudut
+              $125^{\circ}$ adalah sudut di kiri bawah (pada CD). Keduanya
+              adalah sudut dalam sepihak.] / [Image Description: Two parallel
+              lines AB and CD. A transversal cuts them. Angle $y$ is in the
+              top-left (on AB). Angle $125^{\circ}$ is in the bottom-left (on
+              CD). They are consecutive interior angles.]
+            </div>
+          </div>
+          <!-- Soal 24 -->
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> In the figure, $L_1 \parallel L_2$. Find the
+              value of $x$.<br /><br />Pada gambar, $L_1 \parallel L_2$.
+              Tentukan nilai $x$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Garis zig-zag
+              kompleks. Sudut menghadap kanan: $30^{\circ}$ dan $x^{\circ}$.
+              Sudut menghadap kiri: $45^{\circ}$, $20^{\circ}$, dan
+              $35^{\circ}$.] / [Image Description: Two parallel lines L1 and L2.
+              A complex zig-zag line. Angles pointing right: $30^{\circ}$ and
+              $x^{\circ}$. Angles pointing left: $45^{\circ}$, $20^{\circ}$, and
+              $35^{\circ}$.]
+            </div>
+          </div>
+          <!-- Soal 25 -->
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> In the figure, $AB \parallel DE$ and $BC
+              \parallel EF$. Given $\angle ABC = 70^{\circ}$, find the value of
+              $\angle DEF$.<br /><br />Pada gambar, $AB \parallel DE$ dan $BC
+              \parallel EF$. Diketahui $\angle ABC = 70^{\circ}$, tentukan nilai
+              $\angle DEF$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua pasang garis sejajar. Garis AB sejajar
+              dengan DE. Garis BC sejajar dengan EF. Sudut ABC (dibentuk oleh AB
+              dan BC) adalah $70^{\circ}$. Sudut DEF (dibentuk oleh DE dan EF)
+              adalah sudut yang ditanya.] / [Image Description: Two pairs of
+              parallel lines. Line AB is parallel to DE. Line BC is parallel to
+              EF. Angle ABC (formed by AB and BC) is $70^{\circ}$. Angle DEF
+              (formed by DE and EF) is the angle to be found.]
+            </div>
+          </div>
+          <!-- Soal 26 -->
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> In the figure, $L_1 \parallel L_2$. Find the
+              value of $x$.<br /><br />Pada gambar, $L_1 \parallel L_2$.
+              Tentukan nilai $x$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Sebuah segitiga
+              terbentuk dengan salah satu sisinya berada pada L1. Dua sisi
+              lainnya memotong L2. Sudut $x$ adalah sudut puncak segitiga (di
+              L1). Dua sudut alasnya adalah $55^{\circ}$ dan $65^{\circ}$.] /
+              [Image Description: Two parallel lines L1 and L2. A triangle is
+              formed with one side on L1. The other two sides cut L2. Angle $x$
+              is the vertex angle of the triangle (on L1). The two base angles
+              are $55^{\circ}$ and $65^{\circ}$.]
+            </div>
+          </div>
+          <!-- Soal 27 -->
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> In the figure, $AB \parallel CD$. Find the
+              value of $x$.<br /><br />Pada gambar, $AB \parallel CD$. Tentukan
+              nilai $x$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Sebuah titik P
+              berada di antara keduanya. Garis dari A ke P membentuk sudut
+              $140^{\circ}$ (sudut $\angle PAB$). Garis dari C ke P membentuk
+              sudut $130^{\circ}$ (sudut $\angle PCD$). Sudut $x$ adalah sudut
+              refleks $\angle APC$.] / [Image Description: Two parallel lines AB
+              and CD. A point P is between them. A line from A to P forms an
+              angle of $140^{\circ}$ ($\angle PAB$). A line from C to P forms an
+              angle of $130^{\circ}$ ($\angle PCD$). Angle $x$ is the reflex
+              angle $\angle APC$.]
+            </div>
+          </div>
+          <!-- Soal 28 -->
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> Two parallel lines are cut by a transversal.
+              Two alternate interior angles are $(5x - 15)^{\circ}$ and $(2x +
+              30)^{\circ}$. Find the value of $x$.<br /><br />Dua garis sejajar
+              dipotong oleh transversal. Dua sudut dalam berseberangan adalah
+              $(5x - 15)^{\circ}$ dan $(2x + 30)^{\circ}$. Tentukan nilai $x$.
+            </p>
+          </div>
+          <!-- Soal 29 -->
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> In the figure, $AB \parallel DE$. Given that
+              $\triangle BCD$ is an isosceles triangle with $BC = CD$, and
+              $\angle ABC = 108^{\circ}$. Find the value of $\angle CDE$.<br /><br />Pada
+              gambar, $AB \parallel DE$. Diketahui $\triangle BCD$ adalah
+              segitiga sama kaki dengan $BC = CD$, dan $\angle ABC =
+              108^{\circ}$. Tentukan nilai dari $\angle CDE$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan DE (bawah).
+              Titik C berada di antara dua garis. Titik B ada di garis AB dan D
+              ada di garis DE. Garis BC dan CD membentuk segitiga sama kaki.
+              $\angle ABC$ adalah sudut tumpul $108^{\circ}$.] / [Image
+              Description: Two parallel lines AB (top) and DE (bottom). Point C
+              is between them. Point B is on line AB and D is on line DE. Lines
+              BC and CD form an isosceles triangle. $\angle ABC$ is an obtuse
+              angle of $108^{\circ}$.]
+            </div>
+          </div>
+          <!-- Soal 30 -->
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> In the figure, $AB \parallel CD$. Given
+              $\angle ABE = 150^{\circ}$ and $\angle EFD = 140^{\circ}$. Find
+              the value of the *reflex* angle $\angle BEF$.<br /><br />Pada
+              gambar, $AB \parallel CD$. Diketahui $\angle ABE = 150^{\circ}$
+              dan $\angle EFD = 140^{\circ}$. Tentukan nilai dari sudut
+              *refleks* $\angle BEF$.
+            </p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan CD (bawah).
+              Garis "U" terbalik (atau "C" ke kanan) menghubungkan dua garis
+              sejajar. Titik E dan F ada di antara dua garis. $\angle ABE$
+              adalah $150^{\circ}$. $\angle EFD$ adalah $140^{\circ}$. Yang
+              ditanya adalah sudut refleks $\angle BEF$.] / [Image Description:
+              Two parallel lines AB (top) and CD (bottom). An inverted "U" shape
+              connects them. Points E and F are between the lines. $\angle ABE$
+              is $150^{\circ}$. $\angle EFD$ is $140^{\circ}$. The question asks
+              for the reflex $\angle BEF$.]
+            </div>
+          </div>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+
+          <h3 class="topic-title">
+            Pembahasan Bagian 1: Peluang (Probability)
+          </h3>
+
+          <!-- Pembahasan 1 -->
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This problem uses the concept of
+                complementary probability. $P(\text{Not } A) = 1 - P(A)$. It's
+                easier to find the probability of the event happening and
+                subtract it from 1.<br /><br /><strong>Konsep:</strong> Soal ini
+                menggunakan konsep peluang komplementer. $P(\text{Bukan } A) = 1
+                - P(A)$. Lebih mudah mencari peluang kejadian A terjadi, lalu
+                mengurangkannya dari 1.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = 10 (numbers 1 to 10).
+              </p>
+              <p class="solution-text">
+                • Let A be the event of landing on a multiple of 4.
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes for A = {4, 8}. Number of outcomes = 2.
+              </p>
+              <p class="solution-text">• The probability of event A:</p>
+              $$ P(A) = \frac{2}{10} = \frac{1}{5} $$
+              <p class="solution-text">
+                • The probability of NOT landing on A is the complement:
+              </p>
+              $$ P(\text{Not } A) = 1 - P(A) = 1 - \frac{1}{5} = \frac{4}{5} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = 10 (angka 1 sampai 10).
+              </p>
+              <p class="solution-text">
+                • Misal A = kejadian mendarat di kelipatan 4.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan untuk A = {4, 8}. Jumlah hasil = 2.
+              </p>
+              <p class="solution-text">• Peluang kejadian A:</p>
+              $$ P(A) = \frac{2}{10} = \frac{1}{5} $$
+              <p class="solution-text">
+                • Peluang *tidak* mendarat di A adalah komplemennya:
+              </p>
+              $$ P(\text{Bukan } A) = 1 - P(A) = 1 - \frac{1}{5} = \frac{4}{5}
+              $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{4}{5}$. / Jawaban: $\frac{4}{5}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 2 -->
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When rolling two dice, the total
+                sample space is $6 \times 6 = 36$. List all pairs that are
+                "doubles".<br /><br /><strong>Konsep:</strong> Saat melempar dua
+                dadu, total ruang sampel adalah $6 \times 6 = 36$. Daftar semua
+                pasangan "kembar".
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (doubles) = {(1,1), (2,2), (3,3), (4,4),
+                (5,5), (6,6)}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 6.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Doubles}) = \frac{6}{36} = \frac{1}{6} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (kembar) = {(1,1), (2,2), (3,3), (4,4),
+                (5,5), (6,6)}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 6.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Kembar}) = \frac{6}{36} = \frac{1}{6} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{6}$. / Jawaban: $\frac{1}{6}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 3 -->
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This involves dependent events
+                (without replacement). The probability of the second event
+                depends on the outcome of the first event. $P(A \text{ and } B)
+                = P(A) \times P(B | A)$.<br /><br /><strong>Konsep:</strong> Ini
+                melibatkan kejadian tak bebas (tanpa pengembalian). Peluang
+                kejadian kedua bergantung pada hasil kejadian pertama. $P(A
+                \text{ dan } B) = P(A) \times P(B | A)$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total marbles = 4 Red + 6 Blue = 10.
+              </p>
+              <p class="solution-text">
+                • Probability of 1st marble being Red:
+              </p>
+              $$ P(\text{1st Red}) = \frac{4}{10} $$
+              <p class="solution-text">
+                • After taking 1 red, there are 9 marbles left (3 Red, 6 Blue).
+              </p>
+              <p class="solution-text">
+                • Probability of 2nd marble being Red (given 1st was Red):
+              </p>
+              $$ P(\text{2nd Red} | \text{1st Red}) = \frac{3}{9} $$
+              <p class="solution-text">• Multiply the probabilities:</p>
+              $$ P(\text{Both Red}) = \frac{4}{10} \times \frac{3}{9} =
+              \frac{12}{90} = \frac{2}{15} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total kelereng = 4 Merah + 6 Biru = 10.
+              </p>
+              <p class="solution-text">• Peluang kelereng pertama Merah:</p>
+              $$ P(\text{Merah ke-1}) = \frac{4}{10} $$
+              <p class="solution-text">
+                • Setelah diambil 1 merah, tersisa 9 kelereng (3 Merah, 6 Biru).
+              </p>
+              <p class="solution-text">
+                • Peluang kelereng kedua Merah (jika yang pertama Merah):
+              </p>
+              $$ P(\text{Merah ke-2} | \text{Merah ke-1}) = \frac{3}{9} $$
+              <p class="solution-text">• Kalikan kedua peluang tersebut:</p>
+              $$ P(\text{Keduanya Merah}) = \frac{4}{10} \times \frac{3}{9} =
+              \frac{12}{90} = \frac{2}{15} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{2}{15}$. / Jawaban: $\frac{2}{15}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 4 -->
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Be careful with repeated items. List
+                all items in the sample space.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Hati-hati dengan barang yang berulang. Daftar semua item dalam
+                ruang sampel.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space (cards) = {S, A, S, M, O}.
+              </p>
+              <p class="solution-text">• Total number of outcomes = 5.</p>
+              <p class="solution-text">
+                • Favorable outcomes (letter 'S') = {S, S}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 2.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P('S') = \frac{2}{5} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel (kartu) = {S, A, S, M, O}.
+              </p>
+              <p class="solution-text">• Jumlah total hasil = 5.</p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (huruf 'S') = {S, S}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 2.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P('S') = \frac{2}{5} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{2}{5}$. / Jawaban: $\frac{2}{5}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 5 -->
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "Greater than 6" does not include 6.
+                List the favorable outcomes.<br /><br /><strong>Konsep:</strong>
+                "Lebih besar dari 6" tidak termasuk 6. Daftar hasil yang
+                diinginkan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = 8 (numbers 1 to 8).
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (greater than 6) = {7, 8}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 2.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(> 6) = \frac{2}{8} = \frac{1}{4} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = 8 (angka 1 sampai 8).
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (lebih besar dari 6) = {7, 8}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 2.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(> 6) = \frac{2}{8} = \frac{1}{4} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{4}$. / Jawaban: $\frac{1}{4}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 6 -->
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "At least one" can be tricky. It's
+                easiest to list the full sample space for multiple items.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                "Setidaknya satu" bisa jadi rumit. Cara termudah adalah
+                mendaftar seluruh ruang sampel untuk beberapa item.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = {HH, HT, TH, TT}. (H=Head, T=Tail)
+              </p>
+              <p class="solution-text">• Total number of outcomes = 4.</p>
+              <p class="solution-text">
+                • Favorable outcomes (at least one Tail) = {HT, TH, TT}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 3.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{At least one Tail}) = \frac{3}{4} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = {AA, AG, GA, GG}. (A=Angka, G=Gambar)
+              </p>
+              <p class="solution-text">• Jumlah total hasil = 4.</p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (setidaknya satu Gambar) = {AG, GA, GG}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 3.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Setidaknya satu Gambar}) = \frac{3}{4} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{3}{4}$. / Jawaban: $\frac{3}{4}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 7 -->
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Identify the prime numbers first, then
+                find the numbers that are NOT prime.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Identifikasi bilangan prima terlebih dahulu, lalu temukan angka
+                yang BUKAN prima.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = {1, 2, 3, 4, 5, 6}.
+              </p>
+              <p class="solution-text">• Prime numbers = {2, 3, 5}.</p>
+              <p class="solution-text">
+                • Favorable outcomes (NOT prime) = {1, 4, 6}. (Note: 1 is not
+                prime)
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 3.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Not Prime}) = \frac{3}{6} = \frac{1}{2} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = {1, 2, 3, 4, 5, 6}.
+              </p>
+              <p class="solution-text">• Bilangan prima = {2, 3, 5}.</p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (BUKAN prima) = {1, 4, 6}. (Catatan: 1
+                bukan prima)
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 3.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Bukan Prima}) = \frac{3}{6} = \frac{1}{2} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{2}$. / Jawaban: $\frac{1}{2}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 8 -->
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The favorable outcome is 'girl'. Find
+                the number of girls first.<br /><br /><strong>Konsep:</strong>
+                Hasil yang diinginkan adalah 'perempuan'. Cari jumlah siswa
+                perempuan terlebih dahulu.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">• Total students = 30.</p>
+              <p class="solution-text">• Number of boys = 12.</p>
+              <p class="solution-text">
+                • Number of girls = Total - Boys = 30 - 12 = 18.
+              </p>
+              <p class="solution-text">• Favorable outcomes (girl) = 18.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Girl}) = \frac{18}{30} = \frac{3}{5} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">• Total siswa = 30.</p>
+              <p class="solution-text">• Jumlah siswa laki-laki = 12.</p>
+              <p class="solution-text">
+                • Jumlah siswa perempuan = Total - Laki-laki = 30 - 12 = 18.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (perempuan) = 18.
+              </p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Perempuan}) = \frac{18}{30} = \frac{3}{5} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{3}{5}$. / Jawaban: $\frac{3}{5}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 9 -->
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When rolling two dice, the total
+                sample space is $6 \times 6 = 36$. List all pairs that sum to
+                5.<br /><br /><strong>Konsep:</strong>
+                Saat melempar dua dadu, total ruang sampelnya adalah $6 \times 6
+                = 36$. Daftar semua pasangan yang jumlahnya 5.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (sum is 5) = {(1,4), (2,3), (3,2), (4,1)}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 4.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Sum is 5}) = \frac{4}{36} = \frac{1}{9} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (jumlah 5) = {(1,4), (2,3), (3,2),
+                (4,1)}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 4.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Jumlah 5}) = \frac{4}{36} = \frac{1}{9} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{9}$. / Jawaban: $\frac{1}{9}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 10 -->
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Identify the multiples of 3 between 1
+                and 10.<br /><br /><strong>Konsep:</strong> Identifikasi
+                kelipatan 3 antara 1 dan 10.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = 10 (cards 1 to 10).
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (multiple of 3) = {3, 6, 9}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 3.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Multiple of 3}) = \frac{3}{10} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = 10 (kartu 1 sampai 10).
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (kelipatan 3) = {3, 6, 9}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 3.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Kelipatan 3}) = \frac{3}{10} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{3}{10}$. / Jawaban: $\frac{3}{10}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 11 -->
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When events are mutually exclusive (a
+                ball cannot be both red and green), the probability of "A or B"
+                is $P(A) + P(B)$. Or, simply add the favorable outcomes.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Ketika kejadian saling lepas (bola tidak bisa merah sekaligus
+                hijau), peluang "A atau B" adalah $P(A) + P(B)$. Atau, jumlahkan
+                saja hasil yang diinginkan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total number of balls = 3 Red + 2 Green + 5 White = 10.
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (Red or Green) = 3 (Red) + 2 (Green).
+              </p>
+              <p class="solution-text">• Total favorable outcomes = 5.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Red or Green}) = \frac{5}{10} = \frac{1}{2} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Jumlah total bola = 3 Merah + 2 Hijau + 5 Putih = 10.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (Merah atau Hijau) = 3 (Merah) + 2
+                (Hijau).
+              </p>
+              <p class="solution-text">• Total hasil yang diinginkan = 5.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Merah atau Hijau}) = \frac{5}{10} = \frac{1}{2} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{2}$. / Jawaban: $\frac{1}{2}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 12 -->
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> List the full sample space for 3 coins
+                to find the total and favorable outcomes.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Daftar ruang sampel lengkap untuk 3 koin untuk menemukan total
+                dan hasil yang diinginkan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.
+              </p>
+              <p class="solution-text">• Total number of outcomes = 8.</p>
+              <p class="solution-text">
+                • Favorable outcomes (exactly 2 Heads) = {HHT, HTH, THH}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 3.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Exactly 2 Heads}) = \frac{3}{8} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = {AAA, AAG, AGA, GAA, AGG, GAG, GGA, GGG}.
+              </p>
+              <p class="solution-text">• Jumlah total hasil = 8.</p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (tepat 2 Angka) = {AAG, AGA, GAA}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 3.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Tepat 2 Angka}) = \frac{3}{8} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{3}{8}$. / Jawaban: $\frac{3}{8}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 13 -->
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> These are independent events. The
+                probability of "A and B" happening is $P(A) \times P(B)$.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Ini adalah kejadian independen (saling bebas). Peluang "A dan B"
+                terjadi adalah $P(A) \times P(B)$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Let A = getting a 'Head'. $P(A) = 1/2$.
+              </p>
+              <p class="solution-text">
+                • Let B = getting an even number {2, 4, 6} on a die.
+              </p>
+              <p class="solution-text">• $P(B) = 3/6 = 1/2$.</p>
+              <p class="solution-text">• Calculate the combined probability:</p>
+              $$ P(A \text{ and } B) = P(A) \times P(B) = \frac{1}{2} \times
+              \frac{1}{2} = \frac{1}{4} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Misal A = mendapatkan 'Angka'. $P(A) = 1/2$.
+              </p>
+              <p class="solution-text">
+                • Misal B = mendapatkan angka genap {2, 4, 6} pada dadu.
+              </p>
+              <p class="solution-text">• $P(B) = 3/6 = 1/2$.</p>
+              <p class="solution-text">• Hitung peluang gabungannya:</p>
+              $$ P(A \text{ dan } B) = P(A) \times P(B) = \frac{1}{2} \times
+              \frac{1}{2} = \frac{1}{4} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{4}$. / Jawaban: $\frac{1}{4}$.
+            </div>
+          </div>
+
+          <!-- Pembahasan 14 -->
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> We are given the probability and the
+                total. We need to find the number of favorable outcomes.
+                $\text{Favorable} = P(A) \times \text{Total}$.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Kita diberi peluang dan totalnya. Kita perlu mencari jumlah
+                hasil yang diinginkan. $\text{Jumlah Kejadian} = P(A) \times
+                \text{Total}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • We know: $P(\text{Red}) = \frac{\text{Number of Red
+                Balls}}{\text{Total Balls}}$
+              </p>
+              <p class="solution-text">
+                • We are given $P(\text{Red}) = 2/5$ and Total Balls = 20.
+              </p>
+              <p class="solution-text">• Set up the equation:</p>
+              $$ \frac{2}{5} = \frac{\text{Number of Red Balls}}{20} $$
+              <p class="solution-text">• Solve for the Number of Red Balls:</p>
+              $$ \text{Number of Red Balls} = \frac{2}{5} \times 20 =
+              \frac{40}{5} = 8 $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Kita tahu rumus: $P(\text{Merah}) = \frac{\text{Jumlah Bola
+                Merah}}{\text{Total Bola}}$
+              </p>
+              <p class="solution-text">
+                • Diberikan $P(\text{Merah}) = 2/5$ dan Total Bola = 20.
+              </p>
+              <p class="solution-text">• Buat persamaannya:</p>
+              $$ \frac{2}{5} = \frac{\text{Jumlah Bola Merah}}{20} $$
+              <p class="solution-text">• Selesaikan untuk Jumlah Bola Merah:</p>
+              $$ \text{Jumlah Bola Merah} = \frac{2}{5} \times 20 = \frac{40}{5}
+              = 8 $$
+            </div>
+            <div class="final-answer">Answer: 8. / Jawaban: 8.</div>
+          </div>
+
+          <!-- Pembahasan 15 -->
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Total sample space is 36. List all
+                pairs of numbers (from 1 to 6) whose product is 12.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Total ruang sampel adalah 36. Daftar semua pasangan angka (dari
+                1 sampai 6) yang hasil kalinya 12.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Total sample space = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Favorable outcomes (product is 12) = {(2,6), (3,4), (4,3),
+                (6,2)}.
+              </p>
+              <p class="solution-text">• Number of favorable outcomes = 4.</p>
+              <p class="solution-text">• Calculate the probability:</p>
+              $$ P(\text{Product is 12}) = \frac{4}{36} = \frac{1}{9} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Total ruang sampel = $6 \times 6 = 36$.
+              </p>
+              <p class="solution-text">
+                • Hasil yang diinginkan (hasil kali 12) = {(2,6), (3,4), (4,3),
+                (6,2)}.
+              </p>
+              <p class="solution-text">• Jumlah hasil yang diinginkan = 4.</p>
+              <p class="solution-text">• Hitung peluangnya:</p>
+              $$ P(\text{Hasil kali 12}) = \frac{4}{36} = \frac{1}{9} $$
+            </div>
+            <div class="final-answer">
+              Answer: $\frac{1}{9}$. / Jawaban: $\frac{1}{9}$.
+            </div>
+          </div>
+
+          <h3 class="topic-title">
+            Pembahasan Bagian 2: Geometri (Sudut & Garis Sejajar)
+          </h3>
+
+          <!-- Pembahasan 16 -->
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Corresponding angles are angles in the
+                same relative position at each intersection where a straight
+                line crosses two others. If the two lines are parallel, then the
+                corresponding angles are equal.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Sudut sehadap adalah sudut-sudut yang berada pada posisi relatif
+                yang sama di setiap perpotongan di mana sebuah garis lurus
+                memotong dua garis lainnya. Jika kedua garis itu sejajar, maka
+                sudut-sudut sehadap besarnya sama.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • The problem states the lines are parallel.
+              </p>
+              <p class="solution-text">
+                • A property of parallel lines is that corresponding angles are
+                equal.
+              </p>
+              <p class="solution-text">
+                • If one corresponding angle is $65^{\circ}$, the other must
+                also be $65^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Soal menyatakan bahwa garis-garisnya sejajar.
+              </p>
+              <p class="solution-text">
+                • Sifat dari garis sejajar adalah sudut-sudut sehadap besarnya
+                sama.
+              </p>
+              <p class="solution-text">
+                • Jika satu sudut sehadap adalah $65^{\circ}$, maka sudut
+                lainnya juga harus $65^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 65°. / Jawaban: 65°.</div>
+          </div>
+
+          <!-- Pembahasan 17 -->
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="image-desc">
+              <div style="display: flex; justify-content: center">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_tk86gd_2196.png"
+                  style="width: 300px"
+                />
+              </div>
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Draw an auxiliary line through point P
+                parallel to $L_1$ and $L_2$. Use consecutive interior angles
+                ($sum = 180^{\circ}$) and alternate interior angles (equal).<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Gambar garis bantu melalui P yang sejajar $L_1$ dan $L_2$.
+                Gunakan sifat sudut dalam sepihak (jumlah $= 180^{\circ}$) dan
+                sudut dalam berseberangan (sama besar).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw a line $L_3$ passing through $P$ parallel to $L_1$ and
+                $L_2$.
+              </p>
+              <p class="solution-text">
+                • Angle $\angle APC$ is split into two parts: $\angle APL_3$
+                (top) and $\angle CPL_3$ (bottom).
+              </p>
+              <p class="solution-text">
+                • $\angle PAB$ ($140^{\circ}$) and $\angle APL_3$ are
+                consecutive interior angles.
+              </p>
+              <p class="solution-text">
+                • $\angle PAB + \angle APL_3 = 180^{\circ} \implies 140^{\circ}
+                + \angle APL_3 = 180^{\circ} \implies \angle APL_3 =
+                40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PCD$ ($35^{\circ}$) and $\angle CPL_3$ are alternate
+                interior angles.
+              </p>
+              <p class="solution-text">
+                • Therefore, $\angle CPL_3 = \angle PCD = 35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APC = \angle APL_3 + \angle CPL_3 = 40^{\circ} +
+                35^{\circ} = 75^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis $L_3$ melalui $P$ yang sejajar $L_1$ dan $L_2$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle APC$ terbagi jadi dua: $\angle APL_3$ (atas) dan
+                $\angle CPL_3$ (bawah).
+              </p>
+              <p class="solution-text">
+                • $\angle PAB$ ($140^{\circ}$) dan $\angle APL_3$ adalah sudut
+                dalam sepihak.
+              </p>
+              <p class="solution-text">
+                • $\angle PAB + \angle APL_3 = 180^{\circ} \implies 140^{\circ}
+                + \angle APL_3 = 180^{\circ} \implies \angle APL_3 =
+                40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PCD$ ($35^{\circ}$) dan $\angle CPL_3$ adalah sudut
+                dalam berseberangan.
+              </p>
+              <p class="solution-text">
+                • Maka, $\angle CPL_3 = \angle PCD = 35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APC = \angle APL_3 + \angle CPL_3 = 40^{\circ} +
+                35^{\circ} = 75^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 75°. / Jawaban: 75°.</div>
+          </div>
+
+          <!-- Pembahasan 18 -->
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Garis transversal
+              EF (E di AB, F di CD) dan GH (G di AB, H di CD) berpotongan di P.
+              $\angle AEP = 40^{\circ}$. $\angle GHD = 75^{\circ}$. Cari $\angle
+              EPG$.] / [Image Description: Two parallel lines AB and CD.
+              Transversals EF (E on AB, F on CD) and GH (G on AB, H on CD)
+              intersect at P. $\angle AEP = 40^{\circ}$. $\angle GHD =
+              75^{\circ}$. Find $\angle EPG$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use alternate interior angles to find
+                the internal angles of the triangle formed by the intersection.
+                $\angle EPG$ and $\angle FPH$ are vertically opposite angles
+                (equal).<br /><br /><strong>Konsep:</strong>
+                Gunakan sudut dalam berseberangan untuk mencari sudut-sudut di
+                dalam segitiga yang terbentuk. $\angle EPG$ dan $\angle FPH$
+                adalah sudut bertolak belakang (sama besar).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • We need to find $\angle EPG$. This angle is vertically
+                opposite to $\angle FPH$. So, $\angle EPG = \angle FPH$.
+              </p>
+              <p class="solution-text">
+                • Let's find the angles inside $\triangle FPH$.
+              </p>
+              <p class="solution-text">
+                • Angle $\angle PFH$ (or $\angle EFH$) is the alternate interior
+                angle to $\angle AEP$.
+              </p>
+              <p class="solution-text">
+                • $\angle PFH = \angle AEP = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Angle $\angle PHF$ (or $\angle GHF$) is on the straight line
+                $CD$. $\angle GHD = 75^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PHF + \angle GHD = 180^{\circ} \implies \angle PHF +
+                75^{\circ} = 180^{\circ} \implies \angle PHF = 105^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Now, in $\triangle FPH$, the sum of angles is $180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle FPH + \angle PFH + \angle PHF = 180^{\circ} \implies
+                \angle FPH + 40^{\circ} + 105^{\circ} = 180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle FPH + 145^{\circ} = 180^{\circ} \implies \angle FPH =
+                35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Since $\angle EPG = \angle FPH$, then $\angle EPG =
+                35^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Kita harus mencari $\angle EPG$. Sudut ini bertolak belakang
+                dengan $\angle FPH$. Jadi, $\angle EPG = \angle FPH$.
+              </p>
+              <p class="solution-text">
+                • Mari cari sudut-sudut di dalam $\triangle FPH$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle PFH$ (atau $\angle EFH$) adalah sudut dalam
+                berseberangan dari $\angle AEP$.
+              </p>
+              <p class="solution-text">
+                • $\angle PFH = \angle AEP = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle PHF$ (atau $\angle GHF$) ada di garis lurus
+                $CD$. $\angle GHD = 75^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PHF + \angle GHD = 180^{\circ} \implies \angle PHF +
+                75^{\circ} = 180^{\circ} \implies \angle PHF = 105^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Di dalam $\triangle FPH$, jumlah sudutnya $180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle FPH + \angle PFH + \angle PHF = 180^{\circ} \implies
+                \angle FPH + 40^{\circ} + 105^{\circ} = 180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle FPH + 145^{\circ} = 180^{\circ} \implies \angle FPH =
+                35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Karena $\angle EPG = \angle FPH$, maka $\angle EPG =
+                35^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 35°. / Jawaban: 35°.</div>
+          </div>
+
+          <!-- Pembahasan 19 -->
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar m (atas) dan n (bawah). Titik
+              P ada di atas m. Garis PA (A di m) dan PB (B di n) bertemu di P.
+              $\angle APm$ adalah $110^{\circ}$. $\angle BPn$ adalah
+              $120^{\circ}$. Cari $\angle APB$.] / [Image Description: Two
+              parallel lines m (top) and n (bottom). Point P is above m. Lines
+              PA (A on m) and PB (B on n) meet at P. $\angle APm$ is
+              $110^{\circ}$. $\angle BPn$ is $120^{\circ}$. Find $\angle APB$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Draw an auxiliary line through $P$
+                parallel to $m$ and $n$. Use alternate interior angles,
+                calculated from the supplementary angles on the straight lines
+                $m$ and $n$.<br /><br /><strong>Konsep:</strong> Gambar garis
+                bantu melalui $P$ yang sejajar $m$ dan $n$. Gunakan sudut dalam
+                berseberangan, yang dihitung dari sudut pelurus pada garis $m$
+                dan $n$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw a line $L$ through $P$ parallel to $m$ and $n$.
+              </p>
+              <p class="solution-text">
+                • Angle $\angle APB$ is split into two parts: $\angle APL$ (top)
+                and $\angle BPL$ (bottom).
+              </p>
+              <p class="solution-text">
+                • First, find the angle on the straight line $m$ that is
+                supplementary to $\angle APm$. Let's call it $\angle PAm_{int}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PAm_{int} = 180^{\circ} - 110^{\circ} = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APL$ is the alternate interior angle to $\angle
+                PAm_{int}$. So, $\angle APL = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Similarly, find the angle on the straight line $n$
+                supplementary to $\angle BPn$. Let's call it $\angle PBn_{int}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PBn_{int} = 180^{\circ} - 120^{\circ} = 60^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BPL$ is the alternate interior angle to $\angle
+                PBn_{int}$. So, $\angle BPL = 60^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APB = \angle APL + \angle BPL = 70^{\circ} +
+                60^{\circ} = 130^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis $L$ melalui $P$ yang sejajar $m$ dan $n$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle APB$ terbagi jadi dua: $\angle APL$ (atas) dan
+                $\angle BPL$ (bawah).
+              </p>
+              <p class="solution-text">
+                • Cari sudut pada garis lurus $m$ yang berpelurus dengan $\angle
+                APm$. Sebut $\angle PAm_{int}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PAm_{int} = 180^{\circ} - 110^{\circ} = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APL$ adalah sudut dalam berseberangan dari $\angle
+                PAm_{int}$. Maka, $\angle APL = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Cari sudut pada garis lurus $n$ yang berpelurus dengan $\angle
+                BPn$. Sebut $\angle PBn_{int}$.
+              </p>
+              <p class="solution-text">
+                • $\angle PBn_{int} = 180^{\circ} - 120^{\circ} = 60^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BPL$ adalah sudut dalam berseberangan dari $\angle
+                PBn_{int}$. Maka, $\angle BPL = 60^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle APB = \angle APL + \angle BPL = 70^{\circ} +
+                60^{\circ} = 130^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 130°. / Jawaban: 130°.</div>
+          </div>
+
+          <!-- Pembahasan 20 -->
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan CD (bawah).
+              Sebuah titik E berada di antara dua garis. Sebuah titik F berada
+              di garis CD. Garis A-E-F membentuk sudut. $\angle EAB$ adalah
+              sudut tumpul $115^{\circ}$. $\angle AEF$ adalah sudut lancip
+              $30^{\circ}$.] / [Image Description: Two parallel lines AB (top)
+              and CD (bottom). A point E is between the lines. A point F is on
+              line CD. The line A-E-F forms angles. $\angle EAB$ is an obtuse
+              angle of $115^{\circ}$. $\angle AEF$ is an acute angle of
+              $30^{\circ}$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Draw an auxiliary line through point E
+                parallel to AB and CD. Then, use the properties of consecutive
+                interior angles ($sum = 180^{\circ}$) and alternate interior
+                angles (equal).<br /><br /><strong>Konsep:</strong> Gambar garis
+                bantu melalui titik E yang sejajar dengan AB dan CD. Lalu,
+                gunakan sifat sudut dalam sepihak (jumlah $= 180^{\circ}$) dan
+                sudut dalam berseberangan (sama besar).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw a line $L$ passing through $E$ such that $L \parallel AB
+                \parallel CD$.
+              </p>
+              <p class="solution-text">
+                • Angle $\angle EAB$ ($115^{\circ}$) and the part of $\angle
+                AEF$ above line $L$ (let's call it $\angle AEL_1$) are
+                consecutive interior angles.
+              </p>
+              <p class="solution-text">
+                • $\angle EAB + \angle AEL_1 = 180^{\circ} \implies 115^{\circ}
+                + \angle AEL_1 = 180^{\circ} \implies \angle AEL_1 =
+                65^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • We know $\angle AEF = 30^{\circ}$. This angle is composed of
+                $\angle AEL_1$ and the part below line $L$ (let's call it
+                $\angle L_1EF$).
+              </p>
+              <p class="solution-text">
+                • From the figure, $\angle AEL_1 = \angle AEF + \angle L_1EF
+                \implies 65^{\circ} = 30^{\circ} + \angle L_1EF$.
+              </p>
+              <p class="solution-text">
+                • Solving this, $\angle L_1EF = 65^{\circ} - 30^{\circ} =
+                35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Now, $\angle L_1EF$ and $\angle EFC$ are alternate interior
+                angles (between parallel lines $L$ and $CD$).
+              </p>
+              <p class="solution-text">
+                • Therefore, $\angle EFC = \angle L_1EF = 35^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis $L$ yang melalui $E$ sehingga $L \parallel AB
+                \parallel CD$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle EAB$ ($115^{\circ}$) dan bagian dari $\angle
+                AEF$ di atas garis $L$ (sebut $\angle AEL_1$) adalah sudut dalam
+                sepihak.
+              </p>
+              <p class="solution-text">
+                • $\angle EAB + \angle AEL_1 = 180^{\circ} \implies 115^{\circ}
+                + \angle AEL_1 = 180^{\circ} \implies \angle AEL_1 =
+                65^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Kita tahu $\angle AEF = 30^{\circ}$. Sudut ini terdiri dari
+                $\angle AEL_1$ dan bagian di bawah garis $L$ (sebut $\angle
+                L_1EF$).
+              </p>
+              <p class="solution-text">
+                • Dari gambar, $\angle AEL_1 = \angle AEF + \angle L_1EF
+                \implies 65^{\circ} = 30^{\circ} + \angle L_1EF$.
+              </p>
+              <p class="solution-text">
+                • Selesaikan persamaan: $\angle L_1EF = 65^{\circ} - 30^{\circ}
+                = 35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sudut $\angle L_1EF$ dan $\angle EFC$ adalah sudut dalam
+                berseberangan (antara garis $L$ dan $CD$ yang sejajar).
+              </p>
+              <p class="solution-text">
+                • Oleh karena itu, $\angle EFC = \angle L_1EF = 35^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 35°. / Jawaban: 35°.</div>
+          </div>
+
+          <!-- Pembahasan 21 -->
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Segitiga sama kaki
+              ABC dengan puncak A di L1 dan alas BC di L2. $AB = AC$. Sudut
+              $\angle CAE$ (luar) adalah $(4x-5)^{\circ}$. Sudut $\angle ABC$
+              (alas) adalah $(3x+10)^{\circ}$.] / [Image Description: Two
+              parallel lines L1 and L2. Isosceles triangle ABC with vertex A on
+              L1 and base BC on L2. $AB = AC$. Exterior angle $\angle CAE$ is
+              $(4x-5)^{\circ}$. Base angle $\angle ABC$ is $(3x+10)^{\circ}$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use alternate interior angles to
+                relate the exterior angle $\angle CAE$ to the base angle $\angle
+                ACB$. Then, use the isosceles triangle property ($ \angle ABC =
+                \angle ACB $) to solve for $x$. Finally, find all angles to
+                calculate $\angle BAC$.<br /><br /><strong>Konsep:</strong>
+                Gunakan sudut dalam berseberangan untuk menghubungkan sudut luar
+                $\angle CAE$ dengan sudut alas $\angle ACB$. Lalu, gunakan sifat
+                segitiga sama kaki ($ \angle ABC = \angle ACB $) untuk mencari
+                $x$. Terakhir, cari semua sudut untuk menghitung $\angle BAC$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Since $L_1 \parallel L_2$, $\angle CAE$ and $\angle ACB$ are
+                alternate interior angles.
+              </p>
+              <p class="solution-text">
+                • Therefore, $\angle ACB = \angle CAE = (4x - 5)^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • We are given that $\triangle ABC$ is isosceles with $AB = AC$.
+                This means the base angles are equal: $\angle ABC = \angle ACB$.
+              </p>
+              <p class="solution-text">
+                • We are given $\angle ABC = (3x + 10)^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Set the two base angles equal to solve for $x$:
+              </p>
+              $$ \begin{aligned} 3x + 10 &= 4x - 5 \\ 10 + 5 &= 4x - 3x \\ x &=
+              15 \end{aligned} $$
+              <p class="solution-text">
+                • Now find the measure of the base angles: $\angle ABC = 3(15) +
+                10 = 45 + 10 = 55^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • (Check: $\angle ACB = 4(15) - 5 = 60 - 5 = 55^{\circ}$. It
+                matches.)
+              </p>
+              <p class="solution-text">
+                • The sum of angles in $\triangle ABC$ is $180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BAC + \angle ABC + \angle ACB = 180^{\circ} \implies
+                \angle BAC + 55^{\circ} + 55^{\circ} = 180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BAC + 110^{\circ} = 180^{\circ} \implies \angle BAC =
+                70^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Karena $L_1 \parallel L_2$, $\angle CAE$ dan $\angle ACB$
+                adalah sudut dalam berseberangan.
+              </p>
+              <p class="solution-text">
+                • Maka, $\angle ACB = \angle CAE = (4x - 5)^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Diketahui $\triangle ABC$ sama kaki dengan $AB = AC$. Ini
+                berarti sudut alasnya sama besar: $\angle ABC = \angle ACB$.
+              </p>
+              <p class="solution-text">
+                • Diberikan $\angle ABC = (3x + 10)^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Samakan kedua sudut alas untuk mencari $x$:
+              </p>
+              $$ \begin{aligned} 3x + 10 &= 4x - 5 \\ 10 + 5 &= 4x - 3x \\ x &=
+              15 \end{aligned} $$
+              <p class="solution-text">
+                • Sekarang cari besar sudut alas: $\angle ABC = 3(15) + 10 = 45
+                + 10 = 55^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • (Cek: $\angle ACB = 4(15) - 5 = 60 - 5 = 55^{\circ}$. Cocok.)
+              </p>
+              <p class="solution-text">
+                • Jumlah sudut dalam $\triangle ABC$ adalah $180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BAC + \angle ABC + \angle ACB = 180^{\circ} \implies
+                \angle BAC + 55^{\circ} + 55^{\circ} = 180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle BAC + 110^{\circ} = 180^{\circ} \implies \angle BAC =
+                70^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 70°. / Jawaban: 70°.</div>
+          </div>
+
+          <!-- Pembahasan 22 -->
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar PQ dan RS. Sebuah garis
+              transversal memotongnya. Sudut $(2x + 10)^{\circ}$ adalah sudut
+              dalam di kiri. Sudut $(3x - 20)^{\circ}$ adalah sudut dalam di
+              kanan. Keduanya adalah sudut dalam berseberangan.] / [Image
+              Description: Two parallel lines PQ and RS. A transversal cuts
+              them. Angle $(2x + 10)^{\circ}$ is an interior angle on the left.
+              Angle $(3x - 20)^{\circ}$ is an interior angle on the right. They
+              are alternate interior angles.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The two given angles are alternate
+                interior angles. Since the lines are parallel, they must be
+                equal. We can set up an algebraic equation.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Dua sudut yang diberikan adalah sudut dalam berseberangan.
+                Karena garisnya sejajar, keduanya pasti sama besar. Kita bisa
+                membuat persamaan aljabar.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Since $PQ \parallel RS$, the alternate interior angles are
+                equal.
+              </p>
+              <p class="solution-text">• Set up the equation:</p>
+              $$ \begin{aligned} 2x + 10 &= 3x - 20 \\ 10 + 20 &= 3x - 2x \\ 30
+              &= x \end{aligned} $$
+              <p class="solution-text">• The value of $x$ is 30.</p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Karena $PQ \parallel RS$, sudut dalam berseberangan besarnya
+                sama.
+              </p>
+              <p class="solution-text">• Buat persamaannya:</p>
+              $$ \begin{aligned} 2x + 10 &= 3x - 20 \\ 10 + 20 &= 3x - 2x \\ 30
+              &= x \end{aligned} $$
+              <p class="solution-text">• Nilai $x$ adalah 30.</p>
+            </div>
+            <div class="final-answer">Answer: 30. / Jawaban: 30.</div>
+          </div>
+
+          <!-- Pembahasan 23 -->
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Garis transversal
+              memotongnya. Sudut $y$ adalah sudut di kiri atas (pada AB). Sudut
+              $125^{\circ}$ adalah sudut di kiri bawah (pada CD). Keduanya
+              adalah sudut dalam sepihak.] / [Image Description: Two parallel
+              lines AB and CD. A transversal cuts them. Angle $y$ is in the
+              top-left (on AB). Angle $125^{\circ}$ is in the bottom-left (on
+              CD). They are consecutive interior angles.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> The angles $y$ and $125^{\circ}$ are
+                consecutive interior angles (or co-interior). Their sum is
+                $180^{\circ}$.<br /><br /><strong>Konsep:</strong> Sudut $y$ dan
+                $125^{\circ}$ adalah sudut dalam sepihak. Jumlah keduanya adalah
+                $180^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Angle $y$ and the $125^{\circ}$ angle are consecutive interior
+                angles.
+              </p>
+              <p class="solution-text">
+                • Since $AB \parallel CD$, their sum is $180^{\circ}$.
+              </p>
+              <p class="solution-text">• Set up the equation:</p>
+              $$ \begin{aligned} y + 125^{\circ} &= 180^{\circ} \\ y &=
+              180^{\circ} - 125^{\circ} \\ y &= 55^{\circ} \end{aligned} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Sudut $y$ dan sudut $125^{\circ}$ adalah sudut dalam sepihak.
+              </p>
+              <p class="solution-text">
+                • Karena $AB \parallel CD$, jumlah keduanya adalah
+                $180^{\circ}$.
+              </p>
+              <p class="solution-text">• Buat persamaannya:</p>
+              $$ \begin{aligned} y + 125^{\circ} &= 180^{\circ} \\ y &=
+              180^{\circ} - 125^{\circ} \\ y &= 55^{\circ} \end{aligned} $$
+            </div>
+            <div class="final-answer">Answer: 55°. / Jawaban: 55°.</div>
+          </div>
+
+          <!-- Pembahasan 24 -->
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Garis zig-zag
+              kompleks. Sudut menghadap kanan: $30^{\circ}$ dan $x^{\circ}$.
+              Sudut menghadap kiri: $45^{\circ}$, $20^{\circ}$, dan
+              $35^{\circ}$.] / [Image Description: Two parallel lines L1 and L2.
+              A complex zig-zag line. Angles pointing right: $30^{\circ}$ and
+              $x^{\circ}$. Angles pointing left: $45^{\circ}$, $20^{\circ}$, and
+              $35^{\circ}$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> By drawing auxiliary lines parallel to
+                $L_1$ and $L_2$ at each vertex, and repeatedly applying the
+                Alternate Interior Angles Theorem, a principle emerges: The sum
+                of the angles pointing in one direction equals the sum of the
+                angles pointing in the opposite direction.<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Dengan menggambar garis-garis bantu yang sejajar $L_1$ dan $L_2$
+                di setiap 'puncak' zig-zag, dan menerapkan Teorema Sudut Dalam
+                Berseberangan secara berulang, sebuah prinsip akan muncul:
+                Jumlah sudut yang menghadap ke satu arah sama dengan jumlah
+                sudut yang menghadap ke arah yang berlawanan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Identify angles pointing right: $30^{\circ}$ and $x^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Identify angles pointing left: $45^{\circ}$, $20^{\circ}$, and
+                $35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Apply the principle derived from parallel lines:
+              </p>
+              $$ \begin{aligned} \text{Sum(Right)} &= \text{Sum(Left)} \\ 30 + x
+              &= 45 + 20 + 35 \\ 30 + x &= 100 \\ x &= 100 - 30 \\ x &= 70
+              \end{aligned} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Identifikasi sudut menghadap kanan: $30^{\circ}$ dan
+                $x^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Identifikasi sudut menghadap kiri: $45^{\circ}$, $20^{\circ}$,
+                dan $35^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Terapkan prinsip yang didapat dari sifat garis sejajar:
+              </p>
+              $$ \begin{aligned} \text{Jumlah(Kanan)} &= \text{Jumlah(Kiri)} \\
+              30 + x &= 45 + 20 + 35 \\ 30 + x &= 100 \\ x &= 100 - 30 \\ x &=
+              70 \end{aligned} $$
+            </div>
+            <div class="final-answer">Answer: 70. / Jawaban: 70.</div>
+          </div>
+
+          <!-- Pembahasan 25 -->
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua pasang garis sejajar. Garis AB sejajar
+              dengan DE. Garis BC sejajar dengan EF. Sudut ABC (dibentuk oleh AB
+              dan BC) adalah $70^{\circ}$. Sudut DEF (dibentuk oleh DE dan EF)
+              adalah sudut yang ditanya.] / [Image Description: Two pairs of
+              parallel lines. Line AB is parallel to DE. Line BC is parallel to
+              EF. Angle ABC (formed by AB and BC) is $70^{\circ}$. Angle DEF
+              (formed by DE and EF) is the angle to be found.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> If two angles have their corresponding
+                sides parallel, the angles are either equal or supplementary. If
+                both pairs of sides point in the "same" relative directions,
+                they are equal.<br /><br /><strong>Konsep:</strong> Jika dua
+                sudut memiliki sisi-sisi yang sejajar, kedua sudut itu bisa sama
+                besar atau berpelurus. Jika kedua pasang sisi menunjuk ke arah
+                relatif yang "sama", mereka sama besar.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Extend line $DE$ to intersect $BC$ at a point $G$.
+              </p>
+              <p class="solution-text">
+                • Since $AB \parallel DE$ (or $DG$), then $\angle ABC = \angle
+                DGC = 70^{\circ}$ (Corresponding angles).
+              </p>
+              <p class="solution-text">
+                • Since $BC \parallel EF$ (or $GC \parallel EF$), then $\angle
+                DGC = \angle DEF = 70^{\circ}$ (Corresponding angles).
+              </p>
+              <p class="solution-text">
+                • Therefore, $\angle DEF = 70^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Perpanjang garis $DE$ hingga memotong $BC$ di titik $G$.
+              </p>
+              <p class="solution-text">
+                • Karena $AB \parallel DE$ (atau $DG$), maka $\angle ABC =
+                \angle DGC = 70^{\circ}$ (Sudut sehadap).
+              </p>
+              <p class="solution-text">
+                • Karena $BC \parallel EF$ (atau $GC \parallel EF$), maka
+                $\angle DGC = \angle DEF = 70^{\circ}$ (Sudut sehadap).
+              </p>
+              <p class="solution-text">
+                • Oleh karena itu, $\angle DEF = 70^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 70°. / Jawaban: 70°.</div>
+          </div>
+
+          <!-- Pembahasan 26 -->
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar L1 dan L2. Sebuah segitiga
+              terbentuk dengan salah satu sisinya berada pada L1. Dua sisi
+              lainnya memotong L2. Sudut $x$ adalah sudut puncak segitiga (di
+              L1). Dua sudut alasnya adalah $55^{\circ}$ dan $65^{\circ}$.] /
+              [Image Description: Two parallel lines L1 and L2. A triangle is
+              formed with one side on L1. The other two sides cut L2. Angle $x$
+              is the vertex angle of the triangle (on L1). The two base angles
+              are $55^{\circ}$ and $65^{\circ}$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Use alternate interior angles to find
+                the two angles adjacent to $x$ on the straight line $L_1$. The
+                sum of angles on a straight line is $180^{\circ}$. (Or, use the
+                triangle sum theorem).<br /><br /><strong>Konsep:</strong>
+                Gunakan sudut dalam berseberangan untuk menemukan dua sudut di
+                samping $x$ pada garis lurus $L_1$. Jumlah sudut pada garis
+                lurus adalah $180^{\circ}$. (Atau, gunakan teorema jumlah sudut
+                segitiga).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • The angle to the left of $x$ on line $L_1$ is the alternate
+                interior angle to $55^{\circ}$. So, it is $55^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • The angle to the right of $x$ on line $L_1$ is the alternate
+                interior angle to $65^{\circ}$. So, it is $65^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • These three angles ($55^{\circ}$, $x$, $65^{\circ}$) are on
+                the straight line $L_1$.
+              </p>
+              <p class="solution-text">• Set up the equation:</p>
+              $$ \begin{aligned} 55^{\circ} + x + 65^{\circ} &= 180^{\circ} \\ x
+              + 120^{\circ} &= 180^{\circ} \\ x &= 60^{\circ} \end{aligned} $$
+              <p class="solution-text">
+                • (Alternatively, the sum of angles in a triangle is
+                $180^{\circ}$. The third angle is $x$. $x + 55 + 65 = 180$, so
+                $x=60$. This is faster.)
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Sudut di sebelah kiri $x$ pada garis $L_1$ adalah sudut dalam
+                berseberangan dari $55^{\circ}$. Jadi, besarnya $55^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sudut di sebelah kanan $x$ pada garis $L_1$ adalah sudut dalam
+                berseberangan dari $65^{\circ}$. Jadi, besarnya $65^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Ketiga sudut ini ($55^{\circ}$, $x$, $65^{\circ}$) berada pada
+                satu garis lurus $L_1$.
+              </p>
+              <p class="solution-text">• Buat persamaannya:</p>
+              $$ \begin{aligned} 55^{\circ} + x + 65^{\circ} &= 180^{\circ} \\ x
+              + 120^{\circ} &= 180^{\circ} \\ x &= 60^{\circ} \end{aligned} $$
+              <p class="solution-text">
+                • (Alternatif: Jumlah sudut segitiga adalah $180^{\circ}$. Sudut
+                ketiga adalah $x$. $x + 55 + 65 = 180$, jadi $x=60$. Ini lebih
+                cepat.)
+              </p>
+            </div>
+            <div class="final-answer">Answer: 60°. / Jawaban: 60°.</div>
+          </div>
+
+          <!-- Pembahasan 27 -->
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB dan CD. Sebuah titik P
+              berada di antara keduanya. Garis dari A ke P membentuk sudut
+              $140^{\circ}$ (sudut $\angle PAB$). Garis dari C ke P membentuk
+              sudut $130^{\circ}$ (sudut $\angle PCD$). Sudut $x$ adalah sudut
+              refleks $\angle APC$.] / [Image Description: Two parallel lines AB
+              and CD. A point P is between them. A line from A to P forms an
+              angle of $140^{\circ}$ ($\angle PAB$). A line from C to P forms an
+              angle of $130^{\circ}$ ($\angle PCD$). Angle $x$ is the reflex
+              angle $\angle APC$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Draw a third parallel line through
+                point P. Use the consecutive interior angles property twice. The
+                reflex angle $x$ is part of a full circle ($360^{\circ}$).<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Gambar garis sejajar ketiga melalui titik P. Gunakan sifat sudut
+                dalam sepihak dua kali. Sudut refleks $x$ adalah bagian dari
+                satu putaran penuh ($360^{\circ}$).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw a line $L$ through $P$ parallel to $AB$ and $CD$.
+              </p>
+              <p class="solution-text">
+                • Let the *interior* angle $\angle APC$ be $a$. This angle is
+                split into two parts, $a_1$ (top) and $a_2$ (bottom).
+              </p>
+              <p class="solution-text">
+                • $a_1$ and $140^{\circ}$ ($\angle PAB$) are consecutive
+                interior. $a_1 = 180^{\circ} - 140^{\circ} = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $a_2$ and $130^{\circ}$ ($\angle PCD$) are consecutive
+                interior. $a_2 = 180^{\circ} - 130^{\circ} = 50^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • The interior angle $a = a_1 + a_2 = 40^{\circ} + 50^{\circ} =
+                90^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • The question asks for the reflex angle $x$.
+              </p>
+              <p class="solution-text">
+                • $x = 360^{\circ} - a = 360^{\circ} - 90^{\circ} =
+                270^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis $L$ melalui $P$ yang sejajar $AB$ dan $CD$.
+              </p>
+              <p class="solution-text">
+                • Misal sudut *dalam* $\angle APC$ adalah $a$. Sudut ini terbagi
+                menjadi dua bagian, $a_1$ (atas) dan $a_2$ (bawah).
+              </p>
+              <p class="solution-text">
+                • $a_1$ dan $140^{\circ}$ ($\angle PAB$) adalah sudut dalam
+                sepihak. $a_1 = 180^{\circ} - 140^{\circ} = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $a_2$ dan $130^{\circ}$ ($\angle PCD$) adalah sudut dalam
+                sepihak. $a_2 = 180^{\circ} - 130^{\circ} = 50^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sudut dalam $a = a_1 + a_2 = 40^{\circ} + 50^{\circ} =
+                90^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Pertanyaan menanyakan sudut refleks $x$.
+              </p>
+              <p class="solution-text">
+                • $x = 360^{\circ} - a = 360^{\circ} - 90^{\circ} =
+                270^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 270°. / Jawaban: 270°.</div>
+          </div>
+
+          <!-- Pembahasan 28 -->
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Alternate interior angles are equal
+                when lines are parallel. Set the two expressions equal to each
+                other.<br /><br /><strong>Konsep:</strong> Sudut dalam
+                berseberangan besarnya sama jika garisnya sejajar. Buat kedua
+                ekspresi aljabar sama besar.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • The angles are alternate interior angles, so they are equal.
+              </p>
+              <p class="solution-text">• Set up the equation:</p>
+              $$ \begin{aligned} 5x - 15 &= 2x + 30 \\ 5x - 2x &= 30 + 15 \\ 3x
+              &= 45 \\ x &= 15 \end{aligned} $$
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Sudut-sudut tersebut adalah sudut dalam berseberangan, jadi
+                besarnya sama.
+              </p>
+              <p class="solution-text">• Buat persamaannya:</p>
+              $$ \begin{aligned} 5x - 15 &= 2x + 30 \\ 5x - 2x &= 30 + 15 \\ 3x
+              &= 45 \\ x &= 15 \end{aligned} $$
+            </div>
+            <div class="final-answer">Answer: 15. / Jawaban: 15.</div>
+          </div>
+
+          <!-- Pembahasan 29 -->
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan DE (bawah).
+              Titik C berada di antara dua garis. Titik B ada di garis AB dan D
+              ada di garis DE. Garis BC dan CD membentuk segitiga sama kaki.
+              $\angle ABC$ adalah sudut tumpul $108^{\circ}$.] / [Image
+              Description: Two parallel lines AB (top) and DE (bottom). Point C
+              is between them. Point B is on line AB and D is on line DE. Lines
+              BC and CD form an isosceles triangle. $\angle ABC$ is an obtuse
+              angle of $108^{\circ}$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This problem combines multiple
+                concepts: consecutive interior angles (parallel lines),
+                properties of isosceles triangles (base angles are equal), sum
+                of angles in a triangle ($180^{\circ}$), and supplementary
+                angles (on a straight line).<br /><br /><strong>Konsep:</strong>
+                Soal ini menggabungkan beberapa konsep: sudut dalam sepihak
+                (garis sejajar), sifat segitiga sama kaki (sudut alas sama
+                besar), jumlah sudut segitiga ($180^{\circ}$), dan sudut
+                berpelurus (pada garis lurus).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw an auxiliary line $L$ through $C$ parallel to $AB$ and
+                $DE$.
+              </p>
+              <p class="solution-text">
+                • $\angle ABC$ ($108^{\circ}$) and $\angle BCL$ (the top part of
+                $\angle BCD$) are consecutive interior angles.
+              </p>
+              <p class="solution-text">
+                • $\angle ABC + \angle BCL = 180^{\circ} \implies 108^{\circ} +
+                \angle BCL = 180^{\circ} \implies \angle BCL = 72^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Let the bottom part of $\angle BCD$ be $x$. So $\angle LCD =
+                x$.
+              </p>
+              <p class="solution-text">
+                • $\angle LCD$ ($x$) and the angle $\angle CDE$ are consecutive
+                interior angles.
+              </p>
+              <p class="solution-text">
+                • $\angle CDE + \angle LCD = 180^{\circ} \implies \angle CDE + x
+                = 180^{\circ} \implies \angle CDE = 180^{\circ} - x$.
+              </p>
+              <p class="solution-text">
+                • The angle *inside* the triangle, $\angle CDB$, is
+                supplementary to $\angle CDE$.
+              </p>
+              <p class="solution-text">
+                • $\angle CDB = 180^{\circ} - \angle CDE = 180^{\circ} -
+                (180^{\circ} - x) = x$.
+              </p>
+              <p class="solution-text">• So, we found $\angle CDB = x$.</p>
+              <p class="solution-text">
+                • We are given $\triangle BCD$ is isosceles with $BC = CD$. This
+                means base angles are equal: $\angle CBD = \angle CDB$.
+              </p>
+              <p class="solution-text">• Therefore, $\angle CBD = x$.</p>
+              <p class="solution-text">
+                • The total angle $\angle BCD = \angle BCL + \angle LCD =
+                72^{\circ} + x$.
+              </p>
+              <p class="solution-text">
+                • The sum of angles in $\triangle BCD$ is $180^{\circ}$:
+              </p>
+              <p class="solution-text">
+                • $(\angle CBD) + (\angle CDB) + (\angle BCD) = 180^{\circ}$
+              </p>
+              <p class="solution-text">
+                • $(x) + (x) + (72^{\circ} + x) = 180^{\circ}$
+              </p>
+              <p class="solution-text">
+                • $3x + 72^{\circ} = 180^{\circ} \implies 3x = 108^{\circ}
+                \implies x = 36^{\circ}$.
+              </p>
+              <p class="solution-text">• The question asks for $\angle CDE$.</p>
+              <p class="solution-text">
+                • $\angle CDE = 180^{\circ} - x = 180^{\circ} - 36^{\circ} =
+                144^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis bantu $L$ melalui $C$ yang sejajar $AB$ dan $DE$.
+              </p>
+              <p class="solution-text">
+                • $\angle ABC$ ($108^{\circ}$) dan $\angle BCL$ (bagian atas
+                $\angle BCD$) adalah sudut dalam sepihak.
+              </p>
+              <p class="solution-text">
+                • $\angle ABC + \angle BCL = 180^{\circ} \implies 108^{\circ} +
+                \angle BCL = 180^{\circ} \implies \angle BCL = 72^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Misal bagian bawah $\angle BCD$ adalah $x$. Jadi $\angle LCD =
+                x$.
+              </p>
+              <p class="solution-text">
+                • $\angle LCD$ ($x$) dan sudut $\angle CDE$ adalah sudut dalam
+                sepihak.
+              </p>
+              <p class="solution-text">
+                • $\angle CDE + \angle LCD = 180^{\circ} \implies \angle CDE + x
+                = 180^{\circ} \implies \angle CDE = 180^{\circ} - x$.
+              </p>
+              <p class="solution-text">
+                • Sudut *di dalam* segitiga, $\angle CDB$, berpelurus dengan
+                $\angle CDE$.
+              </p>
+              <p class="solution-text">
+                • $\angle CDB = 180^{\circ} - \angle CDE = 180^{\circ} -
+                (180^{\circ} - x) = x$.
+              </p>
+              <p class="solution-text">
+                • Jadi, kita temukan $\angle CDB = x$.
+              </p>
+              <p class="solution-text">
+                • Diketahui $\triangle BCD$ sama kaki dengan $BC = CD$. Artinya
+                sudut alasnya sama besar: $\angle CBD = \angle CDB$.
+              </p>
+              <p class="solution-text">• Maka, $\angle CBD = x$.</p>
+              <p class="solution-text">
+                • Total sudut $\angle BCD = \angle BCL + \angle LCD = 72^{\circ}
+                + x$.
+              </p>
+              <p class="solution-text">
+                • Jumlah sudut dalam $\triangle BCD$ adalah $180^{\circ}$:
+              </p>
+              <p class="solution-text">
+                • $(\angle CBD) + (\angle CDB) + (\angle BCD) = 180^{\circ}$
+              </p>
+              <p class="solution-text">
+                • $(x) + (x) + (72^{\circ} + x) = 180^{\circ}$
+              </p>
+              <p class="solution-text">
+                • $3x + 72^{\circ} = 180^{\circ} \implies 3x = 108^{\circ}
+                \implies x = 36^{\circ}$.
+              </p>
+              <p class="solution-text">• Pertanyaan menanyakan $\angle CDE$.</p>
+              <p class="solution-text">
+                • $\angle CDE = 180^{\circ} - x = 180^{\circ} - 36^{\circ} =
+                144^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 144°. / Jawaban: 144°.</div>
+          </div>
+
+          <!-- Pembahasan 30 -->
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="image-desc">
+              [Deskripsi Gambar: Dua garis sejajar AB (atas) dan CD (bawah).
+              Garis "U" terbalik (atau "C" ke kanan) menghubungkan dua garis
+              sejajar. Titik E dan F ada di antara dua garis. $\angle ABE$
+              adalah $150^{\circ}$. $\angle EFD$ adalah $140^{\circ}$. Yang
+              ditanya adalah sudut refleks $\angle BEF$.] / [Image Description:
+              Two parallel lines AB (top) and CD (bottom). An inverted "U" shape
+              connects them. Points E and F are between the lines. $\angle ABE$
+              is $150^{\circ}$. $\angle EFD$ is $140^{\circ}$. The question asks
+              for the reflex $\angle BEF$.]
+            </div>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This problem requires drawing two
+                auxiliary lines. Draw one line through E parallel to AB, and
+                another line through F parallel to AB. Use the consecutive
+                interior angles property ($sum = 180^{\circ}$) twice. Finally,
+                calculate the reflex angle ($360^{\circ}$ - interior angle).<br /><br /><strong
+                  >Konsep:</strong
+                >
+                Soal ini memerlukan dua garis bantu. Gambar satu garis melalui E
+                sejajar AB, dan satu garis lagi melalui F sejajar AB. Gunakan
+                sifat sudut dalam sepihak (jumlah $= 180^{\circ}$) dua kali.
+                Terakhir, hitung sudut refleks ($360^{\circ}$ - sudut dalam).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution:</strong>
+              <p class="solution-text">
+                • Draw a line $L_1$ through $E$ parallel to $AB$.
+              </p>
+              <p class="solution-text">
+                • Draw a line $L_2$ through $F$ parallel to $AB$. (Now $AB
+                \parallel L_1 \parallel L_2 \parallel CD$).
+              </p>
+              <p class="solution-text">
+                • The interior angle $\angle BEF$ is made of two parts: $\angle
+                BEL_1$ (top) and $\angle L_1EF$ (bottom).
+              </p>
+              <p class="solution-text">
+                • $\angle ABE$ ($150^{\circ}$) and $\angle BEL_1$ are
+                consecutive interior angles.
+              </p>
+              <p class="solution-text">
+                • $\angle ABE + \angle BEL_1 = 180^{\circ} \implies 150^{\circ}
+                + \angle BEL_1 = 180^{\circ} \implies \angle BEL_1 =
+                30^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Now consider lines $L_1 \parallel L_2 \parallel CD$. The angle
+                $\angle L_1EF$ and $\angle EFD$ ($140^{\circ}$) are related.
+              </p>
+              <p class="solution-text">
+                • $\angle L_1EF$ and $\angle EFL_2$ are consecutive interior
+                angles. $\angle L_1EF + \angle EFL_2 = 180^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • $\angle L_2FD$ and $\angle EFD$ ($140^{\circ}$) are also
+                related. $\angle EFL_2 + \angle L_2FD = \angle EFD =
+                140^{\circ}$. This is getting complicated.
+              </p>
+              <p class="solution-text">
+                • <strong>Simpler Method:</strong> Let's find the interior
+                $\angle BEF$. It consists of $\angle BEL_1$ and $\angle L_1EF$.
+              </p>
+              <p class="solution-text">
+                • We already found $\angle BEL_1 = 30^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Now let's relate $L_1$ and $CD$. The angle $\angle L_1EF$ and
+                $\angle EFD$ ($140^{\circ}$) are on the same side of the "U".
+              </p>
+              <p class="solution-text">
+                • Let's find the alternate interior angle to $\angle L_1EF$.
+                This is $\angle EFC$.
+              </p>
+              <p class="solution-text">
+                • We know $\angle EFD + \angle EFC = 180^{\circ}$ (straight line
+                CD).
+              </p>
+              <p class="solution-text">
+                • $140^{\circ} + \angle EFC = 180^{\circ} \implies \angle EFC =
+                40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Since $\angle L_1EF$ and $\angle EFC$ are alternate interior
+                angles ($L_1 \parallel CD$), then $\angle L_1EF = \angle EFC =
+                40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • The total interior angle $\angle BEF = \angle BEL_1 + \angle
+                L_1EF = 30^{\circ} + 40^{\circ} = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • The question asks for the <strong>reflex</strong> angle
+                $\angle BEF$.
+              </p>
+              <p class="solution-text">
+                • Reflex $\angle BEF = 360^{\circ} - \text{Interior } \angle BEF
+                = 360^{\circ} - 70^{\circ} = 290^{\circ}$.
+              </p>
+            </div>
+            <div class="solution-wrapper" style="margin-top: 1.5rem">
+              <strong>Langkah Penyelesaian:</strong>
+              <p class="solution-text">
+                • Gambar garis $L_1$ melalui $E$ sejajar $AB$.
+              </p>
+              <p class="solution-text">
+                • Sudut dalam $\angle BEF$ terdiri dari $\angle BEL_1$ (atas)
+                dan $\angle L_1EF$ (bawah).
+              </p>
+              <p class="solution-text">
+                • $\angle ABE$ ($150^{\circ}$) dan $\angle BEL_1$ adalah sudut
+                dalam sepihak.
+              </p>
+              <p class="solution-text">
+                • $\angle ABE + \angle BEL_1 = 180^{\circ} \implies 150^{\circ}
+                + \angle BEL_1 = 180^{\circ} \implies \angle BEL_1 =
+                30^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sekarang kita cari $\angle L_1EF$. Sudut ini adalah sudut
+                dalam berseberangan dengan $\angle EFC$ (karena $L_1 \parallel
+                CD$).
+              </p>
+              <p class="solution-text">
+                • Kita cari dulu $\angle EFC$. Sudut $\angle EFD$
+                ($140^{\circ}$) dan $\angle EFC$ berada di garis lurus $CD$.
+              </p>
+              <p class="solution-text">
+                • $\angle EFD + \angle EFC = 180^{\circ} \implies 140^{\circ} +
+                \angle EFC = 180^{\circ} \implies \angle EFC = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Karena $\angle L_1EF$ dan $\angle EFC$ berseberangan dalam,
+                maka $\angle L_1EF = \angle EFC = 40^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Sudut dalam total $\angle BEF = \angle BEL_1 + \angle L_1EF =
+                30^{\circ} + 40^{\circ} = 70^{\circ}$.
+              </p>
+              <p class="solution-text">
+                • Soal menanyakan sudut <strong>refleks</strong> $\angle BEF$.
+              </p>
+              <p class="solution-text">
+                • Sudut Refleks $\angle BEF = 360^{\circ} - \text{Sudut Dalam }
+                \angle BEF = 360^{\circ} - 70^{\circ} = 290^{\circ}$.
+              </p>
+            </div>
+            <div class="final-answer">Answer: 290°. / Jawaban: 290°.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
