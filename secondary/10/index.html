@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      body { font-family: "Inter", sans-serif; background-color: #f3f4f6; }
+      .content-card { background-color: white; border-radius: 0.75rem; padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
+      .section-title { font-size: 1.875rem; font-weight: 700; color: #3730a3; }
+      .topic-title { font-size: 1.5rem; font-weight: 600; color: #4338ca; margin-top: 2rem; margin-bottom: 1.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #a5b4fc; }
+      .item-container { margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid #e5e7eb; }
+      .item-container p { line-height: 1.7; font-size: 1.1rem; }
+      .concept { background-color: #eef2ff; border-left: 4px solid #4f46e5; padding: 1rem; margin: 1rem 0; }
+      .final-answer { font-weight: 700; color: #166534; background-color: #dcfce7; padding: 0.5rem 1rem; border-radius: 6px; display: inline-block; margin-top: 1rem; }
+      .solution-step p { line-height: 1.6; margin-bottom: 0.5rem; }
+      .solution-step ul { margin-top: 0.5rem; margin-bottom: 1rem; list-style-type: disc; list-style-position: inside; padding-left: 1rem; }
+      .solution-step ul li { line-height: 1.7; padding-left: 0.5rem; margin-bottom: 0.3rem; }
+      mjx-container { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+<div class="container mx-auto p-4 md:p-8 max-w-4xl">
+    <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 10</h1>
+        <p class="text-gray-600 mt-2">Kelas 7 - 9 | Logika & Strategi, Statistika Dasar</p>
+    </header>
+    <main>
+        <section id="problems-section" class="content-card">
+            <h2 class="section-title">Soal Latihan</h2>
+        </section>
+        <section id="solutions-section" class="content-card">
+            <h2 class="section-title">Pembahasan</h2>
+        </section>
+    </main>
+</div>
+<script>
+    // ### DATA SOAL ###
+    const questions = [
+        // PASTE DATA DARI CHAT DI SINI
+       // --- Bagian 1: Logika & Strategi (Soal 1-5) ---
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "On an island, inhabitants are either Knights (always tell the truth) or Knaves (always lie). You meet three inhabitants: A, B, and C. A says: \"We are all Knaves.\" B says: \"Exactly one of us is a Knight.\" Who is who?",
+          question_id:
+            "Di sebuah pulau, penduduknya adalah Ksatria (selalu jujur) atau Penjahat (selalu bohong). Anda bertemu tiga penduduk: A, B, dan C. A berkata: \"Kami semua Penjahat.\" B berkata: \"Tepat satu di antara kami adalah Ksatria.\" Siapakah mereka?",
+          image_desc: null,
+          answer: "A = Knave, B = Knight, C = Knave",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Case Analysis. We analyze the statement of A first, as it creates a paradox if A is a Knight. This allows us to definitively determine A's identity, and then use that information to analyze B's statement.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Analisis Kasus. Kita analisis pernyataan A terlebih dahulu, karena akan menciptakan paradoks jika A adalah Ksatria. Ini memungkinkan kita menentukan identitas A secara pasti, lalu menggunakan informasi tersebut untuk menganalisis pernyataan B.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze A's statement ("We are all Knaves.")</b>
+                        <ul>
+                            <li><b>Case 1: Assume A is a Knight.</b> If A is a Knight, his statement must be true. But his statement claims he is a Knave ("We are all Knaves"). This is a contradiction (A Knight cannot say he is a Knave).</li>
+                            <li><b>Conclusion:</b> Therefore, A cannot be a Knight. A must be a Knave.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 2: A is a Knave.</b>
+                        <ul>
+                            <li>Since A is a Knave, his statement ("We are all Knaves") must be false.</li>
+                            <li>The opposite of "We are all Knaves" is "At least one of us is a Knight."</li>
+                            <li>So, we know there is at least one Knight among A, B, and C.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 3: Analyze B's statement ("Exactly one of us is a Knight.")</b>
+                        <ul>
+                            <li>We know from Step 2 that there must be at least one Knight.</li>
+                            <li><b>Case 2a: Assume B is a Knight.</b> If B is a Knight, his statement must be true. His statement is "Exactly one of us is a Knight." If this is true, and B himself is the Knight, then A and C must be Knaves.</li>
+                            <li>Let's check this result: A = Knave, B = Knight, C = Knave.
+                                <ul>
+                                    <li>A (Knave) says "We are all Knaves." (This is false, as B is a Knight. This is consistent.)</li>
+                                    <li>B (Knight) says "Exactly one of us is a Knight." (This is true. This is consistent.)</li>
+                                </ul>
+                            </li>
+                            <li>This scenario (A=Knave, B=Knight, C=Knave) works.</li>
+                        </ul>
+                    </li>
+                     <li><b>Step 4: (Check other case just to be sure)</b>
+                        <ul>
+                            <li><b>Case 2b: Assume B is a Knave.</b> If B is a Knave, his statement ("Exactly one of us is a Knight") must be false.</li>
+                            <li>The opposite of "Exactly one..." is "There are zero, two, or three Knights."</li>
+                            <li>We know A is a Knave. We assume B is a Knave. For the statement to be false, C must be a Knight (to satisfy the "two or three Knights" condition, as we already know A is a Knave). Wait, if C is the only Knight, then B's statement "Exactly one of us is a Knight" would be TRUE. But B is a Knave, so he can't say a true statement. This is a contradiction.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 5: Final Conclusion.</b> The only consistent scenario is from Step 3.</li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis pernyataan A ("Kami semua Penjahat.")</b>
+                        <ul>
+                            <li><b>Kasus 1: Asumsikan A adalah Ksatria.</b> Jika A Ksatria, pernyataannya harus benar. Tapi pernyataannya mengklaim dia adalah Penjahat ("Kami semua Penjahat"). Ini adalah kontradiksi (Ksatria tidak bisa berkata dia Penjahat).</li>
+                            <li><b>Kesimpulan:</b> Oleh karena itu, A tidak mungkin Ksatria. A pasti seorang Penjahat.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 2: A adalah Penjahat.</b>
+                        <ul>
+                            <li>Karena A adalah Penjahat, pernyataannya ("Kami semua Penjahat") harus salah.</li>
+                            <li>Kebalikan dari "Kami semua Penjahat" adalah "Setidaknya satu dari kami adalah Ksatria."</li>
+                            <li>Jadi, kita tahu pasti ada minimal satu Ksatria di antara A, B, dan C.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 3: Analisis pernyataan B ("Tepat satu di antara kami adalah Ksatria.")</b>
+                        <ul>
+                            <li>Kita tahu dari Langkah 2 bahwa setidaknya ada satu Ksatria.</li>
+                            <li><b>Kasus 2a: Asumsikan B adalah Ksatria.</b> Jika B Ksatria, pernyataannya harus benar. Pernyataannya adalah "Tepat satu di antara kami adalah Ksatria." Jika ini benar, dan B sendiri adalah Ksatria itu, maka A dan C harus Penjahat.</li>
+                            <li>Mari kita periksa hasil ini: A = Penjahat, B = Ksatria, C = Penjahat.
+                                <ul>
+                                    <li>A (Penjahat) berkata "Kami semua Penjahat." (Ini salah, karena B Ksatria. Ini konsisten.)</li>
+                                    <li>B (Ksatria) berkata "Tepat satu di antara kami adalah Ksatria." (Ini benar. Ini konsisten.)</li>
+                                </ul>
+                            </li>
+                            <li>Skenario ini (A=Penjahat, B=Ksatria, C=Penjahat) berhasil.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 4: (Periksa kasus lain untuk memastikan)</b>
+                        <ul>
+                            <li><b>Kasus 2b: Asumsikan B adalah Penjahat.</b> Jika B Penjahat, pernyataannya ("Tepat satu di antara kami adalah Ksatria") harus salah.</li>
+                            <li>Kebalikan dari "Tepat satu..." adalah "Ada nol, dua, atau tiga Ksatria."</li>
+                            <li>Kita tahu A adalah Penjahat. Kita asumsikan B Penjahat. Agar pernyataan B salah, maka C harus Ksatria (memenuhi kondisi "dua atau tiga Ksatria", tapi kita sudah tahu A Penjahat). Tunggu, jika C adalah satu-satunya Ksatria, maka pernyataan B "Tepat satu di antara kami adalah Ksatria" akan menjadi BENAR. Tapi B adalah Penjahat, dia tidak bisa mengatakan pernyataan yang benar. Ini adalah kontradiksi.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 5: Kesimpulan Akhir.</b> Satu-satunya skenario yang konsisten adalah dari Langkah 3.</li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "You have 9 identical-looking coins. One of them is a counterfeit and is slightly heavier than the others (which are all of equal weight). What is the minimum number of weighings needed to find the heavier counterfeit coin using a two-pan balance scale?",
+          question_id:
+            "Anda memiliki 9 koin yang tampak identik. Salah satunya palsu dan sedikit lebih berat dari yang lain (yang beratnya sama). Berapa jumlah penimbangan minimum yang diperlukan untuk menemukan koin palsu yang lebih berat tersebut menggunakan timbangan dua lengan?",
+          image_desc: null,
+          answer: "2",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Balancing Scale Problem. With each weighing on a two-pan balance, there are three possible outcomes: Left side is heavier, Right side is heavier, or Both sides are equal. This allows us to divide the search group by 3 with each weighing.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Masalah Penimbangan. Dengan setiap penimbangan pada timbangan dua lengan, ada tiga kemungkinan hasil: Sisi kiri lebih berat, Sisi kanan lebih berat, atau Kedua sisi seimbang. Ini memungkinkan kita membagi kelompok pencarian menjadi 3 bagian pada setiap penimbangan.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Understand the Goal.</b> We need to isolate 1 heavier coin from a group of 9.</li>
+                    <li><b>Step 2: Relate Weighings to Outcomes.</b> With 1 weighing, we can find the heavy coin from a group of 3 ($3^1$). With 2 weighings, we can find it from a group of 9 ($3^2$). With $N$ weighings, we can find it from $3^N$ coins.</li>
+                    <li><b>Step 3: First Weighing.</b>
+                        <ul>
+                            <li>Divide the 9 coins into three groups of 3: Group 1 (A,B,C), Group 2 (D,E,F), Group 3 (G,H,I).</li>
+                            <li>Place Group 1 on the left pan and Group 2 on the right pan.</li>
+                            <li><b>Outcome 1:</b> The scale balances. This means the heavy coin is not in Group 1 or 2. It must be in Group 3 (G,H,I).</li>
+                            <li><b>Outcome 2:</b> The left side (Group 1) is heavier. This means the heavy coin is in Group 1 (A,B,C).</li>
+                            <li><b>Outcome 3:</b> The right side (Group 2) is heavier. This means the heavy coin is in Group 2 (D,E,F).</li>
+                            <li>In all outcomes, we have successfully narrowed down the search to a group of 3 coins.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 4: Second Weighing.</b>
+                        <ul>
+                            <li>Take the group of 3 coins identified in Step 3 (e.g., A,B,C).</li>
+                            <li>Place one coin (A) on the left pan and one coin (B) on the right pan. Leave one coin (C) aside.</li>
+                            <li><b>Outcome 2a:</b> The scale balances. This means A and B are normal. The heavy coin must be the one left aside (C).</li>
+                            <li><b>Outcome 2b:</b> The left side (A) is heavier. The heavy coin is A.</li>
+                            <li><b>Outcome 2c:</b> The right side (B) is heavier. The heavy coin is B.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 5: Conclusion.</b> We successfully found the heavy coin in exactly 2 weighings.</li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Pahami Tujuannya.</b> Kita harus mengisolasi 1 koin yang lebih berat dari kelompok 9 koin.</li>
+                    <li><b>Langkah 2: Hubungkan Penimbangan dengan Hasil.</b> Dengan 1 penimbangan, kita dapat menemukan koin berat dari 3 koin ($3^1$). Dengan 2 penimbangan, kita dapat menemukannya dari 9 koin ($3^2$). Dengan $N$ penimbangan, kita dapat menemukannya dari $3^N$ koin.</li>
+                    <li><b>Langkah 3: Penimbangan Pertama.</b>
+                        <ul>
+                            <li>Bagi 9 koin menjadi tiga kelompok @ 3 koin: Kelompok 1 (A,B,C), Kelompok 2 (D,E,F), Kelompok 3 (G,H,I).</li>
+                            <li>Letakkan Kelompok 1 di lengan kiri dan Kelompok 2 di lengan kanan.</li>
+                            <li><b>Hasil 1:</b> Timbangan seimbang. Ini berarti koin berat tidak ada di Kelompok 1 atau 2. Koin itu pasti ada di Kelompok 3 (G,H,I).</li>
+                            <li><b>Hasil 2:</b> Sisi kiri (Kelompok 1) lebih berat. Ini berarti koin berat ada di Kelompok 1 (A,B,C).</li>
+                            <li><b>Hasil 3:</b> Sisi kanan (Kelompok 2) lebih berat. Ini berarti koin berat ada di Kelompok 2 (D,E,F).</li>
+                            <li>Dalam semua hasil, kita telah berhasil mempersempit pencarian ke satu kelompok berisi 3 koin.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 4: Penimbangan Kedua.</b>
+                        <ul>
+                            <li>Ambil kelompok 3 koin yang teridentifikasi di Langkah 3 (misal, A,B,C).</li>
+                            <li>Letakkan satu koin (A) di lengan kiri dan satu koin (B) di lengan kanan. Sisihkan satu koin (C).</li>
+                            <li><b>Hasil 2a:</b> Timbangan seimbang. Ini berarti A dan B normal. Koin berat pastilah yang disisihkan (C).</li>
+                            <li><b>Hasil 2b:</b> Sisi kiri (A) lebih berat. Koin berat adalah A.</li>
+                            <li><b>Hasil 2c:</b> Sisi kanan (B) lebih berat. Koin berat adalah B.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 5: Kesimpulan.</b> Kita berhasil menemukan koin berat tepat dalam 2 kali penimbangan.</li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "Two players, A and B, play a game. They start with a pile of 21 stones. They take turns removing 1, 2, or 3 stones. The player who takes the last stone wins. If Player A goes first, what must A do on the first move to guarantee a win?",
+          question_id:
+            "Dua pemain, A dan B, bermain game. Mereka mulai dengan tumpukan 21 batu. Mereka bergiliran mengambil 1, 2, atau 3 batu. Pemain yang mengambil batu terakhir menang. Jika Pemain A mulai lebih dulu, apa yang harus A lakukan pada langkah pertama untuk menjamin kemenangan?",
+          image_desc: null,
+          answer: "Take 1 stone (Ambil 1 batu)",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Game Theory (Winning/Losing Positions). This is a game of Nim. To win, a player must always leave their opponent in a "losing position." The maximum number of stones removable is $k=3$. The "key" number is $k+1 = 4$.</p>
+                <p>A "losing position" is a multiple of $(k+1)$. In this game, $k+1 = 4$. Losing positions are 4, 8, 12, 16, 20, 24, etc.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Teori Permainan (Posisi Menang/Kalah). Ini adalah permainan Nim. Untuk menang, pemain harus selalu meninggalkan lawannya di "posisi kalah". Jumlah maksimum batu yang bisa diambil adalah $k=3$. Angka "kunci" adalah $k+1 = 4$.</p>
+                <p>"Posisi kalah" adalah kelipatan dari $(k+1)$. Dalam game ini, $k+1 = 4$. Posisi kalah adalah 4, 8, 12, 16, 20, 24, dst.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Identify the Winning Strategy.</b> The player who takes the last stone wins. The strategy is to force the other player to land on a "losing position."</li>
+                    <li><b>Step 2: Identify Losing Positions.</b> The number of stones removable is $k=3$. The 'magic number' is $k+1 = 4$. Any pile size that is a multiple of 4 is a "losing position" for the player whose turn it is.
+                    <br/>Losing Positions: {4, 8, 12, 16, 20, 24, ...}</li>
+                    <li><b>Step 3: Analyze the Starting Position.</b> The game starts with 21 stones. This is a "winning position" because it is not a multiple of 4.</li>
+                    <li><b>Step 4: Determine Player A's First Move.</b> Player A (first player) must move to the nearest losing position *below* 21. The closest losing position is 20.</li>
+                    <li><b>Step 5: Calculate the Move.</b> To get from 21 stones to 20 stones, Player A must remove $21 - 20 = 1$ stone.</li>
+                    <li><b>Step 6: Verify the Win.</b>
+                        <ul>
+                            <li>A takes 1 stone, leaving 20 (a losing position for B).</li>
+                            <li>B takes $x$ stones (1, 2, or 3). B will leave 19, 18, or 17.</li>
+                            <li>A responds by taking $4-x$ stones (3, 2, or 1) to leave 16 (a losing position for B).</li>
+                            <li>This continues (A leaves 12, 8, 4).</li>
+                            <li>Finally, A leaves 4 stones for B. B takes $x$ (1, 2, or 3), leaving 3, 2, or 1.</li>
+                            <li>A takes the remaining 3, 2, or 1 stone and wins.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Identifikasi Strategi Kemenangan.</b> Pemain yang mengambil batu terakhir menang. Strateginya adalah memaksa pemain lain mendarat di "posisi kalah".</li>
+                    <li><b>Langkah 2: Identifikasi Posisi Kalah.</b> Jumlah batu yang bisa diambil adalah $k=3$. 'Angka ajaib' adalah $k+1 = 4$. Ukuran tumpukan apa pun yang merupakan kelipatan 4 adalah "posisi kalah" bagi pemain yang mendapat giliran.
+                    <br/>Posisi Kalah: {4, 8, 12, 16, 20, 24, ...}</li>
+                    <li><b>Langkah 3: Analisis Posisi Awal.</b> Permainan dimulai dengan 21 batu. Ini adalah "posisi menang" karena bukan kelipatan 4.</li>
+                    <li><b>Langkah 4: Tentukan Langkah Pertama A.</b> Pemain A (pemain pertama) harus bergerak ke posisi kalah terdekat *di bawah* 21. Posisi kalah terdekat adalah 20.</li>
+                    <li><b>Langkah 5: Hitung Langkahnya.</b> Untuk beralih dari 21 batu ke 20 batu, Pemain A harus mengambil $21 - 20 = 1$ batu.</li>
+                    <li><b>Langkah 6: Verifikasi Kemenangan.</b>
+                        <ul>
+                            <li>A mengambil 1 batu, menyisakan 20 (posisi kalah untuk B).</li>
+                            <li>B mengambil $x$ batu (1, 2, atau 3). B akan menyisakan 19, 18, atau 17.</li>
+                            <li>A merespons dengan mengambil $4-x$ batu (3, 2, atau 1) untuk menyisakan 16 (posisi kalah untuk B).</li>
+                            <li>Ini berlanjut (A menyisakan 12, 8, 4).</li>
+                            <li>Akhirnya, A menyisakan 4 batu untuk B. B mengambil $x$ (1, 2, atau 3), menyisakan 3, 2, atau 1.</li>
+                            <li>A mengambil sisa 3, 2, atau 1 batu tersebut dan menang.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "A bridge must be crossed by 4 people at night: A, B, C, and D. They have only one flashlight. The bridge can only hold 2 people at a time. The flashlight must be used for every crossing (going and returning). A takes 1 minute to cross, B takes 2 minutes, C takes 7 minutes, and D takes 10 minutes. When two people cross, they move at the speed of the slower person. What is the minimum time required for all 4 people to cross?",
+          question_id:
+            "Sebuah jembatan harus diseberangi oleh 4 orang di malam hari: A, B, C, dan D. Mereka hanya punya satu senter. Jembatan hanya bisa menampung 2 orang sekaligus. Senter harus digunakan untuk setiap penyeberangan (pergi dan kembali). A butuh 1 menit, B butuh 2 menit, C butuh 7 menit, and D butuh 10 menit. Saat dua orang menyeberang, mereka bergerak dengan kecepatan orang yang lebih lambat. Berapa waktu minimum yang diperlukan agar keempat orang itu bisa menyeberang?",
+          image_desc: null,
+          answer: "17 menit",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Bridge Crossing Problem. The key is to optimize the "return" trips. The slowest people (C and D) must cross together. The challenge is how to manage the flashlight returns efficiently. The optimal strategy involves using the fastest person (A) to shuttle the flashlight back, OR having the two fastest (A and B) wait on the other side to shuttle.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Masalah Penyeberangan Jembatan. Kuncinya adalah mengoptimalkan perjalanan "kembali". Orang-orang terlambat (C dan D) harus menyeberang bersama. Tantangannya adalah bagaimana mengelola pengembalian senter secara efisien. Strategi optimal melibatkan penggunaan orang tercepat (A) untuk mengantar senter kembali, ATAU meminta dua tercepat (A dan B) menunggu di seberang untuk mengantar.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution (Strategy 1: Non-Optimal):</p>
+                <p>This strategy uses the fastest person (A) as the only shuttle. This is intuitive but slower.</p>
+                <ul>
+                    <li>1. A (1) and B (2) cross. (Time: 2). <b>Total: 2</b>.</li>
+                    <li>2. A (1) returns. (Time: 1). <b>Total: 3</b>.</li>
+                    <li>3. A (1) and C (7) cross. (Time: 7). <b>Total: 10</b>.</li>
+                    <li>4. A (1) returns. (Time: 1). <b>Total: 11</b>.</li>
+                    <li>5. A (1) and D (10) cross. (Time: 10). <b>Total: 21</b>. (This takes 21 minutes)</li>
+                </ul>
+               
+                <p class="font-bold text-indigo-600 mt-4">Solution (Strategy 2: The Optimal Strategy):</p>
+                <p>This strategy minimizes time by having the two slowest people (C and D) cross together, and using the two fastest (A and B) to efficiently manage the flashlight returns.</p>
+                 <ul>
+                    <li><b>1. A (1) and B (2) cross together.</b> (They move at the slower speed). (Time: 2 mins). <b>Total: 2</b>. (A, B on far side).</li>
+                    <li><b>2. A (1) returns.</b> (Time: 1 min). <b>Total: 3</b>. (B on far side).</li>
+                    <li><b>3. C (7) and D (10) cross together.</b> (The two slowest cross). (Time: 10 mins). <b>Total: 13</b>. (B, C, D on far side).</li>
+                    <li><b>4. B (2) returns.</b> (Time: 2 mins). <b>Total: 15</b>. (C, D on far side; A, B at start).</li>
+                    <li><b>5. A (1) and B (2) cross together.</b> (Time: 2 mins). <b>Total: 17</b>. (All on far side).</li>
+                </ul>
+                <p class="mt-2">This strategy (17 minutes) is faster than Strategy 1 (21 minutes). Therefore, the minimum time is 17 minutes.</p>
+            </div>
+            <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian (Strategi Optimal):</p>
+                 <p>Strategi optimal adalah membiarkan dua orang terlambat (C dan D) menyeberang bersama, dan menggunakan A dan B untuk mengelola senter.</p>
+                 <ul>
+                    <li><b>1. A (1) dan B (2) menyeberang.</b> (Waktu: 2 menit, kecepatan B). <b>Total: 2</b>. (A, B di sisi jauh).</li>
+                    <li><b>2. A (1) kembali.</b> (Waktu: 1 menit). <b>Total: 3</b>. (B di sisi jauh).</li>
+                    <li><b>3. C (7) dan D (10) menyeberang.</b> (Waktu: 10 menit, kecepatan D). <b>Total: 13</b>. (B, C, D di sisi jauh).</li>
+                    <li><b>4. B (2) kembali.</b> (Waktu: 2 menit). <b>Total: 15</b>. (C, D di sisi jauh; A, B di awal).</li>
+                    <li><b>5. A (1) dan B (2) menyeberang.</b> (Waktu: 2 menit). <b>Total: 17</b>. (Semua di sisi jauh).</li>
+                </ul>
+                 <p class="mt-2">Total waktu minimum adalah 17 menit.</p>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "<strong>(Non-Rutin)</strong> You have 10 stacks of 10 coins each. One stack is entirely counterfeit. A real coin weighs 10 grams. A counterfeit coin weighs 9 grams. You have a digital (electronic) scale that gives an exact weight reading (not a balance scale). What is the minimum number of weighings needed to find the counterfeit stack?",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Anda memiliki 10 tumpukan koin, masing-masing berisi 10 koin. Satu tumpukan seluruhnya palsu. Koin asli beratnya 10 gram. Koin palsu beratnya 9 gram. Anda memiliki timbangan digital (elektronik) yang memberikan bacaan berat pasti (bukan timbangan lengan). Berapa jumlah penimbangan minimum yang diperlukan untuk menemukan tumpukan palsu?",
+          image_desc: null,
+          answer: "1",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Strategic Sampling. We can determine the counterfeit stack in one weighing by taking a different number of coins from each stack. The total weight 'missing' from the expected weight will tell us which stack is counterfeit.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Pengambilan Sampel Strategis. Kita dapat menentukan tumpukan palsu dalam satu kali penimbangan dengan mengambil jumlah koin yang berbeda dari setiap tumpukan. Total berat yang 'hilang' dari berat yang diharapkan akan memberi tahu kita tumpukan mana yang palsu.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Label the stacks.</b> Label the 10 stacks as Stack #1, Stack #2, ..., Stack #10.</li>
+                    <li><b>Step 2: Take the strategic sample.</b>
+                        <ul>
+                            <li>Take <b>1</b> coin from Stack #1.</li>
+                            <li>Take <b>2</b> coins from Stack #2.</li>
+                            <li>Take <b>3</b> coins from Stack #3.</li>
+                            <li>...</li>
+                            <li>Take <b>10</b> coins from Stack #10.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 3: Calculate total coins and expected weight.</b>
+                        <ul>
+                            <li>Total coins sampled = $1 + 2 + 3 + ... + 10 = \\frac{10(11)}{2} = 55$ coins.</li>
+                            <li>If all coins were real (10g each), the expected weight would be $55 \\times 10\\text{g} = 550\\text{g}$.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 4: Perform the weighing.</b> Place all 55 sampled coins on the digital scale at the same time (This is 1 weighing).</li>
+                    <li><b>Step 5: Analyze the result.</b> The actual weight will be *less* than 550g. The difference tells us the counterfeit stack.
+                        <ul>
+                            <li>Each counterfeit coin is 1g lighter (10g - 9g = 1g).</li>
+                            <li>If the scale reads <b>549g</b> (1g missing), it means there was 1 counterfeit coin in the sample. This coin came from Stack #1.</li>
+                            <li>If the scale reads <b>548g</b> (2g missing), it means there were 2 counterfeit coins. These came from Stack #2.</li>
+                            <li>If the scale reads <b>547g</b> (3g missing), it means there were 3 counterfeit coins. These came from Stack #3.</li>
+                            <li>...</li>
+                            <li>If the scale reads <b>540g</b> (10g missing), it means there were 10 counterfeit coins. These came from Stack #10.</li>
+                        </ul>
+                    </li>
+                     <li><b>Step 6: Conclusion.</b> By analyzing how many grams are 'missing' from 550g, we can instantly identify the counterfeit stack in a single weighing.</li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Beri label tumpukan.</b> Beri label 10 tumpukan sebagai Tumpukan #1, Tumpukan #2, ..., Tumpukan #10.</li>
+                    <li><b>Langkah 2: Ambil sampel strategis.</b>
+                        <ul>
+                            <li>Ambil <b>1</b> koin dari Tumpukan #1.</li>
+                            <li>Ambil <b>2</b> koin dari Tumpukan #2.</li>
+                            <li>Ambil <b>3</b> koin dari Tumpukan #3.</li>
+                            <li>...</li>
+                            <li>Ambil <b>10</b> koin dari Tumpukan #10.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 3: Hitung total koin dan berat yang diharapkan.</b>
+                        <ul>
+                            <li>Total koin sampel = $1 + 2 + 3 + ... + 10 = \\frac{10(11)}{2} = 55$ koin.</li>
+                            <li>Jika semua koin asli (masing-masing 10g), berat yang diharapkan adalah $55 \\times 10\\text{g} = 550\\text{g}$.</li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 4: Lakukan penimbangan.</b> Letakkan semua 55 koin sampel di timbangan digital secara bersamaan (Ini adalah 1 penimbangan).</li>
+                    <li><b>Langkah 5: Analisis hasil.</b> Berat aktual akan *kurang* dari 550g. Perbedaannya memberi tahu kita tumpukan palsu.
+                        <ul>
+                            <li>Setiap koin palsu 1g lebih ringan (10g - 9g = 1g).</li>
+                            <li>Jika timbangan menunjukkan <b>549g</b> (kurang 1g), berarti ada 1 koin palsu di sampel. Koin ini berasal dari Tumpukan #1.</li>
+                            <li>Jika timbangan menunjukkan <b>548g</b> (kurang 2g), berarti ada 2 koin palsu. Ini berasal dari Tumpukan #2.</li>
+                            <li>Jika timbangan menunjukkan <b>547g</b> (kurang 3g), berarti ada 3 koin palsu. Ini berasal dari Tumpukan #3.</li>
+                            <li>...</li>
+                            <li>Jika timbangan menunjukkan <b>540g</b> (kurang 10g), berarti ada 10 koin palsu. Ini berasal dari Tumpukan #10.</li>
+                        </ul>
+                    </li>
+                     <li><b>Langkah 6: Kesimpulan.</b> Dengan menganalisis berapa gram yang 'hilang' dari 550g, kita dapat langsung mengidentifikasi tumpukan palsu dalam satu kali penimbangan.</li>
+                </ul>
+            </div>`,
+        },
+        // --- Bagian 2: Statistika Dasar (Soal 6-10) ---
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "The mean of 5 numbers is 20. If one number is removed, the mean of the remaining 4 numbers is 23. What was the number that was removed?",
+          question_id:
+            "Rata-rata dari 5 angka adalah 20. Jika satu angka dihilangkan, rata-rata dari 4 angka yang tersisa adalah 23. Berapakah angka yang dihilangkan tersebut?",
+          image_desc: null,
+          answer: "8",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> The mean is the total sum divided by the count (Mean = Total Sum / Count). Therefore, the Total Sum = Mean $\\times$ Count. The removed number is the difference between the original total sum and the new total sum.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Rata-rata adalah jumlah total dibagi banyaknya data (Rata-rata = Jumlah Total / Banyak Data). Oleh karena itu, Jumlah Total = Rata-rata $\\times$ Banyak Data. Angka yang dihapus adalah selisih antara jumlah total awal dan jumlah total baru.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate the original total sum (of 5 numbers).</b>
+                        <br/>Total Sum (Original) = Mean $\\times$ Count = $20 \\times 5 = 100$.
+                    </li>
+                    <li><b>Step 2: Calculate the new total sum (of 4 numbers).</b>
+                        <br/>Total Sum (New) = Mean $\\times$ Count = $23 \\times 4 = 92$.
+                    </li>
+                    <li><b>Step 3: Find the removed number.</b>
+                        <br/>The removed number is the difference between the original sum and the new sum.
+                        <br/>Removed Number = Total Sum (Original) - Total Sum (New) = $100 - 92 = 8$.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung jumlah total awal (dari 5 angka).</b>
+                        <br/>Jumlah Total (Awal) = Rata-rata $\\times$ Banyak Data = $20 \\times 5 = 100$.
+                    </li>
+                    <li><b>Langkah 2: Hitung jumlah total baru (dari 4 angka).</b>
+                        <br/>Jumlah Total (Baru) = Rata-rata $\\times$ Banyak Data = $23 \\times 4 = 92$.
+                    </li>
+                    <li><b>Langkah 3: Cari angka yang dihilangkan.</b>
+                        <br/>Angka yang dihilangkan adalah selisih antara jumlah total awal dan jumlah total baru.
+                        <br/>Angka yang Dihilangkan = Jumlah Total (Awal) - Jumlah Total (Baru) = $100 - 92 = 8$.
+                    </li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A class of 10 students has a mean score of 85 on a test. A second class of 15 students has a mean score of 70 on the same test. What is the combined mean score of all 25 students?",
+          question_id:
+            "Satu kelas berisi 10 siswa memiliki nilai rata-rata 85 pada suatu ujian. Kelas kedua berisi 15 siswa memiliki nilai rata-rata 70 pada ujian yang sama. Berapa nilai rata-rata gabungan dari 25 siswa tersebut?",
+          image_desc: null,
+          answer: "76",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Combined Mean (Weighted Average). We cannot just average the means (85 and 70). We must find the total sum of all scores and divide by the total number of students.
+                <br/>Combined Mean = $\\frac{\\text{(Sum 1)} + \\text{(Sum 2)}}{\\text{(Count 1)} + \\text{(Count 2)}} = \\frac{(N_1 \\times M_1) + (N_2 \\times M_2)}{N_1 + N_2}$.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Rata-rata Gabungan (Rata-rata Tertimbang). Kita tidak bisa hanya merata-ratakan 85 dan 70. Kita harus mencari jumlah total semua nilai dan membaginya dengan jumlah total siswa.
+                <br/>Rata-rata Gabungan = $\\frac{\\text{(Jumlah 1)} + \\text{(Jumlah 2)}}{\\text{(Banyak 1)} + \\text{(Banyak 2)}} = \\frac{(N_1 \\times M_1) + (N_2 \\times M_2)}{N_1 + N_2}$.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate Total Sum for Class 1 (10 students).</b>
+                        <br/>Total Sum 1 = $N_1 \\times M_1 = 10 \\times 85 = 850$.
+                    </li>
+                    <li><b>Step 2: Calculate Total Sum for Class 2 (15 students).</b>
+                        <br/>Total Sum 2 = $N_2 \\times M_2 = 15 \\times 70 = 1050$.
+                    </li>
+                    <li><b>Step 3: Calculate Overall Total Sum and Total Count.</b>
+                        <br/>Overall Sum = Total Sum 1 + Total Sum 2 = $850 + 1050 = 1900$.
+                        <br/>Total Count = $N_1 + N_2 = 10 + 15 = 25$.
+                    </li>
+                    <li><b>Step 4: Calculate the Combined Mean.</b>
+                        <br/>Combined Mean = $\\frac{\\text{Overall Sum}}{\\text{Total Count}} = \\frac{1900}{25}$.
+                        <br/>(Calculation tip: $\\frac{1900}{25} = \\frac{1900 \\times 4}{25 \\times 4} = \\frac{7600}{100} = 76$).
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung Jumlah Total untuk Kelas 1 (10 siswa).</b>
+                        <br/>Jumlah Total 1 = $N_1 \\times M_1 = 10 \\times 85 = 850$.
+                    </li>
+                    <li><b>Langkah 2: Hitung Jumlah Total untuk Kelas 2 (15 siswa).</b>
+                        <br/>Jumlah Total 2 = $N_2 \\times M_2 = 15 \\times 70 = 1050$.
+                    </li>
+                    <li><b>Langkah 3: Hitung Jumlah Total Keseluruhan dan Banyak Data Total.</b>
+                        <br/>Jumlah Keseluruhan = Jumlah Total 1 + Jumlah Total 2 = $850 + 1050 = 1900$.
+                        <br/>Banyak Data Total = $N_1 + N_2 = 10 + 15 = 25$.
+                    </li>
+                    <li><b>Langkah 4: Hitung Rata-rata Gabungan.</b>
+                        <br/>Rata-rata Gabungan = $\\frac{\\text{Jumlah Keseluruhan}}{\\text{Banyak Data Total}} = \\frac{1900}{25}$.
+                        <br/>(Tips kalkulasi: $\\frac{1900}{25} = \\frac{1900 \\times 4}{25 \\times 4} = \\frac{7600}{100} = 76$).
+                    </li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "Find the median, lower quartile (Q1), and upper quartile (Q3) of the following dataset: {14, 8, 10, 15, 8, 12, 11, 2, 20, 18, 5}",
+          question_id:
+            "Tentukan median, kuartil bawah (Q1), dan kuartil atas (Q3) dari kumpulan data berikut: {14, 8, 10, 15, 8, 12, 11, 2, 20, 18, 5}",
+          image_desc: null,
+          answer: "Median = 11, Q1 = 8, Q3 = 15",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Quartiles and Median. The first step is to sort the data.
+                <br/>1. Find the Median (Q2), which is the middle value.
+                <br/>2. Q1 is the median of the lower half of the data (not including Q2).
+                <br/>3. Q3 is the median of the upper half of the data (not including Q2).</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Kuartil dan Median. Langkah pertama adalah mengurutkan data.
+                <br/>1. Cari Median (Q2), yaitu nilai tengah.
+                <br/>2. Q1 adalah median dari setengah bagian bawah data (tidak termasuk Q2).
+                <br/>3. Q3 adalah median dari setengah bagian atas data (tidak termasuk Q2).</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Sort the data.</b>
+                        <br/>Original: {14, 8, 10, 15, 8, 12, 11, 2, 20, 18, 5}
+                        <br/>Sorted: {2, 5, 8, 8, 10, 11, 12, 14, 15, 18, 20}
+                    </li>
+                    <li><b>Step 2: Find the Median (Q2).</b>
+                        <br/>There are $N=11$ data points. The middle position is $\\frac{N+1}{2} = \\frac{11+1}{2} = 6$.
+                        <br/>The 6th value is 11.
+                        <br/><b>Median (Q2) = 11</b>.
+                    </li>
+                    <li><b>Step 3: Find the Lower Quartile (Q1).</b>
+                        <br/>Look at the lower half of the data (excluding the median): {2, 5, 8, 8, 10}.
+                        <br/>This set has 5 values. The middle position is $\\frac{5+1}{2} = 3$.
+                        <br/>The 3rd value in this subset is 8.
+                        <br/><b>Q1 = 8</b>.
+                    </li>
+                    <li><b>Step 4: Find the Upper Quartile (Q3).</b>
+                        <br/>Look at the upper half of the data (excluding the median): {12, 14, 15, 18, 20}.
+                        <br/>This set has 5 values. The middle position is $\\frac{5+1}{2} = 3$.
+                        <br/>The 3rd value in this subset is 15.
+                        <br/><b>Q3 = 15</b>.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Urutkan data.</b>
+                        <br/>Asli: {14, 8, 10, 15, 8, 12, 11, 2, 20, 18, 5}
+                        <br/>Urut: {2, 5, 8, 8, 10, 11, 12, 14, 15, 18, 20}
+                    </li>
+                    <li><b>Langkah 2: Cari Median (Q2).</b>
+                        <br/>Ada $N=11$ titik data. Posisi tengahnya adalah $\\frac{N+1}{2} = \\frac{11+1}{2} = 6$.
+                        <br/>Nilai ke-6 adalah 11.
+                        <br/><b>Median (Q2) = 11</b>.
+                    </li>
+                    <li><b>Langkah 3: Cari Kuartil Bawah (Q1).</b>
+                        <br/>Lihat setengah bagian bawah data (tidak termasuk median): {2, 5, 8, 8, 10}.
+                        <br/>Set ini memiliki 5 nilai. Posisi tengahnya adalah $\\frac{5+1}{2} = 3$.
+                        <br/>Nilai ke-3 di subset ini adalah 8.
+                        <br/><b>Q1 = 8</b>.
+                    </li>
+                    <li><b>Langkah 4: Cari Kuartil Atas (Q3).</b>
+                        <br/>Lihat setengah bagian atas data (tidak termasuk median): {12, 14, 15, 18, 20}.
+                        <br/>Set ini memiliki 5 nilai. Posisi tengahnya adalah $\\frac{5+1}{2} = 3$.
+                        <br/>Nilai ke-3 di subset ini adalah 15.
+                        <br/><b>Q3 = 15</b>.
+                    </li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A survey of 20 students was conducted on the number of books they read last month. The results are: {3, 4, 2, 5, 4, 3, 4, 1, 6, 2, 4, 5, 4, 3, 6, 1, 4, 3, 5, 4}. Find the mean, median, and mode of this dataset.",
+          question_id:
+            "Sebuah survei terhadap 20 siswa dilakukan mengenai jumlah buku yang mereka baca bulan lalu. Hasilnya adalah: {3, 4, 2, 5, 4, 3, 4, 1, 6, 2, 4, 5, 4, 3, 6, 1, 4, 3, 5, 4}. Tentukan mean, median, dan modus dari kumpulan data ini.",
+          image_desc: null,
+          answer: "Mean = 3.65, Median = 4, Mode = 4",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Mean, Median, Mode.
+                <br/>1. <strong>Mean:</strong> The total sum of all values divided by the count.
+                <br/>2. <strong>Median:</strong> The middle value after the data is sorted. If there is an even number of data points (N), it is the average of the two middle values (at $N/2$ and $N/2 + 1$).
+                <br/>3. <strong>Mode:</strong> The value that appears most frequently.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Mean, Median, Modus.
+                <br/>1. <strong>Mean:</strong> Jumlah total semua nilai dibagi dengan banyaknya data.
+                <br/>2. <strong>Median:</strong> Nilai tengah setelah data diurutkan. Jika jumlah data genap (N), median adalah rata-rata dari dua nilai tengah (di $N/2$ dan $N/2 + 1$).
+                <br/>3. <strong>Modus:</strong> Nilai yang paling sering muncul.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Sort the data (N=20).</b>
+                        <br/>{1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6}
+                    </li>
+                    <li><b>Step 2: Find the Mode.</b>
+                        <br/>By looking at the sorted data, '4' appears 7 times, which is more than any other number.
+                        <br/><b>Mode = 4</b>.
+                    </li>
+                    <li><b>Step 3: Find the Median.</b>
+                        <br/>$N=20$ (even). The middle values are the 10th and 11th values.
+                        <br/>(Positions: $\\frac{N}{2} = 10$ and $\\frac{N}{2}+1 = 11$).
+                        <br/>Sorted data: {1, 1, 2, 2, 3, 3, 3, 3, 4, <b>4</b>, <b>4</b>, 4, 4, 4, 4, 5, 5, 5, 6, 6}
+                        <br/>The 10th value is 4. The 11th value is 4.
+                        <br/>Median = $\\frac{4 + 4}{2} = 4$.
+                        <br/><b>Median = 4</b>.
+                    </li>
+                    <li><b>Step 4: Find the Mean.</b>
+                        <br/>Calculate the total sum.
+                        <br/>Sum = $(1\\times2) + (2\\times2) + (3\\times4) + (4\\times7) + (5\\times3) + (6\\times2)$
+                        <br/>Sum = $2 + 4 + 12 + 28 + 15 + 12 = 73$.
+                        <br/>Mean = $\\frac{\\text{Total Sum}}{N} = \\frac{73}{20} = 3.65$.
+                        <br/><b>Mean = 3.65</b>.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Urutkan data (N=20).</b>
+                        <br/>{1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6}
+                    </li>
+                    <li><b>Langkah 2: Cari Modus.</b>
+                        <br/>Dengan melihat data terurut, '4' muncul 7 kali, lebih banyak dari angka lain.
+                        <br/><b>Modus = 4</b>.
+                    </li>
+                    <li><b>Langkah 3: Cari Median.</b>
+                        <br/>$N=20$ (genap). Nilai tengahnya adalah nilai ke-10 dan ke-11.
+                        <br/>(Posisi: $\\frac{N}{2} = 10$ dan $\\frac{N}{2}+1 = 11$).
+                        <br/>Data urut: {1, 1, 2, 2, 3, 3, 3, 3, 4, <b>4</b>, <b>4</b>, 4, 4, 4, 4, 5, 5, 5, 6, 6}
+                        <br/>Nilai ke-10 adalah 4. Nilai ke-11 adalah 4.
+                        <br/>Median = $\\frac{4 + 4}{2} = 4$.
+                        <br/><b>Median = 4</b>.
+                    </li>
+                    <li><b>Langkah 4: Cari Mean.</b>
+                        <br/>Hitung jumlah total.
+                        <br/>Jumlah = $(1\\times2) + (2\\times2) + (3\\times4) + (4\\times7) + (5\\times3) + (6\\times2)$
+                        <br/>Jumlah = $2 + 4 + 12 + 28 + 15 + 12 = 73$.
+                        <br/>Mean = $\\frac{\\text{Jumlah Total}}{N} = \\frac{73}{20} = 3.65$.
+                        <br/><b>Mean = 3.65</b>.
+                    </li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "<strong>(Non-Rutin)</strong> The mean, median, and mode of a set of 7 distinct positive integers are 12, 10, and 8, respectively. What is the maximum possible value for the largest integer in this set?",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Rata-rata, median, dan modus dari 7 bilangan bulat positif yang berbeda (unik) adalah 12, 10, dan 8. Berapa nilai maksimum yang mungkin untuk bilangan terbesar dalam himpunan ini?",
+          image_desc: null,
+          answer: "40",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Maximization/Minimization in Statistics. To maximize one value (the largest), we must minimize all other values while still adhering to the constraints (mean, median, mode, distinct).</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Maksimisasi/Minimisasi dalam Statistika. Untuk memaksimalkan satu nilai (yang terbesar), kita harus meminimalkan semua nilai lainnya sambil tetap mematuhi batasan (mean, median, modus, unik).</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Set up the 7 integers.</b>
+                        <br/>Let the 7 distinct positive integers be $a, b, c, d, e, f, g$, sorted in ascending order.
+                        <br/>{a, b, c, d, e, f, g}
+                    </li>
+                    <li><b>Step 2: Use the Median.</b>
+                        <br/>The median of 7 integers is the 4th term ($d$). We are given Median = 10.
+                        <br/>So, $d = 10$.
+                        <br/>{a, b, c, 10, e, f, g}
+                    </li>
+                    <li><b>Step 3: Use the Mean.</b>
+                        <br/>The mean is 12. The count is 7.
+                        <br/>Total Sum = $Mean \\times Count = 12 \\times 7 = 84$.
+                    </li>
+                    <li><b>Step 4: Use the Mode and "Distinct" constraint.</b>
+                        <br/>We are told the set is *distinct* (all numbers are unique) AND the mode is 8.
+                        <br/>This is a common competition problem structure. A *distinct* set technically has no mode. This constraint implies that 8 *must* be one of the numbers in the set.
+                        <br/>Since $8 < 10$ (the median), 8 must be one of $a, b,$ or $c$.
+                    </li>
+                    <li><b>Step 5: Maximize $g$ by Minimizing $a, b, c, e, f$.</b>
+                        <br/>We want to find the maximum possible value for $g$. To do this, we must make all other numbers as small as possible.
+                        <br/>The numbers must be distinct positive integers.
+                        <br/>Set: {a, b, c, 10, e, f, g}
+                        <br/>To minimize $a, b, c$: They must be the smallest distinct positive integers, but one of them *must* be 8.
+                        <br/>So, the minimal values for $a, b, c$ are {1, 2, 8}.
+                        <br/>To minimize $e, f$: They must be the smallest distinct integers *greater* than the median (10).
+                        <br/>So, $e = 11$, $f = 12$.
+                    </li>
+                     <li><b>Step 6: Form the minimal set and find $g$.</b>
+                        <br/>Our minimal set is: {1, 2, 8, 10, 11, 12, g}.
+                        <br/>The sum of these must be 84 (from Step 3).
+                        <br/>Sum = $1 + 2 + 8 + 10 + 11 + 12 + g = 84$.
+                        <br/>$44 + g = 84$.
+                        <br/>$g = 84 - 44 = 40$.
+                        <br/>The maximum possible value for the largest integer is 40.
+                     </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Susun 7 bilangan.</b>
+                        <br/>Misalkan 7 bilangan bulat positif unik (berbeda) adalah $a, b, c, d, e, f, g$, diurutkan menaik.
+                        <br/>{a, b, c, d, e, f, g}
+                    </li>
+                    <li><b>Langkah 2: Gunakan Median.</b>
+                        <br/>Median dari 7 bilangan adalah suku ke-4 ($d$). Diberikan Median = 10.
+                        <br/>Jadi, $d = 10$.
+                        <br/>{a, b, c, 10, e, f, g}
+                    </li>
+                    <li><b>Langkah 3: Gunakan Rata-rata.</b>
+                        <br/>Rata-rata = 12. Jumlah data = 7.
+                        <br/>Total Sum (Jumlah Total) = $Mean \\times Count = 12 \\times 7 = 84$.
+                    </li>
+                    <li><b>Langkah 4: Gunakan Modus dan Batasan "Distinct" (Unik).</b>
+                        <br/>Kita diberitahu bahwa himpunan itu *distinct* (unik) DAN modusnya adalah 8.
+                        <br/>Ini adalah struktur soal kompetisi yang umum. Himpunan yang *distinct* secara teknis tidak memiliki modus. Batasan ini menyiratkan bahwa 8 *harus* menjadi salah satu angka dalam himpunan.
+                        <br/>Karena $8 < 10$ (median), 8 harus salah satu dari $a, b,$ atau $c$.
+                    </li>
+                    <li><b>Langkah 5: Maksimalkan $g$ dengan Meminimalkan $a, b, c, e, f$.</b>
+                        <br/>Kita ingin mencari nilai maksimum $g$. Untuk melakukannya, kita harus membuat semua angka lain sekecil mungkin.
+                        <br/>Angka-angkanya harus bilangan bulat positif yang unik.
+                        <br/>Himpunan: {a, b, c, 10, e, f, g}
+                        <br/>Untuk meminimalkan $a, b, c$: Mereka harus bilangan bulat positif terkecil yang unik, tetapi salah satunya *harus* 8.
+                        <br/>Jadi, nilai minimal untuk $a, b, c$ adalah {1, 2, 8}.
+                        <br/>Untuk meminimalkan $e, f$: Mereka harus bilangan bulat unik terkecil yang *lebih besar* dari median (10).
+                        <br/>Jadi, $e = 11$, $f = 12$.
+                    </li>
+                     <li><b>Langkah 6: Bentuk himpunan minimal dan cari $g$.</b>
+                        <br/>Himpunan minimal kita adalah: {1, 2, 8, 10, 11, 12, g}.
+                        <br/>Jumlah dari himpunan ini harus 84 (dari Langkah 3).
+                        <br/>Jumlah = $1 + 2 + 8 + 10 + 11 + 12 + g = 84$.
+                        <br/>$44 + g = 84$.
+                        <br/>$g = 84 - 44 = 40$.
+                        <br/>Nilai maksimum yang mungkin untuk bilangan terbesar adalah 40.
+                     </li>
+                </ul>
+            </div>`
+        },
+{
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "There are some chickens and rabbits in a cage. The number of chickens is 5 times the number of rabbits. The total legs of the chickens is 72 more than that of the rabbits. How many rabbits are there?",
+          question_id:
+            "Terdapat beberapa ayam dan kelinci dalam sebuah kandang. Jumlah ayam 5 kali jumlah kelinci. Jumlah kaki ayam 72 lebih banyak dari jumlah kaki kelinci. Ada berapa kelinci di sana?",
+          image_desc: null,
+          answer: "12",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> System of Linear Equations. We set up variables for the unknown quantities (chickens and rabbits) and translate the sentences into mathematical equations.</p>
+                <p>Key information: 1 chicken has 2 legs. 1 rabbit has 4 legs.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Sistem Persamaan Linear. Kita membuat variabel untuk kuantitas yang tidak diketahui (ayam dan kelinci) dan menerjemahkan kalimat-kalimat tersebut menjadi persamaan matematika.</p>
+                <p>Informasi kunci: 1 ayam punya 2 kaki. 1 kelinci punya 4 kaki.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Define variables.</b>
+                        <br/>Let $C$ = number of chickens.
+                        <br/>Let $R$ = number of rabbits.
+                    </li>
+                    <li><b>Step 2: Translate the sentences into equations.</b>
+                        <br/>Equation 1 (Count): "The number of chickens is 5 times the number of rabbits."
+                        <br/>$C = 5R$
+                        <br/>Equation 2 (Legs): "The total legs of the chickens is 72 more than that of the rabbits."
+                        <br/>Total Chicken Legs = $C \\times 2 = 2C$.
+                        <br/>Total Rabbit Legs = $R \\times 4 = 4R$.
+                        <br/>$2C = 4R + 72$
+                    </li>
+                    <li><b>Step 3: Solve the system of equations.</b>
+                        <br/>We have two equations:
+                        <br/>1) $C = 5R$
+                        <br/>2) $2C = 4R + 72$
+                        <br/>Substitute equation (1) into equation (2):
+                        <br/>$2(5R) = 4R + 72$
+                    </li>
+                    <li><b>Step 4: Solve for R.</b>
+                        <br/>$10R = 4R + 72$
+                        <br/>$10R - 4R = 72$
+                        <br/>$6R = 72$
+                        <br/>$R = \\frac{72}{6} = 12$.
+                    </li>
+                    <li><b>Step 5: Check the answer (Optional).</b>
+                        <br/>If $R = 12$ rabbits, then $C = 5 \\times 12 = 60$ chickens.
+                        <br/>Rabbit legs = $12 \\times 4 = 48$.
+                        <br/>Chicken legs = $60 \\times 2 = 120$.
+                        <br/>Difference = $120 - 48 = 72$. This matches the problem statement.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Tentukan variabel.</b>
+                        <br/>Misal $C$ = jumlah ayam.
+                        <br/>Misal $R$ = jumlah kelinci.
+                    </li>
+                    <li><b>Langkah 2: Terjemahkan kalimat menjadi persamaan.</b>
+                        <br/>Persamaan 1 (Jumlah): "Jumlah ayam 5 kali jumlah kelinci."
+                        <br/>$C = 5R$
+                        <br/>Persamaan 2 (Kaki): "Jumlah kaki ayam 72 lebih banyak dari jumlah kaki kelinci."
+                        <br/>Total Kaki Ayam = $C \\times 2 = 2C$.
+                        <br/>Total Kaki Kelinci = $R \\times 4 = 4R$.
+                        <br/>$2C = 4R + 72$
+                    </li>
+                    <li><b>Langkah 3: Selesaikan sistem persamaan.</b>
+                        <br/>Kita punya dua persamaan:
+                        <br/>1) $C = 5R$
+                        <br/>2) $2C = 4R + 72$
+                        <br/>Substitusikan persamaan (1) ke dalam persamaan (2):
+                        <br/>$2(5R) = 4R + 72$
+                    </li>
+                    <li><b>Langkah 4: Selesaikan untuk R.</b>
+                        <br/>$10R = 4R + 72$
+                        <br/>$10R - 4R = 72$
+                        <br/>$6R = 72$
+                        <br/>$R = \\frac{72}{6} = 12$.
+                    </li>
+                    <li><b>Langkah 5: Periksa jawaban (Opsional).</b>
+                        <br/>Jika $R = 12$ kelinci, maka $C = 5 \\times 12 = 60$ ayam.
+                        <br/>Kaki kelinci = $12 \\times 4 = 48$.
+                        <br/>Kaki ayam = $60 \\times 2 = 120$.
+                        <br/>Selisih = $120 - 48 = 72$. Ini sesuai dengan pernyataan soal.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "A game is played with two piles of stones, one with 10 stones and one with 15 stones. Players A and B take turns removing stones. A move consists of taking any number of stones from one pile. The player who takes the last stone loses (this is Misère Play). If Player A goes first, what is A's winning move?",
+          question_id:
+            "Sebuah permainan dimainkan dengan dua tumpukan batu, satu dengan 10 batu dan satu dengan 15 batu. Pemain A dan B bergiliran mengambil batu. Satu langkah terdiri dari mengambil sejumlah batu dari satu tumpukan. Pemain yang mengambil batu terakhir Kalah (ini adalah Misère Play). Jika Pemain A mulai lebih dulu, apa langkah kemenangan A?",
+          image_desc: null,
+          answer: "Take 5 stones from the pile of 15 (Mengambil 5 batu dari tumpukan 15).",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Misère Nim Game. The strategy is almost identical to a normal Nim game (where last player wins).
+                <br/>1. Calculate the Nim-Sum (XOR).
+                <br/>2. If the Nim-Sum is not 0, you have a winning move.
+                <br/>3. The winning strategy is to *always* move to a Nim-Sum of 0, *until* the very end.
+                <br/><strong>Bouton's Theorem (Misère):</strong> If a move would leave only piles of size 1 (e.g., {1, 1, 1} or {1}), you must move differently. If the Nim-Sum is $> 1$ (and not in an end-game state), play exactly like a normal Nim game.
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Permainan Misère Nim. Strateginya hampir identik dengan permainan Nim normal (di mana pemain terakhir menang).
+                <br/>1. Hitung Nim-Sum (XOR).
+                <br/>2. Jika Nim-Sum bukan 0, Anda punya langkah kemenangan.
+                <br/>3. Strategi kemenangannya adalah *selalu* bergerak ke Nim-Sum 0, *hingga* akhir.
+                <br/><strong>Teorema Bouton (Misère):</strong> Jika sebuah langkah akan menyisakan tumpukan berukuran 1 (misal {1, 1, 1} atau {1}), Anda harus bergerak secara berbeda. Jika Nim-Sum $> 1$ (dan tidak dalam fase akhir), mainkan persis seperti Nim normal.
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Write pile sizes in binary.</b>
+                        <br/>Pile 1 = 10. Binary = $1010_2$.
+                        <br/>Pile 2 = 15. Binary = $1111_2$.
+                    </li>
+                    <li><b>Step 2: Calculate the Nim-Sum (XOR) of the starting position.</b>
+<pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
+  1010  (10)
+^ 1111  (15)
+------
+  0101  (5)
+</pre>
+                        <br/>The Nim-Sum is $S = 5$.
+                    </li>
+                    <li><b>Step 3: Analyze the Nim-Sum for Misère Play.</b>
+                        <br/>The Nim-Sum is 5 (which is $> 1$). The game is not in the "end game" phase (no piles of size 1).
+                        <br/>Therefore, according to Bouton's theorem, we play exactly like a *normal* Nim game: move to a Nim-Sum of 0.
+                    </li>
+                    <li><b>Step 4: Find the winning move (move to Nim-Sum 0).</b>
+                        <br/>We need to find a pile $P$ and change it to $P'$ such that $P' = P \\oplus S$.
+                        <br/>$S = 5$ (binary 0101).
+                    </li>
+                    <li><b>Step 5: Check Pile 1 (10).</b>
+                        <br/>$P = 10$ (1010). $S = 5$ (0101).
+                        <br/>$P' = 10 \\oplus 5 = 1010_2 \\oplus 0101_2 = 1111_2 = 15$.
+                        <br/>$P' = 15$. We must move $P \\to P'$ where $P' < P$. (15 is not < 10). This move is invalid.
+                    </li>
+                     <li><b>Step 6: Check Pile 2 (15).</b>
+                        <br/>$P = 15$ (1111). $S = 5$ (0101).
+                        <br/>$P' = 15 \\oplus 5 = 1111_2 \\oplus 0101_2 = 1010_2 = 10$.
+                        <br/>$P' = 10$. We must move $P \\to P'$ where $P' < P$. (10 is < 15). This move is valid.
+                    </li>
+                     <li><b>Step 7: Conclusion.</b>
+                        <br/>A's winning move is to change the pile of 15 stones to a pile of 10 stones.
+                        <br/>(This means A takes $15 - 10 = 5$ stones from Pile 2).
+                        <br/>The new piles will be {10, 10}. The Nim-Sum is $10 \\oplus 10 = 0$. Player B is now in a losing position.
+                     </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Tulis ukuran tumpukan dalam biner.</b>
+                        <br/>Tumpukan 1 = 10. Biner = $1010_2$.
+                        <br/>Tumpukan 2 = 15. Biner = $1111_2$.
+                    </li>
+                    <li><b>Langkah 2: Hitung Nim-Sum (XOR) dari posisi awal.</b>
+<pre style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
+  1010  (10)
+^ 1111  (15)
+------
+  0101  (5)
+</pre>
+                        <br/>Nim-Sum adalah $S = 5$.
+                    </li>
+                    <li><b>Langkah 3: Analisis Nim-Sum untuk Misère Play.</b>
+                        <br/>Nim-Sum adalah 5 (yang mana $> 1$). Permainan ini tidak dalam fase "akhir permainan" (tidak ada tumpukan ukuran 1).
+                        <br/>Oleh karena itu, menurut teorema Bouton, kita bermain persis seperti permainan Nim *normal*: bergerak ke Nim-Sum 0.
+                    </li>
+                    <li><b>Langkah 4: Cari langkah kemenangan (pindah ke Nim-Sum 0).</b>
+                        <br/>Kita perlu mencari tumpukan $P$ dan mengubahnya menjadi $P'$ sehingga $P' = P \\oplus S$.
+                        <br/>$S = 5$ (biner 0101).
+                    </li>
+                    <li><b>Langkah 5: Cek Tumpukan 1 (10).</b>
+                        <br/>$P = 10$ (1010). $S = 5$ (0101).
+                        <br/>$P' = 10 \\oplus 5 = 1010_2 \\oplus 0101_2 = 1111_2 = 15$.
+                        <br/>$P' = 15$. Kita harus $P' < P$. (15 tidak < 10). Langkah ini tidak valid.
+                    </li>
+                     <li><b>Langkah 6: Cek Tumpukan 2 (15).</b>
+                        <br/>$P = 15$ (1111). $S = 5$ (0101).
+                        <br/>$P' = 15 \\oplus 5 = 1111_2 \\oplus 0101_2 = 1010_2 = 10$.
+                        <br/>$P' = 10$. Kita harus $P' < P$. (10 < 15). Langkah ini valid.
+                    </li>
+                     <li><b>Langkah 7: Kesimpulan.</b>
+                        <br/>Langkah kemenangan A adalah mengubah tumpukan 15 batu menjadi 10 batu.
+                        <br/>(Ini berarti A mengambil $15 - 10 = 5$ batu dari Tumpukan 2).
+                        <br/>Tumpukan baru akan menjadi {10, 10}. Nim-Sum baru adalah $10 \\oplus 10 = 0$. Pemain B sekarang dalam posisi kalah.
+                     </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "You are on the island of Knights and Knaves. You meet Calvin and Phoebe. Phoebe says: \"If 34 is odd, then I am a truth-teller.\" Calvin says: \"Phoebe is a liar.\" Determine who is who.",
+          question_id:
+            "Anda berada di pulau Ksatria dan Penjahat. Anda bertemu Calvin dan Phoebe. Phoebe berkata: \"Jika 34 ganjil, maka saya adalah penutur-jujur.\" Calvin berkata: \"Phoebe adalah pembohong.\" Tentukan siapa adalah siapa.",
+          image_desc: null,
+          answer: "Phoebe = Knight, Calvin = Knave",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Conditional Statements (If P, then Q). A conditional statement "If P, then Q" is only FALSE if P is True and Q is False. In all other cases, the statement is True.</p>
+                <p>Truth Table (If P, then Q):
+                <br/>T $\\implies$ T = True
+                <br/>T $\\implies$ F = False
+                <br/>F $\\implies$ T = True
+                <br/>F $\\implies$ F = True
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Pernyataan Kondisional (Jika P, maka Q). Pernyataan kondisional "Jika P, maka Q" hanya Salah jika P Benar dan Q Salah. Dalam semua kasus lain, pernyataan itu Benar.</p>
+                <p>Tabel Kebenaran (Jika P, maka Q):
+                <br/>B $\\implies$ B = Benar
+                <br/>B $\\implies$ S = Salah
+                <br/>S $\\implies$ B = Benar
+                <br/>S $\\implies$ S = Benar
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze Phoebe's statement: "If (34 is odd), then (I am a Knight)."</b>
+                        <br/>This is an "If P, then Q" statement.
+                        <br/>Let P = "34 is odd".
+                        <br/>Let Q = "Phoebe is a Knight".
+                    </li>
+                    <li><b>Step 2: Evaluate P.</b>
+                        <br/>The statement "34 is odd" (P) is clearly False.
+                    </li>
+                    <li><b>Step 3: Evaluate the "If P, then Q" statement.</b>
+                        <br/>Since P is False, the entire conditional statement "If P, then Q" is automatically True (look at the truth table: F $\\implies$ T is True, and F $\\implies$ F is True).
+                        <br/>Phoebe has said a True statement.
+                    </li>
+                    <li><b>Step 4: Determine Phoebe's identity.</b>
+                        <br/>Because Phoebe said a True statement, she must be a Knight (a truth-teller).
+                    </li>
+                    <li><b>Step 5: Analyze Calvin's statement: "Phoebe is a liar (Knave)."</b>
+                        <br/>From Step 4, we know Phoebe is a Knight.
+                        <br/>Therefore, Calvin's statement is False.
+                    </li>
+                     <li><b>Step 6: Determine Calvin's identity.</b>
+                        <br/>Because Calvin said a False statement, he must be a Knave (a liar).
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis pernyataan Phoebe: "Jika (34 ganjil), maka (saya adalah Ksatria)."</b>
+                        <br/>Ini adalah pernyataan "Jika P, maka Q".
+                        <br/>Misal P = "34 ganjil".
+                        <br/>Misal Q = "Phoebe adalah Ksatria".
+                    </li>
+                    <li><b>Langkah 2: Evaluasi P.</b>
+                        <br/>Pernyataan "34 ganjil" (P) jelas Salah.
+                    </li>
+                    <li><b>Langkah 3: Evaluasi pernyataan "Jika P, maka Q".</b>
+                        <br/>Karena P Salah, seluruh pernyataan kondisional "Jika P, maka Q" otomatis Bernilai Benar (lihat tabel kebenaran: S $\\implies$ B = Benar, dan S $\\implies$ S = Benar).
+                        <br/>Phoebe telah mengucapkan pernyataan yang Benar.
+                    </li>
+                    <li><b>Langkah 4: Tentukan identitas Phoebe.</b>
+                        <br/>Karena Phoebe mengucapkan pernyataan yang Benar, dia pastilah seorang Ksatria (penutur-jujur).
+                    </li>
+                    <li><b>Langkah 5: Analisis pernyataan Calvin: "Phoebe adalah pembohong (Penjahat)."</b>
+                        <br/>Dari Langkah 4, kita tahu Phoebe adalah Ksatria.
+                        <br/>Oleh karena itu, pernyataan Calvin adalah Salah.
+                    </li>
+                     <li><b>Langkah 6: Tentukan identitas Calvin.</b>
+                        <br/>Karena Calvin mengucapkan pernyataan yang Salah, dia pastilah seorang Penjahat (pembohong).
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "There are 32 coins in the hands of James. There are 9 coins with tail sides facing up on his left hand. There are 13 coins with head sides facing up on his right hand. Find the maximum number of coins with tail sides facing up in total.",
+          question_id:
+            "Ada 32 koin di tangan James. Ada 9 koin dengan sisi ekor (Tail) menghadap ke atas di tangan kirinya. Ada 13 koin dengan sisi kepala (Head) menghadap ke atas di tangan kanannya. Temukan jumlah maksimum koin dengan sisi ekor (Tail) menghadap ke atas.",
+          image_desc: null,
+          answer: "19",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Maximization. The total number of coins (32) is fixed. To maximize the total tails (Tails Left + Tails Right), we must maximize the tails in the right hand ($T_R$), as the tails in the left hand ($T_L$) are fixed at 9. We must use the total coin constraint to relate the unknown quantities.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Maksimisasi. Jumlah total koin (32) sudah pasti. Untuk memaksimalkan total ekor (Ekor Kiri + Ekor Kanan), kita harus memaksimalkan jumlah ekor di tangan kanan ($T_R$), karena ekor di tangan kiri ($T_L$) sudah pasti 9. Kita harus menggunakan batasan total koin untuk menghubungkan kuantitas yang tidak diketahui.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze the knowns and unknowns.</b>
+                        <br/>Total Coins = 32.
+                        <br/>Left Hand: $T_L$ (Tails Left) = 9. $H_L$ (Heads Left) = ?
+                        <br/>Right Hand: $H_R$ (Heads Right) = 13. $T_R$ (Tails Right) = ?
+                    </li>
+                    <li><b>Step 2: Set up the total coin equation.</b>
+                        <br/>(Total Coins in Left Hand) + (Total Coins in Right Hand) = 32
+                        <br/>$(T_L + H_L) + (T_R + H_R) = 32$
+                    </li>
+                    <li><b>Step 3: Substitute the known values.</b>
+                        <br/>$(9 + H_L) + (T_R + 13) = 32$
+                        <br/>$22 + H_L + T_R = 32$
+                    </li>
+                    <li><b>Step 4: Find the relationship between the unknowns.</b>
+                        <br/>$H_L + T_R = 32 - 22$
+                        <br/>$H_L + T_R = 10$
+                    </li>
+                    <li><b>Step 5: Define the goal.</b>
+                        <br/>We want to maximize Total Tails = $T_L + T_R = 9 + T_R$.
+                    </li>
+                     <li><b>Step 6: Maximize $T_R$.</b>
+                        <br/>To maximize $9 + T_R$, we must maximize $T_R$.
+                        <br/>From Step 4, we know $T_R = 10 - H_L$.
+                        <br/>To maximize $T_R$, we must minimize $H_L$.
+                        <br/>The minimum number of heads in the left hand ($H_L$) is 0 (since it's a count).
+                        <br/>Minimum $H_L = 0$.
+                        <br/>If $H_L = 0$, then $T_R = 10 - 0 = 10$.
+                    </li>
+                     <li><b>Step 7: Calculate the Maximum Total Tails.</b>
+                        <br/>Max Total Tails = $9 + T_R = 9 + 10 = 19$.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis data yang diketahui dan tidak diketahui.</b>
+                        <br/>Total Koin = 32.
+                        <br/>Tangan Kiri: $T_L$ (Ekor Kiri) = 9. $H_L$ (Kepala Kiri) = ?
+                        <br/>Tangan Kanan: $H_R$ (Kepala Kanan) = 13. $T_R$ (Ekor Kanan) = ?
+                    </li>
+                    <li><b>Langkah 2: Susun persamaan total koin.</b>
+                        <br/>(Total Koin Tangan Kiri) + (Total Koin Tangan Kanan) = 32
+                        <br/>$(T_L + H_L) + (T_R + H_R) = 32$
+                    </li>
+                    <li><b>Langkah 3: Substitusi nilai yang diketahui.</b>
+                        <br/>$(9 + H_L) + (T_R + 13) = 32$
+                        <br/>$22 + H_L + T_R = 32$
+                    </li>
+                    <li><b>Langkah 4: Tentukan hubungan $H_L$ dan $T_R$.</b>
+                        <br/>$H_L + T_R = 32 - 22$
+                        <br/>$H_L + T_R = 10$.
+                    </li>
+                    <li><b>Langkah 5: Tentukan tujuan (Goal).</b>
+                        <br/>Kita ingin memaksimalkan Total Ekor = $T_L + T_R = 9 + T_R$.
+                    </li>
+                     <li><b>Langkah 6: Maksimalkan $T_R$.</b>
+                        <br/>Untuk memaksimalkan $9 + T_R$, kita harus memaksimalkan $T_R$.
+                        <br/>Dari Langkah 4, kita tahu $T_R = 10 - H_L$.
+                        <br/>Untuk memaksimalkan $T_R$, kita harus meminimalkan $H_L$.
+                        <br/>Jumlah minimum koin Kepala di Kiri ($H_L$) adalah 0 (karena ini adalah hitungan).
+                        <br/>Minimum $H_L = 0$.
+                        <br/>Jika $H_L = 0$, maka $T_R = 10 - 0 = 10$.
+                    </li>
+                     <li><b>Langkah 7: Hitung Total Ekor Maksimum.</b>
+                        <br/>Total Ekor Maksimum = $9 + T_R = 9 + 10 = 19$.
+                     </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "<strong>(Non-Rutin)</strong> There are 14 problems in a mathematics competition. The scores are: 2 marks for a correct answer, -1 mark for a wrong answer, and 0 marks for a blank answer. Find the minimum number of candidates required to ensure that at least 3 candidates will have the same total score.",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Ada 14 soal dalam sebuah kompetisi matematika. Skornya adalah: 2 nilai untuk jawaban benar, -1 nilai untuk jawaban salah, dan 0 nilai untuk jawaban kosong. Tentukan jumlah minimum kandidat yang diperlukan untuk memastikan bahwa setidaknya 3 kandidat akan memiliki total skor yang sama.",
+          image_desc: null,
+          answer: "85",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Generalized Pigeonhole Principle. If $N$ items are put into $k$ containers, then at least one container must contain at least $\\lceil N/k \\rceil$ items.
+                <br/>In this problem:
+                <br/>Items ($N$) = Candidates (this is what we want to find).
+                <br/>Containers ($k$) = Possible unique total scores.
+                <br/>Required items per container ($n$) = 3.
+                <br/>The formula states: We want the minimum $N$ such that $\\lceil N/k \\rceil = n$.
+                <br/>This is guaranteed by the formula $N = (n-1)k + 1$.
+                <br/>We need $N = (3-1)k + 1 = 2k + 1$.
+                <br/>Our first step is to find $k$ (the number of possible scores).
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Prinsip Sarang Merpati (Generalized Pigeonhole Principle). Jika $N$ benda dimasukkan ke dalam $k$ wadah, maka setidaknya satu wadah harus berisi setidaknya $\\lceil N/k \\rceil$ benda.
+                <br/>Dalam masalah ini:
+                <br/>Benda ($N$) = Kandidat (ini yang kita cari).
+                <br/>Wadah ($k$) = Kemungkinan total skor yang unik.
+                <br/>Benda yang disyaratkan per wadah ($n$) = 3.
+                <br/>Rumus: Kita ingin $N$ minimum sehingga $\\lceil N/k \\rceil = n$.
+                <br/>Ini dijamin oleh rumus $N = (n-1)k + 1$.
+                <br/>Kita butuh $N = (3-1)k + 1 = 2k + 1$.
+                <br/>Langkah pertama kita adalah mencari $k$ (jumlah skor yang mungkin).
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Find the range of possible scores.</b>
+                        <br/>Maximum Score: 14 Correct (C=14, W=0, B=0). Score = $14 \\times 2 = 28$.
+                        <br/>Minimum Score: 14 Wrong (C=0, W=14, B=0). Score = $14 \\times (-1) = -14$.
+                        <br/>The total range spans $28 - (-14) + 1 = 43$ integers.
+                    </li>
+                    <li><b>Step 2: Find all possible scores ($k$).</b>
+                        <br/>Let $C$ = Correct, $W$ = Wrong, $B$ = Blank. $C+W+B = 14$.
+                        <br/>Score $S = 2C - W$.
+                        <br/>Substitute $W = 14 - C - B$:
+                        <br/>$S = 2C - (14 - C - B) = 2C - 14 + C + B = 3C + B - 14$.
+                    </li>
+                    <li><b>Step 3: Check for impossible scores.</b>
+                        <br/>We are checking if $S = 3C + B - 14$ can produce all integers from -14 to 28, given $C \\ge 0, B \\ge 0,$ and $C+B \\le 14$.
+                        <ul>
+                            <li>Let's check the highest scores. $S=28$ is possible ($C=14, B=0$).</li>
+                            <li>Let's check $S=27$. This requires $3C + B - 14 = 27 \\implies 3C + B = 41$.</li>
+                            <li>To check if 41 is possible, let's find the max value for $3C+B$.
+                                <br/>If $C=14, B=0$ (since $C+B \\le 14$), $3(14)+0 = 42$.
+                                <br/>If $C=13, B$ can be $0$ or $1$. Max is $B=1$. $3(13)+1 = 40$.
+                            </li>
+                            <li>Since the value $3C+B$ jumps from 40 to 42, it is impossible to get a value of 41.</li>
+                            <li>Therefore, Score 27 is impossible. All other scores in the range are possible.</li>
+                        </ul>
+                    </li>
+                    <li><b>Step 4: Calculate $k$ (number of containers).</b>
+                        <br/>$k$ = (Total integers in range) - (Impossible scores)
+                        <br/>$k = 43 - 1 = 42$.
+                        <br/>There are $k=42$ possible unique scores.
+                    </li>
+                     <li><b>Step 5: Apply Pigeonhole Principle.</b>
+                        <br/>We need to guarantee 3 candidates ($n=3$) in one container ($k=42$).
+                        <br/>$N = (n-1)k + 1 = (3-1)(42) + 1$.
+                        <br/>$N = 2(42) + 1 = 84 + 1 = 85$.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Pahami Prinsip Sarang Merpati (Pigeonhole Principle).</b>
+                        <br/>Kita ingin menjamin 3 kandidat ($n=3$) memiliki skor yang sama.
+                        <br/>'Wadah' ($k$) adalah jumlah kemungkinan skor unik.
+                        <br/>'Benda' ($N$) adalah jumlah kandidat.
+                        <br/>Rumus: $N = (n-1)k + 1$.
+                        <br/>Kita butuh $N = (3-1)k + 1 = 2k + 1$.
+                        <br/>Kita harus mencari $k$, yaitu jumlah total skor yang mungkin.
+                    </li>
+                    <li><b>Langkah 2: Tentukan rentang skor.</b>
+                        <br/>Skor Maksimum: 14 soal benar. $14 \\times 2 = 28$.
+                        <br/>Skor Minimum: 14 soal salah. $14 \\times (-1) = -14$.
+                        <br/>Total rentang (jika semua mungkin) = $28 - (-14) + 1 = 43$ bilangan bulat.
+                    </li>
+                    <li><b>Langkah 3: Tentukan skor yang tidak mungkin (Impossible Scores).</b>
+                        <br/>Misal $C$ = Benar, $W$ = Salah, $B$ = Kosong. $C+W+B = 14$.
+                        <br/>Skor $S = 2C - W$.
+                        <br/>Kita bisa substitusi $W = 14 - C - B$.
+                        <br/>$S = 2C - (14 - C - B) = 3C + B - 14$.
+                        <br/>Batasan: $C \\ge 0, B \\ge 0,$ dan $C+B \\le 14$.
+                    </li>
+                    <li><b>Langkah 4: Cek skor 27.</b>
+                        <br/>$S = 27 \\implies 3C + B - 14 = 27 \\implies 3C + B = 41$.
+                        <br/>Kita cek nilai maksimum $3C+B$ yang mungkin.
+                        <ul>
+                           <li>Jika $C=14, B=0$ (karena $C+B \\le 14$), $3(14)+0 = 42$.</li>
+                           <li>Jika $C=13, B$ bisa $0$ atau $1$. Nilai maks adalah $B=1$. $3(13)+1 = 40$.</li>
+                        </ul>
+                        <br/>Karena $3C+B$ melompat dari 40 ke 42, nilai 41 tidak mungkin dicapai.
+                        <br/>Jadi, Skor 27 tidak mungkin.
+                    </li>
+                     <li><b>Langkah 5: Hitung $k$ (jumlah skor yang mungkin).</b>
+                        <br/>Hanya skor 27 yang tidak mungkin.
+                        <br/>$k$ = (Total rentang) - (Skor tidak mungkin) = $43 - 1 = 42$.
+                        <br/>Ada $k=42$ 'wadah' skor yang mungkin.
+                    </li>
+                     <li><b>Langkah 6: Hitung $N$ (kandidat minimum).</b>
+                        <br/>$N = (n-1)k + 1 = (3-1)(42) + 1$.
+                        <br/>$N = 2(42) + 1 = 84 + 1 = 85$.
+                    </li>
+                </ul>
+            </div>`,
+        },
+{
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A set of 8 numbers {15, 12, 11, 15, 10, 12, 15, x} has a mode of 15, a mean of 13, and a median of 13. Find the value of $x$.",
+          question_id:
+            "Satu set 8 angka {15, 12, 11, 15, 10, 12, 15, x} memiliki modus 15, rata-rata 13, dan median 13. Tentukan nilai $x$.",
+          image_desc: null,
+          answer: "14",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Mean, Median, Mode. We are given 7 numbers and one unknown, $x$. We must use the given statistical measures to find $x$. The mean is often the most direct calculation, but the median provides constraints on the *position* of $x$.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Mean, Median, Modus. Kita diberi 7 angka dan satu angka tidak diketahui, $x$. Kita harus menggunakan ukuran statistik yang diberikan untuk menemukan $x$. Mean seringkali merupakan perhitungan paling langsung, tetapi median memberikan batasan pada *posisi* $x$.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze the given data.</b>
+                        <br/>$N=8$. Data (unsorted): {10, 11, 12, 12, 15, 15, 15, x}.
+                        <br/>Mode = 15. This is already true (15 appears 3 times, 12 appears 2 times). This doesn't constrain $x$.
+                    </li>
+                    <li><b>Step 2: Use the Median constraint.</b>
+                        <br/>Median = 13. Since $N=8$ (even), the median is the average of the 4th and 5th numbers *after sorting*.
+                        <br/>$\text{Median} = \\frac{x_4 + x_5}{2} = 13 \\implies x_4 + x_5 = 26$.
+                    </li>
+                    <li><b>Step 3: Test the position of $x$.</b>
+                        <br/>Sorted data (known): {10, 11, 12, 12, 15, 15, 15}.
+                        <br/><b>Case 1: $x \\le 12$.</b> The sorted list would be {..., $x$, ..., 12, 12, 15, ...}.
+                        <br/>e.g., if $x=10$: {10, 10, 11, 12, 12, 15, 15, 15}.
+                        <br/>The 4th value is 12, the 5th value is 12.
+                        <br/>Median = $\\frac{12 + 12}{2} = 12$. This contradicts the given median of 13. So $x$ cannot be $\\le 12$.
+                        <br/><b>Case 2: $x \\ge 15$.</b> The sorted list would be {10, 11, 12, 12, 15, ..., $x$, ...}.
+                        <br/>The 4th value is 12, the 5th value is 15.
+                        <br/>Median = $\\frac{12 + 15}{2} = 13.5$. This contradicts the given median of 13. So $x$ cannot be $\\ge 15$.
+                        <br/><b>Case 3: $12 < x < 15$.</b> The sorted list is {10, 11, 12, 12, $x$, 15, 15, 15}.
+                        <br/>The 4th value is 12. The 5th value is $x$.
+                        <br/>Median = $\\frac{12 + x}{2} = 13$.
+                        <br/>$12 + x = 26$.
+                        <br/>$x = 14$.
+                        <br/>This fits our constraint ($12 < 14 < 15$). This must be the answer.
+                    </li>
+                     <li><b>Step 4: Verify with the Mean (optional but good).</b>
+                        <br/>Let's check if $x=14$ gives a mean of 13.
+                        <br/>Sum = $10 + 11 + 12 + 12 + 15 + 15 + 15 + x$
+                        <br/>Sum = $90 + x$.
+                        <br/>If $x=14$, Sum = $90 + 14 = 104$.
+                        <br/>Mean = $\\frac{\\text{Sum}}{N} = \\frac{104}{8} = 13$.
+                        <br/>This matches the given mean. All conditions are satisfied.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis data yang diberikan.</b>
+                        <br/>$N=8$. Data (belum urut): {10, 11, 12, 12, 15, 15, 15, x}.
+                        <br/>Modus = 15. Ini sudah benar (15 muncul 3 kali, 12 muncul 2 kali). Ini tidak membatasi $x$.
+                    </li>
+                    <li><b>Langkah 2: Gunakan batasan Median.</b>
+                        <br/>Median = 13. Karena $N=8$ (genap), median adalah rata-rata dari angka ke-4 dan ke-5 *setelah diurutkan*.
+                        <br/>$\text{Median} = \\frac{x_4 + x_5}{2} = 13 \\implies x_4 + x_5 = 26$.
+                    </li>
+                    <li><b>Langkah 3: Uji posisi $x$.</b>
+                        <br/>Data terurut (yang diketahui): {10, 11, 12, 12, 15, 15, 15}.
+                        <br/><b>Kasus 1: $x \\le 12$.</b> Daftar terurut akan menjadi {..., $x$, ..., 12, 12, 15, ...}.
+                        <br/>misal, jika $x=10$: {10, 10, 11, 12, 12, 15, 15, 15}.
+                        <br/>Nilai ke-4 adalah 12, nilai ke-5 adalah 12.
+                        <br/>Median = $\\frac{12 + 12}{2} = 12$. Ini bertentangan dengan median 13. Jadi $x$ tidak boleh $\\le 12$.
+                        <br/><b>Kasus 2: $x \\ge 15$.</b> Daftar terurut akan menjadi {10, 11, 12, 12, 15, ..., $x$, ...}.
+                        <br/>Nilai ke-4 adalah 12, nilai ke-5 adalah 15.
+                        <br/>Median = $\\frac{12 + 15}{2} = 13.5$. Ini bertentangan dengan median 13. Jadi $x$ tidak boleh $\\ge 15$.
+                        <br/><b>Kasus 3: $12 < x < 15$.</b> Daftar terurut adalah {10, 11, 12, 12, $x$, 15, 15, 15}.
+                        <br/>Nilai ke-4 adalah 12. Nilai ke-5 adalah $x$.
+                        <br/>Median = $\\frac{12 + x}{2} = 13$.
+                        <br/>$12 + x = 26$.
+                        <br/>$x = 14$.
+                        <br/>Ini cocok dengan batasan kita ($12 < 14 < 15$). Ini pasti jawabannya.
+                    </li>
+                     <li><b>Langkah 4: Verifikasi dengan Mean (opsional).</b>
+                        <br/>Mari kita periksa apakah $x=14$ memberikan rata-rata 13.
+                        <br/>Jumlah = $10 + 11 + 12 + 12 + 15 + 15 + 15 + x$
+                        <br/>Jumlah = $90 + x$.
+                        <br/>Jika $x=14$, Jumlah = $90 + 14 = 104$.
+                        <br/>Mean = $\\frac{\\text{Jumlah}}{N} = \\frac{104}{8} = 13$.
+                        <br/>Ini cocok dengan mean yang diberikan. Semua kondisi terpenuhi.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "The line graph shows the total number of employees hired by Bluebird Corporation and Starlight Enterprises from 2014 to 2017. Determine the percentage of employees hired in 2016 out of the total number of employees hired over these four years. Round your answer to the nearest percentage.",
+          question_id:
+            "Grafik garis menunjukkan jumlah total karyawan yang dipekerjakan oleh Bluebird Corporation dan Starlight Enterprises dari 2014 hingga 2017. Tentukan persentase karyawan yang dipekerjakan pada tahun 2016 dari total jumlah karyawan yang dipekerjakan selama empat tahun tersebut. Bulatkan jawaban Anda ke persentase terdekat.",
+          image_url:
+            "https://imgix3.ruangguru.com/assets/miscellaneous/png_1dupzh_5754.png",
+image_desc: null,
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Data Interpretation (Line Graph) and Percentage Calculation.
+                <br/>1. Read the values for both companies for each of the 4 years.
+                <br/>2. Sum the values to get the Total (2014-2017) and the Total (2016).
+                <br/>3. $\text{Percentage} = \\left( \\frac{\\text{Part}}{\\text{Whole}} \\right) \\times 100$.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Interpretasi Data (Grafik Garis) dan Perhitungan Persentase.
+                <br/>1. Baca nilai untuk kedua perusahaan untuk masing-masing 4 tahun.
+                <br/>2. Jumlahkan nilai-nilai tersebut untuk mendapatkan Total (2014-2017) dan Total (2016).
+                <br/>3. $\text{Persentase} = \\left( \\frac{\\text{Bagian}}{\\text{Keseluruhan}} \\right) \\times 100$.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Read the data from the graph (B=Bluebird, S=Starlight).</b>
+                        <br/>- 2014: B $\\approx$ 2700, S $\\approx$ 3600. Total 2014 = $2700 + 3600 = 6300$.
+                        <br/>- 2015: B $\\approx$ 3400, S $\\approx$ 3100. Total 2015 = $3400 + 3100 = 6500$.
+                        <br/>- 2016: B $\\approx$ 4200, S $\\approx$ 3200. Total 2016 = $4200 + 3200 = 7400$. (This is the 'Part').
+                        <br/>- 2017: B $\\approx$ 5200, S $\\approx$ 4600. Total 2017 = $5200 + 4600 = 9800$.
+                    </li>
+                    <li><b>Step 2: Calculate the 'Whole' (Total 4-year hiring).</b>
+                        <br/>Whole = $6300 + 6500 + 7400 + 9800$.
+                        <br/>Whole = $12800 + 17200 = 30000$.
+                    </li>
+                    <li><b>Step 3: Calculate the percentage.</b>
+                        <br/>Part = 7400 (Total in 2016).
+                        <br/>Whole = 30000 (Total 2014-2017).
+                        <br/>Percentage = $\\left( \\frac{7400}{30000} \\right) \\times 100$.
+                        <br/>Percentage = $\\left( \\frac{74}{300} \\right) \\times 100 = \\frac{74}{3}$.
+                    </li>
+                    <li><b>Step 4: Convert and Round.</b>
+                        <br/>$74 \\div 3 = 24.666...\\%$.
+                        <br/>Rounding to the nearest percentage gives 25%.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Baca data dari grafik (B=Bluebird, S=Starlight).</b>
+                        <br/>- 2014: B $\\approx$ 2700, S $\\approx$ 3600. Total 2014 = $2700 + 3600 = 6300$.
+                        <br/>- 2015: B $\\approx$ 3400, S $\\approx$ 3100. Total 2015 = $3400 + 3100 = 6500$.
+                        <br/>- 2016: B $\\approx$ 4200, S $\\approx$ 3200. Total 2016 = $4200 + 3200 = 7400$. (Ini adalah 'Bagian').
+                        <br/>- 2017: B $\\approx$ 5200, S $\\approx$ 4600. Total 2017 = $5200 + 4600 = 9800$.
+                    </li>
+                    <li><b>Langkah 2: Hitung 'Keseluruhan' (Total perekrutan 4 tahun).</b>
+                        <br/>Keseluruhan = $6300 + 6500 + 7400 + 9800 = 30000$.
+                    </li>
+                    <li><b>Langkah 3: Hitung persentase.</b>
+                        <br/>Bagian = 7400 (Total di 2016).
+                        <br/>Keseluruhan = 30000 (Total 2014-2017).
+                        <br/>Persentase = $\\left( \\frac{7400}{30000} \\right) \\times 100$.
+                        <br/>Persentase = $\\left( \\frac{74}{300} \\right) \\times 100 = \\frac{74}{3}$.
+                    </li>
+                    <li><b>Langkah 4: Konversi dan Bulatkan.</b>
+                        <br/>$74 \\div 3 = 24.666...\\%$.
+                        <br/>Dibulatkan ke persentase terdekat adalah 25%.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "The table shows the number of toys purchased by 100 children. If the median number of toys is 5.5, find the mean of this distribution (round to nearest integer). Table: {Toys: 2, 3, 4, 5, 6, 7}, {Children: 15, 11, $m$, 12, 9, $n$}.",
+          question_id:
+            "Tabel menunjukkan jumlah mainan yang dibeli oleh 100 anak. Jika median jumlah mainan adalah 5.5, tentukan rata-rata dari distribusi ini (bulatkan ke bilangan bulat terdekat). Tabel: {Mainan: 2, 3, 4, 5, 6, 7}, {Anak: 15, 11, $m$, 12, 9, $n$}.",
+          image_desc: null,
+          answer: "5",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Median and Mean from Frequency Table.
+                <br/>1. Use the total count (100) to find a relation between $m$ and $n$.
+                <br/>2. Use the median (5.5) for an even dataset (N=100). The median is the average of the 50th and 51st values. This means the 50th value must be 5 and the 51st must be 6.
+                <br/>3. Use cumulative frequency (CF) to find the exact value of $m$.
+                <br/>4. Find $n$, then calculate the total sum ($\Sigma f \cdot x$) to find the mean.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Median dan Mean dari Tabel Frekuensi.
+                <br/>1. Gunakan jumlah total (100) untuk mencari hubungan $m$ dan $n$.
+                <br/>2. Gunakan median (5.5) untuk data genap (N=100). Median adalah rata-rata dari nilai ke-50 dan ke-51. Ini berarti nilai ke-50 harus 5 dan ke-51 harus 6.
+                <br/>3. Gunakan frekuensi kumulatif (CF) untuk mencari nilai $m$.
+                <br/>4. Cari $n$, lalu hitung jumlah total ($\Sigma f \cdot x$) untuk mencari mean.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Find relation between m and n.</b>
+                        <br/>Total N = 100.
+                        <br/>$15 + 11 + m + 12 + 9 + n = 100$
+                        <br/>$47 + m + n = 100$
+                        <br/>$m + n = 53$.
+                    </li>
+                    <li><b>Step 2: Use the Median (5.5).</b>
+                        <br/>N=100. Median is the average of the 50th and 51st values.
+                        <br/>For the median to be 5.5, the 50th value must be 5, and the 51st value must be 6.
+                    </li>
+                    <li><b>Step 3: Analyze Cumulative Frequency (CF) to find $m$.</b>
+                        <br/>CF(2) = 15
+                        <br/>CF(3) = $15 + 11 = 26$
+                        <br/>CF(4) = $26 + m$
+                        <br/>CF(5) = $26 + m + 12 = 38 + m$
+                        <br/>CF(6) = $38 + m + 9 = 47 + m$
+                        <br/>For the 50th value to be 5, the CF(4) must be $\le 49$ AND CF(5) must be $\ge 50$.
+                        <br/>For the 51st value to be 6, the CF(5) must be $\le 50$.
+                        <br/>Combining these: $CF(5)$ must be exactly 50.
+                        <br/>$38 + m = 50 \\implies m = 12$.
+                    </li>
+                    <li><b>Step 4: Verify $m=12$.</b>
+                        <br/>CF(4) = $26+12 = 38$. (Values 27-38 are 4).
+                        <br/>CF(5) = $38+12 = 50$. (Values 39-50 are 5).
+                        <br/>CF(6) = $50+9 = 59$. (Values 51-59 are 6).
+                        <br/>The 50th value is 5. The 51st value is 6. Median = (5+6)/2 = 5.5. This is correct.
+                    </li>
+                     <li><b>Step 5: Find $n$.</b>
+                        <br/>$m + n = 53 \\implies 12 + n = 53 \\implies n = 41$.
+                    </li>
+                     <li><b>Step 6: Calculate the Total Sum ($\Sigma f \cdot x$).</b>
+                        <br/>Sum = $(2\\times15) + (3\\times11) + (4\\times m) + (5\\times12) + (6\\times9) + (7\\times n)$
+                        <br/>Sum = $(2\\times15) + (3\\times11) + (4\\times12) + (5\\times12) + (6\\times9) + (7\\times41)$
+                        <br/>Sum = $30 + 33 + 48 + 60 + 54 + 287$
+                        <br/>Sum = $63 + 48 + 60 + 54 + 287 = 111 + 60 + 54 + 287 = 171 + 54 + 287 = 225 + 287 = 512$.
+                    </li>
+                    <li><b>Step 7: Calculate the Mean.</b>
+                        <br/>Mean = $\\frac{\\text{Total Sum}}{N} = \\frac{512}{100} = 5.12$.
+                    </li>
+                    <li><b>Step 8: Round to the nearest integer.</b>
+                        <br/>5.12 rounds to 5.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Cari hubungan m dan n.</b>
+                        <br/>Total N = 100.
+                        <br/>$15 + 11 + m + 12 + 9 + n = 100$
+                        <br/>$47 + m + n = 100$
+                        <br/>$m + n = 53$.
+                    </li>
+                    <li><b>Langkah 2: Gunakan Median (5.5).</b>
+                        <br/>N=100. Median adalah rata-rata dari nilai ke-50 dan ke-51.
+                        <br/>Agar median 5.5, nilai ke-50 harus 5, dan nilai ke-51 harus 6.
+                    </li>
+                    <li><b>Langkah 3: Analisis Frekuensi Kumulatif (CF) untuk mencari $m$.</b>
+                        <br/>CF(2) = 15
+                        <br/>CF(3) = $15 + 11 = 26$
+                        <br/>CF(4) = $26 + m$
+                        <br/>CF(5) = $26 + m + 12 = 38 + m$
+                        <br/>CF(6) = $38 + m + 9 = 47 + m$
+                        <br/>Agar nilai ke-50 adalah 5, maka CF(4) harus $\le 49$ DAN CF(5) harus $\ge 50$.
+                        <br/>Agar nilai ke-51 adalah 6, maka CF(5) harus $\le 50$.
+                        <br/>Menggabungkan ini: $CF(5)$ harus tepat 50.
+                        <br/>$38 + m = 50 \\implies m = 12$.
+                    </li>
+                    <li><b>Langkah 4: Verifikasi $m=12$.</b>
+                        <br/>CF(4) = $26+12 = 38$. (Nilai ke 27-38 adalah 4).
+                        <br/>CF(5) = $38+12 = 50$. (Nilai ke 39-50 adalah 5).
+                        <br/>CF(6) = $50+9 = 59$. (Nilai ke 51-59 adalah 6).
+                        <br/>Nilai ke-50 adalah 5. Nilai ke-51 adalah 6. Median = (5+6)/2 = 5.5. Ini benar.
+                    </li>
+                     <li><b>Langkah 5: Cari $n$.</b>
+                        <br/>$m + n = 53 \\implies 12 + n = 53 \\implies n = 41$.
+                    </li>
+                     <li><b>Langkah 6: Hitung Jumlah Total ($\Sigma f \cdot x$).</b>
+                        <br/>Jumlah = $(2\\times15) + (3\\times11) + (4\\times m) + (5\\times12) + (6\\times9) + (7\\times n)$
+                        <br/>Jumlah = $(2\\times15) + (3\\times11) + (4\\times12) + (5\\times12) + (6\\times9) + (7\\times41)$
+                        <br/>Jumlah = $30 + 33 + 48 + 60 + 54 + 287 = 512$.
+                    </li>
+                    <li><b>Langkah 7: Hitung Mean.</b>
+                        <br/>Mean = $\\frac{\\text{Jumlah Total}}{N} = \\frac{512}{100} = 5.12$.
+                    </li>
+                    <li><b>Langkah 8: Bulatkan ke bilangan bulat terdekat.</b>
+                        <br/>5.12 dibulatkan menjadi 5.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A set of 10 numbers has a mean of 15 and a median of 12. The set contains exactly 8 distinct positive integers. What is the maximum possible value for the largest integer in this set?",
+          question_id:
+            "Satu set 10 angka memiliki rata-rata 15 dan median 12. Set tersebut berisi tepat 8 bilangan bulat positif yang unik (berbeda). Berapa nilai maksimum yang mungkin untuk bilangan terbesar dalam himpunan ini?",
+          image_desc: null,
+          answer: "77",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Maximization/Minimization. To maximize the largest value (x10), we must minimize the other 9 values (x1...x9) while adhering to all constraints (Mean, Median, 8 distinct values).</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Maksimisasi/Minimisasi. Untuk memaksimalkan nilai terbesar (x10), kita harus meminimalkan 9 nilai lainnya (x1...x9) sambil mematuhi semua batasan (Mean, Median, 8 nilai unik).</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Use the Mean constraint.</b>
+                        <br/>N = 10. Mean = 15.
+                        <br/>Total Sum = $N \\times \text{Mean} = 10 \\times 15 = 150$.
+                    </li>
+                    <li><b>Step 2: Use the Median constraint.</b>
+                        <br/>N = 10 (even). Median is the average of the 5th (x5) and 6th (x6) values.
+                        <br/>Median = $\\frac{x_5 + x_6}{2} = 12 \\implies x_5 + x_6 = 24$.
+                    </li>
+                    <li><b>Step 3: Use the "8 Distinct Values" constraint.</b>
+                        <br/>We have 10 numbers, but only 8 unique values. This means exactly 2 numbers must be repeats (i.e., we have 2 pairs, or 1 triplet).
+                    </li>
+                    <li><b>Step 4: Minimize x1...x9 to maximize x10.</b>
+                        <br/>Set: {x1, x2, x3, x4, x5, x6, x7, x8, x9, x10}.
+                        <br/>We need to minimize the sum $x1 + ... + x9$.
+                        <br/><b>Minimize x5 and x6:</b> $x_5 + x_6 = 24$. To minimize their sum (which is fixed at 24) and allow minimal values before them, we set them as close as possible. Since $x_5 \\le x_6$, we choose $x_5 = 12, x_6 = 12$.
+                        <br/>This uses up one of our "repeats" (12 appears twice).
+                        <br/>Set: {x1, x2, x3, x4, 12, 12, x7, x8, x9, x10}.
+                        <br/><b>Minimize x1, x2, x3, x4:</b> They must be distinct, positive, and $\le 12$. We still have one "repeat" to use. To minimize the sum, we repeat the smallest possible value.
+                        <br/>$x_1=1, x_2=1$. (Uses the second repeat).
+                        <br/>$x_3=2, x_4=3$. (Must be distinct from 1).
+                        <br/>Set: {1, 1, 2, 3, 12, 12, x7, x8, x9, x10}.
+                        <br/><b>Minimize x7, x8, x9:</b> They must be distinct and $> 12$.
+                        <br/>$x_7=13, x_8=14, x_9=15$.
+                    </li>
+                     <li><b>Step 5: Check the set and constraints.</b>
+                        <br/>Minimal set: {1, 1, 2, 3, 12, 12, 13, 14, 15, x10}.
+                        <br/>Distinct values: {1, 2, 3, 12, 13, 14, 15, x10}. We need 8 distinct values. This works if $x_{10}$ is distinct from the others, which it will be.
+                        <br/>Median: $\\frac{x_5+x_6}{2} = \\frac{12+12}{2} = 12$. (Correct).
+                    </li>
+                     <li><b>Step 6: Calculate x10.</b>
+                        <br/>Total Sum = 150.
+                        <br/>Sum (x1..x9) = $1 + 1 + 2 + 3 + 12 + 12 + 13 + 14 + 15 = 73$.
+                        <br/>$73 + x_{10} = 150$.
+                        <br/>$x_{10} = 150 - 73 = 77$.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Gunakan batasan Mean.</b>
+                        <br/>N = 10. Mean = 15.
+                        <br/>Jumlah Total = $N \\times \text{Mean} = 10 \\times 15 = 150$.
+                    </li>
+                    <li><b>Langkah 2: Gunakan batasan Median.</b>
+                        <br/>N = 10 (genap). Median adalah rata-rata dari nilai ke-5 (x5) dan ke-6 (x6).
+                        <br/>Median = $\\frac{x_5 + x_6}{2} = 12 \\implies x_5 + x_6 = 24$.
+                    </li>
+                    <li><b>Langkah 3: Gunakan batasan "8 Nilai Unik".</b>
+                        <br/>Kita punya 10 angka, tapi hanya 8 nilai unik. Ini berarti ada 2 angka yang berulang (bisa 2 pasang, atau 1 triplet).
+                    </li>
+                    <li><b>Langkah 4: Minimalkan x1...x9 untuk memaksimalkan x10.</b>
+                        <br/>Set: {x1, x2, x3, x4, x5, x6, x7, x8, x9, x10}.
+                        <br/>Kita harus meminimalkan jumlah $x1 + ... + x9$.
+                        <br/><b>Minimalkan x5 dan x6:</b> $x_5 + x_6 = 24$. Untuk meminimalkan jumlah mereka (sudah tetap 24) dan memungkinkan nilai minimal sebelumnya, kita atur sedekat mungkin. Karena $x_5 \\le x_6$, kita pilih $x_5 = 12, x_6 = 12$.
+                        <br/>Ini memakai satu "ulangan" kita (12 muncul dua kali).
+                        <br/>Set: {x1, x2, x3, x4, 12, 12, x7, x8, x9, x10}.
+                        <br/><b>Minimalkan x1, x2, x3, x4:</b> Mereka harus unik, positif, dan $\le 12$. Kita masih punya satu "ulangan" untuk dipakai. Untuk meminimalkan jumlah, kita ulangi nilai terkecil.
+                        <br/>$x_1=1, x_2=1$. (Memakai ulangan kedua).
+                        <br/>$x_3=2, x_4=3$. (Harus unik dari 1).
+                        <br/>Set: {1, 1, 2, 3, 12, 12, x7, x8, x9, x10}.
+                        <br/><b>Minimalkan x7, x8, x9:</b> Mereka harus unik dan $> 12$.
+                        <br/>$x_7=13, x_8=14, x_9=15$.
+                    </li>
+                     <li><b>Langkah 5: Periksa himpunan dan batasan.</b>
+                        <br/>Himpunan minimal: {1, 1, 2, 3, 12, 12, 13, 14, 15, x10}.
+                        <br/>Nilai unik: {1, 2, 3, 12, 13, 14, 15, x10}. Kita butuh 8 nilai unik. Ini terpenuhi jika $x_{10}$ unik, dan pasti akan unik.
+                        <br/>Median: $\\frac{x_5+x_6}{2} = \\frac{12+12}{2} = 12$. (Benar).
+                    </li>
+                     <li><b>Langkah 6: Hitung x10.</b>
+                        <br/>Jumlah Total = 150.
+                        <br/>Jumlah (x1..x9) = $1 + 1 + 2 + 3 + 12 + 12 + 13 + 14 + 15 = 73$.
+                        <br/>$73 + x_{10} = 150$.
+                        <br/>$x_{10} = 150 - 73 = 77$.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A set of 20 distinct positive integers has a lower quartile (Q1) of 10 and an upper quartile (Q3) of 45. What is the minimum possible mean for this dataset?",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sekumpulan 20 bilangan bulat positif yang unik (berbeda) memiliki kuartil bawah (Q1) 10 dan kuartil atas (Q3) 45. Berapa rata-rata (mean) minimum yang mungkin untuk kumpulan data ini?",
+          image_desc: null,
+          answer: "21.9",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Minimizing the Mean. To minimize the mean, we must minimize the total sum ($\Sigma x_i$). We must construct the set of 20 numbers ($x_1...x_{20}$) such that they are as small as possible while adhering to the constraints (distinct, positive, Q1=10, Q3=45).</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Meminimalkan Mean. Untuk meminimalkan mean, kita harus meminimalkan jumlah total ($\Sigma x_i$). Kita harus membangun himpunan 20 angka ($x_1...x_{20}$) sedemikian rupa sehingga nilainya sekecil mungkin namun tetap mematuhi batasan (unik, positif, Q1=10, Q3=45).</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze the constraints.</b>
+                        <br/>$N=20$. Distinct positive integers. $\text{Mean} = \\frac{\Sigma x_i}{20}$.
+                        <br/>We must minimize $\Sigma x_i = \Sigma(x_1...x_{10}) + \Sigma(x_{11}...x_{20})$.
+                    </li>
+                    <li><b>Step 2: Analyze Q1 (Lower Half: $x_1...x_{10}$).</b>
+                        <br/>Q1 = 10. Q1 is the median of the first 10 numbers.
+                        <br/>Q1 = $\\frac{x_5 + x_6}{2} = 10 \\implies x_5 + x_6 = 20$.
+                    </li>
+                    <li><b>Step 3: Minimize $\Sigma(x_1...x_{10})$.</b>
+                        <br/>To minimize the sum, we minimize $x_1...x_{10}$.
+                        <br/>$x_5 + x_6 = 20$. To minimize them (and the numbers before), they must be distinct ($x_5 < x_6$) and as close as possible: $x_5 = 9, x_6 = 11$.
+                        <br/>Minimize $x_1...x_4$: Must be distinct, positive, and $< x_5$.
+                        <br/>$x_1=1, x_2=2, x_3=3, x_4=4$.
+                        <br/>Minimize $x_7...x_{10}$: Must be distinct and $> x_6$ (and $< x_{11}$).
+                        <br/>$x_7=12, x_8=13, x_9=14, x_{10}=15$.
+                        <br/>Set 1: {1, 2, 3, 4, 9, 11, 12, 13, 14, 15}. (All distinct).
+                        <br/>Sum 1 = $(1+2+3+4) + (9+11) + (12+13+14+15) = 10 + 20 + 54 = 84$.
+                    </li>
+                     <li><b>Step 4: Analyze Q3 (Upper Half: $x_{11}...x_{20}$).</b>
+                        <br/>Q3 = 45. Q3 is the median of the second 10 numbers.
+                        <br/>Q3 = $\\frac{x_{15} + x_{16}}{2} = 45 \implies x_{15} + x_{16} = 90$.
+                    </li>
+                     <li><b>Step 5: Minimize $\Sigma(x_{11}...x_{20})$.</b>
+                        <br/>To minimize the sum, we minimize $x_{11}...x_{20}$.
+                        <br/>$x_{15} + x_{16} = 90$. Minimize them: $x_{15} = 44, x_{16} = 46$ (must be distinct).
+                        <br/>Minimize $x_{11}...x_{14}$: Must be distinct, positive, $> x_{10}$, and $< x_{15}$.
+                        <br/>$x_{10}$ was 15. So: $x_{11}=16, x_{12}=17, x_{13}=18, x_{14}=19$.
+                        <br/>Minimize $x_{17}...x_{20}$: Must be distinct and $> x_{16}$.
+                        <br/>$x_{17}=47, x_{18}=48, x_{19}=49, x_{20}=50$.
+                        <br/>Set 2: {16, 17, 18, 19, 44, 46, 47, 48, 49, 50}. (All distinct, and distinct from Set 1).
+                        <br/>Sum 2 = $(16+17+18+19) + (44+46) + (47+48+49+50) = 70 + 90 + 194 = 354$.
+                    </li>
+                    <li><b>Step 6: Calculate Minimum Total Sum and Mean.</b>
+                        <br/>Min Total Sum = Sum 1 + Sum 2 = $84 + 354 = 438$.
+                        <br/>Min Mean = $\\frac{\\text{Min Total Sum}}{N} = \\frac{438}{20} = 21.9$.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis batasan.</b>
+                        <br/>$N=20$. Bilangan bulat positif unik. $\text{Mean} = \\frac{\Sigma x_i}{20}$.
+                        <br/>Kita harus meminimalkan $\Sigma x_i = \Sigma(x_1...x_{10}) + \Sigma(x_{11}...x_{20})$.
+                    </li>
+                    <li><b>Langkah 2: Analisis Q1 (Setengah Bawah: $x_1...x_{10}$).</b>
+                        <br/>Q1 = 10. Q1 adalah median dari 10 angka pertama.
+                        <br/>Q1 = $\\frac{x_5 + x_6}{2} = 10 \\implies x_5 + x_6 = 20$.
+                    </li>
+                    <li><b>Langkah 3: Minimalkan $\Sigma(x_1...x_{10})$.</b>
+                        <br/>Untuk meminimalkan jumlah, kita minimalkan $x_1...x_{10}$.
+                        <br/>$x_5 + x_6 = 20$. Untuk meminimalkan mereka (dan angka sebelumnya), mereka harus unik ($x_5 < x_6$) dan sedekat mungkin: $x_5 = 9, x_6 = 11$.
+                        <br/>Minimalkan $x_1...x_4$: Harus unik, positif, dan $< x_5$.
+                        <br/>$x_1=1, x_2=2, x_3=3, x_4=4$.
+                        <br/>Minimalkan $x_7...x_{10}$: Harus unik dan $> x_6$ (dan $< x_{11}$).
+                        <br/>$x_7=12, x_8=13, x_9=14, x_{10}=15$.
+                        <br/>Set 1: {1, 2, 3, 4, 9, 11, 12, 13, 14, 15}. (Semua unik).
+                        <br/>Jumlah 1 = $(1+2+3+4) + (9+11) + (12+13+14+15) = 10 + 20 + 54 = 84$.
+                    </li>
+                     <li><b>Langkah 4: Analisis Q3 (Setengah Atas: $x_{11}...x_{20}$).</b>
+                        <br/>Q3 = 45. Q3 adalah median dari 10 angka kedua.
+                        <br/>Q3 = $\\frac{x_{15} + x_{16}}{2} = 45 \implies x_{15} + x_{16} = 90$.
+                    </li>
+                     <li><b>Langkah 5: Minimalkan $\Sigma(x_{11}...x_{20})$.</b>
+                        <br/>Untuk meminimalkan jumlah, kita minimalkan $x_{11}...x_{20}$.
+                        <br/>$x_{15} + x_{16} = 90$. Minimalkan mereka: $x_{15} = 44, x_{16} = 46$ (harus unik).
+                        <br/>Minimalkan $x_{11}...x_{14}$: Harus unik, positif, $> x_{10}$, dan $< x_{15}$.
+                        <br/>$x_{10}$ adalah 15. Jadi: $x_{11}=16, x_{12}=17, x_{13}=18, x_{14}=19$.
+                        <br/>Minimalkan $x_{17}...x_{20}$: Harus unik dan $> x_{16}$.
+                        <br/>$x_{17}=47, x_{18}=48, x_{19}=49, x_{20}=50$.
+                        <br/>Set 2: {16, 17, 18, 19, 44, 46, 47, 48, 49, 50}. (Semua unik, dan unik dari Set 1).
+                        <br/>Jumlah 2 = $(16+17+18+19) + (44+46) + (47+48+49+50) = 70 + 90 + 194 = 354$.
+                    </li>
+                    <li><b>Langkah 6: Hitung Jumlah Total Minimum dan Mean Minimum.</b>
+                        <br/>Jumlah Total Min = Jumlah 1 + Jumlah 2 = $84 + 354 = 438$.
+                        <br/>Mean Min = $\\frac{\\text{Jumlah Total Min}}{N} = \\frac{438}{20} = 21.9$.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "You have 12 coins, one of which is counterfeit. The counterfeit is either slightly heavier or slightly lighter than a real coin. Using a two-pan balance scale, what is the minimum number of weighings required to find the counterfeit coin and determine if it is heavier or lighter?",
+          question_id:
+            "Anda memiliki 12 koin, salah satunya palsu. Koin palsu itu bisa jadi sedikit lebih berat atau sedikit lebih ringan dari koin asli. Dengan menggunakan timbangan dua lengan, berapa jumlah penimbangan minimum yang diperlukan untuk menemukan koin palsu tersebut DAN menentukan apakah koin itu lebih berat atau lebih ringan?",
+          image_desc: null,
+          answer: "3",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Advanced Weighing Problem (Ternary Search). This is a classic logic puzzle. With 3 weighings, we have $3^3 = 27$ possible outcomes. We need to identify 1 of 12 coins, and 1 of 2 states (heavy or light), for a total of $12 \\times 2 = 24$ possible scenarios. Since $24 < 27$, it is theoretically possible in 3 weighings.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Masalah Penimbangan Lanjutan (Pencarian Ternary). Ini adalah teka-teki logika klasik. Dengan 3 penimbangan, kita memiliki $3^3 = 27$ kemungkinan hasil. Kita perlu mengidentifikasi 1 dari 12 koin, dan 1 dari 2 keadaan (berat atau ringan), dengan total $12 \\times 2 = 24$ skenario yang mungkin. Karena $24 < 27$, secara teoritis ini mungkin dalam 3 penimbangan.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: First Weighing (W1).</b>
+                        <br/>Label coins 1, 2, ..., 12. Divide into 3 groups:
+                        <br/>G1: {1, 2, 3, 4}
+                        <br/>G2: {5, 6, 7, 8}
+                        <br/>G3: {9, 10, 11, 12} (Set aside)
+                        <br/>Weigh G1 vs G2.
+                    </li>
+                    <li><b>Step 2: Analyze W1 Outcomes.</b>
+                        <br/><b>Case A: G1 = G2 (Scale balances).</b>
+                        <br/>This means coins 1-8 are real. The fake is in G3 {9, 10, 11, 12}. We also need to determine if it's heavy or light.
+                        <br/><b>W2 (Case A):</b> Weigh {9, 10, 11} (from G3) vs {1, 2, 3} (known real coins).
+                        <ul>
+                            <li><b>A1: {9,10,11} = {1,2,3} (Balances):</b> The fake must be {12}.
+                                <br/><b>W3 (A1):</b> Weigh {12} vs {1} (real). If {12} > {1}, it's heavy. If {12} < {1}, it's light. (Found in 3 steps).
+                            </li>
+                            <li><b>A2: {9,10,11} > {1,2,3} (Tips down):</b> The fake is in {9, 10, 11} and it is HEAVY.
+                                <br/><b>W3 (A2):</b> Weigh {9} vs {10}. If 9 > 10, fake is 9 (heavy). If 10 > 9, fake is 10 (heavy). If 9 = 10, fake is 11 (heavy). (Found in 3 steps).
+                            </li>
+                             <li><b>A3: {9,10,11} < {1,2,3} (Tips up):</b> The fake is in {9, 10, 11} and it is LIGHT.
+                                <br/><b>W3 (A3):</b> Weigh {9} vs {10}. If 9 < 10, fake is 9 (light). If 10 < 9, fake is 10 (light). If 9 = 10, fake is 11 (light). (Found in 3 steps).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Step 3: Analyze W1 Outcomes (Cont.).</b>
+                        <br/><b>Case B: G1 > G2 (Left side heavier).</b>
+                        <br/>This means G3 {9-12} is real. The fake is either in G1 {1,2,3,4} (and is HEAVY) or in G2 {5,6,7,8} (and is LIGHT). This is the key insight.
+                        <br/><b>W2 (Case B):</b> Weigh {1, 2, 5} vs {3, 6, 9} (9 is known real).
+                         <ul>
+                            <li><b>B1: {1,2,5} = {3,6,9} (Balances):</b> The fake must be {4} (Heavy) or {7, 8} (Light).
+                                <br/><b>W3 (B1):</b> Weigh {7} vs {8}. If they balance, fake is {4} (Heavy). If 7 < 8, fake is {7} (Light). If 8 < 7, fake is {8} (Light). (Found in 3 steps).
+                            </li>
+                            <li><b>B2: {1,2,5} > {3,6,9} (Tips down):</b> The fake is either {1, 2} (Heavy) or {6} (Light).
+                                <br/><b>W3 (B2):</b> Weigh {1} vs {2}. If 1 > 2, fake is {1} (Heavy). If 2 > 1, fake is {2} (Heavy). If 1 = 2, fake is {6} (Light). (Found in 3 steps).
+                            </li>
+                             <li><b>B3: {1,2,5} < {3,6,9} (Tips up):</b> The fake is either {3} (Heavy) or {5} (Light).
+                                <br/><b>W3 (B3):</b> Weigh {3} vs {9} (real). If 3 > 9, fake is {3} (Heavy). If 3 = 9, fake is {5} (Light). (Found in 3 steps).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Step 4: Analyze W1 Outcomes (Cont.).</b>
+                         <br/><b>Case C: G1 < G2 (Left side lighter).</b>
+                         <br/>This is symmetrical to Case B. The fake is either in G1 {1,2,3,4} (LIGHT) or in G2 {5,6,7,8} (HEAVY). The same weighing groups as Case B will isolate the coin.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Penimbangan Pertama (W1).</b>
+                        <br/>Beri label koin 1, 2, ..., 12. Bagi jadi 3 grup:
+                        <br/>G1: {1, 2, 3, 4}
+                        <br/>G2: {5, 6, 7, 8}
+                        <br/>G3: {9, 10, 11, 12} (Disisihkan)
+                        <br/>Timbang G1 vs G2.
+                    </li>
+                    <li><b>Langkah 2: Analisis Hasil W1.</b>
+                        <br/><b>Kasus A: G1 = G2 (Seimbang).</b>
+                        <br/>Ini berarti koin 1-8 asli. Koin palsu ada di G3 {9, 10, 11, 12}.
+                        <br/><b>W2 (Kasus A):</b> Timbang {9, 10, 11} (dari G3) vs {1, 2, 3} (koin asli).
+                        <ul>
+                            <li><b>A1: {9,10,11} = {1,2,3} (Seimbang):</b> Koin palsu pasti {12}.
+                                <br/><b>W3 (A1):</b> Timbang {12} vs {1} (asli). Jika {12} > {1}, koinnya berat. Jika {12} < {1}, koinnya ringan. (Ditemukan dalam 3 langkah).
+                            </li>
+                            <li><b>A2: {9,10,11} > {1,2,3} (Lebih berat):</b> Koin palsu ada di {9, 10, 11} dan BERAT.
+                                <br/><b>W3 (A2):</b> Timbang {9} vs {10}. Jika 9 > 10, palsu adalah 9 (berat). Jika 10 > 9, palsu adalah 10 (berat). Jika 9 = 10, palsu adalah 11 (berat). (Ditemukan dalam 3 langkah).
+                            </li>
+                             <li><b>A3: {9,10,11} < {1,2,3} (Lebih ringan):</b> Koin palsu ada di {9, 10, 11} dan RINGAN.
+                                <br/><b>W3 (A3):</b> Timbang {9} vs {10}. Jika 9 < 10, palsu adalah 9 (ringan). Jika 10 < 9, palsu adalah 10 (ringan). Jika 9 = 10, palsu adalah 11 (ringan). (Ditemukan dalam 3 langkah).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 3: Analisis Hasil W1 (Lanjutan).</b>
+                        <br/><b>Kasus B: G1 > G2 (Sisi kiri lebih berat).</b>
+                        <br/>Ini berarti G3 {9-12} asli. Koin palsu ada di G1 {1,2,3,4} (dan BERAT) ATAU di G2 {5,6,7,8} (dan RINGAN).
+                        <br/><b>W2 (Kasus B):</b> Timbang {1, 2, 5} vs {3, 6, 9} (9 adalah koin asli).
+                         <ul>
+                            <li><b>B1: {1,2,5} = {3,6,9} (Seimbang):</b> Koin palsu pasti {4} (Berat) atau {7, 8} (Ringan).
+                                <br/><b>W3 (B1):</b> Timbang {7} vs {8}. Jika seimbang, palsu adalah {4} (Berat). Jika 7 < 8, palsu adalah {7} (Ringan). Jika 8 < 7, palsu adalah {8} (Ringan).
+                            </li>
+                            <li><b>B2: {1,2,5} > {3,6,9} (Lebih berat):</b> Koin palsu adalah {1, 2} (Berat) atau {6} (Ringan).
+                                <br/><b>W3 (B2):</b> Timbang {1} vs {2}. Jika 1 > 2, palsu {1} (Berat). Jika 2 > 1, palsu {2} (Berat). Jika 1 = 2, palsu {6} (Ringan).
+                            </li>
+                             <li><b>B3: {1,2,5} < {3,6,9} (Lebih ringan):</b> Koin palsu adalah {3} (Berat) atau {5} (Ringan).
+                                <br/><b>W3 (B3):</b> Timbang {3} vs {9} (asli). Jika 3 > 9, palsu {3} (Berat). Jika 3 = 9, palsu {5} (Ringan).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Langkah 4: Analisis Hasil W1 (Lanjutan).</b>
+                         <br/><b>Kasus C: G1 < G2 (Sisi kiri lebih ringan).</b>
+                         <br/>Ini simetris dengan Kasus B. Palsu ada di G1 (RINGAN) atau G2 (BERAT). Penimbangan yang sama akan mengisolasi koin tersebut.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "On the island of Knights and Knaves, you meet A and B. A says, \"We are both Knaves.\" Who is who?",
+          question_id:
+            "Di pulau Ksatria dan Penjahat, Anda bertemu A dan B. A berkata, \"Kami berdua adalah Penjahat.\" Siapakah mereka?",
+          image_desc: null,
+          answer: "A = Knave, B = Knight",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Case Analysis and Contradiction. We test the two possibilities for Player A (Knight or Knave). The one that does not lead to a logical contradiction is the solution. A Knight's statement must be True; a Knave's statement must be False.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Analisis Kasus dan Kontradiksi. Kita menguji dua kemungkinan untuk Pemain A (Ksatria atau Penjahat). Salah satu yang tidak mengarah pada kontradiksi logis adalah solusinya. Pernyataan Ksatria harus Benar; pernyataan Penjahat harus Salah.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Case 1: Assume A is a Knight (Truth-teller).</b>
+                        <br/>If A is a Knight, his statement must be TRUE.
+                        <br/>A's statement: "We are both Knaves."
+                        <br/>This statement claims A is a Knave.
+                        <br/>This is a contradiction, because A cannot be a Knight and also truthfully say he is a Knave.
+                        <br/>Therefore, Case 1 is impossible.
+                    </li>
+                    <li><b>Case 2: Assume A is a Knave (Liar).</b>
+                        <br/>If A is a Knave, his statement must be FALSE.
+                        <br/>A's statement: "We are both Knaves."
+                        <br/>Since this statement is FALSE, the *opposite* must be true.
+                        <br/>The opposite of "We are both Knaves" is "At least one of us is a Knight."
+                        <br/>We already know A is a Knave (from our assumption). For the statement "At least one is a Knight" to be true, B must be a Knight.
+                    </li>
+                    <li><b>Step 3: Check for consistency.</b>
+                        <br/>Our result from Case 2 is: A = Knave, B = Knight.
+                        <br/>Let's check A's statement: A (a Knave) says "We are both Knaves."
+                        <br/>Is this statement false? Yes, because B is a Knight.
+                        <br/>Since A (a Knave) said a False statement, this is logically consistent.
+                    </li>
+                    <li><b>Step 4: Conclusion.</b>
+                        <br/>The only scenario that works is Case 2.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Kasus 1: Asumsikan A adalah Ksatria (Jujur).</b>
+                        <br/>Jika A Ksatria, pernyataannya harus BENAR.
+                        <br/>Pernyataan A: "Kami berdua adalah Penjahat."
+                        <br/>Pernyataan ini mengklaim A adalah Penjahat.
+                        <br/>Ini adalah kontradiksi, karena A tidak bisa menjadi Ksatria sekaligus jujur mengatakan bahwa dia adalah Penjahat.
+                        <br/>Oleh karena itu, Kasus 1 tidak mungkin.
+                    </li>
+                    <li><b>Kasus 2: Asumsikan A adalah Penjahat (Bohong).</b>
+                        <br/>Jika A Penjahat, pernyataannya harus SALAH.
+                        <br/>Pernyataan A: "Kami berdua adalah Penjahat."
+                        <br/>Karena pernyataan ini SALAH, maka *kebalikannya* harus benar.
+                        <br/>Kebalikan dari "Kami berdua adalah Penjahat" adalah "Setidaknya satu dari kami adalah Ksatria."
+                        <br/>Kita sudah tahu A adalah Penjahat (dari asumsi kita). Agar pernyataan "Setidaknya satu adalah Ksatria" itu benar, maka B haruslah seorang Ksatria.
+                    </li>
+                    <li><b>Langkah 3: Periksa konsistensi.</b>
+                        <br/>Hasil kita dari Kasus 2 adalah: A = Penjahat, B = Ksatria.
+                        <br/>Mari cek pernyataan A: A (seorang Penjahat) berkata "Kami berdua adalah Penjahat."
+                        <br/>Apakah pernyataan ini salah? Ya, karena B adalah Ksatria.
+                        <br/>Karena A (Penjahat) mengucapkan pernyataan yang Salah, ini konsisten secara logis.
+                    </li>
+                    <li><b>Langkah 4: Kesimpulan.</b>
+                        <br/>Satu-satunya skenario yang berhasil adalah Kasus 2.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "A game is played on a 7x7 grid. A token starts at the bottom-left square (1,1). Players A and B take turns moving the token either one square to the right or one square up. The player who moves the token to the top-right square (7,7) wins. If A moves first, who has the winning strategy?",
+          question_id:
+            "Sebuah permainan dimainkan di kotak 7x7. Sebuah token dimulai di kotak kiri-bawah (1,1). Pemain A dan B bergiliran memindahkan token, baik satu kotak ke kanan atau satu kotak ke atas. Pemain yang memindahkan token ke kotak kanan-atas (7,7) menang. Jika A bergerak lebih dulu, siapa yang memiliki strategi kemenangan?",
+          image_desc: null,
+          answer: "B (Player 2)",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Game Theory on a Grid (Parity/Symmetry). To get from (1,1) to (7,7), a player must make (7-1) = 6 moves to the Right (R) and (7-1) = 6 moves Up (U).
+                <br/>Total moves = $6 + 6 = 12$ moves.
+                <br/>Since the game *must* end in exactly 12 moves, we can determine the winner by the parity (odd/even) of the total moves.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Teori Permainan di Grid (Paritas/Simetri). Untuk berpindah dari (1,1) ke (7,7), seorang pemain harus melakukan (7-1) = 6 langkah ke Kanan (R) dan (7-1) = 6 langkah ke Atas (U).
+                <br/>Total langkah = $6 + 6 = 12$ langkah.
+                <br/>Karena permainan *harus* berakhir tepat dalam 12 langkah, kita dapat menentukan pemenang dari paritas (ganjil/genap) jumlah total langkah.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate total moves.</b>
+                        <br/>Starting point: (1,1).
+                        <br/>Ending point: (7,7).
+                        <br/>Moves needed = (Moves Right) + (Moves Up) = $(7-1) + (7-1) = 6 + 6 = 12$ moves.
+                    </li>
+                    <li><b>Step 2: Analyze the game length.</b>
+                        <br/>The game will always end on the 12th move, regardless of the path taken (e.g., RRRRRRUUUUUU or RURURURURURU).
+                    </li>
+                    <li><b>Step 3: Determine the winner based on parity.</b>
+                        <br/>Player A moves on moves: 1, 3, 5, 7, 9, 11.
+                        <br/>Player B moves on moves: 2, 4, 6, 8, 10, 12.
+                    </li>
+                    <li><b>Step 4: Conclusion.</b>
+                        <br/>The player who makes the 12th (and final) move wins.
+                        <br/>Player B makes the 12th move.
+                        <br/>Therefore, Player B (the second player) has the winning strategy.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung total langkah.</b>
+                        <br/>Titik awal: (1,1).
+                        <br/>Titik akhir: (7,7).
+                        <br/>Langkah yang dibutuhkan = (Langkah ke Kanan) + (Langkah ke Atas) = $(7-1) + (7-1) = 6 + 6 = 12$ langkah.
+                    </li>
+                    <li><b>Langkah 2: Analisis panjang permainan.</b>
+                        <br/>Permainan akan selalu berakhir pada langkah ke-12, tidak peduli jalur mana yang diambil (misal, KKKKKKAAAAAA atau KAKAKAKAKAKA).
+                    </li>
+                    <li><b>Langkah 3: Tentukan pemenang berdasarkan paritas.</b>
+                        <br/>Pemain A bergerak pada langkah: 1, 3, 5, 7, 9, 11.
+                        <br/>Pemain B bergerak pada langkah: 2, 4, 6, 8, 10, 12.
+                    </li>
+                    <li><b>Langkah 4: Kesimpulan.</b>
+                        <br/>Pemain yang melakukan langkah ke-12 (dan terakhir) akan menang.
+                        <br/>Pemain B melakukan langkah ke-12.
+                        <br/>Oleh karena itu, Pemain B (pemain kedua) memiliki strategi kemenangan.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "A certain month of January had exactly 4 Mondays and 4 Fridays. What day of the week was January 1st?",
+          question_id:
+            "Pada bulan Januari di tahun tertentu, terdapat tepat 4 hari Senin dan 4 hari Jumat. Jatuh pada hari apakah tanggal 1 Januari di tahun tersebut?",
+          image_desc: null,
+          answer: "Tuesday (Selasa)",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Calendar Logic. A month has $7 \\times 4 = 28$ days, plus $X$ extra days.
+                <br/>January has 31 days.
+                <br/>$31 = (7 \\times 4) + 3$ days.
+                <br/>This means in January, there will be 4 of every weekday, PLUS 3 "extra" days.
+                <br/>The 3 days that appear 5 times will be the first 3 days of the month (e.g., if it starts on Mon, then Mon, Tue, Wed appear 5 times).
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Logika Kalender. Satu bulan memiliki $7 \\times 4 = 28$ hari, ditambah $X$ hari ekstra.
+                <br/>Januari memiliki 31 hari.
+                <br/>$31 = (7 \\times 4) + 3$ hari.
+                <br/>Ini berarti di bulan Januari, akan ada 4 kali untuk setiap hari, PLUS 3 hari "ekstra".
+                <br/>Tiga hari yang muncul 5 kali adalah 3 hari pertama dalam sebulan (misal, jika mulai hari Senin, maka Sen, Sel, Rab muncul 5 kali).
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze the days in January.</b>
+                        <br/>January has 31 days. $31 = 4 \\times 7 + 3$.
+                        <br/>This means 3 days of the week will appear 5 times, and 4 days of the week will appear 4 times.
+                    </li>
+                    <li><b>Step 2: Analyze the constraints.</b>
+                        <br/>We are told there are *exactly 4* Mondays and *exactly 4* Fridays.
+                        <br/>This means Monday and Friday must be in the group of 4 days that appear 4 times.
+                        <br/>They cannot be one of the 3 "extra" days (the days that appear 5 times).
+                    </li>
+                    <li><b>Step 3: Identify the 3 "extra" days.</b>
+                        <br/>The 3 "extra" days (that appear 5 times) are the first 3 days of the month.
+                        <br/>Let the days of the week be: M, Tu, W, Th, F, Sa, Su.
+                        <br/>If the 3 extra days were {M, Tu, W}, Monday would appear 5 times. (Contradiction).
+                        <br/>If the 3 extra days were {Th, F, Sa}, Friday would appear 5 times. (Contradiction).
+                        <br/>If the 3 extra days were {F, Sa, Su}, Friday would appear 5 times. (Contradiction).
+                        <br/>If the 3 extra days were {Su, M, Tu}, Monday would appear 5 times. (Contradiction).
+                    </li>
+                    <li><b>Step 4: Find the only possible 3-day block.</b>
+                        <br/>The block of 3 "extra" days (Day 1, Day 2, Day 3) *cannot* contain Monday or Friday.
+                        <br/>Let's check the 3-day blocks:
+                        <br/>{Mon, Tue, Wed} $\\to$ No (contains Mon)
+                        <br/>{Tue, Wed, Thu} $\\to$ Yes (does not contain Mon or Fri)
+                        <br/>{Wed, Thu, Fri} $\\to$ No (contains Fri)
+                        <br/>{Thu, Fri, Sat} $\\to$ No (contains Fri)
+                        <br/>{Fri, Sat, Sun} $\\to$ No (contains Fri)
+                        <br/>{Sat, Sun, Mon} $\\to$ No (contains Mon)
+                        <br/>{Sun, Mon, Tue} $\\to$ No (contains Mon)
+                    </li>
+                     <li><b>Step 5: Conclusion.</b>
+                        <br/>The only possible block of 3 "extra" days is {Tuesday, Wednesday, Thursday}.
+                        <br/>These must be the 3 days that appear 5 times. This also means these must be the first 3 days of the month.
+                        <br/>Day 1 (Jan 1st) = Tuesday.
+                        <br/>Day 2 (Jan 2nd) = Wednesday.
+                        <br/>Day 3 (Jan 3rd) = Thursday.
+                        <br/>The days Monday, Friday, Saturday, Sunday will appear 4 times. This matches the constraints.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis hari di bulan Januari.</b>
+                        <br/>Januari memiliki 31 hari. $31 = 4 \\times 7 + 3$.
+                        <br/>Ini berarti 3 hari dalam seminggu akan muncul 5 kali, dan 4 hari dalam seminggu akan muncul 4 kali.
+                    </li>
+                    <li><b>Langkah 2: Analisis batasan.</b>
+                        <br/>Kita diberitahu bahwa hanya ada *tepat 4* hari Senin dan *tepat 4* hari Jumat.
+                        <br/>Ini berarti Senin dan Jumat harus termasuk dalam kelompok 4 hari yang muncul 4 kali.
+                        <br/>Senin dan Jumat tidak boleh menjadi salah satu dari 3 hari "ekstra" (yang muncul 5 kali).
+                    </li>
+                    <li><b>Langkah 3: Identifikasi 3 hari "ekstra".</b>
+                        <br/>Tiga hari "ekstra" (yang muncul 5 kali) adalah 3 hari pertama di bulan itu.
+                        <br/>Misal hari-hari dalam seminggu: Sen, Sel, Rab, Kam, Jum, Sab, Min.
+                        <br/>Jika 3 hari ekstra adalah {Sen, Sel, Rab}, Senin akan muncul 5 kali. (Kontradiksi).
+                        <br/>Jika 3 hari ekstra adalah {Kam, Jum, Sab}, Jumat akan muncul 5 kali. (Kontradiksi).
+                        <br/>Jika 3 hari ekstra adalah {Jum, Sab, Min}, Jumat akan muncul 5 kali. (Kontradiksi).
+                        <br/>Jika 3 hari ekstra adalah {Min, Sen, Sel}, Senin akan muncul 5 kali. (Kontradiksi).
+                    </li>
+                    <li><b>Langkah 4: Temukan satu-satunya blok 3 hari yang mungkin.</b>
+                        <br/>Blok 3 hari "ekstra" (Hari 1, Hari 2, Hari 3) *tidak boleh* mengandung Senin atau Jumat.
+                        <br/>Mari kita periksa blok 3 hari:
+                        <br/>{Sen, Sel, Rab} $\\to$ Tidak (ada Sen)
+                        <br/>{Sel, Rab, Kam} $\\to$ Ya (tidak ada Sen atau Jum)
+                        <br/>{Rab, Kam, Jum} $\\to$ Tidak (ada Jum)
+                        <br/>{Kam, Jum, Sab} $\\to$ Tidak (ada Jum)
+                        <br/>{Jum, Sab, Min} $\\to$ Tidak (ada Jum)
+                        <br/>{Sab, Min, Sen} $\\to$ Tidak (ada Sen)
+                        <br/>{Min, Sen, Sel} $\\to$ Tidak (ada Sen)
+                    </li>
+                     <li><b>Langkah 5: Kesimpulan.</b>
+                        <br/>Satu-satunya blok 3 hari "ekstra" yang mungkin adalah {Selasa, Rabu, Kamis}.
+                        <br/>Ini pastilah 3 hari yang muncul 5 kali. Ini juga berarti ini adalah 3 hari pertama bulan tersebut.
+                        <br/>Hari 1 (1 Jan) = Selasa.
+                        <br/>Hari 2 (2 Jan) = Rabu.
+                        <br/>Hari 3 (3 Jan) = Kamis.
+                        <br/>Hari Senin, Jumat, Sabtu, Minggu akan muncul 4 kali. Ini sesuai dengan batasan.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 1: Logika & Strategi",
+          question_en:
+            "<strong>(Non-Rutin)</strong> A game starts with a pile of 100 stones. Two players (A and B) take turns. A move consists of removing $k$ stones, where $k$ must be a power of 2 (1, 2, 4, 8, 16, ...). The player who takes the last stone wins. If A moves first, who has the winning strategy?",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Sebuah permainan dimulai dengan 100 batu. Dua pemain (A dan B) bergiliran. Satu langkah adalah mengambil $k$ batu, di mana $k$ harus merupakan pangkat 2 (1, 2, 4, 8, 16, ...). Pemain yang mengambil batu terakhir menang. Jika A bergerak lebih dulu, siapa yang memiliki strategi kemenangan?",
+          image_desc: null,
+          answer: "A (Player 1)",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Game Theory (Binary Nim / Sprague-Grundy). This is a variation of Nim. A position $N$ is a losing position if $N$ is a multiple of 3. If $N$ is not a multiple of 3, it is a winning position.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Teori Permainan (Binary Nim / Sprague-Grundy). Ini adalah variasi dari Nim. Posisi $N$ adalah posisi kalah jika $N$ adalah kelipatan 3. Jika $N$ bukan kelipatan 3, ini adalah posisi menang.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Analyze small positions.</b>
+                        <br/>N=1: A takes 1 (power of 2), wins. (Winning)
+                        <br/>N=2: A takes 2 (power of 2), wins. (Winning)
+                        <br/>N=3: A can take 1 (leaves 2) or take 2 (leaves 1). In both cases, B takes the rest and B wins. (Losing)
+                        <br/>N=4: A takes 4, wins. (Winning)
+                        <br/>N=5: A takes 1 (leaves 4). B takes 4, B wins. $\\to$ Bad move. A takes 2 (leaves 3). B is now at a losing position (3), so B loses. A wins by taking 2. (Winning)
+                        <br/>N=6: A can take 1 (leaves 5), 2 (leaves 4), or 4 (leaves 2).
+                        <br/>All positions {5, 4, 2} are Winning positions.
+                        <br/>A *must* move to a *losing* position for B. A must leave 3.
+                        <br/>To leave 3, A must take $6 - 3 = 3$. But 3 is not a power of 2.
+                        <br/>This means any move A makes leads to B winning. (Losing)
+                    </li>
+                    <li><b>Step 2: Identify the pattern.</b>
+                        <br/>Losing positions (P-positions): 0, 3, 6, 9, ... (Multiples of 3).
+                        <br/>Winning positions (N-positions): 1, 2, 4, 5, 7, 8, ... (Not multiples of 3).
+                    </li>
+                    <li><b>Step 3: Analyze the proof (Why multiples of 3?).</b>
+                        <br/>Any power of 2 ($2^k$) is never a multiple of 3.
+                        <br/>$2^k \\pmod 3$. If $k$ is even (e.g., $k=0, 2, 4...$), $2^k \\pmod 3 = 1$ (e.g., 1, 4, 16...).
+                        <br/>If $k$ is odd (e.g., $k=1, 3, 5...$), $2^k \\pmod 3 = 2$ (e.g., 2, 8, 32...).
+                        <br/>So, any move $k$ is either 1 or 2 (mod 3).
+                        <br/><b>If N = 3m (Losing):</b> A must take $k$. A leaves $3m - k$.
+                        <br/>If $k \\equiv 1 \\pmod 3$, A leaves $3m - 1 \\equiv 2 \\pmod 3$. (Winning).
+                        <br/>If $k \\equiv 2 \pmod 3$, A leaves $3m - 2 \\equiv 1 \\pmod 3$. (Winning).
+                        <br/>A *must* leave a winning position for B.
+                        <br/><b>If N is not 3m (Winning):</b>
+                        <br/>If $N \\equiv 1 \pmod 3$, A takes $k=1$ (which is $1 \pmod 3$). A leaves $N-1 \\equiv 0 \pmod 3$. (Losing).
+                        <br/>If $N \\equiv 2 \pmod 3$, A takes $k=2$ (which is $2 \pmod 3$). A leaves $N-2 \\equiv 0 \pmod 3$. (Losing).
+                        <br/>A can *always* move to a losing position (a multiple of 3).
+                    </li>
+                    <li><b>Step 4: Check the starting position N=100.</b>
+                        <br/>$100 \\div 3 = 33$ remainder 1.
+                        <br/>$100 \\equiv 1 \pmod 3$.
+                        <br/>This is a Winning Position (N-position) for the first player (A).
+                    </li>
+                     <li><b>Step 5: Conclusion.</b>
+                        <br/>Pemain A (pemain pertama) memiliki strategi kemenangan. (Langkah pertamanya adalah mengambil 1 batu (karena $1=2^0$), menyisakan 99, yang merupakan Posisi Kalah untuk B).
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Analisis posisi kecil.</b>
+                        <br/>N=1: A ambil 1 (pangkat 2), A menang. (Posisi Menang)
+                        <br/>N=2: A ambil 2 (pangkat 2), A menang. (Posisi Menang)
+                        <br/>N=3: A ambil 1 (sisa 2) atau 2 (sisa 1). B mengambil sisanya dan B menang. (Posisi Kalah)
+                    </li>
+                    <li><b>Langkah 2: Identifikasi pola (Posisi Kalah/Losing Position).</b>
+                        <br/>Posisi Kalah (P-positions) adalah 0, 3, 6, 9, ... (Semua kelipatan 3).
+                        <br/>Posisi Menang (N-positions) adalah 1, 2, 4, 5, 7, 8, ... (Bukan kelipatan 3).
+                    </li>
+                    <li><b>Langkah 3: Bukti pola (Modulo 3).</b>
+                        <br/>Setiap langkah $k$ (pangkat 2) tidak pernah kelipatan 3.
+                        <br/>Jika $k$ pangkat 2 genap (1, 4, 16...), $k \pmod 3 = 1$.
+                        <br/>Jika $k$ pangkat 2 ganjil (2, 8, 32...), $k \pmod 3 = 2$.
+                        <br/><b>Jika N adalah kelipatan 3 (Posisi Kalah):</b> $N = 3m$.
+                        <br/>A harus mengambil $k$. Sisa $N-k$.
+                        <br/>Jika $k \\equiv 1 \pmod 3$, sisa $3m - 1 \\equiv 2 \pmod 3$ (Posisi Menang).
+                        <br/>Jika $k \\equiv 2 \pmod 3$, sisa $3m - 2 \\equiv 1 \pmod 3$ (Posisi Menang).
+                        <br/>A *harus* meninggalkan Posisi Menang untuk B (artinya A kalah).
+                        <br/><b>Jika N bukan kelipatan 3 (Posisi Menang):</b>
+                        <br/>Jika $N \\equiv 1 \pmod 3$. A mengambil $k=1$ (1 adalah $2^0$, dan $1 \\equiv 1 \pmod 3$). Sisa $N-1 \\equiv 0 \pmod 3$ (Posisi Kalah).
+                        <br/>Jika $N \\equiv 2 \pmod 3$. A mengambil $k=2$ (2 adalah $2^1$, dan $2 \\equiv 2 \pmod 3$). Sisa $N-2 \\equiv 0 \pmod 3$ (Posisi Kalah).
+                        <br/>A selalu bisa memaksa B ke Posisi Kalah (kelipatan 3).
+                    </li>
+                    <li><b>Langkah 4: Cek posisi awal N=100.</b>
+                        <br/>$100 \\div 3 = 33$ sisa 1.
+                        <br/>$100 \\equiv 1 \pmod 3$.
+                        <br/>Ini adalah Posisi Menang (N-position) untuk pemain pertama (A).
+                    </li>
+                     <li><b>Langkah 5: Kesimpulan.</b>
+                        <br/>Pemain A (pemain pertama) memiliki strategi kemenangan. (Langkah pertamanya adalah mengambil 1 batu, menyisakan 99, yang merupakan Posisi Kalah untuk B).
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A survey was conducted on the number of pets owned by 120 students. The mean was 2.5. However, it was later discovered that two entries were recorded incorrectly: one student's 0 pets was recorded as 5, and another student's 12 pets was recorded as 1. What is the correct mean?",
+          question_id:
+            "Sebuah survei dilakukan terhadap 120 siswa mengenai jumlah hewan peliharaan. Rata-ratanya adalah 2,5. Namun, kemudian ditemukan bahwa dua data salah dicatat: 0 hewan peliharaan milik satu siswa dicatat sebagai 5, dan 12 hewan peliharaan milik siswa lain dicatat sebagai 1. Berapa rata-rata yang benar?",
+          image_desc: null,
+          answer: "2.55",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Correcting the Mean. The correct mean is $\\frac{\\text{Correct Sum}}{\\text{Total Count}}$.
+                <br/>The Correct Sum = (Original Sum) - (Sum of Errors) + (Sum of Correct Values).
+                <br/>The Original Sum = $\\text{Original Mean} \\times N$.
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Mengoreksi Mean. Rata-rata yang benar adalah $\\frac{\\text{Jumlah yang Benar}}{\\text{Total Data}}$.
+                <br/>Jumlah yang Benar = (Jumlah Awal) - (Jumlah Data Salah) + (Jumlah Data Benar).
+                <br/>Jumlah Awal = $\\text{Mean Awal} \\times N$.
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate the Original (Incorrect) Sum.</b>
+                        <br/>$N = 120$. Original Mean = 2.5.
+                        <br/>Original Sum = $120 \\times 2.5 = 300$.
+                    </li>
+                    <li><b>Step 2: Identify the Errors and Correct Values.</b>
+                        <br/>Error 1: Recorded as 5. Correct value was 0.
+                        <br/>Error 2: Recorded as 1. Correct value was 12.
+                        <br/>Sum of Errors = $5 + 1 = 6$.
+                        <br/>Sum of Correct Values = $0 + 12 = 12$.
+                    </li>
+                    <li><b>Step 3: Calculate the Correct Sum.</b>
+                        <br/>Correct Sum = Original Sum - Sum of Errors + Sum of Correct Values
+                        <br/>Correct Sum = $300 - 6 + 12 = 306$.
+                    </li>
+                    <li><b>Step 4: Calculate the Correct Mean.</b>
+                        <br/>Correct Mean = $\\frac{\\text{Correct Sum}}{N} = \\frac{306}{120}$.
+                    </li>
+                    <li><b>Step 5: Simplify.</b>
+                        <br/>$\\frac{306}{120} = \\frac{30.6}{12} = \\frac{15.3}{6} = \\frac{5.1}{2} = 2.55$.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung Jumlah Awal (Yang Salah).</b>
+                        <br/>$N = 120$. Mean Awal = 2.5.
+                        <br/>Jumlah Awal = $120 \\times 2.5 = 300$.
+                    </li>
+                    <li><b>Langkah 2: Identifikasi Kesalahan dan Nilai Benar.</b>
+                        <br/>Kesalahan 1: Dicatat 5. Seharusnya 0.
+                        <br/>Kesalahan 2: Dicatat 1. Seharusnya 12.
+                        <br/>Jumlah Data Salah = $5 + 1 = 6$.
+                        <br/>Jumlah Data Benar = $0 + 12 = 12$.
+                    </li>
+                    <li><b>Langkah 3: Hitung Jumlah yang Benar.</b>
+                        <br/>Jumlah Benar = Jumlah Awal - Jumlah Data Salah + Jumlah Data Benar
+                        <br/>Jumlah Benar = $300 - 6 + 12 = 306$.
+                    </li>
+                    <li><b>Langkah 4: Hitung Mean yang Benar.</b>
+                        <br/>Mean Benar = $\\frac{\\text{Jumlah Benar}}{N} = \\frac{306}{120}$.
+                    </li>
+                    <li><b>Langkah 5: Sederhanakan.</b>
+                        <br/>$\\frac{306}{120} = \\frac{30.6}{12} = \\frac{15.3}{6} = \\frac{5.1}{2} = 2.55$.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "The mean of 10 numbers is 18. If a new number, 40, is added to the set, what is the new mean?",
+          question_id:
+            "Rata-rata dari 10 angka adalah 18. Jika angka baru, 40, ditambahkan ke himpunan tersebut, berapa rata-rata yang baru?",
+          image_desc: null,
+          answer: "20",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Adding to the Mean. We must calculate the new total sum and divide by the new total count.</p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Menambahkan Data ke Mean. Kita harus menghitung jumlah total baru dan membaginya dengan jumlah data yang baru.</p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate the Original Sum.</b>
+                        <br/>$N_1 = 10$. Mean 1 = 18.
+                        <br/>Original Sum = $10 \\times 18 = 180$.
+                    </li>
+                    <li><b>Step 2: Calculate the New Sum and New Count.</b>
+                        <br/>New value = 40.
+                        <br/>New Sum = Original Sum + New Value = $180 + 40 = 220$.
+                        <br/>New Count = $N_1 + 1 = 10 + 1 = 11$.
+                    </li>
+                    <li><b>Step 3: Calculate the New Mean.</b>
+                        <br/>New Mean = $\\frac{\\text{New Sum}}{\\text{New Count}} = \\frac{220}{11} = 20$.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung Jumlah Awal.</b>
+                        <br/>$N_1 = 10$. Rata-rata 1 = 18.
+                        <br/>Jumlah Awal = $10 \\times 18 = 180$.
+                    </li>
+                    <li><b>Langkah 2: Hitung Jumlah Baru dan Banyak Data Baru.</b>
+                        <br/>Nilai baru = 40.
+                        <br/>Jumlah Baru = Jumlah Awal + Nilai Baru = $180 + 40 = 220$.
+                        <br/>Banyak Data Baru = $N_1 + 1 = 10 + 1 = 11$.
+                    </li>
+                    <li><b>Langkah 3: Hitung Rata-rata Baru.</b>
+                        <br/>Rata-rata Baru = $\\frac{\\text{Jumlah Baru}}{\\text{Banyak Data Baru}} = \\frac{220}{11} = 20$.
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "A set of 5 distinct integers has a range of 10. The median is 12 and the mean is 11. What is the set of numbers?",
+          question_id:
+            "Jangkauan (range) dari 5 bilangan bulat unik (berbeda) adalah 10. Mediannya 12 dan rata-ratanya 11. Apakah himpunan bilangan tersebut?",
+          image_desc: null,
+          answer: "{5, 10, 12, 13, 15} (or other valid sets like {6, 8, 12, 13, 16})",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Using Statistical Properties to find a set. We must use all constraints (Range, Median, Mean, Distinct) simultaneously.
+                <br/>Range = $x_5 - x_1 = 10$.
+                <br/>Median = $x_3 = 12$.
+                <br/>Mean = $\\frac{\\Sigma x_i}{5} = 11 \\implies \Sigma x_i = 55$.
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Menggunakan Sifat Statistik untuk menemukan himpunan. Kita harus menggunakan semua batasan (Jangkauan, Median, Rata-rata, Unik) secara bersamaan.
+                <br/>Jangkauan = $x_5 - x_1 = 10$.
+                <br/>Median = $x_3 = 12$.
+                <br/>Rata-rata = $\\frac{\\Sigma x_i}{5} = 11 \\implies \Sigma x_i = 55$.
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Set up the 5 integers (sorted).</b>
+                        <br/>{ $x_1, x_2, x_3, x_4, x_5$ }
+                    </li>
+                    <li><b>Step 2: Use the Median.</b>
+                        <br/>The middle value is $x_3$. $x_3 = 12$.
+                        <br/>{ $x_1, x_2, 12, x_4, x_5$ }
+                    </li>
+                    <li><b>Step 3: Use the Range.</b>
+                        <br/>$x_5 - x_1 = 10 \\implies x_5 = x_1 + 10$.
+                        <br/>{ $x_1, x_2, 12, x_4, x_1 + 10$ }
+                    </li>
+                    <li><b>Step 4: Use the Mean.</b>
+                        <br/>The sum $\Sigma x_i = 55$.
+                        <br/>$x_1 + x_2 + 12 + x_4 + (x_1 + 10) = 55$
+                        <br/>$2x_1 + x_2 + x_4 + 22 = 55$
+                        <br/>$2x_1 + x_2 + x_4 = 33$.
+                    </li>
+                    <li><b>Step 5: Use "Distinct" constraint and solve.</b>
+                        <br/>We need to find $x_1, x_2, x_4$ that satisfy $2x_1 + x_2 + x_4 = 33$ and the constraints:
+                        <br/>$x_1 < x_2 < 12$
+                        <br/>$12 < x_4 < x_5$ (where $x_5 = x_1 + 10$)
+                        <br/>The second constraint $12 < x_4 < x_1 + 10$ implies $x_1 > 2$ (for $x_4=13$), $x_1 > 3$ (for $x_4=14$), etc.
+                    </li>
+                    <li><b>Step 6: Test $x_1$ values (must be $x_1 > 2$).</b>
+                        <br/><b>Case 1: $x_1 = 3$.</b> $x_5 = 13$. $12 < x_4 < 13$. Impossible for integers.
+                        <br/><b>Case 2: $x_1 = 4$.</b> $x_5 = 14$. $12 < x_4 < 14 \\implies x_4 = 13$.
+                        <br/>Plug into sum equation: $2(4) + x_2 + 13 = 33 \\implies 8 + x_2 + 13 = 33 \\implies x_2 = 12$.
+                        <br/>This gives {4, 12, 12, 13, 14}. This is NOT distinct (12 repeats).
+                        <br/><b>Case 3: $x_1 = 5$.</b> $x_5 = 15$. $12 < x_4 < 15 \implies x_4$ can be 13 or 14.
+                        <br/>If $x_4=13$: $2(5) + x_2 + 13 = 33 \\implies 10 + x_2 + 13 = 33 \\implies x_2 = 10$.
+                        <br/>Check constraints: $x_1 < x_2 < 12 \\implies 5 < 10 < 12$. (Valid).
+                        <br/>Set: {5, 10, 12, 13, 15}. Sum = $5+10+12+13+15 = 55$. (Correct).
+                        <br/><b>Case 4: $x_1 = 6$.</b> $x_5 = 16$. $12 < x_4 < 16 \\implies x_4$ can be 13, 14, 15.
+                        <br/>If $x_4=13$: $2(6) + x_2 + 13 = 33 \\implies 12 + x_2 + 13 = 33 \\implies x_2 = 8$.
+                        <br/>Set: {6, 8, 12, 13, 16}. Sum = 55. (Also valid).
+                        <br/>If $x_4=14$: $2(6) + x_2 + 14 = 33 \\implies 12 + x_2 + 14 = 33 \\implies x_2 = 7$.
+                        <br/>Set: {6, 7, 12, 14, 16}. Sum = 55. (Also valid).
+                        <br/>If $x_4=15$: $2(6) + x_2 + 15 = 33 \\implies 12 + x_2 + 15 = 33 \\implies x_2 = 6$. Not distinct ($x_1=x_2$).
+                        <br/>Since the question asks "What is the set", and multiple sets are possible, we provide one valid answer.
+                    </li>
+                </ul>
+            </div>
+             <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Susun 5 bilangan (terurut).</b>
+                        <br/>{ $x_1, x_2, x_3, x_4, x_5$ }
+                    </li>
+                    <li><b>Langkah 2: Gunakan Median.</b>
+                        <br/>Nilai tengah adalah $x_3$. $x_3 = 12$.
+                        <br/>{ $x_1, x_2, 12, x_4, x_5$ }
+                    </li>
+                    <li><b>Langkah 3: Gunakan Jangkauan (Range).</b>
+                        <br/>$x_5 - x_1 = 10 \\implies x_5 = x_1 + 10$.
+                        <br/>{ $x_1, x_2, 12, x_4, x_1 + 10$ }
+                    </li>
+                    <li><b>Langkah 4: Gunakan Rata-rata (Mean).</b>
+                        <br/>Jumlah $\Sigma x_i = \text{Mean} \\times N = 11 \\times 5 = 55$.
+                        <br/>$x_1 + x_2 + 12 + x_4 + (x_1 + 10) = 55$
+                        <br/>$2x_1 + x_2 + x_4 + 22 = 55$
+                        <br/>$2x_1 + x_2 + x_4 = 33$.
+                    </li>
+                    <li><b>Langkah 5: Gunakan batasan "Unik" (Distinct) dan selesaikan.</b>
+                        <br/>Kita harus mematuhi: $x_1 < x_2 < 12$ dan $12 < x_4 < x_5$ (dimana $x_5 = x_1 + 10$).
+                        <br/>Batasan $12 < x_4 < x_1 + 10$ berarti $x_1 > 2$.
+                    </li>
+                    <li><b>Langkah 6: Uji nilai $x_1$ (dimulai dari 3).</b>
+                        <br/><b>Kasus 1: $x_1 = 3$.</b> $x_5 = 13$. Batasan: $12 < x_4 < 13$. Tidak ada bilangan bulat.
+                        <br/><b>Kasus 2: $x_1 = 4$.</b> $x_5 = 14$. Batasan: $12 < x_4 < 14 \\implies x_4 = 13$.
+                        <br/>Cari $x_2$: $2(4) + x_2 + 13 = 33 \\implies 8 + x_2 + 13 = 33 \\implies x_2 = 12$.
+                        <br/>Set: {4, 12, 12, 13, 14}. Gagal (tidak unik).
+                        <br/><b>Kasus 3: $x_1 = 5$.</b> $x_5 = 15$. Batasan: $12 < x_4 < 15 \implies x_4$ bisa 13 atau 14.
+                        <br/>Jika $x_4=13$: $2(5) + x_2 + 13 = 33 \\implies 10 + x_2 + 13 = 33 \\implies x_2 = 10$.
+                        <br/>Cek batasan: $5 < 10 < 12$. (Valid).
+                        <br/>Set: {5, 10, 12, 13, 15}. Cek Mean: $5+10+12+13+15 = 55$. (Valid).
+                        <br/>(Satu solusi yang mungkin adalah {5, 10, 12, 13, 15}).
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "The mean of 100 observations is 50. If 10 of these observations, which have a mean of 40, are removed, what is the mean of the remaining 90 observations?",
+          question_id:
+            "Rata-rata dari 100 observasi adalah 50. Jika 10 observasi di antaranya, yang memiliki rata-rata 40, dihilangkan, berapa rata-rata dari 90 observasi yang tersisa?",
+          image_desc: null,
+          answer: "51.11... (atau 460/9)",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Removing a Subset (Combined Mean).
+                <br/>Sum(Remaining) = Sum(Total) - Sum(Removed).
+                <br/>Mean(Remaining) = $\\frac{\\text{Sum(Remaining)}}{\\text{Count(Remaining)}}$.
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Menghilangkan Subset (Rata-rata Gabungan).
+                <br/>Jumlah(Sisa) = Jumlah(Total) - Jumlah(Dihilangkan).
+                <br/>Rata-rata(Sisa) = $\\frac{\\text{Jumlah(Sisa)}}{\\text{Banyak(Sisa)}}$.
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate the Total Sum (100 observations).</b>
+                        <br/>$N_T = 100$. Mean_T = 50.
+                        <br/>Total Sum = $100 \\times 50 = 5000$.
+                    </li>
+                    <li><b>Step 2: Calculate the Removed Sum (10 observations).</b>
+                        <br/>$N_R = 10$. Mean_R = 40.
+                        <br/>Removed Sum = $10 \\times 40 = 400$.
+                    </li>
+                    <li><b>Step 3: Calculate the Remaining Sum and Count.</b>
+                        <br/>Remaining Sum = Total Sum - Removed Sum = $5000 - 400 = 4600$.
+                        <br/>Remaining Count = $N_T - N_R = 100 - 10 = 90$.
+                    </li>
+                    <li><b>Step 4: Calculate the Remaining Mean.</b>
+                        <br/>Remaining Mean = $\\frac{\\text{Remaining Sum}}{\\text{Remaining Count}} = \\frac{4600}{90}$.
+                        <br/>Remaining Mean = $\\frac{460}{9} \\approx 51.11...$
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung Jumlah Total (100 observasi).</b>
+                        <br/>$N_T = 100$. Rata-rata_T = 50.
+                        <br/>Jumlah Total = $100 \\times 50 = 5000$.
+                    </li>
+                    <li><b>Langkah 2: Hitung Jumlah yang Dihilangkan (10 observasi).</b>
+                        <br/>$N_R = 10$. Rata-rata_R = 40.
+                        <br/>Jumlah Dihilangkan = $10 \\times 40 = 400$.
+                    </li>
+                    <li><b>Langkah 3: Hitung Jumlah Sisa dan Banyak Data Sisa.</b>
+                        <br/>Jumlah Sisa = Jumlah Total - Jumlah Dihilangkan = $5000 - 400 = 4600$.
+                        <br/>Banyak Data Sisa = $N_T - N_R = 100 - 10 = 90$.
+                    </li>
+                    <li><b>Langkah 4: Hitung Rata-rata Sisa.</b>
+                        <br/>Rata-rata Sisa = $\\frac{\\text{Jumlah Sisa}}{\\text{Banyak Data Sisa}} = \\frac{4600}{90}$.
+                        <br/>Rata-rata Sisa = $\\frac{460}{9} \\approx 51.11...$
+                    </li>
+                </ul>
+            </div>`,
+        },
+        {
+          topic: "Bagian 2: Statistika Dasar",
+          question_en:
+            "<strong>(Non-Rutin)</strong> The mean of 50 numbers is 38. The mean of the 30 'small' numbers is 20. The mean of the 18 'large' numbers is 60. What is the sum of the 2 numbers that are neither 'small' nor 'large' (the middle numbers)?",
+          question_id:
+            "<strong>(Non-Rutin)</strong> Rata-rata dari 50 angka adalah 38. Rata-rata dari 30 angka 'kecil' adalah 20. Rata-rata dari 18 angka 'besar' adalah 60. Berapa jumlah dari 2 angka yang bukan 'kecil' maupun 'besar' (angka tengah)?",
+          image_desc: null,
+          answer: "220",
+          explanation: `<div class="concept">
+                <p><strong>Concept:</strong> Combined Mean (Partitioning). The total sum is the sum of all its parts.
+                <br/>Sum(Total) = Sum(Small) + Sum(Middle) + Sum(Large).
+                <br/>We can find Sum(Total), Sum(Small), and Sum(Large) from their respective means and counts.
+                </p>
+                <hr class="my-2 border-indigo-100" />
+                <p><strong>Konsep:</strong> Rata-rata Gabungan (Partisi). Jumlah total adalah jumlah dari semua bagiannya.
+                <br/>Jumlah(Total) = Jumlah(Kecil) + Jumlah(Tengah) + Jumlah(Besar).
+                <br/>Kita dapat mencari Jumlah(Total), Jumlah(Kecil), dan Jumlah(Besar) dari rata-rata dan jumlah data masing-masing.
+                </p>
+            </div>
+            <div class="solution-step">
+                <p class="font-bold text-indigo-600">Solution:</p>
+                <ul>
+                    <li><b>Step 1: Calculate the Total Sum (50 numbers).</b>
+                        <br/>$N_T = 50$. Mean_T = 38.
+                        <br/>Total Sum = $50 \\times 38 = 1900$.
+                    </li>
+                    <li><b>Step 2: Calculate the Sum of 'Small' numbers (30 numbers).</b>
+                        <br/>$N_S = 30$. Mean_S = 20.
+                        <br/>Small Sum = $30 \\times 20 = 600$.
+                    </li>
+                    <li><b>Step 3: Calculate the Sum of 'Large' numbers (18 numbers).</b>
+                        <br/>$N_L = 18$. Mean_L = 60.
+                        <br/>Large Sum = $18 \\times 60 = 1080$.
+                    </li>
+                    <li><b>Step 4: Calculate the Count of 'Middle' numbers.</b>
+                        <br/>Count(Middle) = $N_T - N_S - N_L = 50 - 30 - 18 = 2$.
+                        <br/>This matches the prompt.
+                    </li>
+                     <li><b>Step 5: Calculate the Sum of 'Middle' numbers.</b>
+                        <br/>Sum(Middle) = Total Sum - Sum(Small) - Sum(Large)
+                        <br/>Sum(Middle) = $1900 - 600 - 1080$
+                        <br/>Sum(Middle) = $1300 - 1080 = 220$.
+                    </li>
+                </ul>
+            </div>
+            <div class="solution-step mt-4">
+                 <p class="font-bold text-indigo-600">Penyelesaian:</p>
+                <ul>
+                    <li><b>Langkah 1: Hitung Jumlah Total (50 angka).</b>
+                        <br/>$N_T = 50$. Rata-rata_T = 38.
+                        <br/>Jumlah Total = $50 \\times 38 = 1900$.
+                    </li>
+                    <li><b>Langkah 2: Hitung Jumlah angka 'Kecil' (30 angka).</b>
+                        <br/>$N_S = 30$. Rata-rata_S = 20.
+                        <br/>Jumlah Kecil = $30 \\times 20 = 600$.
+                    </li>
+                    <li><b>Langkah 3: Hitung Jumlah angka 'Besar' (18 angka).</b>
+                        <br/>$N_L = 18$. Rata-rata_L = 60.
+                        <br/>Jumlah Besar = $18 \\times 60 = 1080$.
+                    </li>
+                    <li><b>Langkah 4: Hitung Banyak Data angka 'Tengah'.</b>
+                        <br/>Banyak(Tengah) = $N_T - N_S - N_L = 50 - 30 - 18 = 2$.
+                        <br/>Ini sesuai dengan soal.
+                    </li>
+                     <li><b>Langkah 5: Hitung Jumlah angka 'Tengah'.</b>
+                        <br/>Jumlah(Tengah) = Jumlah Total - Jumlah(Kecil) - Jumlah(Besar)
+                        <br/>Jumlah(Tengah) = $1900 - 600 - 1080$
+                        <br/>Jumlah(Tengah) = $1300 - 1080 = 220$.
+                    </li>
+                </ul>
+            </div>`,
+        }
+    ];
+
+    // ### KODE RENDER (JANGAN DIUBAH) ###
+    function getOrderedQuestions() {
+        const topics = [...new Set(questions.map((q) => q.topic))];
+        let ordered = [];
+        let questionCounter = 0;
+        topics.forEach((topic) => {
+          const questionsForTopic = questions.filter(
+            (q) => q.topic === topic
+          );
+          questionsForTopic.forEach((q) => {
+            questionCounter++;
+            q.id = questionCounter;
+            ordered.push(q);
+          });
+        });
+        return ordered;
+      }
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+        const orderedQuestions = getOrderedQuestions();
+        orderedQuestions.forEach((q) => {
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+          problemsHTML += `<div class="item-container"><p><strong>${q.id}.</strong> ${q.question_en}`;
+          if (q.image_desc) {
+            problemsHTML += `<div class="image-desc">${q.image_desc}</div>`;
+          }
+          if (q.question_id) {
+            problemsHTML += `<br/><br/><span class="lang-id">${q.question_id}</span>`;
+          }
+          problemsHTML += `</p></div>`;
+          if (q.topic !== currentSolutionTopic) {
+            currentSolutionTopic = q.topic;
+            solutionsHTML += `<h3 class="topic-title">Pembahasan ${currentSolutionTopic}</h3>`;
+          }
+          solutionsHTML += `<div class="item-container"><p><strong>Pembahasan Soal ${q.id} / Solution ${q.id}:</strong></p>${q.explanation}<div class="final-answer">Jawaban / Answer: ${q.answer}</div></div>`;
+        });
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        }
+      }
+      document.addEventListener("DOMContentLoaded", renderContent);
+</script>
+</body>
+</html>
