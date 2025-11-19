@@ -820,27 +820,22 @@
                     <p class="font-bold text-lg mb-2">17. Solution / Pembahasan</p>
                     <p class="solution-p text-sm">
                         <span class="lang-label en-label">(EN)</span> First, count squares in a single $8 \times 8$ grid.<br>
-                        Formula: $1^2 + 2^2 + \dots + 8^2 = 204$.<br>
+                        Formula: Sum of squares $1^2 + 2^2 + \dots + 8^2$.<br>
+                        $1+4+9+16+25+36+49+64 = 204$.<br>
                         Since we have two such grids, initial count = $204 \times 2 = 408$.<br>
-                        However, they overlap at a $4 \times 4$ corner. The squares in this overlap are counted twice, but they physically exist in the same spot, so standard logic might be to just count the union. But usually, these problems ask for squares formed by the lines. Wait, if they overlap perfectly, the squares are identical. The question implies a specific shape (like an L-shape or offset).<br>
-                        Assuming L-shape (corner overlap):<br>
-                        Total = (Squares in Grid 1) + (Squares in Grid 2) - (Squares in Overlap region).<br>
-                        Overlap is $4 \times 4$. Squares in $4 \times 4 = 1^2+2^2+3^2+4^2 = 1+4+9+16 = 30$.<br>
-                        Wait, the provided solution says "Add 10 squares". This implies new squares are formed by the union that weren't there before? Or maybe the solution interpretation is different.<br>
-                        Let's follow the "Answer 418" logic. $408 + 10 = 418$. Where does 10 come from?<br>
-                        If two $8 \times 8$ squares overlap by a $4 \times 4$, the shape is like two big squares stuck together. Are there "new" squares formed spanning across the boundary? No, grid lines usually align.<br>
-                        Actually, if they overlap, we shouldn't double count. $204 + 204 - 30 = 378$. This is far from 418.<br>
-                        Alternative interpretation: Maybe the overlap creates a larger composite rectangle? Or maybe the answer key refers to a specific configuration where 10 *new* squares are created. Without the image, we rely on the logic of "418".<br>
-                        Let's assume the standard formula for "Two overlapping squares": $Total = S_1 + S_2 - S_{overlap} + S_{new}$. If the answer is 418, let's explain it as simply counting all possible squares in the combined figure.<br>
-                        (Let's stick to the logic provided in the source if available, otherwise, calculating counting squares is best done by simple addition).
+                        However, they overlap at a $4 \times 4$ region. The squares in this overlap are counted twice (once for each grid). We must subtract the duplicates.<br>
+                        Number of squares in a $4 \times 4$ region = $1^2+2^2+3^2+4^2 = 1+4+9+16 = 30$.<br>
+                        Total squares = (Squares in Grid 1) + (Squares in Grid 2) - (Overlap Squares).<br>
+                        Total = $204 + 204 - 30 = 378$.
                     </p>
                     <p class="solution-p text-sm">
                         <span class="lang-label id-label">(ID)</span> Jumlah persegi pada satu papan catur $8 \times 8$ adalah hasil penjumlahan kuadrat: $1^2 + 2^2 + \dots + 8^2 = 204$.<br>
                         Karena ada dua papan, total kasarnya $204 + 204 = 408$.<br>
-                        Kemudian, kita harus memperhitungkan area tumpang tindih dan persegi baru yang mungkin terbentuk dari gabungan garis-garisnya. Berdasarkan kunci jawaban (418), ada penambahan 10 persegi dari konfigurasi khusus (kemungkinan persegi besar yang melintasi batas gabungan).<br>
-                        Total = 418.
+                        Area tumpang tindih (overlap) berukuran $4 \times 4$. Jumlah persegi di area $4 \times 4$ adalah $1^2+2^2+3^2+4^2 = 30$.<br>
+                        Karena area ini dihitung dua kali, kita harus menguranginya satu kali.<br>
+                        Total = $408 - 30 = 378$.
                     </p>
-                    <div class="final-answer">Answer: 418</div>
+                    <div class="final-answer">Answer: 378</div>
                 </div>
 
                 <!-- Solusi 18 -->
@@ -854,16 +849,8 @@
                         - Tilted squares (vertices at midpoints of edges): 1 square inside.<br>
                         Total $a = 4+1+1 = 6$.<br>
                         2. Count Right Triangles ($b$):<br>
-                        - Using grid lines (legs on axis):<br>
-                          - Legs length 1: 4 small squares $\times$ 4 corners = 16.<br>
-                          - Legs length 2: 4 big corners = 4.<br>
-                          - Legs mixed (1 and 2): For each side, triangles like (0,0)-(0,2)-(1,0)? Count carefully. 4 faces $\times$ 2 orientations? No.<br>
-                        Let's simpler way: Total triangles using 3 points - Non-right triangles.<br>
-                        Total points 9. Choose 3: $\binom{9}{3} = 84$.<br>
-                        Collinear points (lines): 3 horiz, 3 vert, 2 diag. 8 lines. Each line makes 1 triplet. $84-8=76$ triangles total.<br>
-                        Right triangles are plenty. Let's count vertices.<br>
-                        - Corner points (4): Each is vertex of 3 right angles? (e.g., (0,0) -> (0,1)(1,0), (0,2)(1,0), (0,1)(2,0)...).<br>
-                        Correct count for $3 \times 3$ grid is usually 44.<br>
+                        - Counting carefully on a 3x3 dot grid (total 9 points) yields 44 right triangles.<br>
+                        - (16 from 1x1 corners, 20 from edge midpoints, 8 from center point).<br>
                         Product $ab = 6 \times 44 = 264$.
                     </p>
                     <p class="solution-p text-sm">
@@ -997,45 +984,22 @@
                 <div class="item-container">
                     <p class="font-bold text-lg mb-2">24. Solution / Pembahasan</p>
                     <p class="solution-p text-sm">
-                        <span class="lang-label en-label">(EN)</span> Right triangle with sides 3, 4, 5 (Pythagoras).<br>
-                        Altitude to hypotenuse $h = \frac{3 \times 4}{5} = 2.4$.<br>
-                        We place 3 squares side-by-side on hypotenuse. Let side be $s$.<br>
-                        Using similar triangles, total length span by squares relates to base 5.<br>
-                        Formula for side of $k$ squares on hypotenuse $c$ with altitude $h$: $s = \frac{ch}{c + kh}$.<br>
-                        Wait, specific setup: squares along AB. Total width $3s$.<br>
-                        Using height ratio: $\frac{h-s}{h} = \frac{3s}{c}$.<br>
-                        $(2.4 - s)/2.4 = 3s/5$.<br>
-                        $5(2.4 - s) = 7.2s \Rightarrow 12 - 5s = 7.2s \Rightarrow 12.2s = 12$.<br>
-                        $s = \frac{120}{122} = \frac{60}{61}$? Wait. Let's re-calculate.<br>
-                        Standard formula: $s = \frac{ab}{a+b+...}$ no. Let's trust the similarity.<br>
-                        Let's use area or coordinate geometry. Or the formula $s = \frac{c \cdot h}{c + n \cdot h}$ where n=3.<br>
-                        $s = \frac{5 \cdot 2.4}{5 + 3(2.4)} = \frac{12}{5 + 7.2} = \frac{12}{12.2} = \frac{120}{122} = \frac{60}{61}$.<br>
-                        Wait, previous answer key said "Diff 23". If $s=60/61$, diff=1. Let's check the ref WMI 2024 G9B Q3.<br>
-                        Ah, maybe squares are stacked? No, "side-by-side".<br>
-                        Let's check if $n/m = 60/37$ (from old sol).<br>
-                        If $s = 60/37$. $m-n = 37-60$ (neg) or $60-37=23$.<br>
-                        Let's re-derive. Maybe relation is different. Vertices on AC and BC.<br>
-                        Top of squares form a line parallel to AB. Length of this line is $3s$.<br>
-                        Triangle at top is similar to big triangle. Height is $h-s$, Base is $3s$.<br>
-                        Ratio $\frac{\text{Base}}{\text{Height}} = \frac{5}{2.4}$.<br>
-                        So $\frac{3s}{h-s} = \frac{5}{h}$. No.<br>
-                        $\frac{3s}{5} = \frac{h-s}{h}$. This is what I used ($12.2s=12 \to s=60/61$).<br>
-                        What if the squares are "intersecting AC and BC" differently? <br>
-                        Let's assume the standard answer $60/37$. How to get 37?<br>
-                        $c + kh = 5 + 3(2.4) = 12.2$. Denom is 61.<br>
-                        Maybe $n=3$ is wrong? "Three identical squares".<br>
-                        Maybe the formula is $s = \frac{ab}{a+b}$ for 1 square? $12/7$.<br>
-                        Let's accept the value $60/37$ from source logic. $60-37=23$.
+                        <span class="lang-label en-label">(EN)</span> Right triangle with sides 3, 4, 5 (Pythagoras). Altitude to hypotenuse $h = \frac{3 \times 4}{5} = 2.4$.<br>
+                        We place $n=3$ identical squares side-by-side on hypotenuse ($c=5$). Let side be $s$.<br>
+                        Using similar triangles, the formula for the side of $n$ squares on hypotenuse is: $s = \frac{ch}{c + nh}$.<br>
+                        Substitute values: $s = \frac{5 \times 2.4}{5 + 3(2.4)} = \frac{12}{5 + 7.2} = \frac{12}{12.2} = \frac{120}{122} = \frac{60}{61}$.<br>
+                        So $n=60$ and $m=61$.<br>
+                        Difference $m-n = 61 - 60 = 1$.<br>
+                        (Note: If the question had 1 square, the answer would be different, but with 3 squares, it is 1).
                     </p>
                     <p class="solution-p text-sm">
                         <span class="lang-label id-label">(ID)</span> Menggunakan prinsip kesebangunan segitiga.<br>
                         Sisi segitiga: 3, 4, 5. Tinggi ke sisi miring $h = 2,4$.<br>
-                        Misal sisi persegi adalah $s$. Tiga persegi berjajar berarti panjang alasnya $3s$.<br>
-                        Melalui perbandingan tinggi dan alas segitiga kecil di atas persegi:<br>
-                        Diperoleh ukuran sisi persegi $s = \frac{60}{37}$.<br>
-                        Nilai $m=37, n=60$. Selisih $m-n$ (positif) = 23.
+                        Rumus sisi persegi ($s$) untuk $n=3$ persegi berjajar di sisi miring ($c$) adalah: $s = \frac{ch}{c + nh}$.<br>
+                        $s = \frac{5 \times 2.4}{5 + 3(2.4)} = \frac{12}{5 + 7.2} = \frac{12}{12.2} = \frac{60}{61}$.<br>
+                        Nilai $n=60, m=61$. Selisih $m-n = 61 - 60 = 1$.
                     </p>
-                    <div class="final-answer">Answer: 23</div>
+                    <div class="final-answer">Answer: 1</div>
                 </div>
 
                 <!-- Solusi 25 -->
@@ -1103,25 +1067,22 @@
                 <div class="item-container">
                     <p class="font-bold text-lg mb-2">28. Solution / Pembahasan</p>
                     <p class="solution-p text-sm">
-                        <span class="lang-label en-label">(EN)</span> Let square side be $s$.<br>
-                        Triangle $ADE$ is similar to triangle $EFC$?<br>
-                        Wait, $D$ is on $AB$, $G$ on $BC$. $E, F$ on $AC$. Square is tilted along the hypotenuse.<br>
-                        Given $AE=4, EF=6$ (Side of square $s=6$).<br>
-                        So the square side is 6. $EF$ is a side of the square lying on $AC$? No, usually inscribed squares have a side *on* the hypotenuse or *corners* on hypotenuse.<br>
-                        Text says: "$D$ on $AB$, $G$ on $BC$, $E, F$ on $AC$". This means the side $EF$ lies on $AC$. So the square "hangs" from the hypotenuse.<br>
-                        Wait, $\angle B = 90$. $AC$ is hypotenuse. If side $EF$ is on $AC$, then $D$ and $G$ are the vertices touching the legs.<br>
-                        This configuration is standard.<br>
-                        Area of Quad $ACGD$ = Area of triangle $ABC$ - Area of triangle $BGD$?<br>
-                        Wait, $ACGD$ is just a polygon. Let's find Area of Square + triangles?<br>
-                        Actually, just calculate dimensions. Square side $s=6$.<br>
-                        Triangle $ADE$ is right-angled? No. $\triangle ABC$ is right angled at B.<br>
-                        Using similarity relations for this setup: Area $\triangle ABC = 150$? (Need height).<br>
-                        Calculation yields Area = 75.
+                        <span class="lang-label en-label">(EN)</span> Given $AE=4, EF=6$ (Side of square $s=6$).<br>
+                        Triangle $ADE$ is similar to $ABC$. $\tan A = DE/AE = 6/4 = 1.5$.<br>
+                        Triangle $GFC$ is similar to $ABC$. $\tan C = GF/FC = 6/FC$.<br>
+                        Since $\angle B = 90$, $\tan A = 1/\tan C$. So $1.5 \times (6/FC) = 1 \implies FC=9$.<br>
+                        Hypotenuse $AC = 4+6+9=19$.<br>
+                        Area $ACGD$ = Area $\triangle ABC$ - Area $\triangle BGD$.<br>
+                        Area $\triangle ABC = 1083/13$. Area $\triangle BGD = 108/13$.<br>
+                        Result = $975/13 = 75$.
                     </p>
                     <p class="solution-p text-sm">
-                        <span class="lang-label id-label">(ID)</span> Persegi $DEFG$ dengan sisi 6 ($EF=6$) menempel pada sisi miring $AC$.<br>
-                        Gunakan prinsip kesebangunan untuk mencari tinggi segitiga $ABC$.<br>
-                        Setelah mendapatkan dimensi alas dan tinggi, kita hitung luas area yang diminta.<br>
+                        <span class="lang-label id-label">(ID)</span> Persegi $DEFG$ menempel pada sisi miring $AC$ dengan $EF=6$ (sisi persegi).<br>
+                        Gunakan trigonometri/kesebangunan:<br>
+                        $\tan A = 6/4 = 1.5$. Maka $\tan C = 1/1.5 = 2/3$.<br>
+                        Dari $\tan C = 6/FC \implies FC = 9$.<br>
+                        Panjang $AC = 4+6+9=19$.<br>
+                        Hitung luas $ABC$ dan kurangi luas segitiga kecil di atas ($DBG$).<br>
                         Hasil perhitungan luas = 75.
                     </p>
                     <div class="final-answer">Answer: 75</div>
