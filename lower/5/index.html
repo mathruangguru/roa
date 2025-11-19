@@ -111,6 +111,14 @@
          }
          .en-label { color: #0369a1; } /* sky-700 */
          .id-label { color: #be123c; } /* rose-700 */
+         .question-image {
+             max-width: 100%;
+             height: auto;
+             margin-top: 10px;
+             margin-bottom: 10px;
+             border-radius: 8px;
+             border: 1px solid #e5e7eb;
+         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -119,7 +127,7 @@
         <header class="text-center mb-10">
             <!-- Logo Ruangguru -->
             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Math Worksheet Header" class="mx-auto mb-6 h-24 object-contain">
-            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 4</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 5</h1>
             <p class="text-gray-600 mt-2 text-lg">Grade 1-2 | Arithmetic, Logic & Bar Models</p>
             <p class="text-sm text-gray-500 mt-1">Sourced from: WMI, SEAMO, WIMO Papers</p>
         </header>
@@ -230,11 +238,7 @@
                 <div class="item-container">
                     <p><strong>16.</strong> <span class="lang-label en-label">(EN)</span> Animals stand in a row. The 10th animal from the left is the leader. The 7th animal from the right is the vice leader. If the leader and vice leader are adjacent (next to each other), how many animals are there? <span class="source-tag">WMI 2024 G1 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Hewan-hewan berbaris. Hewan ke-10 dari kiri adalah pemimpin. Hewan ke-7 dari kanan adalah wakil pemimpin. Jika mereka bersebelahan, berapa total hewan?</p>
-                     <div class="bar-model-viz">
-                        [Model Idea]<br>
-                        |--- 10 (Left to Leader) ---||--- 7 (Right to Vice) ---|<br>
-                        (Leader and Vice are adjacent/next to each other)
-                    </div>
+                     <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jpfrug_7154.png" alt="Question 16 Image" class="question-image">
                 </div>
 
                 <!-- Soal 17 -->
@@ -265,24 +269,12 @@
                 <div class="item-container">
                     <p><strong>21.</strong> <span class="lang-label en-label">(EN)</span> The teacher has a bag of sweets. If she gives each student 7 sweets, 3 sweets remain. If she gives each student 8 sweets, she needs another 5 sweets. How many sweets does the teacher have? <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Guru punya sekantung permen. Jika ia memberi 7 permen per siswa, sisa 3. Jika ia memberi 8 permen per siswa, kurang 5. Berapa banyak permen yang dimiliki guru?</p>
-                    <div class="bar-model-viz">
-                        [Model Idea - Comparison]<br>
-                        Case 1: |------- Total Sweets -------| --Rem: 3-- |<br>
-                        Case 2: |------- Total Sweets -------| --Need: 5-- |<br>
-                        Difference in distribution: 8 - 7 = 1 per student. Total Gap = 3 + 5 = 8.
-                    </div>
                 </div>
 
                 <!-- Soal 22 -->
                 <div class="item-container">
                     <p><strong>22.</strong> <span class="lang-label en-label">(EN)</span> The sum of 2 numbers is 60. The larger one is 4 times the smaller one. Find the value of the larger number. <span class="source-tag">WIMO G2 2019</span><br>
                     <span class="lang-label id-label">(ID)</span> Jumlah dua bilangan adalah 60. Bilangan yang besar adalah 4 kali bilangan yang kecil. Tentukan bilangan yang besar.</p>
-                    <div class="bar-model-viz">
-                        [Model]<br>
-                        Small: | 1 Unit |<br>
-                        Large: | 1 Unit | 1 Unit | 1 Unit | 1 Unit |<br>
-                        Total (5 Units) = 60
-                    </div>
                 </div>
 
                 <!-- Soal 23 -->
@@ -312,9 +304,8 @@
                 <!-- Soal 27 -->
                 <div class="item-container">
                     <p><strong>27.</strong> <span class="lang-label en-label">(EN)</span> Find the missing value: <br>
-                    [Apple] + [Apple] = 160 g <br>
-                    [Apple] + [Banana] = 180 g <br>
-                    [Banana] + [Banana] = ? g <span class="source-tag">SEAMO 2023 Paper A</span><br>
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_upsuqq_8017.png" alt="Question 27 Image" class="question-image"><br>
+                    <span class="source-tag">SEAMO 2023 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan nilai yang hilang dari timbangan di atas.</p>
                 </div>
 
@@ -592,16 +583,24 @@
                         <p><strong>Concept:</strong> Inversions (Counting how many pairs are in wrong order).</p>
                     </div>
                     <p class="solution-p text-sm">
-                        <span class="lang-label en-label">(EN)</span> Sequence: 2, 1, 5, 4, 3, 6.<br>
-                        Pairs out of order: (2,1), (5,4), (5,3), (4,3). Total 4 swaps needed.<br>
-                        *(Note: Based on WMI snippet provided earlier, if the list was longer "2 1 5 4 3 6 0 7 8 9", answer would be 10-12 swaps. For this specific short list, it is 4. Following the source key logic for the full question usually gives 12.)*
+                        <span class="lang-label en-label">(EN)</span> Sequence: $2, 1, 5, 4, 3, 6$.<br>
+                        Pairs out of order (Inversions):<br>
+                        1. (2, 1)<br>
+                        2. (5, 4)<br>
+                        3. (5, 3)<br>
+                        4. (4, 3)<br>
+                        Total inversions = 4. Number of swaps needed = 4.
                     </p>
                     <p class="solution-p text-sm">
-                        <span class="lang-label id-label">(ID)</span> Urutan: 2, 1, 5, 4, 3, 6.<br>
-                        Pasangan yang salah urutan: (2,1), (5,4), (5,3), (4,3). Butuh 4 pertukaran.<br>
-                        *(Catatan: Jika soal asli WMI lebih panjang, jawabannya 12. Untuk versi pendek ini secara logika 4).*
+                        <span class="lang-label id-label">(ID)</span> Urutan: $2, 1, 5, 4, 3, 6$.<br>
+                        Pasangan yang salah urutan (Inversi):<br>
+                        1. (2, 1)<br>
+                        2. (5, 4)<br>
+                        3. (5, 3)<br>
+                        4. (4, 3)<br>
+                        Total inversi = 4. Jumlah pertukaran yang dibutuhkan = 4.
                     </p>
-                    <div class="final-answer">12 (Based on full WMI paper source)</div>
+                    <div class="final-answer">4</div>
                 </div>
 
                 <!-- Soal 16 -->
