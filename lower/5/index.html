@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olympiad Math Practice Worksheet 4 (Source: WMI, SEAMO, WIMO)</title>
+    <title>Olympiad Math Practice Worksheet 5 (MCQ Version)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,8 +45,8 @@
              margin-bottom: 1.5rem;
          }
          .item-container {
-             margin-bottom: 1.75rem;
-             padding-bottom: 1.75rem;
+             margin-bottom: 2rem;
+             padding-bottom: 1.5rem;
              border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
          }
          .item-container:last-child {
@@ -84,17 +84,6 @@
              margin-bottom: 0;
              color: #312e81; /* indigo-900 */
          }
-         .bar-model-viz {
-             border: 2px dashed #9ca3af;
-             background-color: #f9fafb;
-             padding: 1rem;
-             margin: 1rem 0;
-             text-align: center;
-             border-radius: 8px;
-             font-family: monospace;
-             color: #4b5563;
-             white-space: pre-wrap;
-         }
          .source-tag {
              font-size: 0.75rem;
              color: #6b7280;
@@ -119,13 +108,35 @@
              border-radius: 8px;
              border: 1px solid #e5e7eb;
          }
+         /* Styles for Multiple Choice Options */
+         .mcq-options {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+             gap: 10px;
+             margin-top: 12px;
+             margin-bottom: 8px;
+         }
+         .mcq-option {
+             background-color: #f9fafb;
+             border: 1px solid #d1d5db;
+             padding: 8px 12px;
+             border-radius: 6px;
+             font-size: 1rem;
+             color: #374151;
+             cursor: pointer;
+             transition: all 0.2s;
+         }
+         .mcq-option:hover {
+             background-color: #e0e7ff;
+             border-color: #6366f1;
+             color: #312e81;
+         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <div class="container mx-auto p-4 md:p-8 max-w-4xl">
         <header class="text-center mb-10">
-            <!-- Logo Ruangguru -->
             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Math Worksheet Header" class="mx-auto mb-6 h-24 object-contain">
             <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 5</h1>
             <p class="text-gray-600 mt-2 text-lg">Grade 1-2 | Arithmetic, Logic & Bar Models</p>
@@ -142,18 +153,33 @@
                 <div class="item-container">
                     <p><strong>1.</strong> <span class="lang-label en-label">(EN)</span> Find the value of $65 - 54 + 45 - 34 = ?$ <span class="source-tag">WMI 2024 G2 Paper B</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan nilai dari $65 - 54 + 45 - 34 = ?$</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 10</div>
+                        <div class="mcq-option">(B) 32</div>
+                        <div class="mcq-option">(C) 24</div>
+                        <div class="mcq-option">(D) 22</div>
+                        <div class="mcq-option">(E) 20</div>
+                    </div>
                 </div>
 
                 <!-- Soal 2 -->
                 <div class="item-container">
                     <p><strong>2.</strong> <span class="lang-label en-label">(EN)</span> Find the value of $9 + 99 + 999$. <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan nilai dari $9 + 99 + 999$.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 1107</div>
+                        <div class="mcq-option">(B) 1108</div>
+                        <div class="mcq-option">(C) 1109</div>
+                        <div class="mcq-option">(D) 1110</div>
+                        <div class="mcq-option">(E) None</div>
+                    </div>
                 </div>
 
                 <!-- Soal 3 -->
                 <div class="item-container">
                     <p><strong>3.</strong> <span class="lang-label en-label">(EN)</span> Find the value of $19 + 29 + 39 + 49 + 59 + 69 + 79 + 89 + 99$. <span class="source-tag">WIMO G1 2021</span><br>
                     <span class="lang-label id-label">(ID)</span> Hitunglah jumlah dari $19 + 29 + 39 + 49 + 59 + 69 + 79 + 89 + 99$.</p>
+                    <!-- WIMO is typically Open Ended -->
                 </div>
 
                 <!-- Soal 4 -->
@@ -166,12 +192,26 @@
                 <div class="item-container">
                     <p><strong>5.</strong> <span class="lang-label en-label">(EN)</span> Find the value of $1 - 2 + 3 - 4 + 5 - 6 + \dots - 20 + 21$. <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan nilai dari $1 - 2 + 3 - 4 + 5 - 6 + \dots - 20 + 21$.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 11</div>
+                        <div class="mcq-option">(B) 13</div>
+                        <div class="mcq-option">(C) 15</div>
+                        <div class="mcq-option">(D) 17</div>
+                        <div class="mcq-option">(E) 21</div>
+                    </div>
                 </div>
 
                 <!-- Soal 6 -->
                 <div class="item-container">
                     <p><strong>6.</strong> <span class="lang-label en-label">(EN)</span> Find the missing numbers in the sequence: $1, 2, 4, 7, 11, (\dots), (\dots), 29, 37$. <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan angka yang hilang pada barisan: $1, 2, 4, 7, 11, (\dots), (\dots), 29, 37$.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 15, 21</div>
+                        <div class="mcq-option">(B) 16, 22</div>
+                        <div class="mcq-option">(C) 16, 23</div>
+                        <div class="mcq-option">(D) 15, 22</div>
+                        <div class="mcq-option">(E) 17, 24</div>
+                    </div>
                 </div>
 
                 <!-- Soal 7 -->
@@ -184,12 +224,24 @@
                 <div class="item-container">
                     <p><strong>8.</strong> <span class="lang-label en-label">(EN)</span> Which number is larger than 15 by 24? <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Bilangan manakah yang lebih besar 24 dari 15?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 9</div>
+                        <div class="mcq-option">(B) 20</div>
+                        <div class="mcq-option">(C) 29</div>
+                        <div class="mcq-option">(D) 39</div>
+                    </div>
                 </div>
 
                 <!-- Soal 9 -->
                 <div class="item-container">
-                    <p><strong>9.</strong> <span class="lang-label en-label">(EN)</span> Find the sum of the digits of the result that happens to be 10. Options: (A) $5 \times 9$, (B) $47+5$, (C) $32-3$, (D) $8 \times 8$. <span class="source-tag">WMI 2024 G2 Paper A</span><br>
+                    <p><strong>9.</strong> <span class="lang-label en-label">(EN)</span> Find the sum of the digits of the result that happens to be 10. <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Temukan operasi hitung yang jumlah angka-angka pada hasilnya adalah 10.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) $5 \times 9$</div>
+                        <div class="mcq-option">(B) $47 + 5$</div>
+                        <div class="mcq-option">(C) $32 - 3$</div>
+                        <div class="mcq-option">(D) $8 \times 8$</div>
+                    </div>
                 </div>
 
                 <!-- Soal 10 -->
@@ -214,18 +266,39 @@
                 <div class="item-container">
                     <p><strong>13.</strong> <span class="lang-label en-label">(EN)</span> If $AA + BB + CC = ABC$, find the 3-digit number $ABC$. (Note: A, B, C are distinct digits). <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Jika $AA + BB + CC = ABC$, tentukan bilangan 3 angka $ABC$.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 196</div>
+                        <div class="mcq-option">(B) 197</div>
+                        <div class="mcq-option">(C) 198</div>
+                        <div class="mcq-option">(D) 199</div>
+                        <div class="mcq-option">(E) 200</div>
+                    </div>
                 </div>
 
                 <!-- Soal 14 -->
                 <div class="item-container">
-                    <p><strong>14.</strong> <span class="lang-label en-label">(EN)</span> Find the sum of three different odd numbers if their sum is 17. Which number CANNOT be the difference between the largest and smallest number among them? <span class="source-tag">WMI 2024 G2 Paper A</span><br>
+                    <p><strong>14.</strong> <span class="lang-label en-label">(EN)</span> The sum of three different odd numbers is 17. Which number CANNOT be the difference between the largest and smallest number among them? <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Jumlah tiga bilangan ganjil berbeda adalah 17. Bilangan manakah yang TIDAK MUNGKIN menjadi selisih antara bilangan terbesar dan terkecil?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 4</div>
+                        <div class="mcq-option">(B) 6</div>
+                        <div class="mcq-option">(C) 8</div>
+                        <div class="mcq-option">(D) 10</div>
+                        <div class="mcq-option">(E) 12</div>
+                    </div>
                 </div>
 
                 <!-- Soal 15 -->
                 <div class="item-container">
-                    <p><strong>15.</strong> <span class="lang-label en-label">(EN)</span> There are 6 number cards: 2, 1, 5, 4, 3, 6. Each time, only two adjacent cards can exchange places. How many times at least should these cards exchange places so they are arranged in ascending order (1, 2, 3, 4, 5, 6)? <span class="source-tag">WMI 2024 G1 Paper B</span><br>
+                    <p><strong>15.</strong> <span class="lang-label en-label">(EN)</span> There are 6 number cards: 2, 1, 5, 4, 3, 6. Each time, only two adjacent cards can exchange places. How many times at least should these cards exchange places so they are arranged in ascending order (1, 2, 3, 4, 5, 6)? <span class="source-tag">WMI 2024 G2 Paper B</span><br>
                     <span class="lang-label id-label">(ID)</span> Ada 6 kartu angka: 2, 1, 5, 4, 3, 6. Setiap kali, hanya dua kartu yang bersebelahan yang boleh bertukar tempat. Berapa kali minimal pertukaran harus dilakukan agar urutannya menjadi naik (1, 2, 3, 4, 5, 6)?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 3</div>
+                        <div class="mcq-option">(B) 4</div>
+                        <div class="mcq-option">(C) 5</div>
+                        <div class="mcq-option">(D) 6</div>
+                        <div class="mcq-option">(E) 7</div>
+                    </div>
                 </div>
             </section>
 
@@ -238,37 +311,72 @@
                 <div class="item-container">
                     <p><strong>16.</strong> <span class="lang-label en-label">(EN)</span> Animals stand in a row. The 10th animal from the left is the leader. The 7th animal from the right is the vice leader. If the leader and vice leader are adjacent (next to each other), how many animals are there? <span class="source-tag">WMI 2024 G1 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Hewan-hewan berbaris. Hewan ke-10 dari kiri adalah pemimpin. Hewan ke-7 dari kanan adalah wakil pemimpin. Jika mereka bersebelahan, berapa total hewan?</p>
-                     <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jpfrug_7154.png" alt="Question 16 Image" class="question-image">
+                    <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jpfrug_7154.png" alt="Question 16 Image" class="question-image">
+                    <!-- This was visually presented in source, keeping open-ended based on text modification -->
                 </div>
 
                 <!-- Soal 17 -->
                 <div class="item-container">
                     <p><strong>17.</strong> <span class="lang-label en-label">(EN)</span> Nicky has 20 dollars. It is just enough to buy a cup of coffee and a bag of cookies. If Nicky only buys the cookies, he will have 5 dollars left. How much more expensive is the bag of cookies than the cup of coffee? <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Nicky punya 20 dolar, pas untuk membeli kopi dan kue. Jika dia hanya membeli kue, sisa uangnya 5 dolar. Berapa selisih harga kue dan kopi?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 18</div>
+                        <div class="mcq-option">(B) 15</div>
+                        <div class="mcq-option">(C) 12</div>
+                        <div class="mcq-option">(D) 10</div>
+                    </div>
                 </div>
 
                 <!-- Soal 18 -->
                 <div class="item-container">
                     <p><strong>18.</strong> <span class="lang-label en-label">(EN)</span> There are 18 chickens and rabbits in a farm. Altogether there are 58 legs. How many rabbits are there? <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Ada 18 ayam dan kelinci di peternakan. Total kakinya ada 58. Berapa banyak kelinci yang ada?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 8</div>
+                        <div class="mcq-option">(B) 9</div>
+                        <div class="mcq-option">(C) 10</div>
+                        <div class="mcq-option">(D) 11</div>
+                        <div class="mcq-option">(E) 12</div>
+                    </div>
                 </div>
 
                 <!-- Soal 19 -->
                 <div class="item-container">
                     <p><strong>19.</strong> <span class="lang-label en-label">(EN)</span> The longest pencil is 18 cm. There are two other shorter pencils. The lengths shown in the diagram are 12 cm (for the longest), 10 cm, and 5 cm. Find the sum of the real lengths of the other two pencils. <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Pensil terpanjang adalah 18 cm. Ada dua pensil lain yang lebih pendek. Diagram menunjukkan panjang 12 cm (untuk yang terpanjang), 10 cm, dan 5 cm. Tentukan jumlah panjang sebenarnya dari dua pensil lainnya.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 22</div>
+                        <div class="mcq-option">(B) 24</div>
+                        <div class="mcq-option">(C) 19</div>
+                        <div class="mcq-option">(D) 21</div>
+                        <div class="mcq-option">(E) 27</div>
+                    </div>
                 </div>
 
                 <!-- Soal 20 -->
                 <div class="item-container">
                     <p><strong>20.</strong> <span class="lang-label en-label">(EN)</span> Lisa copies 6 two-sided sheets of paper (Total 12 pages). If she only uses 5 sheets, find the sum of the page numbers on the unused sheet. <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Lisa memfotokopi 6 lembar kertas bolak-balik (Total 12 halaman). Jika dia hanya memakai 5 lembar, berapa jumlah nomor halaman pada lembar yang tidak terpakai?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 13</div>
+                        <div class="mcq-option">(B) 21</div>
+                        <div class="mcq-option">(C) 5</div>
+                        <div class="mcq-option">(D) 15</div>
+                        <div class="mcq-option">(E) 14</div>
+                    </div>
                 </div>
 
                 <!-- Soal 21 -->
                 <div class="item-container">
                     <p><strong>21.</strong> <span class="lang-label en-label">(EN)</span> The teacher has a bag of sweets. If she gives each student 7 sweets, 3 sweets remain. If she gives each student 8 sweets, she needs another 5 sweets. How many sweets does the teacher have? <span class="source-tag">SEAMO 2022 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Guru punya sekantung permen. Jika ia memberi 7 permen per siswa, sisa 3. Jika ia memberi 8 permen per siswa, kurang 5. Berapa banyak permen yang dimiliki guru?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 58</div>
+                        <div class="mcq-option">(B) 59</div>
+                        <div class="mcq-option">(C) 60</div>
+                        <div class="mcq-option">(D) 61</div>
+                        <div class="mcq-option">(E) 62</div>
+                    </div>
                 </div>
 
                 <!-- Soal 22 -->
@@ -307,24 +415,50 @@
                     <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_upsuqq_8017.png" alt="Question 27 Image" class="question-image"><br>
                     <span class="source-tag">SEAMO 2023 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Tentukan nilai yang hilang dari timbangan di atas.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 120</div>
+                        <div class="mcq-option">(B) 160</div>
+                        <div class="mcq-option">(C) 169</div>
+                        <div class="mcq-option">(D) 170</div>
+                        <div class="mcq-option">(E) 200</div>
+                    </div>
                 </div>
 
                 <!-- Soal 28 -->
                 <div class="item-container">
                     <p><strong>28.</strong> <span class="lang-label en-label">(EN)</span> Missy walks to school every day. Her school is 720 meters away. In how many minutes does she reach school if she walks at 60 meters per minute? <span class="source-tag">SEAMO 2023 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Missy berjalan ke sekolah sejauh 720 meter. Berapa menit ia sampai jika kecepatannya 60 meter per menit?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 7</div>
+                        <div class="mcq-option">(B) 8</div>
+                        <div class="mcq-option">(C) 10</div>
+                        <div class="mcq-option">(D) 12</div>
+                        <div class="mcq-option">(E) 13</div>
+                    </div>
                 </div>
 
                 <!-- Soal 29 -->
                 <div class="item-container">
                     <p><strong>29.</strong> <span class="lang-label en-label">(EN)</span> The long hand points at 12 and the short hand points at 9 on the clock. What time will it be 2 hours later? <span class="source-tag">WMI 2024 G2 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Jarum panjang menunjuk angka 12 dan jarum pendek menunjuk angka 9. Jam berapakah 2 jam kemudian?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) 10</div>
+                        <div class="mcq-option">(B) 11</div>
+                        <div class="mcq-option">(C) 2</div>
+                        <div class="mcq-option">(D) 8</div>
+                    </div>
                 </div>
 
-                <!-- Soal 30 (DIGANTI) -->
+                <!-- Soal 30 -->
                 <div class="item-container">
                     <p><strong>30.</strong> <span class="lang-label en-label">(EN)</span> On Wednesday Helen starts to paint the word MATHEMATIC. Each day except Sunday she paints one letter. On what day will she paint the last letter? <span class="source-tag">WMI 2024 G1 Paper A</span><br>
                     <span class="lang-label id-label">(ID)</span> Pada hari Rabu Helen mulai mengecat kata MATHEMATIC. Setiap hari kecuali Minggu dia mengecat satu huruf. Pada hari apa dia akan mengecat huruf terakhir?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option">(A) Monday</div>
+                        <div class="mcq-option">(B) Tuesday</div>
+                        <div class="mcq-option">(C) Friday</div>
+                        <div class="mcq-option">(D) Saturday</div>
+                    </div>
                 </div>
             </section>
 
@@ -829,7 +963,7 @@
                     <div class="final-answer">11</div>
                 </div>
 
-                <!-- Soal 30 (REVISI) -->
+                <!-- Soal 30 -->
                 <div class="item-container">
                     <p class="font-bold text-lg mb-2">Problem 30</p>
                     <div class="concept">
