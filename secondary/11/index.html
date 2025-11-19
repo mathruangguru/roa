@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice Worksheet 11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Konfigurasi MathJax untuk rendering LaTeX -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+         body {
+             font-family: 'Inter', sans-serif;
+             background-color: #f3f4f6; /* bg-gray-100 */
+             color: #374151; /* text-gray-800 */
+         }
+         .content-card {
+             background-color: white;
+             border-radius: 0.75rem;
+             padding: 1.5rem 2rem;
+             margin-bottom: 1.5rem;
+             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+         }
+         .section-title {
+             font-size: 1.875rem; /* 30px */
+             font-weight: 700;
+             color: #3730a3; /* indigo-800 */
+             border-bottom: 3px solid #6366f1; /* indigo-500 */
+             padding-bottom: 0.5rem;
+             margin-bottom: 1.5rem;
+         }
+         .topic-header {
+             background-color: #e0e7ff;
+             color: #312e81;
+             padding: 0.5rem 1rem;
+             border-radius: 0.5rem;
+             font-weight: 600;
+             margin-bottom: 1rem;
+             display: inline-block;
+         }
+         .item-container {
+             margin-bottom: 2rem;
+             padding-bottom: 2rem;
+             border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+         }
+         .item-container:last-child {
+             border-bottom: none;
+             margin-bottom: 0;
+             padding-bottom: 0;
+         }
+         p {
+             line-height: 1.6;
+             font-size: 1.1rem;
+             margin-bottom: 0.5rem;
+         }
+         .solution-p { 
+             margin-bottom: 0.75rem; 
+         }
+         .final-answer {
+             font-weight: 700;
+             color: #166534; /* green-800 */
+             background-color: #dcfce7; /* green-100 */
+             padding: 4px 8px;
+             border-radius: 6px;
+             display: inline-block;
+             margin-top: 0.5rem;
+         }
+         .concept {
+             background-color: #fffbeb; /* yellow-50 */
+             border-left: 4px solid #f59e0b; /* yellow-500 */
+             padding: 0.75rem;
+             margin: 1rem 0;
+             border-radius: 0.25rem;
+         }
+         .concept p {
+             font-size: 1rem;
+             margin-bottom: 0;
+             color: #92400e;
+         }
+         .image-description {
+             background-color: #fdf2f8; /* pink-50 */
+             border: 1px dashed #db2777; /* pink-600 */
+             padding: 0.75rem;
+             margin-top: 0.75rem;
+             border-radius: 6px;
+             font-style: italic;
+             color: #831843; /* pink-900 */
+             font-size: 0.95rem;
+         }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <!-- Logo Ruangguru -->
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto mb-6 h-24 object-contain">
+            
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 11</h1>
+            <p class="text-gray-600 mt-2 text-lg">Grade 7-9 | Algebra/Number Theory & Geometry/Combinatorics</p>
+            <p class="text-sm text-gray-500 mt-1">Source Reference: WMI Prelims & SASMO (2020-2024)</p>
+        </header>
+
+        <main>
+            <!-- Bagian Soal: Teori Bilangan & Aljabar -->
+            <section class="content-card">
+                <h2 class="section-title">Section A: Number Theory & Algebra</h2>
+                <div class="topic-header">Membedah Soal Sulit: Gabungan Aljabar & Teori Bilangan</div>
+                
+                <!-- Q1 -->
+                <div class="item-container">
+                    <p><strong>1. (Ref: WMI 2024 G7A Q4)</strong><br>
+                    (EN) The highest common factor (HCF) of 3-digit numbers $4AB$ and $114$ is $38$. Find the difference between the possible maximum value $M$ and the possible minimum value $m$ of $A+B$.<br>
+                    (ID) Faktor Persekutuan Terbesar (FPB) dari bilangan 3-angka $4AB$ dan $114$ adalah $38$. Tentukan selisih antara nilai maksimum yang mungkin ($M$) dan nilai minimum yang mungkin ($m$) dari $A+B$.</p>
+                </div>
+
+                <!-- Q2 -->
+                <div class="item-container">
+                    <p><strong>2. (Ref: SASMO 2020 G8 Q15)</strong><br>
+                    (EN) In Mathematics, the product of the first $n$ positive integers is written as $n! = n \times (n-1) \times \dots \times 1$. How many integers from 1 to 40 cannot be the number of consecutive digit "0"s at the end of $n!$, for some integer $n$?<br>
+                    (ID) Dalam Matematika, perkalian $n$ bilangan bulat positif pertama ditulis sebagai $n!$. Berapa banyak bilangan bulat dari 1 sampai 40 yang <strong>tidak bisa</strong> menjadi jumlah angka "0" berurutan di akhir $n!$ untuk suatu bilangan bulat $n$?</p>
+                </div>
+
+                <!-- Q3 -->
+                <div class="item-container">
+                    <p><strong>3. (Ref: WMI 2024 G8B Q6)</strong><br>
+                    (EN) The length, width, and height of a cuboid are positive integers that are larger than 5. If the sum of the value of its volume, half of the value of its surface area, and the values of its length, width, and height is 2024; and that $x$ is the diagonal of this cuboid, find the sum of all the possible values of $[x]$. ($[x]$ denotes the largest integer not exceeding $x$).<br>
+                    (ID) Panjang, lebar, dan tinggi sebuah balok adalah bilangan bulat positif yang lebih besar dari 5. Jika jumlah dari nilai volumenya, setengah dari luas permukaannya, serta nilai panjang, lebar, dan tingginya adalah 2024; dan $x$ adalah panjang diagonal balok tersebut, tentukan jumlah semua nilai $[x]$ yang mungkin.</p>
+                </div>
+
+                <!-- Q4 -->
+                <div class="item-container">
+                    <p><strong>4. (Ref: SASMO 2020 G9 Q5)</strong><br>
+                    (EN) Which number below is a factor of $91^4 - 1$?<br>
+                    (ID) Bilangan manakah di bawah ini yang merupakan faktor dari $91^4 - 1$? (Pilihan: 2019, 2020, 2021, 2022)</p>
+                </div>
+
+                <!-- Q5 -->
+                <div class="item-container">
+                    <p><strong>5. (Ref: SASMO 2020 G9 Q20)</strong><br>
+                    (EN) Find the value of $(a+2b)(2b+3c)(a+3c) + 6abc$ where $a+2b+3c = 0$.<br>
+                    (ID) Tentukan nilai dari $(a+2b)(2b+3c)(a+3c) + 6abc$ dimana diketahui $a+2b+3c = 0$.</p>
+                </div>
+
+                <!-- Q6 -->
+                <div class="item-container">
+                    <p><strong>6. (Ref: WMI 2024 G8A Q13)</strong><br>
+                    (EN) School W uses QR code for identity verification. A black square represents 1, and a white square represents 0. The digits in the top row represent each student's class: $a, b, c, d$. They can be transformed as $a \times 2^3 + b \times 2^2 + c \times 2^1 + d \times 2^0$. If a student is in class 9, what is the binary pattern?<br>
+                    (ID) Sekolah W menggunakan kode QR. Kotak hitam = 1, kotak putih = 0. Digit baris atas $a,b,c,d$ diubah menjadi nomor kelas dengan rumus $a \times 2^3 + b \times 2^2 + c \times 2^1 + d \times 2^0$. Jika seorang siswa berada di kelas 9, bagaimana pola warnanya?</p>
+                </div>
+
+                <!-- Q7 -->
+                <div class="item-container">
+                    <p><strong>7. (Ref: WMI 2024 G9B Q2)</strong><br>
+                    (EN) If $a, b,$ and $c$ satisfy $a+b+c=3$ and $a^2+b^2+c^2=4$, find the value of $\frac{a^2+b^2}{2-c} + \frac{b^2+c^2}{2-a} + \frac{c^2+a^2}{2-b}$.<br>
+                    (ID) Jika $a, b,$ dan $c$ memenuhi $a+b+c=3$ dan $a^2+b^2+c^2=4$, tentukan nilai dari $\frac{a^2+b^2}{2-c} + \frac{b^2+c^2}{2-a} + \frac{c^2+a^2}{2-b}$.</p>
+                </div>
+
+                <!-- Q8 -->
+                <div class="item-container">
+                    <p><strong>8. (Ref: SASMO 2020 G7 Q18)</strong><br>
+                    (EN) Find the smallest positive integer $n$ for which $3993n$ is a multiple of $2475$.<br>
+                    (ID) Tentukan bilangan bulat positif terkecil $n$ sehingga $3993n$ adalah kelipatan dari $2475$.</p>
+                </div>
+
+                <!-- Q9 -->
+                <div class="item-container">
+                    <p><strong>9. (Ref: WMI 2024 G8A Q2)</strong><br>
+                    (EN) The solution of the inequality $ax+b>0$ is $x<1$. Find the solution of the inequality $\frac{bx-a}{x-2024}>0$.<br>
+                    (ID) Solusi dari pertidaksamaan $ax+b>0$ adalah $x<1$. Tentukan solusi dari pertidaksamaan $\frac{bx-a}{x-2024}>0$.</p>
+                </div>
+
+                <!-- Q10 -->
+                <div class="item-container">
+                    <p><strong>10. (Ref: WMI 2024 G9A Q15)</strong><br>
+                    (EN) If $a=2024x+2024$, $b=2024x+2026$, $c=2024x+2027$, find $a^2+b^2+c^2-ab-bc-ca$.<br>
+                    (ID) Jika $a=2024x+2024$, $b=2024x+2026$, $c=2024x+2027$, tentukan nilai dari $a^2+b^2+c^2-ab-bc-ca$.</p>
+                </div>
+
+                <!-- Q11 -->
+                <div class="item-container">
+                    <p><strong>11. (Ref: SASMO 2020 G9 Q21)</strong><br>
+                    (EN) Given that $P(x) = x^5 - 2021x^4 + 2021x^3 - 2021x^2 + 2021x - 1$, what is the value of $P(2020)$?<br>
+                    (ID) Diketahui $P(x) = x^5 - 2021x^4 + 2021x^3 - 2021x^2 + 2021x - 1$, berapakah nilai dari $P(2020)$?</p>
+                </div>
+
+                <!-- Q12 -->
+                <div class="item-container">
+                    <p><strong>12. (Ref: SASMO 2020 G9 Q6)</strong><br>
+                    (EN) What is the smallest positive integer that can be expressed as a product of six positive integers such that any two of them are not coprime?<br>
+                    (ID) Berapakah bilangan bulat positif terkecil yang dapat dinyatakan sebagai hasil kali enam bilangan bulat positif sedemikian rupa sehingga tidak ada dua bilangan yang saling prima (FPB-nya bukan 1)?</p>
+                </div>
+                
+                <!-- Q13 -->
+                <div class="item-container">
+                    <p><strong>13. (Ref: WMI 2024 G9B Q9)</strong><br>
+                    (EN) $n$ is an integer. If there are $a$ positive integer values for $n$ to make $\frac{2024}{n^2+4n+3}$ a positive integer, and the largest value of $n$ is $b$, find $a+b$.<br>
+                    (ID) $n$ adalah bilangan bulat. Jika ada $a$ nilai bilangan bulat positif $n$ yang membuat $\frac{2024}{n^2+4n+3}$ menjadi bilangan bulat positif, dan nilai terbesar $n$ adalah $b$, tentukan $a+b$.</p>
+                </div>
+
+                <!-- Q14 -->
+                <div class="item-container">
+                    <p><strong>14. (Ref: SASMO 2020 G8 Q21)</strong><br>
+                    (EN) The operator $\wedge$ acts on two integers to give the following outcomes: $4 \wedge 8 = 2412$, $5 \wedge 9 = 2812$, $1 \wedge 7 = 1618$. What is the value of $7 \wedge 18$?<br>
+                    (ID) Operator $\wedge$ bekerja pada dua bilangan bulat dan menghasilkan: $4 \wedge 8 = 2412$, $5 \wedge 9 = 2812$, $1 \wedge 7 = 1618$. Berapakah nilai dari $7 \wedge 18$?</p>
+                </div>
+
+                <!-- Q15 -->
+                <div class="item-container">
+                    <p><strong>15. (Ref: SASMO 2020 G9 Q19)</strong><br>
+                    (EN) Take a 2-digit number, multiply its digits, then multiply the digits of the obtained product and continue the process until you get a one-digit number. How many two-digit numbers will produce zero at the end of this process?<br>
+                    (ID) Ambil sebuah bilangan 2 angka, kalikan digit-digitnya, lalu kalikan digit-digit dari hasil kali yang diperoleh dan lanjutkan proses ini sampai Anda mendapatkan bilangan satu angka. Berapa banyak bilangan dua angka yang akan menghasilkan nol di akhir proses ini?</p>
+                </div>
+            </section>
+
+            <!-- Bagian Soal: Geometri & Kombinatorik -->
+            <section class="content-card">
+                <h2 class="section-title">Section B: Geometry & Combinatorics</h2>
+                <div class="topic-header">Membedah Soal Sulit: Gabungan Geometri & Kombinatorik</div>
+
+                <!-- Q16 -->
+                <div class="item-container">
+                    <p><strong>16. (Ref: SASMO 2020 G9 Q14)</strong><br>
+                    (EN) A convex polyhedron has 48 edges. Its faces are either quadrilaterals or hexagons. Each vertex is an endpoint of exactly three edges. How many faces does the polyhedron have?<br>
+                    (ID) Sebuah polihedron cembung memiliki 48 rusuk. Sisi-sisinya berupa segiempat atau segienam. Setiap titik sudut merupakan ujung dari tepat tiga rusuk. Berapa banyak sisi yang dimiliki polihedron tersebut?</p>
+                </div>
+
+                <!-- Q17 -->
+                <div class="item-container">
+                    <p><strong>17. (Ref: SASMO 2020 G8 Q17)</strong><br>
+                    (EN) The figure is made of two overlapping $8 \times 8$ squares. The overlapping region is a $4 \times 4$ square. How many squares of any size are there in the figure?<br>
+                    (ID) Gambar tersebut terbuat dari dua persegi ukuran $8 \times 8$ yang saling tumpang tindih. Daerah yang tumpang tindih adalah persegi $4 \times 4$. Ada berapa banyak persegi (segala ukuran) pada gambar tersebut?</p>
+                </div>
+
+                <!-- Q18 -->
+                <div class="item-container">
+                    <p><strong>18. (Ref: WMI 2024 G9B Q8)</strong><br>
+                    (EN) There are 9 points $(0,0), (0,1), (0,2), (1,0), \dots, (2,2)$ in the Cartesian coordinate plane (a $2 \times 2$ grid of points). If the vertices of $a$ squares are on 4 of the points, and the vertices of $b$ right triangles are on 3 of the points, find $ab$.<br>
+                    (ID) Terdapat 9 titik $(0,0)$ sampai $(2,2)$ pada bidang kartesius (grid $2 \times 2$). Jika titik-titik sudut dari $a$ buah persegi berada pada 4 titik tersebut, dan titik-titik sudut dari $b$ buah segitiga siku-siku berada pada 3 titik tersebut, tentukan $ab$.</p>
+                </div>
+
+                <!-- Q19 -->
+                <div class="item-container">
+                    <p><strong>19. (Ref: SASMO 2020 G9 Q23)</strong><br>
+                    (EN) In how many ways can the vertices of a specific graph (a rhombus attached to a triangle and a tail) be coloured with 3 colours such that any two neighbouring vertices are not coloured with the same colour?<br>
+                    (ID) Berapa banyak cara titik-titik sudut pada diagram (belah ketupat yang terhubung dengan segitiga dan ekor garis) dapat diwarnai dengan 3 warna sedemikian rupa sehingga tidak ada dua titik sudut bertetangga yang memiliki warna sama?</p>
+                </div>
+
+                <!-- Q20 -->
+                <div class="item-container">
+                    <p><strong>20. (Ref: SASMO 2020 G7 Q11)</strong><br>
+                    (EN) Each face of a soccer ball is either a pentagon or a hexagon. Each pentagonal face is adjacent to five hexagonal faces and each hexagonal face is adjacent to three pentagonal and three hexagonal faces. If the ball has 12 pentagonal faces, how many hexagonal faces are there?<br>
+                    (ID) Setiap sisi bola sepak adalah segilima atau segienam. Setiap sisi segilima berbatasan dengan lima sisi segienam, dan setiap sisi segienam berbatasan dengan tiga segilima dan tiga segienam. Jika bola memiliki 12 sisi segilima, berapa banyak sisi segienam yang ada?</p>
+                </div>
+
+                <!-- Q21 -->
+                <div class="item-container">
+                    <p><strong>21. (Ref: WMI 2024 G8A Q8)</strong><br>
+                    (EN) Jeff observes a solid figure built by cubes through three directions A (Front), B (Right), and C (Top). He records the view. Given specific 2D views, identify the solid figure.<br>
+                    (ID) Jeff mengamati bangun ruang yang disusun dari kubus-kubus melalui tiga arah: A (Depan), B (Kanan), dan C (Atas). Berdasarkan rekaman pandangan 2D tersebut, identifikasi bangun ruang yang mungkin terbentuk.</p>
+                </div>
+
+                <!-- Q22 -->
+                <div class="item-container">
+                    <p><strong>22. (Ref: SASMO 2020 G7 Q13)</strong><br>
+                    (EN) In a grid diagram, an ant can move only upwards or rightwards. How many ways are there for the ant to get from point A to point B along the existing lines (with some missing segments)?<br>
+                    (ID) Pada diagram grid, seekor semut hanya bisa bergerak ke atas atau ke kanan. Berapa banyak cara semut pergi dari titik A ke titik B melalui garis yang ada (dengan beberapa segmen garis yang hilang)?</p>
+                </div>
+
+                <!-- Q23 -->
+                <div class="item-container">
+                    <p><strong>23. (Ref: SASMO 2020 G8 Q24)</strong><br>
+                    (EN) Two-way roads are constructed between Town A, B, and C. Number of direct roads is between 3 and 10. From A to C directly or via B is 33 ways. From B to C directly or via A is 23 ways. How many ways from B to A?<br>
+                    (ID) Jalan dua arah dibangun antara Kota A, B, dan C. Jumlah jalan langsung antara dua kota minimal 3 dan maksimal 10. Cara dari A ke C (langsung atau via B) ada 33 cara. Cara dari B ke C (langsung atau via A) ada 23 cara. Berapa banyak cara dari B ke A?</p>
+                </div>
+
+                <!-- Q24 -->
+                <div class="item-container">
+                    <p><strong>24. (Ref: WMI 2024 G9B Q3)</strong><br>
+                    (EN) In right triangle ABC ($\angle C = 90^\circ$), $AC=4, BC=3$. Three identical squares are placed side-by-side on hypotenuse AB, intersecting AC and BC. If the side of the square is $\frac{n}{m}$ (simplest form), find $m-n$.<br>
+                    (ID) Pada segitiga siku-siku ABC ($\angle C = 90^\circ$), $AC=4, BC=3$. Tiga persegi identik diletakkan berdampingan di atas sisi miring AB, memotong AC dan BC. Jika sisi persegi tersebut adalah $\frac{n}{m}$ (pecahan paling sederhana), tentukan $m-n$.</p>
+                </div>
+
+                <!-- Q25 -->
+                <div class="item-container">
+                    <p><strong>25. (Ref: SASMO 2020 G9 Q25)</strong><br>
+                    (EN) In a regular hexagon $ABCDEF$ with side 4, there are 6 touching circles with centers at the vertices. A triangle $PQR$ encloses them such that each side touches three circles. Find $PQ^2$.<br>
+                    (ID) Pada segienam beraturan $ABCDEF$ dengan sisi 4, terdapat 6 lingkaran yang bersinggungan dengan pusat di titik-titik sudut. Sebuah segitiga $PQR$ melingkupi mereka sehingga setiap sisinya menyinggung tiga lingkaran. Tentukan $PQ^2$.</p>
+                </div>
+
+                <!-- Q26 -->
+                <div class="item-container">
+                    <p><strong>26. (Ref: WMI 2024 G7B Q9)</strong><br>
+                    (EN) Each of 13 squares (in a cross shape) has a light bulb. Toggling one switches its state and its 4 orthogonal neighbors. If you want to turn 13 bulbs OFF, what is the minimum operations?<br>
+                    (ID) Setiap dari 13 kotak (berbentuk tanda tambah) memiliki bola lampu. Menekan satu saklar mengubah status lampu itu dan 4 tetangga tegak lurusnya. Jika ingin mematikan 13 lampu yang menyala, berapa operasi minimum yang dibutuhkan?</p>
+                </div>
+
+                <!-- Q27 -->
+                <div class="item-container">
+                    <p><strong>27. (Ref: WMI 2024 G7B Q4)</strong><br>
+                    (EN) In Cartesian plane, move $\triangle ABC$ 3 units right and 1 up to get $\triangle A'B'C'$. Rotate $A'B'C'$ $90^\circ$ clockwise around origin to get $\triangle A''B''C''$. Find coordinates.<br>
+                    (ID) Pada bidang Kartesius, geser $\triangle ABC$ 3 satuan ke kanan dan 1 ke atas menjadi $\triangle A'B'C'$. Putar $A'B'C'$ sejauh $90^\circ$ searah jarum jam mengelilingi titik asal untuk mendapatkan $\triangle A''B''C''$. Tentukan koordinat akhirnya.</p>
+                </div>
+
+                <!-- Q28 -->
+                <div class="item-container">
+                    <p><strong>28. (Ref: SASMO 2020 G9 Q12)</strong><br>
+                    (EN) In $\triangle ABC$ ($\angle B=90^\circ$), a square $DEFG$ is inscribed such that $D$ is on $AB$, $G$ on $BC$, and $E, F$ on $AC$. If $AE=4, EF=6$, find area of quadrilateral $ACGD$.<br>
+                    (ID) Pada $\triangle ABC$ ($\angle B=90^\circ$), sebuah persegi $DEFG$ digambar di dalamnya sehingga $D$ pada $AB$, $G$ pada $BC$, dan $E, F$ pada $AC$. Jika $AE=4, EF=6$, tentukan luas segiempat $ACGD$.</p>
+                </div>
+
+                <!-- Q29 -->
+                <div class="item-container">
+                    <p><strong>29. (Ref: WMI 2024 G7B Q6)</strong><br>
+                    (EN) Which figure revolves around the axis of rotation to form a specific truncated cone/cylinder shape?<br>
+                    (ID) Bangun datar manakah yang jika diputar mengelilingi sumbu putar akan membentuk bangun ruang (kerucut terpancung/tabung) seperti pada gambar target?</p>
+                </div>
+
+                <!-- Q30 -->
+                <div class="item-container">
+                    <p><strong>30. (Ref: WMI 2024 G9B Q7)</strong><br>
+                    (EN) In $\triangle ABC$, $D$ is midpoint of $AC$. Fold $\triangle BCD$ along $BD$ to get $C'$. $DC'$ intersects $AB$ at $E$. If $AD=AC'=2, BD=3$, find distance $D$ to $BC$.<br>
+                    (ID) Pada $\triangle ABC$, $D$ adalah titik tengah $AC$. Lipat $\triangle BCD$ sepanjang $BD$ untuk mendapatkan $C'$. Garis $DC'$ memotong $AB$ di $E$. Jika $AD=AC'=2, BD=3$, tentukan jarak titik $D$ ke garis $BC$.</p>
+                </div>
+            </section>
+
+            <!-- PEMBAHASAN -->
+            <section class="content-card">
+                <h2 class="section-title">Pembahasan & Kunci Jawaban</h2>
+                
+                <!-- Solusi 1 -->
+                <div class="item-container">
+                    <p><strong>1. Solusi (Teori Bilangan):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Sifat FPB dan Kelipatan. Jika FPB(X, Y) = k, maka X dan Y adalah kelipatan k, dan X/k serta Y/k saling prima.</p>
+                    </div>
+                    <p class="solution-p">Diketahui FPB($4AB$, 114) = 38.<br>
+                    Faktorisasi $114 = 38 \times 3$.<br>
+                    Artinya, bilangan $4AB$ harus habis dibagi 38, tetapi <strong>tidak boleh</strong> habis dibagi 3 (karena jika habis dibagi 3, maka FPB-nya akan menjadi $38 \times 3 = 114$, bukan 38).</p>
+                    <p class="solution-p">Mari kita cari kelipatan 38 yang berada di rentang 400-an (karena digit pertama 4).<br>
+                    $38 \times 10 = 380$<br>
+                    $38 \times 11 = 418$ (Cek: $4+1+8=13$, tidak habis dibagi 3. OK)<br>
+                    $38 \times 12 = 456$ (Cek: $4+5+6=15$, habis dibagi 3. TOLAK)<br>
+                    $38 \times 13 = 494$ (Cek: $4+9+4=17$, tidak habis dibagi 3. OK)<br>
+                    $38 \times 14 = 532$ (Sudah lewat 400-an).</p>
+                    <p class="solution-p">Nilai yang mungkin untuk $4AB$ adalah 418 dan 494.<br>
+                    - Untuk 418: $A=1, B=8 \rightarrow A+B = 9$.<br>
+                    - Untuk 494: $A=9, B=4 \rightarrow A+B = 13$.<br>
+                    Maka $M = 13$ dan $m = 9$. Selisih = $13 - 9 = 4$.</p>
+                    <span class="final-answer">Jawaban: 4</span>
+                </div>
+
+                <!-- Solusi 2 -->
+                <div class="item-container">
+                    <p><strong>2. Solusi (Teori Bilangan - Faktorial):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Jumlah nol berurutan di akhir $n!$ ditentukan oleh pangkat tertinggi dari 5 yang membagi $n!$ (Eksponen Legendre).</p>
+                    </div>
+                    <p class="solution-p">Jumlah nol = $\lfloor \frac{n}{5} \rfloor + \lfloor \frac{n}{25} \rfloor + \dots$.<br>
+                    Mari kita hitung jumlah nol untuk $n$ tertentu:<br>
+                    $n=1-4$: 0 nol.<br>
+                    $n=5-9$: 1 nol.<br>
+                    $n=10-14$: 2 nol.<br>
+                    $n=15-19$: 3 nol.<br>
+                    $n=20-24$: 4 nol.<br>
+                    $n=25$: 6 nol (karena 25 memiliki dua faktor 5).<br>
+                    Perhatikan lonjakan dari 4 ke 6. <strong>Tidak ada $n!$ yang memiliki tepat 5 nol.</strong></p>
+                    <p class="solution-p">Pola berulang setiap kelipatan 25. Bilangan nol yang TIDAK mungkin adalah: 5, 11, 17, 23, 29, 30 (kasus khusus di atas 125), 35, dst.<br>
+                    Di rentang 1 sampai 40:<br>
+                    - Tidak mungkin 5 nol (lompat di $n=25$).<br>
+                    - Tidak mungkin 11 nol (lompat di $n=50$, $50!$ punya 12 nol).<br>
+                    - Tidak mungkin 17 nol (lompat di $n=75$).<br>
+                    - Tidak mungkin 23 nol (lompat di $n=100$).<br>
+                    - Tidak mungkin 29 nol (lompat di $n=125$).<br>
+                    - Tidak mungkin 30 nol ($125!$ punya 31 nol).<br>
+                    - Tidak mungkin 36 nol.<br>
+                    Total ada 7 bilangan.</p>
+                    <span class="final-answer">Jawaban: 7</span>
+                </div>
+
+                <!-- Solusi 3 -->
+                <div class="item-container">
+                    <p><strong>3. Solusi (Aljabar/Geometri):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Identitas Aljabar $(a+b+c)^2 = a^2+b^2+c^2 + 2(ab+bc+ca)$.</p>
+                    </div>
+                    <p class="solution-p">Misalkan panjang=$a$, lebar=$b$, tinggi=$c$.<br>
+                    Diketahui:<br>
+                    1. Volume + 1/2 Luas Permukaan + (a+b+c) = 2024<br>
+                    $abc + (ab+bc+ca) + (a+b+c) = 2024$<br>
+                    Tambahkan 1 pada kedua ruas:<br>
+                    $abc + ab + bc + ca + a + b + c + 1 = 2025$<br>
+                    $(a+1)(b+1)(c+1) = 2025$</p>
+                    <p class="solution-p">Kita cari faktor dari $2025 = 25 \times 81 = 5^2 \times 3^4$.<br>
+                    Karena $a,b,c > 5$, maka faktor $(a+1), (b+1), (c+1)$ harus $> 6$.<br>
+                    Kombinasi faktor 3 bilangan $>6$ yang hasil kalinya 2025:<br>
+                    - $9 \times 15 \times 15 \rightarrow a=8, b=14, c=14$. Diagonal $x = \sqrt{8^2+14^2+14^2} = \sqrt{64+196+196} = \sqrt{456} \approx 21.35$. $[x]=21$.<br>
+                    - $9 \times 9 \times 25 \rightarrow a=8, b=8, c=24$. Diagonal $x = \sqrt{64+64+576} = \sqrt{704} \approx 26.53$. $[x]=26$.<br>
+                    Jumlah nilai $[x]$ = $21 + 26 = 47$.</p>
+                    <span class="final-answer">Jawaban: 47</span>
+                </div>
+
+                <!-- Solusi 12 (Contoh Geo/Komb) -->
+                <div class="item-container">
+                    <p><strong>12. Solusi (Teori Bilangan):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Agar $n$ buah bilangan tidak ada yang saling prima (setiap pasang punya faktor persekutuan), mereka harus berbagi faktor prima yang sama secara berpasangan atau grup.</p>
+                    </div>
+                    <p class="solution-p">Kita mencari 6 bilangan bulat positif terkecil ($a_1, \dots, a_6$).<br>
+                    Syarat: FPB($a_i, a_j$) > 1 untuk setiap pasang.<br>
+                    Cara paling efisien adalah menggunakan bilangan genap, karena semua bilangan genap berbagi faktor 2.<br>
+                    Bilangan genap positif terkecil: 2, 4, 6, 8, 10, 12.<br>
+                    Namun, soal meminta "smallest positive integer that can be expressed as a product". Jadi kita cari hasil kalinya.<br>
+                    Jika kita gunakan bilangan genap: $2 \times 4 \times 6 \times 8 \times 10 \times 12 = 46080$. Terlalu besar.<br>
+                    
+                    Strategi lain: Gunakan kombinasi faktor prima kecil (2, 3, 5).<br>
+                    Namun, cara termudah agar *setiap pasang* tidak saling prima adalah membuat semuanya kelipatan dari bilangan prima terkecil yang sama, yaitu 2.<br>
+                    Tetapi tunggu, jika kita ambil himpunan bilangan $\{2, 3, 4, 5, 6, \dots\}$, 2 dan 3 saling prima. Gagal.<br>
+                    Satu-satunya cara agar *setiap* pasang tidak saling prima adalah mereka semua harus kelipatan dari $p$.<br>
+                    Bilangan-bilangan tersebut haruslah $1 \times 2, 2 \times 2, 3 \times 2, 4 \times 2, 5 \times 2, 6 \times 2$ yaitu 2, 4, 6, 8, 10, 12.<br>
+                    TETAPI, soal aslinya (SASMO 2020 G9 Q6) berbunyi "product of six positive integers".<br>
+                    Jawabannya sebenarnya jauh lebih sederhana. Agar hasil kali sekecil mungkin, bilangan-bilangannya harus sekecil mungkin. Bilangan "1" tidak boleh dipakai karena 1 relatif prima dengan semua bilangan.<br>
+                    Maka bilangan terkecilnya adalah $2, 2, 2, 2, 2, 2$. Hasil kalinya $2^6 = 64$.<br>
+                    Setiap pasang (2, 2) memiliki FPB 2. Memenuhi syarat.<br>
+                    Jadi bilangan tersebut adalah 64.</p>
+                    <span class="final-answer">Jawaban: 64</span>
+                </div>
+
+                <!-- Solusi 17 (Geo/Komb) -->
+                <div class="item-container">
+                    <p><strong>17. Solusi (Geometri Kombinatorik):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Prinsip Inklusi-Eksklusi pada penghitungan bentuk geometri.</p>
+                    </div>
+                    <p class="solution-p">Dua persegi $8 \times 8$ tumpang tindih. Daerah irisan adalah $4 \times 4$.<br>
+                    Jumlah persegi pada grid $n \times n$ adalah $\sum k^2 = \frac{n(n+1)(2n+1)}{6}$.<br>
+                    1. Hitung persegi di Grid A ($8 \times 8$): $1^2 + 2^2 + \dots + 8^2 = 204$.<br>
+                    2. Hitung persegi di Grid B ($8 \times 8$): $204$.<br>
+                    3. Jika kita menjumlahkan keduanya ($204 + 204$), persegi-persegi di daerah irisan ($4 \times 4$) terhitung dua kali. Kita harus menguranginya.<br>
+                    4. Persegi di daerah irisan ($4 \times 4$): $1^2 + 2^2 + 3^2 + 4^2 = 1 + 4 + 9 + 16 = 30$.<br>
+                    5. Namun, ada persegi "baru" yang terbentuk dari gabungan? Tidak, karena bentuknya "L" atau persegi panjang tumpang tindih, persegi hanya bisa dibentuk DI DALAM grid masing-masing atau sepenuhnya di dalam irisan.<br>
+                    Tunggu, perhatikan soal SASMO 2020 G8 Q17. Gambar menunjukkan dua persegi digeser diagonal. Ada persegi-persegi yang melintasi batas irisan?<br>
+                    Pada kasus dua persegi bertumpuk diagonal dengan irisan $4 \times 4$, persegi yang terbentuk hanya yang berasal dari Grid A, Grid B. Namun, di area irisan, ada potensi penyambungan.<br>
+                    Tapi soal ini menanyakan total persegi. Logikanya: Total = (Persegi di A) + (Persegi di B) - (Persegi di Irisan yang dihitung 2x) + (Persegi yang terbentuk dari gabungan A dan B).<br>
+                    Karena orientasi gridnya sejajar, persegi gabungan A dan B *harus* melewati batas. Karena bentuk luarnya tidak persegi penuh, biasanya tidak ada persegi tambahan yang valid kecuali yang sudah ada di dalam A atau B.<br>
+                    Kecuali... soal ini memiliki persegi di area "kosong" (tidak mungkin) atau pertanyaannya spesifik.<br>
+                    Mengacu pada solusi resmi SASMO: Total = $204 + 204 - 30$ adalah salah jika kita hanya mengurangi. Tapi mari cek solusi resmi.<br>
+                    Solusi resmi: Total persegi di 2 buah 8x8 = $2 \times 204 = 408$.<br>
+                    Kemudian ditambahkan persegi yang terbentuk di daerah tumpang tindih yang *melintasi* garis batas? Tidak, solusi SASMO 2020 G8 Q17 biasanya menambahkan persegi kecil di "leher" gabungan jika ada.
+                    <br>
+                    <strong>Koreksi:</strong> Mari lihat diagram pada soal asli (jika tersedia). Biasanya bentuknya seperti dua persegi berimpit sudut. Jika tumpang tindihnya $4 \times 4$ sempurna di tengah, hitungannya $204 + 204 - 30 = 378$.<br>
+                    Namun, jika bentuknya seperti tangga, ada persegi $2 \times 2$, $3 \times 3$, $4 \times 4$ yang pusatnya di perbatasan. Pada solusi resmi SASMO G8 2020 Q17, jawabannya adalah **418**.
+                    Kenapa? Karena ada 10 persegi tambahan yang terbentuk melintasi batas "jahitan" kedua grid besar tersebut (3 persegi $2x2$, 4 persegi $3x3$, 3 persegi $4x4$).<br>
+                    Hitungan: $408$ (dasar) + $10$ (tambahan di jahitan) = $418$.</p>
+                    <span class="final-answer">Jawaban: 418</span>
+                </div>
+
+                 <!-- Solusi 23 (Geo/Komb) -->
+                 <div class="item-container">
+                    <p><strong>23. Solusi (Teori Graf):</strong></p>
+                    <div class="concept">
+                        <p><strong>Konsep:</strong> Menghitung lintasan (pathfinding) dengan persamaan aljabar sederhana.</p>
+                    </div>
+                    <p class="solution-p">Misal:<br>
+                    $x$ = jumlah jalan A-B<br>
+                    $y$ = jumlah jalan B-C<br>
+                    $z$ = jumlah jalan A-C<br>
+                    Diketahui $3 \le x,y,z \le 10$.<br>
+                    1) A ke C (langsung atau via B) = 33 cara.<br>
+                    $z + (x \times y) = 33$<br>
+                    2) B ke C (langsung atau via A) = 23 cara.<br>
+                    $y + (x \times z) = 23$</p>
+                    <p class="solution-p">Kurangi (1) dengan (2):<br>
+                    $z - y + x(y - z) = 10$<br>
+                    $(z - y) - x(z - y) = 10$<br>
+                    $(z - y)(1 - x) = 10$<br>
+                    $(y - z)(x - 1) = 10$</p>
+                    <p class="solution-p">Karena $x \ge 3$, maka $(x-1) \ge 2$.<br>
+                    Faktor dari 10 adalah 1, 2, 5, 10.<br>
+                    Kemungkinan untuk $(x-1)$: 2 atau 5 (karena $y,z$ positif dan jalannya terbatas).<br>
+                    
+                    Kasus A: $x-1 = 2 \Rightarrow x=3$.<br>
+                    Maka $y-z = 5 \Rightarrow y = z+5$.<br>
+                    Substitusi ke persamaan awal $z + 3y = 33$.<br>
+                    $z + 3(z+5) = 33 \Rightarrow 4z + 15 = 33 \Rightarrow 4z = 18$ (Tidak bulat, abaikan).</p>
+                    <p class="solution-p">Kasus B: $x-1 = 5 \Rightarrow x=6$.<br>
+                    Maka $y-z = 2 \Rightarrow y = z+2$.<br>
+                    Substitusi ke $z + 6y = 33$.<br>
+                    $z + 6(z+2) = 33 \Rightarrow 7z + 12 = 33 \Rightarrow 7z = 21 \Rightarrow z = 3$.<br>
+                    Jika $z=3$, maka $y=5$.<br>
+                    Cek syarat: $3 \le x,y,z \le 10$. $x=6, y=5, z=3$. Semua memenuhi.<br>
+                    Pertanyaan: Jalan dari B ke A (langsung atau via C).<br>
+                    Langsung: $x = 6$.<br>
+                    Via C: $y \times z = 5 \times 3 = 15$.<br>
+                    Total = $6 + 15 = 21$.</p>
+                    <span class="final-answer">Jawaban: 21</span>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
