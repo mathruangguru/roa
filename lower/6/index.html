@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Math Olympiad Practice - Logic, Visuals & Order (Grade 1-2)
+    </title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step ul li {
+        line-height: 1.8;
+        padding-left: 0.5rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .question-text {
+        margin-bottom: 1rem;
+      }
+      /* Custom SVG styling */
+      .svg-container {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <div class="text-center mb-8">
+        <!-- Logo Placeholder -->
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Ruangguru Logo"
+          class="mx-auto h-20"
+        />
+      </div>
+
+      <!-- Header Section -->
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Math Olympiad Practice Problems 6
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Topic: Logic, Visuals & Order
+        </p>
+      </header>
+
+      <main>
+ 
+        </section>
+
+        <!-- QUESTIONS SECTION -->
+        <section class="content-card">
+          <h2 class="section-title">Questions / Soal</h2>
+
+          <!-- TOPIC 1 -->
+          <h3 class="topic-title">Topic: Logic & Classification</h3>
+
+          <!-- Q1 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>1.</strong> Observe the pattern below. Which shape is missing?<br /><br />
+              Perhatikan pola di bawah ini. Bangun apa yang hilang?
+            </p>
+            <div class="svg-container">
+              <svg width="400" height="80" viewBox="0 0 500 80">
+                <!-- Circle -->
+                <circle cx="50" cy="40" r="30" stroke="black" stroke-width="3" fill="none" />
+                <!-- Triangle -->
+                <polygon points="150,10 120,70 180,70" stroke="black" stroke-width="3" fill="none" />
+                <!-- Square -->
+                <rect x="220" y="10" width="60" height="60" stroke="black" stroke-width="3" fill="none" />
+                
+                <!-- Repeat -->
+                <circle cx="350" cy="40" r="30" stroke="black" stroke-width="3" fill="none" />
+                <polygon points="450,10 420,70 480,70" stroke="black" stroke-width="3" fill="none" />
+                
+                <!-- ? Box (Next) -->
+                <!-- Ideally the next one is Square, let's put a ? box placeholder to represent the missing spot -->
+                <g transform="translate(520, 0)"> 
+                    <!-- Just showing the space where it would be, user needs to guess -->
+                </g>
+                 <rect x="520" y="10" width="60" height="60" stroke="black" stroke-width="3" stroke-dasharray="5,5" fill="#f3f4f6" />
+                 <text x="550" y="55" font-size="40" text-anchor="middle" font-weight="bold" fill="#666">?</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>2.</strong> Which shape is different from the others? (Odd one out)<br /><br />
+              Manakah bangun yang berbeda dari yang lain?
+            </p>
+            <div class="svg-container">
+                <svg width="600" height="100" viewBox="0 0 600 100">
+                    <!-- A: Circle -->
+                    <circle cx="75" cy="50" r="40" stroke="black" stroke-width="3" fill="none" />
+                    <text x="75" y="110" text-anchor="middle" font-weight="bold">A</text>
+                    
+                    <!-- B: Small Circle -->
+                    <circle cx="225" cy="50" r="25" stroke="black" stroke-width="3" fill="none" />
+                    <text x="225" y="110" text-anchor="middle" font-weight="bold">B</text>
+                    
+                    <!-- C: Rectangle -->
+                    <rect x="335" y="20" width="80" height="60" stroke="black" stroke-width="3" fill="none" />
+                    <text x="375" y="110" text-anchor="middle" font-weight="bold">C</text>
+                    
+                    <!-- D: Big Circle -->
+                    <circle cx="525" cy="50" r="45" stroke="black" stroke-width="3" fill="none" />
+                    <text x="525" y="110" text-anchor="middle" font-weight="bold">D</text>
+                </svg>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>3.</strong> Box A has 12 balls. Box B has 6 balls. How many balls must be moved from Box A to Box B so that both boxes have the SAME number of balls?<br /><br />
+              Kotak A memiliki 12 bola. Kotak B memiliki 6 bola. Berapa bola yang harus dipindahkan dari Kotak A ke Kotak B agar kedua kotak memiliki jumlah bola yang SAMA?
+            </p>
+          </div>
+
+          <!-- Q4 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>4.</strong> How many triangles are there in the figure below?<br /><br />
+              Ada berapa banyak segitiga pada gambar di bawah ini?
+            </p>
+            <div class="svg-container">
+                <svg width="200" height="180" viewBox="0 0 200 180">
+                    <!-- Main Triangle -->
+                    <polygon points="100,10 10,170 190,170" stroke="black" stroke-width="3" fill="none" />
+                    <!-- Horizontal Line -->
+                    <line x1="55" y1="90" x2="145" y2="90" stroke="black" stroke-width="3" />
+                </svg>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>5.</strong> Look at the balance scales. If one Square weighs 4 kg, what is the weight of one Triangle?<br /><br />
+              Perhatikan timbangan berikut. Jika berat satu Kotak adalah 4 kg, berapakah berat satu Segitiga?
+            </p>
+            <div class="svg-container">
+                <svg width="600" height="150" viewBox="0 0 600 150">
+                    <!-- Scale 1 -->
+                    <g transform="translate(50,20)">
+                        <!-- Beam -->
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="4" stroke-linecap="round" />
+                        <!-- Pivot (Triangle Pointing UP) -->
+                        <polygon points="100,100 90,120 110,120" fill="black" />
+                        
+                        <!-- Left: 2 Squares (Blue) -->
+                        <rect x="30" y="65" width="35" height="35" fill="#bfdbfe" stroke="black" stroke-width="2" />
+                        <rect x="70" y="65" width="35" height="35" fill="#bfdbfe" stroke="black" stroke-width="2" />
+                        
+                        <!-- Right: 1 Circle (Pink) -->
+                        <circle cx="160" cy="82" r="17" fill="#fecaca" stroke="black" stroke-width="2" />
+                        
+                        <text x="100" y="145" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="14">Scale 1</text>
+                    </g>
+
+                    <!-- Scale 2 -->
+                    <g transform="translate(350,20)">
+                        <!-- Beam -->
+                        <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="4" stroke-linecap="round" />
+                        <!-- Pivot (Triangle Pointing UP) -->
+                        <polygon points="100,100 90,120 110,120" fill="black" />
+                        
+                        <!-- Left: 1 Circle (Pink) -->
+                        <circle cx="40" cy="82" r="17" fill="#fecaca" stroke="black" stroke-width="2" />
+                        
+                        <!-- Right: 2 Triangles (Green) -->
+                        <polygon points="135,100 152,65 170,100" fill="#bbf7d0" stroke="black" stroke-width="2" />
+                        <polygon points="175,100 192,65 210,100" fill="#bbf7d0" stroke="black" stroke-width="2" />
+                        
+                        <text x="100" y="145" text-anchor="middle" font-weight="bold" font-family="sans-serif" font-size="14">Scale 2</text>
+                    </g>
+                </svg>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>6.</strong> Find the missing numbers in the pattern: 2, 5, 8, 11, <strong>?</strong>, 17.<br /><br />
+              Temukan angka yang hilang pada pola: 2, 5, 8, 11, <strong>?</strong>, 17.
+            </p>
+          </div>
+
+          <!-- Q7 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>7.</strong> The opposite faces of a standard die always add up to 7. If the number 5 is on the top face, what number is on the bottom face?<br /><br />
+              Sisi yang berlawanan pada dadu standar selalu berjumlah 7. Jika angka 5 ada di sisi atas, angka berapakah yang ada di sisi bawah?
+            </p>
+          </div>
+
+          <!-- Q8 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>8.</strong> Which of these does NOT belong in the group?<br />
+              A. Car &nbsp;&nbsp; B. Bicycle &nbsp;&nbsp; C. Airplane &nbsp;&nbsp; D. Bus<br /><br />
+              Manakah yang TIDAK termasuk dalam kelompok ini?<br />
+              A. Mobil &nbsp;&nbsp; B. Sepeda &nbsp;&nbsp; C. Pesawat Terbang &nbsp;&nbsp; D. Bus
+            </p>
+          </div>
+
+          <!-- Q9 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>9.</strong> Look at the logic grid. What shape should be in the empty box?<br /><br />
+              Perhatikan kotak logika berikut. Bangun apa yang seharusnya ada di kotak kosong?
+            </p>
+            <div class="svg-container">
+                <svg width="200" height="200" viewBox="0 0 200 200">
+                    <!-- Grid Lines -->
+                    <rect x="0" y="0" width="200" height="200" fill="none" stroke="black" stroke-width="3" />
+                    <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="3" />
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="3" />
+                    
+                    <!-- Top Left: 1 Circle -->
+                    <circle cx="50" cy="50" r="25" stroke="black" stroke-width="2" fill="none" />
+                    
+                    <!-- Top Right: 2 Circles -->
+                    <circle cx="140" cy="50" r="25" stroke="black" stroke-width="2" fill="none" />
+                    <circle cx="160" cy="50" r="25" stroke="black" stroke-width="2" fill="white" fill-opacity="0.5" />
+                    
+                    <!-- Bottom Left: 1 Triangle -->
+                    <polygon points="50,115 25,185 75,185" stroke="black" stroke-width="2" fill="none" />
+                    
+                    <!-- Bottom Right: ? -->
+                    <text x="150" y="165" font-size="40" text-anchor="middle" font-weight="bold">?</text>
+                </svg>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>10.</strong> If A = 2 and B = 3, what is the value of A + B + A?<br /><br />
+              Jika A = 2 dan B = 3, berapakah nilai dari A + B + A?
+            </p>
+          </div>
+
+          <!-- Q11 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>11.</strong> In a class, 10 students like Chocolate ice cream. 8 students like Vanilla ice cream. If 3 students like BOTH, how many students like Chocolate ONLY?<br /><br />
+              Di sebuah kelas, 10 siswa suka es krim Cokelat. 8 siswa suka es krim Vanila. Jika 3 siswa suka KEDUANYA, berapa siswa yang HANYA suka Cokelat?
+            </p>
+          </div>
+
+          <!-- Q12 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>12.</strong> Which of these words looks the SAME when looked at in a mirror?<br />
+              A. CAT &nbsp;&nbsp; B. MOM &nbsp;&nbsp; C. DAD &nbsp;&nbsp; D. BOB<br /><br />
+              Manakah kata di bawah ini yang terlihat SAMA persis ketika dilihat di cermin?<br />
+              A. CAT &nbsp;&nbsp; B. MOM &nbsp;&nbsp; C. DAD &nbsp;&nbsp; D. BOB
+            </p>
+          </div>
+
+          <!-- Q13 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>13.</strong> Box X is heavier than Box Y. Box Z is lighter than Box Y. Which box is the heaviest?<br /><br />
+              Kotak X lebih berat dari Kotak Y. Kotak Z lebih ringan dari Kotak Y. Kotak manakah yang paling berat?
+            </p>
+          </div>
+
+          <!-- Q14 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>14.</strong> Start with number 5. Add 3. If the number is more than 7, subtract 1. What is the final number?<br /><br />
+              Mulai dengan angka 5. Tambah 3. Jika angkanya lebih dari 7, kurangi 1. Berapakah angka akhirnya?
+            </p>
+          </div>
+
+          <!-- Q15 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>15.</strong> How many small squares (size 1x1) are needed to make a larger square with side length 3?<br /><br />
+              Berapa banyak persegi kecil (ukuran 1x1) yang dibutuhkan untuk membuat persegi besar dengan panjang sisi 3?
+            </p>
+          </div>
+
+          <!-- TOPIC 2 -->
+          <h3 class="topic-title">Topic: Position & Order (Posisi & Urutan)</h3>
+
+          <!-- Q16 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>16.</strong> In a queue to buy toys, Ben is 4th from the front. How many people are in front of Ben?<br /><br />
+              Dalam antrean membeli mainan, Ben ada di urutan ke-4 dari depan. Ada berapa orang di depan Ben?
+            </p>
+          </div>
+
+          <!-- Q17 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>17.</strong> Sarah is standing in a line. She is the 5th person from the front and the 6th person from the back. How many people are there in the line?<br /><br />
+              Sarah berdiri dalam barisan. Dia adalah orang ke-5 dari depan dan orang ke-6 dari belakang. Berapa banyak orang dalam barisan tersebut?
+            </p>
+          </div>
+
+          <!-- Q18 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>18.</strong> In a race of 10 cars, the Red car is 1st. The Blue car is last. How many cars are <strong>between</strong> the Red car and the Blue car?<br /><br />
+              Dalam balapan 10 mobil, mobil Merah juara 1. Mobil Biru juara terakhir. Ada berapa mobil <strong>di antara</strong> mobil Merah dan mobil Biru?
+            </p>
+          </div>
+
+          <!-- Q19 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>19.</strong> You are running in a race. You overtake the person in 2nd place. What place are you in now?<br /><br />
+              Kamu sedang berlomba lari. Kamu menyalip orang di posisi ke-2. Di posisi keberapakah kamu sekarang?
+            </p>
+          </div>
+
+          <!-- Q20 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>20.</strong> Five friends are holding hands in a line facing you: A - B - C - D - E. Who is to the left of C from your perspective?<br /><br />
+              Lima teman bergandengan tangan dalam satu barisan menghadap ke arahmu: A - B - C - D - E. Siapakah yang berada di sebelah kiri C (dari sudut pandangmu)?
+            </p>
+          </div>
+
+          <!-- Q21 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>21.</strong> There is a stack of books. Math is at the bottom. English is on top of Math. Science is on top of English. History is at the very top. Which book is immediately below History?<br /><br />
+              Ada tumpukan buku. Matematika paling bawah. Bahasa Inggris di atas Matematika. Sains di atas Bahasa Inggris. Sejarah paling atas. Buku apa yang tepat berada di bawah Sejarah?
+            </p>
+          </div>
+
+          <!-- Q22 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>22.</strong> Write the letters of the word "OLYMPIAD". What letter is 5th from the left?<br /><br />
+              Tulis huruf-huruf dari kata "OLYMPIAD". Huruf apakah yang berada di urutan ke-5 dari kiri?
+            </p>
+          </div>
+
+          <!-- Q23 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>23.</strong> If yesterday was Friday, what day will it be 3 days <strong>after</strong> tomorrow?<br /><br />
+              Jika kemarin adalah hari Jumat, hari apakah 3 hari <strong>setelah</strong> besok?
+            </p>
+          </div>
+
+          <!-- Q24 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>24.</strong> A building has 12 floors. Tom lives on the 4th floor. Jerry lives 5 floors above Tom. On which floor does Jerry live?<br /><br />
+              Sebuah gedung memiliki 12 lantai. Tom tinggal di lantai 4. Jerry tinggal 5 lantai di atas Tom. Di lantai berapakah Jerry tinggal?
+            </p>
+          </div>
+
+          <!-- Q25 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>25.</strong> 4 kids sit at a round table in clockwise order: A, B, C, D. Who is sitting opposite A?<br /><br />
+              4 anak duduk di meja bundar dengan urutan searah jarum jam: A, B, C, D. Siapakah yang duduk berhadapan dengan A?
+            </p>
+          </div>
+
+          <!-- Q26 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>26.</strong> On a number line, number 10 is to the right of number 5. Is number 3 to the left or right of number 5?<br /><br />
+              Pada garis bilangan, angka 10 ada di sebelah kanan angka 5. Apakah angka 3 ada di sebelah kiri atau kanan angka 5?
+            </p>
+          </div>
+
+          <!-- Q27 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>27.</strong> There are 5 cards in a row: 1, 2, 3, 4, 5. If you swap the card in the 1st position with the card in the last position, what is the order now?<br /><br />
+              Ada 5 kartu berjejer: 1, 2, 3, 4, 5. Jika kamu menukar kartu di posisi ke-1 dengan kartu di posisi terakhir, bagaimana urutannya sekarang?
+            </p>
+          </div>
+
+          <!-- Q28 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>28.</strong> There are 8 people ahead of Tim and 5 people behind Tim. How many people are in the queue?<br /><br />
+              Ada 8 orang di depan Tim dan 5 orang di belakang Tim. Berapa banyak orang dalam antrean itu?
+            </p>
+          </div>
+
+          <!-- Q29 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>29.</strong> Tree A is taller than Tree B. Tree C is shorter than Tree B. Order them from Shortest to Tallest.<br /><br />
+              Pohon A lebih tinggi dari Pohon B. Pohon C lebih pendek dari Pohon B. Urutkan dari yang Terpendek ke Tertinggi.
+            </p>
+          </div>
+
+          <!-- Q30 -->
+          <div class="item-container">
+            <p class="question-text">
+              <strong>30.</strong> In a line of children, Ali is 10th from the left and Budi is 10th from the right. There are 4 children <strong>between</strong> them. What is the total number of children in the line? (Assume Ali is to the left of Budi)<br /><br />
+              Dalam barisan anak-anak, Ali urutan ke-10 dari kiri dan Budi urutan ke-10 dari kanan. Ada 4 anak <strong>di antara</strong> mereka. Berapa jumlah total anak dalam barisan tersebut? (Asumsikan Ali berada di sebelah kiri Budi)
+            </p>
+          </div>
+        </section>
+
+        <!-- SOLUTIONS SECTION -->
+        <section class="content-card">
+          <h2 class="section-title">Detailed Solutions / Pembahasan Detail</h2>
+
+          <h3 class="topic-title">A. Logic & Classification</h3>
+
+          <!-- Sol 1 -->
+          <div class="item-container">
+            <p><strong>1. Answer: Square (Persegi)</strong></p>
+            <div class="solution-step">
+                <p>Pattern: Circle, Triangle, Square. (Repeats). After Triangle, the next shape is Square.</p>
+                <p class="text-gray-600 italic">Pola: Lingkaran, Segitiga, Persegi. (Berulang). Setelah Segitiga, bangun berikutnya adalah Persegi.</p>
+            </div>
+          </div>
+
+          <!-- Sol 2 -->
+          <div class="item-container">
+            <p><strong>2. Answer: C (Rectangle/Persegi Panjang)</strong></p>
+            <div class="solution-step">
+                <p>A, B, and D are circles (curved lines). C is a rectangle (straight lines).</p>
+                <p class="text-gray-600 italic">A, B, dan D adalah lingkaran (garis lengkung). C adalah persegi panjang (garis lurus).</p>
+            </div>
+          </div>
+
+          <!-- Sol 3 -->
+          <div class="item-container">
+            <p><strong>3. Answer: 3 Balls (3 Bola)</strong></p>
+            <div class="concept">
+                <p><strong>Concept:</strong> Transfer to Equalize.</p>
+            </div>
+            <div class="solution-step">
+                <p>Difference is $12 - 6 = 6$. To make them equal, move half of the difference. $6 \div 2 = 3$.</p>
+                <p class="text-gray-600 italic">Selisihnya adalah $12 - 6 = 6$. Pindahkan setengah dari selisihnya. $6 \div 2 = 3$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 4 -->
+          <div class="item-container">
+            <p><strong>4. Answer: 2 Triangles</strong></p>
+            <div class="solution-step">
+                <p>1. Small triangle at top. 2. Large outer triangle. The bottom shape is a trapezoid. Total = 2.</p>
+                <p class="text-gray-600 italic">1. Segitiga kecil di atas. 2. Segitiga besar terluar. Bangun bawah adalah trapesium. Total = 2.</p>
+            </div>
+          </div>
+
+          <!-- Sol 5 -->
+          <div class="item-container">
+            <p><strong>5. Answer: 4 kg</strong></p>
+            <div class="solution-step">
+                <p>Scale 1: 2 Squares = 1 Circle (8kg). So Circle = 8kg.</p>
+                <p>Scale 2: 1 Circle (8kg) = 2 Triangles. So 1 Triangle = 4kg.</p>
+            </div>
+          </div>
+
+          <!-- Sol 6 -->
+          <div class="item-container">
+            <p><strong>6. Answer: 14</strong></p>
+            <div class="solution-step">
+                <p>Pattern is +3. $11 + 3 = 14$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 7 -->
+          <div class="item-container">
+            <p><strong>7. Answer: 2</strong></p>
+            <div class="solution-step">
+                <p>Standard die rule: Opposite sides sum to 7. $7 - 5 = 2$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 8 -->
+          <div class="item-container">
+            <p><strong>8. Answer: C (Airplane)</strong></p>
+            <div class="solution-step">
+                <p>Car, Bicycle, Bus are land transport. Airplane is air transport.</p>
+            </div>
+          </div>
+
+          <!-- Sol 9 -->
+          <div class="item-container">
+            <p><strong>9. Answer: 2 Triangles ($\triangle\triangle$)</strong></p>
+            <div class="solution-step">
+                <p>Logic: Double the shape. 1 Triangle becomes 2 Triangles.</p>
+            </div>
+          </div>
+
+          <!-- Sol 10 -->
+          <div class="item-container">
+            <p><strong>10. Answer: 7</strong></p>
+            <div class="solution-step">
+                <p>$A + B + A = 2 + 3 + 2 = 7$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 11 -->
+          <div class="item-container">
+            <p><strong>11. Answer: 7 Students</strong></p>
+            <div class="solution-step">
+                <p>Chocolate ONLY = Total Chocolate - Both. $10 - 3 = 7$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 12 -->
+          <div class="item-container">
+            <p><strong>12. Answer: B (MOM)</strong></p>
+            <div class="solution-step">
+                <p>"MOM" has vertical symmetry. D and B appear reversed in a mirror.</p>
+            </div>
+          </div>
+
+          <!-- Sol 13 -->
+          <div class="item-container">
+            <p><strong>13. Answer: Box X</strong></p>
+            <div class="solution-step">
+                <p>X > Y and Y > Z. So X is the heaviest.</p>
+            </div>
+          </div>
+
+          <!-- Sol 14 -->
+          <div class="item-container">
+            <p><strong>14. Answer: 7</strong></p>
+            <div class="solution-step">
+                <p>$5 + 3 = 8$. Is $8 > 7$? Yes. So, $8 - 1 = 7$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 15 -->
+          <div class="item-container">
+            <p><strong>15. Answer: 9</strong></p>
+            <div class="solution-step">
+                <p>A square with side 3 is a $3 \times 3$ grid. Total = 9.</p>
+            </div>
+          </div>
+
+          <h3 class="topic-title">B. Position & Order</h3>
+
+          <!-- Sol 16 -->
+          <div class="item-container">
+            <p><strong>16. Answer: 3 people</strong></p>
+            <div class="solution-step">
+                <p>$4 - 1 = 3$ people in front.</p>
+            </div>
+          </div>
+
+          <!-- Sol 17 -->
+          <div class="item-container">
+            <p><strong>17. Answer: 10 people</strong></p>
+            <div class="solution-step">
+                <p>Total = (Front Position + Back Position) - 1. $5 + 6 - 1 = 10$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 18 -->
+          <div class="item-container">
+            <p><strong>18. Answer: 8 cars</strong></p>
+            <div class="solution-step">
+                <p>Cars between 1st and 10th = $10 - 1 - 1 = 8$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 19 -->
+          <div class="item-container">
+            <p><strong>19. Answer: 2nd Place</strong></p>
+            <div class="solution-step">
+                <p>If you overtake the 2nd person, you take their position. You are now 2nd.</p>
+            </div>
+          </div>
+
+          <!-- Sol 20 -->
+          <div class="item-container">
+            <p><strong>20. Answer: B</strong></p>
+            <div class="solution-step">
+                <p>The line faces you: Left A - B - C - D - E Right. Left of C is B.</p>
+            </div>
+          </div>
+
+          <!-- Sol 21 -->
+          <div class="item-container">
+            <p><strong>21. Answer: Science</strong></p>
+            <div class="solution-step">
+                <p>Order (Bottom to Top): Math $\to$ English $\to$ Science $\to$ History.</p>
+            </div>
+          </div>
+
+          <!-- Sol 22 -->
+          <div class="item-container">
+            <p><strong>22. Answer: P</strong></p>
+            <div class="solution-step">
+                <p>O-L-Y-M-<strong>P</strong>-I-A-D.</p>
+            </div>
+          </div>
+
+          <!-- Sol 23 -->
+          <div class="item-container">
+            <p><strong>23. Answer: Wednesday</strong></p>
+            <div class="solution-step">
+                <p>Yesterday=Fri $\to$ Today=Sat $\to$ Tomorrow=Sun. 3 days after Sun = Wed.</p>
+            </div>
+          </div>
+
+          <!-- Sol 24 -->
+          <div class="item-container">
+            <p><strong>24. Answer: 9th Floor</strong></p>
+            <div class="solution-step">
+                <p>$4 + 5 = 9$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 25 -->
+          <div class="item-container">
+            <p><strong>25. Answer: C</strong></p>
+            <div class="solution-step">
+                <p>Clockwise A, B, C, D. Opposite A (12 o'clock) is C (6 o'clock).</p>
+            </div>
+          </div>
+
+          <!-- Sol 26 -->
+          <div class="item-container">
+            <p><strong>26. Answer: Left</strong></p>
+            <div class="solution-step">
+                <p>$3 < 5$, so 3 is to the left.</p>
+            </div>
+          </div>
+
+          <!-- Sol 27 -->
+          <div class="item-container">
+            <p><strong>27. Answer: 5, 2, 3, 4, 1</strong></p>
+          </div>
+
+          <!-- Sol 28 -->
+          <div class="item-container">
+            <p><strong>28. Answer: 14 people</strong></p>
+            <div class="solution-step">
+                <p>$8 (\text{front}) + 1 (\text{Tim}) + 5 (\text{back}) = 14$.</p>
+            </div>
+          </div>
+
+          <!-- Sol 29 -->
+          <div class="item-container">
+            <p><strong>29. Answer: C, B, A</strong></p>
+            <div class="solution-step">
+                <p>C < B and B < A. So C, B, A.</p>
+            </div>
+          </div>
+
+          <!-- Sol 30 -->
+          <div class="item-container">
+            <p><strong>30. Answer: 24 children</strong></p>
+            <div class="solution-step">
+                <p>Separate groups logic: Left(10) + Between(4) + Right(10). Wait, Ali is 10th (9 people before him). Budi is 10th from right (9 people after him).</p>
+                <p>Structure: [9 people] - Ali - [4 people] - Budi - [9 people].</p>
+                <p>Total = $9 + 1 + 4 + 1 + 9 = 24$.</p>
+                <p class="text-gray-600 italic">Logika kelompok terpisah: Kiri(10) + Antara(4) + Kanan(10) = 24.</p>
+            </div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
