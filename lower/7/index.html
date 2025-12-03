@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc;
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-container p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .item-container > p:last-child {
+        margin-bottom: 0;
+      }
+      /* Styling untuk area solusi */
+      .solution-box {
+        margin-top: 1rem;
+        border-left: 4px solid #4f46e5; /* Indigo accent */
+        background-color: #f9fafb;
+        padding: 1rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #3730a3; /* Indigo-800 */
+        margin-bottom: 0.5rem;
+        display: block;
+        font-size: 1.05rem;
+      }
+      .solution-text {
+        color: #374151;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      .solution-text ul, .solution-text ol {
+        margin-left: 1.5rem;
+        list-style-type: disc;
+        margin-bottom: 0.5rem;
+      }
+      .solution-text li {
+        margin-bottom: 0.25rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+        display: block;
+        margin: 1rem auto;
+        border: 1px solid #e5e7eb;
+      }
+      .lang-id {
+        color: #4b5563; /* Gray-600 */
+        font-style: italic;
+        display: block;
+        margin-top: 0.5rem;
+      }
+      .separator {
+        border-top: 1px dashed #d1d5db;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 7
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Level: Grade 1-2 (TIMO, WIMO, SASMO Level)
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Questions</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Data Soal (30 Soal Total)
+      const questions = [
+        // =================================================================
+        // TOPIC 1: TIME MEASUREMENT (15 Questions)
+        // =================================================================
+        {
+          id: 1,
+          topic: "Topic 1: Time Measurement",
+          question_en: "Mother puts a cake in the oven at 10:15. The cake needs to bake for 45 minutes. After baking, it needs to cool down for 30 minutes before it can be eaten. At what time is the cake ready to be eaten?",
+          question_id: "Ibu memasukkan kue ke dalam oven pada pukul 10:15. Kue tersebut perlu dipanggang selama 45 menit. Setelah dipanggang, kue harus didiamkan selama 30 menit agar dingin sebelum bisa dimakan. Pukul berapakah kue siap untuk dimakan?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_xmvwbc_8390.png",
+          answer: "11:30",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Start time is 10:15.</li>
+                <li><strong>Step 2:</strong> Add baking time (45 minutes). <br>$$10:15 + 45 \\text{ mins} = 10:60$$ <br> Since 60 minutes is equal to 1 hour, the time becomes 11:00.</li>
+                <li><strong>Step 3:</strong> Add cooling time (30 minutes). <br>$$11:00 + 30 \\text{ mins} = 11:30$$</li>
+                <li><strong>Conclusion:</strong> The cake is ready at 11:30.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Waktu mulai adalah 10:15.</li>
+                <li><strong>Langkah 2:</strong> Tambahkan waktu memanggang (45 menit). <br>$$10:15 + 45 \\text{ menit} = 10:60$$ <br> Karena 60 menit sama dengan 1 jam, maka waktunya berubah menjadi pukul 11:00.</li>
+                <li><strong>Langkah 3:</strong> Tambahkan waktu pendinginan (30 menit). <br>$$11:00 + 30 \\text{ menit} = 11:30$$</li>
+                <li><strong>Kesimpulan:</strong> Kue siap dimakan pada pukul 11:30.</li>
+            </ul>`
+        },
+        {
+          id: 2,
+          topic: "Topic 1: Time Measurement",
+          question_en: "If the day before yesterday was Thursday, what day will it be the day after tomorrow?",
+          question_id: "Jika kelmarin (hari sebelum kemarin) adalah hari Kamis, hari apakah lusa (hari setelah besok)?",
+          answer: "Monday / Senin",
+          explanation_en: `
+            Let's trace the days on a timeline:
+            <ul>
+                <li>Day before yesterday = Thursday</li>
+                <li>Yesterday = Friday</li>
+                <li><strong>Today = Saturday</strong></li>
+                <li>Tomorrow = Sunday</li>
+                <li>Day after tomorrow = <strong>Monday</strong></li>
+            </ul>`,
+          explanation_id: `
+            Mari kita urutkan harinya:
+            <ul>
+                <li>Kelmarin (sebelum kemarin) = Kamis</li>
+                <li>Kemarin = Jumat</li>
+                <li><strong>Hari ini = Sabtu</strong></li>
+                <li>Besok = Minggu</li>
+                <li>Lusa (hari setelah besok) = <strong>Senin</strong></li>
+            </ul>`
+        },
+        {
+          id: 3,
+          topic: "Topic 1: Time Measurement",
+          question_en: "In a certain month, the $4^{th}$ is a Monday. On which date will the third Monday of that month fall?",
+          question_id: "Pada suatu bulan, tanggal 4 adalah hari Senin. Tanggal berapakah hari Senin ketiga pada bulan tersebut?",
+          answer: "18",
+          explanation_en: `
+            Days of the week repeat every 7 days.
+            <ul>
+                <li>1st Monday = Date 4</li>
+                <li>2nd Monday = $4 + 7 = 11$ (Date 11)</li>
+                <li>3rd Monday = $11 + 7 = 18$ (Date 18)</li>
+            </ul>`,
+          explanation_id: `
+            Hari dalam seminggu berulang setiap 7 hari sekali.
+            <ul>
+                <li>Senin ke-1 = Tanggal 4</li>
+                <li>Senin ke-2 = $4 + 7 = 11$ (Tanggal 11)</li>
+                <li>Senin ke-3 = $11 + 7 = 18$ (Tanggal 18)</li>
+            </ul>`
+        },
+        {
+          id: 4,
+          topic: "Topic 1: Time Measurement",
+          question_en: "An old clock rings the bell according to the hour (e.g., at 3:00 it rings 3 times). It also rings once at every half-hour (e.g., at 3:30 it rings 1 time). How many times does the clock ring in total from 1:00 to 4:00?",
+          question_id: "Sebuah jam tua berbunyi sesuai angka jamnya (misal: pukul 3:00 berbunyi 3 kali). Jam itu juga berbunyi 1 kali setiap setengah jam (misal: pukul 3:30 berbunyi 1 kali). Berapa kali jam tersebut berbunyi total dari pukul 1:00 sampai 4:00?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_mbp30x_6569.png",
+          answer: "13 times / kali",
+          explanation_en: `
+            Let's list all the events:
+            <ul>
+                <li>At 1:00 &rarr; Rings 1 time (Hour is 1)</li>
+                <li>At 1:30 &rarr; Rings 1 time (Half-hour)</li>
+                <li>At 2:00 &rarr; Rings 2 times (Hour is 2)</li>
+                <li>At 2:30 &rarr; Rings 1 time (Half-hour)</li>
+                <li>At 3:00 &rarr; Rings 3 times (Hour is 3)</li>
+                <li>At 3:30 &rarr; Rings 1 time (Half-hour)</li>
+                <li>At 4:00 &rarr; Rings 4 times (Hour is 4)</li>
+            </ul>
+            Total = $1+1+2+1+3+1+4 = \\mathbf{13}$.`,
+          explanation_id: `
+            Mari kita daftar setiap kejadiannya:
+            <ul>
+                <li>Pukul 1:00 &rarr; Bunyi 1 kali (Jam 1)</li>
+                <li>Pukul 1:30 &rarr; Bunyi 1 kali (Setengah jam)</li>
+                <li>Pukul 2:00 &rarr; Bunyi 2 kali (Jam 2)</li>
+                <li>Pukul 2:30 &rarr; Bunyi 1 kali (Setengah jam)</li>
+                <li>Pukul 3:00 &rarr; Bunyi 3 kali (Jam 3)</li>
+                <li>Pukul 3:30 &rarr; Bunyi 1 kali (Setengah jam)</li>
+                <li>Pukul 4:00 &rarr; Bunyi 4 kali (Jam 4)</li>
+            </ul>
+            Total = $1+1+2+1+3+1+4 = \\mathbf{13}$.`
+        },
+        {
+          id: 5,
+          topic: "Topic 1: Time Measurement",
+          question_en: "Dad's watch is broken. For every actual hour that passes, his watch only moves 30 minutes. If he sets his watch correctly at 12:00 PM, what time will his watch show when the actual time is 4:00 PM?",
+          question_id: "Jam tangan Ayah rusak. Untuk setiap 1 jam waktu sebenarnya yang berlalu, jam tangannya hanya bergerak 30 menit. Jika ia mengatur jamnya dengan benar pada pukul 12:00 siang, pukul berapakah yang ditunjukkan jam tangannya saat waktu sebenarnya pukul 4:00 sore?",
+          answer: "2:00 PM",
+          explanation_en: `
+            <ul>
+                <li>The actual time difference from 12:00 to 4:00 is 4 hours.</li>
+                <li>The broken watch moves at half speed (30 minutes for every 1 hour).</li>
+                <li>Calculation: $4 \\text{ hours} \\times 30 \\text{ minutes} = 120 \\text{ minutes}$.</li>
+                <li>Convert minutes to hours: $120 \\text{ minutes} = 2 \\text{ hours}$.</li>
+                <li>So, the watch will show 2 hours after 12:00, which is <strong>2:00 PM</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li>Selisih waktu sebenarnya dari 12:00 ke 4:00 adalah 4 jam.</li>
+                <li>Jam rusak bergerak dengan kecepatan setengahnya (30 menit untuk setiap 1 jam).</li>
+                <li>Perhitungan: $4 \\text{ jam} \\times 30 \\text{ menit} = 120 \\text{ menit}$.</li>
+                <li>Konversi menit ke jam: $120 \\text{ menit} = 2 \\text{ jam}$.</li>
+                <li>Jadi, jam tersebut akan menunjukkan 2 jam setelah pukul 12:00, yaitu pukul <strong>02:00 siang</strong>.</li>
+            </ul>`
+        },
+        {
+          id: 6,
+          topic: "Topic 1: Time Measurement",
+          question_en: "Today is Friday. What day of the week will it be 22 days from now?",
+          question_id: "Hari ini adalah hari Jumat. Hari apakah 22 hari dari sekarang?",
+          answer: "Saturday / Sabtu",
+          explanation_en: `
+            <ul>
+                <li>We know that days repeat every 7 days (1 week).</li>
+                <li>Let's divide 22 by 7 to see how many full weeks pass. <br>$$ 22 \\div 7 = 3 \\text{ weeks with a remainder of } 1 \\text{ day.} $$</li>
+                <li>This means 22 days is exactly 3 full weeks plus 1 extra day.</li>
+                <li>3 weeks from Friday is still Friday. Then add 1 extra day.</li>
+                <li>Friday + 1 day = <strong>Saturday</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li>Kita tahu bahwa nama hari berulang setiap 7 hari (1 minggu).</li>
+                <li>Bagi 22 dengan 7 untuk melihat berapa minggu penuh yang berlalu. <br>$$ 22 \\div 7 = 3 \\text{ minggu dengan sisa } 1 \\text{ hari.} $$</li>
+                <li>Artinya, 22 hari sama dengan 3 minggu penuh ditambah 1 hari ekstra.</li>
+                <li>3 minggu dari Jumat adalah tetap Jumat. Lalu tambahkan 1 hari sisa.</li>
+                <li>Jumat + 1 hari = <strong>Sabtu</strong>.</li>
+            </ul>`
+        },
+        {
+          id: 7,
+          topic: "Topic 1: Time Measurement",
+          question_en: "A bus leaves the station every 30 minutes. The first bus leaves at 8:15 AM. At what time does the 4th bus leave?",
+          question_id: "Sebuah bus berangkat dari stasiun setiap 30 menit. Bus pertama berangkat pukul 08:15 pagi. Pukul berapakah bus ke-4 berangkat?",
+          answer: "9:45 AM",
+          explanation_en: `
+            We can list the departure times:
+            <ul>
+                <li>1st Bus: 08:15</li>
+                <li>2nd Bus: 08:15 + 30 mins = 08:45</li>
+                <li>3rd Bus: 08:45 + 30 mins = 09:15 (Note: 8:75 becomes 9:15)</li>
+                <li>4th Bus: 09:15 + 30 mins = <strong>09:45</strong></li>
+            </ul>`,
+          explanation_id: `
+            Kita bisa mendaftar jadwal keberangkatannya:
+            <ul>
+                <li>Bus ke-1: 08:15</li>
+                <li>Bus ke-2: 08:15 + 30 menit = 08:45</li>
+                <li>Bus ke-3: 08:45 + 30 menit = 09:15 (Catatan: 08:75 menjadi 09:15)</li>
+                <li>Bus ke-4: 09:15 + 30 menit = <strong>09:45</strong></li>
+            </ul>`
+        },
+        {
+          id: 8,
+          topic: "Topic 1: Time Measurement",
+          question_en: "Alice watched 3 cartoons. The first cartoon was 20 minutes long, the second was 40 minutes long, and the third was 15 minutes long. How long did she watch TV in total? (Give answer in hours and minutes).",
+          question_id: "Alice menonton 3 film kartun. Kartun pertama berdurasi 20 menit, yang kedua 40 menit, dan yang ketiga 15 menit. Berapa lama dia menonton TV secara total? (Jawab dalam jam dan menit).",
+          answer: "1 hour 15 minutes / 1 jam 15 menit",
+          explanation_en: `
+            <ul>
+                <li>Sum the minutes: $20 + 40 + 15 = 75$ minutes.</li>
+                <li>Convert to hours: We know 60 minutes = 1 hour.</li>
+                <li>$75 - 60 = 15$ minutes remaining.</li>
+                <li>So, 75 minutes = <strong>1 hour and 15 minutes</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li>Jumlahkan menitnya: $20 + 40 + 15 = 75$ menit.</li>
+                <li>Ubah ke jam: Kita tahu 60 menit = 1 jam.</li>
+                <li>$75 - 60 = 15$ menit sisa.</li>
+                <li>Jadi, 75 menit = <strong>1 jam 15 menit</strong>.</li>
+            </ul>`
+        },
+        {
+          id: 9,
+          topic: "Topic 1: Time Measurement",
+          question_en: "On a digital clock (HH:MM), how many times between 1:00 and 2:00 does the minute part show the same digits (e.g., 1:11)?",
+          question_id: "Pada jam digital (HH:MM), berapa kali antara pukul 1:00 sampai 2:00 bagian menitnya menunjukkan angka kembar (contoh: 1:11)?",
+          answer: "6 times / kali",
+          explanation_en: `
+            We are looking for minutes where both digits are the same (00, 11, 22, etc.) within the hour of 1. The valid times are:
+            <ol>
+                <li>1:00 (0 and 0 are the same digits)</li>
+                <li>1:11</li>
+                <li>1:22</li>
+                <li>1:33</li>
+                <li>1:44</li>
+                <li>1:55</li>
+            </ol>
+            There are <strong>6 times</strong> in total.`,
+          explanation_id: `
+            Kita mencari angka menit yang digitnya sama (00, 11, 22, dll) pada jam 1. Waktu-waktu yang memenuhi adalah:
+            <ol>
+                <li>1:00 (0 dan 0 adalah angka yang sama)</li>
+                <li>1:11</li>
+                <li>1:22</li>
+                <li>1:33</li>
+                <li>1:44</li>
+                <li>1:55</li>
+            </ol>
+            Totalnya ada <strong>6 kali</strong>.`
+        },
+        {
+          id: 10,
+          topic: "Topic 1: Time Measurement",
+          question_en: "You look at the mirror image of a clock. The mirror image shows 9:30. What is the actual time?",
+          question_id: "Kamu melihat bayangan jam di cermin. Bayangan itu menunjukkan pukul 9:30. Pukul berapakah waktu yang sebenarnya?",
+          answer: "2:30",
+          explanation_en: `
+            There is a simple math trick for mirror clocks: Subtract the mirror time from 11:60 (which is 12:00).
+            $$ 11:60 - 09:30 $$
+            <ul>
+                <li>Minutes: $60 - 30 = 30$</li>
+                <li>Hours: $11 - 9 = 2$</li>
+            </ul>
+            The actual time is <strong>2:30</strong>.`,
+          explanation_id: `
+            Ada trik matematika sederhana untuk jam cermin: Kurangi 11:60 (yaitu pukul 12:00) dengan waktu yang terlihat di cermin.
+            $$ 11:60 - 09:30 $$
+            <ul>
+                <li>Menit: $60 - 30 = 30$</li>
+                <li>Jam: $11 - 9 = 2$</li>
+            </ul>
+            Waktu sebenarnya adalah pukul <strong>2:30</strong> (setengah 3).`
+        },
+        {
+          id: 11,
+          topic: "Topic 1: Time Measurement",
+          question_en: "January has 31 days. If January 30th is a Friday, what day of the week is February 2nd of the same year?",
+          question_id: "Januari memiliki 31 hari. Jika tanggal 30 Januari adalah hari Jumat, hari apakah tanggal 2 Februari pada tahun yang sama?",
+          answer: "Monday / Senin",
+          explanation_en: `
+            Let's count forward day by day:
+            <ul>
+                <li>Jan 30 = Friday</li>
+                <li>Jan 31 = Saturday</li>
+                <li>Feb 1 = Sunday</li>
+                <li>Feb 2 = <strong>Monday</strong></li>
+            </ul>`,
+          explanation_id: `
+            Mari kita hitung maju hari demi hari:
+            <ul>
+                <li>30 Jan = Jumat</li>
+                <li>31 Jan = Sabtu</li>
+                <li>1 Feb = Minggu</li>
+                <li>2 Feb = <strong>Senin</strong></li>
+            </ul>`
+        },
+        {
+          id: 12,
+          topic: "Topic 1: Time Measurement",
+          question_en: "A carpenter takes 10 minutes to cut a wooden log into 2 pieces. How many minutes will it take him to cut the same log into 3 pieces? (Hint: Think about how many cuts he makes).",
+          question_id: "Seorang tukang kayu membutuhkan waktu 10 menit untuk memotong sebatang kayu menjadi 2 bagian. Berapa menit yang ia butuhkan untuk memotong kayu yang sama menjadi 3 bagian? (Petunjuk: Pikirkan berapa kali ia memotong).",
+          answer: "20 minutes / 20 menit",
+          explanation_en: `
+            <ul>
+                <li>To get 2 pieces, you need 1 cut. So, 1 cut = 10 minutes.</li>
+                <li>To get 3 pieces, you need 2 cuts.</li>
+                <li>Time = $2 \\text{ cuts} \\times 10 \\text{ minutes} = \\mathbf{20 \\text{ minutes}}$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li>Untuk mendapatkan 2 bagian, kamu butuh 1 potong. Jadi, 1 potong = 10 menit.</li>
+                <li>Untuk mendapatkan 3 bagian, kamu butuh 2 potong.</li>
+                <li>Waktu = $2 \\text{ potong} \\times 10 \\text{ menit} = \\mathbf{20 \\text{ menit}}$.</li>
+            </ul>`
+        },
+        {
+          id: 13,
+          topic: "Topic 1: Time Measurement",
+          question_en: "A movie is 2 hours long. It started at 1:45 PM. There was a 15-minute break in the middle. At what time did the movie finish?",
+          question_id: "Sebuah film berdurasi 2 jam. Film dimulai pukul 1:45 siang. Ada istirahat 15 menit di tengah-tengah. Pukul berapakah film tersebut selesai?",
+          answer: "4:00 PM",
+          explanation_en: `
+            Total time = Movie Duration + Break Time.
+            <ul>
+                <li>Total duration = 2 hours + 15 minutes.</li>
+                <li>Start time: 1:45.</li>
+                <li>Add 2 hours: 1:45 &rarr; 3:45.</li>
+                <li>Add 15 minutes: 3:45 + 15 mins = 3:60 = <strong>4:00 PM</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            Total waktu = Durasi Film + Waktu Istirahat.
+            <ul>
+                <li>Total durasi = 2 jam + 15 menit.</li>
+                <li>Waktu mulai: 1:45.</li>
+                <li>Tambah 2 jam: 1:45 &rarr; 3:45.</li>
+                <li>Tambah 15 menit: 3:45 + 15 menit = 3:60 = <strong>4:00 sore</strong>.</li>
+            </ul>`
+        },
+        {
+          id: 14,
+          topic: "Topic 1: Time Measurement",
+          question_en: "At 6:00, the hour hand and the minute hand form a straight line. How many minutes does the minute hand take to move from 12 to 6?",
+          question_id: "Pada pukul 6:00, jarum jam dan jarum menit membentuk garis lurus. Berapa menit yang dibutuhkan jarum panjang untuk bergerak dari angka 12 ke angka 6?",
+          answer: "30 minutes / 30 menit",
+          explanation_en: `
+            <ul>
+                <li>The minute hand (long hand) starts at 12.</li>
+                <li>Moving from 12 to 6 is exactly half a circle.</li>
+                <li>Half of 60 minutes is <strong>30 minutes</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li>Jarum menit (jarum panjang) mulai di 12.</li>
+                <li>Bergerak dari 12 ke 6 adalah persis setengah lingkaran.</li>
+                <li>Setengah dari 60 menit adalah <strong>30 menit</strong>.</li>
+            </ul>`
+        },
+        {
+          id: 15,
+          topic: "Topic 1: Time Measurement",
+          question_en: "A clock takes 12 seconds to chime 4 times at 4 o'clock. How many seconds will it take to chime 8 times at 8 o'clock? (Warning: Count the gaps/intervals, not the chimes!).",
+          question_id: "Sebuah jam membutuhkan waktu 12 detik untuk berdentang 4 kali pada pukul 4. Berapa detik waktu yang dibutuhkan untuk berdentang 8 kali pada pukul 8? (Peringatan: Hitung jedanya, bukan dentangnya!).",
+          answer: "28 seconds / 28 detik",
+          explanation_en: `
+            This is a "Fencepost Problem". Time is taken by the gaps between chimes.
+            <ul>
+                <li>4 chimes have 3 gaps.</li>
+                <li>3 gaps = 12 seconds &rarr; 1 gap = $12 \\div 3 = 4$ seconds.</li>
+                <li>8 chimes have 7 gaps.</li>
+                <li>Time = 7 gaps $\\times$ 4 seconds = <strong>28 seconds</strong>.</li>
+            </ul>`,
+          explanation_id: `
+            Ini adalah "Masalah Pagar". Waktu dihabiskan oleh jeda antar dentang.
+            <ul>
+                <li>4 dentang memiliki 3 jeda.</li>
+                <li>3 jeda = 12 detik &rarr; 1 jeda = $12 \\div 3 = 4$ detik.</li>
+                <li>8 dentang memiliki 7 jeda.</li>
+                <li>Waktu = 7 jeda $\\times$ 4 detik = <strong>28 detik</strong>.</li>
+            </ul>`
+        },
+        // =================================================================
+        // TOPIC 2: BASIC COMBINATORICS (15 Questions)
+        // =================================================================
+        {
+          id: 16,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "Lily has 2 hats (Red, White) and 3 dresses (Red, Blue, Yellow). She wants to wear a hat and a dress, but she <strong>does not</strong> want to wear the same color for both. How many different outfits can she choose?",
+          question_id: "Lily memiliki 2 topi (Merah, Putih) dan 3 gaun (Merah, Biru, Kuning). Dia ingin memakai satu topi dan satu gaun, tetapi dia <strong>tidak mau</strong> memakai warna yang sama untuk keduanya. Berapa banyak kombinasi pakaian yang bisa dia pilih?",
+          answer: "5",
+          explanation_en: `
+            Let's list all possibilities and cross out the ones with matching colors:
+            <ul>
+                <li>Red Hat + Red Dress (X - Same Color)</li>
+                <li>Red Hat + Blue Dress (OK)</li>
+                <li>Red Hat + Yellow Dress (OK)</li>
+                <li>White Hat + Red Dress (OK)</li>
+                <li>White Hat + Blue Dress (OK)</li>
+                <li>White Hat + Yellow Dress (OK)</li>
+            </ul>
+            Counting the "OK" items, we have $2 + 3 = \\mathbf{5}$ outfits.`,
+          explanation_id: `
+            Mari kita daftar semua kemungkinan dan coret yang warnanya sama:
+            <ul>
+                <li>Topi Merah + Gaun Merah (X - Warna Sama)</li>
+                <li>Topi Merah + Gaun Biru (OK)</li>
+                <li>Topi Merah + Gaun Kuning (OK)</li>
+                <li>Topi Putih + Gaun Merah (OK)</li>
+                <li>Topi Putih + Gaun Biru (OK)</li>
+                <li>Topi Putih + Gaun Kuning (OK)</li>
+            </ul>
+            Menghitung yang "OK", kita mendapatkan $2 + 3 = \\mathbf{5}$ pasang pakaian.`
+        },
+        {
+          id: 17,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "You have three number cards: 0, 2, and 5. How many different <strong>2-digit</strong> numbers can you form using these cards? (Each card can only be used once per number).",
+          question_id: "Kamu memiliki tiga kartu angka: 0, 2, dan 5. Berapa banyak bilangan <strong>2-angka</strong> berbeda yang bisa kamu buat menggunakan kartu-kartu ini? (Setiap kartu hanya boleh dipakai sekali per bilangan).",
+          answer: "4",
+          explanation_en: `
+            A 2-digit number cannot start with 0 (e.g., 02 is just 2, a 1-digit number).
+            <ul>
+                <li>Start with 2: 20, 25 (2 numbers)</li>
+                <li>Start with 5: 50, 52 (2 numbers)</li>
+                <li>Start with 0: Invalid.</li>
+            </ul>
+            Total = $2 + 2 = \\mathbf{4}$ numbers.`,
+          explanation_id: `
+            Bilangan 2-angka tidak boleh dimulai dengan angka 0 (contoh: 02 hanyalah 2, bilangan 1-angka).
+            <ul>
+                <li>Mulai dengan 2: 20, 25 (2 bilangan)</li>
+                <li>Mulai dengan 5: 50, 52 (2 bilangan)</li>
+                <li>Mulai dengan 0: Tidak valid.</li>
+            </ul>
+            Total = $2 + 2 = \\mathbf{4}$ bilangan.`
+        },
+        {
+          id: 18,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "There are 4 students: Andy, Budi, Cindy, and Dedi. They want to form a team of 2 people for a badminton match. How many different teams can they form?",
+          question_id: "Ada 4 siswa: Andy, Budi, Cindy, dan Dedi. Mereka ingin membentuk tim yang terdiri dari 2 orang untuk pertandingan bulu tangkis. Berapa banyak tim berbeda yang bisa mereka bentuk?",
+          answer: "6",
+          explanation_en: `
+            Let's form teams systematically to avoid duplicates (Andy-Budi is the same as Budi-Andy).
+            <ul>
+                <li>Teams with Andy: Andy-Budi, Andy-Cindy, Andy-Dedi (3 teams)</li>
+                <li>Teams with Budi (excluding Andy): Budi-Cindy, Budi-Dedi (2 teams)</li>
+                <li>Teams with Cindy (excluding Andy & Budi): Cindy-Dedi (1 team)</li>
+            </ul>
+            Total = $3 + 2 + 1 = \\mathbf{6}$ teams.`,
+          explanation_id: `
+            Mari bentuk tim secara berurutan agar tidak ada yang dobel (Andy-Budi sama dengan Budi-Andy).
+            <ul>
+                <li>Tim dengan Andy: Andy-Budi, Andy-Cindy, Andy-Dedi (3 tim)</li>
+                <li>Tim dengan Budi (tanpa Andy): Budi-Cindy, Budi-Dedi (2 tim)</li>
+                <li>Tim dengan Cindy (tanpa Andy & Budi): Cindy-Dedi (1 tim)</li>
+            </ul>
+            Total = $3 + 2 + 1 = \\mathbf{6}$ tim.`
+        },
+        {
+          id: 19,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "You have three weights: 1kg, 3kg, and 5kg. How many different total weights can you weigh by using one or more of these weights together?",
+          question_id: "Kamu memiliki tiga anak timbangan: 1kg, 3kg, dan 5kg. Berapa banyak berat total berbeda yang bisa kamu timbang dengan menggunakan satu atau lebih anak timbangan ini bersama-sama?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_jkp5zc_2584.png",
+          answer: "7",
+          explanation_en: `
+            <ul>
+                <li>Using 1 weight: 1, 3, 5 (3 distinct totals)</li>
+                <li>Using 2 weights: <br> $1+3=4$ <br> $1+5=6$ <br> $3+5=8$ (3 distinct totals)</li>
+                <li>Using 3 weights: <br> $1+3+5=9$ (1 distinct total)</li>
+            </ul>
+            All totals (1, 3, 5, 4, 6, 8, 9) are different. Total count = $3 + 3 + 1 = \\mathbf{7}$.`,
+          explanation_id: `
+            <ul>
+                <li>Pakai 1 timbangan: 1, 3, 5 (3 hasil)</li>
+                <li>Pakai 2 timbangan: <br> $1+3=4$ <br> $1+5=6$ <br> $3+5=8$ (3 hasil)</li>
+                <li>Pakai 3 timbangan: <br> $1+3+5=9$ (1 hasil)</li>
+            </ul>
+            Semua hasil (1, 3, 5, 4, 6, 8, 9) berbeda. Totalnya = $3 + 3 + 1 = \\mathbf{7}$.`
+        },
+        {
+          id: 20,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "An ant wants to go from A to B moving only Right or Down in a 2x2 grid. However, the center point is blocked. How many ways can the ant reach B?",
+          question_id: "Seekor semut ingin pergi dari A ke B hanya dengan bergerak ke Kanan atau ke Bawah pada grid 2x2. Namun, titik tengah diblokir. Ada berapa cara semut bisa sampai ke B?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_2oqz2z_9490.png",
+          answer: "2",
+          explanation_en: `
+            Normally, in a 2x2 grid, you can go through the middle. But the middle is blocked.
+            <ul>
+                <li>Path 1: Go all the way Right along the top edge, then all the way Down. (Valid)</li>
+                <li>Path 2: Go all the way Down along the left edge, then all the way Right. (Valid)</li>
+                <li>Any path trying to go Right-Down-Right or Down-Right-Down would hit the center block.</li>
+            </ul>
+            So, only the <strong>2</strong> outer paths are possible.`,
+          explanation_id: `
+            Biasanya, di grid 2x2, kita bisa lewat tengah. Tapi tengahnya diblokir.
+            <ul>
+                <li>Jalan 1: Jalan terus ke Kanan di pinggir atas, lalu turun ke Bawah. (Bisa)</li>
+                <li>Jalan 2: Jalan terus ke Bawah di pinggir kiri, lalu belok ke Kanan. (Bisa)</li>
+                <li>Jalan lain yang mencoba belok di tengah pasti menabrak blokir.</li>
+            </ul>
+            Jadi, hanya ada <strong>2</strong> jalan pinggir yang mungkin.`
+        },
+        {
+          id: 21,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "How many different ways can you arrange the letters A, B, and C in a row?",
+          question_id: "Ada berapa cara berbeda kamu bisa menyusun huruf A, B, dan C dalam satu baris?",
+          answer: "6",
+          explanation_en: `
+            Let's list all possible orders:
+            <ul>
+                <li>ABC, ACB (Starting with A)</li>
+                <li>BAC, BCA (Starting with B)</li>
+                <li>CAB, CBA (Starting with C)</li>
+            </ul>
+            Total = <strong>6</strong> ways.`,
+          explanation_id: `
+            Mari kita daftar semua urutan yang mungkin:
+            <ul>
+                <li>ABC, ACB (Mulai dengan A)</li>
+                <li>BAC, BCA (Mulai dengan B)</li>
+                <li>CAB, CBA (Mulai dengan C)</li>
+            </ul>
+            Total = <strong>6</strong> cara.`
+        },
+        {
+          id: 22,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "You have 2 colors (Red, Blue). You want to color 3 squares lined up in a row. Squares next to each other cannot have the same color. How many ways can you color them?",
+          question_id: "Kamu punya 2 warna (Merah, Biru). Kamu ingin mewarnai 3 kotak yang berbaris. Kotak yang bersebelahan tidak boleh memiliki warna yang sama. Ada berapa cara kamu bisa mewarnainya?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_gf1v2q_2058.png",
+          answer: "2",
+          explanation_en: `
+            <ul>
+                <li>If Square 1 is Red &rarr; Square 2 must be Blue &rarr; Square 3 must be Red. (Red-Blue-Red).</li>
+                <li>If Square 1 is Blue &rarr; Square 2 must be Red &rarr; Square 3 must be Blue. (Blue-Red-Blue).</li>
+            </ul>
+            Total = <strong>2</strong> ways.`,
+          explanation_id: `
+            <ul>
+                <li>Jika Kotak 1 Merah &rarr; Kotak 2 harus Biru &rarr; Kotak 3 harus Merah. (Merah-Biru-Merah).</li>
+                <li>Jika Kotak 1 Biru &rarr; Kotak 2 harus Merah &rarr; Kotak 3 harus Biru. (Biru-Merah-Biru).</li>
+            </ul>
+            Total = <strong>2</strong> cara.`
+        },
+        {
+          id: 23,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "How many numbers between 1 and 20 contain the digit 7?",
+          question_id: "Ada berapa bilangan antara 1 dan 20 yang memuat angka 7?",
+          answer: "2",
+          explanation_en: `
+            Let's check numbers from 1 to 20:
+            <ul>
+                <li>7 (Contains 7) - YES</li>
+                <li>17 (Contains 7) - YES</li>
+            </ul>
+            The numbers are 7 and 17. Total = <strong>2</strong>.`,
+          explanation_id: `
+            Mari kita cek bilangan dari 1 sampai 20:
+            <ul>
+                <li>7 (Memuat 7) - YA</li>
+                <li>17 (Memuat 7) - YA</li>
+            </ul>
+            Bilangannya adalah 7 dan 17. Total = <strong>2</strong>.`
+        },
+        {
+          id: 24,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "A basket contains an Apple, an Orange, and a Banana. You want to pick 2 different fruits. How many combinations can you pick?",
+          question_id: "Sebuah keranjang berisi Apel, Jeruk, dan Pisang. Kamu ingin mengambil 2 buah yang berbeda. Ada berapa kombinasi yang bisa kamu ambil?",
+          answer: "3",
+          explanation_en: `
+            The pairs are:
+            <ol>
+                <li>Apple + Orange</li>
+                <li>Apple + Banana</li>
+                <li>Orange + Banana</li>
+            </ol>
+            Total = <strong>3</strong> combinations.`,
+          explanation_id: `
+            Pasangannya adalah:
+            <ol>
+                <li>Apel + Jeruk</li>
+                <li>Apel + Pisang</li>
+                <li>Jeruk + Pisang</li>
+            </ol>
+            Total = <strong>3</strong> kombinasi.`
+        },
+        {
+          id: 25,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "A frog wants to climb a staircase with 4 steps. He can jump 1 step or 2 steps at a time. How many different ways can the frog reach the top?",
+          question_id: "Seekor katak ingin menaiki tangga yang memiliki 4 anak tangga. Ia bisa melompat 1 tangga atau 2 tangga sekaligus. Ada berapa cara berbeda katak tersebut bisa sampai ke puncak?",
+          answer: "5",
+          explanation_en: `
+            Let's list the jump sequences that sum to 4:
+            <ul>
+                <li>1-1-1-1 (4 single jumps)</li>
+                <li>1-1-2 (One double jump at end)</li>
+                <li>1-2-1 (Double jump in middle)</li>
+                <li>2-1-1 (Double jump at start)</li>
+                <li>2-2 (Two double jumps)</li>
+            </ul>
+            Total = <strong>5</strong> ways.`,
+          explanation_id: `
+            Mari kita daftar urutan lompatan yang jumlahnya 4:
+            <ul>
+                <li>1-1-1-1 (4 lompatan satu)</li>
+                <li>1-1-2 (Lompatan dua di akhir)</li>
+                <li>1-2-1 (Lompatan dua di tengah)</li>
+                <li>2-1-1 (Lompatan dua di awal)</li>
+                <li>2-2 (Dua lompatan dua)</li>
+            </ul>
+            Total = <strong>5</strong> cara.`
+        },
+        {
+          id: 26,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "How many 2-digit numbers are there where the sum of the digits is equal to 4?",
+          question_id: "Ada berapa banyak bilangan 2-angka yang jumlah digitnya sama dengan 4?",
+          answer: "4",
+          explanation_en: `
+            Pairs adding to 4 (First digit $\\neq$ 0):
+            <ul>
+                <li>(1,3) &rarr; 13, 31</li>
+                <li>(2,2) &rarr; 22</li>
+                <li>(4,0) &rarr; 40</li>
+            </ul>
+            Total <strong>4</strong>.`,
+          explanation_id: `
+            Pasangan yang jumlahnya 4 (Digit pertama $\\neq$ 0):
+            <ul>
+                <li>(1,3) &rarr; 13, 31</li>
+                <li>(2,2) &rarr; 22</li>
+                <li>(4,0) &rarr; 40</li>
+            </ul>
+            Total <strong>4</strong>.`
+        },
+        {
+          id: 27,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "In a line of animals, the Lion is 3rd from the front. The Zebra is 4th from the back. There are 2 animals standing between the Lion and the Zebra. The Lion is in front of the Zebra. How many animals are there in the line?",
+          question_id: "Dalam barisan hewan, Singa berada di urutan ke-3 dari depan. Zebra berada di urutan ke-4 dari belakang. Ada 2 hewan berdiri di antara Singa dan Zebra. Singa berada di depan Zebra. Berapa banyak hewan dalam barisan tersebut?",
+          answer: "9",
+          explanation_en: `
+            Line: 1, 2, Lion(3), 4, 5, Zebra(6), 7, 8, 9.
+            Zebra is 6th from front. If 4th from back, Total = $6 + 4 - 1 = \\mathbf{9}$.`,
+          explanation_id: `
+            Barisan: 1, 2, Singa(3), 4, 5, Zebra(6), 7, 8, 9.
+            Zebra urutan 6 dari depan. Jika 4 dari belakang, Total = $6 + 4 - 1 = \\mathbf{9}$.`
+        },
+        {
+          id: 28,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "Amy wants to pay \\$5 using only \\$1 and \\$2 coins. How many different ways can she pay?",
+          question_id: "Amy ingin membayar \\$5 hanya dengan menggunakan koin \\$1 dan \\$2. Ada berapa cara berbeda dia bisa membayar?",
+          answer: "3",
+          explanation_en: `
+            <ol>
+                <li>Five \\$1 coins.</li>
+                <li>Three \\$1 + One \\$2.</li>
+                <li>One \\$1 + Two \\$2.</li>
+            </ol>
+            Total <strong>3</strong>.`,
+          explanation_id: `
+            <ol>
+                <li>Lima koin \\$1.</li>
+                <li>Tiga koin \\$1 + Satu koin \\$2.</li>
+                <li>Satu koin \\$1 + Dua koin \\$2.</li>
+            </ol>
+            Total <strong>3</strong>.`
+        },
+        {
+          id: 29,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "How many squares of any size are there in the figure below (a 2x2 grid)?",
+          question_id: "Ada berapa banyak persegi dengan berbagai ukuran pada gambar di bawah ini (grid 2x2)?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_1sf9kb_6896.png",
+          answer: "5",
+          explanation_en: `
+            4 small squares + 1 big square = <strong>5</strong>.`,
+          explanation_id: `
+            4 persegi kecil + 1 persegi besar = <strong>5</strong>.`
+        },
+        {
+          id: 30,
+          topic: "Topic 2: Basic Combinatorics",
+          question_en: "In a box, there are many Red balls and Blue balls. If you pick balls with your eyes closed, what is the minimum number of balls you must pick to be sure you have 2 balls of the same color?",
+          question_id: "Di dalam sebuah kotak, terdapat banyak bola Merah dan bola Biru. Jika kamu mengambil bola dengan mata tertutup, berapa jumlah minimum bola yang harus kamu ambil untuk memastikan kamu mendapatkan 2 bola dengan warna yang sama?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_c8cbxq_695.png",
+          answer: "3",
+          explanation_en: `
+            Worst case: 1 Red, 1 Blue. The 3rd ball must match one of them. Total <strong>3</strong>.`,
+          explanation_id: `
+            Skenario terburuk: 1 Merah, 1 Biru. Bola ke-3 pasti cocok dengan salah satunya. Total <strong>3</strong>.`
+        }
+      ];
+
+      // Fungsi ini mengelompokkan soal berdasarkan topik dan memberi nomor urut
+      function getOrderedQuestions() {
+        const topics = [...new Set(questions.map((q) => q.topic))];
+        let ordered = [];
+        
+        topics.forEach((topic) => {
+          const questionsForTopic = questions.filter(
+            (q) => q.topic === topic
+          );
+          // Sort by original ID to keep order correct
+          questionsForTopic.sort((a, b) => a.id - b.id);
+          ordered = ordered.concat(questionsForTopic);
+        });
+        return ordered;
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+          problemsHTML += `
+                    <div class="item-container">
+                        <p><strong>${q.id}.</strong> ${q.question_en}`;
+          
+          if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Problem ${q.id}" class="problem-image">`;
+          }
+          
+          if (q.question_id) {
+            problemsHTML += `<br/><br/><span class="lang-id">${q.question_id}</span>`;
+          }
+          problemsHTML += `</p></div>`;
+
+          // Render Solusi
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+                    <div class="item-container">
+                        <p class="mb-2"><strong>Soal No. ${q.id}</strong></p>
+                        
+                        <!-- Solution Box Style -->
+                        <div class="solution-box">
+                            <span class="solution-header">Solution:</span>
+                            <div class="solution-text">
+                                ${q.explanation_en}
+                            </div>
+                            
+                            <div class="separator"></div>
+
+                            <span class="solution-header">Penyelesaian:</span>
+                            <div class="solution-text">
+                                ${q.explanation_id}
+                            </div>
+                        </div>
+
+                        <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+                    </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Re-run MathJax typesetting after content is loaded
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        } else if (
+          typeof MathJax !== "undefined" &&
+          MathJax.Hub &&
+          MathJax.Hub.Queue
+        ) {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      }
+
+      // Call renderContent when the DOM is ready
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
