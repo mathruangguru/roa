@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc;
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-container p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .item-container > p:last-child {
+        margin-bottom: 0;
+      }
+      /* Styling untuk area solusi */
+      .solution-box {
+        margin-top: 1rem;
+        border-left: 4px solid #4f46e5; /* Indigo accent */
+        background-color: #f9fafb;
+        padding: 1rem;
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #3730a3; /* Indigo-800 */
+        margin-bottom: 0.5rem;
+        display: block;
+        font-size: 1.05rem;
+      }
+      .solution-text {
+        color: #374151;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      .solution-text ul, .solution-text ol {
+        margin-left: 1.5rem;
+        list-style-type: disc;
+        margin-bottom: 0.5rem;
+      }
+      .solution-text li {
+        margin-bottom: 0.25rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+        display: block;
+        margin: 1rem auto;
+        border: 1px solid #e5e7eb;
+      }
+      .lang-id {
+        color: #4b5563; /* Gray-600 */
+        font-style: italic;
+        display: block;
+        margin-top: 0.5rem;
+      }
+      .separator {
+        border-top: 1px dashed #d1d5db;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 8
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Level: Grade 1-2 (Bar Models & Multiplication)
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Questions</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Data Soal (30 Soal Total)
+      const questions = [
+        // =================================================================
+        // TOPIC A: COMPARISON MODEL (15 Questions)
+        // =================================================================
+        {
+          id: 1,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Alice has 15 stickers. Bob has 8 more stickers than Alice. How many stickers do they have altogether?",
+          question_id: "Alice memiliki 15 stiker. Bob memiliki 8 stiker lebih banyak daripada Alice. Berapa jumlah stiker mereka berdua?",
+          answer: "38 stickers",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Alice has 15. Bob has $15 + 8 = 23$.</li>
+                <li><strong>Step 2:</strong> Total = Alice + Bob = $15 + 23 = 38$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Alice memiliki 15. Bob memiliki $15 + 8 = 23$.</li>
+                <li><strong>Langkah 2:</strong> Total = Alice + Bob = $15 + 23 = 38$.</li>
+            </ul>`
+        },
+        {
+          id: 2,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "A red ribbon is 24 cm long. A blue ribbon is 6 cm shorter than the red ribbon. What is the total length of the two ribbons?",
+          question_id: "Sebuah pita merah panjangnya 24 cm. Sebuah pita biru 6 cm lebih pendek dari pita merah. Berapa panjang total kedua pita tersebut?",
+          answer: "42 cm",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Find Blue ribbon length. $24 - 6 = 18$ cm.</li>
+                <li><strong>Step 2:</strong> Find Total length. $24 + 18 = 42$ cm.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Cari panjang pita Biru. $24 - 6 = 18$ cm.</li>
+                <li><strong>Langkah 2:</strong> Cari panjang Total. $24 + 18 = 42$ cm.</li>
+            </ul>`
+        },
+        {
+          id: 3,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Class 2A has 30 students. Class 2B has 4 more students than Class 2A. Class 2C has 5 fewer students than Class 2B. How many students are there in Class 2C?",
+          question_id: "Kelas 2A memiliki 30 siswa. Kelas 2B memiliki 4 siswa lebih banyak dari Kelas 2A. Kelas 2C memiliki 5 siswa lebih sedikit dari Kelas 2B. Berapa banyak siswa di Kelas 2C?",
+          answer: "29 students",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1 (Class 2B):</strong> $30 + 4 = 34$ students.</li>
+                <li><strong>Step 2 (Class 2C):</strong> $34 - 5 = 29$ students.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1 (Kelas 2B):</strong> $30 + 4 = 34$ siswa.</li>
+                <li><strong>Langkah 2 (Kelas 2C):</strong> $34 - 5 = 29$ siswa.</li>
+            </ul>`
+        },
+        {
+          id: 4,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Farmer Ben has 45 chickens. He has 12 fewer ducks than chickens. How many chickens and ducks does he have in total?",
+          question_id: "Petani Ben memiliki 45 ayam. Dia memiliki 12 bebek lebih sedikit daripada ayam. Berapa jumlah ayam dan bebek yang dimilikinya secara total?",
+          answer: "78",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1 (Ducks):</strong> Fewer means minus. $45 - 12 = 33$ ducks.</li>
+                <li><strong>Step 2 (Total):</strong> $45 \\text{ (chickens)} + 33 \\text{ (ducks)} = 78$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1 (Bebek):</strong> Lebih sedikit berarti dikurang. $45 - 12 = 33$ bebek.</li>
+                <li><strong>Langkah 2 (Total):</strong> $45 \\text{ (ayam)} + 33 \\text{ (bebek)} = 78$.</li>
+            </ul>`
+        },
+        {
+          id: 5,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Mary has 20 candies. Peter has 10 candies. How many candies must Mary give to Peter so that they have the same number of candies?",
+          question_id: "Mary memiliki 20 permen. Peter memiliki 10 permen. Berapa banyak permen yang harus diberikan Mary kepada Peter agar mereka memiliki jumlah permen yang sama?",
+          answer: "5 candies",
+          explanation_en: `
+            <p><strong>Method 1:</strong> Total candies = $20 + 10 = 30$. To be equal, each needs $30 \\div 2 = 15$. Mary has 20, she gives $20 - 15 = 5$.</p>
+            <p><strong>Method 2:</strong> Difference is $20 - 10 = 10$. Mary must give half the difference. $10 \\div 2 = 5$.</p>`,
+          explanation_id: `
+            <p><strong>Cara 1:</strong> Total permen = $20 + 10 = 30$. Agar sama rata, masing-masing harus punya $30 \\div 2 = 15$. Mary punya 20, dia memberikan $20 - 15 = 5$.</p>
+            <p><strong>Cara 2:</strong> Selisihnya adalah $20 - 10 = 10$. Mary harus memberikan setengah dari selisih tersebut. $10 \\div 2 = 5$.</p>`
+        },
+        {
+          id: 6,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "The sum of two numbers is 40. The difference between the two numbers is 10. Find the smaller number.",
+          question_id: "Jumlah dua bilangan adalah 40. Selisih antara kedua bilangan tersebut adalah 10. Temukan bilangan yang lebih kecil.",
+          answer: "15",
+          explanation_en: `
+            Formula: Smaller Number = (Sum - Difference) $\\div$ 2. <br>
+            Calculation: $(40 - 10) \\div 2 = 30 \\div 2 = 15$.`,
+          explanation_id: `
+            Rumus: Bilangan Kecil = (Jumlah - Selisih) $\\div$ 2. <br>
+            Perhitungan: $(40 - 10) \\div 2 = 30 \\div 2 = 15$.`
+        },
+        {
+          id: 7,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Tom has \\$50. He has \\$15 more than Jerry. How much money does Jerry have?",
+          question_id: "Tom memiliki \\$50. Dia memiliki \\$15 lebih banyak daripada Jerry. Berapa banyak uang yang dimiliki Jerry?",
+          answer: "\\$35",
+          explanation_en: `
+            "Tom has \\$15 more than Jerry" means Tom is bigger, Jerry is smaller. <br>
+            Jerry = Tom - 15 = 50 - 15 = 35.`,
+          explanation_id: `
+            "Tom punya \\$15 lebih banyak dari Jerry" berarti Tom lebih besar, Jerry lebih kecil. <br>
+            Jerry = Tom - 15 = 50 - 15 = 35.`
+        },
+        {
+          id: 8,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "A toy car costs \\$12. A doll costs \\$5 more than the toy car. A robot costs \\$8 more than the doll. How much does the robot cost?",
+          question_id: "Sebuah mobil mainan harganya \\$12. Sebuah boneka harganya \\$5 lebih mahal dari mobil mainan. Sebuah robot harganya \\$8 lebih mahal dari boneka. Berapa harga robot tersebut?",
+          answer: "\\$25",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Doll = $12 + 5 = 17$.</li>
+                <li><strong>Step 2:</strong> Robot = $17 + 8 = 25$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Boneka = $12 + 5 = 17$.</li>
+                <li><strong>Langkah 2:</strong> Robot = $17 + 8 = 25$.</li>
+            </ul>`
+        },
+        {
+          id: 9,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "There are 18 boys in a library. There are 25 girls in the library. 7 girls leave the library. How many more girls than boys are there in the library now?",
+          question_id: "Ada 18 anak laki-laki di perpustakaan. Ada 25 anak perempuan di perpustakaan. 7 anak perempuan meninggalkan perpustakaan. Berapa lebihnya jumlah anak perempuan dibanding anak laki-laki di perpustakaan sekarang?",
+          answer: "0",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Girls now = $25 - 7 = 18$.</li>
+                <li><strong>Step 2:</strong> Compare Girls (18) and Boys (18). The difference is $18 - 18 = 0$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Anak perempuan sekarang = $25 - 7 = 18$.</li>
+                <li><strong>Langkah 2:</strong> Bandingkan Anak perempuan (18) dan Laki-laki (18). Selisihnya $18 - 18 = 0$.</li>
+            </ul>`
+        },
+        {
+          id: 10,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Amy and Ben have 60 marbles altogether. Amy has 40 marbles. How many fewer marbles does Ben have than Amy?",
+          question_id: "Amy dan Ben memiliki total 60 kelereng. Amy memiliki 40 kelereng. Berapa lebih sedikit kelereng yang dimiliki Ben dibandingkan Amy?",
+          answer: "20 fewer marbles",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Find Ben's marbles. Total - Amy = $60 - 40 = 20$.</li>
+                <li><strong>Step 2:</strong> Compare Amy (40) and Ben (20). $40 - 20 = 20$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Cari kelereng Ben. Total - Amy = $60 - 40 = 20$.</li>
+                <li><strong>Langkah 2:</strong> Bandingkan Amy (40) dan Ben (20). $40 - 20 = 20$.</li>
+            </ul>`
+        },
+        {
+          id: 11,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Book A has 100 pages. Book B has 20 pages fewer than Book A. Book C has 15 pages more than Book B. How many pages does Book C have?",
+          question_id: "Buku A memiliki 100 halaman. Buku B memiliki 20 halaman lebih sedikit dari Buku A. Buku C memiliki 15 halaman lebih banyak dari Buku B. Berapa halaman yang dimiliki Buku C?",
+          answer: "95 pages",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Book B = $100 - 20 = 80$.</li>
+                <li><strong>Step 2:</strong> Book C = $80 + 15 = 95$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Buku B = $100 - 20 = 80$.</li>
+                <li><strong>Langkah 2:</strong> Buku C = $80 + 15 = 95$.</li>
+            </ul>`
+        },
+        {
+          id: 12,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Box A has 32 apples. Box B has 18 apples. How many apples must be moved from Box A to Box B so that both boxes have the same number of apples?",
+          question_id: "Kotak A berisi 32 apel. Kotak B berisi 18 apel. Berapa banyak apel yang harus dipindahkan dari Kotak A ke Kotak B agar kedua kotak memiliki jumlah apel yang sama?",
+          answer: "7 apples",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Find the difference. $32 - 18 = 14$.</li>
+                <li><strong>Step 2:</strong> Move half the difference. $14 \\div 2 = 7$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Cari selisihnya. $32 - 18 = 14$.</li>
+                <li><strong>Langkah 2:</strong> Pindahkan setengah dari selisihnya. $14 \\div 2 = 7$.</li>
+            </ul>`
+        },
+        {
+          id: 13,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "Lucy is 8 years old. Her brother is 3 years older than her. What is the sum of their ages?",
+          question_id: "Lucy berusia 8 tahun. Kakak laki-lakinya 3 tahun lebih tua darinya. Berapa jumlah usia mereka?",
+          answer: "19 years",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Brother's age = $8 + 3 = 11$.</li>
+                <li><strong>Step 2:</strong> Sum = $8 + 11 = 19$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Usia kakak = $8 + 3 = 11$.</li>
+                <li><strong>Langkah 2:</strong> Jumlah = $8 + 11 = 19$.</li>
+            </ul>`
+        },
+        {
+          id: 14,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "There are 35 red balloons and 20 blue balloons. 10 red balloons burst. How many more red balloons than blue balloons are left?",
+          question_id: "Ada 35 balon merah dan 20 balon biru. 10 balon merah meletus. Berapa lebihnya balon merah dibanding balon biru yang tersisa?",
+          answer: "5",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Red balloons left = $35 - 10 = 25$.</li>
+                <li><strong>Step 2:</strong> Difference = $25 - 20 = 5$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Balon merah tersisa = $35 - 10 = 25$.</li>
+                <li><strong>Langkah 2:</strong> Selisih = $25 - 20 = 5$.</li>
+            </ul>`
+        },
+        // Soal Non-Rutin: Cryptarithm (Fixed LaTeX and Newlines)
+        {
+          id: 15,
+          topic: "Part A: Problem Solving - Comparison Model & Logic",
+          question_en: "If $A$ and $B$ are two different digits, find the value of $B$ in the addition shown below.<br><br>$$ \\begin{array}{c@{\\,}c@{\\,}c} & A & A \\\\ + & A & B \\\\ \\hline & 7 & 2 \\end{array} $$",
+          question_id: "Jika $A$ dan $B$ adalah dua angka berbeda, tentukan nilai dari $B$ pada penjumlahan di bawah ini.<br><br>$$ \\begin{array}{c@{\\,}c@{\\,}c} & A & A \\\\ + & A & B \\\\ \\hline & 7 & 2 \\end{array} $$",
+          answer: "9",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1 (Tens Column):</strong> We see that $A + A$ results in 7. Since $A$ must be a whole digit (0-9), $A+A$ cannot be 7 exactly (because 3.5 is not a digit). This means there must be a "carry over" of 1 from the ones column.</li>
+                <li><strong>Step 2:</strong> So, $A + A + 1 = 7$. This means $2 \\times A = 6$, so <strong>$A = 3$</strong>.</li>
+                <li><strong>Step 3 (Ones Column):</strong> Now we look at the ones column: $A + B$ ends in 2. Since $A = 3$, we have $3 + B$ ends in 2.</li>
+                <li><strong>Step 4:</strong> Because we had a carry over to the tens column, the sum must be 12, not just 2.</li>
+                <li><strong>Step 5:</strong> $3 + B = 12$, so $B = 12 - 3 = 9$.</li>
+                <li><strong>Check:</strong> $33 + 39 = 72$. Correct.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1 (Kolom Puluhan):</strong> Kita lihat bahwa $A + A$ menghasilkan 7. Karena $A$ adalah angka bulat (0-9), $A+A$ tidak mungkin pas 7 (karena 3,5 bukan digit). Artinya, pasti ada "simpanan 1" (carry) dari kolom satuan.</li>
+                <li><strong>Langkah 2:</strong> Jadi, $A + A + 1 = 7$. Artinya $2 \\times A = 6$, sehingga <strong>$A = 3$</strong>.</li>
+                <li><strong>Langkah 3 (Kolom Satuan):</strong> Sekarang lihat kolom satuan: $A + B$ berakhiran 2. Karena $A = 3$, maka $3 + B$ berakhiran 2.</li>
+                <li><strong>Langkah 4:</strong> Karena tadi ada simpanan ke kolom puluhan, maka jumlahnya pasti 12, bukan hanya 2.</li>
+                <li><strong>Langkah 5:</strong> $3 + B = 12$, sehingga $B = 12 - 3 = 9$.</li>
+                <li><strong>Cek:</strong> $33 + 39 = 72$. Benar.</li>
+            </ul>`
+        },
+
+        // =================================================================
+        // TOPIC B: INTRODUCTION TO MULTIPLICATION (15 Questions)
+        // =================================================================
+        {
+          id: 16,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "Write the following addition as a multiplication sentence: $4 + 4 + 4 + 4 + 4$.",
+          question_id: "Tuliskan penjumlahan berikut sebagai kalimat perkalian: $4 + 4 + 4 + 4 + 4$.",
+          answer: "$5 \\times 4$",
+          explanation_en: `There are 5 groups of number 4. Notation: $5 \\times 4$.`,
+          explanation_id: `Ada 5 kelompok angka 4. Notasi: $5 \\times 4$.`
+        },
+        {
+          id: 17,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "There are 5 groups. Each group has 3 stars. How many stars are there in total?",
+          question_id: "Ada 5 kelompok. Setiap kelompok memiliki 3 bintang. Berapa jumlah total bintang yang ada?",
+          answer: "15",
+          explanation_en: `5 groups $\\times$ 3 stars = $5 \\times 3 = 15$.`,
+          explanation_id: `5 kelompok $\\times$ 3 bintang = $5 \\times 3 = 15$.`
+        },
+        {
+          id: 18,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "A rabbit has 4 legs. How many legs do 6 rabbits have?",
+          question_id: "Seekor kelinci memiliki 4 kaki. Berapa jumlah kaki yang dimiliki 6 ekor kelinci?",
+          answer: "24",
+          explanation_en: `6 rabbits $\\times$ 4 legs = $6 \\times 4 = 24$.`,
+          explanation_id: `6 kelinci $\\times$ 4 kaki = $6 \\times 4 = 24$.`
+        },
+        {
+          id: 19,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "Which is greater: $3 \\times 6$ or $4 \\times 5$?",
+          question_id: "Manakah yang lebih besar: $3 \\times 6$ atau $4 \\times 5$?",
+          answer: "$4 \\times 5$",
+          explanation_en: `$3 \\times 6 = 18$ and $4 \\times 5 = 20$. Since 20 > 18, $4 \\times 5$ is greater.`,
+          explanation_id: `$3 \\times 6 = 18$ dan $4 \\times 5 = 20$. Karena 20 > 18, maka $4 \\times 5$ lebih besar.`
+        },
+        {
+          id: 20,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "Find the missing number: $2 + 2 + 2 + 2 + 2 = \\square \\times 2$.",
+          question_id: "Temukan bilangan yang hilang: $2 + 2 + 2 + 2 + 2 = \\square \\times 2$.",
+          answer: "5",
+          explanation_en: `The number 2 appears 5 times. So it is $5 \\times 2$.`,
+          explanation_id: `Angka 2 muncul 5 kali. Jadi $5 \\times 2$.`
+        },
+        {
+          id: 21,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "A tricycle has 3 wheels. How many wheels do 7 tricycles have?",
+          question_id: "Sebuah sepeda roda tiga memiliki 3 roda. Berapa jumlah roda yang dimiliki 7 sepeda roda tiga?",
+          answer: "21",
+          explanation_en: `7 tricycles $\\times$ 3 wheels = $7 \\times 3 = 21$.`,
+          explanation_id: `7 sepeda roda tiga $\\times$ 3 roda = $7 \\times 3 = 21$.`
+        },
+        {
+          id: 22,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "Complete the pattern: $3, 6, 9, 12, \\square, 18$.",
+          question_id: "Lengkapi pola berikut: $3, 6, 9, 12, \\square, 18$.",
+          answer: "15",
+          explanation_en: `Skip counting by 3: 3, 6, 9, 12, <strong>15</strong>, 18.`,
+          explanation_id: `Kelipatan 3: 3, 6, 9, 12, <strong>15</strong>, 18.`
+        },
+        {
+          id: 23,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "Mrs. Tan buys 4 bags of apples. There are 5 apples in each bag. She also buys 2 loose apples. How many apples does she have in total?",
+          question_id: "Ibu Tan membeli 4 kantong apel. Ada 5 apel di setiap kantong. Dia juga membeli 2 apel satuan. Berapa jumlah total apel yang dia miliki?",
+          answer: "22",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> Bags = $4 \\times 5 = 20$.</li>
+                <li><strong>Step 2:</strong> Total = $20 + 2 = 22$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> Kantong = $4 \\times 5 = 20$.</li>
+                <li><strong>Langkah 2:</strong> Total = $20 + 2 = 22$.</li>
+            </ul>`
+        },
+        {
+          id: 24,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "$5 \\times 8$ is the same as $8 \\times \\square$. What is $\\square$?",
+          question_id: "$5 \\times 8$ sama dengan $8 \\times \\square$. Berapakah $\\square$?",
+          answer: "5",
+          explanation_en: `Commutative property: $a \\times b = b \\times a$. So $5 \\times 8 = 8 \\times 5$.`,
+          explanation_id: `Sifat komutatif: $a \\times b = b \\times a$. Jadi $5 \\times 8 = 8 \\times 5$.`
+        },
+        {
+          id: 25,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "A spider has 8 legs. A fly has 6 legs. How many legs do 2 spiders and 1 fly have altogether?",
+          question_id: "Seekor laba-laba memiliki 8 kaki. Seekor lalat memiliki 6 kaki. Berapa jumlah kaki yang dimiliki 2 laba-laba dan 1 lalat secara bersamaan?",
+          answer: "22",
+          explanation_en: `Spiders: $2 \\times 8 = 16$. Fly: $1 \\times 6 = 6$. Total: $16 + 6 = 22$.`,
+          explanation_id: `Laba-laba: $2 \\times 8 = 16$. Lalat: $1 \\times 6 = 6$. Total: $16 + 6 = 22$.`
+        },
+        {
+          id: 26,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "If $\\Delta + \\Delta + \\Delta = 12$, what is the value of $\\Delta \\times 5$?",
+          question_id: "Jika $\\Delta + \\Delta + \\Delta = 12$, berapakah nilai dari $\\Delta \\times 5$?",
+          answer: "20",
+          explanation_en: `$3 \\times \\Delta = 12$, so $\\Delta = 4$. Then $\\Delta \\times 5 = 4 \\times 5 = 20$.`,
+          explanation_id: `$3 \\times \\Delta = 12$, jadi $\\Delta = 4$. Maka $\\Delta \\times 5 = 4 \\times 5 = 20$.`
+        },
+        {
+          id: 27,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "There are 3 boxes. Each box contains 2 red balls and 3 blue balls. How many balls are there in total?",
+          question_id: "Ada 3 kotak. Setiap kotak berisi 2 bola merah dan 3 bola biru. Berapa jumlah total bola yang ada?",
+          answer: "15",
+          explanation_en: `
+            <ul>
+                <li><strong>Step 1:</strong> 1 box = $2 + 3 = 5$ balls.</li>
+                <li><strong>Step 2:</strong> 3 boxes = $3 \\times 5 = 15$ balls.</li>
+            </ul>`,
+          explanation_id: `
+            <ul>
+                <li><strong>Langkah 1:</strong> 1 kotak = $2 + 3 = 5$ bola.</li>
+                <li><strong>Langkah 2:</strong> 3 kotak = $3 \\times 5 = 15$ bola.</li>
+            </ul>`
+        },
+        {
+          id: 28,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "John plants trees in a row. He plants 6 trees. The distance between each tree is 2 meters. What is the distance from the first tree to the last tree?",
+          question_id: "John menanam pohon dalam satu baris. Dia menanam 6 pohon. Jarak antara setiap pohon adalah 2 meter. Berapa jarak dari pohon pertama ke pohon terakhir?",
+          answer: "10 meters",
+          explanation_en: `6 trees create 5 gaps/spaces. Distance = $5 \\times 2 = 10$ m.`,
+          explanation_id: `6 pohon membentuk 5 celah/jarak. Jarak total = $5 \\times 2 = 10$ m.`
+        },
+        {
+          id: 29,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "One week has 7 days. How many days are there in 4 weeks?",
+          question_id: "Satu minggu ada 7 hari. Berapa hari yang ada dalam 4 minggu?",
+          answer: "28",
+          explanation_en: `$4 \\text{ weeks} \\times 7 \\text{ days} = 28$ days.`,
+          explanation_id: `$4 \\text{ minggu} \\times 7 \\text{ hari} = 28$ hari.`
+        },
+        {
+          id: 30,
+          topic: "Part B: Introduction to Multiplication",
+          question_en: "$4 \\times 6 = 24$. Use this fact to find the value of $4 \\times 7$. (Hint: Add one more group of 4).",
+          question_id: "$4 \\times 6 = 24$. Gunakan fakta ini untuk menemukan nilai dari $4 \\times 7$. (Petunjuk: Tambahkan satu kelompok 4 lagi).",
+          answer: "28",
+          explanation_en: `$4 \\times 7$ is one group of 4 more than $4 \\times 6$. $24 + 4 = 28$.`,
+          explanation_id: `$4 \\times 7$ adalah satu kelompok 4 lebih banyak dari $4 \\times 6$. $24 + 4 = 28$.`
+        }
+      ];
+
+      // Fungsi ini mengelompokkan soal berdasarkan topik dan memberi nomor urut
+      function getOrderedQuestions() {
+        const topics = [...new Set(questions.map((q) => q.topic))];
+        let ordered = [];
+        
+        topics.forEach((topic) => {
+          const questionsForTopic = questions.filter(
+            (q) => q.topic === topic
+          );
+          // Sort by original ID to keep order correct
+          questionsForTopic.sort((a, b) => a.id - b.id);
+          ordered = ordered.concat(questionsForTopic);
+        });
+        return ordered;
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+          problemsHTML += `
+                    <div class="item-container">
+                        <p><strong>${q.id}.</strong> ${q.question_en}`;
+                    if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Problem ${q.id}" class="problem-image">`;
+          }
+          
+          if (q.question_id) {
+            problemsHTML += `<br/><br/><span class="lang-id">${q.question_id}</span>`;
+          }
+          problemsHTML += `</p></div>`;
+
+          // Render Solusi
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+                    <div class="item-container">
+                        <p class="mb-2"><strong>Soal No. ${q.id}</strong></p>
+                        
+                        <!-- Solution Box Style -->
+                        <div class="solution-box">
+                            <span class="solution-header">Solution:</span>
+                            <div class="solution-text">
+                                ${q.explanation_en}
+                            </div>
+                            
+                            <div class="separator"></div>
+
+                            <span class="solution-header">Penyelesaian:</span>
+                            <div class="solution-text">
+                                ${q.explanation_id}
+                            </div>
+                        </div>
+
+                        <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+                    </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Re-run MathJax typesetting after content is loaded
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        } else if (
+          typeof MathJax !== "undefined" &&
+          MathJax.Hub &&
+          MathJax.Hub.Queue
+        ) {
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      }
+
+      // Call renderContent when the DOM is ready
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
