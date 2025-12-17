@@ -70,8 +70,8 @@
         border-radius: 0.375rem;
       }
       .item-container {
-        margin-bottom: 1.75rem;
-        padding-bottom: 1.75rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
         border-bottom: 1px solid #e5e7eb;
       }
       .item-container:last-child {
@@ -84,18 +84,35 @@
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
       }
-      .solution-step p {
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
+      .solution-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        margin-top: 1rem;
       }
-      .solution-step ul {
-        margin-top: 0.5rem;
+      .solution-header {
+        font-weight: 700;
+        color: #4338ca;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 2px solid #e0e7ff;
+        padding-bottom: 0.5rem;
+      }
+      .concept-box {
+        background-color: #eef2ff;
+        border-left: 4px solid #6366f1;
+        padding: 0.75rem;
         margin-bottom: 1rem;
+        font-size: 0.95rem;
       }
-      .solution-step ul li {
-        line-height: 1.7;
-        padding-left: 0.5rem;
-        margin-bottom: 0.3rem;
+      .step-list {
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+      }
+      .step-list li {
+        margin-bottom: 0.25rem;
+        line-height: 1.6;
       }
       .final-answer {
         font-weight: 700;
@@ -104,23 +121,16 @@
         padding: 0.5rem 1rem;
         border-radius: 6px;
         display: inline-block;
-        margin-top: 1rem;
-      }
-      .concept {
-        background-color: #eef2ff;
-        border-left: 4px solid #4f46e5;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 0.25rem;
+        margin-top: 0.5rem;
       }
       .image-desc {
-        background-color: #fffbeb; /* yellow-50 */
-        border: 1px dashed #d97706; /* yellow-600 */
+        background-color: #fffbeb;
+        border: 1px dashed #d97706;
         padding: 10px;
         margin: 15px 0;
         border-radius: 4px;
         font-style: italic;
-        color: #92400e; /* yellow-800 */
+        color: #92400e;
         text-align: center;
         font-size: 0.95rem;
       }
@@ -134,19 +144,31 @@
       .lang-id {
         display: block;
         margin-top: 0.5rem;
-        color: #4b5563; /* gray-600 */
+        color: #4b5563;
         font-style: normal;
         font-weight: 500;
       }
       .non-routine-badge {
-        background-color: #fef08a; /* yellow-200 */
-        color: #854d0e; /* yellow-800 */
+        background-color: #fef08a;
+        color: #854d0e;
         font-size: 0.8rem;
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
         font-weight: 700;
         margin-right: 0.5rem;
         vertical-align: middle;
+      }
+      /* Styling for bilingual separation */
+      .lang-section {
+        margin-bottom: 1rem;
+      }
+      .lang-label {
+        font-weight: 600;
+        color: #374151; /* gray-700 */
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
       }
     </style>
   </head>
@@ -190,22 +212,31 @@
         // TOPIK 1: PENGENALAN PEMBAGIAN (15 SOAL)
         // ==========================================
         
-        // --- 5 Soal Awal (Phase 1) ---
         {
           topic: "Topic 1: Division Concepts & Applications",
           question_en: "A long ribbon is 20 meters long. Mother cuts it into smaller pieces of 4 meters each. How many cuts does she need to make?",
           question_id: "Sebuah pita panjang memiliki panjang 20 meter. Ibu memotongnya menjadi potongan-potongan kecil yang masing-masing panjangnya 4 meter. Berapa kali Ibu harus memotong pita tersebut?",
           image_desc: "(Ilustrasi: Garis panjang mendatar. Ada garis putus-putus (bekas gunting) setiap 4m. Total ada 5 bagian pita, tapi hanya ada 4 garis putus-putus/gunting.)",
           answer: "4 cuts / 4 kali potong",
-          explanation: `<div class="concept">
-                          <p><strong>Concept:</strong> Number of Cuts = Number of Pieces - 1.</p>
-                         </div>
-                         <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Pieces = $20 \\div 4 = 5$ pieces.</li>
-                               <li><b>Step 2:</b> Cuts = $5 - 1 = 4$ cuts.</li>
-                            </ul>
-                         </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Number of Cuts = Number of Pieces - 1.</p>
+                <p><strong>Konsep:</strong> Jumlah Kali Potong = Jumlah Potongan - 1.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Find number of pieces: Total Length ÷ Length per piece = $20 \\div 4 = 5$ pieces.</li>
+                    <li><b>Step 2:</b> Find number of cuts: Cuts = Pieces - 1 = $5 - 1 = 4$ cuts.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Cari jumlah potongan: Total Panjang ÷ Panjang per potong = $20 \\div 4 = 5$ potongan.</li>
+                    <li><b>Langkah 2:</b> Cari jumlah kali potong: Kali Potong = Potongan - 1 = $5 - 1 = 4$ kali potong.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -213,14 +244,27 @@
           question_id: "Kotak A memiliki 20 bola. Kotak B memiliki 6 bola. Berapa banyak bola yang harus dipindahkan dari Kotak A ke Kotak B agar kedua kotak memiliki jumlah bola yang sama?",
           image_desc: null,
           answer: "7 balls / 7 bola",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Find the equal amount first.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Total = $20 + 6 = 26$.</li>
-                               <li><b>Step 2:</b> Target per box = $26 \\div 2 = 13$.</li>
-                               <li><b>Step 3:</b> Move = $20 - 13 = 7$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Find the equal amount first (Average).</p>
+                <p><strong>Konsep:</strong> Cari jumlah rata-rata (jumlah yang sama) terlebih dahulu.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Total balls = $20 + 6 = 26$.</li>
+                    <li><b>Step 2:</b> Target per box = $26 \\div 2 = 13$.</li>
+                    <li><b>Step 3:</b> Move needed = Current A - Target = $20 - 13 = 7$ balls.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Total bola = $20 + 6 = 26$.</li>
+                    <li><b>Langkah 2:</b> Target per kotak = $26 \\div 2 = 13$.</li>
+                    <li><b>Langkah 3:</b> Pindah = Jumlah A sekarang - Target = $20 - 13 = 7$ bola.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -228,13 +272,27 @@
           question_id: "<strong>(Non-Rutin)</strong> 5 kucing dapat menangkap 5 tikus dalam 5 menit. Berapa menit yang dibutuhkan 10 kucing untuk menangkap 10 tikus?",
           image_desc: null,
           answer: "5 minutes / 5 menit",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Rate problem. Each cat works independently.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> 5 cats, 5 mice, 5 mins $\\rightarrow$ 1 cat, 1 mouse, 5 mins.</li>
-                               <li><b>Step 2:</b> 10 cats, 10 mice $\\rightarrow$ Still 5 mins because they work at the same time.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Rate problem. Cats work independently and simultaneously.</p>
+                <p><strong>Konsep:</strong> Masalah kecepatan kerja. Kucing bekerja secara mandiri dan bersamaan.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> "5 cats, 5 mice, 5 minutes" means each cat takes 5 minutes to catch 1 mouse.</li>
+                    <li><b>Step 2:</b> If we have 10 cats and 10 mice, each cat still catches 1 mouse.</li>
+                    <li><b>Step 3:</b> Since they work at the same time, it still takes 5 minutes.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> "5 kucing, 5 tikus, 5 menit" berarti setiap kucing butuh 5 menit untuk menangkap 1 tikus.</li>
+                    <li><b>Langkah 2:</b> Jika ada 10 kucing dan 10 tikus, setiap kucing tetap menangkap 1 tikus.</li>
+                    <li><b>Langkah 3:</b> Karena mereka bekerja bersamaan, waktunya tetap 5 menit.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -242,13 +300,27 @@
           question_id: "Ada beberapa permen di dalam toples. Jika kita memasukkan 4 permen ke dalam setiap kantong, tersisa 2 permen. Jika kita memasukkan 5 permen ke dalam setiap kantong, tersisa 1 permen. Berapakah jumlah permen paling sedikit yang mungkin ada di dalam toples?",
           image_desc: null,
           answer: "6 candies / 6 permen",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Trial and error with remainders.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Multiples of 5 plus 1: 1, 6, 11, 16...</li>
-                               <li><b>Step 2:</b> Check division by 4. $6 \\div 4 = 1$ rem 2. (Correct).</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Trial and error with remainders.</p>
+                <p><strong>Konsep:</strong> Coba-coba dengan sisa pembagian.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> List numbers that divide by 5 with remainder 1: 1, 6, 11, 16...</li>
+                    <li><b>Step 2:</b> Check which number divides by 4 with remainder 2.</li>
+                    <li><b>Step 3:</b> Test 6: $6 \\div 4 = 1$ remainder 2. It matches!</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Daftar angka yang dibagi 5 sisa 1: 1, 6, 11, 16...</li>
+                    <li><b>Langkah 2:</b> Cek angka mana yang dibagi 4 sisa 2.</li>
+                    <li><b>Langkah 3:</b> Coba 6: $6 \\div 4 = 1$ sisa 2. Cocok!</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -256,24 +328,55 @@
           question_id: "Seorang petani memiliki ayam dan sapi. Ada 10 hewan secara total. Jika total kakinya ada 28, berapa banyak ayam yang ada?",
           image_desc: null,
           answer: "6 chickens / 6 ayam",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Assumption Method.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Assume all 10 are chickens (2 legs). Legs = $10 \\times 2 = 20$.</li>
-                               <li><b>Step 2:</b> Shortage = $28 - 20 = 8$ legs.</li>
-                               <li><b>Step 3:</b> Cows = $8 \\div 2 = 4$. Chickens = $10 - 4 = 6$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Assumption Method.</p>
+                <p><strong>Konsep:</strong> Metode Pengandaian.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Assume all 10 are chickens (2 legs). Total legs = $10 \\times 2 = 20$.</li>
+                    <li><b>Step 2:</b> Shortage = $28 - 20 = 8$ legs.</li>
+                    <li><b>Step 3:</b> Each cow has 2 more legs than a chicken. Cows = $8 \\div 2 = 4$.</li>
+                    <li><b>Step 4:</b> Chickens = Total - Cows = $10 - 4 = 6$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Anggap semua 10 hewan adalah ayam (2 kaki). Total kaki = $10 \\times 2 = 20$.</li>
+                    <li><b>Langkah 2:</b> Kekurangan = $28 - 20 = 8$ kaki.</li>
+                    <li><b>Langkah 3:</b> Setiap sapi punya 2 kaki lebih banyak dari ayam. Sapi = $8 \\div 2 = 4$.</li>
+                    <li><b>Langkah 4:</b> Ayam = Total - Sapi = $10 - 4 = 6$.</li>
+                </ul>
+            </div>`
         },
-
-        // --- 5 Soal Tambahan (Phase 2) ---
         {
           topic: "Topic 1: Division Concepts & Applications",
           question_en: "A baker has 30 buns. He packs them into boxes of 6. How many boxes does he need?",
           question_id: "Seorang tukang roti memiliki 30 roti. Dia mengemasnya ke dalam kotak yang berisi 6 roti. Berapa banyak kotak yang dia butuhkan?",
           image_desc: null,
           answer: "5 boxes / 5 kotak",
-          explanation: `<div class="solution-step"><ul><li>$30 \\div 6 = 5$.</li></ul></div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Simple Division.</p>
+                <p><strong>Konsep:</strong> Pembagian Sederhana.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Total $\\div$ Group Size = $30 \\div 6$.</li>
+                    <li><b>Step 2:</b> Answer = 5 boxes.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Total $\\div$ Isi per kotak = $30 \\div 6$.</li>
+                    <li><b>Langkah 2:</b> Jawaban = 5 kotak.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -281,13 +384,25 @@
           question_id: "Ada 10 tiang lampu di sepanjang jalan lurus. Jarak antara setiap dua tiang lampu adalah 5 meter. Berapakah jarak dari tiang lampu pertama ke tiang lampu terakhir?",
           image_desc: "(Ilustrasi: Garis lurus dengan titik-titik (tiang). Antara tiang 1 dan 2 ada jarak '5m'. Tunjukkan bahwa ada 9 jeda/celah untuk 10 tiang.)",
           answer: "45 meters / 45 meter",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Number of gaps = $N - 1$.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Gaps = $10 - 1 = 9$.</li>
-                               <li><b>Step 2:</b> Distance = $9 \\times 5 = 45$ meters.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Number of gaps = Number of items - 1.</p>
+                <p><strong>Konsep:</strong> Jumlah celah = Jumlah benda - 1.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Find gaps for 10 posts: $10 - 1 = 9$ gaps.</li>
+                    <li><b>Step 2:</b> Total distance = $9 \\text{ gaps} \\times 5 \\text{ m} = 45$ meters.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Cari celah untuk 10 tiang: $10 - 1 = 9$ celah.</li>
+                    <li><b>Langkah 2:</b> Total jarak = $9 \\text{ celah} \\times 5 \\text{ m} = 45$ meter.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -295,12 +410,25 @@
           question_id: "Satu minggu ada 7 hari. Jika hari ini adalah Senin, hari apa 15 hari lagi?",
           image_desc: null,
           answer: "Tuesday / Selasa",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> $15 \\div 7 = 2$ remainder $1$.</li>
-                               <li><b>Step 2:</b> 1 day after Monday is Tuesday.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Division with Remainder (Cycles).</p>
+                <p><strong>Konsep:</strong> Pembagian dengan Sisa (Siklus).</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> $15 \\div 7 = 2$ weeks remainder $1$ day.</li>
+                    <li><b>Step 2:</b> Count 1 day after Monday $\\rightarrow$ Tuesday.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> $15 \\div 7 = 2$ minggu sisa $1$ hari.</li>
+                    <li><b>Langkah 2:</b> Hitung 1 hari setelah Senin $\\rightarrow$ Selasa.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -308,12 +436,25 @@
           question_id: "3 pulpen harganya 12 koin. Berapa harga 5 pulpen?",
           image_desc: null,
           answer: "20 coins / 20 koin",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> 1 pen = $12 \\div 3 = 4$ coins.</li>
-                               <li><b>Step 2:</b> 5 pens = $5 \\times 4 = 20$ coins.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Unitary Method (Find cost of 1 item).</p>
+                <p><strong>Konsep:</strong> Metode Satuan (Cari harga 1 barang).</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Cost of 1 pen = $12 \\div 3 = 4$ coins.</li>
+                    <li><b>Step 2:</b> Cost of 5 pens = $5 \\times 4 = 20$ coins.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Harga 1 pulpen = $12 \\div 3 = 4$ koin.</li>
+                    <li><b>Langkah 2:</b> Harga 5 pulpen = $5 \\times 4 = 20$ koin.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -321,31 +462,53 @@
           question_id: "<strong>(Non-Rutin)</strong> Saya punya sebuah bilangan. Jika saya membaginya dengan 2, lalu membagi hasilnya lagi dengan 2, saya mendapatkan 3. Berapakah bilangan itu?",
           image_desc: "(Diagram alur terbalik: [3] --> (x2) --> [6] --> (x2) --> [12].)",
           answer: "12",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Working Backwards.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> $3 \\times 2 = 6$.</li>
-                               <li><b>Step 2:</b> $6 \\times 2 = 12$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Working Backwards (Reverse operations).</p>
+                <p><strong>Konsep:</strong> Bekerja Mundur (Balikkan operasi).</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Start with result 3. Reverse "divide by 2" $\\rightarrow$ $3 \\times 2 = 6$.</li>
+                    <li><b>Step 2:</b> Reverse first "divide by 2" $\\rightarrow$ $6 \\times 2 = 12$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Mulai dari 3. Balikkan "bagi 2" $\\rightarrow$ $3 \\times 2 = 6$.</li>
+                    <li><b>Langkah 2:</b> Balikkan "bagi 2" pertama $\\rightarrow$ $6 \\times 2 = 12$.</li>
+                </ul>
+            </div>`
         },
-
-        // --- 5 Soal Tambahan (Phase 3 - FINAL) ---
         {
           topic: "Topic 1: Division Concepts & Applications",
           question_en: "<strong>(Non-Routine)</strong> It takes 6 minutes to saw a log into 3 pieces. How many minutes does it take to saw the same log into 6 pieces?",
           question_id: "<strong>(Non-Rutin)</strong> Dibutuhkan waktu 6 menit untuk memotong kayu menjadi 3 bagian. Berapa menit yang dibutuhkan untuk memotong kayu yang sama menjadi 6 bagian?",
           image_desc: "(Ilustrasi: Kayu dipotong menjadi 3 bagian memerlukan 2 gergajian. Kayu dipotong menjadi 6 bagian memerlukan 5 gergajian.)",
           answer: "15 minutes / 15 menit",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Pay attention to the number of 'cuts', not pieces. (3 pieces = 2 cuts).</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> To get 3 pieces, you need 2 cuts.</li>
-                               <li><b>Step 2:</b> Time per cut = $6 \\text{ mins} \\div 2 \\text{ cuts} = 3$ minutes/cut.</li>
-                               <li><b>Step 3:</b> To get 6 pieces, you need 5 cuts.</li>
-                               <li><b>Step 4:</b> Total time = $5 \\text{ cuts} \\times 3 \\text{ mins} = 15$ minutes.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Cuts vs Pieces. 3 pieces = 2 cuts.</p>
+                <p><strong>Konsep:</strong> Potongan vs Kali Potong. 3 bagian = 2 kali potong.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> 3 pieces require 2 cuts. So, 6 mins for 2 cuts = 3 mins/cut.</li>
+                    <li><b>Step 2:</b> 6 pieces require 5 cuts.</li>
+                    <li><b>Step 3:</b> Total time = $5 \\text{ cuts} \\times 3 \\text{ mins} = 15$ mins.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> 3 bagian butuh 2 potong. Jadi, 6 menit untuk 2 potong = 3 menit/potong.</li>
+                    <li><b>Langkah 2:</b> 6 bagian butuh 5 potong.</li>
+                    <li><b>Langkah 3:</b> Total waktu = $5 \\text{ potong} \\times 3 \\text{ menit} = 15$ menit.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -353,17 +516,27 @@
           question_id: "Siswa di kelas sedang berbaris. Jika mereka berkelompok 3-3, tersisa 1 siswa. Jika mereka berkelompok 4-4, tidak ada siswa tersisa. Jumlah siswa kurang dari 20. Berapa jumlah siswa di sana?",
           image_desc: null,
           answer: "16 students / 16 siswa",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Multiples of 4 less than 20: 4, 8, 12, 16.</li>
-                               <li><b>Step 2:</b> Check 'divide by 3 remainder 1':</li>
-                               <li>$4 \\div 3 = 1$ rem 1 (Possible but too small usually, let's check others) - Wait, question implies a group exists. 4 works. But typically in these problems, we look for larger logical numbers. Let's check 16.</li>
-                               <li>$16 \\div 3 = 5$ rem 1. (Fits well).</li>
-                               <li>$12 \\div 3 = 4$ rem 0.</li>
-                               <li>$8 \\div 3 = 2$ rem 2.</li>
-                               <li><b>Conclusion:</b> 16 (and 4) work. 16 is the standard answer for a 'class size'.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Multiples and Remainders.</p>
+                <p><strong>Konsep:</strong> Kelipatan dan Sisa.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Multiples of 4 less than 20: 4, 8, 12, 16.</li>
+                    <li><b>Step 2:</b> Find which one has remainder 1 when divided by 3.</li>
+                    <li><b>Step 3:</b> Test 16: $16 \\div 3 = 5$ remainder 1. Correct.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Kelipatan 4 kurang dari 20: 4, 8, 12, 16.</li>
+                    <li><b>Langkah 2:</b> Cari yang jika dibagi 3 bersisa 1.</li>
+                    <li><b>Langkah 3:</b> Coba 16: $16 \\div 3 = 5$ sisa 1. Benar.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -371,15 +544,27 @@
           question_id: "Becak memiliki 3 roda dan sepeda memiliki 2 roda. Ada 5 kendaraan di taman dan total rodanya ada 12. Berapa banyak sepeda yang ada?",
           image_desc: null,
           answer: "3 bicycles / 3 sepeda",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Assumption Method.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Assume all 5 are tricycles (3 wheels). Total = 15 wheels.</li>
-                               <li><b>Step 2:</b> Excess = $15 - 12 = 3$ wheels.</li>
-                               <li><b>Step 3:</b> Replace tricycle with bicycle (remove 1 wheel). We need to remove 3 wheels.</li>
-                               <li><b>Step 4:</b> So there are 3 bicycles. (Check: 3 bikes x 2 = 6. 2 trikes x 3 = 6. 6+6=12. Correct).</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Assumption Method.</p>
+                <p><strong>Konsep:</strong> Metode Pengandaian.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Assume all 5 are tricycles (3 wheels). Total = $5 \\times 3 = 15$ wheels.</li>
+                    <li><b>Step 2:</b> Excess = $15 - 12 = 3$ wheels.</li>
+                    <li><b>Step 3:</b> Replacing a tricycle with a bicycle removes 1 wheel. Remove 3 wheels = 3 bicycles.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Anggap semua becak (3 roda). Total = $5 \\times 3 = 15$ roda.</li>
+                    <li><b>Langkah 2:</b> Kelebihan = $15 - 12 = 3$ roda.</li>
+                    <li><b>Langkah 3:</b> Mengganti becak dengan sepeda mengurangi 1 roda. Kurangi 3 roda = 3 sepeda.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -387,13 +572,27 @@
           question_id: "Bagilah angka 18 dengan sebuah angka, hasilnya 3. Bagilah angka 18 dengan angka lain, hasilnya 2. Berapakah jumlah dari kedua angka pembagi tersebut?",
           image_desc: null,
           answer: "15",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> $18 \\div ? = 3 \\rightarrow ? = 6$.</li>
-                               <li><b>Step 2:</b> $18 \\div ? = 2 \\rightarrow ? = 9$.</li>
-                               <li><b>Step 3:</b> Sum = $6 + 9 = 15$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Finding Divisors.</p>
+                <p><strong>Konsep:</strong> Mencari Pembagi.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> $18 \\div ? = 3 \\rightarrow$ Divisor is 6.</li>
+                    <li><b>Step 2:</b> $18 \\div ? = 2 \\rightarrow$ Divisor is 9.</li>
+                    <li><b>Step 3:</b> Sum = $6 + 9 = 15$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> $18 \\div ? = 3 \\rightarrow$ Pembagi adalah 6.</li>
+                    <li><b>Langkah 2:</b> $18 \\div ? = 2 \\rightarrow$ Pembagi adalah 9.</li>
+                    <li><b>Langkah 3:</b> Jumlah = $6 + 9 = 15$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 1: Division Concepts & Applications",
@@ -401,35 +600,60 @@
           question_id: "Ada 15 apel. Ibu memasukkannya ke dalam kantong. Setiap kantong harus berisi jumlah apel yang sama, dan harus ada lebih dari 1 kantong tetapi kurang dari 15 kantong. Berapa banyak apel yang bisa ada di setiap kantong?",
           image_desc: null,
           answer: "3 or 5 apples / 3 atau 5 apel",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Factors of 15.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Factors of 15 are 1, 3, 5, 15.</li>
-                               <li><b>Step 2:</b> We cannot have 1 bag (all in one) or 15 bags (1 in each).</li>
-                               <li><b>Step 3:</b> So we can have 3 bags (5 apples each) or 5 bags (3 apples each).</li>
-                               <li><b>Answer:</b> The number of apples per bag can be 3 or 5.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Factors.</p>
+                <p><strong>Konsep:</strong> Faktor.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Factors of 15 are 1, 3, 5, 15.</li>
+                    <li><b>Step 2:</b> Exclude 1 bag (15 apples/bag) and 15 bags (1 apple/bag).</li>
+                    <li><b>Step 3:</b> Possibilities: 3 bags (5 apples each) or 5 bags (3 apples each).</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Faktor dari 15 adalah 1, 3, 5, 15.</li>
+                    <li><b>Langkah 2:</b> Coret 1 kantong (isi 15) dan 15 kantong (isi 1).</li>
+                    <li><b>Langkah 3:</b> Kemungkinan: 3 kantong (isi 5) atau 5 kantong (isi 3).</li>
+                </ul>
+            </div>`
         },
 
         // ==========================================
         // TOPIK 2: LOGIKA UMUR (15 SOAL)
         // ==========================================
 
-        // --- 5 Soal Awal (Phase 1) ---
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
           question_en: "When Jerry was 6 years old, his sister was half his age. Jerry is now 15 years old. How old is his sister now?",
           question_id: "Ketika Jerry berusia 6 tahun, adiknya berusia setengah dari usianya. Jerry sekarang berusia 15 tahun. Berapa umur adiknya sekarang?",
           image_desc: null,
           answer: "12 years old / 12 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Constant Difference. $6 \\div 2 = 3$. Gap is 3 years.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Sister was 3. Gap is 3.</li>
-                               <li><b>Step 2:</b> Now Jerry is 15. Sister = $15 - 3 = 12$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Constant Difference.</p>
+                <p><strong>Konsep:</strong> Selisih Tetap.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Sister's past age = $6 \\div 2 = 3$.</li>
+                    <li><b>Step 2:</b> Age gap = $6 - 3 = 3$ years.</li>
+                    <li><b>Step 3:</b> Jerry now is 15. Sister = $15 - 3 = 12$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Umur adik dulu = $6 \\div 2 = 3$.</li>
+                    <li><b>Langkah 2:</b> Selisih umur = $6 - 3 = 3$ tahun.</li>
+                    <li><b>Langkah 3:</b> Jerry sekarang 15. Adik = $15 - 3 = 12$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -437,14 +661,27 @@
           question_id: "3 tahun yang lalu, jumlah umur Alice dan Bob adalah 15. Berapakah jumlah umur mereka 2 tahun dari sekarang?",
           image_desc: null,
           answer: "25 years / 25 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Everyone grows older.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Time passed = 3 years (to now) + 2 years (future) = 5 years.</li>
-                               <li><b>Step 2:</b> 2 people $\\times$ 5 years = +10 years total.</li>
-                               <li><b>Step 3:</b> $15 + 10 = 25$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Everyone grows older.</p>
+                <p><strong>Konsep:</strong> Semua orang bertambah tua.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Time passed = 3 years (to now) + 2 years (to future) = 5 years.</li>
+                    <li><b>Step 2:</b> Total increase = 2 people $\\times$ 5 years = +10 years.</li>
+                    <li><b>Step 3:</b> New Sum = $15 + 10 = 25$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Waktu berlalu = 3 tahun (ke sekarang) + 2 tahun (ke depan) = 5 tahun.</li>
+                    <li><b>Langkah 2:</b> Total tambah = 2 orang $\\times$ 5 tahun = +10 tahun.</li>
+                    <li><b>Langkah 3:</b> Jumlah Baru = $15 + 10 = 25$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -452,12 +689,25 @@
           question_id: "Ayah 32 tahun lebih tua dari Ibu. Ibu 25 tahun lebih tua dari Anak Laki-laki. Anak Laki-laki berusia 7 tahun. Berapa umur Ayah?",
           image_desc: null,
           answer: "64 years old / 64 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Mum = $7 + 25 = 32$.</li>
-                               <li><b>Step 2:</b> Dad = $32 + 32 = 64$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Substitution.</p>
+                <p><strong>Konsep:</strong> Substitusi.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Mum = Son + 25 = $7 + 25 = 32$.</li>
+                    <li><b>Step 2:</b> Dad = Mum + 32 = $32 + 32 = 64$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Ibu = Anak + 25 = $7 + 25 = 32$.</li>
+                    <li><b>Langkah 2:</b> Ayah = Ibu + 32 = $32 + 32 = 64$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -465,13 +715,27 @@
           question_id: "Jumlah umur Ayah dan Ibu adalah 70. 5 tahun yang lalu, Ayah 4 tahun lebih tua dari Ibu. Berapa umur Ibu sekarang?",
           image_desc: null,
           answer: "33 years old / 33 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Difference (4 years) is always constant.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Sum = 70, Diff = 4.</li>
-                               <li><b>Step 2:</b> Mother (younger) = $(70 - 4) \\div 2 = 33$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Age Difference is constant.</p>
+                <p><strong>Konsep:</strong> Selisih Umur selalu tetap.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Sum = 70. Difference = 4 (even today).</li>
+                    <li><b>Step 2:</b> Mother (younger) = (Sum - Diff) $\\div$ 2.</li>
+                    <li><b>Step 3:</b> Mother = $(70 - 4) \\div 2 = 66 \\div 2 = 33$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Jumlah = 70. Selisih = 4 (tetap sama).</li>
+                    <li><b>Langkah 2:</b> Ibu (lebih muda) = (Jumlah - Selisih) $\\div$ 2.</li>
+                    <li><b>Langkah 3:</b> Ibu = $(70 - 4) \\div 2 = 66 \\div 2 = 33$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -479,28 +743,53 @@
           question_id: "<strong>(Non-Rutin)</strong> Dalam sebuah keluarga, ada 2 ayah dan 2 anak laki-laki. Mereka pergi memancing dan masing-masing menangkap 3 ikan. Berapa jumlah total minimum ikan yang mereka tangkap?",
           image_desc: "(Diagram keluarga: Kakek -> Ayah -> Anak. Tunjukkan bahwa Ayah memiliki peran ganda.)",
           answer: "9 fish / 9 ikan",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Overlapping roles (Grandfather - Father - Son).</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> There are only 3 people: Grandfather, Father, Son.</li>
-                               <li><b>Step 2:</b> Fish = $3 \\times 3 = 9$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Overlapping Roles.</p>
+                <p><strong>Konsep:</strong> Peran Ganda.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> To assume minimum people: Grandfather, Father, Son.</li>
+                    <li><b>Step 2:</b> Grandfather is a father. Father is both a son and a father. Son is a son.</li>
+                    <li><b>Step 3:</b> Total 3 people $\\times$ 3 fish = 9 fish.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Asumsi jumlah orang minimum: Kakek, Ayah, Anak.</li>
+                    <li><b>Langkah 2:</b> Kakek adalah ayah. Ayah adalah anak dan ayah. Anak adalah anak.</li>
+                    <li><b>Langkah 3:</b> Total 3 orang $\\times$ 3 ikan = 9 ikan.</li>
+                </ul>
+            </div>`
         },
-
-        // --- 5 Soal Tambahan (Phase 2) ---
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
           question_en: "Tom is 8 years old. He is 2 years older than Ben. Ben is 3 years younger than Sue. How old is Sue?",
           question_id: "Tom berusia 8 tahun. Dia 2 tahun lebih tua dari Ben. Ben 3 tahun lebih muda dari Sue. Berapa umur Sue?",
           image_desc: "(Bar Model: Tom [8], Ben [6], Sue [9].)",
           answer: "9 years old / 9 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Ben = $8 - 2 = 6$.</li>
-                               <li><b>Step 2:</b> Sue = $6 + 3 = 9$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Sequential Comparison.</p>
+                <p><strong>Konsep:</strong> Perbandingan Berurutan.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Tom = 8. Tom is 2 older than Ben $\\rightarrow$ Ben = $8 - 2 = 6$.</li>
+                    <li><b>Step 2:</b> Ben is 3 younger than Sue $\\rightarrow$ Sue = $6 + 3 = 9$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Tom = 8. Tom 2th lebih tua dari Ben $\\rightarrow$ Ben = $8 - 2 = 6$.</li>
+                    <li><b>Langkah 2:</b> Ben 3th lebih muda dari Sue $\\rightarrow$ Sue = $6 + 3 = 9$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -508,12 +797,25 @@
           question_id: "Jumlah umur Amy dan ibunya adalah 40. Dalam 10 tahun, berapakah jumlah umur mereka?",
           image_desc: null,
           answer: "60 years / 60 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> 2 people $\\times$ 10 years = +20 years.</li>
-                               <li><b>Step 2:</b> $40 + 20 = 60$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Total Increase = Years $\\times$ People.</p>
+                <p><strong>Konsep:</strong> Total Kenaikan = Tahun $\\times$ Orang.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> 2 people $\\times$ 10 years = +20 years total.</li>
+                    <li><b>Step 2:</b> New Sum = $40 + 20 = 60$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> 2 orang $\\times$ 10 tahun = +20 tahun total.</li>
+                    <li><b>Langkah 2:</b> Jumlah Baru = $40 + 20 = 60$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -521,12 +823,25 @@
           question_id: "Seorang ayah umurnya 4 kali umur anaknya. Anaknya berusia 5 tahun. Berapa umur ayah ketika anak itu lahir?",
           image_desc: null,
           answer: "15 years old / 15 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Father now = $4 \\times 5 = 20$.</li>
-                               <li><b>Step 2:</b> When son born (5 years ago) = $20 - 5 = 15$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Age Difference.</p>
+                <p><strong>Konsep:</strong> Selisih Umur.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Father's age now = $4 \\times 5 = 20$.</li>
+                    <li><b>Step 2:</b> Age when son born = $20 - 5 = 15$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Umur ayah sekarang = $4 \\times 5 = 20$.</li>
+                    <li><b>Langkah 2:</b> Umur saat anak lahir = $20 - 5 = 15$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -534,12 +849,25 @@
           question_id: "Tiga bersaudara tinggal bersama. Dua di antaranya kembar. Jumlah umur mereka 30. Saudara yang tidak kembar berusia 10 tahun. Berapa umur si kembar?",
           image_desc: null,
           answer: "10 years old / 10 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Twins total = $30 - 10 = 20$.</li>
-                               <li><b>Step 2:</b> One twin = $20 \\div 2 = 10$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Twins have equal age.</p>
+                <p><strong>Konsep:</strong> Anak kembar umurnya sama.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Twins total sum = $30 - 10 = 20$.</li>
+                    <li><b>Step 2:</b> One twin = $20 \\div 2 = 10$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Jumlah umur kembar = $30 - 10 = 20$.</li>
+                    <li><b>Langkah 2:</b> Satu anak kembar = $20 \\div 2 = 10$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -547,27 +875,49 @@
           question_id: "<strong>(Non-Rutin)</strong> Nenek merayakan ulang tahunnya hanya sekali setiap 4 tahun. Dia telah merayakannya sebanyak 15 kali (tidak termasuk hari kelahirannya). Berapa umurnya?",
           image_desc: null,
           answer: "60 years old / 60 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Leap year birthday (Feb 29).</li>
-                               <li><b>Step 2:</b> Age = $15 \\times 4 = 60$ years.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Leap Year (Feb 29).</p>
+                <p><strong>Konsep:</strong> Tahun Kabisat (29 Feb).</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> 15 celebrations $\\times$ 4 years gap.</li>
+                    <li><b>Step 2:</b> $15 \\times 4 = 60$ years old.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> 15 perayaan $\\times$ jarak 4 tahun.</li>
+                    <li><b>Langkah 2:</b> $15 \\times 4 = 60$ tahun.</li>
+                </ul>
+            </div>`
         },
-
-        // --- 5 Soal Tambahan (Phase 3 - FINAL) ---
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
           question_en: "John was born in 2010. How old will he be in 2025?",
           question_id: "John lahir pada tahun 2010. Berapa umurnya pada tahun 2025?",
           image_desc: null,
           answer: "15 years old / 15 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Age = Current Year - Birth Year.</li>
-                               <li><b>Step 2:</b> $2025 - 2010 = 15$.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Time difference.</p>
+                <p><strong>Konsep:</strong> Selisih waktu.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> $2025 - 2010 = 15$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> $2025 - 2010 = 15$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -575,12 +925,25 @@
           question_id: "Mary berusia 5 tahun. Kakak laki-lakinya 3 tahun lebih tua darinya. Berapakah jumlah umur mereka?",
           image_desc: null,
           answer: "13 years / 13 tahun",
-          explanation: `<div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Brother = $5 + 3 = 8$ years old.</li>
-                               <li><b>Step 2:</b> Sum = $5 + 8 = 13$ years.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Simple Addition.</p>
+                <p><strong>Konsep:</strong> Penjumlahan Sederhana.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Brother = $5 + 3 = 8$.</li>
+                    <li><b>Step 2:</b> Sum = $5 + 8 = 13$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Kakak = $5 + 3 = 8$.</li>
+                    <li><b>Langkah 2:</b> Jumlah = $5 + 8 = 13$.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -588,14 +951,27 @@
           question_id: "Ketika saya lahir, ayah saya berusia 28 tahun. Sekarang umurnya dua kali umur saya. Berapa umur saya?",
           image_desc: "(Bar Model: [Saya] vs [Ayah]=[Saya]+[28]. Tapi Ayah juga = [Saya]+[Saya]. Jadi [Saya] = 28.)",
           answer: "28 years old / 28 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> The difference is 28. If Dad is double my age ($2u$), and I am $1u$, the difference ($1u$) is 28.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Age difference = 28 years.</li>
-                               <li><b>Step 2:</b> If Dad = 2 $\\times$ Me, then Difference = Me.</li>
-                               <li><b>Step 3:</b> So I am 28 years old.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Difference is constant.</p>
+                <p><strong>Konsep:</strong> Selisih selalu tetap.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Age difference = 28 years.</li>
+                    <li><b>Step 2:</b> If Dad = 2 $\\times$ Me, the difference is 1 unit (Me).</li>
+                    <li><b>Step 3:</b> So, I am 28.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Selisih umur = 28 tahun.</li>
+                    <li><b>Langkah 2:</b> Jika Ayah = 2 $\\times$ Saya, selisihnya adalah 1 bagian (Saya).</li>
+                    <li><b>Langkah 3:</b> Jadi, saya 28 tahun.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -603,15 +979,27 @@
           question_id: "Umur tiga bersaudara adalah 5, 7, dan 9 tahun. Dalam berapa tahun lagikah jumlah umur mereka akan menjadi 30?",
           image_desc: null,
           answer: "3 years / 3 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Gap in Sum divided by Number of People.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> Current Sum = $5 + 7 + 9 = 21$.</li>
-                               <li><b>Step 2:</b> Target Sum = 30. Difference = $30 - 21 = 9$.</li>
-                               <li><b>Step 3:</b> There are 3 siblings. Each contributes 1 year per year.</li>
-                               <li><b>Step 4:</b> Years needed = $9 \\div 3 = 3$ years.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Gap divided by people.</p>
+                <p><strong>Konsep:</strong> Selisih dibagi jumlah orang.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> Current Sum = $5 + 7 + 9 = 21$.</li>
+                    <li><b>Step 2:</b> Gap needed = $30 - 21 = 9$.</li>
+                    <li><b>Step 3:</b> Years = $9 \\div 3 \\text{ people} = 3$ years.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Jumlah Sekarang = $5 + 7 + 9 = 21$.</li>
+                    <li><b>Langkah 2:</b> Kekurangan = $30 - 21 = 9$.</li>
+                    <li><b>Langkah 3:</b> Tahun = $9 \\div 3 \\text{ orang} = 3$ tahun.</li>
+                </ul>
+            </div>`
         },
         {
           topic: "Topic 2: Problem Solving (Age Logic)",
@@ -619,20 +1007,31 @@
           question_id: "Kakak perempuan saya berusia 12 tahun. Umur saya 1/3 dari umurnya. Berapa umur saya ketika dia berusia 20 tahun?",
           image_desc: null,
           answer: "12 years old / 12 tahun",
-          explanation: `<div class="concept"><p><strong>Concept:</strong> Find constant difference first.</p></div>
-                        <div class="solution-step">
-                            <ul>
-                               <li><b>Step 1:</b> My current age = $12 \\div 3 = 4$ years old.</li>
-                               <li><b>Step 2:</b> Age difference = $12 - 4 = 8$ years.</li>
-                               <li><b>Step 3:</b> When she is 20, I am still 8 years younger.</li>
-                               <li><b>Step 4:</b> My age = $20 - 8 = 12$ years old.</li>
-                            </ul>
-                        </div>`
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Constant Difference.</p>
+                <p><strong>Konsep:</strong> Selisih Tetap.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">English Steps:</p>
+                <ul class="step-list">
+                    <li><b>Step 1:</b> My age = $12 \\div 3 = 4$.</li>
+                    <li><b>Step 2:</b> Difference = $12 - 4 = 8$ years.</li>
+                    <li><b>Step 3:</b> When she is 20, I am $20 - 8 = 12$.</li>
+                </ul>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Langkah Bahasa Indonesia:</p>
+                <ul class="step-list">
+                    <li><b>Langkah 1:</b> Umur saya = $12 \\div 3 = 4$.</li>
+                    <li><b>Langkah 2:</b> Selisih = $12 - 4 = 8$ tahun.</li>
+                    <li><b>Langkah 3:</b> Saat dia 20, saya $20 - 8 = 12$.</li>
+                </ul>
+            </div>`
         }
       ];
 
       function getOrderedQuestions() {
-        // Map questions to give them sequential IDs based on their position in the final array
         return questions.map((q, index) => {
             q.id = index + 1;
             return q;
@@ -692,8 +1091,8 @@
           }
 
           solutionsHTML += `
-            <div class="item-container">
-                <p><strong>No. ${q.id}</strong></p>
+            <div class="solution-box">
+                <div class="solution-header">Solution / Penyelesaian No. ${q.id}</div>
                 ${q.explanation}
                 <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
             </div>`;
