@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan OSNK SMP: Geometri & Transformasi</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 9cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+      .page::before {
+        content: "";
+        /* Logo Mathchamps sebagai watermark background */
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before {
+        opacity: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--secondary-text);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 5px;
+        margin-top: 25px;
+      }
+      h3 {
+        font-size: 14pt;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .materi-konten {
+        display: block;
+        text-align: justify;
+      }
+      .soal-latihan,
+      .soal-latihan-n {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 25px;
+        break-inside: avoid;
+        padding-bottom: 10px;
+      }
+      .soal-latihan > b,
+      .soal-latihan-n > b {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+      .soal-wrapper {
+        flex-grow: 1;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .options {
+        padding-left: 0px;
+        margin-top: 10px;
+        display: block;
+      }
+      .options div {
+        margin-bottom: 5px;
+        padding-left: 20px;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+      .kategori-soal {
+        text-align: center;
+        font-size: 18pt;
+        font-weight: 700;
+        margin: 20px 0;
+        border-top: 2px solid var(--primary-text);
+        border-bottom: 2px solid var(--primary-text);
+        padding: 10px 0;
+      }
+      .pembahasan {
+        background-color: #f9f9f9;
+        border-left: 4px solid #4caf50;
+        padding: 15px;
+        margin-top: 10px;
+        text-align: justify;
+        font-size: 11pt;
+      }
+      .rumus-box {
+        background-color: #e3f2fd;
+        border-left: 4px solid #2196f3;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 11pt;
+      }
+      table.table-materi {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      table.table-materi th,
+      table.table-materi td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      table.table-materi th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      ul.checklist {
+        list-style-type: none;
+        padding-left: 10px;
+      }
+      ul.checklist li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+      ul.checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #4caf50;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .soal-image {
+        display: block;
+        max-width: 100%;
+        max-height: 200px; /* Batasi tinggi agar tidak memakan tempat */
+        height: auto;
+        margin: 10px auto;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+          page-break-after: always;
+        }
+        .page:last-child {
+          page-break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Halaman Sampul -->
+    <section class="page cover-page">
+      <div
+        class="content-wrapper"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <!-- Logo Mathchamps -->
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
+          alt="Mathchamps Logo"
+          class="cover-image"
+        />
+        <h1 class="cover-title">
+          Geometri & Transformasi<br />Latihan OSNK SMP
+        </h1>
+        <p class="cover-subtitle">
+          Modul Lengkap: Bangun Datar, Ruang, & Koordinat
+        </p>
+      </div>
+    </section>
+
+    <!-- MATERI 1A - Halaman 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 1a: Garis, Sudut & Pythagoras (1/2)</h1>
+        <div class="materi-konten">
+          <h2>1. Hubungan Antar Sudut</h2>
+          <p>Memahami sifat sudut sangat penting untuk menyelesaikan soal geometri dasar.</p>
+          <ul class="checklist">
+            <li><b>Sudut Berpelurus (Suplemen):</b> Dua sudut yang jumlahnya $180^\circ$ (membentuk garis lurus).</li>
+            <li><b>Sudut Berpenyiku (Komplemen):</b> Dua sudut yang jumlahnya $90^\circ$ (membentuk sudut siku-siku).</li>
+            <li><b>Sudut Bertolak Belakang:</b> Dua sudut yang saling membelakangi memiliki besar yang <b>sama</b>.</li>
+          </ul>
+
+          <h2>2. Garis Sejajar & Transversal</h2>
+          <p>Jika dua garis sejajar dipotong oleh sebuah garis lurus (transversal), berlaku:</p>
+          <table class="table-materi">
+              <tr>
+                  <th>Jenis Sudut</th>
+                  <th>Sifat</th>
+              </tr>
+              <tr>
+                  <td>Sehadap</td>
+                  <td>Besarnya Sama</td>
+              </tr>
+              <tr>
+                  <td>Dalam Berseberangan</td>
+                  <td>Besarnya Sama</td>
+              </tr>
+              <tr>
+                  <td>Dalam Sepihak</td>
+                  <td>Jumlahnya $180^\circ$</td>
+              </tr>
+          </table>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 1A - Halaman 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 1a: Garis, Sudut & Pythagoras (2/2)</h1>
+        <div class="materi-konten">
+          <h2>3. Teorema Pythagoras</h2>
+          <p>Hanya berlaku pada segitiga siku-siku.</p>
+          <div class="rumus-box">
+             $$c^2 = a^2 + b^2$$
+             <br>
+             $c$ = sisi miring (hipotenusa)<br>
+             $a, b$ = sisi penyiku
+          </div>
+          
+          <h3>Tripel Pythagoras Populer</h3>
+          <p>Hafalkan angka-angka ini untuk mempercepat hitungan:</p>
+          <ul class="checklist">
+              <li>3, 4, 5 (dan kelipatannya: 6, 8, 10, dst)</li>
+              <li>5, 12, 13</li>
+              <li>7, 24, 25</li>
+              <li>8, 15, 17</li>
+          </ul>
+          <div class="tips-box">
+            <b>Tips:</b> Jika angka dalam soal besar, coba sederhanakan dulu dengan membaginya dengan FPB. Contoh: Segitiga sisi 30 dan 40. Bagi 10 jadi 3 dan 4. Maka sisi miringnya 5. Dikali 10 lagi jadi 50.
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 1B - Halaman 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 1b: Bangun Datar & Lingkaran (1/2)</h1>
+        <div class="materi-konten">
+          <h2>1. Luas Bangun Datar</h2>
+          <p>Beberapa rumus luas yang sering terlupakan:</p>
+          <div class="rumus-box">
+            <b>Belah Ketupat & Layang-layang:</b><br>
+            $$ L = \frac{1}{2} \times d_1 \times d_2 $$
+          </div>
+          <div class="rumus-box">
+            <b>Trapesium:</b><br>
+            $$ L = \frac{1}{2} \times (\text{Jumlah Sisi Sejajar}) \times \text{Tinggi} $$
+          </div>
+
+          <h2>2. Lingkaran</h2>
+          <ul class="checklist">
+              <li><b>Luas:</b> $L = \pi r^2$</li>
+              <li><b>Keliling:</b> $K = 2 \pi r$ atau $K = \pi d$</li>
+              <li><b>Panjang Busur:</b> $\frac{\alpha}{360^\circ} \times K$</li>
+              <li><b>Luas Juring:</b> $\frac{\alpha}{360^\circ} \times L$</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 1B - Halaman 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 1b: Bangun Datar & Lingkaran (2/2)</h1>
+        <div class="materi-konten">
+          <h2>3. Kesebangunan</h2>
+          <p>Dua bangun dikatakan sebangun jika sudut-sudut yang bersesuaian sama besar dan perbandingan sisi-sisi yang bersesuaian senilai.</p>
+          
+          <div class="tips-box">
+            <b>Rumus Air Mancur (Segitiga Siku-siku):</b><br>
+            Jika segitiga siku-siku ditarik garis tinggi dari sudut siku-siku ke sisi miring:<br>
+            1. $Tinggi^2 = Sisi\_Kiri \times Sisi\_Kanan$<br>
+            2. $Sisi\_Tegak^2 = Proyeksi\_Kecil \times Sisi\_Miring\_Total$
+          </div>
+
+          <h2>4. Segiempat Tali Busur</h2>
+          <p>Pada segiempat yang keempat titik sudutnya terletak pada lingkaran, jumlah sudut yang berhadapan adalah $180^\circ$.</p>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 2A - Halaman 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 2a: Transformasi Geometri (1/2)</h1>
+        <div class="materi-konten">
+          <h2>1. Translasi (Pergeseran)</h2>
+          <p>Menggeser titik $(x, y)$ sejauh $\binom{a}{b}$.</p>
+          <div class="rumus-box">
+            $$ (x, y) \xrightarrow{T(a,b)} (x+a, y+b) $$
+          </div>
+
+          <h2>2. Refleksi (Pencerminan)</h2>
+          <table class="table-materi">
+              <tr>
+                  <th>Cermin</th>
+                  <th>Bayangan $(x', y')$</th>
+              </tr>
+              <tr>
+                  <td>Sumbu X</td>
+                  <td>$(x, -y)$</td>
+              </tr>
+              <tr>
+                  <td>Sumbu Y</td>
+                  <td>$(-x, y)$</td>
+              </tr>
+              <tr>
+                  <td>Garis $y=x$</td>
+                  <td>$(y, x)$</td>
+              </tr>
+              <tr>
+                  <td>Garis $y=-x$</td>
+                  <td>$(-y, -x)$</td>
+              </tr>
+          </table>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 2A - Halaman 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 2a: Transformasi Geometri (2/2)</h1>
+        <div class="materi-konten">
+          <h2>3. Rotasi (Perputaran)</h2>
+          <p>Rotasi berpusat di $(0,0)$ berlawanan arah jarum jam (sudut positif):</p>
+          <ul class="checklist">
+              <li><b>$90^\circ$:</b> $(x, y) \to (-y, x)$</li>
+              <li><b>$180^\circ$:</b> $(x, y) \to (-x, -y)$</li>
+              <li><b>$270^\circ$ (atau $-90^\circ$):</b> $(x, y) \to (y, -x)$</li>
+          </ul>
+          
+          <div class="tips-box">
+            <b>Rotasi Pusat $(a,b)$:</b><br>
+            Gunakan rumus: $x' - a = -(y-b)$ dan $y' - b = (x-a)$ untuk rotasi $90^\circ$.<br>
+            Atau geser dulu pusat ke (0,0), rotasikan, lalu kembalikan.
+          </div>
+
+          <h2>4. Dilatasi (Perkalian)</h2>
+          <p>Dilatasi pusat $(0,0)$ faktor skala $k$:</p>
+          $$ (x, y) \xrightarrow{[O, k]} (kx, ky) $$
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 2B - Halaman 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 2b: Dimensi Tiga & Koordinat (1/2)</h1>
+        <div class="materi-konten">
+          <h2>1. Jarak Antar Titik</h2>
+          <p>Jarak antara dua titik $(x_1, y_1)$ dan $(x_2, y_2)$ pada bidang kartesius:</p>
+          <div class="rumus-box">
+            $$ d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} $$
+          </div>
+
+          <h2>2. Unsur-unsur Kubus</h2>
+          <p>Misalkan kubus dengan panjang rusuk $s$.</p>
+          <ul class="checklist">
+              <li><b>Diagonal Bidang/Sisi:</b> $s\sqrt{2}$</li>
+              <li><b>Diagonal Ruang:</b> $s\sqrt{3}$</li>
+              <li><b>Luas Permukaan:</b> $6s^2$</li>
+              <li><b>Volume:</b> $s^3$</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 2B - Halaman 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 2b: Dimensi Tiga & Koordinat (2/2)</h1>
+        <div class="materi-konten">
+          <h2>3. Jarak Titik ke Bidang (Kubus)</h2>
+          <p>Rumus cepat jarak pada kubus rusuk $s$ (Sangat sering keluar di OSN!):</p>
+          
+          <table class="table-materi">
+              <tr>
+                  <th>Jarak</th>
+                  <th>Rumus Cepat</th>
+              </tr>
+              <tr>
+                  <td>Titik Sudut ke Diagonal Ruang</td>
+                  <td>$\frac{s}{3}\sqrt{6}$</td>
+              </tr>
+              <tr>
+                  <td>Titik Sudut ke Bidang Segitiga Sudut (misal E ke AFH)</td>
+                  <td>$\frac{1}{3} s\sqrt{3}$ (Dekat)<br>$\frac{2}{3} s\sqrt{3}$ (Jauh)</td>
+              </tr>
+              <tr>
+                  <td>Titik Tengah Rusuk ke Titik Tengah Rusuk Seberang</td>
+                  <td>$s\sqrt{2}$</td>
+              </tr>
+          </table>
+
+          <div class="tips-box">
+             <b>Tips Visualisasi:</b><br>
+             Untuk soal dimensi tiga yang rumit, terkadang lebih mudah jika kita menggambarnya dalam bentuk koordinat 3D $(x, y, z)$.
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 1 (No 1-2) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Latihan Soal (Bagian 1)</div>
+        <div class="soal-latihan">
+          <b>1.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+              Sudut $A$ dan sudut $B$ adalah dua sudut yang saling berpelurus (suplemen). Jika besar sudut $A$ adalah $4$ kali besar sudut $B$, tentukan besar sudut $A$.
+            </div>
+            <div class="options">
+              <div>A. $36^\circ$</div>
+              <div>B. $72^\circ$</div>
+              <div>C. $108^\circ$</div>
+              <div>D. $144^\circ$</div>
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan-n">
+          <b>2.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+                Seorang petugas keamanan membidik sebuah mobil pencuri dari puncak gedung lima lantai. Jika tinggi tiap lantai adalah 7 meter dan jarak mobil di jalan ke kaki gedung adalah 120 meter, berapakah jarak petugas keamanan (di puncak gedung) ke mobil pencuri tersebut?
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_cyflfq_9158.png" alt="Ilustrasi Gedung" class="soal-image">
+            </div>
+            <div class="options">
+              <div>A. 125 m</div>
+              <div>B. 130 m</div>
+              <div>C. 135 m</div>
+              <div>D. 140 m</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 2 (No 3-5) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Latihan Soal (Bagian 2)</div>
+        <div class="soal-latihan">
+          <b>3.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+              Diketahui titik $P(2, -3)$ dan titik $Q(-4, 5)$. Jarak antara titik $P$ dan titik $Q$ adalah ...
+            </div>
+            <div class="options">
+              <div>A. 8 satuan</div>
+              <div>B. 10 satuan</div>
+              <div>C. 12 satuan</div>
+              <div>D. 14 satuan</div>
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan-n">
+          <b>4.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+              Titik $A(5, -2)$ ditranslasikan oleh $T = \binom{-3}{4}$. Koordinat bayangan titik $A$ adalah ...
+            </div>
+            <div class="options">
+              <div>A. $(2, 2)$</div>
+              <div>B. $(8, -6)$</div>
+              <div>C. $(2, -6)$</div>
+              <div>D. $(-2, 2)$</div>
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan-n">
+          <b>5.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+                Diketahui $\triangle ABC$ siku-siku di titik $C$. Jika luas segitiga tersebut 330 cm$^2$ dan panjang sisi miring $AB = 61$ cm, maka keliling $\triangle ABC$ adalah ...
+            </div>
+            <div class="options">
+              <div>A. 130 cm</div>
+              <div>B. 132 cm</div>
+              <div>C. 136 cm</div>
+              <div>D. 142 cm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 3 (No 6-7) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Latihan Soal (Bagian 3)</div>
+        <div class="soal-latihan">
+          <b>6.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+                Sebuah persegi panjang besar berukuran $9 \text{ cm} \times 5 \text{ cm}$. Di dalamnya terdapat daerah yang diarsir. Jika diketahui daerah yang <i>tidak</i> diarsir terdiri dari persegi-persegi satuan (ukuran $1 \times 1$ cm) yang disusun rapat di sekeliling pinggir persegi panjang tersebut setebal 1 lapisan, berapakah luas daerah yang diarsir?
+            </div>
+            <div class="options">
+              <div>A. $15 \text{ cm}^2$</div>
+              <div>B. $21 \text{ cm}^2$</div>
+              <div>C. $24 \text{ cm}^2$</div>
+              <div>D. $28 \text{ cm}^2$</div>
+            </div>
+          </div>
+        </div>
+        <div class="soal-latihan-n">
+          <b>7.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">
+                Segitiga $ABC$ dengan titik $A(2,4)$, $B(-1,3)$, dan $C(5,-6)$ dicerminkan terhadap sumbu $X$, kemudian digeser dengan translasi $\binom{-1}{3}$. Koordinat bayangan akhir titik $A$ adalah ...
+            </div>
+            <div class="options">
+              <div>A. $(1, -1)$</div>
+              <div>B. $(1, 7)$</div>
+              <div>C. $(3, -1)$</div>
+              <div>D. $(-1, -1)$</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 4 (No 8-9) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Latihan Soal (Bagian 4)</div>
+        <div class="soal-latihan">
+            <b>8.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Perhatikan dua garis sejajar $g$ dan $h$ yang dipotong oleh garis tranversal $k$. Jika salah satu sudut dalam sepihak adalah $(3x + 10)^\circ$ dan sudut pasangannya adalah $(2x + 20)^\circ$, tentukan nilai $x$.
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_bfhubn_7038.png" alt="Ilustrasi Sudut" class="soal-image">
+              </div>
+              <div class="options">
+                <div>A. 20</div>
+                <div>B. 30</div>
+                <div>C. 40</div>
+                <div>D. 50</div>
+              </div>
+            </div>
+        </div>
+        <div class="soal-latihan-n">
+            <b>9.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Sebuah juring lingkaran memiliki sudut pusat $60^\circ$ dan jari-jari 14 cm. Luas juring tersebut adalah ... (gunakan $\pi = \frac{22}{7}$)
+              </div>
+              <div class="options">
+                <div>A. $102,67 \text{ cm}^2$</div>
+                <div>B. $205,33 \text{ cm}^2$</div>
+                <div>C. $308,00 \text{ cm}^2$</div>
+                <div>D. $616,00 \text{ cm}^2$</div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- Halaman Soal 5 (No 10-11) -->
+    <section class="page">
+        <div class="content-wrapper">
+          <div class="kategori-soal">Latihan Soal (Bagian 5)</div>
+          <div class="soal-latihan">
+            <b>10.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                  Diketahui kubus $PQRS.TUVW$ memiliki panjang rusuk 1 satuan. Titik $X$ terletak pada perpanjangan $PQ$ (sehingga urutannya $P-Q-X$) dengan $QX=2$ satuan. Titik $Y$ terletak pada perpanjangan $UV$ (sehingga urutannya $U-V-Y$) dengan $VY=1$ satuan. Panjang $XY$ adalah ...
+              </div>
+              <div class="options">
+                <div>A. $\sqrt{7}$ satuan</div>
+                <div>B. $2\sqrt{2}$ satuan</div>
+                <div>C. $3$ satuan</div>
+                <div>D. $9$ satuan</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-latihan-n">
+            <b>11.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                  Diketahui kubus $ABCD.EFGH$ dengan panjang rusuk 1 satuan. Jarak titik $E$ ke bidang datar $AFH$ adalah ...
+              </div>
+              <div class="options">
+                <div>A. $\frac{\sqrt{2}}{2}$ satuan</div>
+                <div>B. $\frac{1}{3}$ satuan</div>
+                <div>C. $\frac{\sqrt{3}}{3}$ satuan</div>
+                <div>D. $\frac{\sqrt{3}}{4}$ satuan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- Halaman Soal 6 (No 12-13) -->
+    <section class="page">
+        <div class="content-wrapper">
+          <div class="kategori-soal">Latihan Soal (Bagian 6)</div>
+          <div class="soal-latihan">
+            <b>12.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Pada trapesium $ABCD$ dengan $AB$ sejajar $CD$, diketahui panjang $AB = 12$ cm dan $CD = 8$ cm. Diagonal $AC$ dan $BD$ berpotongan di titik $O$. Jika tinggi trapesium tersebut adalah 10 cm, berapakah tinggi titik $O$ dari sisi $AB$?
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_l7atvb_5301.png" alt="Ilustrasi Trapesium" class="soal-image">
+              </div>
+              <div class="options">
+                <div>A. $4$ cm</div>
+                <div>B. $5$ cm</div>
+                <div>C. $6$ cm</div>
+                <div>D. $4,8$ cm</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-latihan-n">
+            <b>13.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Titik $P(3, 4)$ dirotasikan sebesar $90^\circ$ berlawanan arah jarum jam dengan pusat rotasi di titik $M(1, 2)$. Koordinat bayangan titik $P$ adalah ...
+              </div>
+              <div class="options">
+                <div>A. $(-1, 4)$</div>
+                <div>B. $(-2, 5)$</div>
+                <div>C. $(0, 5)$</div>
+                <div>D. $(-3, 4)$</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- Halaman Soal 7 (No 14-15) -->
+    <section class="page">
+        <div class="content-wrapper">
+          <div class="kategori-soal">Latihan Soal (Bagian 7)</div>
+          <div class="soal-latihan">
+            <b>14.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Sebuah kubus pejal dengan panjang rusuk 6 cm dipotong pada setiap pojoknya membentuk limas segitiga kecil sedemikian rupa sehingga titik potong pada rusuk berjarak 2 cm dari titik sudut terdekat. Berapakah volume bangun yang tersisa?
+              </div>
+              <div class="options">
+                <div>A. $216 - \frac{32}{3} \text{ cm}^3$</div>
+                <div>B. $216 - \frac{16}{3} \text{ cm}^3$</div>
+                <div>C. $216 - \frac{8}{3} \text{ cm}^3$</div>
+                <div>D. $200 \text{ cm}^3$</div>
+              </div>
+            </div>
+          </div>
+          <div class="soal-latihan-n">
+            <b>15.</b>
+            <div class="soal-wrapper">
+              <div class="soal-konten">
+                Diketahui segiempat $ABCD$ dengan koordinat $A(1,1)$, $B(6,1)$, $C(4,5)$, dan $D(2,5)$. Luas daerah segiempat $ABCD$ adalah ...
+              </div>
+              <div class="options">
+                <div>A. $12$ satuan luas</div>
+                <div>B. $13$ satuan luas</div>
+                <div>C. $14$ satuan luas</div>
+                <div>D. $15$ satuan luas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- ================================================================= -->
+    <!-- START PEMBAHASAN DETAIL -->
+    <!-- ================================================================= -->
+
+    <!-- PEMBAHASAN 1 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 1</div>
+        <div class="soal-latihan">
+          <b>1.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: D. $144^\circ$</b>
+            <div class="pembahasan">
+              <p><b>Mari kita bayangkan garis lurus.</b><br>
+              Dalam geometri, sebuah garis lurus itu memiliki sudut $180^\circ$. Kalau garis ini dipotong menjadi dua sudut (kita sebut sudut A dan sudut B), maka jumlah kedua sudut itu harus pas $180^\circ$. Ini yang disebut <i>saling berpelurus</i>.</p>
+              
+              <p><b>Apa yang diketahui dari soal?</b><br>
+              1. Jumlah mereka: $A + B = 180^\circ$.<br>
+              2. Hubungan besarnya: Sudut A itu 4 kali lipat lebih besar dari sudut B. Bisa ditulis: $A = 4 \times B$.</p>
+              
+              <p><b>Langkah Penyelesaian:</b><br>
+              Gantikan (substitusi) nilai A di persamaan pertama dengan $4 \times B$.<br>
+              $A + B = 180^\circ$<br>
+              $(4 \times B) + B = 180^\circ$<br>
+              Sekarang kita punya 5 buah sudut B (karena 4B + 1B).<br>
+              $5 \times B = 180^\circ$</p>
+              
+              <p><b>Mencari nilai B:</b><br>
+              $B = 180^\circ \div 5 = 36^\circ$.</p>
+              
+              <p><b>Mencari nilai A (yang ditanya):</b><br>
+              Ingat, A itu 4 kalinya B.<br>
+              $A = 4 \times 36^\circ = 144^\circ$.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 2 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 2</div>
+        <div class="soal-latihan-n">
+          <b>2.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 125 m</b>
+            <div class="pembahasan">
+              <p>Soal ini sebenarnya adalah masalah segitiga siku-siku yang disamarkan dalam cerita gedung.</p>
+              
+              <p><b>Langkah 1: Hitung tinggi gedung dulu.</b><br>
+              Gedung punya 5 lantai. Satu lantainya 7 meter.<br>
+              Jadi, tinggi total ($t$) = $5 \times 7 = 35$ meter. Ini adalah sisi tegak segitiga.</p>
+              
+              <p><b>Langkah 2: Identifikasi sisi-sisi segitiga.</b><br>
+              - Sisi tegak (tinggi gedung) = 35 m.<br>
+              - Sisi alas (jarak mobil ke gedung) = 120 m.<br>
+              - Sisi miring (jarak mata petugas ke mobil) = ? (Kita cari ini).</p>
+              
+              <p><b>Langkah 3: Gunakan Teorema Pythagoras.</b><br>
+              Rumusnya: $Miring^2 = Tegak^2 + Alas^2$<br>
+              $Miring^2 = 35^2 + 120^2$<br>
+              $Miring^2 = 1.225 + 14.400$<br>
+              $Miring^2 = 15.625$</p>
+              
+              <p><b>Langkah 4: Akar kuadrat.</b><br>
+              Berapa angka yang kalau dikali dirinya sendiri hasilnya 15.625? Jawabannya adalah 125.<br>
+              Jadi, jaraknya adalah <b>125 meter</b>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 3 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 3</div>
+        <div class="soal-latihan-n">
+          <b>3.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 10 satuan</b>
+            <div class="pembahasan">
+              <p>Kita diminta mencari jarak antara dua titik di diagram kartesius: $P(2, -3)$ dan $Q(-4, 5)$.</p>
+              
+              <p><b>Konsep Dasarnya:</b><br>
+              Jarak miring di koordinat itu bisa dicari dengan Pythagoras juga. Kita cari selisih mendatar ($x$) dan selisih tegak ($y$).</p>
+              
+              <p><b>Langkah 1: Hitung selisih X (Jarak mendatar).</b><br>
+              Dari $x=2$ ke $x=-4$. Jaraknya adalah: $2 - (-4) = 2 + 4 = 6$ langkah.</p>
+              
+              <p><b>Langkah 2: Hitung selisih Y (Jarak tegak).</b><br>
+              Dari $y=-3$ ke $y=5$. Jaraknya adalah: $5 - (-3) = 5 + 3 = 8$ langkah.</p>
+              
+              <p><b>Langkah 3: Pythagoras lagi.</b><br>
+              Sekarang kita punya segitiga siku-siku dengan alas 6 dan tinggi 8.<br>
+              $Jarak^2 = 6^2 + 8^2$<br>
+              $Jarak^2 = 36 + 64$<br>
+              $Jarak^2 = 100$<br>
+              Jarak = $\sqrt{100} = 10$.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 4 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 4</div>
+        <div class="soal-latihan">
+          <b>4.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. $(2, 2)$</b>
+            <div class="pembahasan">
+              <p><b>Apa itu Translasi?</b><br>
+              Translasi itu sederhananya adalah "geser".<br>
+              Simbol $\binom{-3}{4}$ artinya:<br>
+              - Angka atas (-3): Geser kiri 3 langkah (karena negatif).<br>
+              - Angka bawah (4): Geser atas 4 langkah (karena positif).</p>
+              
+              <p><b>Posisi Awal:</b> Titik A ada di $(5, -2)$.<br>
+              Artinya $x=5$ dan $y=-2$.</p>
+              
+              <p><b>Mari kita geser:</b><br>
+              - Koordinat $x$: Dari 5, geser kiri 3 ($5 - 3$) menjadi <b>2</b>.<br>
+              - Koordinat $y$: Dari -2, geser atas 4 ($-2 + 4$) menjadi <b>2</b>.</p>
+              
+              <p>Jadi posisi akhirnya adalah <b>$(2, 2)$</b>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 5 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 5</div>
+        <div class="soal-latihan-n">
+          <b>5.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 132 cm</b>
+            <div class="pembahasan">
+              <p>Soal ini sedikit menjebak karena kita tidak diberitahu panjang sisi alas ($a$) dan tingginya ($b$), tapi kita tahu luas dan sisi miringnya ($c=61$).</p>
+              
+              <p><b>Langkah 1: Bongkar rumus Luas.</b><br>
+              Luas Segitiga = $\frac{1}{2} \times a \times b = 330$.<br>
+              Maka, $a \times b = 330 \times 2 = 660$. (Simpan ini).</p>
+              
+              <p><b>Langkah 2: Gunakan Trik Aljabar $(a+b)^2$.</b><br>
+              Kita mau cari keliling, artinya kita butuh nilai $a + b + c$.<br>
+              Kita sudah tahu $c = 61$. Masalahnya, berapa $a+b$?<br>
+              Rumus sakti: $(a+b)^2 = a^2 + b^2 + 2ab$.</p>
+              
+              <p>Ingat Pythagoras: $a^2 + b^2$ itu sama dengan $c^2$.<br>
+              Jadi: $(a+b)^2 = c^2 + 2(ab)$.<br>
+              Masukkan angkanya:<br>
+              $(a+b)^2 = 61^2 + 2(660)$<br>
+              $(a+b)^2 = 3.721 + 1.320$<br>
+              $(a+b)^2 = 5.041$.</p>
+              
+              <p><b>Langkah 3: Cari $a+b$.</b><br>
+              Akar dari 5.041 adalah 71.<br>
+              Jadi jumlah sisi alas dan tinggi ($a+b$) adalah 71 cm.</p>
+              
+              <p><b>Langkah 4: Hitung Keliling.</b><br>
+              Keliling = $(a+b) + c = 71 + 61 = 132$ cm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 6 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 6</div>
+        <div class="soal-latihan-n">
+          <b>6.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 21 cm$^2$</b>
+            <div class="pembahasan">
+              <p>Bayangkan sebuah bingkai foto. Persegi panjang besar itu bingkainya, dan daerah yang diarsir itu fotonya di tengah.</p>
+              
+              <p><b>Ukuran Awal:</b> Panjang 9 cm, Lebar 5 cm.</p>
+              
+              <p><b>Dipotong Pinggiran:</b><br>
+              Soal bilang pinggirannya setebal 1 cm di sekelilingnya.<br>
+              - Panjangnya akan berkurang 1 cm di kiri dan 1 cm di kanan. Total berkurang 2 cm.<br>
+              Panjang Baru = $9 - 2 = 7$ cm.<br>
+              - Lebarnya akan berkurang 1 cm di atas dan 1 cm di bawah. Total berkurang 2 cm.<br>
+              Lebar Baru = $5 - 2 = 3$ cm.</p>
+              
+              <p><b>Hitung Luas Arsir (Bagian Tengah):</b><br>
+              Luas = Panjang Baru $\times$ Lebar Baru<br>
+              Luas = $7 \times 3 = 21$ cm$^2$.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 7 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 7</div>
+        <div class="soal-latihan-n">
+            <b>7.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: A. $(1, -1)$</b>
+              <div class="pembahasan">
+                <p>Kita fokus pada titik A saja, karena soal hanya menanyakan bayangan A. Posisi awal A adalah $(2, 4)$.</p>
+                
+                <p><b>Tahap 1: Pencerminan Sumbu X.</b><br>
+                Bayangkan cermin ditaruh di garis mendatar (sumbu X).<br>
+                Kalau titik ada di atas cermin, bayangannya jatuh ke bawah.<br>
+                - Koordinat $x$ (kiri-kanan) tetap: 2.<br>
+                - Koordinat $y$ (atas-bawah) berubah tanda: dari 4 menjadi -4.<br>
+                Hasil sementara: $(2, -4)$.</p>
+                
+                <p><b>Tahap 2: Geser (Translasi).</b><br>
+                Translasi $\binom{-1}{3}$ artinya geser kiri 1, geser atas 3.<br>
+                - $x$: $2$ digeser kiri 1 menjadi $2 - 1 = 1$.<br>
+                - $y$: $-4$ digeser atas 3 menjadi $-4 + 3 = -1$.</p>
+                
+                <p>Hasil akhirnya adalah <b>$(1, -1)$</b>.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 8 -->
+    <section class="page">
+        <div class="content-wrapper">
+          <h1>Kunci Jawaban & Pembahasan</h1>
+          <div class="kategori-soal">Pembahasan Soal 8</div>
+          <div class="soal-latihan">
+            <b>8.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: B. 30</b>
+              <div class="pembahasan">
+                <p><b>Konsep "Dalam Sepihak":</b><br>
+                Jika ada dua garis sejajar dipotong garis lain, sudut-sudut yang berada "di dalam" (di antara dua garis sejajar) dan "sepihak" (di sisi yang sama dari garis potong) itu <b>jumlahnya harus $180^\circ$</b>. Bayangkan huruf "C" atau "U".</p>
+                
+                <p><b>Buat Persamaannya:</b><br>
+                Sudut pertama + Sudut kedua = $180^\circ$<br>
+                $(3x + 10) + (2x + 20) = 180$</p>
+                
+                <p><b>Sederhanakan Aljabarnya:</b><br>
+                Gabungkan $x$ dengan $x$, angka dengan angka.<br>
+                $3x + 2x = 5x$.<br>
+                $10 + 20 = 30$.<br>
+                Jadi: $5x + 30 = 180$.</p>
+                
+                <p><b>Cari nilai x:</b><br>
+                $5x = 180 - 30$<br>
+                $5x = 150$<br>
+                $x = 150 \div 5 = 30$.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- PEMBAHASAN 9 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 9</div>
+          <div class="soal-latihan-n">
+            <b>9.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: A. $102,67 \text{ cm}^2$</b>
+              <div class="pembahasan">
+                <p><b>Apa itu Juring?</b><br>
+                Juring itu seperti potongan pizza. Lingkaran utuh itu sudutnya $360^\circ$. Soal ini cuma mengambil potongan sebesar $60^\circ$.</p>
+                
+                <p><b>Berapa bagian pizza yang kita ambil?</b><br>
+                Bagian = $\frac{60}{360}$. Kalau disederhanakan (coret nol, bagi 6), hasilnya adalah $\frac{1}{6}$ bagian.</p>
+                
+                <p><b>Hitung Luas Lingkaran Utuh Dulu:</b><br>
+                Rumus: $\pi \times r \times r$.<br>
+                Luas = $\frac{22}{7} \times 14 \times 14$.<br>
+                Coret 14 dengan 7 (sisa 2).<br>
+                Luas = $22 \times 2 \times 14 = 616$ cm$^2$.</p>
+                
+                <p><b>Hitung Luas Potongannya:</b><br>
+                Kita cuma butuh $\frac{1}{6}$ dari luas total.<br>
+                Luas Juring = $\frac{1}{6} \times 616$.<br>
+                Luas Juring = $102,666...$ atau dibulatkan $102,67$ cm$^2$.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 10 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 10</div>
+          <div class="soal-latihan-n">
+            <b>10.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: C. 3 satuan</b>
+              <div class="pembahasan">
+                <p>Soal ini akan sangat pusing kalau dibayangkan tanpa angka. Mari kita pakai koordinat 3D (Sumbu X, Y, Z).</p>
+                
+                <p><b>Bayangkan Kubus:</b><br>
+                Misal kubus ini ada di pojok ruang. Titik P ada di $(0,0,0)$. Panjang rusuknya 1.</p>
+                
+                <p><b>Mencari Posisi Titik X:</b><br>
+                Titik X ada di perpanjangan PQ. PQ itu sumbu X.<br>
+                Dari P ke Q jaraknya 1. Lalu dari Q lanjut lagi ke X sejauh 2.<br>
+                Jadi total jarak X dari titik awal adalah $1 + 2 = 3$.<br>
+                Koordinat X = $(3, 0, 0)$.</p>
+                
+                <p><b>Mencari Posisi Titik Y:</b><br>
+                Titik V ada di atas Q. Koordinat Q itu $(1,0,0)$, V itu naik 1 langkah ke atas $(1,1,0)$ dan 1 langkah ke belakang $(1,1,1)$.<br>
+                Tunggu, lebih mudah begini:<br>
+                Bayangkan posisi relatifnya saja.<br>
+                - Selisih arah kiri-kanan (sumbu x): Titik X ada di kanan sejauh 3 satuan. Titik Y ada di kanan sejauh 1 satuan (sejajar rusuk). Beda jarak = $3 - 1 = 2$.<br>
+                - Selisih arah depan-belakang (sumbu y): Titik X di depan. Titik Y di perpanjangan belakang sejauh 1 dari kubus (total 2 dari depan). Beda jarak = 2.<br>
+                - Selisih arah atas-bawah (sumbu z): Titik X di lantai (0). Titik Y di atap (1). Beda jarak = 1.</p>
+                
+                <p><b>Pythagoras 3D:</b><br>
+                $Jarak = \sqrt{2^2 + 2^2 + 1^2}$<br>
+                $Jarak = \sqrt{4 + 4 + 1} = \sqrt{9} = 3$.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 11 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 11</div>
+          <div class="soal-latihan-n">
+              <b>11.</b>
+              <div class="soal-wrapper">
+                <b>Jawaban: C. $\frac{\sqrt{3}}{3}$</b>
+                <div class="pembahasan">
+                  <p>Ini adalah soal klasik kubus yang sering keluar. Kita diminta jarak dari titik E (pojok kiri atas depan) ke bidang segitiga AFH (segitiga yang memotong pojok E).</p>
+                  
+                  <p><b>Cara Logika (Visual):</b><br>
+                  Bayangkan diagonal ruang EC (dari pojok E ke pojok seberang bawah C). Garis ini akan menembus tegak lurus tepat di tengah-tengah bidang AFH.</p>
+                  
+                  <p><b>Rumus Cepat (Wajib Hafal):</b><br>
+                  Pada kubus, diagonal ruang dibagi menjadi 3 bagian sama besar oleh bidang segitiga sudut (AFH) dan bidang segitiga seberangnya (BDG).<br>
+                  Jarak dari sudut E ke bidang AFH adalah <b>sepertiga</b> dari panjang diagonal ruang.</p>
+                  
+                  <p><b>Hitungan:</b><br>
+                  Rusuk ($s$) = 1.<br>
+                  Diagonal Ruang = $s\sqrt{3} = 1\sqrt{3} = \sqrt{3}$.<br>
+                  Jarak = $\frac{1}{3} \times \text{Diagonal Ruang} = \frac{1}{3}\sqrt{3}$.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- PEMBAHASAN 12 -->
+    <section class="page">
+        <div class="content-wrapper">
+          <h1>Kunci Jawaban & Pembahasan</h1>
+          <div class="kategori-soal">Pembahasan Soal 12</div>
+          <div class="soal-latihan">
+            <b>12.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: C. 6 cm</b>
+              <div class="pembahasan">
+                <p><b>Konsep Jam Pasir:</b><br>
+                Perhatikan segitiga $AOB$ (bawah) dan segitiga $COD$ (atas). Karena garis AB sejajar CD, kedua segitiga ini <i>sebangun</i> (bentuknya sama, ukurannya beda).</p>
+                
+                <p><b>Perbandingan Ukuran:</b><br>
+                Alas Bawah ($AB$) = 12 cm.<br>
+                Alas Atas ($CD$) = 8 cm.<br>
+                Rasio perbandingannya = $12 : 8$. Kalau disederhanakan (bagi 4) jadi <b>3 : 2</b>.</p>
+                
+                <p><b>Membagi Tinggi:</b><br>
+                Tinggi total trapesium adalah 10 cm. Titik O membagi tinggi ini dengan perbandingan yang sama (3 : 2).<br>
+                Kita mau cari tinggi titik O dari bawah (sisi AB). Berarti kita ambil bagian yang "3".</p>
+                
+                <p><b>Hitungan:</b><br>
+                Tinggi O = $\frac{\text{Bagian Bawah}}{\text{Total Bagian}} \times \text{Tinggi Total}$<br>
+                Tinggi O = $\frac{3}{3 + 2} \times 10$<br>
+                Tinggi O = $\frac{3}{5} \times 10$<br>
+                Tinggi O = $3 \times 2 = 6$ cm.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 13 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 13</div>
+          <div class="soal-latihan-n">
+            <b>13.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: A. $(-1, 4)$</b>
+              <div class="pembahasan">
+                <p>Rotasi dengan pusat BUKAN $(0,0)$ memang agak rumit. Triknya: <b>Geser dulu ke $(0,0)$, Putar, lalu Geser Balik.</b></p>
+                
+                <p>Titik P: $(3, 4)$. Pusat M: $(1, 2)$.</p>
+                
+                <p><b>Langkah 1: Geser ke (0,0).</b><br>
+                Kurangi koordinat P dengan Pusat M.<br>
+                $x_{baru} = 3 - 1 = 2$.<br>
+                $y_{baru} = 4 - 2 = 2$.<br>
+                Jadi posisi sementaranya $(2, 2)$.</p>
+                
+                <p><b>Langkah 2: Putar 90 Derajat.</b><br>
+                Rumus putar $90^\circ$: $(x, y)$ menjadi $(-y, x)$.<br>
+                $(2, 2)$ menjadi $(-2, 2)$.</p>
+                
+                <p><b>Langkah 3: Geser Balik (Kembalikan Pusat).</b><br>
+                Tambahkan lagi dengan Pusat M $(1, 2)$.<br>
+                $x_{akhir} = -2 + 1 = -1$.<br>
+                $y_{akhir} = 2 + 2 = 4$.</p>
+                
+                <p>Jadi bayangannya adalah <b>$(-1, 4)$</b>.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 14 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 14</div>
+          <div class="soal-latihan-n">
+            <b>14.</b>
+            <div class="soal-wrapper">
+              <b>Jawaban: A. $216 - \frac{32}{3}$</b>
+              <div class="pembahasan">
+                <p><b>Hitung Volume Kubus Utuh:</b><br>
+                Rusuk = 6 cm.<br>
+                Volume = $6 \times 6 \times 6 = 216$ cm$^3$.</p>
+                
+                <p><b>Apa yang dipotong?</b><br>
+                Setiap pojok kubus (ada 8 pojok) dipotong membentuk limas segitiga kecil. Bayangkan ujung kotak yang dipangkas.</p>
+                
+                <p><b>Hitung Volume 1 Potongan Limas:</b><br>
+                Alas limas adalah segitiga siku-siku kecil dengan sisi 2 cm dan 2 cm (karena jarak potongnya 2 cm).<br>
+                Luas Alas = $\frac{1}{2} \times 2 \times 2 = 2$.<br>
+                Tinggi limas juga 2 cm (ke arah rusuk tegak).<br>
+                Volume Limas = $\frac{1}{3} \times \text{Luas Alas} \times \text{Tinggi}$.<br>
+                Volume = $\frac{1}{3} \times 2 \times 2 = \frac{4}{3}$ cm$^3$.</p>
+                
+                <p><b>Hitung Total yang Dibuang:</b><br>
+                Ada 8 pojok, jadi dikali 8.<br>
+                Total buangan = $8 \times \frac{4}{3} = \frac{32}{3}$.</p>
+                
+                <p><b>Volume Sisa:</b><br>
+                Volume Awal - Total Buangan = $216 - \frac{32}{3}$.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 15 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Pembahasan Soal 15</div>
+          <div class="soal-latihan-n">
+              <b>15.</b>
+              <div class="soal-wrapper">
+                <b>Jawaban: C. 14 satuan luas</b>
+                <div class="pembahasan">
+                  <p>Mari kita gambar titiknya di kepala (atau kertas buram).</p>
+                  <ul>
+                      <li>A(1,1) dan B(6,1): Ini garis mendatar di bawah. Panjangnya dari 1 ke 6 adalah <b>5 satuan</b>.</li>
+                      <li>C(4,5) dan D(2,5): Ini garis mendatar di atas. Panjangnya dari 2 ke 4 adalah <b>2 satuan</b>.</li>
+                      <li>Karena garis AB dan CD sejajar (sama-sama mendatar), bangun ini adalah <b>Trapesium</b>.</li>
+                  </ul>
+                  
+                  <p><b>Mencari Tinggi Trapesium:</b><br>
+                  Tinggi adalah jarak tegak dari garis bawah ($y=1$) ke garis atas ($y=5$).<br>
+                  Tinggi = $5 - 1 = 4$ satuan.</p>
+                  
+                  <p><b>Hitung Luas Trapesium:</b><br>
+                  Rumus: $\frac{\text{Jumlah Sisi Sejajar}}{2} \times \text{Tinggi}$.<br>
+                  Sisi sejajar adalah 5 dan 2.<br>
+                  Luas = $\frac{5 + 2}{2} \times 4$<br>
+                  Luas = $\frac{7}{2} \times 4$<br>
+                  Luas = $7 \times 2 = 14$ satuan luas.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+  </body>
+</html>
