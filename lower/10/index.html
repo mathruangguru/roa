@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Math Practice Worksheet 10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MathJax Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body { font-family: "Inter", sans-serif; background-color: #f3f4f6; }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc;
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container p { line-height: 1.7; font-size: 1.1rem; margin-bottom: 0.5rem; }
+      .solution-step p { line-height: 1.6; margin-bottom: 0.5rem; }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .concept {
+        background-color: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin: 1.5rem auto;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <!-- Logo Ruangguru -->
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo Ruangguru"
+          class="mx-auto h-24"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 10
+        </h1>
+        <p class="text-gray-600 mt-2">Kelas 1 - 2 | Penalaran Spasial & Strategi Berpikir Terbalik</p>
+      </header>
+
+      <main>
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Problems</h2>
+          <div id="problems-list"></div>
+        </section>
+
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <div id="solutions-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const questions = [
+        // --- TOPIK 1: Penalaran Spasial Lanjutan (1-15) ---
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "A magic spinning box has a small black button at one corner. Each time we press the 'Spin' button, the box rotates 90 degrees clockwise. Looking at the sequence below, can you guess where the button will be in the 4th position?",
+          question_id: "Sebuah kotak putar ajaib memiliki sebuah tombol hitam kecil di salah satu pojoknya. Setiap kali kita menekan tombol 'Putar', kotak tersebut akan berputar 90 derajat searah jarum jam. Berdasarkan urutan gambar ini, bisakah kamu menebak di mana posisi tombol pada kotak ke-4?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_uid9aq_7313.png",
+          answer: "Bottom-left corner / Pojok kiri bawah",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Rotational Symmetry. The object moves from one corner to the next in a clockwise direction.</p>
+              <p><strong>Konsep:</strong> Simetri Rotasi. Objek berpindah dari satu pojok ke pojok berikutnya searah jarum jam.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: The button starts at <b>Top-Left</b>. After 1st spin $\\rightarrow$ <b>Top-Right</b>.</li>
+                <li>Step 2: After 2nd spin $\\rightarrow$ <b>Bottom-Right</b>.</li>
+                <li>Step 3: After 3rd spin (the 4th box) $\\rightarrow$ <b>Bottom-Left</b>.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Tombol mulai dari <b>Kiri Atas</b>. Putaran pertama $\\rightarrow$ <b>Kanan Atas</b>.</li>
+                <li>Langkah 2: Putaran kedua $\\rightarrow$ <b>Kanan Bawah</b>.</li>
+                <li>Langkah 3: Putaran ketiga (untuk gambar ke-4) $\\rightarrow$ <b>Kiri Bawah</b>.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Siti is drawing a special 'L' shape on a glass table. She puts a mirror along the dashed line. What will the 'L' look like inside the mirror? ",
+          question_id: "Siti menggambar bentuk 'L' spesial di atas meja kaca. Dia meletakkan cermin di sepanjang garis putus-putus. Seperti apa bentuk huruf 'L' tersebut di dalam cermin?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_iqzsse_5372.png",
+          answer: "L facing left / L menghadap ke kiri",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Mirror Reflection swaps left and right directions.</p>
+              <p><strong>Konsep:</strong> Pencerminan menukar arah kiri dan kanan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Identify the part closest to the mirror (the foot pointing right).</li>
+                <li>Step 2: In the mirror, that foot must also be closest to the glass surface, so it will point to the left.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Identifikasi bagian terdekat cermin (kaki L yang menunjuk ke kanan).</li>
+                <li>Langkah 2: Di dalam cermin, bagian itu juga harus paling dekat dengan kaca, sehingga menunjuk ke kiri.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Dodi the Ant is walking on a cardboard net. If Dodi folds this cardboard into a cube, which number will be opposite (on the other side) of number 2?",
+          question_id: "Dodi si Semut sedang berjalan di atas jaring-jaring karton. Jika Dodi melipat karton ini menjadi kubus, angka berapakah yang akan berada di sisi seberang (berlawanan) dari angka 2?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_yi2kvl_9300.png",
+          answer: "4",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> In a straight line net of 4 squares, skip one to find the opposite side.</p>
+              <p><strong>Konsep:</strong> Pada jaring-jaring 4 kotak lurus, lompati satu kotak untuk menemukan sisi yang berhadapan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Look at the vertical line 1-2-3-4.</li>
+                <li>Step 2: 1 is opposite 3. So 2 is opposite 4.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Lihat barisan vertikal 1-2-3-4.</li>
+                <li>Langkah 2: Angka 2 melompati angka 3, maka ia berhadapan dengan angka 4.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Ani is folding a square paper twice to make a smaller triangle. She punches one tiny hole right in the center of the folded triangle. How many holes will be there when she opens the paper?",
+          question_id: "Ani melipat kertas persegi dua kali hingga menjadi segitiga kecil. Dia melubangi bagian tengah segitiga itu satu kali. Ada berapa lubang saat kertas dibuka kembali?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_5plpz1_4781.png",
+          answer: "4",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Every fold doubles the layers of paper ($2 \\times 2 = 4$).</p>
+              <p><strong>Konsep:</strong> Setiap lipatan menggandakan jumlah lapisan kertas ($2 \\times 2 = 4$).</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: 1st fold makes 2 layers. 2nd fold makes 4 layers.</li>
+                <li>Step 2: 1 punch through 4 layers = 4 holes when unfolded.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Lipatan pertama jadi 2 lapis. Lipatan kedua jadi 4 lapis.</li>
+                <li>Langkah 2: Satu tusukan pada 4 lapis menghasilkan 4 lubang saat dibuka.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "<strong>(Non-Routine)</strong> A special triangular arrow is pointing to the Top-Right. First, it is reflected across a vertical mirror. Then, it is rotated 180 degrees. Where is it pointing now?",
+          question_id: "<strong>(Non-Rutin)</strong> Sebuah panah segitiga spesial menunjuk ke arah Kanan Atas. Pertama, panah itu dicerminkan pada cermin vertikal. Lalu, panah itu diputar 180 derajat. Ke mana arah panah itu sekarang?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_ueospy_8004.png",
+          answer: "Bottom-Right / Kanan-Bawah",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Combined transformations: Reflection then Rotation.</p>
+              <p><strong>Konsep:</strong> Gabungan transformasi: Pencerminan lalu Rotasi.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Start <b>Top-Right</b>. Mirror (vertical) $\\rightarrow$ points <b>Top-Left</b>.</li>
+                <li>Step 2: Rotate 180 deg $\\rightarrow$ points <b>Bottom-Right</b>.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Mulai <b>Kanan Atas</b>. Cermin vertikal $\\rightarrow$ menunjuk <b>Kiri Atas</b>.</li>
+                <li>Langkah 2: Putar 180 derajat $\\rightarrow$ menunjuk <b>Kanan Bawah</b>.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "A colorful windmill has 4 blades: Red (Top), Blue (Right), Yellow (Bottom), and Green (Left). If it spins 270 degrees clockwise, which color will be at the top?",
+          question_id: "Kincir angin 4 warna: Merah (Atas), Biru (Kanan), Kuning (Bawah), dan Hijau (Kiri). Jika kincir berputar 270 derajat searah jarum jam, warna apa yang akan berada di atas?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_bpdz3s_8122.png",
+          answer: "Green / Hijau",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> 270 deg CW is the same as 90 deg counter-clockwise.</p>
+              <p><strong>Konsep:</strong> 270 derajat CW sama dengan 90 derajat berlawanan jarum jam.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: 270 deg CW = 3 turns of 90 deg.</li>
+                <li>Step 2: Red: Top $\\rightarrow$ Right $\\rightarrow$ Bottom $\\rightarrow$ Left.</li>
+                <li>Step 3: Green (Left) moves 3 times: Left $\\rightarrow$ Top $\\rightarrow$ Right $\\rightarrow$ Bottom? No, 90 deg CCW means Left moves to Top.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Putar 270 CW sama dengan 90 CCW (berlawanan jarum jam).</li>
+                <li>Langkah 2: Warna di sebelah Kiri (Hijau) akan naik ke <b>Atas</b>.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "A butterfly's wings are perfectly symmetrical. If the left wing has 3 small dots and 1 long stripe, how many dots and stripes are there on the entire butterfly?",
+          question_id: "Sayap kupu-kupu sangat simetris. Jika sayap kiri punya 3 bintik dan 1 garis, berapa total bintik dan garis pada seluruh tubuh kupu-kupu itu?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_y2cdne_7216.png",
+          answer: "6 dots, 2 stripes / 6 bintik, 2 garis",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian:</p>
+              <ul>
+                <li>Step 1: Symmetry means both sides are identical mirrors.</li>
+                <li>Step 2: Dots = $3 + 3 = 6$. Stripes = $1 + 1 = 2$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Simetri berarti kedua sisi sama persis.</li>
+                <li>Langkah 2: Bintik = $3 + 3 = 6$. Garis = $1 + 1 = 2$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Look at the 'T' shaped cube net with letters. If we fold it and 'A' is the Front face, which letter is on the Back face?",
+          question_id: "Perhatikan jaring-jaring 'T' dengan huruf-huruf. Jika dilipat dan 'A' jadi sisi Depan, huruf apa yang jadi sisi Belakang?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_ijomv0_8226.png",
+          answer: "C",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Skip one face in a straight row to find the opposite.</p>
+              <p><strong>Konsep:</strong> Lompat satu kotak dalam baris lurus untuk mencari sisi berhadapan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Vertical line: C-B-A-E.</li>
+                <li>Step 2: C is opposite A. B is opposite E.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Garis vertikal: C-B-A-E.</li>
+                <li>Langkah 2: C berhadapan dengan A. B berhadapan dengan E.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Tomi is folding a paper into 4 layers. He cuts a small triangle at the corner where all the folds meet. What shape is the hole when opened?",
+          question_id: "Tomi melipat kertas persegi 4 lapis. Dia memotong segitiga di pojok lipatan pusat. Apa bentuk lubangnya saat dibuka?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_wggxvf_7493.png",
+          answer: "Diamond / Belah Ketupat",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: 4 layers meet at the center point.</li>
+                <li>Step 2: 4 triangles join around the center to form a diamond.</li>
+                <hr class="my-1">
+                <li>Langkah 1: 4 lapisan bertemu di satu titik pusat.</li>
+                <li>Langkah 2: 4 segitiga menyatu mengelilingi pusat membentuk belah ketupat.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "<strong>(Non-Routine)</strong> A digital clock shows the time 12:05. If you look at this clock through a mirror, what time will it appear to show?",
+          question_id: "<strong>(Non-Rutin)</strong> Jam digital menunjukkan 12:05. Berapa waktunya jika dilihat di cermin?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_0tplik_3086.png",
+          answer: "20:51",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Mirrored digits: 5 $\\leftrightarrow$ 2, 1 and 0 are same, but order flips.</p>
+              <p><strong>Konsep:</strong> Cermin angka: 5 $\\leftrightarrow$ 2, angka 1 dan 0 tetap, tapi urutan berbalik.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: 5 (last) becomes 2 (first). 0 remains. 2 becomes 5. 1 remains.</li>
+                <li>Step 2: Result is 20:51.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Angka 5 jadi 2 (di depan). 0 tetap. 2 jadi 5. 1 tetap.</li>
+                <li>Langkah 2: Hasilnya 20:51.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "How many small cubes are hidden (not visible) in this building?",
+          question_id: "Berapa banyak kubus yang tersembunyi (tidak terlihat) pada bangunan ini?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_dtkikj_6154.png",
+          answer: "1",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Every top cube needs a support cube below it.</p>
+              <p><strong>Konsep:</strong> Setiap kubus di atas butuh penopang di bawahnya.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: 1 cube on top sits on 1 hidden cube in the middle of the base.</li>
+                <hr class="my-1">
+                <li>Langkah 1: 1 kubus di puncak berdiri di atas 1 kubus tersembunyi di tengah alas.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Budi has a wooden letter 'F'. If he rotates it by 90 degrees clockwise, in which direction will the 'arms' (the two short horizontal lines) point?",
+          question_id: "Budi punya huruf kayu 'F'. Jika diputar 90 derajat searah jarum jam, ke arah mana bagian 'tangannya' (dua garis horizontal pendek) akan menunjuk?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_cytxgv_5734.png",
+          answer: "Down / Bawah",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Rotation changes orientation of parts.</p>
+              <p><strong>Konsep:</strong> Rotasi mengubah arah bagian-bagian objek.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Originally point Right. 90 deg CW moves them to point Down.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Awalnya menunjuk Kanan. Putar 90 CW membuatnya menunjuk <b>Bawah</b>.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Kiko the Frog shows two views of a colored cube. Based on the images, which color is opposite to Red?",
+          question_id: "Kiko si Katak menunjukkan dua gambar kubus. Berdasarkan gambar, warna apa yang berhadapan dengan Merah?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_vrhqpl_7072.png",
+          answer: "Green / Hijau",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Yellow is fixed on Right. Blue moved from Front to Top.</li>
+                <li>Step 2: Red (Top) moved to Back. Green moved from Bottom to Front.</li>
+                <li>Step 3: Therefore, Red is opposite to Green.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Kuning tetap di Kanan. Biru pindah dari Depan ke Atas.</li>
+                <li>Langkah 2: Merah (Atas) pindah ke Belakang. Hijau dari Bawah pindah ke Depan.</li>
+                <li>Langkah 3: Jadi, Merah berhadapan dengan Hijau.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "Cici draws a symmetrical sea creature. If completed, how many total legs (claws + small legs) will it have?",
+          question_id: "Cici menggambar makhluk laut simetris. Jika selesai, berapa total jumlah kaki (capit + kaki kecil)?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_j6ovce_4695.png",
+          answer: "8",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Left side has 1 claw and 3 legs (Total 4).</li>
+                <li>Step 2: Symmetrical means total is $4 \\times 2 = 8$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Sisi kiri punya 1 capit dan 3 kaki (Total 4).</li>
+                <li>Langkah 2: Simetris berarti totalnya adalah $4 \\times 2 = 8$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 1: Penalaran Spasial Lanjutan",
+          question_en: "<strong>(Non-Routine)</strong> A pattern follows: 1 fold gives 2 layers. How many layers after 3 folds?",
+          question_id: "<strong>(Non-Rutin)</strong> Pola: 1 lipatan jadi 2 lapis. Berapa lapis setelah 3 lipatan?",
+          answer: "8",
+          explanation: `<div class="solution-step">Step 1: $2 \\times 2 \\times 2 = 8$. / Langkah 1: $2 \\times 2 \\times 2 = 8$.</div>`,
+        },
+
+        // --- TOPIK 2: Problem Solving - Working Backwards (16-30) ---
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Budi has a bag of shiny marbles. He gives 5 to Ani and 3 to Caca. Now he has 10 left. How many did he have in his bag at the start?",
+          question_id: "Budi punya sekantong kelereng. Dia kasih 5 ke Ani dan 3 ke Caca. Sekarang sisa 10. Berapa kelereng Budi awalnya?",
+          answer: "18",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Working Backwards. Add back the amounts given away.</p>
+              <p><strong>Konsep:</strong> Berpikir Terbalik. Tambahkan kembali jumlah yang dibagikan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Start 10. Add Caca's back $\\rightarrow 10 + 3 = 13$.</li>
+                <li>Step 2: Add Ani's back $\\rightarrow 13 + 5 = 18$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Mulai 10. Tambah punya Caca $\\rightarrow 13$.</li>
+                <li>Langkah 2: Tambah punya Ani $\\rightarrow 18$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Farmer Joe sells half his apples in the morning. In the afternoon, he sells 7 more. He has 5 left. How many apples did he have in the morning?",
+          question_id: "Petani Joe jual setengah apelnya pagi hari, lalu jual 7 lagi siang hari. Sisa 5. Berapa apel semula?",
+          answer: "24",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Reverse the afternoon sale (Add), then the morning sale (Multiply by 2).</p>
+              <p><strong>Konsep:</strong> Balikkan jual siang (Tambah), lalu jual pagi (Kali 2).</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Steps / Langkah-langkah:</p>
+              <ul>
+                <li>Step 1: Final sisa 5. Add 7 sold in afternoon $\\rightarrow 12$.</li>
+                <li>Step 2: Since 12 is half, multiply by 2 $\\rightarrow 12 \\times 2 = 24$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Sisa 5. Tambah 7 jual siang $\\rightarrow 12$.</li>
+                <li>Langkah 2: Karena 12 itu setengah, kali dua $\\rightarrow 24$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Lala thinks of a number, adds 8, then subtracts 5. The result is 12. What is the number?",
+          question_id: "Lala pikir satu angka, tambah 8, kurang 5. Hasilnya 12. Angka berapa itu?",
+          answer: "9",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian:</p>
+              <ul>
+                <li>Step 1: Start with result 12. Add 5 $\\rightarrow 17$.</li>
+                <li>Step 2: Subtract 8 $\\rightarrow 17 - 8 = 9$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Dari hasil 12. Tambah 5 $\\rightarrow 17$.</li>
+                <li>Langkah 2: Kurang 8 $\\rightarrow 17 - 8 = 9$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "A yellow bus starts with passengers. 4 get off and 2 get on. Now there are 15. How many at start?",
+          question_id: "Bus kuning punya beberapa orang. 4 turun, 2 naik. Sekarang 15. Berapa awalnya?",
+          answer: "17",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian:</p>
+              <ul>
+                <li>Step 1: Start with current 15. Subtract 2 $\\rightarrow 13$.</li>
+                <li>Step 2: Add 4 $\\rightarrow 13 + 4 = 17$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Dari sisa 15. Kurang 2 $\\rightarrow 13$.</li>
+                <li>Langkah 2: Tambah 4 $\\rightarrow 13 + 4 = 17$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "<strong>(Non-Routine)</strong> A magic box doubles money but takes a \\$10 fee. Twice done, box is empty (\\$0). What was the start?",
+          question_id: "<strong>(Non-Rutin)</strong> Kotak ajaib ganda uang tapi minta biaya \\$10. Setelah 2x, sisa 0. Berapa awalnya?",
+          answer: "7.50",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian:</p>
+              <ul>
+                <li>Step 1: Round 2 end 0 $\\rightarrow (0 + 10) \\div 2 = 5$.</li>
+                <li>Step 2: Round 1 end 5 $\\rightarrow (5 + 10) \\div 2 = 7.5$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Putaran 2 sisa 0 $\\rightarrow (0 + 10) \\div 2 = 5$.</li>
+                <li>Langkah 2: Putaran 1 sisa 5 $\\rightarrow (5 + 10) \\div 2 = 7.5$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Maya has a cookie jar. Monday she ate 4. Tuesday mom gave 6. Wednesday she shared half. Now she has 8. How many at first?",
+          question_id: "Maya punya toples kue. Senin makan 4. Selasa Ibu kasih 6. Rabu bagi setengah. Sisa 8. Berapa awalnya?",
+          answer: "14",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Undo Wednesday ($\\times 2$), Tuesday ($-6$), and Monday ($+4$).</p>
+              <p><strong>Konsep:</strong> Batalkan Rabu ($\\times 2$), Selasa ($-6$), dan Senin ($+4$).</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 21</p>
+              <ul>
+                <li>Step 1: $8 \\times 2 = 16$.</li>
+                <li>Step 2: $16 - 6 = 10$.</li>
+                <li>Step 3: $10 + 4 = 14$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: $8 \\times 2 = 16$.</li>
+                <li>Langkah 2: $16 - 6 = 10$.</li>
+                <li>Langkah 3: $10 + 4 = 14$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Sammy squirrel hides 12 acorns. Then finds 5 more. A bird steals 3. Sammy has 20 now. How many did he start with?",
+          question_id: "Sammy tupai simpan 12 kacang. Lalu temu 5 lagi. Burung curi 3. Sekarang sisa 20. Berapa awalnya?",
+          answer: "30",
+          explanation: `
+            <div class="concept">
+              <p><strong>Concept:</strong> Reverse changes: Add stolen, subtract found, add back hidden.</p>
+              <p><strong>Konsep:</strong> Balikkan perubahan: Tambah dicuri, kurang ditemukan, tambah disimpan.</p>
+            </div>
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 22</p>
+              <ul>
+                <li>Step 1: $20 + 3 = 23$.</li>
+                <li>Step 2: $23 - 5 = 18$.</li>
+                <li>Step 3: $18 + 12 = 30$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Tambah 3 (dicuri) $\\rightarrow 23$.</li>
+                <li>Langkah 2: Kurang 5 (ditemukan) $\\rightarrow 18$.</li>
+                <li>Langkah 3: Tambah 12 (disimpan) $\\rightarrow 30$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Kiko frog jumps on pads. Forward 10, backward 4. Now on pad 26. Where did Kiko start?",
+          question_id: "Kiko katak loncat maju 10 daun, mundur 4. Sekarang di daun 26. Mulai di nomor berapa?",
+          answer: "20",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 23</p>
+              <ul>
+                <li>Step 1: Reverse backward jump $\\rightarrow 26 + 4 = 30$.</li>
+                <li>Step 2: Reverse forward jump $\\rightarrow 30 - 10 = 20$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Balikkan lompatan mundur $\\rightarrow 30$.</li>
+                <li>Langkah 2: Balikkan lompatan maju $\\rightarrow 20$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Library shelf had books. Teacher took 15. Student returned 9. Now 40. How many at first?",
+          question_id: "Rak buku punya beberapa buku. Guru ambil 15. Siswa balikkan 9. Sekarang sisa 40. Berapa awalnya?",
+          answer: "46",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 24</p>
+              <ul>
+                <li>Step 1: $40 - 9 = 31$.</li>
+                <li>Step 2: $31 + 15 = 46$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Kurang 9 $\\rightarrow 31$.</li>
+                <li>Langkah 2: Tambah 15 $\\rightarrow 46$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "<strong>(Non-Routine)</strong> Friends A, B, C share candy. Each doubles the next. End: all have 8. Start A?",
+          question_id: "<strong>(Non-Rutin)</strong> A, B, C bagi permen. A ganda B. B ganda C. C ganda A. Akhir semua punya 8. Berapa awal A?",
+          answer: "11",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 25</p>
+              <ul>
+                <li>Step 1: End (8,8,8). Undo C to A: (4, 8, 12).</li>
+                <li>Step 2: Undo B to C: (4, 14, 6).</li>
+                <li>Step 3: Undo A to B: (11, 7, 6).</li>
+                <hr class="my-1">
+                <li>Langkah 1: Akhir (8,8,8). Balikkan C ke A $\\rightarrow$ (4, 8, 12).</li>
+                <li>Langkah 2: Balikkan B ke C $\\rightarrow$ (4, 14, 6).</li>
+                <li>Langkah 3: Balikkan A ke B $\\rightarrow$ (11, 7, 6).</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Father doubles Siti's money. Siti spends \\$20. She has \\$80 left. How much at first?",
+          question_id: "Ayah ganda uang Siti. Siti jajan \\$20. Sisa \\$80. Berapa awalnya?",
+          answer: "50",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 26</p>
+              <ul>
+                <li>Step 1: $80 + 20 = 100$.</li>
+                <li>Step 2: $100 \\div 2 = 50$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Tambah jajan $\\rightarrow 100$.</li>
+                <li>Langkah 2: Bagi dua $\\rightarrow 50$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Budi's party: 5 candles out. Mom lit 10 new. Now 25. How many at start?",
+          question_id: "Pesta Budi: 5 lilin mati. Ibu nyalakan 10 baru. Sekarang ada 25. Berapa awalnya?",
+          answer: "20",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 27</p>
+              <ul>
+                <li>Step 1: $25 - 10 = 15$.</li>
+                <li>Step 2: $15 + 5 = 20$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Kurang baru $\\rightarrow 15$.</li>
+                <li>Langkah 2: Tambah mati $\\rightarrow 20$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Andi finished 7 pages. Teacher gave 10 more. Andi has 15 left. How many at start?",
+          question_id: "Andi selesai 7 hal. Guru kasih 10 lagi. Sisa 15 hal. Berapa hal awal?",
+          answer: "12",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 28</p>
+              <ul>
+                <li>Step 1: $15 - 10 = 5$.</li>
+                <li>Step 2: $5 + 7 = 12$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Kurang baru $\\rightarrow 5$.</li>
+                <li>Langkah 2: Tambah selesai $\\rightarrow 12$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "Magic plant grows 5 cm. Trimmed 2 cm. Now 10 cm. How tall at start?",
+          question_id: "Tanaman tumbuh 5 cm. Digunting 2 cm. Sekarang tinggi 10 cm. Berapa awalnya?",
+          answer: "7",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 29</p>
+              <ul>
+                <li>Step 1: $10 + 2 = 12$.</li>
+                <li>Step 2: $12 - 5 = 7$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Tambah gunting $\\rightarrow 12$.</li>
+                <li>Langkah 2: Kurang tumbuh $\\rightarrow 7$.</li>
+              </ul>
+            </div>`,
+        },
+        {
+          topic: "Topik 2: Problem Solving Strategies 1 (Working Backwards)",
+          question_en: "<strong>(Non-Routine)</strong> Elf changes number: Day 1: +2. Day 2: -3. Day 3: +4. Now 10. Start?",
+          question_id: "<strong>(Non-Rutin)</strong> Elf ubah angka: Hari 1 +2, Hari 2 -3, Hari 3 +4. Sekarang 10. Berapa awalnya?",
+          answer: "7",
+          explanation: `
+            <div class="solution-step">
+              <p class="font-bold text-indigo-600">Solution / Penyelesaian No. 30</p>
+              <ul>
+                <li>Step 1: Reverse Day 3 ($+4 \\rightarrow -4$): $10 - 4 = 6$.</li>
+                <li>Step 2: Reverse Day 2 ($-3 \\rightarrow +3$): $6 + 3 = 9$.</li>
+                <li>Step 3: Reverse Day 1 ($+2 \\rightarrow -2$): $9 - 2 = 7$.</li>
+                <hr class="my-1">
+                <li>Langkah 1: Balikkan Hari 3: $10 - 4 = 6$.</li>
+                <li>Langkah 2: Balikkan Hari 2: $6 + 3 = 9$.</li>
+                <li>Langkah 3: Balikkan Hari 1: $9 - 2 = 7$.</li>
+              </ul>
+            </div>`,
+        },
+      ];
+
+      function renderContent() {
+        const problemsList = document.getElementById("problems-list");
+        const solutionsList = document.getElementById("solutions-list");
+        let currentTopic = "";
+
+        questions.forEach((q, index) => {
+          const qNum = index + 1;
+          
+          if (q.topic !== currentTopic) {
+            currentTopic = q.topic;
+            problemsList.innerHTML += `<h3 class="topic-title">${currentTopic}</h3>`;
+            solutionsList.innerHTML += `<h3 class="topic-title">Solution / Penyelesaian ${currentTopic}</h3>`;
+          }
+
+          let problemHTML = `
+            <div class="item-container">
+              <p><strong>${qNum}.</strong> ${q.question_en}</p>
+              ${q.image_url ? `<img src="${q.image_url}" alt="Problem ${qNum}" class="problem-image">` : ""}
+              <p class="text-gray-600 italic">${q.question_id}</p>
+            </div>`;
+          problemsList.innerHTML += problemHTML;
+
+          let solutionHTML = `
+            <div class="item-container">
+              <p class="font-bold">Solution / Penyelesaian No. ${qNum}</p>
+              ${q.explanation}
+              <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+            </div>`;
+          solutionsList.innerHTML += solutionHTML;
+        });
+
+        if (typeof MathJax !== "undefined") {
+          MathJax.typesetPromise();
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
