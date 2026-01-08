@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan OSNK SD: Konsep Bilangan</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --grey-text: #8d8e8d;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        height: auto;
+        padding: 2.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .page:last-of-type {
+        page-break-after: avoid;
+      }
+      .cover-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .cover-image {
+        max-width: 9cm;
+        height: auto;
+        margin-bottom: 40px;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 900;
+        margin: 0 0 15px 0;
+        line-height: 1.2;
+        color: #333;
+        border-bottom: none;
+      }
+      .cover-subtitle {
+        font-size: 18pt;
+        color: var(--secondary-text);
+        font-weight: 700;
+      }
+      .page::before {
+        content: "";
+        /* Logo Mathchamps sebagai watermark background */
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        z-index: 1;
+      }
+      .cover-page::before {
+        opacity: 0;
+      }
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        flex-grow: 1;
+      }
+      h1 {
+        font-size: 24pt;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-text);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--secondary-text);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 5px;
+        margin-top: 25px;
+      }
+      h3 {
+        font-size: 14pt;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .materi-konten {
+        display: block;
+        text-align: justify;
+      }
+      .soal-latihan,
+      .soal-latihan-n {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 25px;
+        break-inside: avoid;
+        padding-bottom: 10px;
+      }
+      .soal-latihan > b,
+      .soal-latihan-n > b {
+        margin-right: 8px;
+        flex-shrink: 0;
+      }
+      .soal-wrapper {
+        flex-grow: 1;
+      }
+      .soal-konten {
+        text-align: justify;
+      }
+      .options {
+        padding-left: 0px;
+        margin-top: 10px;
+        display: block;
+      }
+      .options div {
+        margin-bottom: 5px;
+        padding-left: 20px;
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        padding-top: 2px;
+        margin-top: auto;
+        border-top: 2.5px solid var(--grey-text);
+        z-index: 2;
+        position: relative;
+      }
+      .kategori-soal {
+        text-align: center;
+        font-size: 18pt;
+        font-weight: 700;
+        margin: 20px 0;
+        border-top: 2px solid var(--primary-text);
+        border-bottom: 2px solid var(--primary-text);
+        padding: 10px 0;
+      }
+      .pembahasan {
+        background-color: #f9f9f9;
+        border-left: 4px solid #4caf50;
+        padding: 15px;
+        margin-top: 10px;
+        text-align: justify;
+        font-size: 11pt;
+      }
+      .rumus-box {
+        background-color: #e3f2fd;
+        border-left: 4px solid #2196f3;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 11pt;
+      }
+      table.table-materi {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      table.table-materi th,
+      table.table-materi td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      table.table-materi th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      ul.checklist {
+        list-style-type: none;
+        padding-left: 10px;
+      }
+      ul.checklist li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+      ul.checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #4caf50;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+        }
+        .page {
+          width: 100%;
+          min-height: 29.7cm;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+          page-break-after: always;
+        }
+        .page:last-child {
+          page-break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Halaman Sampul -->
+    <section class="page cover-page">
+      <div
+        class="content-wrapper"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
+          alt="Mathchamps Logo"
+          class="cover-image"
+        />
+        <h1 class="cover-title">
+          Konsep Bilangan<br />Persiapan OSN-K SD 2025
+        </h1>
+        <p class="cover-subtitle">
+          Modul Lengkap: Cacah, Bulat, Rasional, & Teori Bilangan Dasar
+        </p>
+      </div>
+    </section>
+
+    <!-- MATERI 1A - Konsep Bilangan (Part 1) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 1a: Konsep Dasar Bilangan</h1>
+        <div class="materi-konten">
+          <h2>1. Jenis-Jenis Bilangan Dasar</h2>
+          <div class="rumus-box">
+            <ul class="checklist">
+              <li><b>Bilangan Asli:</b> Dimulai dari 1 ($1, 2, 3, ...$).</li>
+              <li><b>Bilangan Cacah:</b> Bilangan Asli ditambah 0 ($0, 1, 2, 3, ...$).</li>
+              <li><b>Bilangan Bulat:</b> Mencakup negatif, nol, dan positif ($..., -2, -1, 0, 1, 2, ...$).</li>
+            </ul>
+          </div>
+          
+          <h2>2. Operasi Bilangan Bulat pada Garis Bilangan</h2>
+          <p>Bayangkan garis bilangan. Angka 0 di tengah. Kanan positif, kiri negatif.</p>
+          <ul class="checklist">
+            <li><b>Maju (Kanan):</b> Ditambah bilangan positif.</li>
+            <li><b>Mundur (Kiri):</b> Dikurang positif atau ditambah negatif.</li>
+          </ul>
+          <div class="tips-box">
+            <b>Aturan Tanda:</b><br>
+            $a + (-b) = a - b$ (Maju lalu mundur)<br>
+            $a - (-b) = a + b$ (Mundur ke arah negatif = Maju)
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 1B - Konsep Bilangan (Part 2) -->
+    <section class="page">
+        <div class="content-wrapper">
+          <h1>Materi 1b: Bilangan Rasional</h1>
+          <div class="materi-konten">
+            <h2>3. Bilangan Rasional</h2>
+            <p>Bilangan yang bisa ditulis sebagai pecahan $\frac{a}{b}$ dengan $b \neq 0$.</p>
+            <table class="table-materi">
+              <tr>
+                <th>Bentuk</th>
+                <th>Contoh</th>
+                <th>Cara Ubah ke Desimal</th>
+              </tr>
+              <tr>
+                <td>Pecahan Biasa</td>
+                <td>$\frac{3}{4}$</td>
+                <td>$3 \div 4 = 0,75$</td>
+              </tr>
+              <tr>
+                <td>Persen</td>
+                <td>$25\%$</td>
+                <td>$\frac{25}{100} = 0,25$</td>
+              </tr>
+              <tr>
+                <td>Pecahan Campuran</td>
+                <td>$1 \frac{1}{2}$</td>
+                <td>$\frac{3}{2} = 1,5$</td>
+              </tr>
+            </table>
+  
+            <h2>4. Membandingkan Bilangan Rasional</h2>
+            <p>Untuk membandingkan pecahan, ubah semuanya ke bentuk yang sama (disarankan <b>desimal</b>).</p>
+            <p><i>Contoh:</i> Manakah yang lebih besar, $\frac{2}{3}$ atau $60\%$?</p>
+            <ul>
+                <li>$\frac{2}{3} = 0,666...$</li>
+                <li>$60\% = 0,60$</li>
+            </ul>
+            <p>Karena $0,66 > 0,60$, maka $\frac{2}{3}$ lebih besar.</p>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- MATERI 2A - Teori Bilangan (Part 1) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Materi 2a: Sifat Bilangan</h1>
+        <div class="materi-konten">
+          <h2>1. Faktor & Kelipatan</h2>
+          <p><b>Faktor</b> adalah pembagi habis suatu bilangan. <b>Kelipatan</b> adalah hasil kali bilangan dengan bilangan asli.</p>
+          <p>Contoh Bilangan 12:</p>
+          <ul>
+            <li>Faktor: 1, 2, 3, 4, 6, 12</li>
+            <li>Kelipatan: 12, 24, 36, 48, ...</li>
+          </ul>
+
+          <h2>2. Bilangan Prima & Komposit</h2>
+          <div class="rumus-box">
+            <p><b>Bilangan Prima:</b> Bilangan asli > 1 yang hanya memiliki <b>tepat dua faktor</b> (1 dan dirinya sendiri).<br>
+            <i>Contoh:</i> 2, 3, 5, 7, 11, 13, 17, 19, ...</p>
+            <hr style="border: 0; border-top: 1px dashed #2196f3; margin: 10px 0;">
+            <p><b>Bilangan Komposit:</b> Bilangan asli > 1 yang memiliki <b>lebih dari dua faktor</b> (bisa dibagi angka lain selain 1 dan dirinya).<br>
+            <i>Contoh:</i>
+            <ul style="margin-top:0;">
+                <li>4 (Faktor: 1, 2, 4)</li>
+                <li>6 (Faktor: 1, 2, 3, 6)</li>
+                <li>9 (Faktor: 1, 3, 9)</li>
+            </ul>
+            </p>
+            <p><b>Catatan Penting:</b> Angka <b>1</b> bukan Prima dan bukan Komposit (karena hanya punya 1 faktor).</p>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- MATERI 2B - Teori Bilangan (Part 2) -->
+    <section class="page">
+        <div class="content-wrapper">
+          <h1>Materi 2b: Keterbagian & FPB KPK</h1>
+          <div class="materi-konten">
+            <h2>3. Ciri-Ciri Keterbagian</h2>
+            <p>Trik cepat mengetahui apakah angka habis dibagi:</p>
+            <ul class="checklist">
+                <li><b>Dibagi 2:</b> Digit terakhir genap (0, 2, 4, 6, 8).</li>
+                <li><b>Dibagi 3:</b> Jumlah semua digit habis dibagi 3. (Contoh: 123 $\rightarrow 1+2+3=6$, habis).</li>
+                <li><b>Dibagi 4:</b> Dua digit terakhir habis dibagi 4.</li>
+                <li><b>Dibagi 5:</b> Digit terakhir 0 atau 5.</li>
+                <li><b>Dibagi 9:</b> Jumlah semua digit habis dibagi 9.</li>
+            </ul>
+    
+            <h2>4. FPB & KPK (Contoh Pengerjaan)</h2>
+            <p>Gunakan <b>Faktorisasi Prima</b> (Pohon Faktor) untuk angka besar. Mari kita ambil contoh mencari FPB dan KPK dari <b>24 dan 36</b>.</p>
+            
+            <div class="tips-box">
+                <b>Langkah 1: Faktorisasi Prima</b><br>
+                $24 = 2 \times 2 \times 2 \times 3 = \mathbf{2^3 \times 3^1}$<br>
+                $36 = 2 \times 2 \times 3 \times 3 = \mathbf{2^2 \times 3^2}$<br>
+                <b>Langkah 2: Menentukan FPB</b><br>
+                <i>Prinsip: Ambil faktor yang SAMA dengan pangkat TERKECIL.</i><br>
+                - Faktor sama: 2 dan 3.<br>
+                - Pilih pangkat terkecil: $2^2$ (dari 36) dan $3^1$ (dari 24).<br>
+                $ \text{FPB} = 2^2 \times 3^1 = 4 \times 3 = 12 $<br>
+                <b>Langkah 3: Menentukan KPK</b><br>
+                <i>Prinsip: Ambil SEMUA faktor dengan pangkat TERBESAR.</i><br>
+                - Faktor yang ada: 2 dan 3.<br>
+                - Pilih pangkat terbesar: $2^3$ (dari 24) dan $3^2$ (dari 36).<br>
+                $ \text{KPK} = 2^3 \times 3^2 = 8 \times 9 = 72 $
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    <!-- SOAL MUDAH (1-5) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Mudah (5 Soal)</div>
+        
+        <div class="soal-latihan">
+          <b>1.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Suhu ruangan pendingin mula-mula $-5^\circ$C. Kemudian suhu diturunkan sebesar $8^\circ$C. Suhu ruangan sekarang adalah...</div>
+            <div class="options">
+              <div>A. $-13^\circ$C</div>
+              <div>B. $-3^\circ$C</div>
+              <div>C. $3^\circ$C</div>
+              <div>D. $13^\circ$C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>2.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Bentuk pecahan desimal dari $37,5\%$ adalah...</div>
+            <div class="options">
+              <div>A. 0,375</div>
+              <div>B. 3,75</div>
+              <div>C. 37,5</div>
+              <div>D. 0,0375</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>3.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Manakah di antara bilangan berikut yang merupakan bilangan prima?</div>
+            <div class="options">
+              <div>A. 27</div>
+              <div>B. 49</div>
+              <div>C. 51</div>
+              <div>D. 59</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>4.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Faktor persekutuan terbesar (FPB) dari 24 dan 36 adalah...</div>
+            <div class="options">
+              <div>A. 6</div>
+              <div>B. 12</div>
+              <div>C. 18</div>
+              <div>D. 24</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SEDANG (6-10) -->
+    <section class="page">
+      <div class="content-wrapper">
+        
+        <div class="soal-latihan-n">
+          <b>5.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Hasil dari $-12 + 5 - (-3)$ adalah...</div>
+            <div class="options">
+              <div>A. -10</div>
+              <div>B. -4</div>
+              <div>C. 4</div>
+              <div>D. -14</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kategori-soal">Kategori Sedang (10 Soal)</div>
+
+        <div class="soal-latihan">
+          <b>6.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Ibu membeli pita sepanjang $5\frac{1}{2}$ meter. Pita tersebut digunakan untuk menghias kado sebanyak $2,25$ meter dan diberikan kepada adik $\frac{3}{4}$ meter. Sisa pita Ibu sekarang adalah... meter.</div>
+            <div class="options">
+              <div>A. 2,0</div>
+              <div>B. 2,25</div>
+              <div>C. 2,5</div>
+              <div>D. 2,75</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>7.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Lampu A menyala setiap 6 detik sekali, sedangkan lampu B menyala setiap 8 detik sekali. Jika kedua lampu menyala bersamaan pada detik ke-0, pada detik ke berapakah mereka akan menyala bersamaan lagi untuk kedua kalinya setelah detik ke-0?</div>
+            <div class="options">
+              <div>A. 24</div>
+              <div>B. 36</div>
+              <div>C. 48</div>
+              <div>D. 72</div>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SEDANG (11-15) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sedang (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>8.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Pak Budi ingin membagikan 48 buku tulis dan 64 pensil kepada sejumlah anak panti asuhan. Setiap anak menerima buku tulis dan pensil dengan jumlah yang sama banyak. Paling banyak berapa anak yang bisa menerima paket tersebut?</div>
+            <div class="options">
+              <div>A. 8</div>
+              <div>B. 12</div>
+              <div>C. 16</div>
+              <div>D. 24</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>9.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Jumlah semua faktor dari bilangan 20 adalah...</div>
+            <div class="options">
+              <div>A. 30</div>
+              <div>B. 40</div>
+              <div>C. 42</div>
+              <div>D. 45</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>10.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Bilangan $3A2$ adalah bilangan 3 digit yang habis dibagi 9. Nilai $A$ yang memenuhi adalah...</div>
+            <div class="options">
+              <div>A. 2</div>
+              <div>B. 3</div>
+              <div>C. 4</div>
+              <div>D. 5</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (16-20) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sedang (Lanjutan)</div>
+
+        <div class="soal-latihan">
+          <b>11.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Hasil dari operasi hitung $\frac{2}{3} + 0,6 - 15\%$ adalah...</div>
+            <div class="options">
+              <div>A. $\frac{61}{60}$</div>
+              <div>B. $\frac{67}{60}$</div>
+              <div>C. $1,15$</div>
+              <div>D. $1,2$</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>12.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Diketahui $n$ adalah bilangan bulat negatif. Hasil operasi manakah yang menghasilkan nilai terbesar?</div>
+            <div class="options">
+              <div>A. $3 \times n$</div>
+              <div>B. $3 + n$</div>
+              <div>C. $3 - n$</div>
+              <div>D. $3 \div n$</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>13.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Berapa banyak bilangan prima antara 20 dan 40?</div>
+            <div class="options">
+              <div>A. 3</div>
+              <div>B. 4</div>
+              <div>C. 5</div>
+              <div>D. 6</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>14.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Jika $A = \text{FPB}(36, 48)$ dan $B = \text{KPK}(12, 15)$, maka nilai $A + B$ adalah...</div>
+            <div class="options">
+              <div>A. 66</div>
+              <div>B. 72</div>
+              <div>C. 84</div>
+              <div>D. 96</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (16-20) -->
+    <section class="page">
+      <div class="content-wrapper">
+
+         <div class="soal-latihan-n">
+          <b>15.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Dalam tes matematika, jawaban benar diberi nilai 4, salah diberi nilai -2, dan tidak dijawab -1. Dari 50 soal, Budi menjawab benar 35 soal dan salah 10 soal. Nilai total Budi adalah...</div>
+            <div class="options">
+              <div>A. 110</div>
+              <div>B. 115</div>
+              <div>C. 120</div>
+              <div>D. 125</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kategori-soal">Kategori Sulit (15 Soal)</div>
+
+        <div class="soal-latihan">
+          <b>16.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Angka satuan (digit terakhir) dari $3^{2025}$ adalah...</div>
+            <div class="options">
+              <div>A. 1</div>
+              <div>B. 3</div>
+              <div>C. 7</div>
+              <div>D. 9</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>17.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Jumlah bilangan kelipatan 3 antara 1 sampai 100 yang tidak habis dibagi 5 adalah...</div>
+            <div class="options">
+              <div>A. 27</div>
+              <div>B. 33</div>
+              <div>C. 1368</div>
+              <div>D. 1365</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+
+    <!-- SOAL SULIT (21-25) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sulit (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>18.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Diketahui $a$ dan $b$ adalah bilangan cacah berbeda. Jika $\frac{1}{a} + \frac{1}{b} = \frac{1}{4}$, maka nilai terbesar dari $a+b$ adalah...</div>
+            <div class="options">
+              <div>A. 9</div>
+              <div>B. 16</div>
+              <div>C. 25</div>
+              <div>D. 36</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>19.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Bilangan 4 digit $4a5b$ habis dibagi 12. Berapa banyak pasangan $(a, b)$ yang mungkin?</div>
+            <div class="options">
+              <div>A. 6</div>
+              <div>B. 7</div>
+              <div>C. 8</div>
+              <div>D. 9</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>20.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Jika $n$ adalah bilangan bulat positif, berapakah sisa pembagian $1! + 2! + 3! + ... + 100!$ oleh 12?</div>
+            <div class="options">
+              <div>A. 1</div>
+              <div>B. 3</div>
+              <div>C. 9</div>
+              <div>D. 0</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (26-30) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sulit (Lanjutan)</div>
+
+         <div class="soal-latihan">
+          <b>21.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Sebuah bilangan jika dibagi 5 bersisa 3, dan jika dibagi 7 bersisa 5. Bilangan terkecil yang memenuhi sifat tersebut adalah...</div>
+            <div class="options">
+              <div>A. 33</div>
+              <div>B. 38</div>
+              <div>C. 68</div>
+              <div>D. 73</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>22.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Diketahui $x^2 - y^2 = 31$, di mana $x$ dan $y$ adalah bilangan asli. Nilai dari $x^2 + y^2$ adalah...</div>
+            <div class="options">
+              <div>A. 480</div>
+              <div>B. 481</div>
+              <div>C. 512</div>
+              <div>D. 961</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>23.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Jumlah angka-angka (sum of digits) dari hasil $10^{25} - 25$ adalah...</div>
+            <div class="options">
+              <div>A. 210</div>
+              <div>B. 216</div>
+              <div>C. 219</div>
+              <div>D. 225</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (26-30) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sulit (Lanjutan)</div>
+        <div class="soal-latihan-n">
+          <b>24.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Berapa banyak faktor positif dari bilangan 720 yang merupakan kelipatan 3?</div>
+            <div class="options">
+              <div>A. 12</div>
+              <div>B. 18</div>
+              <div>C. 20</div>
+              <div>D. 24</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>25.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Pada sebuah buku, halaman diberi nomor 1, 2, 3, dst. Jika total digit yang digunakan untuk menomori halaman adalah 204 digit, berapa jumlah halaman buku tersebut?</div>
+            <div class="options">
+              <div>A. 102</div>
+              <div>B. 103</div>
+              <div>C. 104</div>
+              <div>D. 105</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (26-30) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sulit (Lanjutan)</div>
+        
+        <div class="soal-latihan">
+          <b>26.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Tiga bilangan prima $p, q, r$ memenuhi persamaan $p \times q \times r = 5 \times (p + q + r)$. Nilai $p + q + r$ adalah...</div>
+            <div class="options">
+              <div>A. 10</div>
+              <div>B. 12</div>
+              <div>C. 14</div>
+              <div>D. 20</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>27.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Nilai dari $\left(1 - \frac{1}{2^2}\right)\left(1 - \frac{1}{3^2}\right)\left(1 - \frac{1}{4^2}\right)...\left(1 - \frac{1}{10^2}\right)$ adalah...</div>
+            <div class="options">
+              <div>A. $\frac{11}{20}$</div>
+              <div>B. $\frac{11}{10}$</div>
+              <div>C. $\frac{9}{20}$</div>
+              <div>D. $\frac{1}{2}$</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- SOAL SULIT (26-30) -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Kategori Sulit (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>28.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">FPB dari dua bilangan adalah 12 dan KPK-nya adalah 432. Jika salah satu bilangan adalah 36, bilangan lainnya adalah...</div>
+            <div class="options">
+              <div>A. 108</div>
+              <div>B. 144</div>
+              <div>C. 124</div>
+              <div>D. 96</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>29.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Berapa banyak bilangan bulat positif $n$ sehingga $\frac{2n + 12}{n + 2}$ juga merupakan bilangan bulat?</div>
+            <div class="options">
+              <div>A. 2</div>
+              <div>B. 3</div>
+              <div>C. 4</div>
+              <div>D. 5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>30.</b>
+          <div class="soal-wrapper">
+            <div class="soal-konten">Rata-rata nilai ujian siswa kelas A adalah 85, sedangkan kelas B adalah 90. Jika nilai kedua kelas digabung, rata-ratanya menjadi 88. Perbandingan banyak siswa kelas A dan B adalah...</div>
+            <div class="options">
+              <div>A. 2 : 3</div>
+              <div>B. 3 : 2</div>
+              <div>C. 3 : 4</div>
+              <div>D. 4 : 3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+
+    <!-- PEMBAHASAN 1-5 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <h1>Kunci Jawaban & Pembahasan</h1>
+        <div class="kategori-soal">Kategori Mudah</div>
+        
+        <div class="soal-latihan">
+          <b>1.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. -13</b>
+            <div class="pembahasan">
+              Suhu awal = $-5$. Diturunkan = dikurangi.
+              $$-5 - 8 = -13$$
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>2.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 0,375</b>
+            <div class="pembahasan">
+              $$37,5\% = \frac{37,5}{100} = 0,375$$
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>3.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: D. 59</b>
+            <div class="pembahasan">
+              - 27 habis dibagi 3.<br>
+              - 49 habis dibagi 7 ($7 \times 7$).<br>
+              - 51 habis dibagi 3 ($17 \times 3$).<br>
+              - 59 hanya bisa dibagi 1 dan 59.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>4.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 12</b>
+            <div class="pembahasan">
+              Faktor 24: 1, 2, 3, 4, 6, 8, <b>12</b>, 24.<br>
+              Faktor 36: 1, 2, 3, 4, 6, 9, <b>12</b>, 18, 36.<br>
+              Faktor terbesar yang sama adalah 12.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 6-10 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="soal-latihan-n">
+          <b>5.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. -4</b>
+            <div class="pembahasan">
+              Ingat: kurang negatif sama dengan tambah.<br>
+              $-12 + 5 - (-3) = -12 + 5 + 3$<br>
+              $= -7 + 3 = -4$
+            </div>
+          </div>
+        </div>
+
+        <div class="kategori-soal">Pembahasan Kategori Sedang</div>
+        
+        <div class="soal-latihan">
+          <b>6.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 2,5</b>
+            <div class="pembahasan">
+              Ubah ke desimal agar mudah.<br>
+              $5\frac{1}{2} = 5,5$. $\frac{3}{4} = 0,75$.<br>
+              Sisa = $5,5 - 2,25 - 0,75 = 3,25 - 0,75 = 2,5$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>7.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 48</b>
+            <div class="pembahasan">
+              Cari KPK dari 6 dan 8.<br>
+              6 = $2 \times 3$<br>
+              8 = $2^3$<br>
+              KPK = $2^3 \times 3 = 8 \times 3 = 24$.<br>
+              Mereka menyala bersama setiap 24 detik.<br>
+              Kali pertama = detik 24. Kali kedua = detik 48.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>8.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 16</b>
+            <div class="pembahasan">
+              "Paling banyak" = Kata kunci FPB.<br>
+              48 = $16 \times 3 = 2^4 \times 3$<br>
+              64 = $2^6$<br>
+              FPB = $2^4 = 16$.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 11-15 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sedang (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>9.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 42</b>
+            <div class="pembahasan">
+              Faktor 20: 1, 2, 4, 5, 10, 20.<br>
+              Jumlah = $1+2+4+5+10+20 = 42$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>10.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 4</b>
+            <div class="pembahasan">
+              Syarat habis dibagi 9: Jumlah digit habis dibagi 9.<br>
+              $3 + A + 2 = 5 + A$.<br>
+              Agar $5+A$ habis dibagi 9, maka $5+A$ harus 9.<br>
+              $A = 4$.
+            </div>
+          </div>
+        </div>
+        
+        <div class="soal-latihan">
+          <b>11.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 67/60</b>
+            <div class="pembahasan">
+              Ubah ke pecahan biasa.<br>
+              $\frac{2}{3} + \frac{6}{10} - \frac{15}{100} = \frac{2}{3} + \frac{3}{5} - \frac{3}{20}$<br>
+              KPK penyebut (3, 5, 20) adalah 60.<br>
+              $\frac{40}{60} + \frac{36}{60} - \frac{9}{60} = \frac{67}{60}$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>12.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 3 - n</b>
+            <div class="pembahasan">
+              Misal $n = -2$.<br>
+              A. $3 \times -2 = -6$<br>
+              B. $3 + (-2) = 1$<br>
+              C. $3 - (-2) = 5$ (Terbesar)<br>
+              D. $3 \div -2 = -1,5$
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 11-15 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sedang (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>13.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 4</b>
+            <div class="pembahasan">
+              Bilangan prima antara 20 dan 40: 23, 29, 31, 37.<br>
+              Ada 4 bilangan.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>14.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 72</b>
+            <div class="pembahasan">
+              A = FPB(36, 48) = 12.<br>
+              B = KPK(12, 15) = 60.<br>
+              $A+B = 12+60 = 72$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>15.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 115</b>
+            <div class="pembahasan">
+              Benar: $35 \times 4 = 140$.<br>
+              Salah: $10 \times (-2) = -20$.<br>
+              Kosong: $(50 - 35 - 10) \times (-1) = 5 \times -1 = -5$.<br>
+              Total = $140 - 20 - 5 = 115$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan">
+          <b>16.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 3</b>
+            <div class="pembahasan">
+              Pola pangkat 3: 3, 9, 7, 1 (berulang tiap 4).<br>
+              $2025 \div 4 = 506$ sisa 1.<br>
+              Urutan ke-1 adalah 3.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 16-20 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sulit</div>
+
+        <div class="soal-latihan-n">
+          <b>17.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 27</b>
+            <div class="pembahasan">
+              Bilangan kelipatan 3: $3, 6, ..., 99$.<br>
+              Banyaknya = $\frac{99}{3} = 33$.<br>
+              Kelipatan 3 yang juga kelipatan 5 (KPK 15): $15, 30, 45, 60, 75, 90$ (ada 6).<br>
+              Sisa = $33 - 6 = 27$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>18.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 25</b>
+            <div class="pembahasan">
+              $\frac{1}{a} + \frac{1}{b} = \frac{1}{4} \Rightarrow \frac{a+b}{ab} = \frac{1}{4} \Rightarrow 4a + 4b = ab \Rightarrow ab - 4a - 4b = 0$.<br>
+              Trik aljabar: $(a-4)(b-4) = 16$.<br>
+              Faktor 16: (1,16), (2,8), (4,4).<br>
+              Agar $a+b$ maks, pilih faktor berjauhan (1, 16).<br>
+              $a-4=1 \rightarrow a=5$. $b-4=16 \rightarrow b=20$.<br>
+              $a+b = 5+20=25$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>19.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 7</b>
+            <div class="pembahasan">
+              Habis dibagi 12 $\rightarrow$ habis dibagi 4 dan 3.<br>
+              1) Dibagi 4: $5b$ harus habis dibagi 4. $b \in \{2, 6\}$.<br>
+              2) Dibagi 3: $4+a+5+b = 9+a+b$ habis dibagi 3 $\rightarrow a+b$ habis dibagi 3.<br>
+              - Jika $b=2 \rightarrow a+2$ kelipatan 3. $a \in \{1, 4, 7\}$. (3 pasang)<br>
+              - Jika $b=6 \rightarrow a+6$ kelipatan 3. $a \in \{0, 3, 6, 9\}$. (4 pasang)<br>
+              Total $3 + 4 = 7$ pasang.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 21-25 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sulit (Lanjutan)</div>
+
+        <div class="soal-latihan-n">
+          <b>20.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 9</b>
+            <div class="pembahasan">
+              Mulai $4! = 24$, sudah habis dibagi 12.<br>
+              Jadi sisa hanya dari $1!+2!+3! = 1+2+6 = 9$.
+            </div>
+          </div>
+        </div>
+        
+        <div class="soal-latihan">
+          <b>21.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 33</b>
+            <div class="pembahasan">
+              Pola sisa:<br>
+              $x \equiv 3 \pmod 5$ (artinya $x$ kurang 2 dari kelipatan 5)<br>
+              $x \equiv 5 \pmod 7$ (artinya $x$ kurang 2 dari kelipatan 7)<br>
+              Karena sama-sama "kurang 2", kita cari KPK(5,7) lalu kurangi 2.<br>
+              $35 - 2 = 33$.<br>
+              Cek: $33 \div 5$ sisa 3, $33 \div 7$ sisa 5. (Benar).
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>22.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 481</b>
+            <div class="pembahasan">
+              $x^2-y^2=31 \rightarrow (x-y)(x+y)=31$.<br>
+              31 Prima, maka $x-y=1$ dan $x+y=31$.<br>
+              Eliminasi: $2x=32 \rightarrow x=16$. $y=15$.<br>
+              $x^2+y^2 = 16^2 + 15^2 = 256 + 225 = 481$.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 26-30 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sulit (Terakhir)</div>
+
+        <div class="soal-latihan-n">
+          <b>23.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 219</b>
+            <div class="pembahasan">
+              $10^{25} = 100...0$ (angka 1 diikuti 25 nol).<br>
+              $100...0 - 25 = 99...975$.<br>
+              Karena hasil pengurangan 25 digit nol terakhir dengan 25 menghasilkan 75, maka 2 digit terakhir adalah 7 dan 5.<br>
+              Sisa digit di depannya adalah angka 9 sebanyak $25 - 2 = 23$ digit.<br>
+              Jumlah angka = $(23 \times 9) + 7 + 5 = 207 + 12 = 219$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>24.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 20</b>
+            <div class="pembahasan">
+              $720 = 2^4 \times 3^2 \times 5^1$.<br>
+              Total faktor = $(4+1)(2+1)(1+1) = 30$.<br>
+              Faktor YANG TIDAK kelipatan 3 (berarti pangkat 3-nya nol) = $(4+1)(1)(1+1) = 10$.<br>
+              Faktor kelipatan 3 = Total - Tidak kelipatan 3 = $30 - 10 = 20$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>25.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 104</b>
+            <div class="pembahasan">
+              Hal 1-9 (1 digit) = 9 digit.<br>
+              Hal 10-99 (2 digit) = 90 hal $\times$ 2 = 180 digit.<br>
+              Total sementara = 189 digit.<br>
+              Sisa digit = $204 - 189 = 15$ digit.<br>
+              Halaman 3 digit butuh 3 digit/hal. $\frac{15}{3} = 5$ halaman.<br>
+              Total hal = $99 + 5 = 104$.
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 26-30 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sulit (Terakhir)</div>
+        <div class="soal-latihan">
+          <b>26.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: C. 14</b>
+            <div class="pembahasan">
+              $pqr = 5(p+q+r)$.<br>
+              Salah satu prima pasti 5 (karena ruas kanan kelipatan 5). Misal $p=5$.<br>
+              $5qr = 5(5+q+r) \rightarrow qr = 5+q+r$.<br>
+              $qr - q - r = 5 \rightarrow qr - q - r + 1 = 6$.<br>
+              $(q-1)(r-1) = 6$.<br>
+              Faktor 6 yang mungkin untuk prima: $q-1=1 \rightarrow q=2$ dan $r-1=6 \rightarrow r=7$.<br>
+              Prima: 5, 2, 7. Sum = $5+2+7=14$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>27.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 11/20</b>
+            <div class="pembahasan">
+              Rumus: $(1 - \frac{1}{n^2}) = \frac{n-1}{n} \times \frac{n+1}{n}$.<br>
+              Teleskoping perkalian:<br>
+              $(\frac{1}{2} \cdot \frac{3}{2}) (\frac{2}{3} \cdot \frac{4}{3}) ... (\frac{9}{10} \cdot \frac{11}{10})$<br>
+              Bagian tengah saling coret. Sisa awal $\frac{1}{2}$ dan akhir $\frac{11}{10}$.<br>
+              Hasil = $\frac{1}{2} \times \frac{11}{10} = \frac{11}{20}$.
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>28.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: B. 144</b>
+            <div class="pembahasan">
+              $a \times b = \text{KPK} \times \text{FPB}$<br>
+              $36 \times b = 432 \times 12$<br>
+              $b = \frac{432 \times 12}{36} = \frac{432}{3} = 144$.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+    <!-- PEMBAHASAN 26-30 -->
+    <section class="page">
+      <div class="content-wrapper">
+        <div class="kategori-soal">Pembahasan Kategori Sulit (Terakhir)</div>
+
+        <div class="soal-latihan-n">
+          <b>29.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 2</b>
+            <div class="pembahasan">
+              $\frac{2n+12}{n+2} = \frac{2(n+2) + 8}{n+2} = 2 + \frac{8}{n+2}$.<br>
+              Agar bulat, $n+2$ harus faktor dari 8 (1, 2, 4, 8).<br>
+              Karena $n$ bilangan positif, maka $n+2 > 2$.<br>
+              Pilihan yang mungkin untuk $n+2$ adalah 4 dan 8.<br>
+              - Jika $n+2=4 \rightarrow n=2$.<br>
+              - Jika $n+2=8 \rightarrow n=6$.<br>
+              Hanya ada 2 nilai ($n=2, 6$).
+            </div>
+          </div>
+        </div>
+
+        <div class="soal-latihan-n">
+          <b>30.</b>
+          <div class="soal-wrapper">
+            <b>Jawaban: A. 2 : 3</b>
+            <div class="pembahasan">
+              Gunakan rumus keseimbangan (alligasi):<br>
+              Selisih A ke Gabungan = $|85 - 88| = 3$.<br>
+              Selisih B ke Gabungan = $|90 - 88| = 2$.<br>
+              Perbandingan Siswa A : Siswa B = (Selisih B) : (Selisih A) = <b>2 : 3</b>.
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer">
+        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+      </footer>
+    </section>
+
+  </body>
+</html>
