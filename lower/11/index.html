@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympiad Practice: Pigeonhole & Logic (1-30)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MathJax Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #a5b4fc;
+        background-color: #e0e7ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+      }
+      .item-container {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      /* Styling for Question Text */
+      .q-english {
+        font-size: 1.15rem;
+        color: #1f2937; /* gray-800 */
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+      .q-indonesian {
+        font-size: 1.05rem;
+        color: #4b5563; /* gray-600 */
+        font-style: italic;
+        border-left: 4px solid #c7d2fe; /* indigo-200 */
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+        line-height: 1.6;
+      }
+      
+      .solution-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        margin-top: 1rem;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #4338ca;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #e0e7ff;
+        padding-bottom: 0.5rem;
+      }
+      .lang-section {
+        margin-bottom: 1rem;
+      }
+      .lang-label {
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+      }
+      .label-en {
+        background-color: #dbeafe; /* blue-100 */
+        color: #1e40af; /* blue-800 */
+      }
+      .label-id {
+        background-color: #dcfce7; /* green-100 */
+        color: #166534; /* green-800 */
+      }
+      .divider-line {
+        border-top: 1px dashed #d1d5db;
+        margin: 1.5rem 0;
+      }
+      .step-list {
+        padding-left: 1.2rem;
+        list-style-type: disc;
+      }
+      .step-list li {
+        margin-bottom: 0.25rem;
+        line-height: 1.6;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #ffffff;
+        background-color: #4338ca;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo Ruangguru"
+          class="mx-auto h-20 md:h-24 mb-4"
+          onerror="this.style.display='none'"
+        />
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 11
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg font-medium">
+          Part 1: Pigeonhole Principle | Part 2: Deductive Logic
+        </p>
+      </div>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const questions = [
+        // ==========================================
+        // PART 1: PIGEONHOLE PRINCIPLE (1-15)
+        // ==========================================
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "There are 10 black socks and 10 white socks mixed together in a drawer. You close your eyes and pick socks one by one. What is the smallest number of socks you must pick to make sure you have a matching pair of the same color?",
+          question_id: "Terdapat 10 kaus kaki hitam dan 10 kaus kaki putih yang tercampur di dalam laci. Kamu memejamkan mata dan mengambil kaus kaki satu per satu. Berapa jumlah paling sedikit yang harus diambil untuk memastikan kamu mendapatkan sepasang kaus kaki dengan warna yang sama?",
+          answer: "3 socks",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> Get 1 Pair (Same Color).</li>
+                <li><strong>Worst-Case (Unlucky):</strong> You pick 1 Black sock, then you pick 1 White sock.</li>
+                <li>Now you have 2 socks of different colors. Still no pair.</li>
+                <li><strong>The Guarantee:</strong> The 3rd sock MUST be either Black or White. It will match one of the socks you already have.</li>
+                <li><strong>Calculation:</strong> $1 + 1 + 1 = 3$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> Dapat 1 Pasang (Warna Sama).</li>
+                <li><strong>Skenario Terburuk (Sial):</strong> Ambil 1 Hitam, lalu ambil 1 Putih.</li>
+                <li>Sekarang punya 2 kaus kaki beda warna. Belum sepasang.</li>
+                <li><strong>Jaminan:</strong> Kaus kaki ke-3 PASTI Hitam atau Putih. Ini akan cocok dengan salah satu yang sudah ada.</li>
+                <li><strong>Hitungan:</strong> $1 + 1 + 1 = 3$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A box contains 5 red balls and 4 blue balls. You want to get exactly one red ball. Without looking into the box, at least how many balls must you take out to be absolutely sure you have obtained a red one?",
+          question_id: "Sebuah kotak berisi 5 bola merah dan 4 bola biru. Kamu ingin mendapatkan tepat satu bola merah. Tanpa melihat ke dalam kotak, setidaknya berapa bola yang harus kamu ambil untuk benar-benar yakin kamu telah mendapatkan bola merah?",
+          answer: "5 balls",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> Get 1 Red Ball.</li>
+                <li><strong>Worst-Case:</strong> You are unlucky and pick all the WRONG balls (Blue) first.</li>
+                <li>There are 4 Blue balls. Imagine you pick all 4 of them.</li>
+                <li>Now only Red balls are left. The next pick (5th) is guaranteed to be Red.</li>
+                <li><strong>Calculation:</strong> $4 \\text{ (Blue)} + 1 = 5$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> Dapat 1 Bola Merah.</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu sial dan mengambil semua bola yang SALAH (Biru) dulu.</li>
+                <li>Ada 4 bola biru. Bayangkan kamu mengambil keempatnya.</li>
+                <li>Sekarang hanya sisa bola Merah. Ambilan berikutnya (ke-5) pasti Merah.</li>
+                <li><strong>Hitungan:</strong> $4 \\text{ (Biru)} + 1 = 5$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "In a candy jar, there are 8 red candies, 6 yellow candies, and 4 green candies. You want to eat two candies of different colors. Without looking, what is the minimum number of candies you must pick to guarantee this?",
+          question_id: "Di dalam toples permen, terdapat 8 permen merah, 6 permen kuning, dan 4 permen hijau. Kamu ingin memakan dua permen dengan warna berbeda. Tanpa melihat, berapa jumlah minimum permen yang harus kamu ambil untuk menjamin hal ini?",
+          answer: "9 candies",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> Get 2 Different Colors.</li>
+                <li><strong>Worst-Case:</strong> You keep picking the SAME color over and over. Assume you pick the color with the most candies (Red).</li>
+                <li>You pick all 8 Red candies. You have 8 candies, but still only 1 color.</li>
+                <li>The next candy (9th) must be Yellow or Green. Now you have 2 colors.</li>
+                <li><strong>Calculation:</strong> $8 + 1 = 9$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> Dapat 2 Warna Berbeda.</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu terus mengambil warna yang SAMA. Anggap kamu mengambil warna terbanyak (Merah).</li>
+                <li>Kamu ambil semua 8 permen Merah. Punya 8 permen, tapi masih 1 warna.</li>
+                <li>Permen berikutnya (ke-9) pasti Kuning atau Hijau. Sekarang kamu punya 2 warna.</li>
+                <li><strong>Hitungan:</strong> $8 + 1 = 9$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A fruit basket has 10 green apples and 8 red apples. Mom wants to bake a pie using 3 red apples. Without looking, how many apples must she take from the basket to guarantee she gets 3 red apples?",
+          question_id: "Sebuah keranjang buah berisi 10 apel hijau dan 8 apel merah. Ibu ingin membuat pai menggunakan 3 apel merah. Tanpa melihat, berapa banyak apel yang harus dia ambil dari keranjang untuk memastikan dia mendapatkan 3 apel merah?",
+          answer: "13 apples",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 3 Red Apples.</li>
+                <li><strong>Worst-Case:</strong> She picks all the apples she DOESN'T want (Green) first.</li>
+                <li>She picks all 10 Green apples.</li>
+                <li>Now she needs 3 more. The next 3 must be Red.</li>
+                <li><strong>Calculation:</strong> $10 \\text{ (Green)} + 3 \\text{ (Red)} = 13$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 3 Apel Merah.</li>
+                <li><strong>Skenario Terburuk:</strong> Ibu mengambil semua apel yang TIDAK diinginkan (Hijau) dulu.</li>
+                <li>Ibu mengambil semua 10 apel Hijau.</li>
+                <li>Sekarang butuh 3 lagi. 3 apel berikutnya pasti Merah.</li>
+                <li><strong>Hitungan:</strong> $10 \\text{ (Hijau)} + 3 \\text{ (Merah)} = 13$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "There are 13 students in a classroom. Can you explain why at least two students must have their birthdays in the same month?",
+          question_id: "Ada 13 siswa di dalam kelas. Bisakah kamu jelaskan mengapa setidaknya ada dua siswa yang pasti berulang tahun di bulan yang sama?",
+          answer: "12 months logic",
+          explanation_en: `
+            <ul class="step-list">
+                <li>There are only 12 months in a year (January to December).</li>
+                <li>Imagine putting 1 student into each month. That uses up 12 students.</li>
+                <li>The 13th student MUST go into a month that already has a student.</li>
+                <li>So, one month will have at least 2 students.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Hanya ada 12 bulan dalam setahun (Januari - Desember).</li>
+                <li>Bayangkan kita menaruh 1 siswa di setiap bulan. Itu menghabiskan 12 siswa.</li>
+                <li>Siswa ke-13 HARUS masuk ke salah satu bulan yang sudah ada siswanya.</li>
+                <li>Jadi, satu bulan pasti memiliki minimal 2 siswa.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A pencil case holds 5 blue pens, 5 red pens, and 5 black pens. Without looking inside, what is the least number of pens you need to take out to ensure you have two pens of the same color?",
+          question_id: "Sebuah kotak pensil berisi 5 pulpen biru, 5 pulpen merah, dan 5 pulpen hitam. Tanpa melihat ke dalam, berapa jumlah pulpen paling sedikit yang perlu kamu ambil untuk memastikan kamu memiliki dua pulpen dengan warna yang sama?",
+          answer: "4 pens",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 2 Pens of Same Color.</li>
+                <li><strong>Worst-Case:</strong> You pick one of every different color first.</li>
+                <li>Pick 1 Blue, 1 Red, 1 Black. (Total 3 pens, all different).</li>
+                <li>The 4th pen will match one of the colors you already have.</li>
+                <li><strong>Calculation:</strong> $3 + 1 = 4$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 2 Pulpen Warna Sama.</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu mengambil satu dari tiap warna berbeda dulu.</li>
+                <li>Ambil 1 Biru, 1 Merah, 1 Hitam. (Total 3 pulpen, beda semua).</li>
+                <li>Pulpen ke-4 pasti cocok dengan salah satu warna yang sudah ada.</li>
+                <li><strong>Hitungan:</strong> $3 + 1 = 4$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "In a box, there are 6 left-handed gloves and 6 right-handed gloves. They all look identical except for the side. How many gloves must you pick to be sure you have one matching pair?",
+          question_id: "Di dalam kotak, terdapat 6 sarung tangan kiri dan 6 sarung tangan kanan. Semuanya terlihat sama kecuali posisinya. Berapa banyak sarung tangan yang harus kamu ambil untuk memastikan kamu memiliki satu pasang yang cocok?",
+          answer: "7 gloves",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 1 Left + 1 Right.</li>
+                <li><strong>Worst-Case:</strong> You pick all gloves for the SAME hand (e.g., all Lefts).</li>
+                <li>You pick all 6 Left gloves. You have 6 gloves but no pair.</li>
+                <li>The next one (7th) must be a Right glove. Pair complete!</li>
+                <li><strong>Calculation:</strong> $6 + 1 = 7$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 1 Kiri + 1 Kanan.</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu mengambil semua sarung tangan untuk tangan yang SAMA (misal Kiri semua).</li>
+                <li>Kamu ambil semua 6 sarung tangan Kiri. Belum ada pasangan.</li>
+                <li>Yang berikutnya (ke-7) pasti Kanan. Pasangan lengkap!</li>
+                <li><strong>Hitungan:</strong> $6 + 1 = 7$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A bag contains 4 yellow marbles, 5 blue marbles, and 6 red marbles. Without looking, how many marbles must you pick to guarantee you have at least one marble of each color?",
+          question_id: "Sebuah tas berisi 4 kelereng kuning, 5 kelereng biru, dan 6 kelereng merah. Tanpa melihat, berapa banyak kelereng yang harus kamu ambil untuk menjamin kamu memiliki setidaknya satu kelereng dari setiap warna?",
+          answer: "12 marbles",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 1 of EACH color (Red, Blue, Yellow).</li>
+                <li><strong>Worst-Case:</strong> You exhaust the two largest color groups before finding the third color.</li>
+                <li>Pick all 6 Red. Pick all 5 Blue. Total $6+5=11$. Still no Yellow.</li>
+                <li>The 12th marble must be Yellow.</li>
+                <li><strong>Calculation:</strong> $6 + 5 + 1 = 12$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 1 dari SETIAP warna (Merah, Biru, Kuning).</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu menghabiskan dua kelompok warna terbanyak sebelum menemukan warna ketiga.</li>
+                <li>Ambil semua 6 Merah. Ambil semua 5 Biru. Total $6+5=11$. Belum ada Kuning.</li>
+                <li>Kelereng ke-12 pasti Kuning.</li>
+                <li><strong>Hitungan:</strong> $6 + 5 + 1 = 12$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "In a fruit bowl, there are 20 oranges, 15 pears, and 3 apples. You really want an apple. Without looking, how many fruits must you pick to be absolutely sure you get an apple?",
+          question_id: "Di mangkuk buah, terdapat 20 jeruk, 15 pir, dan 3 apel. Kamu sangat menginginkan apel. Tanpa melihat, berapa banyak buah yang harus kamu ambil untuk benar-benar yakin kamu mendapatkan apel?",
+          answer: "36 fruits",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> Get 1 Apple.</li>
+                <li><strong>Worst-Case:</strong> Pick everything that is NOT an apple first.</li>
+                <li>Pick all 20 Oranges. Pick all 15 Pears. Total $20+15=35$.</li>
+                <li>The next pick (36th) must be an Apple.</li>
+                <li><strong>Calculation:</strong> $20 + 15 + 1 = 36$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> Dapat 1 Apel.</li>
+                <li><strong>Skenario Terburuk:</strong> Ambil semua yang BUKAN apel terlebih dahulu.</li>
+                <li>Ambil semua 20 Jeruk. Ambil semua 15 Pir. Total $20+15=35$.</li>
+                <li>Ambilan ke-36 pasti Apel.</li>
+                <li><strong>Hitungan:</strong> $20 + 15 + 1 = 36$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "You roll a standard 6-sided dice (with numbers 1 to 6) many times. How many times must you roll the dice to be absolutely sure that the same number appears twice?",
+          question_id: "Kamu melempar dadu standar bersisi 6 (angka 1 sampai 6) berkali-kali. Berapa kali kamu harus melempar dadu untuk memastikan bahwa angka yang sama muncul dua kali?",
+          answer: "7 rolls",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Worst-Case:</strong> You get all different numbers first.</li>
+                <li>You roll 1, 2, 3, 4, 5, 6. That is 6 rolls, all distinct.</li>
+                <li>The 7th roll MUST repeat one of the previous numbers.</li>
+                <li><strong>Calculation:</strong> $6 + 1 = 7$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Skenario Terburuk:</strong> Kamu mendapat semua angka berbeda dulu.</li>
+                <li>Kamu lempar dapat 1, 2, 3, 4, 5, 6. Itu 6 lemparan beda semua.</li>
+                <li>Lemparan ke-7 PASTI mengulang salah satu angka tadi.</li>
+                <li><strong>Hitungan:</strong> $6 + 1 = 7$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A standard deck of playing cards has 4 suits: Hearts, Diamonds, Clubs, and Spades. If you pick cards without looking, how many cards must you pick to make sure you have 3 cards of the same suit?",
+          question_id: "Setumpuk kartu standar memiliki 4 jenis: Hati, Wajik, Keriting, dan Sekop. Jika kamu mengambil kartu tanpa melihat, berapa banyak kartu yang harus kamu ambil untuk memastikan kamu memiliki 3 kartu dengan jenis yang sama?",
+          answer: "9 cards",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 3 Cards of One Suit.</li>
+                <li><strong>Worst-Case:</strong> You collect 2 of every suit (just missing the 3rd one).</li>
+                <li>Pick 2 Hearts, 2 Diamonds, 2 Clubs, 2 Spades. Total 8 cards.</li>
+                <li>The 9th card will make one suit have 3 cards.</li>
+                <li><strong>Calculation:</strong> $8 + 1 = 9$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 3 Kartu Satu Jenis.</li>
+                <li><strong>Skenario Terburuk:</strong> Kamu mengumpulkan 2 kartu untuk tiap jenis.</li>
+                <li>Ambil 2 Hati, 2 Wajik, 2 Keriting, 2 Sekop. Total 8 kartu.</li>
+                <li>Kartu ke-9 pasti akan membuat salah satu jenis menjadi 3 kartu.</li>
+                <li><strong>Hitungan:</strong> $8 + 1 = 9$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "Tom has a bag of stickers containing 10 Star stickers and 10 Heart stickers. He wants to give 2 Heart stickers to his sister. What is the fewest number of stickers he must pull out to guarantee he has 2 Heart stickers?",
+          question_id: "Tom memiliki tas berisi stiker yang terdiri dari 10 stiker Bintang dan 10 stiker Hati. Dia ingin memberikan 2 stiker Hati kepada adiknya. Berapa jumlah stiker paling sedikit yang harus dia ambil untuk menjamin dia memiliki 2 stiker Hati?",
+          answer: "12 stickers",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 2 Heart Stickers.</li>
+                <li><strong>Worst-Case:</strong> Pick all the Star stickers first.</li>
+                <li>Pick all 10 Stars.</li>
+                <li>Pick 2 more (must be Hearts).</li>
+                <li><strong>Calculation:</strong> $10 + 2 = 12$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 2 Stiker Hati.</li>
+                <li><strong>Skenario Terburuk:</strong> Ambil semua stiker Bintang dulu.</li>
+                <li>Ambil semua 10 Bintang.</li>
+                <li>Ambil 2 lagi (pasti Hati).</li>
+                <li><strong>Hitungan:</strong> $10 + 2 = 12$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "A chef has 6 potatoes, 8 onions, and 5 carrots in a dark room. He needs exactly 1 carrot for his soup. If he picks vegetables randomly, how many must he pick to guarantee he gets at least one carrot?",
+          question_id: "Seorang koki memiliki 6 kentang, 8 bawang, dan 5 wortel di ruang gelap. Dia membutuhkan tepat 1 wortel untuk supnya. Jika dia mengambil sayuran secara acak, berapa banyak yang harus dia ambil untuk menjamin dia mendapatkan setidaknya satu wortel?",
+          answer: "15 vegetables",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> 1 Carrot.</li>
+                <li><strong>Worst-Case:</strong> Pick all non-carrots first.</li>
+                <li>Pick all 8 Onions + 6 Potatoes = 14 items.</li>
+                <li>The 15th pick must be a Carrot.</li>
+                <li><strong>Calculation:</strong> $14 + 1 = 15$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> 1 Wortel.</li>
+                <li><strong>Skenario Terburuk:</strong> Ambil semua yang bukan wortel dulu.</li>
+                <li>Ambil 8 Bawang + 6 Kentang = 14 item.</li>
+                <li>Ambilan ke-15 pasti Wortel.</li>
+                <li><strong>Hitungan:</strong> $14 + 1 = 15$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "There are 3 locked doors and 3 keys. You want to open just the first door, but you don't know which key is the right one. What is the maximum number of times you might need to try a key to open this door?",
+          question_id: "Ada 3 pintu terkunci dan 3 kunci. Kamu ingin membuka hanya pintu pertama, tetapi kamu tidak tahu kunci mana yang benar. Berapa kali maksimal kamu mungkin perlu mencoba kunci untuk membuka pintu ini?",
+          answer: "3 tries",
+          explanation_en: `
+            <ul class="step-list">
+                <li><strong>Goal:</strong> Find right key for Door 1.</li>
+                <li><strong>Worst-Case:</strong> Try Key A (Wrong). Try Key B (Wrong).</li>
+                <li>Now you know Key C MUST be the right one. You try it and it opens.</li>
+                <li><strong>Total:</strong> 3 tries.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li><strong>Tujuan:</strong> Cari kunci yang pas untuk Pintu 1.</li>
+                <li><strong>Skenario Terburuk:</strong> Coba Kunci A (Salah). Coba Kunci B (Salah).</li>
+                <li>Sekarang kamu tahu Kunci C PASTI benar. Kamu coba dan terbuka.</li>
+                <li><strong>Total:</strong> 3 percobaan.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 1: PIGEONHOLE PRINCIPLE (WORST-CASE SCENARIO)",
+          question_en: "There are 3 children in a room. Explain why at least 2 of them must be of the same gender (both boys or both girls).",
+          question_id: "Ada 3 anak di dalam ruangan. Jelaskan mengapa setidaknya 2 dari mereka pasti berjenis kelamin sama (keduanya laki-laki atau keduanya perempuan).",
+          answer: "Boy/Girl Logic",
+          explanation_en: `
+            <ul class="step-list">
+                <li>There are only 2 genders: Boy and Girl.</li>
+                <li>Suppose Child 1 is a Boy and Child 2 is a Girl.</li>
+                <li>Child 3 must be either a Boy or a Girl.</li>
+                <li>This will create a pair of Boys or a pair of Girls.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Hanya ada 2 jenis kelamin: Laki dan Perempuan.</li>
+                <li>Misal Anak 1 Laki-laki, Anak 2 Perempuan.</li>
+                <li>Anak 3 harus salah satu dari itu.</li>
+                <li>Ini akan membuat sepasang Laki-laki atau sepasang Perempuan.</li>
+            </ul>`
+        },
+
+        // ==========================================
+        // PART 2: DEDUCTIVE LOGIC (16-30)
+        // ==========================================
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Five students named Adi, Budi, Candra, Dedi, and Eko are queuing at the canteen. It is known that Budi is in the 4th position. Dedi is standing immediately behind Budi. Adi is standing directly in front of Candra. Eko is ahead of Adi. Who is standing at the very front of the line?",
+          question_id: "Lima siswa bernama Adi, Budi, Candra, Dedi, dan Eko sedang mengantre di kantin. Diketahui bahwa Budi berada di urutan ke-4. Dedi berdiri tepat di belakang Budi. Adi berdiri tepat di depan Candra. Eko berada di depan Adi. Siapa yang berdiri paling depan dalam antrean?",
+          answer: "Eko",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Budi is 4th. Dedi is immediately behind Budi, so Dedi is 5th.</li>
+                <li>Positions 1, 2, 3 are open. Adi is directly in front of Candra [Adi, Candra].</li>
+                <li>This pair fits in (1,2) or (2,3).</li>
+                <li>But Eko is ahead of Adi. If Adi is 1, Eko has no spot. So Adi must be 2.</li>
+                <li>Order: 1. Eko, 2. Adi, 3. Candra.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Budi urutan 4. Dedi di belakang Budi, jadi Dedi urutan 5.</li>
+                <li>Posisi 1, 2, 3 kosong. Adi tepat di depan Candra [Adi, Candra].</li>
+                <li>Pasangan ini bisa di (1,2) atau (2,3).</li>
+                <li>Tapi Eko di depan Adi. Jika Adi di 1, Eko tidak punya tempat. Jadi Adi harus di 2.</li>
+                <li>Urutan: 1. Eko, 2. Adi, 3. Candra.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Fara, Gina, Hana, and Indah have bags of different colors: Red, Blue, Green, and Yellow. We know that Fara's bag is neither Red nor Green. Gina's bag is Blue. Hana's bag is not Red. Can you determine the color of Indah's bag?",
+          question_id: "Fara, Gina, Hana, dan Indah memiliki tas dengan warna berbeda: Merah, Biru, Hijau, dan Kuning. Diketahui bahwa tas Fara bukan Merah ataupun Hijau. Tas Gina berwarna Biru. Tas Hana bukan berwarna Merah. Apa warna tas Indah?",
+          answer: "Red (Merah)",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Gina = Blue.</li>
+                <li>Fara $\\neq$ Red/Green/Blue $\\to$ Fara = Yellow.</li>
+                <li>Hana $\\neq$ Red/Blue/Yellow $\\to$ Hana = Green.</li>
+                <li>Indah = Remaining color = Red.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Gina = Biru.</li>
+                <li>Fara $\\neq$ Merah/Hijau/Biru $\\to$ Fara = Kuning.</li>
+                <li>Hana $\\neq$ Merah/Biru/Kuning $\\to$ Hana = Hijau.</li>
+                <li>Indah = Sisa warna = Merah.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Joko, Kiki, Leman, Momon, and Nanan live in a 5-story building. Nanan lives on the top floor. Kiki lives on a lower floor than Joko. Leman lives directly above Momon's floor. Joko does not live on floor 3. Momon lives on floor 1. Who lives on floor 3?",
+          question_id: "Joko, Kiki, Leman, Momon, dan Nanan tinggal di gedung berlantai 5. Nanan tinggal di lantai paling atas. Kiki tinggal di lantai yang lebih rendah dari Joko. Leman tinggal tepat di atas lantai Momon. Joko tidak tinggal di lantai 3. Momon tinggal di lantai 1. Siapa yang tinggal di lantai 3?",
+          answer: "Kiki",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Floor 5: Nanan. Floor 1: Momon.</li>
+                <li>Leman above Momon $\\to$ Floor 2: Leman.</li>
+                <li>Floors 3 and 4 left. Joko not on 3 $\\to$ Joko on 4.</li>
+                <li>So Kiki is on 3.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Lantai 5: Nanan. Lantai 1: Momon.</li>
+                <li>Leman di atas Momon $\\to$ Lantai 2: Leman.</li>
+                <li>Sisa lantai 3 dan 4. Joko bukan di 3 $\\to$ Joko di 4.</li>
+                <li>Jadi Kiki di lantai 3.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Four students named P, Q, R, and S sit at a round table. P sits to the immediate right of Q. R does not sit next to Q. Who sits to the left of S?",
+          question_id: "Empat siswa bernama P, Q, R, dan S duduk di meja bundar. P duduk tepat di sebelah kanan Q. R tidak duduk di sebelah Q. Siapa yang duduk di sebelah kiri S?",
+          answer: "R",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Imagine clock: Q at 12. P right of Q $\\to$ P at 3.</li>
+                <li>R not next to Q $\\to$ R cannot be at 9. R must be opposite at 6.</li>
+                <li>S is at 9.</li>
+                <li>Left of S (clockwise from 9) is R at 6.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Bayangkan jam: Q di 12. P di kanan Q $\\to$ P di 3.</li>
+                <li>R tidak sebelah Q $\\to$ R tidak bisa di 9. R harus di seberang (angka 6).</li>
+                <li>S ada di 9.</li>
+                <li>Kiri S (searah jarum jam dari 9) adalah R di 6.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "In a strange village, Type A residents always tell the truth, and Type B residents always lie. You meet a person named X from this village. X says: 'I am Type B.' Is it logically possible for X to be a resident of this village?",
+          question_id: "Di sebuah desa aneh, penduduk Tipe A selalu berkata jujur, dan penduduk Tipe B selalu berbohong. Kamu bertemu orang bernama X dari desa ini. X berkata: 'Saya Tipe B.' Apakah secara logika mungkin X adalah penduduk desa tersebut?",
+          answer: "Impossible",
+          explanation_en: `
+            <ul class="step-list">
+                <li>If X is Honest, he can't say he is a liar.</li>
+                <li>If X is a Liar, he must lie. The truth is he is a liar, so he cannot say 'I am a liar' (because that would be telling the truth).</li>
+                <li>It's a paradox.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Jika X Jujur, dia tidak bisa bilang dia pembohong.</li>
+                <li>Jika X Pembohong, dia harus bohong. Kebenarannya adalah dia pembohong, jadi dia tidak bisa bilang 'Saya pembohong' (karena itu jujur).</li>
+                <li>Ini paradoks (mustahil).</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "In a running race between four friends: Citra finished before Doni. Andi finished after Bayu. Doni was not the last one to finish. Bayu finished after Citra. Who won 1st place in the race?",
+          question_id: "Dalam lomba lari antara empat teman: Citra finish sebelum Doni. Andi finish setelah Bayu. Doni bukan yang terakhir finish. Bayu finish setelah Citra. Siapa juara 1 lomba tersebut?",
+          answer: "Citra",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Citra > Doni.</li>
+                <li>Bayu > Andi.</li>
+                <li>Citra > Bayu. Chain: Citra > Bayu > Andi.</li>
+                <li>Citra also beat Doni. Citra beat everyone mentioned.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Citra > Doni.</li>
+                <li>Bayu > Andi.</li>
+                <li>Citra > Bayu. Rantai: Citra > Bayu > Andi.</li>
+                <li>Citra juga mengalahkan Doni. Citra mengalahkan semua orang.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Three friends (Tono, Tini, Tina) like different sports (Swimming, Running, Basketball) and different drinks (Water, Juice, Milk). Tono likes Running. The Swimmer drinks Water. Tina likes Basketball. Tono does not drink Milk. What are Tini's hobby and drink?",
+          question_id: "Tiga teman (Tono, Tini, Tina) menyukai olahraga berbeda (Renang, Lari, Basket) dan minuman berbeda (Air, Jus, Susu). Tono suka Lari. Perenang minum Air. Tina suka Basket. Tono tidak minum Susu. Apa hobi dan minuman Tini?",
+          answer: "Swimming/Water",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Tina=Basket. Tono=Running. So Tini=Swimming.</li>
+                <li>Clue: Swimmer drinks Water.</li>
+                <li>Therefore, Tini drinks Water.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Tina=Basket. Tono=Lari. Maka Tini=Renang.</li>
+                <li>Petunjuk: Perenang minum Air.</li>
+                <li>Maka, Tini minum Air.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "I am a positive integer less than 50. I am not an even number. I am divisible by 5. If you add my digits together, the result is 8. What number am I?",
+          question_id: "Aku adalah bilangan bulat positif kurang dari 50. Aku bukan bilangan genap. Aku habis dibagi 5. Jika kamu menjumlahkan digit-digitku, hasilnya adalah 8. Angka berapakah aku?",
+          answer: "35",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Odd multiples of 5 under 50: 5, 15, 25, 35, 45.</li>
+                <li>Sum of digits: 5, 6, 7, 8, 9.</li>
+                <li>Only 35 has sum 8 ($3+5=8$).</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Kelipatan 5 ganjil di bawah 50: 5, 15, 25, 35, 45.</li>
+                <li>Jumlah digit: 5, 6, 7, 8, 9.</li>
+                <li>Hanya 35 yang jumlahnya 8 ($3+5=8$).</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "A man points to a photo and says: 'The father of the person in this photo is the only child of my father.' Who is the person in the photo related to the speaker?",
+          question_id: "Seorang pria menunjuk sebuah foto dan berkata: 'Ayah dari orang di foto ini adalah anak tunggal ayahku.' Siapakah orang di foto itu dalam hubungannya dengan si pembicara?",
+          answer: "His child",
+          explanation_en: `
+            <ul class="step-list">
+                <li>'Only child of my father' = Me (the speaker).</li>
+                <li>Sentence becomes: 'The father of the person in photo is ME.'</li>
+                <li>If I am the father, the person is my child.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>'Anak tunggal ayahku' = SAYA (si pembicara).</li>
+                <li>Kalimat menjadi: 'Ayah orang di foto adalah SAYA.'</li>
+                <li>Jika saya ayahnya, maka orang itu adalah anak saya.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "The weights of 5 students are compared. It is known that A is heavier than B. C is lighter than D. B is heavier than D. E is heavier than A. Please order the students from lightest to heaviest.",
+          question_id: "Berat badan 5 siswa dibandingkan. Diketahui bahwa A lebih berat dari B. C lebih ringan dari D. B lebih berat dari D. E lebih berat dari A. Urutkan siswa dari yang paling ringan ke paling berat.",
+          answer: "C, D, B, A, E",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Smallest chain: C < D.</li>
+                <li>Add B: D < B. Chain: C < D < B.</li>
+                <li>Add A: B < A. Chain: C < D < B < A.</li>
+                <li>Add E: A < E. Total: C < D < B < A < E.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Rantai terkecil: C < D.</li>
+                <li>Tambah B: D < B. Rantai: C < D < B.</li>
+                <li>Tambah A: B < A. Rantai: C < D < B < A.</li>
+                <li>Tambah E: A < E. Total: C < D < B < A < E.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "There are 3 closed boxes labeled: 'APPLES', 'ORANGES', and 'MIXED'. It is known that all labels are wrong. You are allowed to pick only 1 fruit from one of the boxes. Which box must you open first to determine the contents of all three boxes with certainty?",
+          question_id: "Ada 3 kotak tertutup berlabel: 'APEL', 'JERUK', dan 'CAMPUR'. Diketahui bahwa semua label salah. Kamu diperbolehkan mengambil hanya 1 buah dari salah satu kotak. Kotak mana yang harus kamu buka pertama kali untuk menentukan isi ketiga kotak dengan pasti?",
+          answer: "MIXED",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Open the 'MIXED' box. Since label is wrong, it contains only Apples or only Oranges.</li>
+                <li>If you see Apple, this box is APPLES.</li>
+                <li>Then 'ORANGES' box cannot be Oranges (wrong label) or Apples (taken). So it is MIXED.</li>
+                <li>'APPLES' box must be ORANGES.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Buka kotak 'CAMPUR'. Karena label salah, isinya pasti Apel saja atau Jeruk saja.</li>
+                <li>Jika kamu lihat Apel, kotak ini adalah APEL.</li>
+                <li>Maka kotak label 'JERUK' haruslah CAMPUR (karena label salah & bukan apel).</li>
+                <li>Kotak label 'APEL' haruslah JERUK.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "Sinta takes Math, Science, English, and Music lessons from Monday to Thursday (one subject per day). Math is not on Tuesday or Thursday. Music is on the day after English. Science is scheduled exactly before Math. What subject does Sinta take on Wednesday?",
+          question_id: "Sinta mengikuti les Matematika, Sains, Bahasa Inggris, dan Musik dari Senin hingga Kamis (satu pelajaran per hari). Matematika tidak pada hari Selasa atau Kamis. Musik pada hari setelah Bahasa Inggris. Sains dijadwalkan tepat sebelum Matematika. Pelajaran apa yang diikuti Sinta pada hari Rabu?",
+          answer: "Math",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Math must be Wed (so Science can be Tue). If Math was Mon, Science would be Sun (invalid).</li>
+                <li>So: Tue=Sci, Wed=Math.</li>
+                <li>Remaining: Mon/Thu for Eng/Music. Music after Eng $\\to$ Mon=Eng, Thu=Mus.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Math harus Rabu (supaya Sains bisa Selasa). Jika Math Senin, Sains Minggu (tidak ada).</li>
+                <li>Jadi: Sel=Sains, Rab=Math.</li>
+                <li>Sisa: Sen/Kam untuk Ing/Musik. Musik setelah Inggris $\\to$ Sen=Ing, Kam=Musik.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "You have 9 gold coins that look identical. One coin is fake and lighter than the real ones. You have a balance scale. What is the minimum number of weighings required to ensure you find the fake coin?",
+          question_id: "Kamu memiliki 9 koin emas yang terlihat identik. Satu koin palsu dan lebih ringan dari yang asli. Kamu memiliki timbangan keseimbangan. Berapa jumlah penimbangan minimum yang diperlukan untuk memastikan kamu menemukan koin palsu?",
+          answer: "2 times",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Split into 3 groups (3, 3, 3). Weigh A vs B. (1st weigh).</li>
+                <li>Identify the lighter group (could be A, B, or C if balanced).</li>
+                <li>Take 2 coins from suspect group. Weigh 1 vs 1. (2nd weigh).</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Bagi 3 grup (3, 3, 3). Timbang A vs B. (Timbangan 1).</li>
+                <li>Identifikasi grup ringan (bisa A, B, atau C jika seimbang).</li>
+                <li>Ambil 2 koin dari grup tersangka. Timbang 1 vs 1. (Timbangan 2).</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "There are four houses A, B, C, and D lined up on one side of a road. House A is located to the left of House B. House C is located between House A and House B. House D is located to the right of House B. The distance between House A and House C is 10 meters. The distance between House B and House D is 15 meters. If the distance from House C to House B is 5 meters, what is the total distance from House A to House D?",
+          question_id: "Empat rumah A, B, C, dan D berjajar di satu sisi jalan. Rumah A terletak di sebelah kiri Rumah B. Rumah C terletak di antara Rumah A dan Rumah B. Rumah D terletak di sebelah kanan Rumah B. Jarak antara Rumah A dan Rumah C adalah 10 meter. Jarak antara Rumah B dan Rumah D adalah 15 meter. Jika jarak dari Rumah C ke Rumah B adalah 5 meter, berapakah jarak total dari Rumah A ke Rumah D?",
+          answer: "30 meters",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Order: A ... C ... B ... D.</li>
+                <li>Path: A $\\to$ C (10) + C $\\to$ B (5) + B $\\to$ D (15).</li>
+                <li>Total: $10 + 5 + 15 = 30$.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Urutan: A ... C ... B ... D.</li>
+                <li>Jalur: A $\\to$ C (10) + C $\\to$ B (5) + B $\\to$ D (15).</li>
+                <li>Total: $10 + 5 + 15 = 30$.</li>
+            </ul>`
+        },
+        {
+          topic: "PART 2: DEDUCTIVE LOGIC (LOGIKA DEDUKSI)",
+          question_en: "There are 3 houses in a row: Left, Middle, and Right. The occupants are Mr. Ali, Mr. Budi, and Mr. Cipto. They each have a different pet: a Cat, a Bird, and a Fish. The houses are painted different colors: Red, White, and Blue. It is known that Mr. Ali lives in the Middle house. The Red house is to the left of the White house. The Cat owner lives in the Blue house. Mr. Cipto lives in the rightmost house. The Bird owner is not Mr. Ali. Who keeps the Fish?",
+          question_id: "Ada 3 rumah berjajar: Kiri, Tengah, dan Kanan. Penghuninya adalah Pak Ali, Pak Budi, dan Pak Cipto. Mereka masing-masing memiliki hewan peliharaan yang berbeda: Kucing, Burung, dan Ikan. Rumah-rumah tersebut dicat dengan warna berbeda: Merah, Putih, dan Biru. Diketahui bahwa Pak Ali tinggal di rumah Tengah. Rumah Merah berada di sebelah kiri rumah Putih. Pemilik Kucing tinggal di rumah Biru. Pak Cipto tinggal di rumah paling kanan. Pemilik Burung bukan Pak Ali. Siapa yang memelihara Ikan?",
+          answer: "Ali",
+          explanation_en: `
+            <ul class="step-list">
+                <li>Houses: Left(1), Middle(2-Ali), Right(3-Cipto). So Left is Budi.</li>
+                <li>Blue has Cat. If Left=Blue, Budi=Cat.</li>
+                <li>Ali (Middle) is not Bird. So Cipto must be Bird.</li>
+                <li>Ali must be Fish.</li>
+            </ul>`,
+          explanation_id: `
+            <ul class="step-list">
+                <li>Rumah: Kiri(1), Tengah(2-Ali), Kanan(3-Cipto). Maka Kiri adalah Budi.</li>
+                <li>Biru punya Kucing. Jika Kiri=Biru, Budi=Kucing.</li>
+                <li>Ali (Tengah) bukan Burung. Maka Cipto pasti Burung.</li>
+                <li>Ali pasti Ikan.</li>
+            </ul>`
+        }
+      ];
+
+      function getOrderedQuestions() {
+        return questions.map((q, index) => {
+            q.id = index + 1;
+            return q;
+        });
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Problem Header (Topic Grouping)
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+
+          problemsHTML += `
+            <div class="item-container">
+                <p class="q-english">
+                  <strong>${q.id}.</strong> ${q.question_en}
+                </p>
+                <p class="q-indonesian">
+                  ${q.question_id}
+                </p>
+            </div>`;
+
+          // Render Solution Header
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan: ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+            <div class="solution-box">
+                <div class="solution-header">Solution / Penyelesaian No. ${q.id}</div>
+                
+                <div class="lang-section">
+                    <span class="lang-label label-en">English Explanation</span>
+                    ${q.explanation_en}
+                </div>
+                
+                <div class="divider-line"></div>
+                
+                <div class="lang-section">
+                    <span class="lang-label label-id">Penjelasan Bahasa Indonesia</span>
+                    ${q.explanation_id}
+                </div>
+
+                <div class="final-answer">Jawaban: ${q.answer}</div>
+            </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Trigger MathJax typeset
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
