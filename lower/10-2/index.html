@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 1-2: Top 10 Working Backwards Problems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #a5b4fc;
+        background-color: #e0e7ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+      }
+      .item-container {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-container p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .solution-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        margin-top: 1rem;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #4338ca;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 2px solid #e0e7ff;
+        padding-bottom: 0.5rem;
+      }
+      .concept-box {
+        background-color: #eef2ff;
+        border-left: 4px solid #6366f1;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .step-list {
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+      }
+      .step-list li {
+        margin-bottom: 0.25rem;
+        line-height: 1.6;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      .image-desc {
+        background-color: #fffbeb;
+        border: 1px dashed #d97706;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 4px;
+        font-style: italic;
+        color: #92400e;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      }
+      .lang-id {
+        display: block;
+        margin-top: 0.5rem;
+        color: #4b5563;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .non-routine-badge {
+        background-color: #fef08a;
+        color: #854d0e;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;        font-weight: 700;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      /* Styling for bilingual separation */
+      .lang-section {
+        margin-bottom: 1rem;
+      }
+      .lang-label {
+        font-weight: 600;
+        color: #374151; /* gray-700 */
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo Math"
+          class="mx-auto h-20 md:h-24"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          WMI & SASMO Grade 1-2
+        </h1>
+        <p class="text-gray-600 mt-2">
+          Top 10 "Working Backwards" Problems (Pola Pikir Mundur)
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const questions = [
+        // ==========================================
+        // TOPIK: WORD PROBLEMS (Soal Cerita Kompleks)
+        // ==========================================
+        {
+          topic: "Topic 1: Complex Word Problems",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2022 Grade 2A Q14]</span> <strong>(HOTS)</strong> 84 people attended a game show. In the 'Red light' round, 9 people were eliminated. In 'Hopscotch', people eliminated were four times more than in 'Red light'. In the end, 11 people passed. How many people were eliminated in the 'Musical chairs' round?",
+          question_id: "84 orang mengikuti permainan. Di babak 'Lampu Merah', 9 orang gugur. Di babak 'Engklek', yang gugur 4 kali lipat dari babak 'Lampu Merah'. Pada akhirnya, 11 orang lolos. Berapa orang yang gugur di babak 'Kursi Musik'?",
+          image_url: "",
+          answer: "28 people",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Find the Missing Part.</p>
+                <p><strong>Konsep:</strong> Mencari Bagian yang Hilang dari Total.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Total Start:</b> 84 people.</li>
+                    <li><b>Eliminated (Red Light):</b> 9 people.</li>
+                    <li><b>Eliminated (Hopscotch):</b> $4 \\times 9 = 36$ people.</li>
+                    <li><b>Passed (Survivors):</b> 11 people.</li>
+                    <li><b>Working Backwards:</b> <br> Total - (Red + Hopscotch + Passed) = Musical Chairs <br> $84 - (9 + 36 + 11) = 84 - 56 = 28$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Complex Word Problems",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: SASMO 2015 P2 Q9]</span> Georgia had a sum of money. She gave half to her sister. Then she used half of the remainder to buy a book. Next she gave half of what was left to her brother. Finally, she had \\$7 remaining. How much money did she have at first?",
+          question_id: "Georgia punya sejumlah uang. Dia beri setengah ke adiknya. Lalu pakai setengah sisanya untuk beli buku. Lalu beri setengah sisanya lagi ke kakaknya. Akhirnya sisa uangnya \\$7. Berapa uang awalnya?",
+          image_url: "",
+          answer: "\\$56",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Reverse 'Half' Operations.</p>
+                <p><strong>Konsep:</strong> Membalik Operasi 'Setengah' (Dikali 2).</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>End:</b> \\$7.</li>
+                    <li><b>Step 1 (Reverse Brother):</b> Before giving to brother, she had $7 \\times 2 = 14$.</li>
+                    <li><b>Step 2 (Reverse Book):</b> Before buying book, she had $14 \\times 2 = 28$.</li>
+                    <li><b>Step 3 (Reverse Sister):</b> At first, she had $28 \\times 2 = 56$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Complex Word Problems",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: 2019 SASMO G2 Q23]</span> Claire had 0 cupcakes. Alice gave half of her cupcakes to Claire. Bob gave 17 cupcakes to Claire. Claire has 55 cupcakes now. How many cupcakes did Alice have in the beginning?",
+          question_id: "Claire punya 0 cupcake. Alice beri setengah miliknya ke Claire. Bob beri 17 ke Claire. Sekarang Claire punya 55. Berapa cupcake Alice di awal?",
+          image_url: "",
+          answer: "76 cupcakes",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Reverse Operations Chain.</p>
+                <p><strong>Konsep:</strong> Rantai Operasi Terbalik.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Claire's Final:</b> 55.</li>
+                    <li><b>Reverse (Bob gave 17):</b> $55 - 17 = 38$. This 38 came from Alice.</li>
+                    <li><b>Reverse (Alice gave half):</b> If 38 is half of Alice's cupcakes, then Alice started with $38 \\times 2 = 76$.</li>
+                </ul>
+            </div>`
+        },
+
+        // ==========================================
+        // TOPIK: LOGIC & DEDUCTION (Logika & Deduksi)
+        // ==========================================
+        {
+          topic: "Topic 2: Logic & Deduction",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 2A Q8]</span> Nicky has 20 dollars (enough for Coffee + Cookies). If he only buys Cookies, he has 5 dollars left. How much more expensive are Cookies than Coffee?",
+          question_id: "Nicky punya \\$20 (cukup untuk Kopi + Kue). Jika hanya beli Kue, sisa \\$5. Berapa selisih harga Kue dan Kopi?",
+          image_url: "",
+          answer: "10 dollars",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Component Deduction.</p>
+                <p><strong>Konsep:</strong> Deduksi Komponen Harga.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Cookies Cost:</b> Total - Leftover = $20 - 5 = 15$.</li>
+                    <li><b>Coffee Cost:</b> Since 20 dollars covers exactly Coffee + Cookies, Coffee = $20 - 15 = 5$.</li>
+                    <li><b>Difference:</b> $15 - 5 = 10$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Logic & Deduction",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 2A Q11]</span> Otani scores points by hitting 'digit below 1' and 'digit right of 8'. Acuna hits the same digit twice and gets the same total score. Which digit did Acuna hit?",
+          question_id: "Otani dapat poin dari angka 'di bawah 1' dan 'di kanan 8'. Acuna mengenai angka yang sama dua kali dan dapat total skor sama. Angka berapa yang kena Acuna?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_x1gqgy_4229.png",
+          answer: "8",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Equivalence.</p>
+                <p><strong>Konsep:</strong> Kesetaraan Nilai.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Identify Otani's numbers:</b> Below 1 is <b>7</b>. Right of 8 is <b>9</b>.</li>
+                    <li><b>Otani's Total:</b> $7 + 9 = 16$.</li>
+                    <li><b>Acuna's Logic:</b> Hit same number twice ($N + N$) to get 16.</li>
+                    <li><b>Calculation:</b> $16 \\div 2 = 8$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Logic & Deduction",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: SEAMO 2022 Paper A Q13]</span> A number goes through operations: [+6] then [÷6] then [-6] to become 6. What was the number in the 1st circle?",
+          question_id: "Sebuah angka melewati operasi: [+6] lalu [÷6] lalu [-6] menjadi 6. Berapa angka di lingkaran pertama?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_sfagul_7934.png",
+          answer: "66",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Inverse Operations Flowchart.</p>
+                <p><strong>Konsep:</strong> Diagram Alur Operasi Terbalik.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>End:</b> 6.</li>
+                    <li><b>Reverse [-6]:</b> $6 + 6 = 12$.</li>
+                    <li><b>Reverse [÷6]:</b> $12 \\times 6 = 72$.</li>
+                    <li><b>Reverse [+6]:</b> $72 - 6 = 66$.</li>
+                </ul>
+            </div>`
+        },
+
+        // ==========================================
+        // TOPIK: DAILY MATH (Matematika Sehari-hari)
+        // ==========================================
+        {
+          topic: "Topic 3: Daily Math (Time & Money)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1A Q4]</span> Thirty minutes from now will be 6:00. What time is it now?",
+          question_id: "Tiga puluh menit dari sekarang adalah pukul 6:00. Pukul berapa sekarang?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_wt8j4d_6086.png",
+          answer: "5:30",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Time Subtraction.</p>
+                <p><strong>Konsep:</strong> Pengurangan Waktu.</p>
+            </div>
+            <div class="lang-section">
+                <p>We need to go back 30 minutes from 6:00. <br> $6:00 - 30 \\text{ mins} = 5:30$.</p>
+            </div>`
+        },
+        {
+          topic: "Topic 3: Daily Math (Time & Money)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1B Q14]</span> Jerry bought stationery. He paid one \\$10 and two \\$5 bills. The boss gave him back three \\$1 coins. How much is the stationery?",
+          question_id: "Jerry membeli alat tulis. Dia bayar dengan satu uang \\$10 dan dua uang \\$5. Bos memberinya kembalian tiga koin \\$1. Berapa harga alat tulis?",
+          image_url: "",
+          answer: "\\$17",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Payment - Change = Cost.</p>
+                <p><strong>Konsep:</strong> Bayar - Kembali = Harga.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Total Paid:</b> $10 + 5 + 5 = 20$.</li>
+                    <li><b>Change Received:</b> $1 + 1 + 1 = 3$.</li>
+                    <li><b>Cost:</b> $20 - 3 = 17$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 3: Daily Math (Time & Money)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: SASMO 2017 P2 Q15]</span> Jay gave half his buns to mother, then 3 to sister. Then half of remaining to brother. Left with 8. How many at first?",
+          question_id: "Jay beri setengah kue ke ibu, lalu 3 ke adik. Lalu beri setengah sisanya ke kakak. Sisa 8. Berapa kue awal?",
+          image_url: "",
+          answer: "38 buns",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Mixed Operations Backwards.</p>
+                <p><strong>Konsep:</strong> Operasi Campuran Terbalik.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>End:</b> 8.</li>
+                    <li><b>Reverse (Half to brother):</b> $8 \\times 2 = 16$.</li>
+                    <li><b>Reverse (3 to sister):</b> $16 + 3 = 19$.</li>
+                    <li><b>Reverse (Half to mother):</b> $19 \\times 2 = 38$.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 3: Daily Math (Time & Money)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: SASMO 2018 P2 Q15]</span> Wendy gave half cheese sticks to Yasmin. Yasmin gave 2 to Xander. Zane gave 3 to Yasmin. Yasmin now has 10. How many did Wendy give Yasmin?",
+          question_id: "Wendy beri setengah stik keju ke Yasmin. Yasmin beri 2 ke Xander. Zane beri 3 ke Yasmin. Yasmin sekarang punya 10. Berapa yang Wendy berikan ke Yasmin?",
+          image_url: "",
+          answer: "9 sticks",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Tracking Inventory.</p>
+                <p><strong>Konsep:</strong> Melacak Persediaan.</p>
+            </div>
+            <div class="lang-section">
+                <p>We focus only on Yasmin's pile.</p>
+                <ul class="step-list">
+                    <li><b>End (Yasmin):</b> 10.</li>
+                    <li><b>Reverse (Zane gave 3):</b> $10 - 3 = 7$.</li>
+                    <li><b>Reverse (Yasmin gave 2):</b> $7 + 2 = 9$.</li>
+                    <li><b>Conclusion:</b> This 9 is what Wendy gave her (which was half of Wendy's pile, but the question asks how many she <i>gave</i>).</li>
+                </ul>
+            </div>`
+        }
+      ];
+
+      function getOrderedQuestions() {
+        return questions.map((q, index) => {
+            q.id = index + 1;
+            return q;
+        });
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal Header (Topic Grouping)
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+
+          // Logic for Non-Routine Badge
+          let titlePrefix = "";
+          let displayEn = q.question_en;
+          let displayId = q.question_id;
+
+          if (q.question_en.includes("<strong>(Non-Routine)</strong>") || q.question_en.includes("<strong>(HOTS)</strong>")) {
+             displayEn = displayEn.replace("<strong>(Non-Routine)</strong>", "").replace("<strong>(HOTS)</strong>", "").trim();
+             displayId = displayId.replace("<strong>(Non-Rutin)</strong>", "").replace("<strong>(HOTS)</strong>", "").trim();
+             titlePrefix = `<span class="non-routine-badge">HOTS</span>`;
+          }
+
+          problemsHTML += `
+            <div class="item-container">
+                <p>
+                  <strong>${q.id}.</strong> ${titlePrefix} ${displayEn}
+                </p>`;
+
+          // Modifikasi di sini: Jika image_desc ada, tampilkan.
+          // Tapi karena kita ingin menghapus deskripsi jika ada gambar di nomor 5 dan 6,
+          // kita sudah menghapus properti image_desc dari objek tersebut di atas.
+          if (q.image_desc) {
+            problemsHTML += `<div class="image-desc">Description: ${q.image_desc}</div>`;
+          } else if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Image for Q${q.id}" class="problem-image" onerror="this.style.display='none'">`;
+          }
+
+          if (q.question_id) {
+            problemsHTML += `<span class="lang-id">${displayId}</span>`;
+          }
+          problemsHTML += `</div>`;
+
+          // Render Solusi Header
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan: ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+            <div class="solution-box">
+                <div class="solution-header">Solution / Penyelesaian No. ${q.id}</div>
+                ${q.explanation}
+                <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+            </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Trigger MathJax typeset
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
