@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WMI Grade 1-2: 10 Hardest Spatial & Logic Problems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #a5b4fc;
+        background-color: #e0e7ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+      }
+      .item-container {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-container p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .solution-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        margin-top: 1rem;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #4338ca;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 2px solid #e0e7ff;
+        padding-bottom: 0.5rem;
+      }
+      .concept-box {
+        background-color: #eef2ff;
+        border-left: 4px solid #6366f1;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .step-list {
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+      }
+      .step-list li {
+        margin-bottom: 0.25rem;
+        line-height: 1.6;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      .image-desc {
+        background-color: #fffbeb;
+        border: 1px dashed #d97706;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 4px;
+        font-style: italic;
+        color: #92400e;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      }
+      .lang-id {
+        display: block;
+        margin-top: 0.5rem;
+        color: #4b5563;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .non-routine-badge {
+        background-color: #fef08a;
+        color: #854d0e;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 700;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      /* Styling for bilingual separation */
+      .lang-section {
+        margin-bottom: 1rem;
+      }
+      .lang-label {
+        font-weight: 600;
+        color: #374151; /* gray-700 */
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+       /* Additional Grid Table for Pathfinding Problems (Needed for WMI) */
+       .grid-table {
+        border-collapse: collapse;
+        margin: 10px auto;
+        background: white;
+      }
+      .grid-table td {
+        border: 2px solid #cbd5e1;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-weight: bold;
+        color: #1e293b;
+      }
+      .grid-table td.start-end {
+        background-color: #dbeafe;
+        color: #1e40af;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo Ruangguru"
+          class="mx-auto h-20 md:h-24"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          WMI Grade 1-2 Practice
+        </h1>
+        <p class="text-gray-600 mt-2">
+          10 Hardest Spatial & Logic Problems (HOTS) | Based on WMI 2023-2024
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const questions = [
+        // ==========================================
+        // TOPIK: VISUALISASI 3D & JARING-JARING
+        // ==========================================
+        {
+          topic: "Topic 1: Spatial Visualization (3D)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 1B Q6]</span> <strong>(HOTS)</strong> A cube net is shown with a red circle and a blue diamond. When folded into a cube, which 3D shape is formed?",
+          question_id: "Jaring-jaring kubus ditunjukkan dengan lingkaran merah dan belah ketupat biru. Ketika dilipat menjadi kubus, bangun ruang manakah yang terbentuk?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_wxwgnb_3479.png",
+          answer: "The diamond is opposite the circle.",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Opposite Faces in a Cube Net.</p>
+                <p><strong>Konsep:</strong> Sisi Berlawanan pada Jaring-jaring Kubus.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Explanation:</p>
+                <ul class="step-list">
+                    <li>In a standard 1-4-1 net, the top square and the bottom square always become <b>opposite faces</b>.</li>
+                    <li>Therefore, the Red Circle and Blue Diamond will never touch each other. They are on opposite sides.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Spatial Visualization (3D)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1B Q3]</span> How many more blocks are needed to make the solid on the left become the solid on the right (a complete 3x3x3 cube)?",
+          question_id: "Berapa banyak balok tambahan yang dibutuhkan untuk membuat bangun di sebelah kiri menjadi bangun di sebelah kanan (kubus utuh 3x3x3)?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_8bwei1_8658.png",
+          answer: "9 blocks / 9 balok",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Volume by Counting Units.</p>
+                <p><strong>Konsep:</strong> Volume dengan Menghitung Satuan.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Target:</b> $3 \\times 3 \\times 3 = 27$ blocks.</li>
+                    <li><b>Current:</b> $9 + 6 + 3 = 18$ blocks.</li>
+                    <li><b>Missing:</b> $27 - 18 = 9$ blocks.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Spatial Visualization (3D)",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 1A Q7]</span> <strong>(HOTS)</strong> Which set of blocks is most likely to fall?",
+          question_id: "Kumpulan balok manakah yang paling mungkin jatuh?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_e6w6un_7603.png",
+          answer: "Option C",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Center of Gravity.</p>
+                <p><strong>Konsep:</strong> Titik Berat.</p>
+            </div>
+            <div class="lang-section">
+                <p>For stability, the center of gravity must be above the base. Tower C leans too far (overhangs), so gravity pulls it down.</p>
+            </div>`
+        },
+
+        // ==========================================
+        // TOPIK: OPTIMASI JALUR & GRID
+        // ==========================================
+        {
+          topic: "Topic 2: Pathfinding & Logic",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 1B Q10]</span> <strong>(HOTS)</strong> The robot can only go left, right, or down. Find the <strong>smallest sum</strong> of digits along the way from the Entrance to the Exit.",
+          question_id: "Robot hanya bisa bergerak ke kiri, kanan, atau bawah. Temukan <strong>jumlah terkecil</strong> dari angka-angka di sepanjang jalan dari Pintu Masuk ke Keluar.",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_fc5ny7_6732.png",
+          answer: "Sum = 23",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Path Optimization.</p>
+                <p><strong>Konsep:</strong> Optimasi Jalur.</p>
+            </div>
+            <div class="lang-section">
+                <p class="lang-label">Strategy:</p>
+                <p>Avoid large numbers like 8 and 7. <br>Path: $2 \\to 2 \\to 2 \\to 4 \\to 2 \\dots$ (Example logic). You must check every valid path.</p>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Pathfinding & Logic",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1B Q8]</span> <strong>(HOTS)</strong> Go right or up from bottom-left 5 to top-right 5. Find the difference between the <strong>Maximum Sum</strong> and <strong>Minimum Sum</strong>.",
+          question_id: "Bergerak ke kanan atau atas dari angka 5 di kiri-bawah ke angka 5 di kanan-atas. Temukan selisih antara <strong>Jumlah Maksimum</strong> dan <strong>Jumlah Minimum</strong>.",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_nr3vd6_4834.png",
+          answer: "Calculate Max - Min",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Systematic Counting.</p>
+                <p><strong>Konsep:</strong> Berhitung Sistematis.</p>
+            </div>
+            <div class="lang-section">
+                <ul class="step-list">
+                    <li><b>Max Path:</b> Choose largest neighbors.</li>
+                    <li><b>Min Path:</b> Choose smallest neighbors.</li>
+                    <li><b>Result:</b> Difference between the two totals.</li>
+                </ul>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Pathfinding & Logic",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1B Q5]</span> At least how many squares must be shaded so that every row and every column has 3 or more shaded squares?",
+          question_id: "Setidaknya berapa banyak kotak harus diarsir agar setiap baris dan setiap kolom memiliki 3 atau lebih kotak yang diarsir?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_qtqjyv_2215.png",
+          answer: "Fill gaps to reach 3 per row/col",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Constraint Satisfaction.</p>
+                <p><strong>Konsep:</strong> Pemenuhan Syarat.</p>
+            </div>
+            <div class="lang-section">
+                <p>Check each row count. Add dots if $<3$. Then check columns. Try to place dots where they help both a row and a column.</p>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Pathfinding & Logic",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2023 Grade 1B Q10]</span> <strong>(HOTS)</strong> Put 4 puzzle pieces into a 4x4 grid. If the puzzles cannot be rotated, what does the shaded 2x2 area look like?",
+          question_id: "Masukkan 4 keping puzzle ke dalam grid 4x4. Jika puzzle tidak boleh diputar, seperti apa tampilan area 2x2 yang diarsir?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_y7jj8u_9560.png",
+          answer: "Visual Pattern",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Spatial Composition.</p>
+                <p><strong>Konsep:</strong> Komposisi Spasial.</p>
+            </div>
+            <div class="lang-section">
+                <p>Match the corners of the pieces to the corners of the grid. Identify which part of which piece covers the center 2x2 area.</p>
+            </div>`
+        },
+
+        // ==========================================
+        // TOPIK: ROTASI MENTAL & POLA
+        // ==========================================
+        {
+          topic: "Topic 3: Mental Rotation & Patterns",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 1B Q2]</span> Which option shows the figure that is the same as the one below (just rotated)?",
+          question_id: "Pilihan mana yang menunjukkan gambar yang sama dengan gambar di bawah ini (hanya diputar)?",
+          image_url: "https://mathruangguru.github.io/roa/lower/no.11.png",
+          answer: "Check clockwise distance",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Invariance.</p>
+                <p><strong>Konsep:</strong> Invariansi.</p>
+            </div>
+            <div class="lang-section">
+                <p>Track the distance between the Dot and the Hole. If the Dot is 1 step clockwise from the Hole, find the option that matches that specific relative position.</p>
+            </div>`
+        },
+        {
+          topic: "Topic 3: Mental Rotation & Patterns",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 2B Q7]</span> Observe the changes of the blocks (Rotation & Color change). What comes next?",
+          question_id: "Amati perubahan balok (Rotasi & Perubahan Warna). Apa urutan selanjutnya?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_u5wtuw_4278.png",
+          answer: "Left side",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> 3D Pattern Sequencing.</p>
+                <p><strong>Konsep:</strong> Urutan Pola 3D.</p>
+            </div>
+            <div class="lang-section">
+                <p>The object rotates 90 degrees clockwise. Front $\\to$ Right $\\to$ Back $\\to$ <b>Left</b>.</p>
+            </div>`
+        },
+        {
+          topic: "Topic 3: Mental Rotation & Patterns",
+          question_en: "<span class='text-indigo-600 font-bold'>[Source: WMI 2024 Grade 1A Q11]</span> Which two pieces can form a perfect square?",
+          question_id: "Dua kepingan mana yang dapat membentuk persegi sempurna?",
+          image_url: "https://imgix3.ruangguru.com/assets/miscellaneous/png_fcmbgn_8949.png",
+          answer: "Complementary Shapes",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Shape Composition.</p>
+                <p><strong>Konsep:</strong> Penyusunan Bentuk.</p>
+            </div>
+            <div class="lang-section">
+                <p>Look for 'dents' and 'bumps'. A bump on one piece must fit perfectly into a dent on the other.</p>
+            </div>`
+        }
+      ];
+
+      function getOrderedQuestions() {
+        return questions.map((q, index) => {
+            q.id = index + 1;
+            return q;
+        });
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal Header (Topic Grouping)
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+
+          // Logic for Non-Routine Badge
+          let titlePrefix = "";
+          let displayEn = q.question_en;
+          let displayId = q.question_id;
+
+          if (q.question_en.includes("<strong>(Non-Routine)</strong>") || q.question_en.includes("<strong>(HOTS)</strong>")) {
+             displayEn = displayEn.replace("<strong>(Non-Routine)</strong>", "").replace("<strong>(HOTS)</strong>", "").trim();
+             displayId = displayId.replace("<strong>(Non-Rutin)</strong>", "").replace("<strong>(HOTS)</strong>", "").trim();
+             titlePrefix = `<span class="non-routine-badge">HOTS</span>`;
+          }
+
+          problemsHTML += `
+            <div class="item-container">
+                <p>
+                  <strong>${q.id}.</strong> ${titlePrefix} ${displayEn}
+                </p>`;
+
+          if (q.image_desc) {
+            problemsHTML += `<div class="image-desc">Deskripsi Gambar: ${q.image_desc}</div>`;
+          } else if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Gambar untuk Soal ${q.id}" class="problem-image" onerror="this.style.display='none'">`;
+          }
+
+          if (q.question_id) {
+            problemsHTML += `<span class="lang-id">${displayId}</span>`;
+          }
+          problemsHTML += `</div>`;
+
+          // Render Solusi Header
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan: ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+            <div class="solution-box">
+                <div class="solution-header">Solution / Penyelesaian No. ${q.id}</div>
+                ${q.explanation}
+                <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+            </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Trigger MathJax typeset
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
