@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worksheet 2: Modular Arithmetic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+        overflow-x: auto;
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #a5b4fc;
+        background-color: #e0e7ff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+      }
+      .item-container {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .item-container p {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .solution-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        margin-top: 1rem;
+      }
+      .solution-header {
+        font-weight: 700;
+        color: #4338ca;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 2px solid #e0e7ff;
+        padding-bottom: 0.5rem;
+      }
+      .concept-box {
+        background-color: #eef2ff;
+        border-left: 4px solid #6366f1;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+      .step-list {
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+      }
+      .step-list li {
+        margin-bottom: 0.25rem;
+        line-height: 1.6;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+      .image-desc {
+        background-color: #fffbeb;
+        border: 1px dashed #d97706;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 4px;
+        font-style: italic;
+        color: #92400e;
+        text-align: center;
+        font-size: 0.95rem;
+      }
+      .problem-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      }
+      .lang-id {
+        display: block;
+        margin-top: 0.5rem;
+        color: #4b5563;
+        font-style: normal;
+        font-weight: 500;
+      }
+      .non-routine-badge {
+        background-color: #fef08a;
+        color: #854d0e;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;        border-radius: 4px;
+        font-weight: 700;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+      /* Styling for bilingual separation */
+      .lang-section {
+        margin-bottom: 1rem;
+      }
+      .lang-label {
+        font-weight: 600;
+        color: #374151; /* gray-700 */
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <div class="text-center mb-8">
+        <img
+          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png"
+          alt="Logo Math"
+          class="mx-auto h-20 md:h-24"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 2
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg font-medium">
+          Grade 7 - 8 | Modular Arithmetic
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section id="problems-section" class="content-card">
+          <h2 class="section-title">Soal Latihan / Practice Problems</h2>
+          <!-- Konten Soal Dimasukkan oleh JavaScript -->
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section id="solutions-section" class="content-card">
+          <h2 class="section-title">Pembahasan / Solutions</h2>
+          <!-- Konten Pembahasan Dimasukkan oleh JavaScript -->
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const questions = [
+        // ==========================================
+        // TOPIK 1: BASIC CONCEPTS & POWERS
+        // ==========================================
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Today is Wednesday. What day of the week will it be 2025 days from now?",
+          question_id: "Hari ini adalah hari Rabu. Jatuh pada hari apakah 2025 hari dari sekarang?",
+          image_url: "",
+          answer: "Friday (Jumat)",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modulo 7 (Days of the week).</p>
+                <p><strong>Konsep:</strong> Modulo 7 (Hari dalam seminggu).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Find the remainder of $2025 \\div 7$.</li>
+                        <li>$2025 = 7 \\times 289 + 2$. The remainder is 2.</li>
+                        <li>Wednesday + 2 days = Friday.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Cari sisa dari $2025 \\div 7$.</li>
+                        <li>$2025 = 7 \\times 289 + 2$. Sisanya adalah 2.</li>
+                        <li>Rabu + 2 hari = Jumat.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Find the units digit (last digit) of $2023^{2024}$.",
+          question_id: "Tentukan digit satuan (angka terakhir) dari $2023^{2024}$.",
+          image_url: "",
+          answer: "1",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Cyclicity of units digits.</p>
+                <p><strong>Konsep:</strong> Pola berulang digit satuan.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Pattern of base 3: $3^1=3, 3^2=9, 3^3=7, 3^4=1$. Cycle length = 4.</li>
+                        <li>The exponent is 2024. $2024 \\div 4$ has a remainder of 0.</li>
+                        <li>Remainder 0 means the units digit is the last one in the cycle ($3^4$), which is 1.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Pola digit satuan basis 3: $3, 9, 7, 1$. Panjang siklus = 4.</li>
+                        <li>Pangkatnya adalah 2024. $2024$ habis dibagi 4 (sisa 0).</li>
+                        <li>Sisa 0 berarti digit satuannya mengikuti angka terakhir dalam siklus ($3^4$), yaitu 1.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "What is the remainder when $3^{50}$ is divided by 7?",
+          question_id: "Berapakah sisa pembagian $3^{50}$ jika dibagi dengan 7?",
+          image_url: "",
+          answer: "2",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modular Exponentiation Pattern.</p>
+                <p><strong>Konsep:</strong> Pola Perpangkatan Modular.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Powers of 3 mod 7:</li>
+                        <li>$3^1 \\equiv 3$, $3^2 \\equiv 2$, $3^3 \\equiv 6$, $3^4 \\equiv 4$, $3^5 \\equiv 5$, $3^6 \\equiv 1$.</li>
+                        <li>Cycle length is 6.</li>
+                        <li>$50 \\div 6 = 8$ remainder 2.</li>
+                        <li>So, $3^{50} \\equiv 3^2 \\equiv 2 \\pmod 7$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Pola pangkat 3 mod 7: $3, 2, 6, 4, 5, 1$.</li>
+                        <li>Siklus berulang setiap 6 angka.</li>
+                        <li>$50 \\div 6$ bersisa 2.</li>
+                        <li>Maka, $3^{50} \\equiv 3^2 \\equiv 2 \\pmod 7$.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Find the remainder when the sum is divided by 12: $$ 1! + 2! + 3! + 4! + \\dots + 100! $$",
+          question_id: "Tentukan sisa pembagian dari penjumlahan berikut oleh 12: $$ 1! + 2! + 3! + 4! + \\dots + 100! $$",
+          image_url: "",
+          answer: "9",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Properties of Factorials.</p>
+                <p><strong>Konsep:</strong> Sifat Faktorial.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$4! = 24$, which is divisible by 12 ($24 \\equiv 0 \\pmod{12}$).</li>
+                        <li>For all $n \\ge 4$, $n!$ is divisible by 12.</li>
+                        <li>Sum remainder = $1! + 2! + 3! = 1 + 2 + 6 = 9$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>$4! = 24$, habis dibagi 12 (sisa 0).</li>
+                        <li>Untuk setiap $n \\ge 4$, nilai $n!$ pasti habis dibagi 12.</li>
+                        <li>Sisa total = $1! + 2! + 3! = 1 + 2 + 6 = 9$.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "If $5x \\equiv 2 \\pmod 7$, find the smallest positive integer $x$.",
+          question_id: "Jika $5x \\equiv 2 \\pmod 7$, tentukan bilangan bulat positif terkecil $x$.",
+          image_url: "",
+          answer: "6",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Linear Congruence / Inverse.</p>
+                <p><strong>Konsep:</strong> Kekongruenan Linear / Invers.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$5x \\equiv 2 \\pmod 7$.</li>
+                        <li>Add multiples of 7 to 2 until divisible by 5:</li>
+                        <li>$2, 9, 16, 23, 30$.</li>
+                        <li>$5x = 30 \\implies x = 6$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Kita punya persamaan $5x \\equiv 2 \\pmod 7$.</li>
+                        <li>Tambahkan kelipatan 7 ke angka 2 sampai hasilnya bisa dibagi 5.</li>
+                        <li>$2 \to 9 \to 16 \to 23 \to 30$.</li>
+                        <li>$30$ bisa dibagi 5, jadi $5x = 30 \\implies x = 6$.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "What is the remainder when $(2^{2023} + 3^{2023})$ is divided by 5?",
+          question_id: "Berapakah sisa pembagian $(2^{2023} + 3^{2023})$ dibagi 5?",
+          image_url: "",
+          answer: "0",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> $a^n + b^n$ is divisible by $(a+b)$ for odd $n$.</p>
+                <p><strong>Konsep:</strong> $a^n + b^n$ habis dibagi $(a+b)$ untuk n ganjil.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$n = 2023$ is odd.</li>
+                        <li>$2^{2023} + 3^{2023}$ is divisible by $(2+3) = 5$.</li>
+                        <li>Remainder is 0.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Karena $n = 2023$ adalah bilangan ganjil,</li>
+                        <li>Maka $2^{2023} + 3^{2023}$ habis dibagi oleh $(2+3) = 5$.</li>
+                        <li>Sisa pembagiannya adalah 0.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Find the units digit of the sum: $$ 1^{2024} + 2^{2024} + 3^{2024} + \\dots + 10^{2024} $$",
+          question_id: "Tentukan digit satuan dari hasil penjumlahan: $$ 1^{2024} + 2^{2024} + 3^{2024} + \\dots + 10^{2024} $$",
+          image_url: "",
+          answer: "3",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Sum of Units Digits.</p>
+                <p><strong>Konsep:</strong> Penjumlahan Digit Satuan.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Since exponent 2024 is divisible by 4, we use the 4th power patterns.</li>
+                        <li>Units digits: $1, 6, 1, 6, 5, 6, 1, 6, 1, 0$.</li>
+                        <li>Sum: $1+6+1+6+5+6+1+6+1+0 = 33$.</li>
+                        <li>Last digit is 3.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Karena pangkat 2024 habis dibagi 4, kita gunakan pola satuan pangkat ke-4.</li>
+                        <li>Digit satuan masing-masing: $1, 6, 1, 6, 5, 6, 1, 6, 1, 0$.</li>
+                        <li>Jumlahkan: $1+6+1+6+5+6+1+6+1+0 = 33$.</li>
+                        <li>Digit terakhirnya adalah 3.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "A wall clock shows 10:00. What time will it show 1000 hours later? (12-hour format).",
+          question_id: "Sebuah jam dinding menunjukkan pukul 10.00. Pukul berapakah jam tersebut 1000 jam kemudian? (Gunakan format 12 jam).",
+          image_url: "",
+          answer: "02:00",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modulo 12.</p>
+                <p><strong>Konsep:</strong> Modulo 12 (Sistem Jam).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$1000 \\pmod{12}$.</li>
+                        <li>$1000 = 12 \\times 83 + 4$. Remainder is 4 hours.</li>
+                        <li>$10 + 4 = 14:00$ or 02:00.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Hitung sisa dari $1000 \\div 12$.</li>
+                        <li>$1000 = 12 \\times 83 + 4$. Sisanya adalah 4 jam.</li>
+                        <li>$10.00 + 4$ jam = $14.00$, yang sama dengan pukul 02.00 siang/pagi.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "A number $n$ leaves a remainder of 2 when divided by 3, and a remainder of 3 when divided by 5. Find the smallest possible value of $n$.",
+          question_id: "Sebuah bilangan $n$ jika dibagi 3 bersisa 2, dan jika dibagi 5 bersisa 3. Tentukan nilai $n$ terkecil yang mungkin.",
+          image_url: "",
+          answer: "8",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Chinese Remainder Theorem (Simplified).</p>
+                <p><strong>Konsep:</strong> Teorema Sisa Cina (Disederhanakan).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$n \\equiv 3 \\pmod 5 \\implies n = 3, 8, 13, 18, \\dots$</li>
+                        <li>Check $n \\equiv 2 \\pmod 3$:</li>
+                        <li>$3 \\div 3$ rem 0 (No).</li>
+                        <li>$8 \\div 3$ rem 2 (Yes).</li>
+                        <li>Smallest $n = 8$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Dari $n \\equiv 3 \\pmod 5$, kemungkinan $n$ adalah $3, 8, 13, 18, \\dots$</li>
+                        <li>Cek syarat kedua ($n \\div 3$ sisa 2):</li>
+                        <li>$3 \\div 3$ sisa 0 (Salah).</li>
+                        <li>$8 \\div 3$ sisa 2 (Benar).</li>
+                        <li>Nilai terkecil adalah 8.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "What is the remainder when $202420242024$ is divided by 9?",
+          question_id: "Berapakah sisa jika $202420242024$ dibagi dengan 9?",
+          image_url: "",
+          answer: "6",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Divisibility Rule for 9 (Sum of Digits).</p>
+                <p><strong>Konsep:</strong> Ciri Habis Dibagi 9 (Jumlah Digit).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Sum of digits: $3 \\times (2+0+2+4) = 3 \\times 8 = 24$.</li>
+                        <li>$24 \\pmod 9 = 6$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Jumlahkan semua digitnya: Ada 3 blok '2024'.</li>
+                        <li>Total = $3 \\times (2+0+2+4) = 3 \\times 8 = 24$.</li>
+                        <li>Cari sisa $24$ dibagi 9, yaitu 6.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Find the units digit of $7^{7^7}$.",
+          question_id: "Tentukan digit satuan dari $7^{7^7}$.",
+          image_url: "",
+          answer: "3",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Nested Exponents Modulo 4.</p>
+                <p><strong>Konsep:</strong> Eksponen Bertingkat Modulo 4.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Cycle of 7 is length 4. We need $7^7 \\pmod 4$.</li>
+                        <li>$7 \\equiv -1 \\pmod 4$.</li>
+                        <li>$(-1)^7 = -1 \\equiv 3 \\pmod 4$.</li>
+                        <li>The units digit is the same as $7^3$, which ends in 3 ($343$).</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Siklus pangkat 7 adalah 4. Kita perlu mencari sisa pangkat $7^7$ dibagi 4.</li>
+                        <li>$7 \\equiv -1 \\pmod 4$.</li>
+                        <li>$(-1)^7 = -1 \\equiv 3 \\pmod 4$.</li>
+                        <li>Digit satuannya sama dengan $7^3$, yaitu 343 (berakhiran 3).</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Find the last two digits of $5^{2025}$.",
+          question_id: "Tentukan dua digit terakhir dari $5^{2025}$.",
+          image_url: "",
+          answer: "25",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Properties of Powers of 5.</p>
+                <p><strong>Konsep:</strong> Sifat Pangkat 5.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>For any integer $n \\ge 2$, $5^n$ always ends in 25.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Untuk setiap bilangan bulat $n \\ge 2$, hasil $5^n$ selalu berakhiran dengan angka 25.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "What is the remainder when $1234 \\times 5678 \\times 91011$ is divided by 11?",
+          question_id: "Berapakah sisa pembagian $1234 \\times 5678 \\times 91011$ dibagi 11?",
+          image_url: "",
+          answer: "10",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Divisibility by 11 (Alternating Sum).</p>
+                <p><strong>Konsep:</strong> Keterbagian 11 (Selisih Silang).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$1234 \\pmod{11} \\equiv 4-3+2-1 = 2$.</li>
+                        <li>$5678 \\pmod{11} \\equiv 8-7+6-5 = 2$.</li>
+                        <li>$91011 \\pmod{11} \\equiv 1-1+0-1+9 = 8$.</li>
+                        <li>Product: $2 \\times 2 \\times 8 = 32$.</li>
+                        <li>$32 \\pmod{11} = 10$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Cari sisa tiap bilangan dibagi 11 (jumlah selang-seling):</li>
+                        <li>$1234 \to 4-3+2-1 = 2$.</li>
+                        <li>$5678 \to 8-7+6-5 = 2$.</li>
+                        <li>$91011 \to 1-1+0-1+9 = 8$.</li>
+                        <li>Kalikan sisanya: $2 \times 2 \times 8 = 32$. Sisa bagi $32 \div 11$ adalah 10.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "The sequence $1, 4, 16, 64, \\dots$ is powers of 4. What is the remainder when the 100th term ($4^{99}$) is divided by 7?",
+          question_id: "Barisan bilangan $1, 4, 16, 64, \\dots$ dibentuk dari pangkat 4. Berapakah sisa pembagian suku ke-100 ($4^{99}$) jika dibagi 7?",
+          image_url: "",
+          answer: "1",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Pattern Recognition.</p>
+                <p><strong>Konsep:</strong> Pengenalan Pola.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Powers of 4 mod 7: $4^1 \\equiv 4$, $4^2 \\equiv 2$, $4^3 \\equiv 1$.</li>
+                        <li>Cycle length is 3.</li>
+                        <li>Exponent is 99. $99 \\div 3$ has remainder 0.</li>
+                        <li>Remainder 0 corresponds to the end of the cycle ($4^3$), which is 1.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Pola pangkat 4 mod 7: $4, 2, 1$. Siklus berulang tiap 3 angka.</li>
+                        <li>Suku ke-100 adalah pangkat 99 ($4^{99}$).</li>
+                        <li>$99$ habis dibagi 3 (sisa 0).</li>
+                        <li>Sisa 0 berarti mengikuti angka terakhir siklus, yaitu 1.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 1: Basic Concepts & Powers",
+          question_en: "Prove or determine if $2^{70} + 3^{70}$ is divisible by 13.",
+          question_id: "Buktikan atau tentukan apakah $2^{70} + 3^{70}$ habis dibagi 13.",
+          image_url: "",
+          answer: "Yes, divisible (Remainder 0)",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Fermat's Little Theorem.</p>
+                <p><strong>Konsep:</strong> Teorema Kecil Fermat.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$2^{12} \\equiv 1 \\pmod{13}$. $70 = 12 \\times 5 + 10$.</li>
+                        <li>$2^{70} \\equiv 2^{10} = 1024 \\equiv 10 \\pmod{13}$ (or $-3$).</li>
+                        <li>$3^{70} \\equiv 3^{10} \\pmod{13}$. ($3^3=27 \\equiv 1$).</li>
+                        <li>$3^{10} = (3^3)^3 \\cdot 3 \\equiv 1 \\cdot 3 = 3$.</li>
+                        <li>Sum: $-3 + 3 = 0$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Menurut Fermat, $a^{12} \equiv 1 \pmod{13}$. $70 = 12 \times 5 + 10$.</li>
+                        <li>$2^{70} \equiv 2^{10} = 1024$. $1024 \div 13$ sisa 10 (atau $\equiv -3$).</li>
+                        <li>$3^{70} \equiv 3^{10}$. Karena $3^3=27 \equiv 1$, maka $3^{10} = (3^3)^3 \cdot 3 \equiv 1 \cdot 3 = 3$.</li>
+                        <li>Jumlah: $-3 + 3 = 0$. Habis dibagi.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+
+        // ==========================================
+        // TOPIK 2: APPLICATIONS & DIVISIBILITY
+        // ==========================================
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "The fraction $1/7$ is the repeating decimal $0.142857142857\\dots$. Find the 100th digit after the decimal point.",
+          question_id: "Pecahan $\\frac{1}{7}$ jika diubah ke desimal akan menghasilkan bilangan desimal berulang $0,142857142857\\dots$. Tentukan angka ke-100 di belakang koma.",
+          image_url: "",
+          answer: "8",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Repeating Decimal Cycles.</p>
+                <p><strong>Konsep:</strong> Siklus Desimal Berulang.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Cycle: $142857$ (length 6).</li>
+                        <li>$100 \\div 6 = 16$ remainder 4.</li>
+                        <li>The 4th digit in the sequence $142\\mathbf{8}57$ is 8.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Siklus berulang: $142857$ (panjang 6 digit).</li>
+                        <li>$100 \div 6$ hasilnya 16 sisa 4.</li>
+                        <li>Ambil digit ke-4 dari pola $142\mathbf{8}57$, yaitu 8.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Decorative lights flash in the order: Red, Yellow, Green, Blue, Purple, then repeat. What is the color of the 2025th light?",
+          question_id: "Serangkaian lampu hias dipasang dengan urutan warna: Merah, Kuning, Hijau, Biru, Ungu, lalu kembali ke Merah, dan seterusnya. Apa warna lampu pada urutan ke-2025?",
+          image_url: "",
+          answer: "Purple (Ungu)",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Periodicity.</p>
+                <p><strong>Konsep:</strong> Periodisitas (Pola Berulang).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Cycle length = 5.</li>
+                        <li>$2025 \\div 5$ has remainder 0.</li>
+                        <li>Remainder 0 means the last item in the sequence: Purple.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Panjang siklus adalah 5 warna.</li>
+                        <li>$2025 \div 5$ sisanya 0.</li>
+                        <li>Sisa 0 berarti warna terakhir dalam urutan, yaitu Ungu.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Five students (Andi, Budi, Cici, Dedi, Eko) sit in a circle counting. Andi says '1', Budi '2', and so on. Who says '500'?",
+          question_id: "Lima orang siswa (Andi, Budi, Cici, Dedi, Eko) duduk melingkar. Mereka berhitung mulai dari 1. Andi menyebut '1', Budi '2', Cici '3', dan seterusnya. Jika hitungan terus berlanjut melingkar, siapa yang akan menyebut angka '500'?",
+          image_url: "",
+          answer: "Eko",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modulo 5.</p>
+                <p><strong>Konsep:</strong> Modulo 5.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$500 \\div 5$ has remainder 0.</li>
+                        <li>Remainder 0 corresponds to the 5th person: Eko.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Ada 5 siswa. Cari sisa $500 \div 5$.</li>
+                        <li>Sisanya adalah 0.</li>
+                        <li>Sisa 0 menunjukkan orang urutan ke-5, yaitu Eko.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "The 5-digit number $4a3b5$ is divisible by 9. Find the maximum value of $a + b$.",
+          question_id: "Bilangan 5 digit $4a3b5$ habis dibagi 9. Jika $a$ dan $b$ adalah digit (0-9), tentukan nilai maksimum dari $a + b$.",
+          image_url: "",
+          answer: "15",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Divisibility by 9.</p>
+                <p><strong>Konsep:</strong> Ciri Habis Dibagi 9.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Sum of digits: $4+a+3+b+5 = 12 + a + b$.</li>
+                        <li>Must be a multiple of 9 (e.g., 18, 27).</li>
+                        <li>If $12+a+b=27$, then $a+b=15$. (Max possible since $a,b \\le 9$).</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Jumlah digit: $12 + a + b$. Harus kelipatan 9.</li>
+                        <li>Nilai terdekat adalah 18 atau 27.</li>
+                        <li>Nilai maksimum terjadi jika jumlahnya 27, maka $a + b = 27 - 12 = 15$.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Mother has some candies. If divided among 4 kids, 3 remain. If divided among 5 kids, 4 remain. What is the smallest number of candies?",
+          question_id: "Ibu memiliki sekantong permen. Jika permen dibagikan kepada 4 anak, bersisa 3 permen. Jika dibagikan kepada 5 anak, bersisa 4 permen. Berapakah jumlah permen terkecil yang dimiliki Ibu?",
+          image_url: "",
+          answer: "19",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Negative Remainders (LCM - 1).</p>
+                <p><strong>Konsep:</strong> Sisa Negatif (KPK - 1).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$n \\equiv -1 \\pmod 4$ and $n \\equiv -1 \\pmod 5$.</li>
+                        <li>$n = LCM(4, 5) - 1 = 20 - 1 = 19$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Sisa pembagian selalu kurang 1 dari pembaginya (sisa -1).</li>
+                        <li>Cari KPK(4, 5) lalu kurangi 1.</li>
+                        <li>KPK(4, 5) = 20. Permen = $20 - 1 = 19$.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "If Jan 1, 2024 is Monday, what day is Jan 1, 2025? (2024 is a leap year).",
+          question_id: "Jika tanggal 1 Januari 2024 jatuh pada hari Senin, jatuh pada hari apakah tanggal 1 Januari 2025? (Catatan: 2024 adalah tahun kabisat, 366 hari).",
+          image_url: "",
+          answer: "Wednesday (Rabu)",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Leap Year Calculation.</p>
+                <p><strong>Konsep:</strong> Perhitungan Tahun Kabisat.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>366 days in 2024.</li>
+                        <li>$366 \\div 7 = 52$ remainder 2.</li>
+                        <li>Senin + 2 days = Rabu.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Tahun 2024 kabisat memiliki 366 hari.</li>
+                        <li>$366 \div 7$ sisa 2.</li>
+                        <li>Hari Senin + 2 hari = Rabu.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "10,000 toys are packed into boxes of 12. How many toys are left over?",
+          question_id: "Sebuah pabrik memproduksi 10.000 mainan. Mainan tersebut akan dimasukkan ke dalam kotak yang masing-masing berisi 12 mainan. Berapakah sisa mainan yang tidak masuk ke dalam kotak penuh?",
+          image_url: "",
+          answer: "4",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Division Algorithm.</p>
+                <p><strong>Konsep:</strong> Algoritma Pembagian.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$10000 = 12 \\times 833 + 4$.</li>
+                        <li>Remainder is 4.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Hitung $10.000 \pmod{12}$.</li>
+                        <li>$10.000 = 12 \times 833 + 4$.</li>
+                        <li>Sisa mainan adalah 4.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Find the remainder when the square of any odd integer $n^2$ is divided by 8.",
+          question_id: "Tentukan sisa pembagian kuadrat bilangan bulat ganjil $n^2$ jika dibagi dengan 8.",
+          image_url: "",
+          answer: "1",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Properties of Squares.</p>
+                <p><strong>Konsep:</strong> Sifat Bilangan Kuadrat.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Let $n = 2k+1$.</li>
+                        <li>$n^2 = 4k^2 + 4k + 1 = 4k(k+1) + 1$.</li>
+                        <li>$k(k+1)$ is always even, so $4k(k+1)$ is divisible by 8.</li>
+                        <li>Remainder is always 1.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Misalkan $n = 2k+1$ (ganjil).</li>
+                        <li>$n^2 = (2k+1)^2 = 4k^2 + 4k + 1 = 4k(k+1) + 1$.</li>
+                        <li>$k(k+1)$ adalah perkalian 2 bilangan berurutan (pasti genap). Jadi $4 \times genap = habis$ dibagi 8.</li>
+                        <li>Sisanya selalu 1.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "The 4-digit number $2m7n$ is divisible by 5 and 11. Find $m$.",
+          question_id: "Bilangan 4 digit $2m7n$ habis dibagi 5 dan habis dibagi 11. Tentukan nilai $m$.",
+          image_url: "",
+          answer: "4 or 9",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Divisibility Rules.</p>
+                <p><strong>Konsep:</strong> Aturan Keterbagian.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Divisible by 5: $n=0$ or $n=5$.</li>
+                        <li>If $n=0$: $2m70$. Div by 11: $(2+7)-(m+0) = 9-m = 0 \\to m=9$.</li>
+                        <li>If $n=5$: $2m75$. Div by 11: $(2+7)-(m+5) = 4-m = 0 \\to m=4$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Agar habis dibagi 5, $n$ harus 0 atau 5.</li>
+                        <li>Jika $n=0$: Cek $2m70 \to (2+7) - (m+0) = 9-m = 0 \implies m=9$.</li>
+                        <li>Jika $n=5$: Cek $2m75 \to (2+7) - (m+5) = 4-m = 0 \implies m=4$.</li>
+                        <li>Jawaban $m$ bisa 4 atau 9.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Traffic light cycle: Green (40s), Yellow (5s), Red (35s). What color is on at the 200th second?",
+          question_id: "Lampu lalu lintas menyala dengan pola: Hijau (40 detik), Kuning (5 detik), Merah (35 detik). Siklus berulang terus menerus. Pada detik ke-200 sejak pertama kali Hijau menyala, warna lampu apa yang sedang menyala?",
+          image_url: "",
+          answer: "Green (Hijau)",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Cyclic Intervals.</p>
+                <p><strong>Konsep:</strong> Interval Siklus.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>Cycle: $40+5+35 = 80$ seconds.</li>
+                        <li>$200 = 80 \\times 2 + 40$.</li>
+                        <li>Remainder is exactly 40. This falls on the very last second of the Green phase.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Satu siklus = $40+5+35 = 80$ detik.</li>
+                        <li>$200 = 80 \times 2 + 40$. Sisanya adalah 40 detik.</li>
+                        <li>Lampu hijau menyala dari detik ke-1 sampai ke-40. Jadi pada detik ke-40 (atau ke-200), lampu Hijau masih menyala (tepat akan berakhir).</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Find the units digit of $1! + 2! + 3! + \\dots + 2025!$.",
+          question_id: "Tentukan digit satuan dari hasil $1! + 2! + 3! + \\dots + 2025!$.",
+          image_url: "",
+          answer: "3",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Factorial Tails.</p>
+                <p><strong>Konsep:</strong> Ekor Faktorial.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>For $n \\ge 5$, $n!$ ends in 0.</li>
+                        <li>Sum $1!+2!+3!+4! = 1+2+6+24 = 33$.</li>
+                        <li>Units digit is 3.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Mulai dari $5! = 120$, digit satuannya selalu 0.</li>
+                        <li>Cukup jumlahkan $1!+2!+3!+4! = 1+2+6+24 = 33$.</li>
+                        <li>Digit terakhirnya adalah 3.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Find the remainder of $(2021 \\times 2022 \\times 2023 \\times 2024)$ divided by 5.",
+          question_id: "Berapakah sisa pembagian $(2021 \\times 2022 \\times 2023 \\times 2024)$ jika dibagi 5?",
+          image_url: "",
+          answer: "4",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modular Arithmetic Properties.</p>
+                <p><strong>Konsep:</strong> Sifat Aritmetika Modular.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$1 \\times 2 \\times 3 \\times 4 = 24$.</li>
+                        <li>$24 \\pmod 5 = 4$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Ambil digit terakhir masing-masing (modulo 5): $1, 2, 3, 4$.</li>
+                        <li>Kalikan: $1 \times 2 \times 3 \times 4 = 24$.</li>
+                        <li>$24 \div 5$ sisanya 4.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Secret Code: $A=0, \\dots, Z=25$. Function $f(x) \\equiv (x+10) \\pmod{26}$. If result is 'D' (3), find the original letter.",
+          question_id: "Dalam kode rahasia, huruf A=0, B=1, C=2, ..., Z=25. Sebuah pesan dienkripsi dengan fungsi $f(x) \\equiv (x + 10) \\pmod{26}$. Jika hasil enkripsi adalah huruf 'D' (nilai 3), apakah huruf aslinya?",
+          image_url: "",
+          answer: "T",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Reverse Modular Function.</p>
+                <p><strong>Konsep:</strong> Fungsi Modular Terbalik.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$3 \\equiv x + 10 \\pmod{26}$.</li>
+                        <li>$x \\equiv 3 - 10 \\equiv -7 \\pmod{26}$.</li>
+                        <li>$x = 26 - 7 = 19$.</li>
+                        <li>Index 19 corresponds to letter T.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Diketahui hasil $f(x) = 3$ (D).</li>
+                        <li>$3 \equiv x + 10 \pmod{26}$.</li>
+                        <li>$x \equiv 3 - 10 = -7$.</li>
+                        <li>Dalam modulo 26, $-7$ sama dengan $26 - 7 = 19$. Huruf ke-19 adalah T.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Lamp A flashes every 6s, Lamp B every 8s. When do they flash together for the 3rd time (starting at 0s)?",
+          question_id: "Lampu A berkedip setiap 6 detik sekali. Lampu B berkedip setiap 8 detik sekali. Jika kedua lampu berkedip bersamaan pada detik ke-0, pada detik ke berapakah mereka akan berkedip bersamaan lagi untuk ketiga kalinya?",
+          image_url: "",
+          answer: "48 seconds",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Least Common Multiple (LCM).</p>
+                <p><strong>Konsep:</strong> Kelipatan Persekutuan Terkecil (KPK).</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>LCM(6, 8) = 24. They flash together every 24s.</li>
+                        <li>1st: 0s. 2nd: 24s. 3rd: 48s.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>Cari KPK dari 6 dan 8, yaitu 24.</li>
+                        <li>Lampu menyala bersama setiap 24 detik.</li>
+                        <li>Kali pertama: 0 detik. Kali kedua: 24 detik. Kali ketiga: 48 detik.</li>
+                    </ul>
+                </div>
+            </div>`
+        },
+        {
+          topic: "Topic 2: Applications & Divisibility",
+          question_en: "Find the remainder of $2^{100} + 3^{100}$ divided by 7.",
+          question_id: "Tentukan sisa pembagian $2^{100} + 3^{100}$ jika dibagi 7.",
+          image_url: "",
+          answer: "6",
+          explanation: `
+            <div class="concept-box">
+                <p><strong>Concept:</strong> Modular Exponentiation.</p>
+                <p><strong>Konsep:</strong> Eksponen Modular.</p>
+            </div>
+            <div class="lang-section">
+                <div class="mb-4">
+                    <span class="lang-label text-indigo-600 block mb-1">English Explanation:</span>
+                    <ul class="step-list">
+                        <li>$2^{100} \pmod 7$: Cycle is 3. $100 \\div 3$ rem 1. $2^1=2$.</li>
+                        <li>$3^{100} \pmod 7$: Cycle is 6. $100 \\div 6$ rem 4. $3^4=81 \\equiv 4$.</li>
+                        <li>Sum: $2 + 4 = 6$.</li>
+                    </ul>
+                </div>
+                <hr class="my-4 border-gray-300">
+                <div>
+                    <span class="lang-label text-emerald-600 block mb-1">Penjelasan Bahasa Indonesia:</span>
+                    <ul class="step-list">
+                        <li>$2^{100} \pmod 7$: Pola siklus 3 ($2,4,1$). $100 \div 3$ sisa 1 $\to 2^1=2$.</li>
+                        <li>$3^{100} \pmod 7$: Pola siklus 6 ($3,2,6,4,5,1$). $100 \div 6$ sisa 4 $\to 3^4=81 \equiv 4$.</li>
+                        <li>Total sisa: $2 + 4 = 6$.</li>
+                    </ul>
+                </div>
+            </div>`
+        }
+      ];
+
+      function getOrderedQuestions() {
+        return questions.map((q, index) => {
+            q.id = index + 1;
+            return q;
+        });
+      }
+
+      const problemsContainer = document.getElementById("problems-section");
+      const solutionsContainer = document.getElementById("solutions-section");
+
+      function renderContent() {
+        let problemsHTML = "";
+        let solutionsHTML = "";
+        let currentProblemTopic = "";
+        let currentSolutionTopic = "";
+
+        const orderedQuestions = getOrderedQuestions();
+
+        orderedQuestions.forEach((q) => {
+          // Render Soal Header (Topic Grouping)
+          if (q.topic !== currentProblemTopic) {
+            currentProblemTopic = q.topic;
+            problemsHTML += `<h3 class="topic-title">${currentProblemTopic}</h3>`;
+          }
+
+          // Logic for Non-Routine Badge
+          let titlePrefix = "";
+          let displayEn = q.question_en;
+          let displayId = q.question_id;
+
+          // Simple keyword check for adding badges (optional for this dataset)
+          if (q.question_en.includes("Prove") || q.question_en.includes("Challenge")) {
+             titlePrefix = `<span class="non-routine-badge">HOTS</span>`;
+          }
+
+          problemsHTML += `
+            <div class="item-container">
+                <p>
+                  <strong>${q.id}.</strong> ${titlePrefix} <br/>
+                  <span class="lang-label text-indigo-600">EN:</span> ${displayEn}
+                  <span class="lang-id"><span class="lang-label text-emerald-600">ID:</span> ${displayId}</span>
+                </p>`;
+          
+          // Menampilkan gambar jika tersedia
+          if (q.image_url) {
+            problemsHTML += `<img src="${q.image_url}" alt="Image for Q${q.id}" class="problem-image" onerror="this.style.display='none'">`;
+          }
+          problemsHTML += `</div>`;
+
+          // Render Solusi Header
+          if (q.topic !== currentSolutionTopic) {
+             currentSolutionTopic = q.topic;
+             solutionsHTML += `<h3 class="topic-title">Pembahasan: ${currentSolutionTopic}</h3>`;
+          }
+
+          solutionsHTML += `
+            <div class="solution-box">
+                <div class="solution-header">Solution / Penyelesaian No. ${q.id}</div>
+                ${q.explanation}
+                <div class="final-answer">Jawaban / Answer: ${q.answer}</div>
+            </div>`;
+        });
+
+        problemsContainer.innerHTML = problemsHTML;
+        solutionsContainer.innerHTML = solutionsHTML;
+
+        // Trigger MathJax typeset
+        if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+          try {
+            MathJax.typesetPromise();
+          } catch (e) {
+            console.error("MathJax typesetting error:", e);
+          }
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderContent);
+    </script>
+  </body>
+</html>
