@@ -1,0 +1,2808 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul OSNK SD: Geometri & Pengukuran</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        /* Brain Academy / Ruangguru Teal Theme */
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+
+      /* WATERMARK RUANGGURU */
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+
+      .header-bottom-box {
+        padding: 0 2cm 15px 2cm;
+        text-align: left;
+      }
+
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+
+      .materi-subjudul {
+        font-size: 13pt;
+        font-weight: 700;
+        color: var(--primary-text);
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .summary-table td,
+      .summary-table th {
+        border: 1px solid var(--border-color);
+        padding: 10px 15px;
+        vertical-align: top;
+        font-size: 11pt;
+      }
+      .summary-table .summary-table-header td,
+      .summary-table th {
+        background-color: var(--table-header-bg);
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 11pt;
+        border-radius: 0 5px 5px 0;
+      }
+
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 10px;
+      }
+
+      .pembahasan-box {
+        margin-top: 20px;
+        page-break-inside: avoid;
+      }
+
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 8px 15px;
+        font-size: 10pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 120px;
+        color: var(--secondary-text);
+      }
+
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 40px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 13pt;
+      }
+
+      .soal-img {
+        display: block;
+        max-width: 300px;
+        height: auto;
+        margin: 20px auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 15px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 30px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+
+      .pembahasan-detail {
+        margin-top: 25px;
+        background-color: var(--highlight-box-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+        font-size: 11pt;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-size: 10pt;
+      }
+
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      .page-footer b,
+      .page-footer i {
+        display: inline;
+        margin: 0 3px;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- ==================== MATERI 1 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Ringkasan Materi</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">1. Rumus Kunci (Wajib Hafal)</h2>
+          <div class="konsep-box">
+            <ul class="custom-list">
+              <li>
+                <b>Persegi:</b> <br />Keliling ($K$) = $4 \times s$ <br />Luas
+                ($L$) = $s \times s$ <br /><i
+                  >Ingat: Mencari sisi jika diketahui luas $\rightarrow s =
+                  \sqrt{L}$</i
+                >
+              </li>
+              <li>
+                <b>Persegi Panjang:</b> <br />$K = 2 \times (p + l)$ <br />$L =
+                p \times l$
+              </li>
+              <li>
+                <b>Segitiga:</b> <br />$K = \text{jumlah panjang ketiga
+                sisinya}$ <br />$L = \frac{1}{2} \times \text{alas} \times
+                \text{tinggi}$ (alas dan tinggi harus tegak lurus)
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="section-title">2. Triple Pythagoras</h2>
+          <p>
+            Hafalkan pasangan sisi segitiga siku-siku ini. Ini akan sangat
+            menghemat waktu daripada menghitung manual dengan $a^2+b^2=c^2$.
+          </p>
+          <div class="tips-box">
+            <ul class="custom-list">
+              <li><b>3 - 4 - 5</b> (dan kelipatannya: 6-8-10, 9-12-15)</li>
+              <li><b>5 - 12 - 13</b></li>
+              <li><b>8 - 15 - 17</b></li>
+              <li><b>7 - 24 - 25</b></li>
+            </ul>
+            <br />
+            <i
+              >Contoh Soal: Jika alas 6 cm dan tinggi 8 cm, maka sisi miring
+              pasti 10 cm (karena kelipatan 2 dari 3-4-5).</i
+            >
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== MATERI 2 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Ringkasan Materi</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">3. Trik Pergeseran Sisi (Shifting)</h2>
+          <div class="konsep-box">
+            <p>
+              Untuk menghitung <b>keliling</b> bangun gabungan yang
+              berlekuk-lekuk (seperti tangga), sisi-sisi yang berlekuk bisa
+              "digeser" keluar hingga membentuk persegi atau persegi panjang
+              utuh.
+            </p>
+          </div>
+          <center>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jplzvs_4150.png"
+              class="soal-img"
+              style="width: 250px"
+            />
+          </center>
+          <p>
+            <i
+              ><b>Catatan Penting:</b> Konsep ini hanya berlaku untuk menghitung
+              <b>Keliling</b>, tidak berlaku untuk Luas.</i
+            >
+          </p>
+
+          <h2 class="section-title">4. Prinsip Maksimum & Minimum</h2>
+          <table class="summary-table">
+            <tr class="summary-table-header">
+              <td>Kondisi</td>
+              <td>Strategi Optimal</td>
+            </tr>
+            <tr>
+              <td><b>Keliling Tetap, Ingin Luas Maksimum</b></td>
+              <td>
+                Bentuk bangun menjadi <b>PERSEGI</b>.<br /><i
+                  >Contoh: Diberi kawat 40m, luas kandang terbesar dicapai jika
+                  ukuran 10x10.</i
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><b>Luas Tetap, Ingin Keliling Minimum</b></td>
+              <td>
+                Bentuk bangun menjadi <b>PERSEGI</b>.<br /><i
+                  >Contoh: Ingin memagari tanah seluas 100m², pagar terpendek
+                  (biaya termurah) dicapai jika ukuran 10x10.</i
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== MATERI 3 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Ringkasan Materi</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">5. Unsur-Unsur Lingkaran</h2>
+          <center>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_kywm4n_3895.png"
+              alt="Unsur Lingkaran"
+              class="soal-img"
+              style="width: 250px"
+            />
+          </center>
+          <div class="konsep-box">
+            <ul class="custom-list">
+              <li>
+                <b>Jari-jari ($r$):</b> Jarak dari titik pusat ke tepian
+                lingkaran.
+              </li>
+              <li>
+                <b>Diameter ($d$):</b> Garis tengah yang membagi lingkaran jadi
+                dua ($d = 2 \times r$).
+              </li>
+              <li>
+                <b>Juring:</b> Daerah seperti "potongan pizza" (dibatasi 2
+                jari-jari dan busur).
+              </li>
+              <li>
+                <b>Tembereng:</b> Daerah seperti "potongan biskuit" (dibatasi
+                tali busur dan busur).
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="section-title">6. Keliling dan Luas</h2>
+          <div class="tips-box">
+            <b>Nilai $\pi$ (Pi):</b>
+            <br />Gunakan $\frac{22}{7}$ jika $r$ atau $d$ adalah kelipatan 7.
+            <br />Gunakan $3,14$ jika angka bukan kelipatan 7. <br /><br />
+            <b>Keliling ($K$):</b> $K = \pi \times d$ atau $K = 2 \times \pi
+            \times r$ <br /><b>Luas ($L$):</b> $L = \pi \times r^2$
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== MATERI 4 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Ringkasan Materi</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">7. Trik Luas Daun (Irisan)</h2>
+          <p>
+            Jika ada dua juring seperempat lingkaran di dalam persegi yang
+            saling tumpang tindih membentuk "daun":
+          </p>
+          <div class="konsep-box">
+            <b>Rumus Logika:</b>
+            $$ L_{daun} = (2 \times \text{Luas Juring}) - \text{Luas Persegi} $$
+            <br />
+            <b>Rumus Cepat (Khusus jika $\pi = \frac{22}{7}$):</b>
+            $$ L_{daun} = \frac{4}{7} \times s^2 $$
+          </div>
+
+          <h2 class="section-title">8. Masalah Tali Lilitan (Belt Problem)</h2>
+          <p>Jika ada $n$ pipa/lingkaran identik yang diikat tali:</p>
+          <center>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_yzxorq_6234.png"
+              class="soal-img"
+              style="width: 150px"
+              alt="Pipa"
+            />
+          </center>
+          <div class="tips-box">
+            $$ \text{Panjang Tali} = (n \times d) + (\pi \times d) $$
+            <br />
+            <b>Logika Pembentuk:</b>
+            <br />1. Bagian lurus tali = jumlah diameter (sebanyak pipa bagian
+            luar). <br />2. Bagian melengkung tali jika digabung
+            <b>SELALU</b> membentuk 1 lingkaran penuh.
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 1 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Persegi</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Mudah</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">1.</div>
+              <div class="soal-konten">
+                Sebuah persegi memiliki luas $144$ cm$^2$. Berapakah keliling
+                persegi tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">24 cm</li>
+                  <li data-opt="B">36 cm</li>
+                  <li data-opt="C">48 cm</li>
+                  <li data-opt="D">60 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 48 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Ingat rumus luas persegi: $L = s \times s$.<br />
+                  2. Cari panjang sisi ($s$) dengan akar pangkat dua: $s =
+                  \sqrt{144} = 12$ cm.<br />
+                  3. Hitung Keliling: $K = 4 \times s = 4 \times 12 = 48$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 2 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Persegi Panjang</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Mudah</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">2.</div>
+              <div class="soal-konten">
+                Pak Budi punya kebun berbentuk persegi panjang dengan panjang
+                $p=15$ m dan lebar $l=8$ m. Luas kebun Pak Budi adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">46 m$^2$</li>
+                  <li data-opt="B">110 m$^2$</li>
+                  <li data-opt="C">120 m$^2$</li>
+                  <li data-opt="D">230 m$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 120 m$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus Luas Persegi Panjang: $L = p \times l$.<br />
+                  $L = 15 \times 8 = 120$ m$^2$.<br />
+                  (Catatan: Pilihan A adalah kelilingnya, $2 \times (15+8) =
+                  46$, jangan terkecoh).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 3 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Mudah</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">3.</div>
+              <div class="soal-konten">
+                Sebuah lingkaran memiliki jari-jari ($r$) 14 cm. Berapakah
+                panjang diameternya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">7 cm</li>
+                  <li data-opt="B">14 cm</li>
+                  <li data-opt="C">21 cm</li>
+                  <li data-opt="D">28 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: D. 28 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Diameter adalah garis tengah yang panjangnya dua kali
+                  jari-jari.<br />
+                  $d = 2 \times r = 2 \times 14 = 28$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 4 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Mudah</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">4.</div>
+              <div class="soal-konten">
+                Keliling lingkaran dengan diameter 20 cm ($\pi=3,14$) adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">31,4 cm</li>
+                  <li data-opt="B">40 cm</li>
+                  <li data-opt="C">62,8 cm</li>
+                  <li data-opt="D">100 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 62,8 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus keliling jika diketahui diameter: $K = \pi \times d$.<br />
+                  $K = 3,14 \times 20$.<br />
+                  Tips hitung: $3,14 \times 20$ sama dengan $31,4 \times 2 =
+                  62,8$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 5 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Segitiga</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Mudah</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">5.</div>
+              <div class="soal-konten">
+                Luas segitiga dengan panjang alas 12 cm dan tinggi 9 cm
+                adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">54 cm$^2$</li>
+                  <li data-opt="B">60 cm$^2$</li>
+                  <li data-opt="C">96 cm$^2$</li>
+                  <li data-opt="D">108 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: A. 54 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus Luas Segitiga: $L = \frac{1}{2} \times \text{alas}
+                  \times \text{tinggi}$.<br />
+                  $L = \frac{1}{2} \times 12 \times 9 = 6 \times 9 = 54$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 6 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Keliling Gabungan</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">6.</div>
+              <div class="soal-konten">
+                Sebuah kertas berbentuk persegi luasnya 100 cm$^2$ dipotong
+                menjadi dua persegi panjang sama besar. Keliling
+                <b>satu</b> potongan persegi panjang tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20 cm</li>
+                  <li data-opt="B">25 cm</li>
+                  <li data-opt="C">30 cm</li>
+                  <li data-opt="D">40 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 30 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Cari sisi persegi awal: $s = \sqrt{100} = 10$ cm.<br />
+                  2. Kertas dipotong dua sama besar. Panjang tetap 10 cm, Lebar
+                  menjadi setengahnya ($10 \div 2 = 5$ cm).<br />
+                  3. Keliling potongan = $2 \times (\text{panjang} +
+                  \text{lebar})$.<br />
+                  $K = 2 \times (10 + 5) = 2 \times 15 = 30$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 7 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Aplikasi Persegi</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">7.</div>
+              <div class="soal-konten">
+                Lantai ruangan berukuran $6 \times 6$ meter akan dipasang
+                keramik berukuran $30 \times 30$ cm. Banyak keramik yang
+                dibutuhkan adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">200</li>
+                  <li data-opt="B">400</li>
+                  <li data-opt="C">600</li>
+                  <li data-opt="D">900</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 400 buah</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. <b>Samakan Satuan:</b> Ubah meter ke cm. Sisi lantai $6$ m
+                  $= 600$ cm.<br />
+                  2. <b>Cara Cepat:</b> Bagi sisi lantai dengan sisi keramik.<br />
+                  Sepanjang sisi, muat: $600 \text{ cm} \div 30 \text{ cm} = 20$
+                  keramik.<br />
+                  3. Total keramik = $20 \times 20 = 400$ buah.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 8 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">8.</div>
+              <div class="soal-konten">
+                Keliling sebuah lingkaran adalah 88 cm ($\pi = \frac{22}{7}$).
+                Berapakah panjang jari-jarinya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">7 cm</li>
+                  <li data-opt="B">14 cm</li>
+                  <li data-opt="C">21 cm</li>
+                  <li data-opt="D">28 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 14 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus: $K = 2 \times \pi \times r$<br />
+                  $88 = 2 \times \frac{22}{7} \times r$<br />
+                  $88 = \frac{44}{7} \times r$<br />
+                  $r = 88 \times \frac{7}{44} = 2 \times 7 = 14$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 9 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Unsur Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">9.</div>
+              <div class="soal-konten">
+                Daerah di dalam lingkaran yang dibatasi oleh dua jari-jari dan
+                satu busur (seperti potongan pizza) disebut...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Tembereng</li>
+                  <li data-opt="B">Juring</li>
+                  <li data-opt="C">Apotema</li>
+                  <li data-opt="D">Tali Busur</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. Juring</b><br />
+                  <b>Pembahasan:</b><br />
+                  - <b>Juring:</b> Dibatasi 2 jari-jari dan busur.<br />
+                  - <b>Tembereng:</b> Dibatasi tali busur dan busur.<br />
+                  - <b>Apotema:</b> Jarak terpendek pusat ke tali busur.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 10 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Perbandingan</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">10.</div>
+              <div class="soal-konten">
+                Dua persegi A dan B. Panjang sisi A = 6 cm, dan panjang sisi B =
+                10 cm. Selisih luas kedua persegi tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">16 cm$^2$</li>
+                  <li data-opt="B">36 cm$^2$</li>
+                  <li data-opt="C">64 cm$^2$</li>
+                  <li data-opt="D">100 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 64 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  Luas A = $6 \times 6 = 36$ cm$^2$.<br />
+                  Luas B = $10 \times 10 = 100$ cm$^2$.<br />
+                  Selisih = $100 - 36 = 64$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 11 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Aplikasi Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">11.</div>
+              <div class="soal-konten">
+                Roda sepeda memiliki jari-jari 35 cm. Jika roda berputar
+                sebanyak 100 kali, berapakah jarak yang ditempuh?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">110 m</li>
+                  <li data-opt="B">220 m</li>
+                  <li data-opt="C">440 m</li>
+                  <li data-opt="D">2200 m</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 220 m</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Hitung keliling satu putaran roda:<br />
+                  $K = 2 \times \frac{22}{7} \times 35 = 2 \times 22 \times 5 =
+                  220$ cm.<br />
+                  2. Jarak total = 100 putaran $\times$ 220 cm = 22.000 cm.<br />
+                  3. Ubah ke meter: 22.000 cm = 220 m.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 12 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jplzvs_4150.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Bangun Gabungan</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">12.</div>
+              <div class="soal-konten">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_jplzvs_4150.png"
+                  class="soal-img"
+                  style="width: 150px"
+                  alt="Gabungan"
+                />
+                Sebuah bangun terdiri dari persegi dengan sisi 4 cm dan setengah
+                lingkaran yang menempel pada salah satu sisinya. Luas total
+                bangun tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">18,28 cm$^2$</li>
+                  <li data-opt="B">20,56 cm$^2$</li>
+                  <li data-opt="C">22,28 cm$^2$</li>
+                  <li data-opt="D">28,28 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 22,28 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  - Luas Persegi = $4 \times 4 = 16$.<br />
+                  - Diameter setengah lingkaran = sisi persegi = 4 cm (maka
+                  jari-jari = 2 cm).<br />
+                  - Luas 1/2 Lingkaran = $\frac{1}{2} \times 3,14 \times 2
+                  \times 2 = 6,28$.<br />
+                  - Total = $16 + 6,28 = 22,28$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 13 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Pythagoras</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">13.</div>
+              <div class="soal-konten">
+                Sebuah segitiga siku-siku memiliki luas 24 cm$^2$. Jika panjang
+                alasnya 6 cm, berapakah panjang sisi miringnya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">8 cm</li>
+                  <li data-opt="B">10 cm</li>
+                  <li data-opt="C">12 cm</li>
+                  <li data-opt="D">14 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 10 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Cari tinggi dulu: $L = \frac{a \times t}{2} \Rightarrow 24
+                  = \frac{6 \times t}{2} \Rightarrow 24 = 3t \Rightarrow t=8$
+                  cm.<br />
+                  2. Sisi tegak segitiga adalah 6 cm dan 8 cm.<br />
+                  3. Menggunakan Triple Pythagoras (6-8-10), sisi miringnya
+                  pasti 10 cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 14 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">14.</div>
+              <div class="soal-konten">
+                Keliling sebuah lingkaran sama dengan keliling persegi yang
+                panjang sisinya 11 cm. Berapakah luas lingkaran tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">44 cm$^2$</li>
+                  <li data-opt="B">88 cm$^2$</li>
+                  <li data-opt="C">154 cm$^2$</li>
+                  <li data-opt="D">616 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 154 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Keliling Persegi = $4 \times 11 = 44$ cm.<br />
+                  2. Keliling Lingkaran = 44 cm. Cari jari-jari: $2 \times
+                  \frac{22}{7} \times r = 44 \Rightarrow \frac{44}{7}r = 44
+                  \Rightarrow r=7$.<br />
+                  3. Luas Lingkaran = $\frac{22}{7} \times 7 \times 7 = 154$
+                  cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 15 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Jalan Setapak</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>Sedang</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">15.</div>
+              <div class="soal-konten">
+                Sebuah kolam renang berukuran $25 \times 10$ m dikelilingi jalan
+                setapak selebar 2 m. Berapakah luas jalan setapak itu?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">140 m$^2$</li>
+                  <li data-opt="B">156 m$^2$</li>
+                  <li data-opt="C">250 m$^2$</li>
+                  <li data-opt="D">406 m$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 156 m$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Luas Kolam (Kecil) = $25 \times 10 = 250$ m$^2$.<br />
+                  2. Cari ukuran total (Kolam + Jalan). Panjang bertambah 2m
+                  kiri dan 2m kanan $\rightarrow 25+2+2 = 29$ m. Lebar
+                  $\rightarrow 10+2+2 = 14$ m.<br />
+                  3. Luas Total (Besar) = $29 \times 14 = 406$ m$^2$.<br />
+                  4. Luas Jalan = Luas Besar - Luas Kecil = $406 - 250 = 156$
+                  m$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 16 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Optimasi</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">16.</div>
+              <div class="soal-konten">
+                Keliling sebuah persegipanjang adalah 36 cm. Agar luasnya
+                maksimum, berapakah ukuran panjang dan lebarnya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">10 cm dan 8 cm</li>
+                  <li data-opt="B">12 cm dan 6 cm</li>
+                  <li data-opt="C">9 cm dan 9 cm</li>
+                  <li data-opt="D">15 cm dan 3 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 9 cm dan 9 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Prinsip: Untuk keliling yang tetap, luas maksimum sebuah
+                  segiempat dicapai jika bangun tersebut berbentuk
+                  <b>persegi</b>.<br />
+                  Sisi persegi = Keliling $\div$ 4 = $36 \div 4 = 9$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 17 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Rotasi Bangun</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">17.</div>
+              <div class="soal-konten">
+                Dua persegi identik memiliki sisi 10 cm. Titik sudut persegi
+                kedua diletakkan tepat di titik pusat persegi pertama (seperti
+                diputar). Berapakah luas daerah gabungan kedua persegi tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">150 cm$^2$</li>
+                  <li data-opt="B">175 cm$^2$</li>
+                  <li data-opt="C">180 cm$^2$</li>
+                  <li data-opt="D">190 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 175 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. <b>Konsep:</b> Jika salah satu sudut persegi diletakkan di
+                  pusat persegi lain yang identik, luas daerah irisannya SELALU
+                  $\frac{1}{4}$ dari luas satu persegi.<br />
+                  2. Luas Irisan = $\frac{1}{4} \times (10 \times 10) = 25$
+                  cm$^2$.<br />
+                  3. Luas Gabungan = Luas Persegi 1 + Luas Persegi 2 - Irisan<br />
+                  $= 100 + 100 - 25 = 175$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 18 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_yzxorq_6234.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Tali Lilitan</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">18.</div>
+              <div class="soal-konten">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_yzxorq_6234.png"
+                  class="soal-img"
+                  style="width: 150px"
+                  alt="Pipa"
+                />
+                Tiga buah pipa berdiameter 14 cm diikat erat dengan seutas tali
+                seperti gambar. Berapakah panjang tali minimal yang dibutuhkan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">42 cm</li>
+                  <li data-opt="B">44 cm</li>
+                  <li data-opt="C">86 cm</li>
+                  <li data-opt="D">100 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 86 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus cepat untuk $n$ pipa yang dikelilingi tali: $(n \times
+                  d) + (\pi \times d)$.<br />
+                  - Bagian Lurus: Ada 3 sisi lurus, totalnya 3 diameter = $3
+                  \times 14 = 42$ cm.<br />
+                  - Bagian Lengkung: Total sudut lengkung pasti membentuk 1
+                  lingkaran penuh = $\frac{22}{7} \times 14 = 44$ cm.<br />
+                  - Total Panjang = $42 + 44 = 86$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 19 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Luas Arsir</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">19.</div>
+              <div class="soal-konten">
+                Sebuah lingkaran berada tepat di dalam persegi (menyinggung
+                keempat sisinya). Jika sisi persegi 20 cm, berapakah luas daerah
+                di pojok-pojok persegi (di luar lingkaran)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">21,5 cm$^2$</li>
+                  <li data-opt="B">43 cm$^2$</li>
+                  <li data-opt="C">86 cm$^2$</li>
+                  <li data-opt="D">100 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 86 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  - Luas Persegi = $20 \times 20 = 400$.<br />
+                  - Jari-jari lingkaran = setengah sisi persegi = 10 cm.<br />
+                  - Luas Lingkaran = $3,14 \times 10 \times 10 = 314$.<br />
+                  - Sisa (Pojok) = Luas Persegi - Luas Lingkaran = $400 - 314 =
+                  86$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 20 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_4oxz85_3049.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Tiga Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">20.</div>
+              <div class="soal-konten">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_4oxz85_3049.png"
+                  class="soal-img"
+                  style="width: 150px"
+                  alt="3 Lingkaran"
+                />
+                Tiga lingkaran identik dengan jari-jari 7 cm saling
+                bersinggungan. Berapakah keliling segitiga yang menghubungkan
+                ketiga titik pusat lingkaran tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">21 cm</li>
+                  <li data-opt="B">42 cm</li>
+                  <li data-opt="C">63 cm</li>
+                  <li data-opt="D">84 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 42 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Perhatikan sisi segitiga yang menghubungkan pusat. Garis
+                  tersebut terdiri dari dua jari-jari yang bertemu.<br />
+                  Panjang satu sisi segitiga = $r + r = 7 + 7 = 14$ cm.<br />
+                  Karena ada 3 sisi sama panjang, Keliling = $3 \times 14 = 42$
+                  cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 21 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Luas Daun (Irisan)</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">21.</div>
+              <div class="soal-konten">
+                Di dalam sebuah persegi dengan sisi 14 cm, dibuat dua buah
+                juring seperempat lingkaran dari sudut yang berseberangan.
+                Berapakah luas daerah irisannya (yang berbentuk seperti daun)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">56 cm$^2$</li>
+                  <li data-opt="B">98 cm$^2$</li>
+                  <li data-opt="C">112 cm$^2$</li>
+                  <li data-opt="D">154 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 112 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  Gunakan trik cepat (karena $\pi=22/7$):<br />
+                  Luas Daun = $\frac{4}{7} \times \text{sisi}^2$.<br />
+                  $L = \frac{4}{7} \times 14 \times 14 = 4 \times 2 \times 14 =
+                  112$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 22 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_awsxoz_6111.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Cincin Lingkaran</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">22.</div>
+              <div class="soal-konten">
+                <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_awsxoz_6111.png"
+                  class="soal-img"
+                  style="width: 150px"
+                  alt="Cincin"
+                />
+                Sebuah tali busur pada lingkaran besar menyinggung lingkaran
+                kecil di dalamnya. Panjang tali busur tersebut 20 cm. Berapakah
+                luas daerah cincin (daerah di antara lingkaran besar dan kecil)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">100 cm$^2$</li>
+                  <li data-opt="B">314 cm$^2$</li>
+                  <li data-opt="C">628 cm$^2$</li>
+                  <li data-opt="D">1256 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 314 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Misal jari-jari besar $R$, kecil $r$. Setengah panjang tali
+                  = 10 cm.<br />
+                  2. Berdasarkan dalil Pythagoras pada segitiga siku-siku yang
+                  terbentuk: $R^2 - r^2 = 10^2 = 100$.<br />
+                  3. Luas Cincin = Luas Besar - Luas Kecil = $\pi R^2 - \pi r^2
+                  = \pi(R^2 - r^2)$.<br />
+                  4. Substitusi nilai: $3,14 \times 100 = 314$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 23 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Perbandingan Luas</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">23.</div>
+              <div class="soal-konten">
+                Jari-jari sebuah lingkaran diperbesar 20%. Berapa persen
+                pertambahan luasnya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20%</li>
+                  <li data-opt="B">40%</li>
+                  <li data-opt="C">44%</li>
+                  <li data-opt="D">144%</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 44%</b><br />
+                  <b>Pembahasan:</b><br />
+                  Gunakan pemisalan angka mudah.<br />
+                  - Misal jari-jari awal = 10. Luas Awal = $\pi \times 10 \times
+                  10 = 100\pi$.<br />
+                  - Diperbesar 20% $\rightarrow$ jari-jari baru = 12.<br />
+                  - Luas Baru = $\pi \times 12 \times 12 = 144\pi$.<br />
+                  - Kenaikan = $144\pi - 100\pi = 44\pi$. Dari 100 ke 144 naik
+                  44%.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 24 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Geser Sisi (Keliling)</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">24.</div>
+              <div class="soal-konten">
+                Selembar kertas persegi panjang berukuran $40 \times 30$ cm.
+                Keempat pojoknya digunting berbentuk persegi kecil dengan sisi 5
+                cm. Berapakah keliling kertas sisa guntingan tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">100 cm</li>
+                  <li data-opt="B">120 cm</li>
+                  <li data-opt="C">140 cm</li>
+                  <li data-opt="D">160 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 140 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Gunakan prinsip <b>Pergeseran Sisi</b>.<br />
+                  Meskipun pojok dipotong, garis potong yang baru (yang masuk ke
+                  dalam) panjangnya sama dengan garis sisi yang hilang.<br />
+                  Jadi, keliling bangun baru SAMA dengan keliling persegi
+                  panjang utuh.<br />
+                  $K = 2 \times (40+30) = 140$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 25 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Aljabar Geometri</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">25.</div>
+              <div class="soal-konten">
+                Jumlah keliling dua buah persegi adalah 100 cm. Selisih panjang
+                sisi kedua persegi tersebut adalah 5 cm. Tentukan luas persegi
+                yang lebih besar!
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">100 cm$^2$</li>
+                  <li data-opt="B">144 cm$^2$</li>
+                  <li data-opt="C">225 cm$^2$</li>
+                  <li data-opt="D">400 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 225 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Jumlah Keliling = 100 $\rightarrow$ Jumlah Sisi = $100 \div
+                  4 = 25$ cm.<br />
+                  2. Kita punya dua bilangan: Jumlahnya 25, Selisihnya 5.<br />
+                  3. Bilangan besar = $(25+5) \div 2 = 15$. Bilangan kecil =
+                  10.<br />
+                  4. Luas persegi besar = $15 \times 15 = 225$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 26 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran Dalam/Luar</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">26.</div>
+              <div class="soal-konten">
+                Sebuah persegi memiliki sisi 14 cm. Tentukan selisih luas antara
+                lingkaran luar (melalui titik sudut) dan lingkaran dalam
+                (menyinggung sisi) persegi tersebut!
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">77 cm$^2$</li>
+                  <li data-opt="B">100 cm$^2$</li>
+                  <li data-opt="C">154 cm$^2$</li>
+                  <li data-opt="D">308 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 154 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  - Jari-jari dalam = setengah sisi = 7 cm. Luas Dalam =
+                  $154$.<br />
+                  - Jari-jari luar = setengah diagonal = $7\sqrt{2}$. Luas Luar
+                  = $\frac{22}{7} \times (7\sqrt{2})^2 = \frac{22}{7} \times 98
+                  = 308$.<br />
+                  - Selisih = $308 - 154 = 154$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 27 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Grazing Problem</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">27.</div>
+              <div class="soal-konten">
+                Seekor kambing diikat di salah satu sudut luar kandang berukuran
+                $8 \times 6$ m. Panjang tali kambing adalah 10 m. Berapakah luas
+                maksimal daerah yang bisa dimakan kambing?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">235,5 m$^2$</li>
+                  <li data-opt="B">251,2 m$^2$</li>
+                  <li data-opt="C">314 m$^2$</li>
+                  <li data-opt="D">157 m$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 251,2 m$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. <b>Area Utama:</b> 3/4 lingkaran dengan $r=10$ m. Luas =
+                  $0,75 \times 3,14 \times 100 = 235,5$.<br />
+                  2. <b>Sisa Tali 1:</b> Di sisi 8 m, sisa tali $10-8=2$ m.
+                  Membentuk 1/4 lingkaran kecil ($r=2$). Luas = $0,25 \times
+                  3,14 \times 4 = 3,14$.<br />
+                  3. <b>Sisa Tali 2:</b> Di sisi 6 m, sisa tali $10-6=4$ m.
+                  Membentuk 1/4 lingkaran kecil ($r=4$). Luas = $0,25 \times
+                  3,14 \times 16 = 12,56$.<br />
+                  4. Total = $235,5 + 3,14 + 12,56 = 251,2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 28 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lingkaran dalam Segitiga</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">28.</div>
+              <div class="soal-konten">
+                Sebuah segitiga siku-siku memiliki panjang sisi 6 cm, 8 cm, dan
+                10 cm. Berapakah panjang jari-jari lingkaran dalam segitiga
+                tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1 cm</li>
+                  <li data-opt="B">2 cm</li>
+                  <li data-opt="C">3 cm</li>
+                  <li data-opt="D">4 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B. 2 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  Rumus jari-jari dalam segitiga siku-siku:<br />
+                  $r = \frac{\text{alas} + \text{tinggi} - \text{sisi
+                  miring}}{2}$<br />
+                  $r = \frac{6 + 8 - 10}{2} = \frac{4}{2} = 2$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 29 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Teorema Titik Interior</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">29.</div>
+              <div class="soal-konten">
+                Titik P berada di dalam persegi panjang ABCD. Jika Luas
+                $\triangle PAB = 15$ cm$^2$ dan Luas $\triangle PCD = 25$
+                cm$^2$, berapakah luas total persegi panjang ABCD?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">40 cm$^2$</li>
+                  <li data-opt="B">60 cm$^2$</li>
+                  <li data-opt="C">80 cm$^2$</li>
+                  <li data-opt="D">100 cm$^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 80 cm$^2$</b><br />
+                  <b>Pembahasan:</b><br />
+                  Teorema: Untuk sembarang titik P di dalam persegi panjang,
+                  jumlah luas segitiga atas dan bawah adalah setengah dari luas
+                  total.<br />
+                  Luas (Atas+Bawah) = $15 + 25 = 40$.<br />
+                  Luas Total = $2 \times 40 = 80$ cm$^2$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 30 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Latihan Soal</div>
+              <div class="header-title-sub">
+                Matematika - Bangun Datar dan Lingkaran
+              </div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 5 | Geometri Datar: Pengukuran dan Lingkaran
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Motif Batik (Juring)</td>
+              </tr>
+              <tr>
+                <td>Level</td>
+                <td>HOTS</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">30.</div>
+              <div class="soal-konten">
+                Sebuah motif batik terdiri dari 4 buah juring lingkaran yang
+                terpisah. Masing-masing juring memiliki sudut pusat $45^\circ$
+                dan jari-jari 10 cm. Berapakah total keliling keempat juring
+                tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">27,85 cm</li>
+                  <li data-opt="B">78,5 cm</li>
+                  <li data-opt="C">111,4 cm</li>
+                  <li data-opt="D">125,6 cm</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C. 111,4 cm</b><br />
+                  <b>Pembahasan:</b><br />
+                  1. Keliling 1 Juring = Panjang Busur + 2 jari-jari.<br />
+                  2. Busur = $\frac{45}{360} \times 2 \times 3,14 \times 10 =
+                  \frac{1}{8} \times 62,8 = 7,85$ cm.<br />
+                  3. Keliling 1 Juring = $7,85 + 20 = 27,85$ cm.<br />
+                  4. Total 4 Juring = $4 \times 27,85 = 111,4$ cm.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+    </div>
+  </body>
+</html>
