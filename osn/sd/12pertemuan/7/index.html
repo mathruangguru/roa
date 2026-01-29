@@ -1,0 +1,2434 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul OSNK SD: Pengukuran Lanjut</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        /* Brain Academy / Ruangguru Teal Theme */
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+
+      /* WATERMARK RUANGGURU */
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+
+      .header-bottom-box {
+        padding: 0 2cm 15px 2cm;
+        text-align: left;
+      }
+
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--border-color);
+        margin-bottom: 0px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .summary-table td,
+      .summary-table th {
+        border: 1px solid var(--border-color);
+        padding: 10px 15px;
+        vertical-align: top;
+        font-size: 10pt;
+      }
+      .summary-table .summary-table-header td,
+      .summary-table th {
+        background-color: var(--table-header-bg);
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+        font-size: 10.5pt;
+      }
+
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 10.5pt;
+        border-radius: 0 5px 5px 0;
+      }
+
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 5px;
+      }
+
+      .pembahasan-box {
+        margin-top: 20px;
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 20px;
+      }
+
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 4px 10px;
+        font-size: 9pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 120px;
+        color: var(--secondary-text);
+      }
+
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 14pt;
+        min-width: 35px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 12pt;
+      }
+
+      .soal-img {
+        display: block;
+        max-width: 250px;
+        height: auto;
+        margin: 10px auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+      }
+
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 15px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 8px;
+        font-size: 11.5pt;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 30px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+
+      .pembahasan-detail {
+        margin-top: 20px;
+        background-color: var(--highlight-box-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        border-radius: 0 8px 8px 0;
+        font-size: 11pt;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 10pt;
+      }
+
+      .page-footer {
+        text-align: justify;
+        font-size: 6pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 8px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      .page-footer b,
+      .page-footer i {
+        display: inline;
+        margin: 0 3px;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          margin: 0;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- ==================== MATERI: KECEPATAN & WAKTU ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">A. Waktu dan Kecepatan (J-K-W)</h2>
+
+          <div class="konsep-box">
+            <b>Rumus Dasar:</b><br />
+            Untuk memudahkan, ingat segitiga <b>"Jokowi" (J-K-W)</b>.
+            <ul class="custom-list">
+              <li><b>Jarak ($J$)</b> = Kecepatan ($K$) $\times$ Waktu ($W$)</li>
+              <li><b>Kecepatan ($K$)</b> = Jarak ($J$) $\div$ Waktu ($W$)</li>
+              <li><b>Waktu ($W$)</b> = Jarak ($J$) $\div$ Kecepatan ($K$)</li>
+            </ul>
+          </div>
+
+          <div class="tips-box">
+            <b>Tips Konversi Satuan Kecepatan:</b>
+            <ul class="custom-list">
+              <li>
+                <b>km/jam $\to$ m/detik:</b> Bagi dengan 3,6 (atau kali
+                $\frac{5}{18}$).<br />Contoh: $72 \text{ km/jam} = 72 \div 3,6 =
+                20 \text{ m/detik}$.
+              </li>
+              <li>
+                <b>m/detik $\to$ km/jam:</b> Kali dengan 3,6 (atau kali
+                $\frac{18}{5}$).<br />Contoh: $10 \text{ m/detik} = 10 \times
+                3,6 = 36 \text{ km/jam}$.
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="section-title">B. Variasi Soal Olimpiade</h2>
+          <table class="summary-table">
+            <tr class="summary-table-header">
+              <td width="20%">Tipe Soal</td>
+              <td>Rumus Cepat</td>
+            </tr>
+            <tr>
+              <td><b>Kecepatan Rata-rata</b><br />(Perjalanan majemuk)</td>
+              <td>
+                $$ V_{rata} = \frac{\text{Total Jarak}}{\text{Total Waktu}} $$
+                <i style="font-size: 9pt; color: red"
+                  >*Jangan pernah merata-rata kecepatan (tambah bagi 2) kecuali
+                  durasi waktunya sama.</i
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><b>Berpapasan</b><br />(Berangkat Sama)</td>
+              <td>
+                $$ W_{\text{temu}} = \frac{\text{Jarak Awal}}{\text{Jumlah
+                Kecepatan}} = \frac{J}{K_1 + K_2} $$
+              </td>
+            </tr>
+            <tr>
+              <td><b>Menyusul</b><br />(Arah Sama)</td>
+              <td>
+                $$ W_{\text{susul}} = \frac{\text{Selisih Jarak}}{\text{Selisih
+                Kecepatan}} = \frac{\Delta J}{K_2 - K_1} $$
+              </td>
+            </tr>
+            <tr>
+              <td><b>Perjalanan Pulang-Pergi</b><br />(Jarak Sama)</td>
+              <td>
+                Jika kecepatan pergi $x$ dan pulang $y$: $$ V_{rata} = \frac{2
+                \cdot x \cdot y}{x + y} $$
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== MATERI: DEBIT ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">C. Debit (V-D-W)</h2>
+          <div class="konsep-box">
+            <b>Hubungan Dasar:</b>
+            <ul class="custom-list">
+              <li><b>Volume ($V$)</b> = Debit ($D$) $\times$ Waktu ($W$)</li>
+              <li><b>Debit ($D$)</b> = Volume ($V$) $\div$ Waktu ($W$)</li>
+              <li><b>Waktu ($W$)</b> = Volume ($V$) $\div$ Debit ($D$)</li>
+            </ul>
+            <br />
+            <b>Tangga Satuan Penting:</b>
+            <ul class="custom-list">
+              <li>$1 \text{ liter} = 1 \text{ dm}^3$</li>
+              <li>$1 \text{ ml} = 1 \text{ cc} = 1 \text{ cm}^3$</li>
+              <li>$1 \text{ m}^3 = 1.000 \text{ liter}$</li>
+            </ul>
+          </div>
+
+          <h2 class="section-title">D. Pekerjaan Bersama (Tangki & Pipa)</h2>
+          <div class="tips-box">
+            Jika Pipa A mengisi penuh dalam $a$ jam, dan Pipa B dalam $b$ jam.
+            <br /><br />
+            <b>1. Kedua Pipa Mengisi (Buka Bersama):</b>
+            $$ \frac{1}{W_{gabung}} = \frac{1}{a} + \frac{1}{b} $$
+            <br />
+            <b>2. Satu Mengisi, Satu Bocor:</b>
+            Misal A mengisi ($a$ jam) dan B membuang/bocor ($b$ jam). $$
+            \frac{1}{W_{penuh}} = \frac{1}{a} - \frac{1}{b} $$
+          </div>
+        </div>
+
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 1 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Operasi Waktu</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">1.</div>
+              <div class="soal-konten">
+                Hasil penjumlahan dari 3 jam 15 menit + 1 jam 50 menit adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">4 jam 65 menit</li>
+                  <li data-opt="B">5 jam 5 menit</li>
+                  <li data-opt="C">5 jam 15 menit</li>
+                  <li data-opt="D">5 jam 50 menit</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  <b>Langkah Pengerjaan:</b><br />
+                  $3 \text{ jam } 15 \text{ menit} + 1 \text{ jam } 50 \text{
+                  menit} = 4 \text{ jam } 65 \text{ menit}$.<br />
+                  Karena 1 jam = 60 menit, maka 65 menit dipecah menjadi 1 jam +
+                  5 menit.<br />
+                  Total = $4 \text{ jam} + 1 \text{ jam} + 5 \text{ menit} = 5
+                  \text{ jam } 5 \text{ menit}$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 2 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Konversi Kecepatan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">2.</div>
+              <div class="soal-konten">
+                Sebuah mobil melaju dengan kecepatan 90 km/jam. Berapakah
+                kecepatan tersebut jika dinyatakan dalam m/detik?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">15 m/detik</li>
+                  <li data-opt="B">20 m/detik</li>
+                  <li data-opt="C">25 m/detik</li>
+                  <li data-opt="D">30 m/detik</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  <b>Cara Cepat:</b> Bagi dengan 3,6.<br />
+                  $90 \div 3,6 = 25$ m/detik.<br />
+                  <b>Cara Biasa:</b> <br />
+                  $90 \text{ km} = 90.000 \text{ m}$ dan $1 \text{ jam} = 3.600
+                  \text{ detik}$.<br />
+                  $\frac{90.000}{3.600} = \frac{900}{36} = 25$ m/detik.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 3 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Mencari Kecepatan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">3.</div>
+              <div class="soal-konten">
+                Ayah berangkat pukul 06.30 dan tiba pukul 07.15. Jika jarak
+                tempuh 15 km, berapa kecepatan rata-ratanya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">15 km/jam</li>
+                  <li data-opt="B">20 km/jam</li>
+                  <li data-opt="C">30 km/jam</li>
+                  <li data-opt="D">45 km/jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Waktu tempuh ($W$) = 07.15 - 06.30 = 45 menit.<br />
+                  Ubah menit ke jam: 45 menit = $\frac{45}{60} = \frac{3}{4}$
+                  jam.<br />
+                  Kecepatan ($K$) = $\frac{\text{Jarak}}{\text{Waktu}} = 15 \div
+                  \frac{3}{4} = 15 \times \frac{4}{3} = 20$ km/jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 4 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Menghitung Debit</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">4.</div>
+              <div class="soal-konten">
+                Kran mengalirkan 1.200 liter air dalam 20 menit. Berapa debitnya
+                dalam liter/detik?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1 liter/detik</li>
+                  <li data-opt="B">10 liter/detik</li>
+                  <li data-opt="C">60 liter/detik</li>
+                  <li data-opt="D">100 liter/detik</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: A</b><br />
+                  Samakan satuan waktu ke detik: <br />20 menit = $20 \times 60
+                  = 1.200$ detik.<br />
+                  Debit = $\frac{\text{Volume}}{\text{Waktu}} = \frac{1.200
+                  \text{ liter}}{1.200 \text{ detik}} = 1$ liter/detik.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 5 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Mencari Waktu</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">5.</div>
+              <div class="soal-konten">
+                Jarak 180 km ditempuh dengan kecepatan 60 km/jam. Berapa jam
+                waktu yang dibutuhkan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2 jam</li>
+                  <li data-opt="B">2,5 jam</li>
+                  <li data-opt="C">3 jam</li>
+                  <li data-opt="D">3,5 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  $W = \frac{\text{Jarak}}{\text{Kecepatan}} = \frac{180}{60} =
+                  3$ jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 6 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Konversi Volume</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">6.</div>
+              <div class="soal-konten">
+                Hasil dari $2,5 \text{ m}^3 - 150 \text{ liter} + 45.000 \text{
+                cm}^3$ adalah ... liter.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2.395 liter</li>
+                  <li data-opt="B">2.450 liter</li>
+                  <li data-opt="C">2.545 liter</li>
+                  <li data-opt="D">2.800 liter</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: A</b><br />
+                  Ubah semua ke satuan <b>liter</b>:<br />
+                  1. $2,5 \text{ m}^3 = 2,5 \times 1.000 = 2.500$ liter.<br />
+                  2. $45.000 \text{ cm}^3 = 45.000 \div 1.000 \text{ (ke dm}^3)
+                  = 45 \text{ dm}^3 = 45$ liter.<br />
+                  Total = $2.500 - 150 + 45 = 2.350 + 45 = 2.395$ liter.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 7 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Waktu Pengurasan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">7.</div>
+              <div class="soal-konten">
+                Volume kolam 6.000 liter. Dikuras dengan debit 50 liter/menit.
+                Berapa jam waktu yang dibutuhkan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1,5 jam</li>
+                  <li data-opt="B">2 jam</li>
+                  <li data-opt="C">2,5 jam</li>
+                  <li data-opt="D">3 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Waktu (menit) = $\frac{\text{Volume}}{\text{Debit}} =
+                  \frac{6.000}{50} = 120$ menit.<br />
+                  Ubah ke jam: $120 \div 60 = 2$ jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 8 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Konversi Lari</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">8.</div>
+              <div class="soal-konten">
+                Ani berlari 100 meter dalam 20 detik. Kecepatannya dalam km/jam
+                adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">10 km/jam</li>
+                  <li data-opt="B">18 km/jam</li>
+                  <li data-opt="C">20 km/jam</li>
+                  <li data-opt="D">36 km/jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  $V = \frac{100 \text{ m}}{20 \text{ det}} = 5 \text{
+                  m/detik}$.<br />
+                  Konversi ke km/jam: $5 \times 3,6 = 18$ km/jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 9 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Waktu Tiba</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">9.</div>
+              <div class="soal-konten">
+                Bus berangkat pukul 08.00 dengan kecepatan 60 km/jam sejauh 240
+                km. Pukul berapa bus tiba?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">11.00</li>
+                  <li data-opt="B">11.30</li>
+                  <li data-opt="C">12.00</li>
+                  <li data-opt="D">12.30</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  Waktu tempuh = $240 \div 60 = 4$ jam.<br />
+                  Waktu Tiba = Pukul 08.00 + 4 jam = Pukul 12.00.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 10 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Volume Aliran</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">10.</div>
+              <div class="soal-konten">
+                Debit sungai 24 m$^3$/menit. Berapa liter air yang mengalir
+                dalam 5 detik?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1.200 liter</li>
+                  <li data-opt="B">2.000 liter</li>
+                  <li data-opt="C">2.400 liter</li>
+                  <li data-opt="D">12.000 liter</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Ubah satuan debit ke liter/detik:<br />
+                  $24 \text{ m}^3 = 24.000$ liter. Waktu 1 menit = 60 detik.<br />
+                  Debit = $24.000 \div 60 = 400$ liter/detik.<br />
+                  Volume dalam 5 detik = $400 \times 5 = 2.000$ liter.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 11 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Perjalanan + Istirahat</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">11.</div>
+              <div class="soal-konten">
+                Jarak 175 km, kecepatan 70 km/jam. Berangkat 07.00, istirahat 30
+                menit. Tiba pukul?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">09.30</li>
+                  <li data-opt="B">09.45</li>
+                  <li data-opt="C">10.00</li>
+                  <li data-opt="D">10.15</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  Waktu perjalanan = $175 \div 70 = 2,5$ jam (2 jam 30
+                  menit).<br />
+                  Total waktu = 2 jam 30 menit + 30 menit (istirahat) = 3
+                  jam.<br />
+                  Tiba = $07.00 + 3 \text{ jam} = 10.00$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 12 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Waktu Pengisian</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">12.</div>
+              <div class="soal-konten">
+                Bak ukuran $80 \times 50 \times 60$ cm diisi debit 12
+                liter/menit. Waktu sampai penuh?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">15 menit</li>
+                  <li data-opt="B">20 menit</li>
+                  <li data-opt="C">25 menit</li>
+                  <li data-opt="D">30 menit</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Volume = $80 \times 50 \times 60 = 240.000 \text{ cm}^3$.<br />
+                  Ubah ke liter: $240.000 \text{ cm}^3 = 240 \text{ dm}^3 = 240$
+                  liter.<br />
+                  Waktu = $240 \div 12 = 20$ menit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 13 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Menyusul (Susul)</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">13.</div>
+              <div class="soal-konten">
+                Budi (15 km/jam) berangkat. 30 menit kemudian Kakak (40 km/jam)
+                menyusul. Kapan tersusul?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">15 menit</li>
+                  <li data-opt="B">18 menit</li>
+                  <li data-opt="C">24 menit</li>
+                  <li data-opt="D">30 menit</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  1. Hitung selisih jarak awal (karena Budi berangkat
+                  duluan):<br />
+                  Jarak = $15 \text{ km/jam} \times 0,5 \text{ jam} = 7,5$
+                  km.<br />
+                  2. Hitung selisih kecepatan: $40 - 15 = 25$ km/jam.<br />
+                  3. Waktu susul = $\frac{\text{Selisih Jarak}}{\text{Selisih
+                  Kec}} = \frac{7,5}{25} = 0,3$ jam.<br />
+                  Dalam menit: $0,3 \times 60 = 18$ menit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 14 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Berpapasan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">14.</div>
+              <div class="soal-konten">
+                Jarak 270 km. Mobil A (50 km/jam) dan Mobil B (40 km/jam)
+                berangkat bersamaan berlawanan arah. Kapan papasan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2 jam</li>
+                  <li data-opt="B">3 jam</li>
+                  <li data-opt="C">4 jam</li>
+                  <li data-opt="D">5 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Karena berlawanan arah, kecepatan dijumlahkan.<br />
+                  $W = \frac{J_{total}}{K_1 + K_2} = \frac{270}{50+40} =
+                  \frac{270}{90} = 3$ jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 15 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Pekerjaan Bersama</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">15.</div>
+              <div class="soal-konten">
+                Pipa A mengisi 3 jam, Pipa B mengisi 6 jam. Jika dibuka bersama,
+                penuh dalam?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2 jam</li>
+                  <li data-opt="B">3 jam</li>
+                  <li data-opt="C">4,5 jam</li>
+                  <li data-opt="D">9 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: A</b><br />
+                  Gunakan rumus: $\frac{1}{W} = \frac{1}{3} + \frac{1}{6}$.<br />
+                  Samakan penyebut: $\frac{1}{W} = \frac{2}{6} + \frac{1}{6} =
+                  \frac{3}{6} = \frac{1}{2}$.<br />
+                  Maka $W = 2$ jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 16 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Kecepatan Rata-rata</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">16.</div>
+              <div class="soal-konten">
+                Doni bersepeda sejauh 12 km dengan kecepatan 10 km/jam. Pulang
+                lewat jalan sama dengan kecepatan 15 km/jam. Kecepatan rata-rata
+                seluruh perjalanan adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">11 km/jam</li>
+                  <li data-opt="B">12 km/jam</li>
+                  <li data-opt="C">12,5 km/jam</li>
+                  <li data-opt="D">13 km/jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  <b style="color: red">Peringatan:</b> Jangan dirata-rata
+                  langsung $(10+15):2 = 12,5$ (SALAH).<br />
+                  1. Hitung total waktu:<br />
+                  Waktu pergi = $12 \div 10 = 1,2$ jam.<br />
+                  Waktu pulang = $12 \div 15 = 0,8$ jam.<br />
+                  Total Waktu = $1,2 + 0,8 = 2$ jam.<br />
+                  2. Hitung total jarak = $12 + 12 = 24$ km.<br />
+                  3. $V_{rata} = \frac{24 \text{ km}}{2 \text{ jam}} = 12$
+                  km/jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 17 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Pengisian Drum</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">17.</div>
+              <div class="soal-konten">
+                Drum mula-mula berisi $1/4$ bagian. Diisi dengan debit 10
+                liter/menit selama 15 menit hingga penuh. Kapasitas total drum
+                adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">150 liter</li>
+                  <li data-opt="B">180 liter</li>
+                  <li data-opt="C">200 liter</li>
+                  <li data-opt="D">240 liter</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  1. Volume air yang ditambahkan = $10 \text{ liter/menit}
+                  \times 15 \text{ menit} = 150$ liter.<br />
+                  2. Bagian yang diisi = $1 (\text{penuh}) - 1/4 = 3/4$
+                  bagian.<br />
+                  3. Artinya, $3/4$ dari total drum adalah 150 liter.<br />
+                  Total = $150 \times \frac{4}{3} = 200$ liter.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 18 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Kereta & Terowongan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">18.</div>
+              <div class="soal-konten">
+                Kereta (panjang 150 m) melaju 72 km/jam melewati terowongan
+                (panjang 450 m). Waktu tempuh dari kepala masuk hingga ekor
+                keluar adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">25 detik</li>
+                  <li data-opt="B">30 detik</li>
+                  <li data-opt="C">40 detik</li>
+                  <li data-opt="D">45 detik</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  1. Jarak Total = Panjang Kereta + Panjang Terowongan = $150 +
+                  450 = 600$ m.<br />
+                  2. Ubah kecepatan: 72 km/jam = 20 m/detik.<br />
+                  3. Waktu = $600 \div 20 = 30$ detik.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 19 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Posisi Papasan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">19.</div>
+              <div class="soal-konten">
+                Jarak Andi dan Budi 10 km. Andi (12 km/jam) dan Budi (8 km/jam)
+                berangkat bersamaan saling mendekat. Pada jarak berapa dari
+                posisi awal Andi mereka bertemu?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">4 km</li>
+                  <li data-opt="B">5 km</li>
+                  <li data-opt="C">6 km</li>
+                  <li data-opt="D">7 km</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  1. Waktu temu = $\frac{\text{Jarak Total}}{\text{Jml
+                  Kecepatan}} = \frac{10}{12+8} = \frac{10}{20} = 0,5$ jam.<br />
+                  2. Jarak dari Andi = $K_{\text{Andi}} \times \text{Waktu} = 12
+                  \times 0,5 = 6$ km.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 20 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Kerja Bergantian</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">20.</div>
+              <div class="soal-konten">
+                Kran I penuhkan bak dalam 20 menit, Kran II dalam 30 menit. Kran
+                I dibuka 5 menit lalu ditutup. Berapa lama Kran II menyelesaikan
+                sisanya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20 menit</li>
+                  <li data-opt="B">22,5 menit</li>
+                  <li data-opt="C">25 menit</li>
+                  <li data-opt="D">27,5 menit</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  1. Bagian yang diisi Kran I dalam 5 menit = $\frac{5}{20} =
+                  \frac{1}{4}$ bagian.<br />
+                  2. Sisa bagian kosong = $1 - \frac{1}{4} = \frac{3}{4}$
+                  bagian.<br />
+                  3. Waktu Kran II = $\frac{3}{4} \times 30 \text{ menit} =
+                  \frac{90}{4} = 22,5$ menit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 21 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Kecepatan Relatif (Burung)</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">21.</div>
+              <div class="soal-konten">
+                Dua mobil terpisah 100 km bergerak saling mendekat dengan
+                kecepatan 40 km/jam dan 60 km/jam. Seekor burung terbang
+                bolak-balik antar mobil dengan kecepatan 80 km/jam. Berapa total
+                jarak tempuh burung sampai mobil bertabrakan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">60 km</li>
+                  <li data-opt="B">80 km</li>
+                  <li data-opt="C">100 km</li>
+                  <li data-opt="D">120 km</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  <b>Trik Logika:</b> Jangan menghitung gerakan bolak-baliknya,
+                  cukup hitung berapa lama burung terbang.<br />
+                  1. Waktu hingga mobil bertabrakan = $\frac{100 \text{
+                  km}}{40+60 \text{ km/jam}} = \frac{100}{100} = 1$ jam.<br />
+                  2. Selama 1 jam itu, burung terus terbang.<br />
+                  3. Jarak burung = $80 \text{ km/jam} \times 1 \text{ jam} =
+                  80$ km.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 22 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Isi vs Bocor</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">22.</div>
+              <div class="soal-konten">
+                Pipa pengisi memenuhkan tangki dalam 4 jam. Pipa pembuang
+                mengosongkan dalam 6 jam. Jika keduanya dibuka, tangki penuh
+                dalam...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">5 jam</li>
+                  <li data-opt="B">10 jam</li>
+                  <li data-opt="C">12 jam</li>
+                  <li data-opt="D">24 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  Karena satu mengisi dan satu membuang, maka kecepatannya
+                  dikurangkan.<br />
+                  Kecepatan bersih = $\frac{1}{4} - \frac{1}{6} = \frac{3}{12} -
+                  \frac{2}{12} = \frac{1}{12}$ bagian/jam.<br />
+                  Artinya, tangki penuh dalam 12 jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 23 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lintasan Melingkar</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">23.</div>
+              <div class="soal-konten">
+                Andi (5 m/detik) dan Budi (3 m/detik) lari berlawanan arah di
+                lintasan 400 m. Dalam 10 menit, berapa kali mereka berpapasan?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">10 kali</li>
+                  <li data-opt="B">12 kali</li>
+                  <li data-opt="C">15 kali</li>
+                  <li data-opt="D">20 kali</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  1. Kecepatan gabungan (saling mendekat) = $5+3 = 8$
+                  m/detik.<br />
+                  2. Waktu untuk 1 kali papasan (satu keliling) = $400 \div 8 =
+                  50$ detik.<br />
+                  3. Total waktu lari = 10 menit = 600 detik.<br />
+                  4. Jumlah papasan = $600 \div 50 = 12$ kali.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 24 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Interval Waktu</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">24.</div>
+              <div class="soal-konten">
+                Jam berdentang 4 kali pada pukul 04.00 membutuhkan 6 detik.
+                Berapa detik untuk berdentang pada pukul 10.00?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">15 detik</li>
+                  <li data-opt="B">18 detik</li>
+                  <li data-opt="C">20 detik</li>
+                  <li data-opt="D">24 detik</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  <b>Konsep:</b> Waktu dihitung berdasarkan jeda antar
+                  dentangan.<br />
+                  1. 4 dentangan berarti ada <b>3 jeda</b>. Waktu 1 jeda = $6
+                  \div 3 = 2$ detik.<br />
+                  2. Pukul 10 ada 10 dentangan, berarti ada <b>9 jeda</b>.<br />
+                  3. Waktu total = $9 \text{ jeda} \times 2 \text{ detik} = 18$
+                  detik.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 25 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Kerja Gabungan (3 Variabel)</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">25.</div>
+              <div class="soal-konten">
+                Pipa A+B penuhkan bak 12 menit. B+C 15 menit. A+C 20 menit. Jika
+                A+B+C dibuka bersamaan, bak penuh dalam?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">8 menit</li>
+                  <li data-opt="B">10 menit</li>
+                  <li data-opt="C">12 menit</li>
+                  <li data-opt="D">14 menit</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Jumlahkan ketiga persamaan kecepatan:<br />
+                  $2(A+B+C) = \frac{1}{12} + \frac{1}{15} + \frac{1}{20}$.<br />
+                  $2(A+B+C) = \frac{5}{60} + \frac{4}{60} + \frac{3}{60} =
+                  \frac{12}{60} = \frac{1}{5}$.<br />
+                  $A+B+C = \frac{1}{5} \div 2 = \frac{1}{10}$.<br />
+                  Maka waktu bersama = 10 menit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 26 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Naik Turun Bukit</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">26.</div>
+              <div class="soal-konten">
+                Mendaki bukit (3 km/jam) dan turun (6 km/jam). Total waktu 3
+                jam. Berapa jarak kaki ke puncak?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">4 km</li>
+                  <li data-opt="B">6 km</li>
+                  <li data-opt="C">9 km</li>
+                  <li data-opt="D">12 km</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Misal jarak ke puncak adalah $x$ km.<br />
+                  Waktu naik = $x/3$. Waktu turun = $x/6$.<br />
+                  Total waktu: $\frac{x}{3} + \frac{x}{6} = 3$.<br />
+                  Samakan penyebut: $\frac{2x}{6} + \frac{x}{6} = 3 \Rightarrow
+                  \frac{3x}{6} = 3 \Rightarrow \frac{x}{2} = 3 \Rightarrow x =
+                  6$ km.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 27 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>3 Mobil Menyusul</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">27.</div>
+              <div class="soal-konten">
+                Mobil A berangkat 07.00 (40 km/jam). Mobil B berangkat 08.00 (60
+                km/jam). Mobil C berangkat 09.00 dan menyusul A dan B di titik
+                yang sama. Kecepatan C?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">90 km/jam</li>
+                  <li data-opt="B">100 km/jam</li>
+                  <li data-opt="C">110 km/jam</li>
+                  <li data-opt="D">120 km/jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: D</b><br />
+                  1. Cari kapan B menyusul A. Misal waktu tempuh A adalah $t$
+                  jam, maka B adalah $t-1$ jam.<br />
+                  $40t = 60(t-1) \Rightarrow 40t = 60t - 60 \Rightarrow 20t = 60
+                  \Rightarrow t = 3$ jam.<br />
+                  2. A berjalan 3 jam sejak 07.00, jadi mereka bertemu pukul
+                  10.00 di jarak $40 \times 3 = 120$ km.<br />
+                  3. Mobil C harus mencapai jarak 120 km pada pukul 10.00.
+                  Karena C berangkat 09.00, waktu tempuhnya hanya 1 jam.<br />
+                  4. Kecepatan C = $120 \text{ km} \div 1 \text{ jam} = 120$
+                  km/jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 28 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Lilin Terbakar</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">28.</div>
+              <div class="soal-konten">
+                Lilin A habis 4 jam, Lilin B habis 3 jam. Tinggi awal sama.
+                Kapan tinggi A menjadi 2 kali tinggi B?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2,4 jam</li>
+                  <li data-opt="B">2,5 jam</li>
+                  <li data-opt="C">2,6 jam</li>
+                  <li data-opt="D">2,8 jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: A</b><br />
+                  Misal tinggi awal 1. Tinggi A saat $t$ = $1 - t/4$. Tinggi B
+                  saat $t$ = $1 - t/3$.<br />
+                  Syarat: Tinggi A = 2 $\times$ Tinggi B.<br />
+                  $1 - \frac{t}{4} = 2(1 - \frac{t}{3}) \Rightarrow 1 -
+                  \frac{t}{4} = 2 - \frac{2t}{3}$.<br />
+                  Pindahkan ruas: $\frac{2t}{3} - \frac{t}{4} = 1$.<br />
+                  Samakan penyebut (12): $\frac{8t - 3t}{12} = 1 \Rightarrow 5t
+                  = 12 \Rightarrow t = 2,4$ jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 29 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Rumus Papasan Lanjutan</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">29.</div>
+              <div class="soal-konten">
+                Ali dari P ke Q, Badu dari Q ke P. Setelah papasan, Ali butuh 4
+                jam ke Q, Badu butuh 9 jam ke P. Jika Ali 18 km/jam, kecepatan
+                Badu?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">9 km/jam</li>
+                  <li data-opt="B">12 km/jam</li>
+                  <li data-opt="C">15 km/jam</li>
+                  <li data-opt="D">16 km/jam</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: B</b><br />
+                  Gunakan rumus cepat untuk soal tipe ini:<br />
+                  $\frac{V_{Ali}}{V_{Badu}} = \sqrt{\frac{\text{Sisa Waktu
+                  Badu}}{\text{Sisa Waktu Ali}}}$.<br />
+                  $\frac{18}{V_B} = \sqrt{\frac{9}{4}} = \frac{3}{2}$.<br />
+                  $3 \times V_B = 18 \times 2 \Rightarrow 3 V_B = 36 \Rightarrow
+                  V_B = 12$ km/jam.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+
+      <!-- ==================== SOAL 30 ==================== -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 7 | Pengukuran: Waktu, Kecepatan, dan Debit
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <table class="soal-card">
+              <tr>
+                <td>Topik</td>
+                <td>Eskalator</td>
+              </tr>
+            </table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">30.</div>
+              <div class="soal-konten">
+                Naik eskalator berjalan: memijak 14 tangga. Jika jalan 2x lebih
+                cepat, memijak 21 tangga. Jumlah anak tangga jika eskalator
+                diam?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">28</li>
+                  <li data-opt="B">35</li>
+                  <li data-opt="C">42</li>
+                  <li data-opt="D">49</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="jawaban">Jawaban: C</b><br />
+                  Gunakan rumus: $N = n (1 + \frac{v_{esk}}{v_{org}})$.<br />
+                  1. Kondisi 1: $N = 14(1+k)$, dimana $k$ adalah rasio
+                  kecepatan.<br />
+                  2. Kondisi 2 (orang 2x lebih cepat, rasio jadi $k/2$): $N =
+                  21(1 + \frac{k}{2})$.<br />
+                  3. Dari pers (1): $1+k = \frac{N}{14} \Rightarrow k =
+                  \frac{N}{14} - 1$.<br />
+                  4. Substitusi ke pers (2): $N = 21(1 +
+                  \frac{\frac{N}{14}-1}{2}) = 21(1 + \frac{N}{28} - 0,5) =
+                  21(0,5 + \frac{N}{28})$.<br />
+                  5. $N = 10,5 + 0,75N \Rightarrow 0,25N = 10,5 \Rightarrow N =
+                  42$.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b
+            >Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights
+            Reserved.</b
+          >
+          <i
+            >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
+            Indonesia.</i
+          >
+        </footer>
+      </section>
+    </div>
+  </body>
+</html>
