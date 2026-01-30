@@ -137,6 +137,21 @@
         margin-top: auto; padding-top: 5px; border-top: 2px solid var(--border-color);
         flex-shrink: 0; width: 100%; position: relative; z-index: 10; background: white;
       }
+      table {
+        width: 100%;
+        border-collapse: collapse; /* Menghilangkan spasi antar garis */
+        font-family: Arial, sans-serif;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+      tr:hover {background-color: #f5f5f5;} /* Efek saat mouse lewat */
       @media print {
         @page { size: A4; margin: 0; }
         body { background-color: white; margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact;}
@@ -524,7 +539,34 @@
             <div class="soal-pembahasan">
               <div class="soal-nomor">23.</div>
               <div class="soal-konten">
-                Data: $60(4), 70(x), 80(6), 90(2)$. Jika median 70, nilai minimal $x$ adalah...
+                Perhatikan data berikut.
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Nilai (x)</th>
+                            <th>Frekuensi (f)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>60</td>
+                            <td>4</td>
+                            </tr>
+                            <tr>
+                            <td>70</td>
+                            <td>x</td>
+                            </tr>
+                            <tr>
+                            <td>80</td>
+                            <td>6</td>
+                            </tr>
+                            <tr>
+                            <td>90</td>
+                            <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                Jika median 70, nilai minimal $x$ adalah...
                 <ul class="pilihan-ganda"><li data-opt="A">4</li><li data-opt="B">5</li><li data-opt="C">6</li><li data-opt="D">7</li></ul>
                 <div class="pembahasan-detail"><b class="jawaban">Jawaban: B. 5</b><br>Kanan median ada 8 data. Agar median di 70, kiri $+$ pusat must $> 8$. $4 + x > 8 \Rightarrow x \ge 5$.</div>
               </div>
