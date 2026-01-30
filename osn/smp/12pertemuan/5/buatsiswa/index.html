@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LKS OSNK SMP: Geometri & Transformasi</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      /* WATERMARK */
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 15px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      /* Layout Kolom Manual */
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      /* Soal Styles */
+      .soal-container {
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 10px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .soal-image {
+        display: block;
+        max-width: 100%;
+        max-height: 150px;
+        height: auto;
+        margin: 8px auto;
+        border-radius: 4px;
+      }
+      .page-footer {
+        text-align: justify;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;          margin: 0;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- HALAMAN 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 5 | Geometri 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- Kolom Kiri -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Sudut $A$ dan sudut $B$ adalah dua sudut yang saling berpelurus (suplemen). Jika besar sudut $A$ adalah $4$ kali besar sudut $B$, tentukan besar sudut $A$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$36^\circ$</li>
+                    <li data-opt="B">$72^\circ$</li>
+                    <li data-opt="C">$108^\circ$</li>
+                    <li data-opt="D">$144^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Seorang petugas keamanan membidik sebuah mobil pencuri dari puncak gedung lima lantai. Jika tinggi tiap lantai adalah 7 meter dan jarak mobil di jalan ke kaki gedung adalah 120 meter, berapakah jarak petugas keamanan (di puncak gedung) ke mobil pencuri tersebut?
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_cyflfq_9158.png" class="soal-image">
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">125 m</li>
+                    <li data-opt="B">130 m</li>
+                    <li data-opt="C">135 m</li>
+                    <li data-opt="D">140 m</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Diketahui titik $P(2, -3)$ dan titik $Q(-4, 5)$. Jarak antara titik $P$ dan titik $Q$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8 satuan</li>
+                    <li data-opt="B">10 satuan</li>
+                    <li data-opt="C">12 satuan</li>
+                    <li data-opt="D">14 satuan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Titik $A(5, -2)$ ditranslasikan oleh $T = \binom{-3}{4}$. Koordinat bayangan titik $A$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$(2, 2)$</li>
+                    <li data-opt="B">$(8, -6)$</li>
+                    <li data-opt="C">$(2, -6)$</li>
+                    <li data-opt="D">$(-2, 2)$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Diketahui $\triangle ABC$ siku-siku di titik $C$. Jika luas segitiga tersebut 330 cm$^2$ dan panjang sisi miring $AB = 61$ cm, maka keliling $\triangle ABC$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">130 cm</li>
+                    <li data-opt="B">132 cm</li>
+                    <li data-opt="C">136 cm</li>
+                    <li data-opt="D">142 cm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Sebuah persegi panjang besar berukuran $9 \text{ cm} \times 5 \text{ cm}$. Di dalamnya terdapat daerah yang diarsir. Jika diketahui daerah yang <i>tidak</i> diarsir terdiri dari persegi-persegi satuan (ukuran $1 \times 1$ cm) yang disusun rapat di sekeliling pinggir persegi panjang tersebut setebal 1 lapisan, berapakah luas daerah yang diarsir?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$15 \text{ cm}^2$</li>
+                    <li data-opt="B">$21 \text{ cm}^2$</li>
+                    <li data-opt="C">$24 \text{ cm}^2$</li>
+                    <li data-opt="D">$28 \text{ cm}^2$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 5 | Geometri 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- Kolom Kiri -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Segitiga $ABC$ dengan titik $A(2,4)$, $B(-1,3)$, dan $C(5,-6)$ dicerminkan terhadap sumbu $X$, kemudian digeser dengan translasi $\binom{-1}{3}$. Koordinat bayangan akhir titik $A$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$(1, -1)$</li>
+                    <li data-opt="B">$(1, 7)$</li>
+                    <li data-opt="C">$(3, -1)$</li>
+                    <li data-opt="D">$(-1, -1)$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Perhatikan dua garis sejajar $g$ dan $h$ yang dipotong oleh garis transversal $k$. Jika salah satu sudut dalam sepihak adalah $(3x + 10)^\circ$ dan sudut pasangannya adalah $(2x + 20)^\circ$, tentukan nilai $x$.
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_bfhubn_7038.png" class="soal-image">
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">20</li>
+                    <li data-opt="B">30</li>
+                    <li data-opt="C">40</li>
+                    <li data-opt="D">50</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Sebuah juring lingkaran memiliki sudut pusat $60^\circ$ dan jari-jari 14 cm. Luas juring tersebut adalah ... (gunakan $\pi = \frac{22}{7}$)
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$102,67 \text{ cm}^2$</li>
+                    <li data-opt="B">$205,33 \text{ cm}^2$</li>
+                    <li data-opt="C">$308,00 \text{ cm}^2$</li>
+                    <li data-opt="D">$616,00 \text{ cm}^2$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Diketahui kubus $PQRS.TUVW$ memiliki panjang rusuk 1 satuan. Titik $X$ terletak pada perpanjangan $PQ$ (sehingga urutannya $P-Q-X$) dengan $QX=2$ satuan. Titik $Y$ terletak pada perpanjangan $UV$ (sehingga urutannya $U-V-Y$) dengan $VY=1$ satuan. Panjang $XY$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$\sqrt{7}$ satuan</li>
+                    <li data-opt="B">$2\sqrt{2}$ satuan</li>
+                    <li data-opt="C">$3$ satuan</li>
+                    <li data-opt="D">$9$ satuan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Diketahui kubus $ABCD.EFGH$ dengan panjang rusuk 1 satuan. Jarak titik $E$ ke bidang datar $AFH$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$\frac{\sqrt{2}}{2}$ satuan</li>
+                    <li data-opt="B">$\frac{1}{3}$ satuan</li>
+                    <li data-opt="C">$\frac{\sqrt{3}}{3}$ satuan</li>
+                    <li data-opt="D">$\frac{\sqrt{3}}{4}$ satuan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Pada trapesium $ABCD$ dengan $AB$ sejajar $CD$, diketahui panjang $AB = 12$ cm dan $CD = 8$ cm. Diagonal $AC$ dan $BD$ berpotongan di titik $O$. Jika tinggi trapesium tersebut adalah 10 cm, berapakah tinggi titik $O$ dari sisi $AB$?
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_l7atvb_5301.png" class="soal-image">
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$4$ cm</li>
+                    <li data-opt="B">$5$ cm</li>
+                    <li data-opt="C">$6$ cm</li>
+                    <li data-opt="D">$4,8$ cm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 3 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 5 | Geometri 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- Kolom Kiri -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Titik $P(3, 4)$ dirotasikan sebesar $90^\circ$ berlawanan arah jarum jam dengan pusat rotasi di titik $M(1, 2)$. Koordinat bayangan titik $P$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$(-1, 4)$</li>
+                    <li data-opt="B">$(-2, 5)$</li>
+                    <li data-opt="C">$(0, 5)$</li>
+                    <li data-opt="D">$(-3, 4)$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Sebuah kubus pejal dengan panjang rusuk 6 cm dipotong pada setiap pojoknya membentuk limas segitiga kecil sedemikian rupa sehingga titik potong pada rusuk berjarak 2 cm dari titik sudut terdekat. Berapakah volume bangun yang tersisa?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$216 - \frac{32}{3} \text{ cm}^3$</li>
+                    <li data-opt="B">$216 - \frac{16}{3} \text{ cm}^3$</li>
+                    <li data-opt="C">$216 - \frac{8}{3} \text{ cm}^3$</li>
+                    <li data-opt="D">$200 \text{ cm}^3$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- Kolom Kanan -->
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Diketahui segi empat $ABCD$ dengan koordinat $A(1,1)$, $B(6,1)$, $C(4,5)$, dan $D(2,5)$. Luas daerah segi empat $ABCD$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$12$ satuan luas</li>
+                    <li data-opt="B">$13$ satuan luas</li>
+                    <li data-opt="C">$14$ satuan luas</li>
+                    <li data-opt="D">$15$ satuan luas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+    </div>
+  </body>
+</html>
