@@ -7,1496 +7,1027 @@
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
-          ],
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          packages: { "[+]": ["ams"] },
         },
-        svg: {
-          fontCache: "global",
-        },
+        svg: { fontCache: "global" },
       };
     </script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-    ></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
     <style>
       :root {
         --primary-text: #333333;
         --secondary-text: #555555;
         --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
         --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+      *, *::before, *::after { box-sizing: border-box; }
       body {
         font-family: "Nunito", sans-serif;
-        font-size: 12pt;
+        font-size: 10pt;
         line-height: 1.5;
         color: var(--primary-text);
         background-color: #e0e0e0;
-        margin: 0;
-        padding: 0;
+        margin: 0; padding: 0;
       }
+      .page-container { display: flex; flex-direction: column; align-items: center; }
       .page {
         background: white;
         width: 21cm;
         min-height: 29.7cm;
-        padding: 2.5cm;
+        padding: 1.8cm 2.5cm;
         margin: 1cm auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         position: relative;
         display: flex;
         flex-direction: column;
-        page-break-after: always;
-        break-after: page;
-        overflow: hidden; /* Mencegah elemen keluar dari layout visual */
+        overflow: hidden;
       }
-      .page:last-of-type {
-        page-break-after: auto;
-        break-after: auto;
-      }
-      /* Halaman Sampul - Tengah Vertikal */
-      .cover-page {
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .cover-image {
-        max-width: 9cm;
-        height: auto;
-        margin-bottom: 40px;
-      }
-      .cover-title {
-        font-size: 38pt;
-        font-weight: 900;
-        margin: 0 0 15px 0;
-        line-height: 1.2;
-        color: #333;
-        border-bottom: none;
-      }
-      .cover-subtitle {
-        font-size: 18pt;
-        color: var(--secondary-text);
-        font-weight: 700;
-      }
-      /* Watermark */
       .page::before {
         content: "";
         background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 14cm;
+        background-size: 10cm;
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        opacity: 0.05;
-        z-index: 1;
-        pointer-events: none;
+        width: 100%; height: 100%;
+        opacity: 0.05; pointer-events: none; z-index: 0;
       }
-      .cover-page::before {
-        opacity: 0;
-      }
-      .content-wrapper {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        flex-grow: 1;
-      }
-      h1 {
-        font-size: 24pt;
-        text-align: center;
-        border-bottom: 2px solid var(--primary-text);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-      }
-      h2 {
-        font-size: 16pt;
-        font-weight: 700;
-        color: var(--secondary-text);
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 5px;
-        margin-top: 25px;
-      }
-      h3 {
-        font-size: 14pt;
-        font-weight: 700;
-        color: var(--primary-text);
-        margin-top: 15px;
-        margin-bottom: 5px;
-      }
-      .materi-konten {
-        display: block;
-        text-align: justify;
-      }
-      .soal-latihan,
-      .soal-latihan-n {
+      .page-header { margin: -1.8cm -2.5cm 0 -2.5cm; flex-shrink: 0; position: relative; z-index: 10; }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2.5cm;
         display: flex;
-        align-items: baseline;
-        margin-bottom: 20px; /* Jarak antar soal */
-        break-inside: avoid; /* Mencegah soal terpotong */
-        page-break-inside: avoid;
-        padding-bottom: 5px;
-      }
-      .soal-latihan > b,
-      .soal-latihan-n > b {
-        margin-right: 8px;
-        flex-shrink: 0;
-      }
-      .soal-wrapper {
-        flex-grow: 1;
-      }
-      .soal-konten {
-        text-align: justify;
-      }
-      .options {
-        padding-left: 0px;
-        margin-top: 5px;
-        display: block;
-      }
-      .options div {
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 2px;
-        padding-left: 20px;
       }
-      .page-footer {
-        text-align: left;
-        font-size: 6pt;
-        color: var(--grey-text);
-        padding-top: 2px;
-        margin-top: auto;
-        border-top: 2.5px solid var(--grey-text);
-        z-index: 2;
-        position: relative;
-      }
-      .kategori-soal {
-        text-align: center;
-        font-size: 18pt;
+      .header-title-main { font-size: 18pt; font-weight: 900; color: var(--header-title-color); line-height: 1.2; }
+      .header-title-sub { font-size: 10pt; font-weight: 700; color: var(--primary-text); }
+      .header-bottom-box { padding: 0 2.5cm 15px 2.5cm; text-align: left; }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 15px;
         font-weight: 700;
-        margin: 15px 0;
-        border-top: 2px solid var(--primary-text);
-        border-bottom: 2px solid var(--primary-text);
-        padding: 5px 0;
-        break-inside: avoid;
+        font-size: 9pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
       }
-      .pembahasan {
-        background-color: #f9f9f9;
-        border-left: 4px solid #4caf50;
-        padding: 10px 15px;
-        margin-top: 5px;
-        text-align: justify;
-        font-size: 11pt;
-        break-inside: avoid; /* Mencegah pembahasan terpotong */
-        page-break-inside: avoid;
+      .header-logo { max-height: 45px; width: auto; }
+      .content-wrapper { flex-grow: 1; position: relative; z-index: 2; padding-top: 10px; }
+      .section-title {
+        font-size: 14pt; font-weight: 700; color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 5px; margin-bottom: 15px; margin-top: 5px;
+        text-transform: uppercase;
       }
-      .rumus-box {
-        background-color: #e3f2fd;
-        border-left: 4px solid #2196f3;
-        padding: 10px 15px;
-        margin: 10px 0;
-        border-radius: 0 5px 5px 0;
-        break-inside: avoid;
+      .materi-subjudul { font-size: 11pt; font-weight: 700; color: var(--primary-text); margin-top: 15px; margin-bottom: 5px; }
+      .summary-table {
+        width: 100%; border-collapse: collapse; border: 1px solid var(--border-color);
+        margin-bottom: 10px; background: rgba(255, 255, 255, 0.95);
+      }
+      .summary-table td, .summary-table th { border: 1px solid var(--border-color); padding: 6px 10px; vertical-align: top; font-size: 9pt; }
+      .summary-table th { background-color: var(--table-header-bg); font-weight: 700; }
+      .konsep-box {
+        background-color: var(--header-top-bg); border-left: 4px solid var(--header-title-color);
+        padding: 8px 12px; margin: 8px 0; border-radius: 0 5px 5px 0; font-size: 9.5pt;
       }
       .tips-box {
-        background-color: #fff3e0;
-        border-left: 4px solid #ff9800;
-        padding: 10px 15px;
-        margin: 10px 0;
-        font-size: 11pt;
-        break-inside: avoid;
+        background-color: #fff3e0; border-left: 4px solid #ff9800;
+        padding: 8px 12px; margin: 8px 0; font-size: 9.5pt; border-radius: 0 5px 5px 0;
       }
-      table.table-materi {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-        break-inside: avoid;
+      ul.custom-list { padding-left: 20px; margin: 5px 0; }
+      .pembahasan-box { margin-bottom: 22px; page-break-inside: avoid; }
+      .soal-pembahasan { display: flex; align-items: flex-start; gap: 8px; margin-top: 5px; }
+      .soal-nomor { font-weight: 800; font-size: 11pt; min-width: 25px; color: var(--header-title-color); }
+      .soal-konten { flex-grow: 1; text-align: justify; font-size: 9.5pt; }
+      .pilihan-ganda { padding-left: 0; list-style: none; margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+      .pilihan-ganda li { display: flex; }
+      .pilihan-ganda li::before { content: attr(data-opt) "."; font-weight: 700; width: 20px; flex-shrink: 0; color: var(--secondary-text); }
+      .pembahasan-detail {
+        margin-top: 10px; background-color: var(--highlight-box-bg);
+        border-left: 3px solid var(--header-title-color); padding: 10px 14px;
+        border-radius: 0 4px 4px 0; font-size: 9pt;
       }
-      table.table-materi th,
-      table.table-materi td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color); color: white;
+        padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 8.5pt;
+        display: inline-block; margin-bottom: 6px;
       }
-      table.table-materi th {
-        background-color: #f2f2f2;
-        font-weight: bold;
+      .pembahasan-detail .step-title { font-weight: 700; color: var(--header-title-color); margin-top: 5px; display: block; }
+      .pembahasan-detail .kesimpulan {
+        display: block; margin-top: 8px; font-weight: 700;
+        color: var(--header-title-color); border-top: 1px dashed var(--border-color); padding-top: 4px;
       }
-      ul.checklist {
-        list-style-type: none;
-        padding-left: 10px;
+      .level-tag { font-size: 8pt; font-weight: 800; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; margin-bottom: 10px; display: inline-block; color: #555; }
+      .page-footer {
+        text-align: left; font-size: 6pt; color: var(--grey-text);
+        margin-top: auto; padding-top: 5px; border-top: 2px solid var(--border-color);
+        flex-shrink: 0; width: 100%; position: relative; z-index: 10; background: white;
       }
-      ul.checklist li {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 5px;
-        break-inside: avoid;
-      }
-      ul.checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #4caf50;
-        font-weight: bold;
-        font-size: 1.2em;
-      }
-
-      /* PENGATURAN CETAK (PRINT) */
       @media print {
-        @page {
-          size: A4;
-          margin: 0; /* Margin halaman 0, dikontrol oleh padding .page */
-        }
-        body {
-          background-color: white;
-          margin: 0;
-          -webkit-print-color-adjust: exact; /* Pastikan warna background tercetak */
-          print-color-adjust: exact;
-        }
-        .page {
-          width: 100%;
-          min-height: 29.7cm; /* Tinggi minimal A4 */
-          height: auto; /* Biarkan konten memanjang jika perlu */
-          margin: 0;
-          padding: 2cm; /* Padding aman untuk printer */
-          box-shadow: none;
-          border: none;
-          page-break-after: always;
-          break-after: page;
-          float: none;
-        }
-        .page:last-child {
-          page-break-after: auto;
-          break-after: auto;
-        }
-        /* Mencegah elemen penting terpotong di tengah halaman */
-        .soal-latihan,
-        .soal-latihan-n,
-        .pembahasan,
-        .rumus-box,
-        .tips-box,
-        h2,
-        table,
-        .kategori-soal {
-          page-break-inside: avoid;
-          break-inside: avoid;
-        }
-        /* Pastikan footer tetap di bawah */
-        .page-footer {
-          position: absolute; /* Posisi absolut relatif terhadap .page */
-          bottom: 1.5cm; /* Jarak dari bawah kertas */
-          left: 2cm; /* Sesuaikan dengan padding halaman */
-          right: 2cm; /* Sesuaikan dengan padding halaman */
-          width: auto;
-          border-top: 1px solid #8d8e8d;
-        }
-        /* Penyesuaian Cover agar tetap tengah saat diprint */
-        .cover-page {
-          height: 29.7cm;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
+        @page { size: A4; margin: 0; }
+        body { background-color: white; margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+        .page:last-child { page-break-after: avoid; }
       }
     </style>
   </head>
   <body>
-    <!-- Halaman Sampul -->
-    <section class="page cover-page">
-      <div
-        class="content-wrapper"
-        style="
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <!-- Logo Mathchamps -->
-        <img
-          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
-          alt="Mathchamps Logo"
-          class="cover-image"
-        />
-        <h1 class="cover-title">Teori Bilangan & Pola<br />Latihan OSNK SD</h1>
-        <p class="cover-subtitle">
-          Modul Intensif: Strategi & Logika Matematika
-        </p>
-      </div>
-    </section>
-
-    <!-- MATERI 1 - Faktorisasi & FPB KPK -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1: FPB & KPK (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Faktorisasi Prima</h2>
-          <p>
-            <b>Faktorisasi Prima</b> adalah proses menguraikan bilangan komposit
-            menjadi perkalian faktor-faktor primanya (contoh: 2, 3, 5, 7, 11).
-            Biasanya menggunakan pohon faktor.
-          </p>
-          <div class="rumus-box">
-            Contoh Faktorisasi 60:<br />
-            $60 = 2 \times 30$<br />
-            $30 = 2 \times 15$<br />
-            $15 = 3 \times 5$<br />
-            Jadi, $60 = 2^2 \times 3 \times 5$.
+    <div class="page-container">
+      <!-- HALAMAN 1: RINGKASAN MATERI 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
           </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
 
-          <h2>2. Faktor Persekutuan Terbesar (FPB)</h2>
-          <p>
-            FPB adalah bilangan terbesar yang dapat membagi habis dua bilangan
-            atau lebih.
-          </p>
+        <div class="content-wrapper">
+          <h2 class="section-title">Ringkasan Materi 1: Teori Bilangan</h2>
+          <div class="materi-subjudul">1. Klasifikasi Bilangan</div>
+          <div class="konsep-box">
+            <ul class="custom-list">
+              <li><b>Bilangan Prima:</b> Bilangan yang tepat memiliki 2 faktor (1 dan dirinya). (2, 3, 5, 7, 11...).</li>
+              <li><b>Bilangan Komposit:</b> Bilangan yang memiliki lebih dari 2 faktor. (4, 6, 8, 9, 10...).</li>
+              <li><b>Faktorisasi Prima:</b> Menguraikan bilangan menjadi perkalian angka prima (Pohon Faktor).</li>
+            </ul>
+          </div>
+          <div class="materi-subjudul">2. Ciri Keterbagian</div>
+          <table class="summary-table">
+            <tr><th>Angka</th><th>Ciri / Syarat Habis Dibagi</th></tr>
+            <tr><td><b>3</b></td><td>Jumlah seluruh digit bilangan tersebut habis dibagi 3.</td></tr>
+            <tr><td><b>4</b></td><td>Dua digit terakhir bilangan tersebut habis dibagi 4.</td></tr>
+            <tr><td><b>9</b></td><td>Jumlah seluruh digit bilangan tersebut habis dibagi 9.</td></tr>
+            <tr><td><b>11</b></td><td>Selisih jumlah digit posisi ganjil dan genap adalah 0 atau kelipatan 11.</td></tr>
+          </table>
+          <div class="materi-subjudul">3. FPB & KPK</div>
           <div class="tips-box">
-            <b>Cara Cepat:</b> Ambil faktor prima yang <b>sama</b> dengan
-            <b>pangkat terkecil</b>.
+            <b>FPB (Faktor Persekutuan Terbesar):</b> Ambil faktor prima yang <b>sama</b> saja, pilih pangkat <b>terkecil</b>.<br>
+            <b>KPK (Kelipatan Persekutuan Terkecil):</b> Ambil <b>semua</b> faktor prima yang ada, pilih pangkat <b>terbesar</b>.
           </div>
-          <p>
-            <b>Kapan pakai FPB?</b> Jika soal ada kata kunci: "dibagi sama
-            rata", "jumlah terbanyak", "ukuran terpanjang/terbesar".
-          </p>
+        </div>
 
-          <h2>3. Kelipatan Persekutuan Terkecil (KPK)</h2>
-          <p>
-            KPK adalah bilangan kelipatan terkecil yang sama dari dua bilangan
-            atau lebih.
-          </p>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2: RINGKASAN MATERI 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Ringkasan Materi 2: Pola Bilangan</h2>
+          <div class="materi-subjudul">1. Barisan Aritmetika (Beda Tetap)</div>
+          <div class="konsep-box">
+            Suku ke-$n$: $U_n = a + (n-1)b$<br>
+            Jumlah $n$ Suku Pertama: $S_n = \frac{n}{2}(a + U_n)$
+          </div>
+          <div class="materi-subjudul">2. Pola Bilangan Khusus</div>
+          <table class="summary-table">
+            <tr><th>Jenis</th><th>Rumus Suku ke-$n$</th><th>Contoh</th></tr>
+            <tr><td><b>Persegi</b></td><td>$U_n = n^2$</td><td>1, 4, 9, 16...</td></tr>
+            <tr><td><b>Segitiga</b></td><td>$U_n = \frac{n(n+1)}{2}$</td><td>1, 3, 6, 10...</td></tr>
+            <tr><td><b>Fibonacci</b></td><td>$U_n = U_{n-1} + U_{n-2}$</td><td>1, 1, 2, 3, 5, 8...</td></tr>
+          </table>
+          <div class="materi-subjudul">3. Analisis Digit Terakhir</div>
           <div class="tips-box">
-            <b>Cara Cepat:</b> Ambil <b>semua</b> faktor prima. Jika ada yang
-            sama, ambil <b>pangkat terbesar</b>.
-          </div>
-          <p>
-            <b>Kapan pakai KPK?</b> Jika soal ada kata kunci: "bersama-sama
-            lagi", "bertemu lagi", "setiap ... sekali".
-          </p>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- MATERI 1 - FPB KPK Lanjutan -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1: FPB & KPK (2/2)</h1>
-        <div class="materi-konten">
-          <h2>4. Hubungan FPB & KPK</h2>
-          <p>
-            Untuk dua bilangan $A$ dan $B$, terdapat rumus "sakti" yang
-            menghubungkan keduanya:
-          </p>
-          <div class="rumus-box">
-            $$ A \times B = FPB(A, B) \times KPK(A, B) $$
-          </div>
-          <p>Rumus ini sangat berguna jika salah satu nilai sudah diketahui.</p>
-
-          <h2>5. Aplikasi Sisa Pembagian (Modulo)</h2>
-          <p>Sering muncul di soal Olimpiade (OSN).</p>
-          <ul class="checklist">
-            <li>
-              Jika $N$ dibagi $A$ sisa $x$, dibagi $B$ sisa $x$, dan dibagi $C$
-              sisa $x$.<br />
-              Maka: $N = KPK(A, B, C) \times k + x$.
-            </li>
-            <li>
-              Jika sisa pembagiannya berbeda, cari pola penambahannya (biasanya
-              selisih antara pembagi dan sisa adalah sama).
-            </li>
-          </ul>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- MATERI 2 - Pola Bilangan -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2: Pola Bilangan</h1>
-        <div class="materi-konten">
-          <h2>1. Barisan Aritmetika (Pola Tambah/Kurang)</h2>
-          <p>
-            Memiliki selisih (beda) yang tetap. Contoh: $3, 7, 11, 15...$ (beda
-            4).
-          </p>
-          <div class="rumus-box">
-            $$U_n = a + (n-1)b$$
-            <small>$a$ = suku pertama, $b$ = beda.</small>
-          </div>
-
-          <h2>2. Barisan Geometri (Pola Kali/Bagi)</h2>
-          <p>
-            Memiliki rasio (pengali) yang tetap. Contoh: $3, 6, 12, 24...$ (kali
-            2).
-          </p>
-          <div class="rumus-box">
-            $$U_n = a \times r^{(n-1)}$$
-            <small>$r$ = rasio.</small>
-          </div>
-
-          <h2>3. Pola Bilangan Khusus</h2>
-          <ul class="checklist">
-            <li><b>Persegi:</b> $1, 4, 9, 16... \rightarrow U_n = n^2$</li>
-            <li>
-              <b>Segitiga:</b> $1, 3, 6, 10... \rightarrow U_n =
-              \frac{n(n+1)}{2}$
-            </li>
-            <li>
-              <b>Fibonacci:</b> $1, 1, 2, 3, 5, 8...$ (Jumlah 2 suku
-              sebelumnya).
-            </li>
-          </ul>
-
-          <div class="tips-box">
-            <b>Tips Pola Digit Terakhir (Satuan):</b><br />
-            Untuk soal seperti $3^{2025}$, perhatikan pola pengulangannya.<br />
-            $3^1=3, 3^2=9, 3^3=27 (7), 3^4=81 (1)$. Pola: 3, 9, 7, 1 (berulang
-            tiap 4).
+            Untuk mencari angka satuan dari $A^n$:
+            <ul class="custom-list">
+              <li>Cari siklus perulangan angka satuan (biasanya berulang tiap 1, 2, atau 4 kali).</li>
+              <li>Bagi pangkat ($n$) dengan panjang siklus.</li>
+              <li>Gunakan sisa pembagian untuk menentukan posisi satuan dalam siklus tersebut.</li>
+            </ul>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
 
-    <!-- SOAL MUDAH (1-5) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Mudah</div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
 
-        <div class="soal-latihan">
-          <b>1.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Faktorisasi prima dari bilangan 60 adalah...
+      <!-- HALAMAN 3: SOAL 1-4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. $2 \times 3 \times 5$</div>
-              <div>B. $2^2 \times 3 \times 5$</div>
-              <div>C. $3 \times 4 \times 5$</div>
-              <div>D. $2 \times 30$</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="level-tag">LEVEL: MUDAH</div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">1.</div>
+              <div class="soal-konten">
+                Bentuk faktorisasi prima yang benar dari bilangan 60 adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$2 \times 3 \times 5$</li><li data-opt="B">$2^2 \times 3 \times 5$</li>
+                  <li data-opt="C">$3 \times 4 \times 5$</li><li data-opt="D">$2 \times 30$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Menguraikan bilangan menggunakan pohon faktor hingga menyisakan bilangan prima.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. $60 = 2 \times 30$<br>
+                  2. $30 = 2 \times 15$<br>
+                  3. $15 = 3 \times 5$<br>
+                  Hasil perkalian prima: $2 \times 2 \times 3 \times 5$.
+                  <span class="kesimpulan">Jadi, bentuk faktorisasi primanya adalah $2^2 \times 3 \times 5$.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">2.</div>
+              <div class="soal-konten">
+                Berapakah Faktor Persekutuan Terbesar (FPB) dari bilangan 24 dan 36?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">6</li><li data-opt="B">8</li><li data-opt="C">12</li><li data-opt="D">24</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Cari faktor prima yang sama dengan pangkat paling kecil.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Faktorisasi 24: $2^3 \times 3$.<br>
+                  2. Faktorisasi 36: $2^2 \times 3^2$.<br>
+                  3. FPB = $2^2 \times 3^1 = 4 \times 3 = 12$.
+                  <span class="kesimpulan">Jadi, FPB dari 24 dan 36 adalah 12.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">3.</div>
+              <div class="soal-konten">
+                Berapakah Kelipatan Persekutuan Terkecil (KPK) dari bilangan 12 dan 15?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">30</li><li data-opt="B">45</li><li data-opt="C">60</li><li data-opt="D">90</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Ambil seluruh faktor prima, jika ada yang sama pilih pangkat terbesar.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Faktorisasi 12: $2^2 \times 3$.<br>
+                  2. Faktorisasi 15: $3 \times 5$.<br>
+                  3. KPK = $2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60$.
+                  <span class="kesimpulan">Jadi, KPK dari 12 dan 15 adalah 60.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>2.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">FPB dari 24 dan 36 adalah...</div>
-            <div class="options">
-              <div>A. 6</div>
-              <div>B. 8</div>
-              <div>C. 12</div>
-              <div>D. 24</div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">4.</div>
+              <div class="soal-konten">
+                Diberikan barisan aritmetika: $3, 7, 11, 15, ...$. Suku kelima dari barisan tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">18</li><li data-opt="B">19</li><li data-opt="C">20</li><li data-opt="D">21</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Identifikasi beda antar suku yang berurutan.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Selisih: $7-3=4, 11-7=4$. Barisan ini memiliki beda tetap $b=4$.<br>
+                  2. Suku setelah 15 adalah $15 + 4 = 19$.
+                  <span class="kesimpulan">Jadi, suku berikutnya atau suku kelima adalah 19.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">5.</div>
+              <div class="soal-konten">
+                Tentukan suku ke-5 dari barisan bilangan persegi ($1, 4, 9, 16, ...$).
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20</li><li data-opt="B">24</li><li data-opt="C">25</li><li data-opt="D">36</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Gunakan rumus pola persegi $U_n = n^2$.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  Suku ke-5 berarti $n = 5$, maka $U_5 = 5^2 = 25$.
+                  <span class="kesimpulan">Jadi, suku kelima dari barisan tersebut adalah 25.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">6.</div>
+              <div class="soal-konten">
+                Lampu A berkedip setiap 4 detik, Lampu B setiap 5 detik, dan Lampu C setiap 6 detik. Jika ketiga lampu berkedip bersamaan pada pukul 08:00:00, pukul berapakah mereka akan berkedip bersamaan kembali?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">08:00:30</li><li data-opt="B">08:01:00</li><li data-opt="C">08:01:20</li><li data-opt="D">08:02:00</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Masalah waktu bersamaan diselesaikan dengan KPK.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. KPK(4, 5, 6) = 60.<br>
+                  2. 60 detik setara dengan 1 menit.<br>
+                  3. Pukul 08:00:00 + 1 menit = 08:01:00.
+                  <span class="kesimpulan">Jadi, lampu akan menyala bersama lagi pada pukul 08:01:00.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>3.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">KPK dari 12 dan 15 adalah...</div>
-            <div class="options">
-              <div>A. 30</div>
-              <div>B. 45</div>
-              <div>C. 60</div>
-              <div>D. 90</div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 4: SOAL 5-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">7.</div>
+              <div class="soal-konten">
+                Ibu memiliki 24 permen coklat, 36 permen mint, dan 48 permen buah. Ibu ingin membagikannya ke dalam beberapa kantong plastik dengan jumlah setiap jenis permen sama banyak. Berapakah <b>total permen</b> yang ada di setiap satu kantong?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">9</li><li data-opt="B">10</li><li data-opt="C">12</li><li data-opt="D">18</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Cari FPB untuk menentukan jumlah kantong maksimal.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. FPB(24, 36, 48) = 12 (Artinya ada 12 kantong).<br>
+                  2. Isi per kantong: Coklat (2), Mint (3), Buah (4).<br>
+                  3. Total permen per kantong = $2 + 3 + 4 = 9$ permen.
+                  <span class="kesimpulan">Jadi, setiap kantong berisi 9 permen.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">8.</div>
+              <div class="soal-konten">
+                Diketahui suatu barisan aritmetika memiliki suku ke-3 ($U_3$) = 11 dan suku ke-7 ($U_7$) = 23. Berapakah nilai dari suku ke-10 ($U_{10}$)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">26</li><li data-opt="B">29</li><li data-opt="C">32</li><li data-opt="D">35</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Beda ($b$) = $(U_7 - U_3) / (7 - 3) = (23 - 11) / 4 = 3$.<br>
+                  2. $U_{10} = U_7 + 3b = 23 + 3(3) = 32$.
+                  <span class="kesimpulan">Jadi, nilai suku ke-10 adalah 32.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">9.</div>
+              <div class="soal-konten">
+                Sejenis bakteri membelah diri menjadi dua setiap 20 menit. Jika mula-mula terdapat 5 bakteri, tentukan jumlah bakteri setelah 2 jam.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">160</li><li data-opt="B">320</li><li data-opt="C">640</li><li data-opt="D">1280</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Tentukan jumlah periode pembelahan.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. 2 jam = 120 menit. Banyak pembelahan = $120 / 20 = 6$ kali.<br>
+                  2. Total bakteri = $5 \times 2^6 = 5 \times 64 = 320$.
+                  <span class="kesimpulan">Jadi, total bakteri setelah 2 jam adalah 320.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>4.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Perhatikan pola bilangan: $3, 7, 11, 15, ...$. Suku berikutnya
-              adalah...
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. 18</div>
-              <div>B. 19</div>
-              <div>C. 20</div>
-              <div>D. 21</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">10.</div>
+              <div class="soal-konten">
+                Tentukan bilangan asli terkecil yang habis dibagi oleh 8, 12, dan 15.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">60</li><li data-opt="B">90</li><li data-opt="C">120</li><li data-opt="D">180</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Cari KPK(8, 12, 15).<br>
+                  2. Faktorisasi: $8=2^3, 12=2^2 \times 3, 15=3 \times 5$.<br>
+                  3. KPK = $2^3 \times 3 \times 5 = 120$.
+                  <span class="kesimpulan">Jadi, bilangan terkecil tersebut adalah 120.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
 
-    <!-- SOAL SEDANG (6-10) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="soal-latihan-n">
-          <b>5.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Suku ke-5 dari pola bilangan persegi ($1, 4, 9, 16, ...$)
-              adalah...
-            </div>
-            <div class="options">
-              <div>A. 20</div>
-              <div>B. 24</div>
-              <div>C. 25</div>
-              <div>D. 36</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">11.</div>
+              <div class="soal-konten">
+                Berapakah jumlah dari seluruh bilangan kelipatan 4 yang berada di antara 10 dan 50?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">240</li><li data-opt="B">288</li><li data-opt="C">300</li><li data-opt="D">312</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Barisan: 12, 16, ..., 48. $a=12, b=4, U_n=48$.<br>
+                  2. Banyak suku ($n$) = $((48-12)/4) + 1 = 10$.<br>
+                  3. Jumlah ($S_{10}$) = $(10/2) \times (12 + 48) = 5 \times 60 = 300$.
+                  <span class="kesimpulan">Jadi, total penjumlahannya adalah 300.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="kategori-soal">Level Sedang</div>
-
-        <div class="soal-latihan">
-          <b>6.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Lampu A berkedip setiap 4 detik, Lampu B setiap 5 detik, dan Lampu
-              C setiap 6 detik. Jika ketiga lampu berkedip bersamaan pada pukul
-              08:00:00, pukul berapakah mereka berkedip bersamaan lagi?
-            </div>
-            <div class="options">
-              <div>A. 08:00:30</div>
-              <div>B. 08:01:00</div>
-              <div>C. 08:01:20</div>
-              <div>D. 08:02:00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>7.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Ibu memiliki 24 permen coklat, 36 permen mint, dan 48 permen buah.
-              Ia ingin membagikan permen tersebut ke dalam beberapa kantong
-              dengan jumlah permen tiap jenisnya sama banyak. Berapakah
-              <b>total permen</b> yang ada di dalam satu kantong?
-            </div>
-            <div class="options">
-              <div>A. 9</div>
-              <div>B. 10</div>
-              <div>C. 12</div>
-              <div>D. 18</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">12.</div>
+              <div class="soal-konten">
+                Perhatikan barisan bilangan: $2, 5, 10, 17, 26, ...$. Suku ke-10 dari barisan tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">82</li><li data-opt="B">100</li><li data-opt="C">101</li><li data-opt="D">102</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Analisis hubungan angka dengan kuadrat sempurna.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Perhatikan: $1^2+1, 2^2+1, 3^2+1, ...$ maka rumus pola adalah $U_n = n^2 + 1$.<br>
+                  2. Suku ke-10: $10^2 + 1 = 101$.
+                  <span class="kesimpulan">Jadi, suku kesepuluh adalah 101.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>8.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui suatu barisan aritmetika memiliki suku ke-3 = 11 dan
-              suku ke-7 = 23. Berapakah nilai suku ke-10?
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. 26</div>
-              <div>B. 29</div>
-              <div>C. 32</div>
-              <div>D. 35</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">13.</div>
+              <div class="soal-konten">
+                Andi pergi ke perpustakaan setiap 4 hari sekali, sedangkan Budi setiap 6 hari sekali. Jika hari ini Selasa mereka bertemu, pada hari apa mereka akan bertemu kembali?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Sabtu</li><li data-opt="B">Minggu</li><li data-opt="C">Senin</li><li data-opt="D">Selasa</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. KPK(4, 6) = 12 hari.<br>
+                  2. $12 \pmod 7 = 5$ hari (sisa 5 hari setelah satu minggu).<br>
+                  3. Selasa + 5 hari = Minggu.
+                  <span class="kesimpulan">Jadi, mereka akan bertemu kembali hari Minggu.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-    <!-- SOAL SEDANG (6-10) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Sedang</div>
 
-        <div class="soal-latihan-n">
-          <b>9.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sejenis bakteri membelah diri menjadi 2 setiap 20 menit. Jika
-              mula-mula ada 5 bakteri, berapa banyak bakteri setelah 2 jam?
-            </div>
-            <div class="options">
-              <div>A. 160</div>
-              <div>B. 320</div>
-              <div>C. 640</div>
-              <div>D. 1280</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">14.</div>
+              <div class="soal-konten">
+                Diberikan barisan bilangan Fibonacci: $2, 3, 5, 8, ...$. Suku kedelapan ($U_8$) dari barisan tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">21</li><li data-opt="B">34</li><li data-opt="C">55</li><li data-opt="D">89</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Pola Fibonacci: Jumlah dua suku sebelumnya.<br>
+                  2. Lanjutkan: $2, 3, 5, 8, 13, 21, 34, 55$.
+                  <span class="kesimpulan">Jadi, suku ke-8 adalah 55.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="soal-latihan-n">
-          <b>10.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Bilangan asli terkecil yang habis dibagi oleh 8, 12, dan 15
-              adalah...
-            </div>
-            <div class="options">
-              <div>A. 60</div>
-              <div>B. 90</div>
-              <div>C. 120</div>
-              <div>D. 180</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>11.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah bilangan kelipatan 4 antara 10 dan 50 (tidak termasuk 10
-              dan 50) adalah...
-            </div>
-            <div class="options">
-              <div>A. 240</div>
-              <div>B. 288</div>
-              <div>C. 300</div>
-              <div>D. 312</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL SEDANG (11-15) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Sedang</div>
-
-        <div class="soal-latihan-n">
-          <b>12.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Perhatikan pola bilangan: $2, 5, 10, 17, 26, ...$. Suku ke-10 dari
-              pola tersebut adalah...
-            </div>
-            <div class="options">
-              <div>A. 82</div>
-              <div>B. 100</div>
-              <div>C. 101</div>
-              <div>D. 102</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">15.</div>
+              <div class="soal-konten">
+                Berapakah jumlah faktor positif dari bilangan 72?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">8</li><li data-opt="B">10</li><li data-opt="C">12</li><li data-opt="D">14</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Faktorisasi 72 = $2^3 \times 3^2$.<br>
+                  2. Rumus: $(3+1) \times (2+1) = 4 \times 3 = 12$.
+                  <span class="kesimpulan">Jadi, ada 12 faktor positif.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>13.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Andi pergi ke perpustakaan setiap 4 hari sekali, sedangkan Budi
-              setiap 6 hari sekali. Jika mereka bertemu di perpustakaan pada
-              hari Selasa, pada hari apa mereka akan bertemu kembali?
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 6: SOAL 13-16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. Sabtu</div>
-              <div>B. Minggu</div>
-              <div>C. Senin</div>
-              <div>D. Selasa</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">16.</div>
+              <div class="soal-konten">
+                FPB dari dua buah bilangan adalah 6, sedangkan KPK-nya adalah 180. Jika salah satu bilangannya adalah 30, tentukan nilai bilangan lainnya.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">12</li><li data-opt="B">36</li><li data-opt="C">45</li><li data-opt="D">60</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Hubungan $A \times B = FPB \times KPK$.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  $30 \times B = 6 \times 180 \rightarrow 30B = 1080 \rightarrow B = 36$.
+                  <span class="kesimpulan">Jadi, bilangan lainnya adalah 36.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">17.</div>
+              <div class="soal-konten">
+                Tentukan nilai $N$ terkecil jika $N$ dibagi 4 bersisa 3, dibagi 5 bersisa 4, dan dibagi 6 bersisa 5.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">59</li><li data-opt="B">60</li><li data-opt="C">61</li><li data-opt="D">119</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Selisih pembagi dan sisa konstan (1).
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  $N = KPK(4,5,6) - 1 = 60 - 1 = 59$.
+                  <span class="kesimpulan">Jadi, nilai $N$ terkecil adalah 59.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">18.</div>
+              <div class="soal-konten">
+                Berapakah angka satuan dari hasil penjumlahan $2^{2025} + 3^{2025}$?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">3</li><li data-opt="B">5</li><li data-opt="C">7</li><li data-opt="D">9</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. $2025 \pmod 4 = 1$.<br>
+                  2. Satuan $2^1 = 2$, Satuan $3^1 = 3$.<br>
+                  3. Penjumlahan satuan: $2 + 3 = 5$.
+                  <span class="kesimpulan">Jadi, angka satuannya adalah 5.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>14.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Perhatikan barisan bilangan Fibonacci berikut: $2, 3, 5, 8, ...$.
-              Suku ke-8 dari barisan tersebut adalah...
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 7: SOAL 17-20 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. 21</div>
-              <div>B. 34</div>
-              <div>C. 55</div>
-              <div>D. 89</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">19.</div>
+              <div class="soal-konten">
+                Hitunglah hasil dari deret: $1 - 2 + 3 - 4 + 5 - 6 + ... + 99 - 100$.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">-50</li><li data-opt="B">-100</li><li data-opt="C">0</li><li data-opt="D">50</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Kelompokkan suku berpasangan.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Pasangan $(1-2), (3-4), ... = -1$.<br>
+                  2. Ada 50 pasang. Hasil = $50 \times -1 = -50$.
+                  <span class="kesimpulan">Jadi, hasil deret adalah -50.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">20.</div>
+              <div class="soal-konten">
+                Bilangan $X$ terkecil yang lebih besar dari 50 yang jika dibagi 4 bersisa 2 dan dibagi 6 bersisa 2 adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">50</li><li data-opt="B">62</li><li data-opt="C">74</li><li data-opt="D">86</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. KPK(4, 6) = 12. Pola: $12k + 2$.<br>
+                  2. Untuk $k=4 \rightarrow 50$ (tidak memenuhi > 50). Untuk $k=5 \rightarrow 62$.
+                  <span class="kesimpulan">Jadi, nilai $X$ adalah 62.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">21.</div>
+              <div class="soal-konten">
+                Diberikan barisan "Look-and-Say": $1, 11, 21, 1211, 111221, ...$. Tentukan suku berikutnya.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">312211</li><li data-opt="B">111221</li><li data-opt="C">111222</li><li data-opt="D">122111</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Baca jumlah masing-masing angka dari suku sebelumnya.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  Suku 111221 dibaca: Tiga buah angka 1 (31), Dua buah angka 2 (22), Satu buah angka 1 (11). Digabung menjadi 312211.
+                  <span class="kesimpulan">Jadi, jawabannya 312211.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>15.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Berapa banyak faktor positif dari bilangan 72?
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 8: SOAL 21-25 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. 8</div>
-              <div>B. 10</div>
-              <div>C. 12</div>
-              <div>D. 14</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">22.</div>
+              <div class="soal-konten">
+                Berapa banyak pasangan asli $(a, b)$ dengan $a < b$ yang memiliki $FPB=6$ dan $KPK=72$?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">2</li><li data-opt="C">3</li><li data-opt="D">4</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Gunakan hubungan FPB, KPK, dan hasil kali bilangan asli yang relatif prima.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. $a \cdot b = FPB \times KPK = 432$.<br>
+                  2. Misal $a=6x$ dan $b=6y$ dengan $FPB(x,y)=1$.<br>
+                  3. $6x \cdot 6y = 432 \rightarrow 36xy = 432 \rightarrow xy = 12$.<br>
+                  4. Pasangan $(x,y)$ yang memenuhi syarat relatif prima: (1,12) dan (3,4).<br>
+                  5. Pasangan $(a,b)$ adalah (6,72) dan (18,24).
+                  <span class="kesimpulan">Jadi, terdapat 2 pasang bilangan yang memenuhi.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
 
-    <!-- SOAL SULIT (16-20) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Sulit / Olimpiade</div>
-
-        <div class="soal-latihan">
-          <b>16.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              FPB dari dua bilangan adalah 6, sedangkan KPK-nya adalah 180. Jika
-              salah satu bilangan adalah 30, bilangan lainnya adalah...
-            </div>
-            <div class="options">
-              <div>A. 12</div>
-              <div>B. 36</div>
-              <div>C. 45</div>
-              <div>D. 60</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">23.</div>
+              <div class="soal-konten">
+                Bilangan asli terkecil $X$ agar $12X$ menjadi kuadrat sempurna adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2</li><li data-opt="B">3</li><li data-opt="C">4</li><li data-opt="D">6</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Pangkat pada seluruh faktor prima kuadrat sempurna haruslah genap.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Faktorisasi $12 = 2^2 \times 3^1$.<br>
+                  2. Agar faktor 3 memiliki pangkat genap, maka ia harus dikali $3^1$ lagi.<br>
+                  3. Maka nilai $X = 3$.
+                  <span class="kesimpulan">Jadi, nilai $X$ terkecil agar hasilnya kuadrat sempurna adalah 3.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="soal-latihan-n">
-          <b>17.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Bilangan $N$ adalah bilangan asli terkecil yang jika dibagi 4
-              bersisa 3, dibagi 5 bersisa 4, dan dibagi 6 bersisa 5. Nilai $N$
-              adalah...
-            </div>
-            <div class="options">
-              <div>A. 59</div>
-              <div>B. 60</div>
-              <div>C. 61</div>
-              <div>D. 119</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>18.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Angka satuan (digit terakhir) dari hasil penjumlahan $2^{2025} +
-              3^{2025}$ adalah...
-            </div>
-            <div class="options">
-              <div>A. 3</div>
-              <div>B. 5</div>
-              <div>C. 7</div>
-              <div>D. 9</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>19.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Hitunglah hasil dari deret berikut: $1 - 2 + 3 - 4 + 5 - 6 + ... +
-              99 - 100$.
-            </div>
-            <div class="options">
-              <div>A. -50</div>
-              <div>B. -100</div>
-              <div>C. 0</div>
-              <div>D. 50</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">24.</div>
+              <div class="soal-konten">
+                Diketahui bahwa jumlah $n$ bilangan genap positif pertama adalah 420. Tentukan nilai $n$.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">10</li><li data-opt="B">20</li><li data-opt="C">21</li><li data-opt="D">40</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Gunakan rumus jumlah bilangan genap: $S_n = n(n+1)$.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. $n(n+1) = 420$.<br>
+                  2. Cari dua bilangan asli berurutan yang dikalikan hasilnya 420.<br>
+                  3. $20 \times 21 = 420$.
+                  <span class="kesimpulan">Jadi, nilai $n$ adalah 20.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>20.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Bilangan $X$ adalah bilangan asli terkecil lebih besar dari 50
-              yang jika dibagi 4 bersisa 2 dan jika dibagi 6 bersisa 2.
-              Berapakah nilai $X$?
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. 50</div>
-              <div>B. 62</div>
-              <div>C. 74</div>
-              <div>D. 86</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">25.</div>
+              <div class="soal-konten">
+                Huruf urutan ke-2025 pada pola $O, S, N, M, A, T, O, S, N, M, A, T...$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">O</li><li data-opt="B">S</li><li data-opt="C">N</li><li data-opt="D">T</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Gunakan operasi sisa bagi (modulo) dengan panjang siklus.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Pola "OSNMAT" terdiri dari 6 huruf.<br>
+                  2. $2025 \div 6 = 337$ sisa 3.<br>
+                  3. Urutan ke-3 dalam pola adalah huruf N.
+                  <span class="kesimpulan">Jadi, huruf yang menempati urutan ke-2025 adalah N.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
 
-    <!-- SOAL SULIT (21-25) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Sulit / Olimpiade</div>
-
-        <div class="soal-latihan">
-          <b>21.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Perhatikan barisan "Look-and-Say": $1, 11, 21, 1211, 111221, ...$
-              Suku berikutnya adalah...
-            </div>
-            <div class="options">
-              <div>A. 312211</div>
-              <div>B. 111221</div>
-              <div>C. 111222</div>
-              <div>D. 122111</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">26.</div>
+              <div class="soal-konten">
+                Dalam barisan aritmetika, diketahui $U_3 = 10$ dan $U_7 = 22$. Nilai suku pertamanya ($U_1$) adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">3</li><li data-opt="C">4</li><li data-opt="D">7</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Beda ($b$) = $(22 - 10) / (7 - 3) = 12 / 4 = 3$.<br>
+                  2. $U_1 = U_3 - 2b = 10 - 2(3) = 10 - 6 = 4$.
+                  <span class="kesimpulan">Jadi, nilai suku pertama barisan tersebut adalah 4.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="soal-latihan-n">
-          <b>22.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Berapa banyak pasangan bilangan asli $(a, b)$ dengan $a < b$ yang
-              memiliki $FPB(a,b) = 6$ dan $KPK(a,b) = 72$?
-            </div>
-            <div class="options">
-              <div>A. 1</div>
-              <div>B. 2</div>
-              <div>C. 3</div>
-              <div>D. 4</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>23.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sebuah bilangan $X$ jika dikalikan dengan 12 hasilnya adalah
-              bilangan kuadrat sempurna. Nilai $X$ terkecil adalah...
-            </div>
-            <div class="options">
-              <div>A. 2</div>
-              <div>B. 3</div>
-              <div>C. 4</div>
-              <div>D. 6</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>24.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui jumlah $n$ bilangan genap positif pertama adalah 420.
-              Nilai $n$ adalah...
-            </div>
-            <div class="options">
-              <div>A. 10</div>
-              <div>B. 20</div>
-              <div>C. 21</div>
-              <div>D. 40</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">27.</div>
+              <div class="soal-konten">
+                Berapakah hasil penjumlahan dari semua faktor prima unik dari angka tahun 2025?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">8</li><li data-opt="B">10</li><li data-opt="C">12</li><li data-opt="D">15</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Faktorisasi $2025 = 25 \times 81 = 5^2 \times 3^4$.<br>
+                  2. Faktor prima uniknya adalah 3 dan 5.<br>
+                  3. Jumlah = $3 + 5 = 8$.
+                  <span class="kesimpulan">Jadi, jumlah semua faktor prima uniknya adalah 8.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>25.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Huruf apakah yang menempati urutan ke-2025 pada pola $O, S, N, M,
-              A, T, O, S, N, M, A, T...$?
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 9: SOAL 26-30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
             </div>
-            <div class="options">
-              <div>A. O</div>
-              <div>B. S</div>
-              <div>C. N</div>
-              <div>D. T</div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 2 | Teori dan Pola Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">28.</div>
+              <div class="soal-konten">
+                Sekarang tepat menunjukkan pukul 09:00. Pukul berapakah 100 jam yang akan datang?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">13:00</li><li data-opt="B">15:00</li><li data-opt="C">17:00</li><li data-opt="D">21:00</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Strategi:</span> Konversi jam ke hari dan sisa jam.
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. $100 \div 24 = 4$ hari sisa 4 jam.<br>
+                  2. Pukul 09:00 + 4 jam = 13:00.
+                  <span class="kesimpulan">Jadi, 100 jam lagi akan menunjukkan pukul 13:00.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL SULIT (26-30) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level Sulit / Olimpiade</div>
-
-        <div class="soal-latihan">
-          <b>26.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Dalam barisan aritmetika, $U_3 = 10$ dan $U_7 = 22$. Suku
-              pertamanya ($U_1$) adalah...
-            </div>
-            <div class="options">
-              <div>A. 1</div>
-              <div>B. 3</div>
-              <div>C. 4</div>
-              <div>D. 7</div>
+          
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">29.</div>
+              <div class="soal-konten">
+                Diketahui $FPB(a, 60) = 12$ dan $KPK(a, 60) = 420$. Tentukan nilai $a$.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">42</li><li data-opt="B">72</li><li data-opt="C">84</li><li data-opt="D">96</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Gunakan rumus $a \times 60 = FPB \times KPK$.<br>
+                  2. $a \times 60 = 12 \times 420 \rightarrow 60a = 5040$.<br>
+                  3. $a = 5040 \div 60 = 84$.
+                  <span class="kesimpulan">Jadi, nilai $a$ yang memenuhi adalah 84.</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="soal-latihan-n">
-          <b>27.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah semua faktor prima unik dari tahun 2025 adalah...
-            </div>
-            <div class="options">
-              <div>A. 8</div>
-              <div>B. 10</div>
-              <div>C. 12</div>
-              <div>D. 15</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>28.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jika sekarang pukul 09:00. Pukul berapakah 100 jam yang akan
-              datang?
-            </div>
-            <div class="options">
-              <div>A. 13:00</div>
-              <div>B. 15:00</div>
-              <div>C. 17:00</div>
-              <div>D. 21:00</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>29.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui $FPB(a, 60) = 12$ dan $KPK(a, 60) = 420$. Nilai $a$
-              adalah...
-            </div>
-            <div class="options">
-              <div>A. 42</div>
-              <div>B. 72</div>
-              <div>C. 84</div>
-              <div>D. 96</div>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">30.</div>
+              <div class="soal-konten">
+                Jumlah dua buah bilangan asli adalah 45 dan FPB-nya adalah 9. Manakah dari pasangan berikut yang <b>tidak mungkin</b> merupakan pasangan bilangan tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">9 dan 36</li><li data-opt="B">18 dan 27</li><li data-opt="C">45 dan 90</li><li data-opt="D">Opsi A & B benar</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <span class="step-title">Langkah pengerjaan:</span>
+                  1. Misal bilangan $a$ dan $b$. Syarat: $a+b=45$ dan $FPB(a,b)=9$.<br>
+                  2. Opsi A: $9+36=45, FPB(9,36)=9$. (Mungkin)<br>
+                  3. Opsi B: $18+27=45, FPB(18,27)=9$. (Mungkin)<br>
+                  4. Opsi C: $45+90=135$. Jelas tidak mungkin karena jumlahnya bukan 45.
+                  <span class="kesimpulan">Jadi, pasangan yang tidak mungkin adalah 45 dan 90.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="soal-latihan-n">
-          <b>30.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah dua bilangan asli adalah 45 dan FPB-nya 9. Pasangan yang
-              <b>tidak</b> mungkin adalah...
-            </div>
-            <div class="options">
-              <div>A. 9 dan 36</div>
-              <div>B. 18 dan 27</div>
-              <div>C. 45 dan 90</div>
-              <div>D. Opsi A dan B benar</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 1-6 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan No 1 - 6</div>
-
-        <div class="soal-latihan-n">
-          <b>1.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              $60 = 2 \times 30 = 2 \times 2 \times 15 = 2^2 \times 3 \times 5$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>2.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              $24 = 2^3 \times 3$. $36 = 2^2 \times 3^2$. FPB ambil pangkat
-              terkecil: $2^2 \times 3 = 4 \times 3 = 12$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>3.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              $12 = 2^2 \times 3$. $15 = 3 \times 5$. KPK ambil pangkat
-              terbesar: $2^2 \times 3 \times 5 = 60$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>4.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Pola aritmetika beda 4. $15 + 4 = 19$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>5.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Pola $n^2$. Suku ke-5 = $5^2 = 25$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>6.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Cari KPK(4, 5, 6).<br />
-              $4=2^2$, $5=5$, $6=2 \times 3$. KPK=$2^2 \times 3 \times 5 =
-              60$.<br />
-              Mereka berkedip bersama setiap 60 detik (1 menit).<br />
-              08:00:00 + 1 menit = 08:01:00.
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 7-12 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan No 7 - 12</div>
-
-        <div class="soal-latihan-n">
-          <b>7.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              Cari FPB(24, 36, 48) = 12 (Ini adalah jumlah kantong
-              terbanyak).<br />
-              Total Permen per kantong = (Total Semua Permen) / Jumlah
-              Kantong<br />
-              Total Permen = $24+36+48 = 108$.<br />
-              Isi per kantong = $108 / 12 = 9$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>8.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Diketahui $U_3 = 11$ dan $U_7 = 23$.<br />
-              Beda ($b$) = $(U_7 - U_3) / (7-3) = (23-11)/4 = 12/4 = 3$.<br />
-              Cari $U_{10}$ pakai $U_7$: $U_{10} = U_7 + 3b = 23 + 3(3) = 23 + 9
-              = 32$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>9.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Waktu = 2 jam = 120 menit. Periode belah = 20 menit.<br />
-              Banyak pembelahan ($n$) = $120 / 20 = 6$ kali.<br />
-              Total bakteri = Awal $\times 2^n = 5 \times 2^6 = 5 \times 64 =
-              320$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>10.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Cari KPK(8, 12, 15).<br />
-              $8=2^3$. $12=2^2 \times 3$. $15=3 \times 5$.<br />
-              KPK = $2^3 \times 3 \times 5 = 8 \times 3 \times 5 = 120$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>11.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Bilangan kelipatan 4 antara 10 dan 50: 12, 16, 20, ..., 48.<br />
-              Suku pertama ($a$) = 12, Suku terakhir ($U_n$) = 48.<br />
-              Cari banyak suku ($n$): $(48-12)/4 + 1 = 9 + 1 = 10$ suku.<br />
-              Jumlah = $\frac{n}{2}(a + U_n) = \frac{10}{2}(12+48) = 5 \times 60
-              = 300$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>12.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Pola: $2, 5, 10, 17...$<br />
-              $1^2+1, 2^2+1, 3^2+1, 4^2+1...$<br />
-              Rumus $U_n = n^2 + 1$. Suku ke-10 = $10^2 + 1 = 100 + 1 = 101$.
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 13-18 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan No 13 - 18</div>
-
-        <div class="soal-latihan-n">
-          <b>13.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              KPK(4, 6) = 12. Mereka bertemu 12 hari lagi.<br />
-              12 hari dibagi 7 (seminggu) sisa 5 hari.<br />
-              Selasa + 5 hari = Rabu, Kamis, Jumat, Sabtu, <b>Minggu</b>.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>14.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Fibonacci: Jumlahkan dua angka sebelumnya.<br />
-              2, 3, 5, 8, 13, 21, 34, <b>55</b>.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>15.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Faktorisasi 72 = $8 \times 9 = 2^3 \times 3^2$.<br />
-              Rumus banyak faktor = (pangkat+1) dikalikan.<br />
-              $(3+1) \times (2+1) = 4 \times 3 = 12$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>16.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Rumus: $A \times B = FPB \times KPK$.<br />
-              $30 \times B = 6 \times 180 \rightarrow 30B = 1080 \rightarrow B =
-              36$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>17.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              Sisa selalu kurang 1 dari pembagi ($4-3=1$, $5-4=1$, $6-5=1$).<br />
-              Rumus: $KPK(4,5,6) - 1$. KPK=60. $N = 60 - 1 = 59$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>18.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              - Digit satuan $2^{2025}$: Siklus 2,4,8,6. $2025 \div 4$ sisa 1
-              $\rightarrow$ Ujungnya 2.<br />
-              - Digit satuan $3^{2025}$: Siklus 3,9,7,1. $2025 \div 4$ sisa 1
-              $\rightarrow$ Ujungnya 3.<br />
-              - Jumlah: $2 + 3 = 5$.
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 19-24 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan No 19 - 24</div>
-
-        <div class="soal-latihan-n">
-          <b>19.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              Kelompokkan: $(1-2) + (3-4) + ... + (99-100)$.<br />
-              Ada 100 bilangan, berarti ada 50 pasang.<br />
-              Setiap pasang hasilnya -1. Total = $50 \times (-1) = -50$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>20.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Sisa sama (2). Cari $KPK(4,6) = 12$.<br />
-              Pola: $12k + 2$. Coba $k=5 \rightarrow 60+2=62$ (terkecil > 50).
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>21.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              Lihat suku sebelumnya: "111221".<br />
-              Cara bacanya: Ada tiga angka 1, dua angka 2, satu angka 1.<br />
-              Ditulis: 3-1-2-2-1-1 $\rightarrow$ 312211.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>22.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              $a \times b = 6 \times 72 = 432$. $FPB=6$, berarti $a=6x, b=6y$
-              dengan $FPB(x,y)=1$.<br />
-              $36xy = 432 \rightarrow xy = 12$.<br />
-              Pasangan $(x,y)$ yang mungkin (relatif prima): (1,12) dan
-              (3,4).<br />
-              Maka $(a,b)$ adalah $(6, 72)$ dan $(18, 24)$. Ada 2 pasang.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>23.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              $12 = 2^2 \times 3$. Agar jadi kuadrat sempurna, semua pangkat
-              faktor prima harus genap.<br />
-              Pangkat 2 sudah genap ($2^2$). Pangkat 3 masih ganjil ($3^1$).<br />
-              Maka kita butuh dikali 3 lagi agar jadi $3^2$. Jadi $X = 3$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>24.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: B</b><br />
-              Rumus jumlah $n$ genap pertama: $n(n+1) = 420$.<br />
-              Cari dua bilangan berurutan yang dikali hasilnya 420.<br />
-              $20 \times 21 = 420$. Jadi $n = 20$.
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 25-30 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan No 25 - 30</div>
-
-        <div class="soal-latihan-n">
-          <b>25.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Pola "OSNMAT" (6 huruf). $2025 \div 6 = 337$ sisa 3. Huruf ke-3
-              adalah N.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>26.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              $U_7 - U_3 = 4b \rightarrow 22 - 10 = 12 \rightarrow 4b=12
-              \rightarrow b=3$.<br />
-              $U_1 = U_3 - 2b = 10 - 6 = 4$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>27.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              Tahun 2025. Faktorisasi: $2025 = 25 \times 81 = 5^2 \times
-              3^4$.<br />
-              Faktor prima uniknya adalah 3 dan 5.<br />
-              Jumlahnya: $3 + 5 = 8$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>28.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: A</b><br />
-              $100 \div 24 = 4$ hari sisa $4$ jam.<br />
-              Pukul 09:00 + 4 jam = 13:00.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>29.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Rumus: $a \times 60 = 12 \times 420$.<br />
-              $a \times 60 = 5040 \rightarrow a = 5040 \div 60 = 84$.
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>30.</b>
-          <div class="soal-wrapper">
-            <div class="pembahasan">
-              <b>Jawaban: C</b><br />
-              Syarat: Jumlah 45. Opsi C jumlahnya $45+90=135$ (Salah). Opsi A
-              dan B benar jumlahnya 45 dan FPB-nya 9.
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+    </div>
   </body>
 </html>
