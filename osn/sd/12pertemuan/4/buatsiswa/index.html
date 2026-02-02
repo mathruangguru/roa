@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0405MAT12SESSIONS04BS - PERTEMUAN 04 - Geometri Datar: Sifat & Sudut</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0; padding: 0;
+      }
+      .page-container { display: flex; flex-direction: column; align-items: center; }
+      .page {
+        background: white; width: 21cm; min-height: 29.7cm;
+        padding: 1.5cm 1.5cm; margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative; display: flex; flex-direction: column;
+        overflow: hidden; page-break-after: always;
+      }
+      .page::before {
+        content: ""; background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat; background-position: center; background-size: 12cm;
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 100%; height: 100%; opacity: 0.06; pointer-events: none; z-index: 0;
+      }
+      .page-header { margin: -1.5cm -1.5cm 0 -1.5cm; flex-shrink: 0; position: relative; z-index: 10; }
+      .header-top-box {
+        background-color: var(--header-top-bg); padding: 12px 1.5cm;
+        display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;
+      }
+      .header-title-main { font-size: 16pt; font-weight: 900; color: var(--header-title-color); line-height: 1.2; }
+      .header-title-sub { font-size: 10pt; font-weight: 700; color: var(--primary-text); }
+      .header-bottom-box { padding: 0 1.5cm 12px 1.5cm; text-align: left; }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg); padding: 6px 12px;
+        font-weight: 700; font-size: 9.5pt; color: var(--primary-text);
+        display: block; border-radius: 4px;
+      }
+      .header-logo { max-height: 40px; width: auto; }
+      .content-wrapper { flex-grow: 1; position: relative; z-index: 2; padding-top: 15px; display: flex; gap: 0.8cm; }
+      .column { width: 50%; display: flex; flex-direction: column; gap: 15px; }
+      .soal-container { page-break-inside: avoid; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
+      .soal-container:last-child { border-bottom: none; }
+      .soal-header { display: flex; align-items: flex-start; gap: 8px; }
+      .soal-nomor { font-weight: 800; font-size: 11pt; min-width: 25px; color: var(--header-title-color); }
+      .soal-konten { flex-grow: 1; text-align: justify; }
+      .pilihan-ganda { padding-left: 0; list-style: none; margin-top: 5px; }
+      .pilihan-ganda li { display: flex; margin-bottom: 2px; }
+      .pilihan-ganda li::before { content: attr(data-opt) "."; font-weight: 700; width: 20px; flex-shrink: 0; color: var(--secondary-text); }
+      .soal-img { display: block; max-width: 80%; margin: 8px auto; border-radius: 4px; }
+      .page-footer {
+        text-align: justify; font-size: 6pt; color: var(--grey-text);
+        margin-top: auto; padding-top: 8px; border-top: 2px solid var(--border-color);
+        flex-shrink: 0; width: 100%; position: relative; z-index: 10; background: white;
+      }
+      .page-footer b, .page-footer i { display: inline; margin: 0 3px; }
+      @media print {
+        @page { size: A4; margin: 0; }
+        body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- HALAMAN 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Bangun datar manakah di bawah ini yang merupakan <b>segi banyak beraturan</b>?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Persegi Panjang</li><li data-opt="B">Belah Ketupat</li>
+                    <li data-opt="C">Persegi</li><li data-opt="D">Segitiga Sama Kaki</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Sudut yang besarnya $135^\circ$ termasuk jenis sudut...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Lancip</li><li data-opt="B">Siku-siku</li>
+                    <li data-opt="C">Tumpul</li><li data-opt="D">Lurus</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Berapa banyak simetri putar yang dimiliki oleh Persegi Panjang?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1</li><li data-opt="B">2</li>
+                    <li data-opt="C">4</li><li data-opt="D">Tak Terhingga</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Dua buah sudut saling berpelurus. Jika perbandingan besar kedua sudut tersebut adalah 4 : 5, selisih kedua sudut tersebut adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$10^\circ$</li><li data-opt="B">$20^\circ$</li>
+                    <li data-opt="C">$30^\circ$</li><li data-opt="D">$40^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Pelurus dari sudut $75^\circ$ adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$15^\circ$</li><li data-opt="B">$25^\circ$</li>
+                    <li data-opt="C">$105^\circ$</li><li data-opt="D">$115^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Pada pukul 03.00, besar sudut terkecil yang dibentuk oleh jarum jam adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$30^\circ$</li><li data-opt="B">$60^\circ$</li>
+                    <li data-opt="C">$90^\circ$</li><li data-opt="D">$120^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Sebuah segitiga sama kaki memiliki sudut puncak $40^\circ$. Berapakah besar salah satu sudut kakinya?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$40^\circ$</li><li data-opt="B">$70^\circ$</li>
+                    <li data-opt="C">$140^\circ$</li><li data-opt="D">$60^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Bangun datar segiempat memiliki diagonal yang saling tegak lurus, namun panjang diagonalnya tidak sama. Bangun tersebut adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Persegi</li><li data-opt="B">Persegi Panjang</li>
+                    <li data-opt="C">Belah Ketupat</li><li data-opt="D">Jajar Genjang</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Diketahui sudut $A$ dan sudut $B$ adalah pasangan sudut <b>dalam berseberangan</b>. Jika besar sudut $A = 70^\circ$, maka besar sudut $B$ adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$20^\circ$</li><li data-opt="B">$70^\circ$</li>
+                    <li data-opt="C">$110^\circ$</li><li data-opt="D">$180^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Sudut $A$ adalah pelurus dari sudut $B$. Jika besar sudut $A$ sama dengan 7 kali sudut $B$ ditambah $20^\circ$, berapakah besar sudut $B$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$20^\circ$</li><li data-opt="B">$30^\circ$</li>
+                    <li data-opt="C">$50^\circ$</li><li data-opt="D">$160^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Jumlah seluruh sudut dalam dari sebuah segilima (pentagon) adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$360^\circ$</li><li data-opt="B">$540^\circ$</li>
+                    <li data-opt="C">$720^\circ$</li><li data-opt="D">$180^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Pernyataan yang <b>SALAH</b> mengenai Layang-layang adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Memiliki sepasang sudut berhadapan yang sama besar</li>
+                    <li data-opt="B">Diagonalnya berpotongan tegak lurus</li>
+                    <li data-opt="C">Memiliki 2 sumbu simetri lipat</li>
+                    <li data-opt="D">Memiliki 2 pasang sisi sama panjang</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Hitunglah besar sudut terkecil yang dibentuk jarum jam pada pukul 09.30.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$90^\circ$</li><li data-opt="B">$100^\circ$</li>
+                    <li data-opt="C">$105^\circ$</li><li data-opt="D">$120^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Pada segitiga siku-siku $ABC$ ($\angle B = 90^\circ$), ditarik garis tinggi $BD$ ke sisi miring $AC$. Jika diketahui $\angle C = 40^\circ$, berapakah besar $\angle ABD$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$30^\circ$</li><li data-opt="B">$40^\circ$</li>
+                    <li data-opt="C">$50^\circ$</li><li data-opt="D">$60^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Dua garis sejajar dipotong garis lain. Jika sudut sehadap besarnya $(2x + 10)^\circ$ dan $(3x - 20)^\circ$, nilai $x$ adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">20</li><li data-opt="B">30</li>
+                    <li data-opt="C">40</li><li data-opt="D">50</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">16.</div>
+                <div class="soal-konten">
+                  Perhatikan gambar garis zig-zag di bawah ini. Garis $a$ sejajar dengan garis $b$. Tentukan nilai $x$.<br />
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_egecd9_2827.png" class="soal-img" style="width: 150px;" />
+                  (Sudut kiri $x$, Sudut kanan $40^\circ$ dan $35^\circ$)
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$75^\circ$</li><li data-opt="B">$85^\circ$</li>
+                    <li data-opt="C">$105^\circ$</li><li data-opt="D">$5^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 3 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">17.</div>
+                <div class="soal-konten">
+                  Dua garis sejajar dipotong garis zigzag. Sudut yang menghadap ke kiri berturut-turut adalah $30^\circ$ dan $40^\circ$. Sudut yang menghadap ke kanan adalah $y^\circ$. Berapakah nilai $y$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$10^\circ$</li><li data-opt="B">$35^\circ$</li>
+                    <li data-opt="C">$70^\circ$</li><li data-opt="D">$110^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">18.</div>
+                <div class="soal-konten">
+                  Kertas persegi panjang ABCD dilipat sepanjang diagonal AC. Daerah irisan (bagian yang bertumpuk dobel) berbentuk bangun apa?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Segitiga Siku-siku</li><li data-opt="B">Segitiga Sama Kaki</li>
+                    <li data-opt="C">Jajar Genjang</li><li data-opt="D">Persegi</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">19.</div>
+                <div class="soal-konten">
+                  Hitunglah besar sudut terkecil pada pukul 02.24 menggunakan perhitungan akurat.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$60^\circ$</li><li data-opt="B">$66^\circ$</li>
+                    <li data-opt="C">$72^\circ$</li><li data-opt="D">$78^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">20.</div>
+                <div class="soal-konten">
+                  Antara pukul 03.00 dan 04.00, pada pukul berapa tepatnya jarum panjang dan jarum pendek saling berhimpit ($0^\circ$)?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">03:15</li><li data-opt="B">03:16 $\frac{4}{11}$</li>
+                    <li data-opt="C">03:17 $\frac{2}{11}$</li><li data-opt="D">03:20</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">21.</div>
+                <div class="soal-konten">
+                  Pada sebuah segitiga, besar sudut luar salah satu titik sudutnya adalah $120^\circ$. Jika perbandingan dua sudut dalam yang tidak berpelurus dengan sudut luar tersebut adalah 3 : 5, tentukan selisih kedua sudut dalam tersebut.<br />
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_0jlh9z_6515.png" class="soal-img" style="width: 120px;" />
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$15^\circ$</li><li data-opt="B">$30^\circ$</li>
+                    <li data-opt="C">$45^\circ$</li><li data-opt="D">$60^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">22.</div>
+                <div class="soal-konten">
+                  Jika satu pojok kertas berbentuk Persegi digunting lurus (dipancung), bangun barunya adalah segilima. Berapa jumlah seluruh sudut dalam bangun baru tersebut?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$360^\circ$</li><li data-opt="B">$450^\circ$</li>
+                    <li data-opt="C">$540^\circ$</li><li data-opt="D">$720^\circ$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">23.</div>
+                <div class="soal-konten">
+                  Sebuah segitiga sama sisi diputar $60^\circ$ dengan pusat putaran di salah satu titik sudutnya. Gabungan segitiga awal dan hasil putarannya akan membentuk bangun...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Segienam beraturan</li><li data-opt="B">Belah Ketupat</li>
+                    <li data-opt="C">Trapesium</li><li data-opt="D">Bintang</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">24.</div>
+                <div class="soal-konten">
+                  Manakah bangun di bawah ini yang <b>TIDAK</b> dapat digunakan untuk menutupi lantai secara rapat (tesselasi) jika hanya menggunakan satu jenis bangun itu saja?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Segitiga Sama Sisi</li><li data-opt="B">Persegi</li>
+                    <li data-opt="C">Segilima Beraturan</li><li data-opt="D">Segienam Beraturan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">25.</div>
+                <div class="soal-konten">
+                  Empat buah segitiga siku-siku sama kaki yang kongruen disusun. Bangun manakah yang <b>MUSTAHIL</b> terbentuk dari susunan tersebut?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Persegi</li><li data-opt="B">Persegi Panjang</li>
+                    <li data-opt="C">Jajar Genjang</li><li data-opt="D">Segilima Beraturan</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">26.</div>
+                <div class="soal-konten">
+                  Berapa banyak pasangan sudut lancip yang saling bertolak belakang pada titik potong kedua diagonal sebuah Persegi Panjang?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1 pasang</li><li data-opt="B">2 pasang</li>
+                    <li data-opt="C">3 pasang</li><li data-opt="D">4 pasang</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">27.</div>
+                <div class="soal-konten">
+                  Diketahui garis $m \parallel n$. Garis $k$ memotong keduanya. Jika dibuat garis bagi (bisector) untuk sepasang sudut dalam sepihak, berapakah besar sudut yang terbentuk dari perpotongan kedua garis bagi tersebut?<br />
+                  <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_rrznib_7438.png" class="soal-img" style="width: 200px;" />
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$45^\circ$</li><li data-opt="B">$60^\circ$</li>
+                    <li data-opt="C">$90^\circ$</li><li data-opt="D">Tergantung kemiringan garis $k$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">28.</div>
+                <div class="soal-konten">
+                  Diberikan 5 garis lurus pada bidang datar. Tidak ada garis yang sejajar dan tidak ada tiga garis yang berpotongan di satu titik. Berapakah jumlah titik potong maksimum yang dapat terbentuk?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li><li data-opt="B">8</li>
+                    <li data-opt="C">10</li><li data-opt="D">15</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">29.</div>
+                <div class="soal-konten">
+                  Berapa banyak total segitiga (dari berbagai ukuran) yang dapat ditemukan pada gambar bintang segilima (pentagram)?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li><li data-opt="B">8</li>
+                    <li data-opt="C">10</li><li data-opt="D">12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">30.</div>
+                <div class="soal-konten">
+                  Dua buah persegi memiliki panjang sisi masing-masing 10 cm. Jika salah satu persegi diletakkan sedemikian rupa sehingga salah satu titik sudutnya berada tepat di titik pusat persegi kedua, berapakah luas daerah irisan (daerah yang saling menumpuk) antara kedua persegi tersebut?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$15 \text{ cm}^2$</li><li data-opt="B">$20 \text{ cm}^2$</li>
+                    <li data-opt="C">$25 \text{ cm}^2$</li><li data-opt="D">$50 \text{ cm}^2$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+    </div>
+  </body>
+</html>
