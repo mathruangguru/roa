@@ -3,1426 +3,1042 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan OSN-K SD: Geometri Datar</title>
+    <title>OSK0405MAT12SESSIONS04 - PERTEMUAN 04 - Geometri Datar: Sifat & Sudut</title>
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
-          ],
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          packages: { "[+]": ["ams"] },
         },
-        svg: {
-          fontCache: "global",
-        },
+        svg: { fontCache: "global" },
       };
     </script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-    ></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
     <style>
       :root {
         --primary-text: #333333;
         --secondary-text: #555555;
         --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
         --grey-text: #8d8e8d;
-        --accent-color: #ff9800;
-        --accent-light: #fff3e0;
+        --highlight-box-bg: #f9f9f9;
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
       body {
         font-family: "Nunito", sans-serif;
-        font-size: 12pt;
-        line-height: 1.6;
+        font-size: 10.5pt;
+        line-height: 1.4;
         color: var(--primary-text);
         background-color: #e0e0e0;
-        margin: 0;
-        padding: 0;
+        margin: 0; padding: 0;
       }
+
+      .page-container { display: flex; flex-direction: column; align-items: center; }
+
       .page {
-        background: white;
-        width: 21cm;
-        min-height: 29.7cm;
-        height: auto;
-        padding: 2.5cm;
-        margin: 1cm auto;
+        background: white; width: 21cm; height: 29.7cm;
+        padding: 0.8cm 1.8cm; margin: 1cm auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        page-break-after: always;
+        position: relative; display: flex; flex-direction: column;
+        overflow: hidden; page-break-after: always;
       }
-      .page:last-of-type {
-        page-break-after: avoid;
-      }
-      .cover-page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .cover-image {
-        max-width: 9cm;
-        height: auto;
-        margin-bottom: 40px;
-      }
-      .cover-title {
-        font-size: 38pt;
-        font-weight: 900;
-        margin: 0 0 15px 0;
-        line-height: 1.2;
-        color: #333;
-        border-bottom: none;
-      }
-      .cover-subtitle {
-        font-size: 18pt;
-        color: var(--secondary-text);
-        font-weight: 700;
-      }
+
       .page::before {
-        content: "";
-        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 14cm;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        opacity: 0.05;
-        z-index: 1;
+        content: ""; background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat; background-position: center; background-size: 12cm;
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 100%; height: 100%; opacity: 0.05; pointer-events: none; z-index: 0;
       }
-      .cover-page::before {
-        opacity: 0;
+
+      .page-header { margin: -0.8cm -1.8cm 0 -1.8cm; flex-shrink: 0; position: relative; z-index: 10; }
+
+      .header-top-box {
+        background-color: var(--header-top-bg); padding: 10px 1.8cm;
+        display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;
       }
-      .content-wrapper {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        flex-grow: 1;
+
+      .header-title-main { font-size: 15pt; font-weight: 900; color: var(--header-title-color); line-height: 1.2; }
+      .header-title-sub { font-size: 9pt; font-weight: 700; color: var(--primary-text); }
+
+      .header-bottom-box { padding: 0 1.8cm 8px 1.8cm; text-align: left; }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg); padding: 5px 12px;
+        font-weight: 700; font-size: 8pt; color: var(--primary-text);
+        display: block; border-radius: 4px;
       }
-      h1 {
-        font-size: 24pt;
-        text-align: center;
-        border-bottom: 2px solid var(--primary-text);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
+
+      .header-logo { max-height: 30px; width: auto; }
+
+      .content-wrapper { flex-grow: 1; position: relative; z-index: 2; padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+
+      .section-title {
+        font-size: 13pt; font-weight: 700; color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg); padding-bottom: 3px; margin: 10px 0;
       }
-      h2 {
-        font-size: 16pt;
-        font-weight: 700;
-        color: var(--secondary-text);
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 5px;
-        margin-top: 25px;
+
+      .konsep-box {
+        background-color: var(--header-top-bg); border-left: 4px solid var(--header-title-color);
+        padding: 10px 15px; margin: 5px 0; border-radius: 0 5px 5px 0;
       }
-      h3 {
-        font-size: 14pt;
-        font-weight: 700;
-        color: var(--primary-text);
-        margin-top: 15px;
-        margin-bottom: 5px;
+
+      .tips-box {
+        background-color: #fff3e0; border-left: 4px solid #ff9800;
+        padding: 10px 15px; margin: 5px 0; font-size: 9.5pt; border-radius: 0 5px 5px 0;
       }
-      .materi-konten {
-        display: block;
-        text-align: justify;
+
+      .table-materi {
+        width: 100%; border-collapse: collapse; border: 1px solid var(--border-color);
+        margin: 5px 0; background: white;
       }
-      .soal-latihan,
-      .soal-latihan-n {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 25px;
-        break-inside: avoid;
-        padding-bottom: 10px;
+      .table-materi th, .table-materi td { border: 1px solid var(--border-color); padding: 6px 10px; font-size: 9.5pt; }
+      .table-materi th { background-color: var(--table-header-bg); font-weight: 700; text-align: left; }
+
+      .soal-container { margin-bottom: 10px; }
+      .soal-card {
+        width: 100%; border-collapse: collapse;
+        border: 1px solid var(--border-color); background: rgba(255, 255, 255, 0.9);
       }
-      .soal-latihan > b,
-      .soal-latihan-n > b {
-        margin-right: 8px;
-        flex-shrink: 0;
+      .soal-card td { border: 1px solid var(--border-color); padding: 5px 12px; font-size: 8.5pt; }
+      .soal-card td:first-child { font-weight: 700; background-color: var(--table-header-bg); width: 80px; }
+
+      .soal-pembahasan { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; }
+      .soal-nomor { font-weight: 800; font-size: 11pt; min-width: 25px; color: var(--header-title-color); }
+      .soal-konten { flex-grow: 1; text-align: justify; font-size: 10pt; }
+
+      .pilihan-ganda { padding-left: 0; list-style: none; margin-top: 5px; }
+      .pilihan-ganda li { display: flex; margin-bottom: 2px; }
+      .pilihan-ganda li::before { content: attr(data-opt) "."; font-weight: 700; width: 22px; flex-shrink: 0; color: var(--secondary-text); }
+
+      .pembahasan-detail {
+        margin-top: 8px; background-color: var(--highlight-box-bg);
+        border-left: 4px solid var(--header-title-color); padding: 8px 12px; border-radius: 0 5px 5px 0;
+        font-size: 9.5pt; text-align: justify;
       }
-      .soal-wrapper {
-        flex-grow: 1;
+      .pembahasan-detail b.label-jawaban {
+        background-color: var(--header-title-color); color: white;
+        padding: 2px 8px; border-radius: 4px; font-size: 8.5pt; display: inline-block; margin-bottom: 5px;
       }
-      .soal-konten {
-        text-align: justify;
-      }
-      .soal-img {
-        display: block;
-        max-width: 80%;
-        margin: 10px auto;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-      .options {
-        padding-left: 0px;
-        margin-top: 10px;
-        display: block;
-      }
-      .options div {
-        margin-bottom: 5px;
-        padding-left: 20px;
-      }
+
+      .soal-img { display: block; max-width: 35%; margin: 8px auto; border-radius: 4px; }
+
       .page-footer {
-        text-align: left;
+        text-align: justify;
         font-size: 6pt;
         color: var(--grey-text);
-        padding-top: 2px;
         margin-top: auto;
-        border-top: 2.5px solid var(--grey-text);
-        z-index: 2;
-        position: relative;
-      }
-      .kategori-soal {
-        text-align: center;
-        font-size: 18pt;
-        font-weight: 700;
-        margin: 20px 0;
-        border-top: 2px solid var(--primary-text);
-        border-bottom: 2px solid var(--primary-text);
-        padding: 10px 0;
-      }
-      .pembahasan {
-        background-color: #f9f9f9;
-        border-left: 4px solid #4caf50;
-        padding: 15px;
-        margin-top: 10px;
-        text-align: justify;
-        font-size: 11pt;
-      }
-      .rumus-box {
-        background-color: #e3f2fd;
-        border-left: 4px solid #2196f3;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 0 5px 5px 0;
-      }
-      .tips-box {
-        background-color: var(--accent-light);
-        border-left: 4px solid var(--accent-color);
-        padding: 15px;
-        margin: 15px 0;
-        font-size: 11pt;
-      }
-      table.table-materi {
+        padding-top: 8px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
         width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-      }
-      table.table-materi th,
-      table.table-materi td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-      table.table-materi th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
-      ul.checklist {
-        list-style-type: none;
-        padding-left: 10px;
-      }
-      ul.checklist li {
         position: relative;
-        padding-left: 30px;
-        margin-bottom: 10px;
+        z-index: 10;
+        background: white;
       }
-      ul.checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #4caf50;
-        font-weight: bold;
-        font-size: 1.2em;
-      }
+      .page-footer b, .page-footer i { display: inline; margin: 0 3px; }
+
       @media print {
-        @page {
-          size: A4;
-          margin: 0;
-        }
-        body {
-          background-color: white;
-          margin: 0;
-        }
-        .page {
-          width: 100%;
-          min-height: 29.7cm;
-          height: 100%;
-          margin: 0;
-          box-shadow: none;
-          page-break-after: always;
-        }
-        .page:last-child {
-          page-break-after: avoid;
-        }
+        @page { size: A4; margin: 0; }
+        body { background-color: white; -webkit-print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; height: 29.7cm; }
       }
     </style>
   </head>
   <body>
-    <!-- Halaman Sampul -->
-    <section class="page cover-page">
-      <div
-        class="content-wrapper"
-        style="
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <img
-          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
-          alt="Mathchamps Logo"
-          class="cover-image"
-        />
-        <h1 class="cover-title">Geometri Datar<br />Latihan OSN-K SD</h1>
-        <p class="cover-subtitle">Sifat Bangun Datar, Simetri, Sudut & Garis</p>
-      </div>
-    </section>
-
-    <!-- MATERI 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1: Sifat Bangun Datar</h1>
-        <div class="materi-konten">
-          <h2>1. Segi Banyak (Poligon)</h2>
-          <p>
-            Dalam olimpiade, membedakan bangun beraturan dan tidak beraturan
-            adalah kunci.
-          </p>
-          <div class="rumus-box">
-            <b>Syarat Segi Banyak Beraturan:</b><br />
-            Harus memenuhi <b>DUA</b> syarat sekaligus:<br />
-            1. Semua <b>Sisi</b> sama panjang.<br />
-            2. Semua <b>Sudut</b> sama besar.
+    <div class="page-container">
+      <!-- HALAMAN MATERI 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
           </div>
-          <ul class="checklist">
-            <li>
-              <b>Contoh Beraturan:</b> Segitiga sama sisi, Persegi, Segienam
-              beraturan.
-            </li>
-            <li>
-              <b>Contoh Tidak Beraturan (Jebakan!):</b> <br />
-              - <i>Persegi Panjang:</i> Sudut sama ($90^\circ$), tapi sisi beda.
-              <br />
-              - <i>Belah Ketupat:</i> Sisi sama, tapi sudut beda.
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <h2 class="section-title">1. Segi Banyak (Poligon)</h2>
+          <p>Dalam olimpiade, membedakan bangun beraturan dan tidak beraturan adalah fondasi utama analisis geometri.</p>
+          <div class="konsep-box">
+            <b>Syarat Poligon Beraturan:</b><br />
+            1. <b>Sisi:</b> Semua sisi memiliki panjang yang sama.<br />
+            2. <b>Sudut:</b> Semua sudut memiliki besar yang sama.
+          </div>
+          <ul style="list-style-type: none; padding-left: 5px;">
+            <li style="margin-bottom: 8px;"><b>✓ Beraturan:</b> Segitiga sama sisi, Persegi, Segienam beraturan.</li>
+            <li><b>✓ Tidak Beraturan (Jebakan!):</b><br />
+              - <i>Persegi Panjang:</i> Sudut sama ($90^\circ$), tapi sisi beda.<br />
+              - <i>Belah Ketupat:</i> Sisi sama panjang, tapi besar sudut berbeda.
             </li>
           </ul>
-          <h2>2. Sifat Diagonal</h2>
+          <h2 class="section-title">2. Sifat Diagonal Segiempat</h2>
           <table class="table-materi">
-            <tr>
-              <th>Bangun</th>
-              <th>Panjang</th>
-              <th>Sifat Perpotongan</th>
-            </tr>
-            <tr>
-              <td>Persegi</td>
-              <td>Sama ($=$)</td>
-              <td>Tegak lurus & bagi 2 sama</td>
-            </tr>
-            <tr>
-              <td>Persegi Panjang</td>
-              <td>Sama ($=$)</td>
-              <td><b>Tidak</b> tegak lurus</td>
-            </tr>
-            <tr>
-              <td>Belah Ketupat</td>
-              <td>Beda ($\neq$)</td>
-              <td>Tegak lurus ($90^\circ$)</td>
-            </tr>
-            <tr>
-              <td>Layang-layang</td>
-              <td>Beda ($\neq$)</td>
-              <td>Tegak lurus (Satu membagi dua)</td>
-            </tr>
+            <tr><th>Bangun</th><th>Diagonal</th><th>Sifat Perpotongan</th></tr>
+            <tr><td>Persegi</td><td>Sama</td><td>Tegak lurus & bagi 2 sama</td></tr>
+            <tr><td>Persegi Panjang</td><td>Sama</td><td>Membagi 2 sama, <b>TIDAK</b> tegak lurus</td></tr>
+            <tr><td>Belah Ketupat</td><td>Beda</td><td>Saling bagi 2 & Tegak lurus</td></tr>
+            <tr><td>Layang-layang</td><td>Beda</td><td>Tegak lurus (hanya satu diagonal terbagi 2)</td></tr>
           </table>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- MATERI 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2: Simetri</h1>
-        <div class="materi-konten">
-          <h2>1. Simetri Lipat (Cermin)</h2>
-          <p>
-            Bayangkan melipat kertas bangun datar tersebut. Jika kiri dan kanan
-            saling menutupi sempurna, itu adalah sumbu simetri.
-          </p>
-          <ul>
-            <li>
-              <b>Persegi Panjang:</b> Diagonal <b>BUKAN</b> sumbu simetri.
-            </li>
-            <li><b>Layang-layang:</b> Memiliki 1 sumbu simetri (vertikal).</li>
-          </ul>
-
-          <h2>2. Simetri Putar (Rotasi)</h2>
-          <p>
-            Tusuk jarum di tengah bangun, putar satu putaran penuh
-            ($360^\circ$). Berapa kali dia menempati bingkainya dengan pas?
-          </p>
-          <div class="rumus-box">
-            <b>Tips:</b><br />
-            Segi-$n$ beraturan pasti memiliki $n$ simetri putar dan $n$ simetri
-            lipat.<br />
+      <!-- HALAMAN MATERI 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
           </div>
-
-          <h2>3. Tesselasi (Ubin)</h2>
-          <p>
-            Bangun yang bisa menutupi lantai tanpa celah sendirian adalah:
-            Segitiga sama sisi, Persegi, dan Segienam beraturan. Segilima
-            beraturan <b>tidak bisa</b>.
-          </p>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- MATERI 3 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 3: Sudut dan Garis</h1>
-        <div class="materi-konten">
-          <h2>1. Jenis Sudut</h2>
-          <ul>
-            <li><b>Lancip:</b> $< 90^\circ$</li>
-            <li><b>Siku-siku:</b> $= 90^\circ$</li>
-            <li><b>Tumpul:</b> Antara $90^\circ$ dan $180^\circ$</li>
-            <li><b>Lurus:</b> $180^\circ$</li>
-          </ul>
-
-          <h2>2. Jarum Jam (Clock Problem)</h2>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <h2 class="section-title">3. Simetri & Tesselasi</h2>
+          <div class="konsep-box">
+            - <b>Simetri Lipat:</b> Garis yang membagi bangun menjadi dua bagian kongruen.<br />
+            - <b>Simetri Putar:</b> Jumlah posisi bangun yang tampak sama dalam rotasi $360^\circ$.<br />
+            - <b>Tesselasi:</b> Pengubinan tanpa celah. (Berhasil pada Segitiga, Persegi, Segienam).
+          </div>
+          <h2 class="section-title">4. Sudut dan Jam</h2>
           <div class="tips-box">
-            1 putaran = $360^\circ$. Setiap lompatan angka (1 jam) =
-            $30^\circ$.<br />
-            <b>Rumus Sudut Terkecil:</b>
-            $$ \theta = | 30 \times \text{jam} - 5,5 \times \text{menit} | $$
+            - 1 Jam $= 30^\circ$, 1 Menit $= 6^\circ$.<br />
+            - <b>Rumus Sudut Jam:</b> $$\theta = | 30 \times \text{jam} - 5,5 \times \text{menit} |$$
           </div>
-
-          <h2>3. Hubungan Antar Sudut</h2>
-          <ul>
-            <li><b>Berpenyiku:</b> Jumlahnya $90^\circ$.</li>
-            <li><b>Berpelurus:</b> Jumlahnya $180^\circ$.</li>
-            <li><b>Bertolak Belakang:</b> Besarnya <b>SAMA</b>.</li>
-          </ul>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- MATERI 4 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 4: Garis Sejajar</h1>
-        <div class="materi-konten">
-          <p>Jika dua garis sejajar dipotong garis lain (transversal):</p>
-          <ul class="checklist">
-            <li><b>Sudut Sehadap (F):</b> Besarnya SAMA.</li>
-            <li><b>Sudut Dalam Berseberangan (Z):</b> Besarnya SAMA.</li>
-            <li><b>Sudut Dalam Sepihak (U):</b> Jumlahnya $180^\circ$.</li>
-          </ul>
-
-          <h2>Trik Garis Zig-Zag</h2>
-          <div class="rumus-box">
-            $$ \text{Total Sudut Kiri} = \text{Total Sudut Kanan} $$
-            <i>(Syarat: Gunakan sudut lancip di bagian dalam tekukan)</i>
+          <h2 class="section-title">5. Garis Sejajar & Zig-Zag</h2>
+          <div class="konsep-box">
+            - <b>Sudut Sehadap & Dalam Berseberangan:</b> Besarnya SAMA.<br />
+            - <b>Trik Zig-Zag:</b> Total Sudut Kiri = Total Sudut Kanan.
           </div>
-          <img
-            src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zugizi_6614.png"
-            alt="Zigzag line rule"
-            class="soal-img"
-            style="max-width: 60%"
-          />
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- SOAL 1-4 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 1: Dasar (Mudah)</div>
-
-        <div class="soal-latihan">
-          <b>1.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Bangun datar manakah di bawah ini yang merupakan
-              <b>segi banyak beraturan</b>?
+      <!-- HALAMAN SOAL 1-2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sifat Bangun Datar</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">1.</div>
+              <div class="soal-konten">
+                Bangun datar manakah di bawah ini yang merupakan <b>segi banyak beraturan</b>?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Persegi Panjang</li><li data-opt="B">Belah Ketupat</li>
+                  <li data-opt="C">Persegi</li><li data-opt="D">Segitiga Sama Kaki</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. Persegi</b><br />
+                  Syarat segi banyak beraturan: Sisi sama panjang DAN sudut sama besar.
+                  <ul>
+                    <li>Persegi panjang: Sisi beda.</li>
+                    <li>Belah ketupat: Sudut beda (ada lancip & tumpul).</li>
+                    <li>Segitiga sama kaki: Sisi alas biasanya beda.</li>
+                    <li><b>Persegi:</b> Memenuhi semua syarat (4 sisi sama, 4 sudut 90°).</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. Persegi Panjang</div>
-              <div>B. Belah Ketupat</div>
-              <div>C. Persegi</div>
-              <div>D. Segitiga Sama Kaki</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Klasifikasi Sudut</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">2.</div>
+              <div class="soal-konten">
+                Sudut yang besarnya $135^\circ$ termasuk jenis sudut...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Lancip</li><li data-opt="B">Siku-siku</li>
+                  <li data-opt="C">Tumpul</li><li data-opt="D">Lurus</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. Tumpul</b><br />
+                  Klasifikasi sudut:<br />
+                  - Lancip: $0^\circ < x < 90^\circ$.<br />
+                  - Siku-siku: $x = 90^\circ$.<br />
+                  - <b>Tumpul:</b> $90^\circ < x < 180^\circ$.<br />
+                  Karena $135^\circ$ berada di rentang tersebut, maka ia sudut tumpul.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>2.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sudut yang besarnya $135^\circ$ termasuk jenis sudut...
+      <!-- HALAMAN SOAL 3-4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Simetri Putar</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">3.</div>
+              <div class="soal-konten">
+                Berapa banyak simetri putar yang dimiliki oleh Persegi Panjang?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">2</li>
+                  <li data-opt="C">4</li><li data-opt="D">Tak Terhingga</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 2</b><br />
+                  Simetri putar diukur dari berapa kali bangun menempati bingkainya dalam putaran 360°. Persegi panjang menempati bingkainya saat diputar $180^\circ$ dan $360^\circ$. Maka ada 2 simetri putar.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. Lancip</div>
-              <div>B. Siku-siku</div>
-              <div>C. Tumpul</div>
-              <div>D. Lurus</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sudut Berpelurus</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">4.</div>
+              <div class="soal-konten">
+                Dua buah sudut saling berpelurus. Jika perbandingan besar kedua sudut tersebut adalah 4 : 5, selisih kedua sudut tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$10^\circ$</li><li data-opt="B">$20^\circ$</li>
+                  <li data-opt="C">$30^\circ$</li><li data-opt="D">$40^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 20°</b><br />
+                  Langkah:<br />
+                  1. Sudut berpelurus jumlahnya $180^\circ$.<br />
+                  2. Total rasio $= 4 + 5 = 9$ bagian.<br />
+                  3. Nilai 1 bagian $= 180^\circ / 9 = 20^\circ$.<br />
+                  4. Selisih rasio $= 5 - 4 = 1$. Selisih sudut $= 1 \times 20^\circ = 20^\circ$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>3.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Berapa banyak simetri putar yang dimiliki oleh Persegi Panjang?
+      <!-- HALAMAN SOAL 5-6 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Pelurus Sudut</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">5.</div>
+              <div class="soal-konten">
+                Pelurus dari sudut $75^\circ$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$15^\circ$</li><li data-opt="B">$25^\circ$</li>
+                  <li data-opt="C">$105^\circ$</li><li data-opt="D">$115^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 105°</b><br />
+                  Dua sudut berpelurus jika dijumlahkan hasilnya $180^\circ$.<br />
+                  Maka, Pelurus $= 180^\circ - 75^\circ = 105^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. 1</div>
-              <div>B. 2</div>
-              <div>C. 4</div>
-              <div>D. Tak Terhingga</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Logika Jam</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">6.</div>
+              <div class="soal-konten">
+                Pada pukul 03.00, besar sudut terkecil yang dibentuk oleh jarum jam adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$30^\circ$</li><li data-opt="B">$60^\circ$</li>
+                  <li data-opt="C">$90^\circ$</li><li data-opt="D">$120^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 90°</b><br />
+                  Pukul 03.00: Jarum pendek di angka 3, jarum panjang di angka 12. Jarak $= 3$ bagian angka. Tiap 1 bagian $= 30^\circ$. Maka, $3 \times 30^\circ = 90^\circ$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>4.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Dua buah sudut saling berpelurus. Jika perbandingan besar kedua
-              sudut tersebut adalah 4 : 5, selisih kedua sudut tersebut
-              adalah...
+      <!-- HALAMAN SOAL 7-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Segitiga Sama Kaki</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">7.</div>
+              <div class="soal-konten">
+                Sebuah segitiga sama kaki memiliki sudut puncak $40^\circ$. Berapakah besar salah satu sudut kakinya?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$40^\circ$</li><li data-opt="B">$70^\circ$</li>
+                  <li data-opt="C">$140^\circ$</li><li data-opt="D">$60^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 70°</b><br />
+                  Langkah:<br />
+                  1. Total sudut segitiga $= 180^\circ$.<br />
+                  2. Sisa untuk dua kaki $= 180^\circ - 40^\circ = 140^\circ$.<br />
+                  3. Karena sama kaki, bagi dua: $140^\circ / 2 = 70^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $10^\circ$</div>
-              <div>B. $20^\circ$</div>
-              <div>C. $30^\circ$</div>
-              <div>D. $40^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sifat Diagonal</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">8.</div>
+              <div class="soal-konten">
+                Bangun datar segiempat memiliki diagonal yang saling tegak lurus, namun panjang diagonalnya tidak sama. Bangun tersebut adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Persegi</li><li data-opt="B">Persegi Panjang</li>
+                  <li data-opt="C">Belah Ketupat</li><li data-opt="D">Jajar Genjang</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. Belah Ketupat</b><br />
+                  Analisis Kata Kunci: "Diagonal tegak lurus" (Persegi, Belah Ketupat, Layang-layang). "Panjang diagonal tidak sama" (Belah Ketupat, Layang-layang). Karena "saling membagi dua", maka bangun tersebut adalah <b>Belah Ketupat</b>.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- SOAL 5-8 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Latihan Soal (Lanjutan)</div>
-
-        <div class="soal-latihan">
-          <b>5.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pelurus dari sudut $75^\circ$ adalah...
+      <!-- HALAMAN SOAL 9-10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Garis Sejajar</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">9.</div>
+              <div class="soal-konten">
+                Diketahui sudut $A$ dan sudut $B$ adalah pasangan sudut <b>dalam berseberangan</b>. Jika besar sudut $A = 70^\circ$, maka besar sudut $B$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$20^\circ$</li><li data-opt="B">$70^\circ$</li>
+                  <li data-opt="C">$110^\circ$</li><li data-opt="D">$180^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 70°</b><br />
+                  Sifat garis sejajar: Pasangan sudut dalam berseberangan (pola huruf Z) besarnya selalu <b>SAMA</b>. Maka $\angle B = \angle A = 70^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $15^\circ$</div>
-              <div>B. $25^\circ$</div>
-              <div>C. $105^\circ$</div>
-              <div>D. $115^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Aljabar Sudut</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">10.</div>
+              <div class="soal-konten">
+                Sudut $A$ adalah pelurus dari sudut $B$. Jika besar sudut $A$ sama dengan 7 kali sudut $B$ ditambah $20^\circ$, berapakah besar sudut $B$?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$20^\circ$</li><li data-opt="B">$30^\circ$</li>
+                  <li data-opt="C">$50^\circ$</li><li data-opt="D">$160^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: A. 20°</b><br />
+                  Diketahui $A + B = 180^\circ$.<br />
+                  Substitusi $A = 7B + 20$:<br />
+                  $(7B + 20) + B = 180^\circ$<br />
+                  $8B = 160^\circ \to B = 20^\circ$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>6.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pada pukul 03.00, besar sudut terkecil yang dibentuk oleh jarum
-              jam adalah...
+      <!-- HALAMAN SOAL 11-12 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Interior Poligon</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">11.</div>
+              <div class="soal-konten">
+                Jumlah seluruh sudut dalam dari sebuah segilima (pentagon) adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$360^\circ$</li><li data-opt="B">$540^\circ$</li>
+                  <li data-opt="C">$720^\circ$</li><li data-opt="D">$180^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 540°</b><br />
+                  Rumus jumlah sudut interior poligon segi-$n$: $(n-2) \times 180^\circ$.<br />
+                  Segilima ($n=5$): $(5-2) \times 180^\circ = 3 \times 180^\circ = 540^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $30^\circ$</div>
-              <div>B. $60^\circ$</div>
-              <div>C. $90^\circ$</div>
-              <div>D. $120^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sifat Layang-layang</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">12.</div>
+              <div class="soal-konten">
+                Pernyataan yang <b>SALAH</b> mengenai Layang-layang adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Memiliki sepasang sudut berhadapan yang sama besar</li>
+                  <li data-opt="B">Diagonalnya berpotongan tegak lurus</li>
+                  <li data-opt="C">Memiliki 2 sumbu simetri lipat</li>
+                  <li data-opt="D">Memiliki 2 pasang sisi sama panjang</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. Memiliki 2 sumbu simetri</b><br />
+                  Layang-layang umumnya hanya memiliki <b>1 sumbu simetri</b> (vertikal membelah sayap). Jika memiliki 2, ia akan menjadi Belah Ketupat. Pilihan A, B, dan D adalah sifat benar.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>7.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sebuah segitiga sama kaki memiliki sudut puncak $40^\circ$.
-              Berapakah besar salah satu sudut kakinya?
+      <!-- HALAMAN SOAL 13-14 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sudut Jam</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">13.</div>
+              <div class="soal-konten">
+                Hitunglah besar sudut terkecil yang dibentuk jarum jam pada pukul 09.30.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$90^\circ$</li><li data-opt="B">$100^\circ$</li>
+                  <li data-opt="C">$105^\circ$</li><li data-opt="D">$120^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 105°</b><br />
+                  Langkah Analitis:<br />
+                  1. Jarum panjang di angka 6.<br />
+                  2. Jarum pendek di tengah angka 9 dan 10 (posisi 9,5).<br />
+                  3. Selisih langkah $= 9,5 - 6 = 3,5$ langkah.<br />
+                  4. Sudut $= 3,5 \times 30^\circ = 105^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $40^\circ$</div>
-              <div>B. $70^\circ$</div>
-              <div>C. $140^\circ$</div>
-              <div>D. $60^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Geometri Segitiga</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">14.</div>
+              <div class="soal-konten">
+                Pada segitiga siku-siku $ABC$ ($\angle B = 90^\circ$), ditarik garis tinggi $BD$ ke sisi miring $AC$. Jika diketahui $\angle C = 40^\circ$, berapakah besar $\angle ABD$?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$30^\circ$</li><li data-opt="B">$40^\circ$</li>
+                  <li data-opt="C">$50^\circ$</li><li data-opt="D">$60^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 40°</b><br />
+                  Analisis Segitiga:<br />
+                  - Di $\triangle ABC$: $\angle A = 180^\circ - (90^\circ + 40^\circ) = 50^\circ$.<br />
+                  - Di $\triangle ABD$ (siku-siku di $D$): $\angle ABD = 180^\circ - (90^\circ + 50^\circ) = 40^\circ$.<br />
+                  Catatan: Sudut $\angle ABD$ akan selalu sama dengan $\angle C$ pada konfigurasi garis tinggi ini.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- SOAL 9-12 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 2: Aplikasi (Sedang)</div>
-        <div class="soal-latihan-n">
-          <b>8.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Bangun datar segiempat memiliki diagonal yang saling tegak lurus,
-              namun panjang diagonalnya tidak sama. Bangun tersebut adalah...
+      <!-- HALAMAN SOAL 15-16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sudut Sehadap</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">15.</div>
+              <div class="soal-konten">
+                Dua garis sejajar dipotong garis lain. Jika sudut sehadap besarnya $(2x + 10)^\circ$ dan $(3x - 20)^\circ$, nilai $x$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20</li><li data-opt="B">30</li>
+                  <li data-opt="C">40</li><li data-opt="D">50</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 30</b><br />
+                  Sudut sehadap memiliki besar yang sama.<br />
+                  $2x + 10 = 3x - 20$<br />
+                  $10 + 20 = 3x - 2x \to 30 = x$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. Persegi</div>
-              <div>B. Persegi Panjang</div>
-              <div>C. Belah Ketupat</div>
-              <div>D. Jajar Genjang</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Trik Zig-Zag</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">16.</div>
+              <div class="soal-konten">
+                Perhatikan gambar garis zig-zag di bawah ini. Garis $a \parallel b$. Tentukan nilai $x$.<br />
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_egecd9_2827.png" class="soal-img" />
+                (Keterangan: Sudut kiri $x$, Sudut kanan $40^\circ$ dan $35^\circ$)
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$75^\circ$</li><li data-opt="B">$85^\circ$</li>
+                  <li data-opt="C">$105^\circ$</li><li data-opt="D">$5^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: A. 75°</b><br />
+                  <b>Aturan Zig-Zag:</b> Total sudut menghadap Kiri = Total sudut menghadap Kanan.<br />
+                  Mulut sudut $x$ menghadap kiri. Sudut $40^\circ$ dan $35^\circ$ menghadap kanan.<br />
+                  $x = 40^\circ + 35^\circ = 75^\circ$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan">
-          <b>9.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui sudut $A$ dan sudut $B$ adalah pasangan sudut
-              <b>dalam berseberangan</b>. Jika besar sudut $A = 70^\circ$, maka
-              besar sudut $B$ adalah...
+      <!-- HALAMAN SOAL 17-18 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Visualisasi Zig-Zag</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">17.</div>
+              <div class="soal-konten">
+                Dua garis sejajar dipotong garis zigzag. Sudut yang menghadap ke kiri berturut-turut adalah $30^\circ$ dan $40^\circ$. Sudut yang menghadap ke kanan adalah $y^\circ$. Berapakah nilai $y$?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$10^\circ$</li><li data-opt="B">$35^\circ$</li>
+                  <li data-opt="C">$70^\circ$</li><li data-opt="D">$110^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 70°</b><br />
+                  Sama seperti nomor sebelumnya. Total Kiri $= 30^\circ + 40^\circ = 70^\circ$. Total Kanan $= y^\circ$. Maka $y = 70$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $20^\circ$</div>
-              <div>B. $70^\circ$</div>
-              <div>C. $110^\circ$</div>
-              <div>D. $180^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Analisis Lipatan</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">18.</div>
+              <div class="soal-konten">
+                Kertas persegi panjang ABCD dilipat sepanjang diagonal AC. Daerah irisan (bagian yang bertumpuk dobel) berbentuk bangun apa?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Segitiga Siku-siku</li><li data-opt="B">Segitiga Sama Kaki</li>
+                  <li data-opt="C">Jajar Genjang</li><li data-opt="D">Persegi</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. Segitiga Sama Kaki</b><br />
+                  <b>Visualisasi:</b> Saat kertas dilipat diagonal, bagian yang menumpuk di tengah membentuk segitiga. Karena sudut dalam berseberangan pada persegi panjang memiliki relasi tertentu saat dilipat, dua sudut kaki segitiga irisan tersebut akan terbukti sama besar.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>10.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sudut $A$ adalah pelurus dari sudut $B$. Jika besar sudut $A$ sama
-              dengan 7 kali sudut $B$ ditambah $20^\circ$, berapakah besar sudut
-              $B$?
+      <!-- HALAMAN SOAL 19-20 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Jam Akurat</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">19.</div>
+              <div class="soal-konten">
+                Hitunglah besar sudut terkecil pada pukul 02.24 menggunakan perhitungan akurat.
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$60^\circ$</li><li data-opt="B">$66^\circ$</li>
+                  <li data-opt="C">$72^\circ$</li><li data-opt="D">$78^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 72°</b><br />
+                  Gunakan Rumus: $\theta = |30h - 5,5m|$.<br />
+                  $h = 2$, $m = 24$.<br />
+                  $\theta = |30(2) - 5,5(24)| = |60 - 132| = |-72| = 72^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $20^\circ$</div>
-              <div>B. $30^\circ$</div>
-              <div>C. $50^\circ$</div>
-              <div>D. $160^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Jarum Berhimpit</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">20.</div>
+              <div class="soal-konten">
+                Antara pukul 03.00 dan 04.00, pada pukul berapa tepatnya jarum panjang dan jarum pendek saling berhimpit ($0^\circ$)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">03:15</li><li data-opt="B">03:16 $\frac{4}{11}$</li>
+                  <li data-opt="C">03:17 $\frac{2}{11}$</li><li data-opt="D">03:20</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 03:16 4/11</b><br />
+                  Berhimpit artinya sudut $= 0^\circ$.<br />
+                  $30(3) - 5,5m = 0 \to 90 = 5,5m \to m = 180 / 11 = 16 \frac{4}{11}$.<br />
+                  Waktu yang dicari adalah 03:16 $\frac{4}{11}$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- SOAL 13-16 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 2 & 3: Aplikasi & HOTS</div>
-
-        <div class="soal-latihan-n">
-          <b>11.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah seluruh sudut dalam dari sebuah segilima (pentagon)
-              adalah...
+      <!-- HALAMAN SOAL 21-22 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Teorema Sudut Luar</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">21.</div>
+              <div class="soal-konten">
+                Pada sebuah segitiga, besar sudut luar salah satu titik sudutnya adalah $120^\circ$. Jika perbandingan dua sudut dalam yang tidak berpelurus dengan sudut luar tersebut adalah 3 : 5, tentukan selisih kedua sudut dalam tersebut.<br />
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_0jlh9z_6515.png" class="soal-img" />
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$15^\circ$</li><li data-opt="B">$30^\circ$</li>
+                  <li data-opt="C">$45^\circ$</li><li data-opt="D">$60^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. 30°</b><br />
+                  <b>Teorema:</b> Sudut luar = Jumlah dua sudut dalam yang jauh.<br />
+                  $120^\circ = 3x + 5x \to 8x = 120^\circ \to x = 15^\circ$.<br />
+                  Selisih $= 5x - 3x = 2x = 2(15) = 30^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $360^\circ$</div>
-              <div>B. $540^\circ$</div>
-              <div>C. $720^\circ$</div>
-              <div>D. $180^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Modifikasi Poligon</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">22.</div>
+              <div class="soal-konten">
+                Jika satu pojok kertas berbentuk Persegi digunting lurus (dipancung), bangun barunya adalah segilima. Berapa jumlah seluruh sudut dalam bangun baru tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$360^\circ$</li><li data-opt="B">$450^\circ$</li>
+                  <li data-opt="C">$540^\circ$</li><li data-opt="D">$720^\circ$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 540°</b><br />
+                  Memotong satu pojok persegi menambah satu sisi baru sehingga menjadi segi-5 (Pentagon). Jumlah sudut Pentagon $= (5-2) \times 180^\circ = 540^\circ$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>12.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pernyataan yang <b>SALAH</b> mengenai Layang-layang adalah...
+      <!-- HALAMAN SOAL 23-24 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Rotasi & Gabungan</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">23.</div>
+              <div class="soal-konten">
+                Sebuah segitiga sama sisi diputar $60^\circ$ dengan pusat putaran di salah satu titik sudutnya. Gabungan segitiga awal dan hasil putarannya akan membentuk bangun...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Segienam beraturan</li><li data-opt="B">Belah Ketupat</li>
+                  <li data-opt="C">Trapesium</li><li data-opt="D">Bintang</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: B. Belah Ketupat</b><br />
+                  Karena diputar $60^\circ$ (besar sudut segitiga sama sisi), sisi segitiga baru menempel pada sisi segitiga lama. Gabungan dua segitiga sama sisi yang berbagi satu sisi membentuk Belah Ketupat.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. Memiliki sepasang sudut berhadapan yang sama besar</div>
-              <div>B. Diagonalnya berpotongan tegak lurus</div>
-              <div>C. Memiliki 2 sumbu simetri lipat</div>
-              <div>D. Memiliki 2 pasang sisi sama panjang</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Syarat Tesselasi</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">24.</div>
+              <div class="soal-konten">
+                Manakah bangun di bawah ini yang <b>TIDAK</b> dapat digunakan untuk menutupi lantai secara rapat (tesselasi) jika hanya menggunakan satu jenis bangun itu saja?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Segitiga Sama Sisi</li><li data-opt="B">Persegi</li>
+                  <li data-opt="C">Segilima Beraturan</li><li data-opt="D">Segienam Beraturan</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. Segilima Beraturan</b><br />
+                  Sudut interior Segilima Beraturan $= 108^\circ$. $108$ bukan faktor dari $360$ (titik temu ubin). Maka pengubinan segilima akan menyisakan celah atau tumpang tindih.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan">
-          <b>13.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Hitunglah besar sudut terkecil yang dibentuk jarum jam pada pukul
-              09.30.
+      <!-- HALAMAN SOAL 25-26 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Logika Susunan</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">25.</div>
+              <div class="soal-konten">
+                Empat buah segitiga siku-siku sama kaki yang kongruen disusun. Bangun manakah yang <b>MUSTAHIL</b> terbentuk dari susunan tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">Persegi</li><li data-opt="B">Persegi Panjang</li>
+                  <li data-opt="C">Jajar Genjang</li><li data-opt="D">Segilima Beraturan</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: D. Segilima Beraturan</b><br />
+                  Segitiga siku-siku sama kaki memiliki sudut $90^\circ, 45^\circ, 45^\circ$. Sudut interior segilima beraturan $= 108^\circ$. Tidak ada cara menjumlahkan sudut 90 dan 45 untuk mendapatkan 108.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $90^\circ$</div>
-              <div>B. $100^\circ$</div>
-              <div>C. $105^\circ$</div>
-              <div>D. $120^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Sudut Diagonal</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">26.</div>
+              <div class="soal-konten">
+                Berapa banyak pasangan sudut lancip yang saling bertolak belakang pada titik potong kedua diagonal sebuah Persegi Panjang?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1 pasang</li><li data-opt="B">2 pasang</li>
+                  <li data-opt="C">3 pasang</li><li data-opt="D">4 pasang</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: A. 1 pasang</b><br />
+                  Di perpotongan diagonal persegi panjang, terbentuk 2 pasang sudut bertolak belakang: sepasang lancip (kiri-kanan) dan sepasang tumpul (atas-bawah). Maka hanya ada 1 pasang lancip.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-        <div class="soal-latihan-n">
-          <b>14.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pada segitiga siku-siku $ABC$ ($\angle B = 90^\circ$), ditarik
-              garis tinggi $BD$ ke sisi miring $AC$. Jika diketahui $\angle C =
-              40^\circ$, berapakah besar $\angle ABD$?
+      <!-- HALAMAN SOAL 27-28 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Garis Bagi (Bisector)</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">27.</div>
+              <div class="soal-konten">
+                Diketahui garis $m \parallel n$. Garis $k$ memotong keduanya. Jika dibuat garis bagi (bisector) untuk sepasang sudut dalam sepihak, berapakah besar sudut yang terbentuk dari perpotongan kedua garis bagi tersebut?<br />
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_rrznib_7438.png" class="soal-img" />
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$45^\circ$</li><li data-opt="B">$60^\circ$</li>
+                  <li data-opt="C">$90^\circ$</li><li data-opt="D">Tergantung kemiringan garis $k$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 90°</b><br />
+                  Dalam sepihak jumlahnya $180^\circ$ ($2\alpha + 2\beta = 180^\circ$). Garis bagi membelahnya jadi $\alpha + \beta = 90^\circ$. Sudut di segitiga tengah $= 180^\circ - (\alpha + \beta) = 90^\circ$.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. $30^\circ$</div>
-              <div>B. $40^\circ$</div>
-              <div>C. $50^\circ$</div>
-              <div>D. $60^\circ$</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika Garis</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">28.</div>
+              <div class="soal-konten">
+                Diberikan 5 garis lurus pada bidang datar. Tidak ada garis yang sejajar dan tidak ada tiga garis yang berpotongan di satu titik. Berapakah jumlah titik potong maksimum yang dapat terbentuk?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">5</li><li data-opt="B">8</li>
+                  <li data-opt="C">10</li><li data-opt="D">15</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 10</b><br />
+                  Setiap 2 garis bertemu di 1 titik. Dengan $n=5$ garis, jumlah titik potong maksimum adalah kombinasi 2 garis dari 5, yaitu: $\frac{n(n-1)}{2} = \frac{5 \times 4}{2} = 10$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
 
-    <!-- SOAL 17-20 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Visualisasi)</div>
-
-        <div class="soal-latihan-n">
-          <b>15.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Dua garis sejajar dipotong garis lain. Jika sudut sehadap besarnya
-              $(2x + 10)^\circ$ dan $(3x - 20)^\circ$, nilai $x$ adalah...
+      <!-- HALAMAN SOAL 29-30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 4 | Geometri Datar: Sifat & Sudut</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Cacah Segitiga</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">29.</div>
+              <div class="soal-konten">
+                Berapa banyak total segitiga (dari berbagai ukuran) yang dapat ditemukan pada gambar bintang segilima (pentagram)?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">5</li><li data-opt="B">8</li>
+                  <li data-opt="C">10</li><li data-opt="D">12</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 10</b><br />
+                  1. Terdapat 5 segitiga kecil di masing-masing ujung lengan bintang.<br />
+                  2. Terdapat 5 segitiga besar (tumpul) yang dibentuk oleh dua lengan dan bagian segilima di tengah.<br />
+                  Total $= 10$ segitiga.
+                </div>
+              </div>
             </div>
-            <div class="options">
-              <div>A. 20</div>
-              <div>B. 30</div>
-              <div>C. 40</div>
-              <div>D. 50</div>
+          </div>
+          <div class="soal-container">
+            <table class="soal-card"><tr><td>Topik</td><td>Luas Irisan Dua Persegi</td></tr></table>
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">30.</div>
+              <div class="soal-konten">
+                Dua buah persegi memiliki panjang sisi masing-masing 10 cm. Jika salah satu persegi diletakkan sedemikian rupa sehingga salah satu titik sudutnya berada tepat di titik pusat persegi kedua, berapakah luas daerah irisan (daerah yang saling menumpuk) antara kedua persegi tersebut?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">$15 \text{ cm}^2$</li><li data-opt="B">$20 \text{ cm}^2$</li>
+                  <li data-opt="C">$25 \text{ cm}^2$</li><li data-opt="D">$50 \text{ cm}^2$</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <b class="label-jawaban">Jawaban: C. 25 cm²</b><br />
+                  <b>Analisis Invarian:</b> Ketika sebuah titik sudut suatu persegi berada di titik pusat persegi lain yang kongruen, luas irisannya akan selalu tetap sebesar <b>seperempat</b> ($\frac{1}{4}$) dari luas persegi tersebut, tidak peduli seberapa besar sudut rotasinya.<br />
+                  Luas Persegi $= 10 \text{ cm} \times 10 \text{ cm} = 100 \text{ cm}^2$.<br />
+                  Luas Irisan $= 100 / 4 = 25 \text{ cm}^2$.
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="soal-latihan-n">
-          <b>16.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Perhatikan gambar garis zig-zag di bawah ini. Garis $a$ sejajar
-              dengan garis $b$. Tentukan nilai $x$.
-              <br />
-              <img
-                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_egecd9_2827.png"
-                class="soal-img"
-                alt="Soal Zigzag"
-                style="width: 200px"
-              />
-              (Sudut kiri $X$, Sudut kanan $40^\circ$ dan $35^\circ$)
-            </div>
-            <div class="options">
-              <div>A. $75^\circ$</div>
-              <div>B. $85^\circ$</div>
-              <div>C. $105^\circ$</div>
-              <div>D. $5^\circ$</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL 17-20 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Visualisasi)</div>
-
-        <div class="soal-latihan">
-          <b>17.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Dua garis sejajar dipotong garis zigzag. Sudut yang menghadap ke
-              kiri berturut-turut adalah $30^\circ$ dan $40^\circ$. Sudut yang
-              menghadap ke kanan adalah $y^\circ$. Berapakah nilai $y$?
-            </div>
-            <div class="options">
-              <div>A. $10^\circ$</div>
-              <div>B. $35^\circ$</div>
-              <div>C. $70^\circ$</div>
-              <div>D. $110^\circ$</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>18.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Kertas persegi panjang ABCD dilipat sepanjang diagonal AC. Daerah
-              irisan (bagian yang bertumpuk dobel) berbentuk bangun apa?
-            </div>
-            <div class="options">
-              <div>A. Segitiga Siku-siku</div>
-              <div>B. Segitiga Sama Kaki</div>
-              <div>C. Jajar Genjang</div>
-              <div>D. Persegi</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL 21-24 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Analisis)</div>
-        <div class="soal-latihan-n">
-          <b>19.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Hitunglah besar sudut terkecil pada pukul 02.24 menggunakan
-              perhitungan akurat.
-            </div>
-            <div class="options">
-              <div>A. $60^\circ$</div>
-              <div>B. $66^\circ$</div>
-              <div>C. $72^\circ$</div>
-              <div>D. $78^\circ$</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>20.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Antara pukul 03.00 dan 04.00, pada pukul berapa tepatnya jarum
-              panjang dan jarum pendek saling berhimpit ($0^\circ$)?
-            </div>
-            <div class="options">
-              <div>A. 03:15</div>
-              <div>B. 03:16 $\frac{4}{11}$</div>
-              <div>C. 03:17 $\frac{2}{11}$</div>
-              <div>D. 03:20</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>21.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pada sebuah segitiga, besar sudut luar salah satu titik sudutnya
-              adalah $120^\circ$. Jika perbandingan dua sudut dalam yang tidak
-              berpelurus dengan sudut luar tersebut adalah 3 : 5, tentukan
-              selisih kedua sudut dalam tersebut.
-              <img
-                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_0jlh9z_6515.png"
-                class="soal-img"
-                alt="Sudut Luar"
-                style="width: 150px"
-              />
-            </div>
-            <div class="options">
-              <div>A. $15^\circ$</div>
-              <div>B. $30^\circ$</div>
-              <div>C. $45^\circ$</div>
-              <div>D. $60^\circ$</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Analisis)</div>
-
-        <div class="soal-latihan-n">
-          <b>22.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jika satu pojok kertas berbentuk Persegi digunting lurus
-              (dipancung), bangun barunya adalah segilima. Berapa jumlah seluruh
-              sudut dalam bangun baru tersebut?
-            </div>
-            <div class="options">
-              <div>A. $360^\circ$</div>
-              <div>B. $450^\circ$</div>
-              <div>C. $540^\circ$</div>
-              <div>D. $720^\circ$</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>23.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sebuah segitiga sama sisi diputar $60^\circ$ dengan pusat putaran
-              di salah satu titik sudutnya. Gabungan segitiga awal dan hasil
-              putarannya akan membentuk bangun...
-            </div>
-            <div class="options">
-              <div>A. Segienam beraturan</div>
-              <div>B. Belah Ketupat</div>
-              <div>C. Trapesium</div>
-              <div>D. Bintang</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>24.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Manakah bangun di bawah ini yang <b>TIDAK</b> dapat digunakan
-              untuk menutupi lantai secara rapat (tesselasi) jika hanya
-              menggunakan satu jenis bangun itu saja?
-            </div>
-            <div class="options">
-              <div>A. Segitiga Sama Sisi</div>
-              <div>B. Persegi</div>
-              <div>C. Segilima Beraturan</div>
-              <div>D. Segienam Beraturan</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL 25-28 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Logika)</div>
-
-        <div class="soal-latihan">
-          <b>25.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Empat buah segitiga siku-siku sama kaki yang kongruen disusun.
-              Bangun manakah yang <b>MUSTAHIL</b> terbentuk dari susunan
-              tersebut?
-            </div>
-            <div class="options">
-              <div>A. Persegi</div>
-              <div>B. Persegi Panjang</div>
-              <div>C. Jajar Genjang</div>
-              <div>D. Segilima Beraturan</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>26.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Berapa banyak pasangan sudut lancip yang saling bertolak belakang
-              pada titik potong kedua diagonal sebuah Persegi Panjang?
-            </div>
-            <div class="options">
-              <div>A. 1 pasang</div>
-              <div>B. 2 pasang</div>
-              <div>C. 3 pasang</div>
-              <div>D. 4 pasang</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>27.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui garis $m \parallel n$. Garis $k$ memotong keduanya. Jika
-              dibuat garis bagi (bisector) untuk sepasang sudut dalam sepihak,
-              berapakah besar sudut yang terbentuk dari perpotongan kedua garis
-              bagi tersebut?
-              <img
-                src="https://imgix3.ruangguru.com/assets/miscellaneous/png_rrznib_7438.png"
-                class="soal-img"
-                alt="Garis Bagi"
-                style="width: 150px"
-              />
-            </div>
-            <div class="options">
-              <div>A. $45^\circ$</div>
-              <div>B. $60^\circ$</div>
-              <div>C. $90^\circ$</div>
-              <div>D. Tergantung kemiringan garis $k$</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- SOAL 29-30 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Level 3: HOTS (Akhir)</div>
-
-        <div class="soal-latihan-n">
-          <b>28.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diberikan 5 garis lurus pada bidang datar. Tidak ada garis yang
-              sejajar dan tidak ada tiga garis yang berpotongan di satu titik.
-              Berapakah jumlah titik potong maksimum yang dapat terbentuk?
-            </div>
-            <div class="options">
-              <div>A. 5</div>
-              <div>B. 8</div>
-              <div>C. 10</div>
-              <div>D. 15</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan">
-          <b>29.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Berapa banyak total segitiga (dari berbagai ukuran) yang dapat
-              ditemukan pada gambar bintang segilima (pentagram)?
-            </div>
-            <div class="options">
-              <div>A. 5</div>
-              <div>B. 8</div>
-              <div>C. 10</div>
-              <div>D. 12</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="soal-latihan-n">
-          <b>30.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Kertas berbentuk persegi dilipat dua secara horizontal, lalu
-              dilipat dua lagi secara vertikal hingga menjadi persegi kecil.
-              Pojok pusat lipatan digunting membentuk lingkaran. Saat kertas
-              dibuka kembali, polanya adalah...
-            </div>
-            <div class="options">
-              <div>A. Satu lingkaran di tengah</div>
-              <div>B. Dua lingkaran terpisah</div>
-              <div>C. Empat lingkaran di pojok</div>
-              <div>D. Empat lingkaran di tengah</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 1-5 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-
-        <div class="kategori-soal">Pembahasan Bagian 1</div>
-        <div class="pembahasan">
-          <b>1. Jawaban: C (Persegi)</b><br />
-          Syarat segi banyak beraturan: Sisi sama panjang DAN sudut sama besar.
-          <ul>
-            <li>Persegi panjang: Sisi beda.</li>
-            <li>Belah ketupat: Sudut beda.</li>
-            <li>Segitiga sama kaki: Sisi alas beda (biasanya).</li>
-            <li><b>Persegi:</b> Memenuhi semua syarat.</li>
-          </ul>
-        </div>
-        <div class="pembahasan">
-          <b>2. Jawaban: C (Tumpul)</b><br />
-          Sudut tumpul adalah sudut antara $90^\circ$ dan $180^\circ$. Karena
-          $135^\circ$ ada di rentang itu, maka ia tumpul.
-        </div>
-        <div class="pembahasan">
-          <b>3. Jawaban: B (2)</b><br />
-          Persegi panjang bisa menempati bingkainya jika diputar $180^\circ$ dan
-          $360^\circ$ (kembali ke awal). Jadi ada 2 simetri putar.
-        </div>
-        <div class="pembahasan">
-          <b>4. Jawaban: B ($20^\circ$)</b><br />
-          Sudut berpelurus jumlahnya $180^\circ$.<br />
-          Total perbandingan = $4 + 5 = 9$.<br />
-          Nilai 1 bagian = $180 / 9 = 20^\circ$.<br />
-          Selisih bagian = $5 - 4 = 1$.<br />
-          Selisih sudut = $1 \times 20^\circ = 20^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>5. Jawaban: C ($105^\circ$)</b><br />
-          Sudut berpelurus jumlahnya $180^\circ$.<br />
-          Pelurus = $180^\circ - 75^\circ = 105^\circ$.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 6-10 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan Bagian 2</div>
-        <div class="pembahasan">
-          <b>6. Jawaban: C ($90^\circ$)</b><br />
-          Pukul 03.00. Jarum pendek di 3, jarum panjang di 12.<br />
-          Jarak = 3 langkah angka.<br />
-          $3 \times 30^\circ = 90^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>7. Jawaban: B ($70^\circ$)</b><br />
-          Total sudut segitiga = $180^\circ$.<br />
-          Sisa untuk dua kaki = $180 - 40 = 140^\circ$.<br />
-          Karena sama kaki, bagi dua: $140 / 2 = 70^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>8. Jawaban: C (Belah Ketupat)</b><br />
-          Kata kuncinya: Diagonal tegak lurus ($90^\circ$). Kandidatnya hanya
-          Persegi, Belah Ketupat, Layang-layang.<br />
-          Karena diagonalnya "tidak sama panjang", maka bukan Persegi.<br />
-          Karena "saling membagi dua", maka bukan Layang-layang.<br />
-          Jadi: Belah Ketupat.
-        </div>
-        <div class="pembahasan">
-          <b>9. Jawaban: B ($70^\circ$)</b><br />
-          Sifat garis sejajar: Sudut dalam berseberangan (membentuk huruf Z)
-          besarnya selalu <b>SAMA</b>.<br />
-          Jadi $\angle B = \angle A = 70^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>10. Jawaban: A ($20^\circ$)</b><br />
-          Diketahui $A + B = 180^\circ$.<br />
-          Substitusi $A = 7B + 20$:<br />
-          $(7B + 20) + B = 180$<br />
-          $8B = 160 \Rightarrow B = 20^\circ$.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 11-15 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan Bagian 3</div>
-        <div class="pembahasan">
-          <b>11. Jawaban: B ($540^\circ$)</b><br />
-          Rumus jumlah sudut dalam segi-$n$: $(n-2) \times 180^\circ$.<br />
-          Segilima ($n=5$): $(5-2) \times 180 = 3 \times 180 = 540^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>12. Jawaban: C (Punya 2 simetri lipat)</b><br />
-          Layang-layang umumnya hanya memiliki <b>1 sumbu simetri</b> (vertikal
-          membelah sayap kiri kanan). Jika punya 2, dia akan menjadi Belah
-          Ketupat.
-        </div>
-        <div class="pembahasan">
-          <b>13. Jawaban: C ($105^\circ$)</b><br />
-          Pukul 09.30.<br />
-          Jarum panjang: di angka 6.<br />
-          Jarum pendek: di tengah 9 dan 10 (9.5).<br />
-          Jarak: $9.5 - 6 = 3.5$ langkah.<br />
-          Sudut: $3.5 \times 30^\circ = 105^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>14. Jawaban: B ($40^\circ$)</b><br />
-          Perhatikan segitiga siku-siku besar $ABC$.<br />
-          $\angle A = 180 - (90 + 40) = 50^\circ$.<br />
-          Sekarang lihat segitiga kecil $ABD$ (siku-siku di $D$).<br />
-          $\angle ABD = 180 - (90 + 50) = 40^\circ$.<br />
-          (Cara cepat: pada segitiga siku-siku, garis tinggi membagi segitiga
-          menjadi dua segitiga yang sebangun dengan aslinya).
-        </div>
-        <div class="pembahasan">
-          <b>15. Jawaban: B (30)</b><br />
-          Sudut sehadap besarnya SAMA.<br />
-          $2x + 10 = 3x - 20$<br />
-          $10 + 20 = 3x - 2x$<br />
-          $30 = x$.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 16-20 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan Bagian 4</div>
-        <div class="pembahasan">
-          <b>16. Jawaban: A ($75^\circ$)</b><br />
-          <b>Aturan Zig-Zag:</b> Total sudut menghadap Kiri = Total sudut
-          menghadap Kanan.<br />
-          Mulut sudut $X$ menghadap ke kiri.<br />
-          Mulut sudut $40^\circ$ dan $35^\circ$ menghadap ke kanan.<br />
-          $X = 40 + 35 = 75^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>17. Jawaban: C ($70^\circ$)</b><br />
-          Sama dengan nomor 16.<br />
-          Kiri: $30^\circ$ dan $40^\circ$.<br />
-          Kanan: $y^\circ$.<br />
-          $y = 30 + 40 = 70^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>18. Jawaban: B (Segitiga Sama Kaki)</b><br />
-          <b>Visualisasi Concrete:</b> Ambil kertas HVS, lipat diagonal. Anda
-          akan melihat segitiga yang "keluar jalur". Bagian yang bertumpuk
-          (irisan) di tengah selalu membentuk segitiga sama kaki.
-        </div>
-        <div class="pembahasan">
-          <b>19. Jawaban: C ($72^\circ$)</b><br />
-          Rumus: $|30h - 5,5m|$. Jam $h=2$, Menit $m=24$.<br />
-          $= |30(2) - 5,5(24)|$<br />
-          $= |60 - 132|$<br />
-          $= |-72| = 72^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>20. Jawaban: B (03:16 $\frac{4}{11}$)</b><br />
-          Syarat berhimpit: Sudut = 0.<br />
-          $30h - 5,5m = 0$ (dengan $h=3$).<br />
-          $90 - 5,5m = 0 \Rightarrow 5,5m = 90$.<br />
-          $m = \frac{90}{5,5} = \frac{180}{11}$.<br />
-          $180 \div 11 = 16$ sisa $4$. Jadi $16 \frac{4}{11}$ menit.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 21-25 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan Bagian 5</div>
-        <div class="pembahasan">
-          <b>21. Jawaban: B ($30^\circ$)</b><br />
-          <b>Teorema Sudut Luar:</b> Sudut luar = Jumlah dua sudut dalam yang
-          jauh.<br />
-          Total dua sudut dalam = $120^\circ$.<br />
-          Perbandingan 3 : 5. Total bagian = 8.<br />
-          Sudut 1: $\frac{3}{8} \times 120 = 45^\circ$.<br />
-          Sudut 2: $\frac{5}{8} \times 120 = 75^\circ$.<br />
-          Selisih: $75 - 45 = 30^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>22. Jawaban: C ($540^\circ$)</b><br />
-          Persegi punya 4 sisi. Jika satu pojok dipotong lurus, sisinya
-          bertambah 1 jadi 5 (Segilima).<br />
-          Sudut dalam segilima = $(5-2) \times 180 = 540^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>23. Jawaban: B (Belah Ketupat)</b><br />
-          Bayangkan segitiga sama sisi diputar $60^\circ$ menempel pada salah
-          satu sisinya. Dua segitiga sama sisi yang berdempetan alas akan
-          membentuk Belah Ketupat (atau Jajar Genjang yang semua sisinya sama).
-        </div>
-        <div class="pembahasan">
-          <b>24. Jawaban: C (Segilima Beraturan)</b><br />
-          Sudut segilima beraturan adalah $108^\circ$.<br />
-          Untuk menutup lantai ($360^\circ$) tanpa celah:<br />
-          $108 \times 3 = 324$ (Kurang/ada celah).<br />
-          $108 \times 4 = 432$ (Tumpang tindih).
-        </div>
-        <div class="pembahasan">
-          <b>25. Jawaban: D (Segilima Beraturan)</b><br />
-          Segitiga siku-siku memiliki sudut $90^\circ$ dan $45^\circ$.<br />
-          Segilima beraturan butuh sudut $108^\circ$. Tidak mungkin membuat
-          $108^\circ$ dari kombinasi $90^\circ$ dan $45^\circ$.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 26-30 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Pembahasan Bagian 6</div>
-        <div class="pembahasan">
-          <b>26. Jawaban: A (1 Pasang)</b><br />
-          Di titik potong diagonal, ada 4 sudut. 2 tumpul (atas bawah) dan 2
-          lancip (kiri kanan).<br />
-          Pasangan sudut lancip yang bertolak belakang hanya ada sepasang (kiri
-          dan kanan).
-        </div>
-        <div class="pembahasan">
-          <b>27. Jawaban: C ($90^\circ$)</b><br />
-          Jumlah sudut dalam sepihak = $180^\circ$ (misal $2a + 2b = 180$).<br />
-          Garis bagi membagi sudut jadi setengahnya ($a + b = 90$).<br />
-          Sisa sudut pada segitiga kecil di tengah = $180 - (a+b) = 180 - 90 =
-          90^\circ$.
-        </div>
-        <div class="pembahasan">
-          <b>28. Jawaban: C (10)</b><br />
-          Pola jabat tangan (kombinasi). Setiap 2 garis bertemu di 1 titik.<br />
-          Rumus: $\frac{n(n-1)}{2}$.<br />
-          Untuk 5 garis: $\frac{5 \times 4}{2} = 10$ titik potong.
-        </div>
-        <div class="pembahasan">
-          <b>29. Jawaban: C (10)</b><br />
-          5 segitiga kecil di ujung-ujung bintang.<br />
-          5 segitiga tumpul besar yang dibentuk dari gabungan 2 segitiga kecil +
-          segilima tengah.<br />
-          Total = 10 segitiga.
-        </div>
-        <div class="pembahasan">
-          <b>30. Jawaban: A (Satu lingkaran di tengah)</b><br />
-          Lipatan 2x (horizontal lalu vertikal) membuat "Pusat Kertas" pindah ke
-          salah satu pojok lipatan.<br />
-          Jika pojok pusat itu digunting, maka saat dibuka, lubangnya akan
-          berada tepat di tengah-tengah kertas.
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i
-          >Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya
-          Indonesia.</i
-        >
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+    </div>
   </body>
 </html>
