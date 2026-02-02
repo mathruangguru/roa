@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympiad Math Practice (Grade 7-8)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax Configuration for LaTeX rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4f46e5; /* indigo-600 */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #818cf8;
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .solution-step {
+             margin-bottom: 0.75rem;
+         }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .concept {
+            background-color: #eef2ff; /* indigo-50 */
+            border-left: 4px solid #4f46e5; /* indigo-600 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        /* Style for Indonesian translation */
+        em {
+            color: #4b5563; /* gray-600 */
+            font-style: normal; /* Normal font style (not italic) */
+            display: block;
+            margin-top: 0.25rem;
+        }
+        .solution-step em {
+            display: block;
+            color: #4b5563;
+            font-style: normal; /* Normal font style (not italic) */
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Ruangguru Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 3</h1>
+            <p class="text-gray-600 mt-2">Grade 7-8 | Algebraic Expressions, Factorisation & Linear Equations</p>
+        </header>
+
+        <main>
+            <!-- Questions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Questions / Soal-Soal</h2>
+
+                <!-- Topic 1 -->
+                <h3 class="topic-title">Topic 1: Algebraic Expressions & Factorisation</h3>
+
+                <div class="item-container">
+                    <p><strong>1.</strong> Find the value of $12345^2 - 12344^2$.</p>
+                    <em>Tentukan nilai dari $12345^2 - 12344^2$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>2.</strong> Factorise completely: $x^2 - y^2 - 14x + 49$.</p>
+                    <em>Faktorkan selengkapnya: $x^2 - y^2 - 14x + 49$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>3.</strong> Given $x > 0$ and $x + \frac{1}{x} = 8$, find the value of $x^2 + \frac{1}{x^2}$.</p>
+                    <em>Diketahui $x > 0$ dan $x + \frac{1}{x} = 8$, tentukan nilai dari $x^2 + \frac{1}{x^2}$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>4.</strong> Simplify $\sqrt{20 + 2\sqrt{51}}$.</p>
+                    <em>Sederhanakan $\sqrt{20 + 2\sqrt{51}}$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>5.</strong> Find the coefficient of $x^3$ in the expansion of $(3 + x - 2x^2)^4$.</p>
+                    <em>Tentukan koefisien dari $x^3$ dalam penjabaran $(3 + x - 2x^2)^4$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>6.</strong> Find the value of: $100^2 - 99^2 + 98^2 - 97^2 + \dots + 2^2 - 1^2$.</p>
+                    <em>Tentukan nilai dari: $100^2 - 99^2 + 98^2 - 97^2 + \dots + 2^2 - 1^2$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>7.</strong> Given $a$ satisfies $4 = a + a^{-1}$. What is the value of $a^4 + a^{-4}$?</p>
+                    <em>Diketahui $a$ memenuhi persamaan $4 = a + a^{-1}$. Berapakah nilai dari $a^4 + a^{-4}$?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>8.</strong> Factorise $3x^2 - 9x - 210$.</p>
+                    <em>Faktorkan $3x^2 - 9x - 210$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>9.</strong> Given $a$ and $b$ are the roots of $x^2 + 7x + 23 = 0$, find the value of $a^3 + b^3$.</p>
+                    <em>Diketahui $a$ dan $b$ adalah akar-akar dari $x^2 + 7x + 23 = 0$, tentukan nilai dari $a^3 + b^3$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>10.</strong> Write the expression $\sqrt{3^6} - \sqrt[3]{3^6}$ as an integer.</p>
+                    <em>Tuliskan ekspresi $\sqrt{3^6} - \sqrt[3]{3^6}$ sebagai bilangan bulat.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>11.</strong> Find the value of $(9.87)^2 + 19.74 \times 0.13 + (0.13)^2$.</p>
+                    <em>Tentukan nilai dari $(9.87)^2 + 19.74 \times 0.13 + (0.13)^2$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>12.</strong> Find the $1000^{th}$ root of $10^{(10^{10})}$.</p>
+                    <em>Tentukan akar ke-1000 dari $10^{(10^{10})}$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>13.</strong> Given $m + n = 28$ and $m^2 + n^2 = 400$, find the value of $m^2 - n^2$ given $m > n$.</p>
+                    <em>Diketahui $m + n = 28$ dan $m^2 + n^2 = 400$, tentukan nilai dari $m^2 - n^2$ jika diketahui $m > n$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>14.</strong> If $(3x - 4) : (y + 15)$ is a fixed ratio and if $x = \frac{7}{3}$, then $y = 12$. Find the value of $x + y$ when $x = 2$.</p>
+                    <em>Jika $(3x - 4) : (y + 15)$ adalah rasio tetap dan jika $x = \frac{7}{3}$, maka $y = 12$. Tentukan nilai $x + y$ ketika $x = 2$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>15.</strong> Simplify: $\frac{32.8 \times 32.8 + 2 \times 32.8 \times 67.2 + 67.2 \times 67.2}{10}$.</p>
+                    <em>Sederhanakan: $\frac{32.8 \times 32.8 + 2 \times 32.8 \times 67.2 + 67.2 \times 67.2}{10}$.</em>
+                </div>
+
+                <!-- Topic 2 -->
+                <h3 class="topic-title">Topic 2: Equations & Systems of Linear Equations</h3>
+
+                <div class="item-container">
+                    <p><strong>16.</strong> Find the value of $x$ if: $\begin{cases} 3x + y = 30 \\ 5x - 3y = 8 \end{cases}$</p>
+                    <em>Carilah nilai dari $x$ jika: $\begin{cases} 3x + y = 30 \\ 5x - 3y = 8 \end{cases}$</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>17.</strong> Find the value of $xy$ if $|4x + 3y - 9| + |y - x + 4| = 0$.</p>
+                    <em>Tentukan nilai $xy$ jika $|4x + 3y - 9| + |y - x + 4| = 0$.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>18.</strong> There are some chickens and rabbits in a cage. The number of rabbits is 3 times less 16 as the number of chickens. The total legs of rabbits is 186 more than that of chickens. How many rabbits are there?</p>
+                    <em>Terdapat sejumlah ayam dan kelinci di sebuah kandang. Jumlah kelinci 3 kali jumlah ayam dikurangi 16. Jumlah kaki kelinci 186 lebih banyak dari jumlah kaki ayam. Berapa jumlah kelinci di sana?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>19.</strong> Given that $A:B = 4:1$, $B:C = 3:2$, $C:D = 3:5$ and $A+B+C+D = 427$. What is the value of $A$?</p>
+                    <em>Diketahui $A:B = 4:1$, $B:C = 3:2$, $C:D = 3:5$ dan $A+B+C+D = 427$. Berapa nilai dari $A$?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>20.</strong> Find the value of $x+y$ if: $\begin{cases} x + 2y = 13 \\ 6x + 7y = 38 \end{cases}$</p>
+                    <em>Tentukan nilai dari $x+y$ jika: $\begin{cases} x + 2y = 13 \\ 6x + 7y = 38 \end{cases}$</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>21.</strong> Two cities are 600 km apart. Two cars A and B start off at the same time towards each other. They are 52 km apart 4 hours later without meeting each other. If A drives at 59 km/h, how much faster is B than A?</p>
+                    <em>Dua kota berjarak 600 km. Dua mobil A dan B berangkat bersamaan saling mendekat. 4 jam kemudian mereka berjarak 52 km (belum berpapasan). Jika kecepatan A 59 km/jam, berapa selisih kecepatan B dibanding A?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>22.</strong> Paul drives to the office and expects to arrive at 9:00. If he drives at 90 km/h, he will be 5 minutes earlier. If he drives at 60 km/h, he will be 5 minutes late. If he drives at 72 km/h, what time will he arrive?</p>
+                    <em>Paul berkendara ke kantor dan berencana tiba pukul 9:00. Jika ia berkendara 90 km/jam, ia tiba 5 menit lebih awal. Jika 60 km/jam, ia terlambat 5 menit. Jika ia berkendara 72 km/jam, pukul berapa ia tiba?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>23.</strong> A cook mixes sugar water of concentrations 48% and 80%. Then he pours 8L of water to obtain 48L of sugar water with concentration 50%. How many more litres of sugar water with concentration 48% does the cook use than sugar water with concentration 80%?</p>
+                    <em>Seorang koki mencampur air gula konsentrasi 48% dan 80%. Kemudian ia menuangkan 8L air murni untuk mendapatkan 48L air gula berkonsentrasi 50%. Berapa liter lebih banyak air gula 48% yang digunakan dibandingkan air gula 80%?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>24.</strong> If the two digits of a two-digit number are reversed, the new 2-digit number is increased by 9. If the sum of the digits is 17, find the original number.</p>
+                    <em>Jika dua angka dari bilangan dua digit dibalik, bilangan baru bertambah 9. Jika jumlah angka-angkanya 17, tentukan bilangan aslinya.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>25.</strong> Find the value of $2xy$ if: $\begin{cases} x + 5y - 37 = 0 \\ 4x - 3y + 36 = 0 \end{cases}$</p>
+                    <em>Carilah nilai dari $2xy$ jika: $\begin{cases} x + 5y - 37 = 0 \\ 4x - 3y + 36 = 0 \end{cases}$</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>26.</strong> There are some giraffes and ants in a room. The number of ants is 7 times the number of giraffes. The total number of legs of giraffes is 570 less than that of ants. How many ants are there? (An ant has 6 legs).</p>
+                    <em>Terdapat beberapa jerapah dan semut di ruangan. Jumlah semut adalah 7 kali jumlah jerapah. Total kaki jerapah 570 lebih sedikit dari kaki semut. Berapa banyak semut? (Semut memiliki 6 kaki).</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>27.</strong> There are two bags of mixed coffee beans. The weight ratio of Colombian to Brazilian beans in the first bag is 4:3. In the second bag is 1:2. If the weight of the first bag is twice the second, find the weight ratio of Colombian to Brazilian in the mixture.</p>
+                    <em>Ada dua tas biji kopi campuran. Rasio berat kopi Kolombia terhadap Brasil di tas pertama adalah 4:3. Di tas kedua 1:2. Jika berat tas pertama dua kali tas kedua, tentukan rasio kopi Kolombia terhadap Brasil dalam campuran total.</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>28.</strong> If a mother makes $x$ cakes in 2 hours and $y$ pizzas in 3 hours, how many cakes and pizzas altogether does she make in 6 hours?</p>
+                    <em>Jika seorang ibu membuat $x$ kue dalam 2 jam dan $y$ pizza dalam 3 jam, berapa total kue dan pizza yang ia buat dalam 6 jam?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>29.</strong> It is given that the ratio of ages of Arthur and Ben is 1:3. The ratio of ages of Ben and Chris is 3:1. The ratio of ages of Chris and David is 4:5. Their grandma divides 1325ml of apple juice between them in the ratio of their ages. What is the total amount Ben and David get?</p>
+                    <em>Diketahui rasio umur Arthur:Ben = 1:3. Rasio Ben:Chris = 3:1. Rasio Chris:David = 4:5. Nenek membagi 1325ml jus apel sesuai rasio umur. Berapa total jus yang didapat Ben dan David?</em>
+                </div>
+
+                <div class="item-container">
+                    <p><strong>30.</strong> If $\frac{6}{x^2-4} - \frac{1}{x+2} + \frac{1}{x-2} = 2 \frac{px+q}{x^2-4}$, find the value of $p^2 + q^2$.</p>
+                    <em>Jika $\frac{6}{x^2-4} - \frac{1}{x+2} + \frac{1}{x-2} = 2 \frac{px+q}{x^2-4}$, tentukan nilai dari $p^2 + q^2$.</em>
+                </div>
+            </section>
+
+            <!-- Solutions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Detailed Solutions / Pembahasan Detail</h2>
+
+                <h3 class="topic-title">Algebraic Expressions & Factorisation</h3>
+
+                <!-- Q1 -->
+                <div class="item-container">
+                    <p><strong>1. Solution:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> This follows the pattern $a^2 - b^2 = (a-b)(a+b)$.</p>
+                        <p><em><strong>Konsep:</strong> Ini mengikuti pola selisih kuadrat $a^2 - b^2 = (a-b)(a+b)$.</em></p>
+                    </div>
+                    <p class="solution-step">Let $a = 12345$ and $b = 12344$.<br><em>Misalkan $a = 12345$ dan $b = 12344$.</em></p>
+                    <p class="solution-step">$a^2 - b^2 = (12345 - 12344)(12345 + 12344)$</p>
+                    <p class="solution-step">$a^2 - b^2 = (1)(24689) = 24689$.</p>
+                    <div class="final-answer">Answer / Jawaban: 24689</div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="item-container">
+                    <p><strong>2. Solution:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> Rearrange terms to form a perfect square: $x^2 - 14x + 49 - y^2$. The first three terms form $(x-7)^2$.</p>
+                        <p><em><strong>Konsep:</strong> Susun ulang suku-suku untuk membentuk kuadrat sempurna: $x^2 - 14x + 49 - y^2$. Tiga suku pertama membentuk $(x-7)^2$.</em></p>
+                    </div>
+                    <p class="solution-step">So, $(x-7)^2 - y^2$.<br><em>Jadi, $(x-7)^2 - y^2$.</em></p>
+                    <p class="solution-step">Using difference of squares $A^2 - B^2 = (A-B)(A+B)$:<br><em>Menggunakan selisih kuadrat $A^2 - B^2 = (A-B)(A+B)$:</em></p>
+                    <p class="solution-step">$(x-7 - y)(x-7 + y)$ or $(x - y - 7)(x + y - 7)$.<br><em>$(x-7 - y)(x-7 + y)$ atau $(x - y - 7)(x + y - 7)$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: $(x - y - 7)(x + y - 7)$</div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="item-container">
+                    <p><strong>3. Solution:</strong></p>
+                    <p class="solution-step">Given $x + \frac{1}{x} = 8$. Square both sides:<br><em>Diketahui $x + \frac{1}{x} = 8$. Kuadratkan kedua ruas:</em></p>
+                    <p class="solution-step">$(x + \frac{1}{x})^2 = 8^2$</p>
+                    <p class="solution-step">$x^2 + 2(x)(\frac{1}{x}) + \frac{1}{x^2} = 64$</p>
+                    <p class="solution-step">$x^2 + 2 + \frac{1}{x^2} = 64$</p>
+                    <p class="solution-step">$x^2 + \frac{1}{x^2} = 62$.</p>
+                    <div class="final-answer">Answer / Jawaban: 62</div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="item-container">
+                    <p><strong>4. Solution:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> To simplify $\sqrt{20 + 2\sqrt{51}}$, assume it equals $\sqrt{a} + \sqrt{b}$. Use $(\sqrt{a} + \sqrt{b})^2 = (a+b) + 2\sqrt{ab}$.</p>
+                        <p><em><strong>Konsep:</strong> Untuk menyederhanakan $\sqrt{20 + 2\sqrt{51}}$, asumsikan bentuknya sama dengan $\sqrt{a} + \sqrt{b}$. Gunakan $(\sqrt{a} + \sqrt{b})^2 = (a+b) + 2\sqrt{ab}$.</em></p>
+                    </div>
+                    <p class="solution-step">We need $a+b = 20$ and $ab = 51$.<br><em>Kita membutuhkan $a+b = 20$ dan $ab = 51$.</em></p>
+                    <p class="solution-step">Factors of 51 are 1, 51 and 3, 17.<br><em>Faktor dari 51 adalah 1, 51 dan 3, 17.</em></p>
+                    <p class="solution-step">$3 + 17 = 20$. So $a=17, b=3$.<br><em>$3 + 17 = 20$. Jadi $a=17, b=3$.</em></p>
+                    <p class="solution-step">Result: $\sqrt{17} + \sqrt{3}$.<br><em>Hasil: $\sqrt{17} + \sqrt{3}$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: $\sqrt{17} + \sqrt{3}$</div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="item-container">
+                    <p><strong>5. Solution:</strong></p>
+                    <p class="solution-step">Expansion of $(3 + x - 2x^2)^4$. We need $x^3$. Let the terms be $A=3, B=x, C=-2x^2$. We choose terms from 4 brackets that multiply to $x^3$.<br><em>Penjabaran dari $(3 + x - 2x^2)^4$. Kita mencari $x^3$. Misalkan suku-sukunya $A=3, B=x, C=-2x^2$. Kita pilih suku dari 4 kurung yang jika dikalikan menghasilkan $x^3$.</em></p>
+                    <p class="solution-step">Possible combinations of $(A, B, C)$ powers:<br><em>Kemungkinan kombinasi pangkat $(A, B, C)$:</em></p>
+                    <p class="solution-step">1. $B^3 \cdot A^1$: Choose $x$ three times, $3$ once. Ways: $\binom{4}{3} = 4$. Value: $4 \times (x)^3 \times (3)^1 = 12x^3$.<br><em>1. $B^3 \cdot A^1$: Pilih $x$ tiga kali, $3$ sekali. Cara: $\binom{4}{3} = 4$. Nilai: $4 \times (x)^3 \times (3)^1 = 12x^3$.</em></p>
+                    <p class="solution-step">2. $B^1 \cdot C^1 \cdot A^2$: Choose $x$ once, $-2x^2$ once, $3$ twice. Ways: $4! / (1!1!2!) = 12$. Value: $12 \times (x) \times (-2x^2) \times (3)^2 = 12 \times -2 \times 9 x^3 = -216x^3$.<br><em>2. $B^1 \cdot C^1 \cdot A^2$: Pilih $x$ sekali, $-2x^2$ sekali, $3$ dua kali. Cara: $4! / (1!1!2!) = 12$. Nilai: $12 \times (x) \times (-2x^2) \times (3)^2 = 12 \times -2 \times 9 x^3 = -216x^3$.</em></p>
+                    <p class="solution-step">Total coeff: $12 - 216 = -204$.<br><em>Total koefisien: $12 - 216 = -204$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: -204</div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="item-container">
+                    <p><strong>6. Solution:</strong></p>
+                    <p class="solution-step">$100^2 - 99^2 + 98^2 - 97^2 + \dots + 2^2 - 1^2$.</p>
+                    <p class="solution-step">Group in pairs: $(100^2 - 99^2) + (98^2 - 97^2) + \dots$<br><em>Kelompokkan berpasangan: $(100^2 - 99^2) + (98^2 - 97^2) + \dots$</em></p>
+                    <p class="solution-step">Using $a^2-b^2 = (a-b)(a+b)$, and noting difference is always 1:<br><em>Menggunakan $a^2-b^2 = (a-b)(a+b)$, dan memperhatikan selisihnya selalu 1:</em></p>
+                    <p class="solution-step">$= (1)(100+99) + (1)(98+97) + \dots + (1)(2+1)$.</p>
+                    <p class="solution-step">This is simply the sum of integers from 1 to 100.<br><em>Ini hanyalah jumlah bilangan bulat dari 1 sampai 100.</em></p>
+                    <p class="solution-step">Sum $= \frac{n(n+1)}{2} = \frac{100 \times 101}{2} = 5050$.</p>
+                    <div class="final-answer">Answer / Jawaban: 5050</div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="item-container">
+                    <p><strong>7. Solution:</strong></p>
+                    <p class="solution-step">Given $a + \frac{1}{a} = 4$.<br><em>Diketahui $a + \frac{1}{a} = 4$.</em></p>
+                    <p class="solution-step">Squaring: $a^2 + \frac{1}{a^2} = 4^2 - 2 = 14$.<br><em>Kuadratkan: $a^2 + \frac{1}{a^2} = 4^2 - 2 = 14$.</em></p>
+                    <p class="solution-step">Squaring again: $(a^2 + \frac{1}{a^2})^2 = 14^2 = 196$.<br><em>Kuadratkan lagi: $(a^2 + \frac{1}{a^2})^2 = 14^2 = 196$.</em></p>
+                    <p class="solution-step">$a^4 + 2 + \frac{1}{a^4} = 196$.</p>
+                    <p class="solution-step">$a^4 + \frac{1}{a^4} = 194$.</p>
+                    <div class="final-answer">Answer / Jawaban: 194</div>
+                </div>
+
+                <!-- Q8 -->
+                <div class="item-container">
+                    <p><strong>8. Solution:</strong></p>
+                    <p class="solution-step">Factorise $3x^2 - 9x - 210$.<br><em>Faktorkan $3x^2 - 9x - 210$.</em></p>
+                    <p class="solution-step">Factor out 3: $3(x^2 - 3x - 70)$.<br><em>Keluarkan faktor 3: $3(x^2 - 3x - 70)$.</em></p>
+                    <p class="solution-step">Find factors of -70 that sum to -3: -10 and +7.<br><em>Cari faktor dari -70 yang jumlahnya -3: -10 dan +7.</em></p>
+                    <p class="solution-step">So, $3(x-10)(x+7)$.<br><em>Jadi, $3(x-10)(x+7)$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: $3(x-10)(x+7)$</div>
+                </div>
+
+                <!-- Q9 -->
+                <div class="item-container">
+                    <p><strong>9. Solution:</strong></p>
+                    <p class="solution-step">Roots sum $a+b = -7$, product $ab = 23$.<br><em>Jumlah akar $a+b = -7$, hasil kali $ab = 23$.</em></p>
+                    <p class="solution-step">$a^3 + b^3 = (a+b)(a^2 - ab + b^2)$.</p>
+                    <p class="solution-step">We know $a^2 + b^2 = (a+b)^2 - 2ab = (-7)^2 - 2(23) = 49 - 46 = 3$.<br><em>Kita tahu $a^2 + b^2 = (a+b)^2 - 2ab = (-7)^2 - 2(23) = 49 - 46 = 3$.</em></p>
+                    <p class="solution-step">$a^3 + b^3 = (-7)(3 - 23) = (-7)(-20) = 140$.</p>
+                    <div class="final-answer">Answer / Jawaban: 140</div>
+                </div>
+
+                <!-- Q10 -->
+                <div class="item-container">
+                    <p><strong>10. Solution:</strong></p>
+                    <p class="solution-step">$\sqrt{3^6} = (3^6)^{1/2} = 3^3 = 27$.</p>
+                    <p class="solution-step">$\sqrt[3]{3^6} = (3^6)^{1/3} = 3^2 = 9$.</p>
+                    <p class="solution-step">$27 - 9 = 18$.</p>
+                    <div class="final-answer">Answer / Jawaban: 18</div>
+                </div>
+
+                <!-- Q11 -->
+                <div class="item-container">
+                    <p><strong>11. Solution:</strong></p>
+                    <p class="solution-step">$(9.87)^2 + 19.74 \times 0.13 + (0.13)^2$.</p>
+                    <p class="solution-step">Notice $19.74 = 2 \times 9.87$.<br><em>Perhatikan bahwa $19.74 = 2 \times 9.87$.</em></p>
+                    <p class="solution-step">So expression is $a^2 + 2ab + b^2$ where $a=9.87, b=0.13$.<br><em>Jadi ekspresi tersebut adalah $a^2 + 2ab + b^2$ dimana $a=9.87, b=0.13$.</em></p>
+                    <p class="solution-step">$= (9.87 + 0.13)^2 = (10.00)^2 = 100$.</p>
+                    <div class="final-answer">Answer / Jawaban: 100</div>
+                </div>
+
+                <!-- Q12 -->
+                <div class="item-container">
+                    <p><strong>12. Solution:</strong></p>
+                    <p class="solution-step">$1000^{th}$ root means power $1/1000$ or $10^{-3}$.<br><em>Akar ke-1000 berarti pangkat $1/1000$ atau $10^{-3}$.</em></p>
+                    <p class="solution-step">$(10^{(10^{10})})^{10^{-3}} = 10^{(10^{10} \times 10^{-3})} = 10^{(10^{10-3})} = 10^{(10^7)}$.</p>
+                    <p class="solution-step">Note: The answer is $10^{10^7}$.<br><em>Catatan: Jawabannya adalah $10^{10^7}$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: $10^{(10^7)}$</div>
+                </div>
+
+                <!-- Q13 -->
+                <div class="item-container">
+                    <p><strong>13. Solution:</strong></p>
+                    <p class="solution-step">$m^2+n^2 = (m+n)^2 - 2mn \implies 400 = 28^2 - 2mn$.</p>
+                    <p class="solution-step">$400 = 784 - 2mn \implies 2mn = 384 \implies mn = 192$.</p>
+                    <p class="solution-step">We need $m-n$. $(m-n)^2 = m^2+n^2 - 2mn = 400 - 384 = 16$.<br><em>Kita mencari $m-n$. $(m-n)^2 = m^2+n^2 - 2mn = 400 - 384 = 16$.</em></p>
+                    <p class="solution-step">Since $m>n$, $m-n = 4$.<br><em>Karena $m>n$, maka $m-n = 4$.</em></p>
+                    <p class="solution-step">$m^2 - n^2 = (m+n)(m-n) = 28 \times 4 = 112$.</p>
+                    <div class="final-answer">Answer / Jawaban: 112</div>
+                </div>
+
+                <!-- Q14 -->
+                <div class="item-container">
+                    <p><strong>14. Solution:</strong></p>
+                    <p class="solution-step">Fixed ratio $k = \frac{3x-4}{y+15}$.<br><em>Rasio tetap $k = \frac{3x-4}{y+15}$.</em></p>
+                    <p class="solution-step">First case: $x = 7/3, y=12$.<br><em>Kasus pertama: $x = 7/3, y=12$.</em></p>
+                    <p class="solution-step">$3(7/3) - 4 = 7-4=3$. Denominator $12+15=27$.</p>
+                    <p class="solution-step">$k = 3/27 = 1/9$.</p>
+                    <p class="solution-step">Second case: $x=2$.<br><em>Kasus kedua: $x=2$.</em></p>
+                    <p class="solution-step">$\frac{3(2)-4}{y+15} = \frac{1}{9} \implies \frac{2}{y+15} = \frac{1}{9}$.</p>
+                    <p class="solution-step">$y+15 = 18 \implies y = 3$.</p>
+                    <p class="solution-step">Find $x+y$: $2 + 3 = 5$.<br><em>Cari $x+y$: $2 + 3 = 5$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 5</div>
+                </div>
+
+                <!-- Q15 -->
+                <div class="item-container">
+                    <p><strong>15. Solution:</strong></p>
+                    <p class="solution-step">Numerator is $a^2 + 2ab + b^2$ with $a=32.8, b=67.2$.<br><em>Pembilang adalah $a^2 + 2ab + b^2$ dengan $a=32.8, b=67.2$.</em></p>
+                    <p class="solution-step">Numerator $= (32.8 + 67.2)^2 = (100)^2 = 10000$.</p>
+                    <p class="solution-step">Divide by 10: $10000 / 10 = 1000$.<br><em>Bagi dengan 10: $10000 / 10 = 1000$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 1000</div>
+                </div>
+
+                <h3 class="topic-title">Equations & Systems of Linear Equations</h3>
+
+                <!-- Q16 -->
+                <div class="item-container">
+                    <p><strong>16. Solution:</strong></p>
+                    <p class="solution-step">1) $3x + y = 30 \implies y = 30 - 3x$.</p>
+                    <p class="solution-step">2) $5x - 3y = 8$.</p>
+                    <p class="solution-step">Sub (1) into (2):<br><em>Substitusi (1) ke (2):</em></p>
+                    <p class="solution-step">$5x - 3(30 - 3x) = 8$</p>
+                    <p class="solution-step">$5x - 90 + 9x = 8$</p>
+                    <p class="solution-step">$14x = 98 \implies x = 7$.</p>
+                    <div class="final-answer">Answer / Jawaban: 7</div>
+                </div>
+
+                <!-- Q17 -->
+                <div class="item-container">
+                    <p><strong>17. Solution:</strong></p>
+                    <div class="concept">
+                        <p><strong>Concept:</strong> For sum of absolute values to be 0, both must be 0.</p>
+                        <p><em><strong>Konsep:</strong> Agar jumlah nilai mutlak menjadi 0, keduanya harus bernilai 0.</em></p>
+                    </div>
+                    <p class="solution-step">$4x + 3y - 9 = 0 \implies 4x + 3y = 9$ (1)</p>
+                    <p class="solution-step">$y - x + 4 = 0 \implies -x + y = -4 \implies x - y = 4$ (2)</p>
+                    <p class="solution-step">From (2), $x = y+4$. Sub into (1):<br><em>Dari (2), $x = y+4$. Substitusi ke (1):</em></p>
+                    <p class="solution-step">$4(y+4) + 3y = 9$</p>
+                    <p class="solution-step">$4y + 16 + 3y = 9$</p>
+                    <p class="solution-step">$7y = -7 \implies y = -1$.</p>
+                    <p class="solution-step">$x = -1 + 4 = 3$.</p>
+                    <p class="solution-step">$xy = 3(-1) = -3$.</p>
+                    <div class="final-answer">Answer / Jawaban: -3</div>
+                </div>
+
+                <!-- Q18 -->
+                <div class="item-container">
+                    <p><strong>18. Solution:</strong></p>
+                    <p class="solution-step">Let Chickens = $C$, Rabbits = $R$. Interpretation: $R = 3C - 16$.<br><em>Misalkan Ayam = $C$, Kelinci = $R$. Interpretasi: $R = 3C - 16$.</em></p>
+                    <p class="solution-step">Total legs of rabbits ($4R$) is 186 more than chickens ($2C$).<br><em>Total kaki kelinci ($4R$) 186 lebih banyak dari ayam ($2C$).</em></p>
+                    <p class="solution-step">$4R - 2C = 186$.</p>
+                    <p class="solution-step">Sub $R$: $4(3C - 16) - 2C = 186$.<br><em>Substitusi $R$: $4(3C - 16) - 2C = 186$.</em></p>
+                    <p class="solution-step">$12C - 64 - 2C = 186$.</p>
+                    <p class="solution-step">$10C = 250 \implies C = 25$.</p>
+                    <p class="solution-step">$R = 3(25) - 16 = 75 - 16 = 59$.</p>
+                    <div class="final-answer">Answer / Jawaban: 59</div>
+                </div>
+
+                <!-- Q19 -->
+                <div class="item-container">
+                    <p><strong>19. Solution:</strong></p>
+                    <p class="solution-step">$A:B = 4:1 \to 12:3$.</p>
+                    <p class="solution-step">$B:C = 3:2 \to 3:2$.</p>
+                    <p class="solution-step">$C:D = 3:5 \to 2:?$. Match C. LCM(2,3) = 6.<br><em>$C:D = 3:5 \to 2:?$. Samakan C. KPK(2,3) = 6.</em></p>
+                    <p class="solution-step">$B:C = 9:6$ (Multiply by 3 / Kalikan 3).</p>
+                    <p class="solution-step">$A:B = 36:9$ (Multiply by 9 / Kalikan 9).</p>
+                    <p class="solution-step">$C:D = 6:10$ (Multiply by 2 / Kalikan 2).</p>
+                    <p class="solution-step">Ratio $A:B:C:D = 36 : 9 : 6 : 10$.</p>
+                    <p class="solution-step">Total units $36+9+6+10 = 61$.<br><em>Total unit $36+9+6+10 = 61$.</em></p>
+                    <p class="solution-step">Total sum 427. 1 unit = $427/61 = 7$.<br><em>Jumlah total 427. 1 unit = $427/61 = 7$.</em></p>
+                    <p class="solution-step">$A = 36 \text{ units} \times 7 = 252$.</p>
+                    <div class="final-answer">Answer / Jawaban: 252</div>
+                </div>
+
+                <!-- Q20 -->
+                <div class="item-container">
+                    <p><strong>20. Solution:</strong></p>
+                    <p class="solution-step">1) $x + 2y = 13$</p>
+                    <p class="solution-step">2) $6x + 7y = 38$</p>
+                    <p class="solution-step">Multiply (1) by 6: $6x + 12y = 78$.<br><em>Kalikan (1) dengan 6: $6x + 12y = 78$.</em></p>
+                    <p class="solution-step">Subtract (2): $(6x+12y) - (6x+7y) = 78 - 38$.<br><em>Kurangi (2): $(6x+12y) - (6x+7y) = 78 - 38$.</em></p>
+                    <p class="solution-step">$5y = 40 \implies y = 8$.</p>
+                    <p class="solution-step">$x + 16 = 13 \implies x = -3$.</p>
+                    <p class="solution-step">$x + y = -3 + 8 = 5$.</p>
+                    <div class="final-answer">Answer / Jawaban: 5</div>
+                </div>
+
+                <!-- Q21 -->
+                <div class="item-container">
+                    <p><strong>21. Solution:</strong></p>
+                    <p class="solution-step">Distance 600. Time 4h. Remaining 52.<br><em>Jarak 600. Waktu 4 jam. Sisa 52.</em></p>
+                    <p class="solution-step">Distance covered = $600 - 52 = 548$ km.<br><em>Jarak ditempuh = $600 - 52 = 548$ km.</em></p>
+                    <p class="solution-step">Sum of speeds $(V_a + V_b) = 548 / 4 = 137$ km/h.<br><em>Jumlah kecepatan $(V_a + V_b) = 548 / 4 = 137$ km/jam.</em></p>
+                    <p class="solution-step">Given $V_a = 59$.<br><em>Diketahui $V_a = 59$.</em></p>
+                    <p class="solution-step">$59 + V_b = 137 \implies V_b = 78$.</p>
+                    <p class="solution-step">Difference $= 78 - 59 = 19$ km/h.<br><em>Selisih $= 78 - 59 = 19$ km/jam.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 19 km/h</div>
+                </div>
+
+                <!-- Q22 -->
+                <div class="item-container">
+                    <p><strong>22. Solution:</strong></p>
+                    <p class="solution-step">Distance $D$, correct time $T$.<br><em>Jarak $D$, waktu tepat $T$.</em></p>
+                    <p class="solution-step">$D/90 = T - 5/60$ (early / awal)</p>
+                    <p class="solution-step">$D/60 = T + 5/60$ (late / telat)</p>
+                    <p class="solution-step">Subtract: $D/60 - D/90 = 10/60 = 1/6$.<br><em>Kurangi: $D/60 - D/90 = 10/60 = 1/6$.</em></p>
+                    <p class="solution-step">Multiply by 180: $3D - 2D = 30 \implies D = 30$ km.<br><em>Kalikan 180: $3D - 2D = 30 \implies D = 30$ km.</em></p>
+                    <p class="solution-step">Find $T$: $30/60 = T + 5/60 \implies 0.5 = T + 1/12$.<br><em>Cari $T$: $30/60 = T + 5/60 \implies 0.5 = T + 1/12$.</em></p>
+                    <p class="solution-step">$T = 1/2 - 1/12 = 5/12$ hours $= 25$ minutes.<br><em>$T = 1/2 - 1/12 = 5/12$ jam $= 25$ menit.</em></p>
+                    <p class="solution-step">Target time 9:00, so he leaves at 8:35.<br><em>Waktu target 9:00, jadi ia berangkat 8:35.</em></p>
+                    <p class="solution-step">Speed 72: Time $= 30/72$ hours $= 5/12$ hours $= 25$ minutes.<br><em>Kecepatan 72: Waktu $= 30/72$ jam $= 5/12$ jam $= 25$ menit.</em></p>
+                    <p class="solution-step">He arrives exactly at 9:00.<br><em>Ia tiba tepat pukul 9:00.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 09:00</div>
+                </div>
+
+                <!-- Q23 -->
+                <div class="item-container">
+                    <p><strong>23. Solution:</strong></p>
+                    <p class="solution-step">Let vol of 48% be $x$, 80% be $y$. Water is 8L (0% sugar).<br><em>Misalkan volume 48% adalah $x$, 80% adalah $y$. Air 8L (0% gula).</em></p>
+                    <p class="solution-step">Total vol = $x + y + 8 = 48 \implies x + y = 40$.</p>
+                    <p class="solution-step">Sugar balance: $0.48x + 0.80y + 0 = 0.50(48)$.<br><em>Keseimbangan gula: $0.48x + 0.80y + 0 = 0.50(48)$.</em></p>
+                    <p class="solution-step">$0.48x + 0.80y = 24$.</p>
+                    <p class="solution-step">Multiply by 100: $48x + 80y = 2400$. Divide by 8: $6x + 10y = 300$. Divide by 2: $3x + 5y = 150$.</p>
+                    <p class="solution-step">System: $x+y=40$ and $3x+5y=150$.</p>
+                    <p class="solution-step">$3(40-y) + 5y = 150 \implies 120 - 3y + 5y = 150$.</p>
+                    <p class="solution-step">$2y = 30 \implies y = 15$.</p>
+                    <p class="solution-step">$x = 25$.</p>
+                    <p class="solution-step">Difference $x - y = 25 - 15 = 10$.<br><em>Selisih $x - y = 25 - 15 = 10$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 10 L</div>
+                </div>
+
+                <!-- Q24 -->
+                <div class="item-container">
+                    <p><strong>24. Solution:</strong></p>
+                    <p class="solution-step">Number $10a+b$. Sum $a+b=17$ (Must be 8,9 or 9,8).<br><em>Bilangan $10a+b$. Jumlah $a+b=17$ (Harus 8,9 atau 9,8).</em></p>
+                    <p class="solution-step">Reversed $10b+a$.<br><em>Dibalik $10b+a$.</em></p>
+                    <p class="solution-step">$(10b+a) = (10a+b) + 9$.</p>
+                    <p class="solution-step">$9b - 9a = 9 \implies b - a = 1$.</p>
+                    <p class="solution-step">System: $a+b=17, b-a=1$.</p>
+                    <p class="solution-step">$2b = 18 \implies b=9, a=8$.</p>
+                    <p class="solution-step">Original number 89.<br><em>Bilangan asli 89.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 89</div>
+                </div>
+
+                <!-- Q25 -->
+                <div class="item-container">
+                    <p><strong>25. Solution:</strong></p>
+                    <p class="solution-step">1) $x + 5y = 37$</p>
+                    <p class="solution-step">2) $4x - 3y = -36$</p>
+                    <p class="solution-step">From (1) $x = 37 - 5y$. Sub into (2):<br><em>Dari (1) $x = 37 - 5y$. Substitusi ke (2):</em></p>
+                    <p class="solution-step">$4(37 - 5y) - 3y = -36$</p>
+                    <p class="solution-step">$148 - 20y - 3y = -36$</p>
+                    <p class="solution-step">$-23y = -184 \implies y = 8$.</p>
+                    <p class="solution-step">$x = 37 - 5(8) = -3$.</p>
+                    <p class="solution-step">$2xy = 2(-3)(8) = -48$.</p>
+                    <div class="final-answer">Answer / Jawaban: -48</div>
+                </div>
+
+                <!-- Q26 -->
+                <div class="item-container">
+                    <p><strong>26. Solution:</strong></p>
+                    <p class="solution-step">Let Giraffes = $G$, Ants = $A$.<br><em>Misalkan Jerapah = $G$, Semut = $A$.</em></p>
+                    <p class="solution-step">$A = 7G$.</p>
+                    <p class="solution-step">Legs: Giraffe=$4G$, Ant=$6A$.<br><em>Kaki: Jerapah=$4G$, Semut=$6A$.</em></p>
+                    <p class="solution-step">$4G = 6A - 570$.</p>
+                    <p class="solution-step">Sub $A=7G$: $4G = 6(7G) - 570$.<br><em>Substitusi $A=7G$: $4G = 6(7G) - 570$.</em></p>
+                    <p class="solution-step">$4G = 42G - 570 \implies 38G = 570$.</p>
+                    <p class="solution-step">$G = 15$.</p>
+                    <p class="solution-step">Ants $A = 7(15) = 105$.<br><em>Semut $A = 7(15) = 105$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: 105</div>
+                </div>
+
+                <!-- Q27 -->
+                <div class="item-container">
+                    <p><strong>27. Solution:</strong></p>
+                    <p class="solution-step">Bag 1: Col:Bra = 4:3 (Total 7 parts).<br><em>Tas 1: Col:Bra = 4:3 (Total 7 bagian).</em></p>
+                    <p class="solution-step">Bag 2: Col:Bra = 1:2 (Total 3 parts).<br><em>Tas 2: Col:Bra = 1:2 (Total 3 bagian).</em></p>
+                    <p class="solution-step">Weight Bag 1 = 2 $\times$ Weight Bag 2.<br><em>Berat Tas 1 = 2 $\times$ Berat Tas 2.</em></p>
+                    <p class="solution-step">Assume Bag 2 is 21 kg (LCM of 7,3). Then Bag 1 is 42 kg.<br><em>Asumsikan Tas 2 adalah 21 kg (KPK dari 7,3). Maka Tas 1 adalah 42 kg.</em></p>
+                    <p class="solution-step">Bag 1 contents: Col $= \frac{4}{7} \times 42 = 24$, Bra $= 18$.<br><em>Isi Tas 1: Col $= \frac{4}{7} \times 42 = 24$, Bra $= 18$.</em></p>
+                    <p class="solution-step">Bag 2 contents: Col $= \frac{1}{3} \times 21 = 7$, Bra $= 14$.<br><em>Isi Tas 2: Col $= \frac{1}{3} \times 21 = 7$, Bra $= 14$.</em></p>
+                    <p class="solution-step">Total Col $= 24+7=31$. Total Bra $= 18+14=32$.</p>
+                    <div class="final-answer">Answer / Jawaban: 31 : 32</div>
+                </div>
+
+                <!-- Q28 -->
+                <div class="item-container">
+                    <p><strong>28. Solution:</strong></p>
+                    <p class="solution-step">Rate cakes = $x/2$ per hour.<br><em>Laju kue = $x/2$ per jam.</em></p>
+                    <p class="solution-step">Rate pizzas = $y/3$ per hour.<br><em>Laju pizza = $y/3$ per jam.</em></p>
+                    <p class="solution-step">In 6 hours:<br><em>Dalam 6 jam:</em></p>
+                    <p class="solution-step">Cakes $= 6(x/2) = 3x$.<br><em>Kue $= 6(x/2) = 3x$.</em></p>
+                    <p class="solution-step">Pizzas $= 6(y/3) = 2y$.<br><em>Pizza $= 6(y/3) = 2y$.</em></p>
+                    <div class="final-answer">Answer / Jawaban: $3x + 2y$</div>
+                </div>
+
+                <!-- Q29 -->
+                <div class="item-container">
+                    <p><strong>29. Solution:</strong></p>
+                    <p class="solution-step">A:B = 1:3.</p>
+                    <p class="solution-step">B:C = 3:1.</p>
+                    <p class="solution-step">So A:B:C = 1:3:1.</p>
+                    <p class="solution-step">C:D = 4:5. Match C (currently 1, needs to be 4).<br><em>C:D = 4:5. Samakan C (saat ini 1, harus 4).</em></p>
+                    <p class="solution-step">Multiply A:B:C by 4 $\to$ 4:12:4.<br><em>Kalikan A:B:C dengan 4 $\to$ 4:12:4.</em></p>
+                    <p class="solution-step">A:B:C:D = 4 : 12 : 4 : 5.</p>
+                    <p class="solution-step">Total units = $4+12+4+5 = 25$.<br><em>Total unit = $4+12+4+5 = 25$.</em></p>
+                    <p class="solution-step">Total juice 1325. 1 unit = $1325/25 = 53$.<br><em>Total jus 1325. 1 unit = $1325/25 = 53$.</em></p>
+                    <p class="solution-step">Ben (12 units) + David (5 units) = 17 units.<br><em>Ben (12 unit) + David (5 unit) = 17 unit.</em></p>
+                    <p class="solution-step">$17 \times 53 = 901$.</p>
+                    <div class="final-answer">Answer / Jawaban: 901 ml</div>
+                </div>
+
+                <!-- Q30 -->
+                <div class="item-container">
+                    <p><strong>30. Solution:</strong></p>
+                    <p class="solution-step">LHS common denominator $x^2-4 = (x-2)(x+2)$.<br><em>Penyebut sama ruas kiri $x^2-4 = (x-2)(x+2)$.</em></p>
+                    <p class="solution-step">$\frac{6 - 1(x-2) + 1(x+2)}{x^2-4} = \frac{6 - x + 2 + x + 2}{x^2-4} = \frac{10}{x^2-4}$.</p>
+                    <p class="solution-step">Equation: $\frac{10}{x^2-4} = \frac{2(px+q)}{x^2-4}$.<br><em>Persamaan: $\frac{10}{x^2-4} = \frac{2(px+q)}{x^2-4}$.</em></p>
+                    <p class="solution-step">$10 = 2px + 2q$.</p>
+                    <p class="solution-step">Comparing coeffs: $x$ coeff is 0, constant is 10.<br><em>Membandingkan koefisien: koefisien $x$ adalah 0, konstanta adalah 10.</em></p>
+                    <p class="solution-step">$2p = 0 \implies p = 0$.</p>
+                    <p class="solution-step">$2q = 10 \implies q = 5$.</p>
+                    <p class="solution-step">$p^2 + q^2 = 0 + 25 = 25$.</p>
+                    <div class="final-answer">Answer / Jawaban: 25</div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
