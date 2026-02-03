@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan OSNK SMP: Teori Bilangan</title>
+    <title>OSK0708MAT12SESSIONS01 - PERTEMUAN 01 - Sifat & Operasi Bilangan 1</title>
     <script>
       window.MathJax = {
         tex: {
           inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
+            ["$", "$"],            ["\\(", "\\)"],
           ],
           displayMath: [
-            ["$$", "$$"],
-            ["\\[", "\\]"],
+            ["$$", "$$"],            ["\\[", "\\]"],
           ],
+          packages: { "[+]": ["ams"] },
         },
         svg: {
           fontCache: "global",
@@ -29,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -37,406 +36,520 @@
         --primary-text: #333333;
         --secondary-text: #555555;
         --border-color: #dddddd;
+        /* UI Theme Colors */
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f; /* Teal */
+        --table-header-bg: #e9e9e9;
         --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+        --box-bg-blue: #e3f2fd;
+        --box-border-blue: #2196f3;
       }
+
       *,
       *::before,
       *::after {
         box-sizing: border-box;
       }
+
       body {
         font-family: "Nunito", sans-serif;
-        font-size: 12pt;
-        line-height: 1.6;
+        font-size: 10pt;
+        line-height: 1.5;
         color: var(--primary-text);
         background-color: #e0e0e0;
         margin: 0;
         padding: 0;
       }
+
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .page {
         background: white;
         width: 21cm;
         min-height: 29.7cm;
-        height: auto;
-        padding: 2.5cm;
+        padding: 1.8cm 2.5cm;
         margin: 1cm auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         position: relative;
         display: flex;
         flex-direction: column;
-        page-break-after: always;
+        overflow: hidden;
       }
-      .page:last-of-type {
-        page-break-after: avoid;
-      }
-      .cover-page {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .cover-image {
-        max-width: 9cm;
-        height: auto;
-        margin-bottom: 40px;
-      }
-      .cover-title {
-        font-size: 38pt;
-        font-weight: 900;
-        margin: 0 0 15px 0;
-        line-height: 1.2;
-        color: #333;
-        border-bottom: none;
-      }
-      .cover-subtitle {
-        font-size: 18pt;
-        color: var(--secondary-text);
-        font-weight: 700;
-      }
+
+      /* WATERMARK */
       .page::before {
         content: "";
-        /* Logo Mathchamps sebagai watermark background */
         background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 14cm;
+        background-size: 10cm;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
-        opacity: 0.05;
-        z-index: 1;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Cover Page Specifics */
+      .cover-page {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
       .cover-page::before {
-        opacity: 0;
+        opacity: 0.05; /* Dikit lebih transparan di cover agar teks terbaca */
       }
-      .content-wrapper {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        flex-grow: 1;
+      .cover-image {
+        max-width: 8cm;
+        height: auto;
+        margin-bottom: 30px;
       }
-      h1 {
-        font-size: 24pt;
-        text-align: center;
-        border-bottom: 2px solid var(--primary-text);
-        padding-bottom: 10px;
-        margin-bottom: 20px;
+      .cover-title {
+        font-size: 32pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        margin: 0 0 10px 0;
+        line-height: 1.2;
       }
-      h2 {
+      .cover-subtitle {
         font-size: 16pt;
-        font-weight: 700;
         color: var(--secondary-text);
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 5px;
-        margin-top: 25px;
+        font-weight: 700;
       }
-      h3 {
-        font-size: 14pt;
+
+      /* Header Style */
+      .page-header {
+        margin: -1.8cm -2.5cm 0 -2.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+
+      .header-title-sub {
+        font-size: 10pt;
         font-weight: 700;
         color: var(--primary-text);
-        margin-top: 15px;
-        margin-bottom: 5px;
       }
-      .materi-konten {
+
+      .header-bottom-box {
+        padding: 0 2.5cm 15px 2.5cm;
+        text-align: left;
+      }
+
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 15px;
+        font-weight: 700;
+        font-size: 9pt;
+        color: var(--primary-text);
         display: block;
-        text-align: justify;
+        border-radius: 4px;
       }
-      .soal-latihan,
-      .soal-latihan-n {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 25px;
-        break-inside: avoid;
-        padding-bottom: 10px;
+
+      .header-logo {
+        max-height: 45px;
+        width: auto;
       }
-      .soal-latihan > b,
-      .soal-latihan-n > b {
-        margin-right: 8px;
-        flex-shrink: 0;
-      }
-      .soal-wrapper {
+
+      .content-wrapper {
         flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
       }
-      .soal-konten {
-        text-align: justify;
+
+      /* Content Styles */
+      .section-title {
+        font-size: 14pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        margin-top: 5px;
       }
-      .options {
-        padding-left: 0px;
-        margin-top: 10px;
-        display: block;
+
+      .materi-subjudul {
+        font-size: 11pt;
+        font-weight: 800;
+        color: var(--primary-text);
+        margin-top: 2px;
+        margin-bottom: 2px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 4px;
+        display: inline-block;
       }
-      .options div {
+      
+      .materi-subjudul-kecil {
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        margin-top: 5px;
         margin-bottom: 5px;
-        padding-left: 20px;
       }
+
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--border-color);
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .summary-table td, .summary-table th {
+        border: 1px solid var(--border-color);
+        padding: 6px 10px;
+        vertical-align: top;
+        font-size: 9.5pt;
+      }
+      .summary-table th {
+        background-color: var(--table-header-bg);
+        font-weight: 700;
+        text-align: left;
+      }
+
+      /* Box Styles */
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 4px solid var(--header-title-color);
+        padding: 10px 14px;
+        margin: 12px 0;
+        border-radius: 0 5px 5px 0;
+        font-size: 10pt;
+      }
+
+      .rumus-box-blue {
+        background-color: var(--box-bg-blue);
+        border-left: 4px solid var(--box-border-blue);
+        padding: 0px 2px;
+        margin: 12px 0;
+        border-radius: 0 5px 5px 0;
+        font-size: 10pt;
+      }
+
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 10px 14px;
+        margin: 12px 0;
+        font-size: 10pt;
+        border-radius: 0 5px 5px 0;
+      }
+
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 5px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 5px;
+      }
+
+      /* Soal & Pembahasan Styles */
+      .pembahasan-box {
+        margin-bottom: 25px;
+        page-break-inside: avoid;
+        padding-bottom: 20px;
+      }
+      
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 5px;
+      }
+      
+      .soal-nomor {
+        font-weight: 900;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 10pt;
+      }
+
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 Kolom horizontal */
+        gap: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        align-items: center;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+
+      /* Style khusus pembahasan */
+      .pembahasan-detail {
+        margin-top: 15px;
+        background-color: var(--highlight-box-bg);
+        border-left: 4px solid #4caf50; /* Green for answer */
+        padding: 12px 16px;
+        border-radius: 0 6px 6px 0;
+        font-size: 10pt;
+      }
+      
+      .pembahasan-detail b {
+        color: #2e7d32;
+      }
+      
+      .pembahasan-detail h4 {
+        margin: 0 0 8px 0;
+        color: #2e7d32;
+        font-size: 10pt;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
       .page-footer {
         text-align: left;
         font-size: 6pt;
         color: var(--grey-text);
-        padding-top: 2px;
         margin-top: auto;
-        border-top: 2.5px solid var(--grey-text);
-        z-index: 2;
-        position: relative;
-      }
-      .kategori-soal {
-        text-align: center;
-        font-size: 18pt;
-        font-weight: 700;
-        margin: 20px 0;
-        border-top: 2px solid var(--primary-text);
-        border-bottom: 2px solid var(--primary-text);
-        padding: 10px 0;
-      }
-      .pembahasan {
-        background-color: #f9f9f9;
-        border-left: 4px solid #4caf50;
-        padding: 15px;
-        margin-top: 10px;
-        text-align: justify;
-        font-size: 11pt;
-      }
-      .rumus-box {
-        background-color: #e3f2fd;
-        border-left: 4px solid #2196f3;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 0 5px 5px 0;
-      }
-      
-      .tips-box {
-        background-color: #fff3e0;
-        border-left: 4px solid #ff9800;
-        padding: 15px;
-        margin: 15px 0;
-        font-size: 11pt;
-      }
-
-      table.table-materi {
+        padding-top: 8px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
         width: 100%;
-        border-collapse: collapse;
-        margin: 15px 0;
-      }
-      table.table-materi th, table.table-materi td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-      table.table-materi th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
-      ul.checklist {
-        list-style-type: none;
-        padding-left: 10px;
-      }
-      ul.checklist li {
         position: relative;
-        padding-left: 30px;
-        margin-bottom: 10px;
-      }
-      ul.checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #4caf50;
-        font-weight: bold;
-        font-size: 1.2em;
+        z-index: 10;
+        background: white;
       }
 
       @media print {
-        @page {
-          size: A4;
-          margin: 0;
-        }
-        body {
-          background-color: white;
-          margin: 0;
-        }
-        .page {
-          width: 100%;
-          min-height: 29.7cm;
-          height: 100%;
-          margin: 0;
-          box-shadow: none;
-          page-break-after: always;
-        }
-        .page:last-child {
-          page-break-after: avoid;
-        }
+        @page { size: A4; margin: 0; }
+        body { background-color: white; margin: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact;}
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+        .page:last-child { page-break-after: avoid; }
       }
     </style>
   </head>
   <body>
-    <!-- Halaman Sampul -->
-    <section class="page cover-page">
-      <div
-        class="content-wrapper"
-        style="
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <!-- Logo Mathchamps -->
-        <img
-          src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
-          alt="Mathchamps Logo"
-          class="cover-image"
-        />
-        <h1 class="cover-title">
-          Teori Bilangan<br />Latihan OSNK SMP
-        </h1>
-        <p class="cover-subtitle">
-          Modul Lengkap: Pola, Aljabar, & Keterbagian
-        </p>
-      </div>
-    </section>
-
-    <!-- MATERI 1A - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1a: Jenis & Sifat Bilangan (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Himpunan Bilangan</h2>
-          <p>Memahami jenis bilangan adalah pondasi utama dalam teori bilangan. Berikut adalah klasifikasi dasar yang wajib diketahui:</p>
-          <ul class="checklist">
-            <li><b>Bilangan Asli ($\mathbb{N}$):</b> Bilangan bulat positif dimulai dari 1 ($1, 2, 3, ...$).</li>
-            <li><b>Bilangan Cacah:</b> Bilangan asli ditambah nol ($0, 1, 2, 3, ...$).</li>
-            <li><b>Bilangan Bulat ($\mathbb{Z}$):</b> Mencakup bilangan negatif, nol, dan positif ($..., -2, -1, 0, 1, 2, ...$).</li>
-          </ul>
-          <p>Pemahaman himpunan ini penting karena soal sering memberikan batasan domain, misalnya "Tentukan solusi bilangan asli...".</p>
+    <div class="page-container">
+      
+      <!-- Halaman Sampul -->
+      <section class="page cover-page">
+        <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <img
+            src="https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png"
+            alt="Mathchamps Logo"
+            class="cover-image"
+          />
+          <h1 class="cover-title">
+            Teori Bilangan<br />Latihan OSNK SMP
+          </h1>
+          <p class="cover-subtitle">
+            Sifat & Operasi Bilangan
+          </p>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+      </section>
 
-    <!-- MATERI 1A - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1a: Jenis & Sifat Bilangan (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Sifat Pembagi & Faktor</h2>
-          <p>Berdasarkan jumlah faktor pembaginya, bilangan asli dibagi menjadi:</p>
-          <div class="rumus-box">
-             <b>Bilangan Prima:</b><br>
-             Bilangan yang memiliki <b>tepat dua faktor</b>, yaitu 1 dan dirinya sendiri.<br>
-             Contoh: $2, 3, 5, 7, 11, 13, 17, 19, 23, ...$<br>
-             <i>Catatan: 1 bukan bilangan prima karena hanya punya satu faktor.</i>
+      <!-- MATERI 1A - Halaman 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
           </div>
-          <div class="rumus-box">
-             <b>Bilangan Komposit:</b><br>
-             Bilangan yang memiliki <b>lebih dari dua faktor</b>.<br>
-             Contoh: $4$ (faktor: 1, 2, 4), $6$ (faktor: 1, 2, 3, 6), $8, 9, 10, ...$
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title"><b>Jenis & Sifat Bilangan</b></h2>
+          <h2 class="section-title">1. Himpunan Bilangan</h2>
+          <div class="soal-konten">
+            <p>Memahami jenis bilangan adalah pondasi utama dalam teori bilangan. Berikut adalah klasifikasi dasar yang wajib diketahui:</p>
+            <div class="konsep-box">
+              <ul class="custom-list">
+                <li><b>Bilangan Asli ($\mathbb{N}$):</b> Bilangan bulat positif dimulai dari 1 ($1, 2, 3, ...$).</li>
+                <li><b>Bilangan Cacah:</b> Bilangan asli ditambah nol ($0, 1, 2, 3, ...$).</li>
+                <li><b>Bilangan Bulat ($\mathbb{Z}$):</b> Mencakup bilangan negatif, nol, dan positif ($..., -2, -1, 0, 1, 2, ...$).</li>
+              </ul>
+            </div>
+            <p>Pemahaman himpunan ini penting karena soal sering memberikan batasan domain, misalnya "Tentukan solusi bilangan asli...".</p>
           </div>
 
-          <h2>3. Bilangan Kuadrat Sempurna</h2>
-          <p>Bilangan yang merupakan hasil kuadrat dari suatu bilangan bulat ($n^2$).</p>
-          <p>Contoh: $1, 4, 9, 16, 25, 36, 49, 64, 81, 100, ...$</p>
-          <div class="tips-box">
-            <b>Ciri Unik:</b> Bilangan kuadrat sempurna selalu memiliki jumlah faktor yang <b>ganjil</b>. Contoh: 9 faktornya (1, 3, 9) ada 3 buah.
+          <h2 class="section-title">2. Sifat Pembagi & Faktor</h2>
+          <div class="soal-konten">
+            <p>Berdasarkan jumlah faktor pembaginya, bilangan asli dibagi menjadi:</p>
+            <div class="konsep-box">
+               <b>Bilangan Prima:</b><br>
+               Bilangan yang memiliki <b>tepat dua faktor</b>, yaitu 1 dan dirinya sendiri.<br>
+               Contoh: $2, 3, 5, 7, 11, 13, 17, 19, 23, ...$<br>
+               <i>Catatan: 1 bukan bilangan prima karena hanya punya satu faktor.</i>
+            </div>
+            <div class="konsep-box">
+               <b>Bilangan Komposit:</b><br>
+               Bilangan yang memiliki <b>lebih dari dua faktor</b>.<br>
+               Contoh: $4$ (faktor: 1, 2, 4), $6$ (faktor: 1, 2, 3, 6), $8, 9, 10, ...$
+            </div>
+  
+            <h2 class="section-title" style="margin-top: 25px;">3. Bilangan Kuadrat Sempurna</h2>
+            <p>Bilangan yang merupakan hasil kuadrat dari suatu bilangan bulat ($n^2$).</p>
+            <p>Contoh: $1, 4, 9, 16, 25, 36, 49, 64, 81, 100, ...$</p>
+            <div class="tips-box">
+              <b>Ciri Unik:</b> Bilangan kuadrat sempurna selalu memiliki jumlah faktor yang <b>ganjil</b>. Contoh: 9 faktornya (1, 3, 9) ada 3 buah.
+            </div>
           </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
 
-    <!-- MATERI 1B - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1b: Aljabar Dasar & Faktorial (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Identitas Aljabar Penting</h2>
-          <p>Dalam olimpiade, kita sering bertemu angka besar yang sulit dihitung manual. Gunakan identitas aljabar untuk menyederhanakannya.</p>
-          
-          <h3>Selisih Dua Kuadrat</h3>
-          <div class="rumus-box">
-            $$a^2 - b^2 = (a-b)(a+b)$$
+      <!-- MATERI 1B - Halaman 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
           </div>
-          <p><i>Contoh:</i> Hitung $102^2 - 98^2$.<br>
-          Jawab: $(102-98)(102+98) = 4 \times 200 = 800$.</p>
-
-          <h3>Kuadrat Penjumlahan & Pengurangan</h3>
-          <div class="rumus-box">
-            $$(a+b)^2 = a^2 + 2ab + b^2$$
-            $$(a-b)^2 = a^2 - 2ab + b^2$$
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
           </div>
-          <p><i>Contoh:</i> $1001^2 = (1000+1)^2 = 1000^2 + 2(1000)(1) + 1^2 = 1.000.000 + 2000 + 1 = 1.002.001$.</p>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        </header>
 
-    <!-- MATERI 1B - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 1b: Aljabar Dasar & Faktorial (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Faktorial ($n!$)</h2>
-          <p>Notasi $n!$ dibaca "n faktorial", artinya perkalian bilangan asli berurutan dari 1 sampai $n$.</p>
-          $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$
-          <p>Contoh: $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.</p>
-
-          <div class="tips-box">
-            <b>Tips Ekor Nol:</b><br>
-            Untuk $n \ge 5$, nilai satuan dari $n!$ pasti <b>0</b>. Ini karena di dalam perkaliannya sudah ada faktor 2 dan faktor 5, yang jika dikalikan menghasilkan 10 (akhiran 0).
+        <div class="content-wrapper">
+          <h2 class="section-title"><b>Aljabar Dasar & Faktorial</b></h2>
+          <h2 class="section-title">1. Identitas Aljabar Penting</h2>
+          <div class="soal-konten">
+            <p>Dalam olimpiade, kita sering bertemu angka besar yang sulit dihitung manual. Gunakan identitas aljabar untuk menyederhanakannya.</p>
+            
+            <div class="rumus-box-blue">
+              <div class="materi-subjudul">Selisih Dua Kuadrat</div>
+              $$a^2 - b^2 = (a-b)(a+b)$$
+            </div>
+            <p><i>Contoh:</i> Hitung $102^2 - 98^2$.<br>
+            Jawab: $(102-98)(102+98) = 4 \times 200 = 800$.</p>
+  
+            <div class="rumus-box-blue">
+              <div class="materi-subjudul">Kuadrat Penjumlahan & Pengurangan</div>
+              $$(a+b)^2 = a^2 + 2ab + b^2$$
+              $$(a-b)^2 = a^2 - 2ab + b^2$$
+            </div>
+            <p><i>Contoh:</i> $1001^2 = (1000+1)^2 = 1000^2 + 2(1000)(1) + 1^2 = 1.000.000 + 2000 + 1 = 1.002.001$.</p>
           </div>
-          <p>Faktorial sangat sering muncul dalam soal kombinatorika dan teori bilangan yang melibatkan sisa bagi.</p>
+          <h2 class="section-title">2. Faktorial ($n!$)</h2>
+          <div class="soal-konten">
+            <p>Notasi $n!$ dibaca "n faktorial", artinya perkalian bilangan asli berurutan dari 1 sampai $n$.</p>
+            <div class="konsep-box">
+              $$n! = n \times (n-1) \times (n-2) \times ... \times 2 \times 1$$
+            </div>
+            <p>Contoh: $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$.</p>
+  
+            <div class="tips-box">
+              <b>Tips Ekor Nol:</b><br>
+              Untuk $n \ge 5$, nilai satuan dari $n!$ pasti <b>0</b>. Ini karena di dalam perkaliannya sudah ada faktor 2 dan faktor 5, yang jika dikalikan menghasilkan 10 (akhiran 0).
+            </div>
+            <p>Faktorial sangat sering muncul dalam soal kombinatorika dan teori bilangan yang melibatkan sisa bagi.</p>
+          </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
 
-    <!-- MATERI 2A - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2a: Barisan & Deret Aritmatika (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Pengertian</h2>
-          <p><b>Barisan Aritmatika</b> adalah barisan bilangan yang memiliki selisih (beda) tetap antara dua suku yang berurutan.</p>
-          <p>Contoh: $3, 7, 11, 15, ...$</p>
-          <p>Di sini, beda ($b$) adalah 4.</p>
-          <p><b>Notasi Umum:</b></p>
-          <ul>
-              <li>$a$ atau $U_1$: Suku pertama.</li>
-              <li>$b$: Beda (selisih).</li>
-              <li>$n$: Posisi suku (urutan ke berapa).</li>
-              <li>$U_n$: Suku ke-$n$.</li>
-              <li>$S_n$: Jumlah $n$ suku pertama.</li>
-          </ul>
+      <!-- MATERI 2A - Halaman 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title"><b>Barisan & Deret Aritmatika</b></h2>
+          <h2 class="section-title">1. Pengertian</h2>
+          <div class="soal-konten">
+            <p><b>Barisan Aritmatika</b> adalah barisan bilangan yang memiliki selisih (beda) tetap antara dua suku yang berurutan.</p>
+            <p>Contoh: $3, 7, 11, 15, ...$</p>
+            <p>Di sini, beda ($b$) adalah 4.</p>
+            <div class="konsep-box">
+              <b>Notasi Umum:</b>
+              <ul class="custom-list">
+                  <li>$a$ atau $U_1$: Suku pertama.</li>
+                  <li>$b$: Beda (selisih).</li>
+                  <li>$n$: Posisi suku (urutan ke berapa).</li>
+                  <li>$U_n$: Suku ke-$n$.</li>
+                  <li>$S_n$: Jumlah $n$ suku pertama.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
 
-    <!-- MATERI 2A - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2a: Barisan & Deret Aritmatika (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Rumus Penting</h2>
-          <table class="table-materi">
+      <!-- MATERI 2A - Halaman 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">2. Rumus Penting</h2>
+          <table class="summary-table">
               <tr>
                   <th>Konsep</th>
                   <th>Rumus</th>
@@ -454,794 +567,634 @@
               </tr>
           </table>
 
-          <h2>3. Contoh Penerapan</h2>
-          <p>Diketahui barisan: $2, 5, 8, 11, ...$. Tentukan suku ke-10 dan jumlah 10 suku pertama.</p>
-          <ul>
-              <li>$a = 2$, $b = 3$.</li>
-              <li>$U_{10} = 2 + (10-1)3 = 2 + 27 = 29$.</li>
-              <li>$S_{10} = \frac{10}{2}(2 + 29) = 5 \times 31 = 155$.</li>
-          </ul>
+          <h2 class="section-title" style="margin-top: 20px;">3. Contoh Penerapan</h2>
+          <div class="konsep-box">
+            <p>Diketahui barisan: $2, 5, 8, 11, ...$. Tentukan suku ke-10 dan jumlah 10 suku pertama.</p>
+            <ul class="custom-list">
+                <li>$a = 2$, $b = 3$.</li>
+                <li>$U_{10} = 2 + (10-1)3 = 2 + 27 = 29$.</li>
+                <li>$S_{10} = \frac{10}{2}(2 + 29) = 5 \times 31 = 155$.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
 
-    <!-- MATERI 2B - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2b: Rumus Gauss & Pola Bilangan (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Rumus Gauss (Penjumlahan Bilangan Asli)</h2>
-          <p>Carl Friedrich Gauss menemukan cara cepat menjumlahkan bilangan berurutan dari 1 sampai $n$ tanpa menghitung satu per satu.</p>
-          <div class="rumus-box">
-            <b>Jumlah $n$ Bilangan Asli Pertama:</b><br>
-            $$1 + 2 + 3 + ... + n = \frac{n(n+1)}{2}$$
+      <!-- MATERI 2B - Halaman 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
           </div>
-          <p><i>Contoh:</i> Jumlah bilangan 1 sampai 100.<br>
-          $S_{100} = \frac{100 \times 101}{2} = 50 \times 101 = 5050$.</p>
-          <p>Rumus ini sangat sering digunakan dalam soal cerita tentang menjumlahkan kelereng, batu bata, atau nomor rumah.</p>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
 
-    <!-- MATERI 2B - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 2b: Rumus Gauss & Pola Bilangan (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Pola Bilangan Ganjil & Genap</h2>
-          <p>Pola ini sering muncul dalam soal bergambar atau susunan kelereng.</p>
-          <ul class="checklist">
-              <li><b>Jumlah $n$ bilangan ganjil pertama:</b><br>
-              $1 + 3 + 5 + ... + (2n-1) = n^2$<br>
-              <i>Contoh:</i> $1+3+5+7$ (4 bilangan) $= 4^2 = 16$.
-              </li>
-              <li><b>Jumlah $n$ bilangan genap pertama:</b><br>
-              $2 + 4 + 6 + ... + 2n = n(n+1)$<br>
-              <i>Contoh:</i> $2+4+6$ (3 bilangan) $= 3 \times 4 = 12$.
-              </li>
-          </ul>
-
-          <div class="tips-box">
-            <b>Trik Rata-rata (Median):</b><br>
-            Jika diketahui jumlah dari sekumpulan bilangan berurutan (misal: 5 bilangan berurutan), maka:<br>
-            $$\text{Bilangan Tengah} = \frac{\text{Jumlah Total}}{\text{Banyak Bilangan}}$$
-            Ini sangat berguna untuk mencari bilangan terbesar/terkecil dengan cepat.
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- MATERI 3A - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 3a: Keterbagian (KPK & FPB) (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. KPK dan FPB</h2>
-          <ul class="checklist">
-            <li><b>FPB (Faktor Persekutuan Terbesar):</b> Faktor terbesar yang dapat membagi habis dua bilangan atau lebih. Berguna untuk soal penyederhanaan atau pembagian barang.</li>
-            <li><b>KPK (Kelipatan Persekutuan Terkecil):</b> Kelipatan terkecil yang sama dari dua bilangan atau lebih. Berguna untuk soal siklus waktu (kapan bertemu lagi).</li>
-          </ul>
-          
-          <div class="rumus-box">
-            <b>Hubungan Sakti KPK & FPB:</b><br>
-            Untuk dua bilangan $a$ dan $b$, berlaku:<br>
-            $$a \times b = \text{KPK}(a, b) \times \text{FPB}(a, b)$$
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- MATERI 3A - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 3a: Keterbagian (KPK & FPB) (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Prinsip Inklusi-Eksklusi</h2>
-          <p>Digunakan untuk menghitung banyaknya anggota gabungan dua himpunan agar tidak terjadi perhitungan ganda (double counting) pada irisan.</p>
-          <div class="rumus-box">
-            $$|A \cup B| = |A| + |B| - |A \cap B|$$
-          </div>
-          <p><b>Contoh Soal:</b> Berapa banyak bilangan 1-100 yang habis dibagi 3 atau 5?</p>
-          <ul>
-              <li>Habis dibagi 3 ($|A|$): $\lfloor 100/3 \rfloor = 33$</li>
-              <li>Habis dibagi 5 ($|B|$): $\lfloor 100/5 \rfloor = 20$</li>
-              <li>Habis dibagi 15 (KPK 3 & 5) ($|A \cap B|$): $\lfloor 100/15 \rfloor = 6$</li>
-              <li>Jawab: $33 + 20 - 6 = 47$.</li>
-          </ul>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- MATERI 3B - Halaman 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 3b: Modulo & Basis Bilangan (1/2)</h1>
-        <div class="materi-konten">
-          <h2>1. Aritmatika Modular (Sisa Bagi)</h2>
-          <p>Konsep ini fokus pada <b>sisa pembagian</b>. Ditulis $a \equiv r \pmod m$.</p>
-          <p><i>Contoh:</i> $17 \equiv 2 \pmod 5$, karena 17 dibagi 5 bersisa 2.</p>
-          
-          <h3>Pola Digit Terakhir (Satuan)</h3>
-          <p>Digit terakhir dari bilangan berpangkat besar ($a^n$) selalu berulang dalam siklus tertentu.</p>
-          <table class="table-materi">
-              <tr>
-                  <th>Angka Dasar</th>
-                  <th>Pola Pangkat ($n=1, 2, 3, 4, ...$)</th>
-                  <th>Panjang Siklus</th>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>2, 4, 8, 6, ...</td>
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>3, 9, 7, 1, ...</td>
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <td>7</td>
-                  <td>7, 9, 3, 1, ...</td>
-                  <td>4</td>
-              </tr>
-              <tr>
-                  <td>8</td>
-                  <td>8, 4, 2, 6, ...</td>
-                  <td>4</td>
-              </tr>
-          </table>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- MATERI 3B - Halaman 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Materi 3b: Modulo & Basis Bilangan (2/2)</h1>
-        <div class="materi-konten">
-          <h2>2. Basis Bilangan</h2>
-          <p>Sistem bilangan sehari-hari adalah Basis 10 (Desimal). Namun, ada basis lain seperti Biner (2), Ternary (3), dll.</p>
-          <p><b>Konversi Basis $n$ ke Desimal:</b><br>
-          Bilangan $(abc)_n$ artinya:</p>
-          <div class="rumus-box">
-             $$ (a \times n^2) + (b \times n^1) + (c \times n^0) $$
-          </div>
-          <p><i>Contoh:</i> $(121)_4$ ke desimal:<br>
-          $= (1 \times 4^2) + (2 \times 4^1) + (1 \times 1)$<br>
-          $= 16 + 8 + 1 = 25$.</p>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 1 (No 1-3) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Latihan Soal (Bagian 1)</div>
-        <div class="soal-latihan">
-          <b>1.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah lima bilangan ganjil berurutan adalah 365. Jumlah bilangan terkecil dan terbesar adalah...
-            </div>
-            <div class="options">
-              <div>A. 145</div>
-              <div>B. 146</div>
-              <div>C. 183</div>
-              <div>D. 185</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>2.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">Hasil penjumlahan $1+2+3+4+...+2.000$ adalah...</div>
-            <div class="options">
-              <div>A. 2.000.000</div>
-              <div>B. 2.000.100</div>
-              <div>C. 2.001.000</div>
-              <div>D. 2.010.000</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>3.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Pada suatu halte bus kota, bus jalur A datang setiap 15 menit dan bus jalur B setiap 12 menit. Jika pada pukul 08.00 kedua bus datang bersamaan, pukul berapa mereka akan datang bersamaan lagi?
-            </div>
-            <div class="options">
-              <div>A. 09.00</div>
-              <div>B. 09.30</div>
-              <div>C. 10.00</div>
-              <div>D. 11.00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 2 (No 4-6) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Latihan Soal (Bagian 2)</div>
-        <div class="soal-latihan">
-          <b>4.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Diketahui $p$ dan $q$ adalah bilangan bulat positif yang memenuhi $\frac{1}{p} + \frac{1}{q} = \frac{10}{21}$ dengan $p > q$. Nilai dari $p^2 - q^2$ adalah...
-            </div>
-            <div class="options">
-              <div>A. 32</div>
-              <div>B. 40</div>
-              <div>C. 42</div>
-              <div>D. 51</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>5.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Desi merayakan ulang tahun pada 26 Desember 2006. Jika pada hari itu usianya sama dengan jumlah digit tahun kelahirannya, tahun berapa Desi lahir?
-            </div>
-            <div class="options">
-              <div>A. 1994</div>
-              <div>B. 1992</div>
-              <div>C. 1989</div>
-              <div>D. 1984</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>6.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jumlah lima bilangan genap berurutan adalah 200. Jumlah bilangan terkecil dan terbesarnya adalah...
-            </div>
-            <div class="options">
-              <div>A. 70</div>
-              <div>B. 80</div>
-              <div>C. 90</div>
-              <div>D. 100</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 3 (No 7-9) -->
-    <section class="page">
-      <div class="content-wrapper">
-        <div class="kategori-soal">Latihan Soal (Bagian 3)</div>
-        <div class="soal-latihan">
-          <b>7.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sisa dari $3^{100}$ jika dibagi 5 adalah...
-            </div>
-            <div class="options">
-              <div>A. 1</div>
-              <div>B. 2</div>
-              <div>C. 3</div>
-              <div>D. 4</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>8.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Sisa dari $2^{2000}$ jika dibagi 7 adalah...
-            </div>
-            <div class="options">
-              <div>A. 1</div>
-              <div>B. 2</div>
-              <div>C. 4</div>
-              <div>D. 3</div>
-            </div>
-          </div>
-        </div>
-        <div class="soal-latihan-n">
-          <b>9.</b>
-          <div class="soal-wrapper">
-            <div class="soal-konten">
-              Jika bilangan $N$ dalam basis $b$ dituliskan sebagai $(121)_b$ dan nilai $N$ dalam desimal adalah 25, maka nilai $b$ adalah...
-            </div>
-            <div class="options">
-              <div>A. 3</div>
-              <div>B. 4</div>
-              <div>C. 5</div>
-              <div>D. 6</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- Halaman Soal 4 (No 10-12) -->
-    <section class="page">
         <div class="content-wrapper">
-          <div class="kategori-soal">Latihan Soal (Bagian 4)</div>
-          <div class="soal-latihan">
-            <b>10.</b>
-            <div class="soal-wrapper">
+          <h2 class="section-title"><b>Rumus Gauss & Pola Bilangan</b></h2>
+          <h2 class="section-title">1. Rumus Gauss (Penjumlahan Bilangan Asli)</h2>
+          <div class="soal-konten">
+            <p>Carl Friedrich Gauss menemukan cara cepat menjumlahkan bilangan berurutan dari 1 sampai $n$ tanpa menghitung satu per satu.</p>
+            <div class="konsep-box">
+              <b>Jumlah $n$ Bilangan Asli Pertama:</b><br>
+              $$1 + 2 + 3 + ... + n = \frac{n(n+1)}{2}$$
+            </div>
+            <p><i>Contoh:</i> Jumlah bilangan 1 sampai 100.<br>
+            $S_{100} = \frac{100 \times 101}{2} = 50 \times 101 = 5050$.</p>
+            <p>Rumus ini sangat sering digunakan dalam soal cerita tentang menjumlahkan kelereng, batu bata, atau nomor rumah.</p>
+          </div>
+
+          <h2 class="section-title">2. Pola Bilangan Ganjil & Genap</h2>
+          <div class="soal-konten">
+            <p>Pola ini sering muncul dalam soal bergambar atau susunan kelereng.</p>
+            <ul class="custom-list">
+                <li><b>Jumlah $n$ bilangan ganjil pertama:</b><br>
+                $1 + 3 + 5 + ... + (2n-1) = n^2$<br>
+                <i>Contoh:</i> $1+3+5+7$ (4 bilangan) $= 4^2 = 16$.
+                </li>
+                <li><b>Jumlah $n$ bilangan genap pertama:</b><br>
+                $2 + 4 + 6 + ... + 2n = n(n+1)$<br>
+                <i>Contoh:</i> $2+4+6$ (3 bilangan) $= 3 \times 4 = 12$.
+                </li>
+            </ul>
+  
+            <div class="tips-box">
+              <b>Trik Rata-rata (Median):</b><br>
+              Jika diketahui jumlah dari sekumpulan bilangan berurutan (misal: 5 bilangan berurutan), maka:<br>
+              $$\text{Bilangan Tengah} = \frac{\text{Jumlah Total}}{\text{Banyak Bilangan}}$$
+              Ini sangat berguna untuk mencari bilangan terbesar/terkecil dengan cepat.
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- MATERI 3A - Halaman 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title"><b>Keterbagian (KPK & FPB)</b></h2>
+          <h2 class="section-title">1. KPK dan FPB</h2>
+          <div class="soal-konten">
+            <ul class="custom-list">
+              <li><b>FPB (Faktor Persekutuan Terbesar):</b> Faktor terbesar yang dapat membagi habis dua bilangan atau lebih. Berguna untuk soal penyederhanaan atau pembagian barang.</li>
+              <li><b>KPK (Kelipatan Persekutuan Terkecil):</b> Kelipatan terkecil yang sama dari dua bilangan atau lebih. Berguna untuk soal siklus waktu (kapan bertemu lagi).</li>
+            </ul>
+            
+            <div class="konsep-box">
+              <b>Hubungan Sakti KPK & FPB:</b><br>
+              Untuk dua bilangan $a$ dan $b$, berlaku:<br>
+              $$a \times b = \text{KPK}(a, b) \times \text{FPB}(a, b)$$
+            </div>
+          </div>
+
+          <h2 class="section-title">2. Prinsip Inklusi-Eksklusi</h2>
+          <div class="soal-konten">
+            <p>Digunakan untuk menghitung banyaknya anggota gabungan dua himpunan agar tidak terjadi perhitungan ganda (double counting) pada irisan.</p>
+            <div class="rumus-box-blue">
+              $$|A \cup B| = |A| + |B| - |A \cap B|$$
+            </div>
+            <p><b>Contoh Soal:</b> Berapa banyak bilangan 1-100 yang habis dibagi 3 atau 5?</p>
+            <ul class="custom-list">
+                <li>Habis dibagi 3 ($|A|$): $\lfloor 100/3 \rfloor = 33$</li>
+                <li>Habis dibagi 5 ($|B|$): $\lfloor 100/5 \rfloor = 20$</li>
+                <li>Habis dibagi 15 (KPK 3 & 5) ($|A \cap B|$): $\lfloor 100/15 \rfloor = 6$</li>
+                <li>Jawab: $33 + 20 - 6 = 47$.</li>
+            </ul>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- MATERI 3B - Halaman 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title"><b>Modulo dan Basis Bilangan</b></h2>
+          <h2 class="section-title">1. Aritmatika Modular (Sisa Bagi)</h2>
+          <div class="soal-konten">
+            <p>Konsep ini fokus pada <b>sisa pembagian</b>. Ditulis $a \equiv r \pmod m$.</p>
+            <p><i>Contoh:</i> $17 \equiv 2 \pmod 5$, karena 17 dibagi 5 bersisa 2.</p>
+            
+            <div class="materi-subjudul-kecil">Pola Digit Terakhir (Satuan)</div>
+            <p>Digit terakhir dari bilangan berpangkat besar ($a^n$) selalu berulang dalam siklus tertentu.</p>
+            <table class="summary-table">
+                <tr>
+                    <th>Angka Dasar</th>
+                    <th>Pola Pangkat ($n=1, 2, 3, 4, ...$)</th>
+                    <th>Panjang Siklus</th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2, 4, 8, 6, ...</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3, 9, 7, 1, ...</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>7, 9, 3, 1, ...</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>8, 4, 2, 6, ...</td>
+                    <td>4</td>
+                </tr>
+            </table>
+          </div>
+          <h2 class="section-title">2. Basis Bilangan</h2>
+          <div class="soal-konten">
+            <p>Sistem bilangan sehari-hari adalah Basis 10 (Desimal). Namun, ada basis lain seperti Biner (2), Ternary (3), dll.</p>
+            <p><b>Konversi Basis $n$ ke Desimal:</b><br>
+            Bilangan $(abc)_n$ artinya:</p>
+            <div class="rumus-box-blue">
+               $$ (a \times n^2) + (b \times n^1) + (c \times n^0) $$
+            </div>
+            <p><i>Contoh:</i> $(121)_4$ ke desimal:<br>
+            $= (1 \times 4^2) + (2 \times 4^1) + (1 \times 1)$<br>
+            $= 16 + 8 + 1 = 25$.</p>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span>
+        </footer>
+      </section>
+
+      <!-- ============================================= -->
+      <!-- BAGIAN SOAL - 1 HALAMAN 1 SOAL -->
+      <!-- ============================================= -->
+
+      <!-- Halaman Soal 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">1.</div>
+              <div class="soal-konten">
+                Jumlah lima bilangan ganjil berurutan adalah 365. Jumlah bilangan terkecil dan terbesar adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">145</li><li data-opt="B">146</li><li data-opt="C">183</li><li data-opt="D">185</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 146</b>
+                  <p>Mari kita bayangkan 5 bilangan ganjil yang berjejer.</p>
+                  <p><b>Langkah 1: Cari bilangan tengahnya dulu.</b><br>
+                  Karena jumlah totalnya 365 dan ada 5 bilangan, maka bilangan yang persis di tengah adalah rata-ratanya.<br>
+                  $$ \text{Bilangan Tengah} = \frac{\text{Jumlah Total}}{\text{Banyak Bilangan}} = \frac{365}{5} = 73 $$</p>
+                  <p><b>Langkah 2: Susun bilangannya.</b><br>
+                  Bilangan ganjil itu loncat-loncat 2 angka (contoh: 1, 3, 5).<br>
+                  Jika tengahnya 73, maka:<br>
+                  - Sebelumnya: 71, 69<br>
+                  - Sesudahnya: 75, 77<br>
+                  Jadi urutannya: <b>69, 71, 73, 75, 77</b>.</p>
+                  <p><b>Langkah 3: Jumlahkan yang terkecil dan terbesar.</b><br>
+                  Terkecil = 69, Terbesar = 77<br>
+                  $$ 69 + 77 = 146 $$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">2.</div>
+              <div class="soal-konten">
+                Hasil penjumlahan $1+2+3+4+...+2.000$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">2.000.000</li><li data-opt="B">2.000.100</li><li data-opt="C">2.001.000</li><li data-opt="D">2.010.000</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: C. 2.001.000</b>
+                  <p>Ini adalah penjumlahan bilangan dari 1 sampai 2000. Jangan hitung manual ya!</p>
+                  <p><b>Gunakan Trik Gauss:</b><br>
+                  Kalau kita jumlahkan ujung awal dan ujung akhir, hasilnya selalu sama.<br>
+                  $1 + 2000 = 2001$<br>
+                  $2 + 1999 = 2001$<br>
+                  $3 + 1998 = 2001$</p>
+                  <p><b>Ada berapa pasang?</b><br>
+                  Karena ada 2000 bilangan, maka ada 1000 pasang ($\frac{2000}{2}$).</p>
+                  <p><b>Hitung totalnya:</b><br>
+                  $$ \text{Total} = \text{Banyak Pasangan} \times \text{Jumlah per Pasang} $$
+                  $$ \text{Total} = 1000 \times 2001 = 2.001.000 $$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 3 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">3.</div>
+              <div class="soal-konten">
+                Pada suatu halte bus kota, bus jalur A datang setiap 15 menit dan bus jalur B setiap 12 menit. Jika pada pukul 08.00 kedua bus datang bersamaan, pukul berapa mereka akan datang bersamaan lagi?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">09.00</li><li data-opt="B">09.30</li><li data-opt="C">10.00</li><li data-opt="D">11.00</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: A. 09.00</b>
+                  <p>Soal ini menanyakan "kapan bertemu lagi", berarti kita pakai konsep <b>KPK (Kelipatan Persekutuan Terkecil)</b>.</p>
+                  <p><b>Langkah 1: Faktorkan angkanya.</b><br>
+                  - 15 menit: $3 \times 5$<br>
+                  - 12 menit: $4 \times 3 = 2^2 \times 3$</p>
+                  <p><b>Langkah 2: Cari KPK.</b><br>
+                  Ambil semua angka prima yang ada. Jika angkanya kembar, pilih pangkat yang paling besar.<br>
+                  - Angka 2: Ambil $2^2$ (karena lebih besar dari tidak ada).<br>
+                  - Angka 3: Ambil 3.<br>
+                  - Angka 5: Ambil 5.<br>
+                  $$ \text{KPK} = 2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60 $$</p>
+                  <p><b>Langkah 3: Hitung waktunya.</b><br>
+                  Artinya, bus bertemu setiap 60 menit (1 jam) sekali.<br>
+                  Pukul 08.00 + 1 jam = <b>Pukul 09.00</b>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">4.</div>
+              <div class="soal-konten">
+                Diketahui $p$ dan $q$ adalah bilangan bulat positif yang memenuhi $\frac{1}{p} + \frac{1}{q} = \frac{10}{21}$ dengan $p > q$. Nilai dari $p^2 - q^2$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">32</li><li data-opt="B">40</li><li data-opt="C">42</li><li data-opt="D">51</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 40</b>
+                  <p>Soal: $\frac{1}{p} + \frac{1}{q} = \frac{10}{21}$. Kita diminta cari $p^2 - q^2$.</p>
+                  <p><b>Langkah 1: Samakan penyebut pecahan.</b><br>
+                  Rumus penjumlahan pecahan: $\frac{1}{p} + \frac{1}{q} = \frac{q + p}{p \times q}$.<br>
+                  Jadi, $\frac{p+q}{pq} = \frac{10}{21}$.</p>
+                  <p><b>Langkah 2: Tebak angka $p$ dan $q$.</b><br>
+                  Kita butuh dua bilangan yang:<br>
+                  - Jika dikali hasilnya 21 ($p \times q = 21$).<br>
+                  - Jika ditambah hasilnya 10 ($p + q = 10$).<br>
+                  Faktor dari 21 adalah: 1 dan 21, atau 3 dan 7.<br>
+                  Coba 3 dan 7: $3 + 7 = 10$. Pas! Berarti angkanya 3 dan 7.<br>
+                  Karena soal bilang $p > q$, maka <b>$p = 7$</b> dan <b>$q = 3$</b>.</p>
+                  <p><b>Langkah 3: Hitung pertanyaannya.</b><br>
+                  $$ p^2 - q^2 = 7^2 - 3^2 = 49 - 9 = 40 $$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">5.</div>
+              <div class="soal-konten">
+                Desi merayakan ulang tahun pada 26 Desember 2006. Jika pada hari itu usianya sama dengan jumlah digit tahun kelahirannya, tahun berapa Desi lahir?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1994</li><li data-opt="B">1992</li><li data-opt="C">1989</li><li data-opt="D">1984</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: D. 1984</b>
+                  <p>Mari kita cek satu per satu pilihan gandanya. Rumusnya: Tahun Lahir + Jumlah Digit Tahun Lahir = 2006.</p>
+                  <p><b>Cek Pilihan D (1984):</b><br>
+                  Tahun lahir: 1984.<br>
+                  Jumlah digit: $1 + 9 + 8 + 4 = 22$.<br>
+                  Umur Desi di tahun 2006 = 22 tahun.<br>
+                  Tahun Lahir + Umur = $1984 + 22 = 2006$.<br>
+                  <b>Cocok!</b></p>
+                  <p><i>Kenapa pilihan lain salah? Misal 1994:</i><br>
+                  Jumlah digit: $1+9+9+4 = 23$.<br>
+                  $1994 + 23 = 2017$. (Lewat dari 2006).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 6 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">6.</div>
+              <div class="soal-konten">
+                Jumlah lima bilangan genap berurutan adalah 200. Jumlah bilangan terkecil dan terbesarnya adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">70</li><li data-opt="B">80</li><li data-opt="C">90</li><li data-opt="D">100</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 80</b>
+                  <p>Mirip dengan soal nomor 1, tapi ini bilangan genap.</p>
+                  <p><b>Langkah 1: Cari bilangan tengah.</b><br>
+                  Total 200 dibagi 5 bilangan.<br>
+                  Bilangan Tengah = $200 / 5 = 40$.</p>
+                  <p><b>Langkah 2: Susun deretnya.</b><br>
+                  Bilangan genap: 36, 38, <b>40</b>, 42, 44.</p>
+                  <p><b>Langkah 3: Jumlahkan ujung-ujungnya.</b><br>
+                  Terkecil = 36. Terbesar = 44.<br>
+                  $$ 36 + 44 = 80 $$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 7 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">7.</div>
+              <div class="soal-konten">
+                Sisa dari $3^{100}$ jika dibagi 5 adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">2</li><li data-opt="C">3</li><li data-opt="D">4</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: A. 1</b>
+                  <p>Kita tidak mungkin menghitung $3^{100}$ manual. Kita cari polanya (satuannya).</p>
+                  <p><b>Langkah 1: Cek pola pangkat 3.</b><br>
+                  $3^1 = 3$<br>
+                  $3^2 = 9$<br>
+                  $3^3 = 27$ (ambil belakangnya saja: 7)<br>
+                  $3^4 = 81$ (ambil belakangnya saja: 1)<br>
+                  $3^5 = 243$ (kembali ke 3 lagi).<br>
+                  Jadi polanya berulang setiap 4 langkah: <b>3, 9, 7, 1</b>.</p>
+                  <p><b>Langkah 2: Bagi pangkat dengan siklusnya.</b><br>
+                  Pangkatnya 100. Siklusnya 4.<br>
+                  $100 \div 4 = 25$ sisa <b>0</b>.<br>
+                  Kalau sisa 0 (habis dibagi), berarti kita ambil angka urutan ke-4 (terakhir).<br>
+                  Angka urutan ke-4 adalah <b>1</b>.</p>
+                  <p><b>Langkah 3: Sisa bagi 5.</b><br>
+                  Bilangan yang belakangnya 1 (seperti 1, 11, 21, 81) kalau dibagi 5 pasti sisanya <b>1</b>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">8.</div>
+              <div class="soal-konten">
+                Sisa dari $2^{2000}$ jika dibagi 7 adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">2</li><li data-opt="C">4</li><li data-opt="D">3</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: C. 4</b>
+                  <p>Kita cari sisa pembagian $2^{2000}$ dengan 7.</p>
+                  <p><b>Langkah 1: Cek pola sisa (modulo 7).</b><br>
+                  $2^1 = 2$. (2 dibagi 7 sisa <b>2</b>).<br>
+                  $2^2 = 4$. (4 dibagi 7 sisa <b>4</b>).<br>
+                  $2^3 = 8$. (8 dibagi 7 sisa <b>1</b>).<br>
+                  $2^4 = 16$. (16 dibagi 7 sisa 2 lagi).<br>
+                  Polanya berulang setiap 3 langkah: <b>2, 4, 1</b>.</p>
+                  <p><b>Langkah 2: Cek pangkatnya.</b><br>
+                  Pangkatnya 2000. Siklusnya 3.<br>
+                  $2000 \div 3 = 666$ sisa <b>2</b>.</p>
+                  <p><b>Langkah 3: Ambil polanya.</b><br>
+                  Karena sisa 2, berarti kita ambil urutan ke-2 dari pola.<br>
+                  Urutan ke-2 adalah angka <b>4</b>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 9 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">9.</div>
+              <div class="soal-konten">
+                Jika bilangan $N$ dalam basis $b$ dituliskan sebagai $(121)_b$ dan nilai $N$ dalam desimal adalah 25, maka nilai $b$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">3</li><li data-opt="B">4</li><li data-opt="C">5</li><li data-opt="D">6</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 4</b>
+                  <p>Soal ini tentang basis bilangan.</p>
+                  <p><b>Langkah 1: Terjemahkan $(121)_b$.</b><br>
+                  Angka $(121)_b$ artinya:<br>
+                  $1 \times b^2 + 2 \times b^1 + 1 \times b^0$<br>
+                  $= b^2 + 2b + 1$</p>
+                  <p><b>Langkah 2: Sederhanakan bentuk aljabarnya.</b><br>
+                  Bentuk $b^2 + 2b + 1$ bisa diringkas menjadi $(b+1)^2$.</p>
+                  <p><b>Langkah 3: Samakan dengan 25.</b><br>
+                  Soal bilang nilainya 25.<br>
+                  $(b+1)^2 = 25$<br>
+                  Angka apa yang dikuadratkan jadi 25? Jawabannya 5.<br>
+                  Jadi, $b + 1 = 5$.<br>
+                  $b = 5 - 1 = 4$.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">10.</div>
               <div class="soal-konten">
                 Angka satuan (digit terakhir) dari hasil pemangkatan $3^{2025}$ adalah...
-              </div>
-              <div class="options">
-                <div>A. 1</div>
-                <div>B. 3</div>
-                <div>C. 7</div>
-                <div>D. 9</div>
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">3</li><li data-opt="C">7</li><li data-opt="D">9</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 3</b>
+                  <p>Ini sama persis caranya dengan soal nomor 7, tapi pangkatnya beda.</p>
+                  <p><b>Langkah 1: Ingat pola 3.</b><br>
+                  Pola satuan 3 adalah: <b>3, 9, 7, 1</b>. (Siklus 4).</p>
+                  <p><b>Langkah 2: Cek pangkat 2025.</b><br>
+                  $2025 \div 4$.<br>
+                  2000 habis dibagi 4.<br>
+                  24 habis dibagi 4.<br>
+                  Jadi 2025 dibagi 4 bersisa <b>1</b>.</p>
+                  <p><b>Langkah 3: Kesimpulan.</b><br>
+                  Karena sisa 1, ambil urutan ke-1 dari pola.<br>
+                  Urutan ke-1 adalah <b>3</b>.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="soal-latihan-n">
-            <b>11.</b>
-            <div class="soal-wrapper">
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- Halaman Soal 11 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">11.</div>
               <div class="soal-konten">
                 Berapa banyak bilangan bulat antara 1 sampai 100 (inklusif) yang habis dibagi 3 tetapi tidak habis dibagi 5?
-              </div>
-              <div class="options">
-                <div>A. 20</div>
-                <div>B. 26</div>
-                <div>C. 27</div>
-                <div>D. 33</div>
-              </div>
-            </div>
-          </div>
-          <div class="soal-latihan-n">
-            <b>12.</b>
-            <div class="soal-wrapper">
-              <div class="soal-konten">
-                Berapakah sisa pembagian $1! + 2! + 3! + ... + 2025!$ oleh 15?
-              </div>
-              <div class="options">
-                <div>A. 3</div>
-                <div>B. 0</div>
-                <div>C. 9</div>
-                <div>D. 12</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="page-footer">
-          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-        </footer>
-      </section>
-
-    <!-- Halaman Soal 5 (No 13-15) -->
-    <section class="page">
-        <div class="content-wrapper">
-          <div class="kategori-soal">Latihan Soal (Bagian 5)</div>
-          <div class="soal-latihan">
-            <b>13.</b>
-            <div class="soal-wrapper">
-              <div class="soal-konten">
-                Diketahui $x$ dan $y$ adalah bilangan asli. Jika $x^2 - y^2 = 29$, maka nilai $x + y$ adalah...
-              </div>
-              <div class="options">
-                <div>A. 1</div>
-                <div>B. 29</div>
-                <div>C. 14</div>
-                <div>D. 15</div>
-              </div>
-            </div>
-          </div>
-          <div class="soal-latihan-n">
-            <b>14.</b>
-            <div class="soal-wrapper">
-              <div class="soal-konten">
-                KPK dari dua bilangan adalah 168 dan FPB-nya adalah 6. Jika salah satu bilangan adalah 24, maka bilangan lainnya adalah...
-              </div>
-              <div class="options">
-                <div>A. 36</div>
-                <div>B. 42</div>
-                <div>C. 48</div>
-                <div>D. 54</div>
-              </div>
-            </div>
-          </div>
-          <div class="soal-latihan-n">
-            <b>15.</b>
-            <div class="soal-wrapper">
-              <div class="soal-konten">
-                Bilangan 4 digit $4a5b$ habis dibagi 9 dan 4. Nilai maksimum dari $a$ adalah...
-              </div>
-              <div class="options">
-                <div>A. 3</div>
-                <div>B. 7</div>
-                <div>C. 8</div>
-                <div>D. 9</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="page-footer">
-          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-        </footer>
-      </section>
-
-    <!-- ================================================================= -->
-    <!-- START PEMBAHASAN -->
-    <!-- ================================================================= -->
-
-    <!-- PEMBAHASAN 1 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 1</div>
-        <div class="soal-latihan">
-          <b>1.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: B. 146</b>
-            <div class="pembahasan">
-              <p>Mari kita bayangkan 5 bilangan ganjil yang berjejer.</p>
-              <p><b>Langkah 1: Cari bilangan tengahnya dulu.</b><br>
-              Karena jumlah totalnya 365 dan ada 5 bilangan, maka bilangan yang persis di tengah adalah rata-ratanya.<br>
-              $$ \text{Bilangan Tengah} = \frac{\text{Jumlah Total}}{\text{Banyak Bilangan}} = \frac{365}{5} = 73 $$</p>
-              <p><b>Langkah 2: Susun bilangannya.</b><br>
-              Bilangan ganjil itu loncat-loncat 2 angka (contoh: 1, 3, 5).<br>
-              Jika tengahnya 73, maka:<br>
-              - Sebelumnya: 71, 69<br>
-              - Sesudahnya: 75, 77<br>
-              Jadi urutannya: <b>69, 71, 73, 75, 77</b>.</p>
-              <p><b>Langkah 3: Jumlahkan yang terkecil dan terbesar.</b><br>
-              Terkecil = 69<br>
-              Terbesar = 77<br>
-              $$ 69 + 77 = 146 $$</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 2 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 2</div>
-        <div class="soal-latihan-n">
-          <b>2.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: C. 2.001.000</b>
-            <div class="pembahasan">
-              <p>Ini adalah penjumlahan bilangan dari 1 sampai 2000. Jangan hitung manual ya!</p>
-              <p><b>Gunakan Trik Gauss:</b><br>
-              Kalau kita jumlahkan ujung awal dan ujung akhir, hasilnya selalu sama.<br>
-              $1 + 2000 = 2001$<br>
-              $2 + 1999 = 2001$<br>
-              $3 + 1998 = 2001$</p>
-              <p><b>Ada berapa pasang?</b><br>
-              Karena ada 2000 bilangan, maka ada 1000 pasang ($\frac{2000}{2}$).</p>
-              <p><b>Hitung totalnya:</b><br>
-              $$ \text{Total} = \text{Banyak Pasangan} \times \text{Jumlah per Pasang} $$
-              $$ \text{Total} = 1000 \times 2001 = 2.001.000 $$</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 3 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 3</div>
-        <div class="soal-latihan-n">
-          <b>3.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: A. 09.00</b>
-            <div class="pembahasan">
-              <p>Soal ini menanyakan "kapan bertemu lagi", berarti kita pakai konsep <b>KPK (Kelipatan Persekutuan Terkecil)</b>.</p>
-              <p><b>Langkah 1: Faktorkan angkanya.</b><br>
-              - 15 menit: $3 \times 5$<br>
-              - 12 menit: $4 \times 3 = 2^2 \times 3$</p>
-              <p><b>Langkah 2: Cari KPK.</b><br>
-              Ambil semua angka prima yang ada. Jika angkanya kembar, pilih pangkat yang paling besar.<br>
-              - Angka 2: Ambil $2^2$ (karena lebih besar dari tidak ada).<br>
-              - Angka 3: Ambil 3.<br>
-              - Angka 5: Ambil 5.<br>
-              $$ \text{KPK} = 2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60 $$</p>
-              <p><b>Langkah 3: Hitung waktunya.</b><br>
-              Artinya, bus bertemu setiap 60 menit (1 jam) sekali.<br>
-              Pukul 08.00 + 1 jam = <b>Pukul 09.00</b>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 4 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 4</div>
-        <div class="soal-latihan">
-          <b>4.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: B. 40</b>
-            <div class="pembahasan">
-              <p>Soal: $\frac{1}{p} + \frac{1}{q} = \frac{10}{21}$. Kita diminta cari $p^2 - q^2$.</p>
-              <p><b>Langkah 1: Samakan penyebut pecahan.</b><br>
-              Rumus penjumlahan pecahan: $\frac{1}{p} + \frac{1}{q} = \frac{q + p}{p \times q}$.<br>
-              Jadi, $\frac{p+q}{pq} = \frac{10}{21}$.</p>
-              <p><b>Langkah 2: Tebak angka $p$ dan $q$.</b><br>
-              Kita butuh dua bilangan yang:<br>
-              - Jika dikali hasilnya 21 ($p \times q = 21$).<br>
-              - Jika ditambah hasilnya 10 ($p + q = 10$).<br>
-              Faktor dari 21 adalah: 1 dan 21, atau 3 dan 7.<br>
-              Coba 3 dan 7: $3 + 7 = 10$. Pas! Berarti angkanya 3 dan 7.<br>
-              Karena soal bilang $p > q$, maka <b>$p = 7$</b> dan <b>$q = 3$</b>.</p>
-              <p><b>Langkah 3: Hitung pertanyaannya.</b><br>
-              $$ p^2 - q^2 = 7^2 - 3^2 $$
-              $$ = 49 - 9 = 40 $$</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 5 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 5</div>
-        <div class="soal-latihan-n">
-          <b>5.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: D. 1984</b>
-            <div class="pembahasan">
-              <p>Mari kita cek satu per satu pilihan gandanya. Rumusnya: Tahun Lahir + Jumlah Digit Tahun Lahir = 2006.</p>
-              <p><b>Cek Pilihan D (1984):</b><br>
-              Tahun lahir: 1984.<br>
-              Jumlah digit: $1 + 9 + 8 + 4 = 22$.<br>
-              Umur Desi di tahun 2006 = 22 tahun.<br>
-              Tahun Lahir + Umur = $1984 + 22 = 2006$.<br>
-              <b>Cocok!</b></p>
-              <p><i>Kenapa pilihan lain salah? Misal 1994:</i><br>
-              Jumlah digit: $1+9+9+4 = 23$.<br>
-              $1994 + 23 = 2017$. (Lewat dari 2006).</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 6 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 6</div>
-        <div class="soal-latihan-n">
-          <b>6.</b>
-          <div class="soal-wrapper">
-            <b>Jawaban: B. 80</b>
-            <div class="pembahasan">
-              <p>Mirip dengan soal nomor 1, tapi ini bilangan genap.</p>
-              <p><b>Langkah 1: Cari bilangan tengah.</b><br>
-              Total 200 dibagi 5 bilangan.<br>
-              Bilangan Tengah = $200 / 5 = 40$.</p>
-              <p><b>Langkah 2: Susun deretnya.</b><br>
-              Bilangan genap: 36, 38, <b>40</b>, 42, 44.</p>
-              <p><b>Langkah 3: Jumlahkan ujung-ujungnya.</b><br>
-              Terkecil = 36.<br>
-              Terbesar = 44.<br>
-              $$ 36 + 44 = 80 $$</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 7 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 7</div>
-        <div class="soal-latihan-n">
-            <b>7.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: A. 1</b>
-              <div class="pembahasan">
-                <p>Kita tidak mungkin menghitung $3^{100}$ manual. Kita cari polanya (satuannya).</p>
-                <p><b>Langkah 1: Cek pola pangkat 3.</b><br>
-                $3^1 = 3$<br>
-                $3^2 = 9$<br>
-                $3^3 = 27$ (ambil belakangnya saja: 7)<br>
-                $3^4 = 81$ (ambil belakangnya saja: 1)<br>
-                $3^5 = 243$ (kembali ke 3 lagi).<br>
-                Jadi polanya berulang setiap 4 langkah: <b>3, 9, 7, 1</b>.</p>
-                <p><b>Langkah 2: Bagi pangkat dengan siklusnya.</b><br>
-                Pangkatnya 100. Siklusnya 4.<br>
-                $100 \div 4 = 25$ sisa <b>0</b>.<br>
-                Kalau sisa 0 (habis dibagi), berarti kita ambil angka urutan ke-4 (terakhir).<br>
-                Angka urutan ke-4 adalah <b>1</b>.</p>
-                <p><b>Langkah 3: Sisa bagi 5.</b><br>
-                Bilangan yang belakangnya 1 (seperti 1, 11, 21, 81) kalau dibagi 5 pasti sisanya <b>1</b>.</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 8 -->
-    <section class="page">
-        <div class="content-wrapper">
-          <h1>Kunci Jawaban & Pembahasan</h1>
-          <div class="kategori-soal">Pembahasan Soal 8</div>
-          <div class="soal-latihan">
-            <b>8.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: C. 4</b>
-              <div class="pembahasan">
-                <p>Kita cari sisa pembagian $2^{2000}$ dengan 7.</p>
-                <p><b>Langkah 1: Cek pola sisa (modulo 7).</b><br>
-                $2^1 = 2$. (2 dibagi 7 sisa <b>2</b>).<br>
-                $2^2 = 4$. (4 dibagi 7 sisa <b>4</b>).<br>
-                $2^3 = 8$. (8 dibagi 7 sisa <b>1</b>).<br>
-                $2^4 = 16$. (16 dibagi 7 sisa 2 lagi).<br>
-                Polanya berulang setiap 3 langkah: <b>2, 4, 1</b>.</p>
-                <p><b>Langkah 2: Cek pangkatnya.</b><br>
-                Pangkatnya 2000. Siklusnya 3.<br>
-                $2000 \div 3 = 666$ sisa <b>2</b>.</p>
-                <p><b>Langkah 3: Ambil polanya.</b><br>
-                Karena sisa 2, berarti kita ambil urutan ke-2 dari pola.<br>
-                Urutan ke-2 adalah angka <b>4</b>.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <footer class="page-footer">
-          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-        </footer>
-      </section>
-
-    <!-- PEMBAHASAN 9 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 9</div>
-          <div class="soal-latihan-n">
-            <b>9.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: B. 4</b>
-              <div class="pembahasan">
-                <p>Soal ini tentang basis bilangan.</p>
-                <p><b>Langkah 1: Terjemahkan $(121)_b$.</b><br>
-                Angka $(121)_b$ artinya:<br>
-                $1 \times b^2 + 2 \times b^1 + 1 \times b^0$<br>
-                $= b^2 + 2b + 1$</p>
-                <p><b>Langkah 2: Sederhanakan bentuk aljabarnya.</b><br>
-                Bentuk $b^2 + 2b + 1$ bisa diringkas menjadi $(b+1)^2$.</p>
-                <p><b>Langkah 3: Samakan dengan 25.</b><br>
-                Soal bilang nilainya 25.<br>
-                $(b+1)^2 = 25$<br>
-                Angka apa yang dikuadratkan jadi 25? Jawabannya 5.<br>
-                Jadi, $b + 1 = 5$.<br>
-                $b = 5 - 1 = 4$.</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 10 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 10</div>
-          <div class="soal-latihan-n">
-            <b>10.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: B. 3</b>
-              <div class="pembahasan">
-                <p>Ini sama persis caranya dengan soal nomor 7, tapi pangkatnya beda.</p>
-                <p><b>Langkah 1: Ingat pola 3.</b><br>
-                Pola satuan 3 adalah: <b>3, 9, 7, 1</b>. (Siklus 4).</p>
-                <p><b>Langkah 2: Cek pangkat 2025.</b><br>
-                $2025 \div 4$.<br>
-                2000 habis dibagi 4.<br>
-                24 habis dibagi 4.<br>
-                Jadi 2025 dibagi 4 bersisa <b>1</b>.</p>
-                <p><b>Langkah 3: Kesimpulan.</b><br>
-                Karena sisa 1, ambil urutan ke-1 dari pola.<br>
-                Urutan ke-1 adalah <b>3</b>.</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
-
-    <!-- PEMBAHASAN 11 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 11</div>
-          <div class="soal-latihan-n">
-              <b>11.</b>
-              <div class="soal-wrapper">
-                <b>Jawaban: C. 27</b>
-                <div class="pembahasan">
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">20</li><li data-opt="B">26</li><li data-opt="C">27</li><li data-opt="D">33</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: C. 27</b>
                   <p>Ini soal Himpunan (Diagram Venn).</p>
                   <p><b>Langkah 1: Hitung yang habis dibagi 3.</b><br>
                   $100 \div 3 = 33,33$. Berarti ada <b>33</b> bilangan.</p>
@@ -1256,122 +1209,158 @@
                 </div>
               </div>
             </div>
+          </div>
         </div>
-        <footer class="page-footer">
-          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-        </footer>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
       </section>
 
-    <!-- PEMBAHASAN 12 -->
-    <section class="page">
+      <!-- Halaman Soal 12 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
         <div class="content-wrapper">
-          <h1>Kunci Jawaban & Pembahasan</h1>
-          <div class="kategori-soal">Pembahasan Soal 12</div>
-          <div class="soal-latihan">
-            <b>12.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: A. 3</b>
-              <div class="pembahasan">
-                <p>Soal: $1! + 2! + 3! + ... + 2025!$ dibagi 15.</p>
-                <p><b>Langkah 1: Pahami Faktorial.</b><br>
-                $1! = 1$<br>
-                $2! = 2 \times 1 = 2$<br>
-                $3! = 3 \times 2 \times 1 = 6$<br>
-                $4! = 4 \times 3 \times 2 \times 1 = 24$<br>
-                $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$</p>
-                <p><b>Langkah 2: Cari Keterbagian 15.</b><br>
-                Mulai dari $5!$, di dalamnya ada perkalian $5 \times ... \times 3$.<br>
-                Karena ada angka 5 dan 3, maka $5 \times 3 = 15$.<br>
-                Artinya: <b>Mulai dari 5! sampai 2025!, semuanya HABIS dibagi 15 (sisa 0).</b></p>
-                <p><b>Langkah 3: Hitung sisanya saja.</b><br>
-                Kita cuma perlu hitung yang kecil-kecil di depan:<br>
-                $1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33$.<br>
-                Berapa sisa $33 \div 15$?<br>
-                $33 = 15 \times 2 + 3$.<br>
-                Sisanya <b>3</b>.</p>
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">12.</div>
+              <div class="soal-konten">
+                Berapakah sisa pembagian $1! + 2! + 3! + ... + 2025!$ oleh 15?
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">3</li><li data-opt="B">0</li><li data-opt="C">9</li><li data-opt="D">12</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: A. 3</b>
+                  <p>Soal: $1! + 2! + 3! + ... + 2025!$ dibagi 15.</p>
+                  <p><b>Langkah 1: Pahami Faktorial.</b><br>
+                  $1! = 1$<br>
+                  $2! = 2 \times 1 = 2$<br>
+                  $3! = 3 \times 2 \times 1 = 6$<br>
+                  $4! = 4 \times 3 \times 2 \times 1 = 24$<br>
+                  $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$</p>
+                  <p><b>Langkah 2: Cari Keterbagian 15.</b><br>
+                  Mulai dari $5!$, di dalamnya ada perkalian $5 \times ... \times 3$.<br>
+                  Karena ada angka 5 dan 3, maka $5 \times 3 = 15$.<br>
+                  Artinya: <b>Mulai dari 5! sampai 2025!, semuanya HABIS dibagi 15 (sisa 0).</b></p>
+                  <p><b>Langkah 3: Hitung sisanya saja.</b><br>
+                  Kita cuma perlu hitung yang kecil-kecil di depan:<br>
+                  $1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33$.<br>
+                  Berapa sisa $33 \div 15$?<br>
+                  $33 = 15 \times 2 + 3$.<br>
+                  Sisanya <b>3</b>.</p>
+                </div>
               </div>
             </div>
           </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
 
-    <!-- PEMBAHASAN 13 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 13</div>
-          <div class="soal-latihan-n">
-            <b>13.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: B. 29</b>
-              <div class="pembahasan">
-                <p>Soal: $x^2 - y^2 = 29$.</p>
-                <p><b>Langkah 1: Faktorkan.</b><br>
-                Ingat rumus aljabar: $x^2 - y^2 = (x-y)(x+y)$.<br>
-                Jadi, $(x-y) \times (x+y) = 29$.</p>
-                <p><b>Langkah 2: Analisa angka 29.</b><br>
-                29 adalah bilangan prima. Dia cuma bisa dibagi 1 dan 29.<br>
-                Artinya, perkalian di atas pasti:<br>
-                $1 \times 29$.</p>
-                <p><b>Langkah 3: Tentukan nilai.</b><br>
-                Yang kecil pasti $(x-y) = 1$.<br>
-                Yang besar pasti $(x+y) = 29$.<br>
-                Pertanyaannya adalah nilai $x+y$. Jawabannya langsung ketemu: <b>29</b>.</p>
+      <!-- Halaman Soal 13 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">13.</div>
+              <div class="soal-konten">
+                Diketahui $x$ dan $y$ adalah bilangan asli. Jika $x^2 - y^2 = 29$, maka nilai $x + y$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">1</li><li data-opt="B">29</li><li data-opt="C">14</li><li data-opt="D">15</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 29</b>
+                  <p>Soal: $x^2 - y^2 = 29$.</p>
+                  <p><b>Langkah 1: Faktorkan.</b><br>
+                  Ingat rumus aljabar: $x^2 - y^2 = (x-y)(x+y)$.<br>
+                  Jadi, $(x-y) \times (x+y) = 29$.</p>
+                  <p><b>Langkah 2: Analisa angka 29.</b><br>
+                  29 adalah bilangan prima. Dia cuma bisa dibagi 1 dan 29.<br>
+                  Artinya, perkalian di atas pasti:<br>
+                  $1 \times 29$.</p>
+                  <p><b>Langkah 3: Tentukan nilai.</b><br>
+                  Yang kecil pasti $(x-y) = 1$.<br>
+                  Yang besar pasti $(x+y) = 29$.<br>
+                  Pertanyaannya adalah nilai $x+y$. Jawabannya langsung ketemu: <b>29</b>.</p>
+                </div>
               </div>
             </div>
           </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
 
-    <!-- PEMBAHASAN 14 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 14</div>
-          <div class="soal-latihan-n">
-            <b>14.</b>
-            <div class="soal-wrapper">
-              <b>Jawaban: B. 42</b>
-              <div class="pembahasan">
-                <p>Gunakan rumus ajaib hubungan KPK dan FPB:</p>
-                <p><b>Rumus:</b><br>
-                Bilangan 1 $\times$ Bilangan 2 = KPK $\times$ FPB</p>
-                <p><b>Langkah 1: Masukkan angka.</b><br>
-                Misal bilangan kedua adalah $b$.<br>
-                $24 \times b = 168 \times 6$</p>
-                <p><b>Langkah 2: Hitung.</b><br>
-                $24 \times b = 1008$<br>
-                $b = 1008 \div 24$<br>
-                $b = 42$.</p>
+      <!-- Halaman Soal 14 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">14.</div>
+              <div class="soal-konten">
+                KPK dari dua bilangan adalah 168 dan FPB-nya adalah 6. Jika salah satu bilangan adalah 24, maka bilangan lainnya adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">36</li><li data-opt="B">42</li><li data-opt="C">48</li><li data-opt="D">54</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 42</b>
+                  <p>Gunakan rumus ajaib hubungan KPK dan FPB:</p>
+                  <p><b>Rumus:</b><br>
+                  Bilangan 1 $\times$ Bilangan 2 = KPK $\times$ FPB</p>
+                  <p><b>Langkah 1: Masukkan angka.</b><br>
+                  Misal bilangan kedua adalah $b$.<br>
+                  $24 \times b = 168 \times 6$</p>
+                  <p><b>Langkah 2: Hitung.</b><br>
+                  $24 \times b = 1008$<br>
+                  $b = 1008 \div 24$<br>
+                  $b = 42$.</p>
+                </div>
               </div>
             </div>
           </div>
-      </div>
-      <footer class="page-footer">
-        <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-        <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-      </footer>
-    </section>
+        </div>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
 
-    <!-- PEMBAHASAN 15 -->
-    <section class="page">
-      <div class="content-wrapper">
-        <h1>Kunci Jawaban & Pembahasan</h1>
-        <div class="kategori-soal">Pembahasan Soal 15</div>
-          <div class="soal-latihan-n">
-              <b>15.</b>
-              <div class="soal-wrapper">
-                <b>Jawaban: B. 7</b>
-                <div class="pembahasan">
+      <!-- Halaman Soal 15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" alt="Ruangguru Logo" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 1 | Sifat & Operasi Bilangan</div></div>
+        </header>
+        <div class="content-wrapper">
+          <div class="pembahasan-box">
+            <div class="soal-pembahasan">
+              <div class="soal-nomor">15.</div>
+              <div class="soal-konten">
+                Bilangan 4 digit $4a5b$ habis dibagi 9 dan 4. Nilai maksimum dari $a$ adalah...
+                <ul class="pilihan-ganda">
+                  <li data-opt="A">3</li><li data-opt="B">7</li><li data-opt="C">8</li><li data-opt="D">9</li>
+                </ul>
+                <div class="pembahasan-detail">
+                  <h4>Pembahasan:</h4>
+                  <b class="jawaban">Jawaban: B. 7</b>
                   <p>Bilangan $4a5b$ habis dibagi 4 dan 9.</p>
                   <p><b>Langkah 1: Syarat bagi 4.</b><br>
                   Lihat 2 digit terakhir ($5b$) harus habis dibagi 4.<br>
@@ -1392,11 +1381,11 @@
                 </div>
               </div>
             </div>
+          </div>
         </div>
-        <footer class="page-footer">
-          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
-          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
-        </footer>
+        <footer class="page-footer"><span><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b> <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
       </section>
+
+    </div>
   </body>
 </html>
