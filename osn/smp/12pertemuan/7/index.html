@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS07 - PERTEMUAN 07 - Statistika & Peluang 1</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 2cm 15px 2cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 11pt;
+        border-radius: 0 5px 5px 0;
+      }
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 10px;
+      }
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .summary-table td,
+      .summary-table th {
+        border: 1px solid var(--border-color);
+        padding: 10px 15px;
+        vertical-align: top;
+        font-size: 11pt;
+      }
+      .summary-table .summary-table-header td,
+      .summary-table th {
+        background-color: var(--table-header-bg);
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 8px 15px;
+        font-size: 10pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 150px;
+        color: var(--secondary-text);
+      }
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 35px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 11.5pt;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 10px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 5px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 25px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .pembahasan-detail {
+        margin-top: 15px;
+        background-color: var(--highlight-box-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 15px;
+        border-radius: 0 8px 8px 0;
+        font-size: 10.5pt;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 9pt;
+      }
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: MATERI BAGIAN 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Pendalaman Materi & Rumus Penting</h2>
+
+          <div class="konsep-box">
+            <h3>1. Statistika Deskriptif</h3>
+            <ul class="custom-list">
+              <li>
+                <b>a. Rata-rata (Mean)</b><br />
+                Rata-rata ($\bar{x}$) adalah wakil data yang paling sering
+                digunakan.
+                $$ \bar{x} = \frac{\sum x_i}{n} = \frac{x_1 + x_2 + \dots + x_n}{n} $$
+                <br />
+                <b>Konsep Rata-rata Gabungan (Penting untuk OSN):</b><br />
+                Soal OSN sering memanipulasi perubahan rata-rata akibat
+                penambahan/pengurangan data atau penggabungan dua kelompok.
+                $$ \bar{x}_{gab} = \frac{n_A \cdot \bar{x}_A + n_B \cdot \bar{x}_B}{n_A + n_B} $$
+              </li>
+              <li>
+                <b>b. Median dan Modus</b><br />
+                - <b>Median ($Me$):</b> Nilai tengah data <b>setelah diurutkan</b>.<br />
+                &nbsp;&nbsp; Data ganjil: Data ke-$\frac{n+1}{2}$.<br />
+                &nbsp;&nbsp; Data genap: Rata-rata dari data ke-$\frac{n}{2}$ dan ke-$(\frac{n}{2}+1)$.<br />
+                - <b>Modus ($Mo$):</b> Nilai yang paling sering muncul.
+              </li>
+              <li>
+                <b>c. Ukuran Penyebaran Data</b><br />
+                - <b>Jangkauan (Range):</b> $R = x_{max} - x_{min}$.<br />
+                - <b>Kuartil ($Q_1, Q_2, Q_3$):</b><br />
+                &nbsp;&nbsp; $Q_2$ (Median): Membagi data menjadi 2 bagian.<br />
+                &nbsp;&nbsp; $Q_1$ (Kuartil Bawah): Median dari separuh data pertama.<br />
+                &nbsp;&nbsp; $Q_3$ (Kuartil Atas): Median dari separuh data kedua.<br />
+                &nbsp;&nbsp; <b>Jangkauan Interkuartil ($H$):</b> $H = Q_3 - Q_1$.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="tips-box">
+            <b>Tips Statistika:</b><br />
+            Jika ada soal "seorang siswa nilainya salah catat", gunakan konsep <b>Jumlah Nilai ($\Sigma x$)</b>. Perubahan pada satu data hanya mempengaruhi jumlah nilai sebesar selisih nilai baru dan lama.
+            <br>
+            Dalam soal bilangan bulat berurutan atau himpunan bilangan, perhatikan syarat <b>Unik/Tunggal</b>. Modus tunggal artinya hanya ada satu nilai yang frekuensinya tertinggi.
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2: MATERI BAGIAN 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="konsep-box">
+            <h3>2. Peluang (Probabilitas)</h3>
+            <p>Peluang adalah rasio banyaknya kejadian yang diharapkan terhadap total kemungkinan.<br>$$ P(A) = \frac{n(A)}{n(S)} $$</p>
+            <ul class="custom-list">
+              <li>
+                <b>a. Kaidah Pencacahan Dasar (Counting Principles)</b><br />
+                - <b>Aturan Perkalian:</b> Jika kejadian A dapat terjadi dalam $p$ cara dan kejadian B dalam $q$ cara, maka pasangan kejadian (A kemudian B) ada $p \times q$ cara.<br />
+                - <b>Permutasi:</b> Susunan memperhatikan urutan (AB $\ne$ BA). Contoh: Memilih ketua, wakil.<br />
+                - <b>Kombinasi:</b> Susunan <b>tidak</b> memperhatikan urutan (AB = BA). Contoh: Memilih tim, mengambil kelereng.<br />
+                $$ C(n,r) = \frac{n!}{r!(n-r)!} $$
+              </li>
+              <li>
+                <b>b. Peluang Kejadian Majemuk</b><br />
+                - <b>Saling Lepas:</b> $P(A \cup B) = P(A) + P(B)$. (Tidak bisa terjadi bersamaan).<br />
+                - <b>Saling Bebas:</b> $P(A \cap B) = P(A) \times P(B)$. (Kejadian satu tidak mempengaruhi yang lain, misal: dadu dan koin).<br />
+                - <b>Komplemen:</b> $P(A') = 1 - P(A)$.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Strategi & Tips OSN Matematika</h2>
+          <div class="tips-box">
+            <ol>
+                <li><b>Gunakan Variabel untuk Data Tidak Diketahui:</b> Banyak soal statistika OSN tidak memberikan angka langsung, melainkan hubungan antar bilangan. Misalkan data sebagai $x_1, x_2, \dots, x_n$ dan urutkan.</li>
+                <li><b>Manfaatkan Konsep "Jumlah Total":</b> Rata-rata seringkali hanya jembatan. Fokuslah pada persamaan: $$ \text{Jumlah Data} = \text{Rata-rata} \times \text{Banyak Data} $$</li>
+                <li><b>Eksplorasi Kasus (Case Checking):</b> Untuk soal median, modus, atau jangkauan dengan jumlah data sedikit, jangan ragu untuk mencoba kasus-kasus yang mungkin.</li>
+                <li><b>Cek Batasan Logis Peluang:</b> Ingat $0 \le P(A) \le 1$.</li>
+                <li><b>Gunakan Komplemen untuk Kata Kunci "Minimal Satu":</b> Menghitung peluang "muncul minimal satu angka genap" lebih mudah dengan cara $1 - P(\text{semua ganjil})$.</li>
+            </ol>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Rata-rata Gabungan</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">1.</div>
+            <div class="soal-konten">
+              Nilai rata-rata 40 siswa dalam suatu kelas adalah 7,6 dan nilai rata-rata 24 siswa perempuan adalah 7,7. Rata-rata nilai siswa laki-laki adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">7</li>
+                <li data-opt="b">7,45</li>
+                <li data-opt="c">7,54</li>
+                <li data-opt="d">8,45</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: b. 7,45</b><br />
+                <b>Analisis:</b> Kita memiliki rata-rata total dan rata-rata sebagian kelompok. Kita diminta mencari rata-rata kelompok sisanya.<br>
+                - Total Siswa ($n_{tot}$) = 40, Rata-rata Total ($\bar{x}_{tot}$) = 7,6.<br>
+                - Siswa Perempuan ($n_P$) = 24, Rata-rata Perempuan ($\bar{x}_P$) = 7,7.<br>
+                - Siswa Laki-laki ($n_L$) = $40 - 24 = 16$.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Hitung jumlah total nilai seluruh kelas:<br>
+                $$ \Sigma_{tot} = 40 \times 7,6 = 304 $$
+                2. Hitung jumlah total nilai siswa perempuan:<br>
+                $$ \Sigma_{P} = 24 \times 7,7 = 184,8 $$
+                3. Cari selisihnya untuk mendapatkan total nilai laki-laki:<br>
+                $$ \Sigma_{L} = 304 - 184,8 = 119,2 $$
+                4. Hitung rata-rata laki-laki:<br>
+                $$ \bar{x}_L = \frac{119,2}{16} = 7,45 $$
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Jangkauan Data</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">2.</div>
+            <div class="soal-konten">
+              Nilai ujian Bahasa Inggris dari 10 siswa adalah 85, 70, 90, 82, 75, 95, 88, 78, 80, 85. Jangkauan dari data tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">15</li>
+                <li data-opt="b">20</li>
+                <li data-opt="c">25</li>
+                <li data-opt="d">35</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 25</b><br />
+                <b>Analisis:</b> Jangkauan (Range) adalah selisih nilai terbesar dan terkecil.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Identifikasi nilai terbesar ($x_{max}$) dan terkecil ($x_{min}$):<br>
+                $$ x_{max} = 95, \quad x_{min} = 70 $$
+                2. Hitung selisihnya:<br>
+                $$ R = 95 - 70 = 25 $$
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 3 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Kuartil Data</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">3.</div>
+            <div class="soal-konten">
+              Diketahui data nilai ulangan Matematika adalah 7, 8, 9, 6, 10, 8, 7. Nilai dari kuartil bawah, kuartil tengah, dan kuartil atas berturut-turut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">7, 8, dan 9</li>
+                <li data-opt="b">7, 9, dan 10</li>
+                <li data-opt="c">6, 7, dan 8</li>
+                <li data-opt="d">6, 8, dan 10</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 7, 8, dan 9</b><br />
+                <b>Analisis:</b> Kuartil membagi data terurut menjadi 4 bagian.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Urutkan data: $6, 7, 7, 8, 8, 9, 10$. Banyak data ($n$) = 7.<br>
+                2. Cari $Q_2$ (Median): Data ke-4 adalah 8.<br>
+                3. Cari $Q_1$ (Kuartil Bawah): Median dari data kiri $\{6, 7, 7\}$ adalah 7.<br>
+                4. Cari $Q_3$ (Kuartil Atas): Median dari data kanan $\{8, 9, 10\}$ adalah 9.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Peluang Saling Bebas</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">4.</div>
+            <div class="soal-konten">
+              Sebuah dadu dan sekeping koin dilempar satu kali secara bersama-sama. Berapa besarnya kemungkinan munculnya sisi angka pada uang logam dan angka prima pada mata dadu?
+              <ul class="pilihan-ganda">
+                <li data-opt="a">1/2</li>
+                <li data-opt="b">1/3</li>
+                <li data-opt="c">1/4</li>
+                <li data-opt="d">1/5</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 1/4</b><br />
+                <b>Analisis:</b> Peluang kejadian saling bebas.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Peluang Koin Angka ($A$): $P(A) = \frac{1}{2}$.<br>
+                2. Peluang Dadu Prima ($B$): $\{2, 3, 5\}$ dari 6 sisi $\rightarrow P(B) = \frac{3}{6} = \frac{1}{2}$.<br>
+                3. $P(A \cap B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Aljabar Statistika</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">5.</div>
+            <div class="soal-konten">
+              Rata-rata tujuh bilangan adalah 3. Rata-rata empat bilangan pertama adalah $2k+1$ dengan $k$ adalah bilangan bulat positif. Sementara itu, rata-rata tiga bilangan kedua adalah $k+2$. Selisih dari rata-rata empat bilangan pertama dan rata-rata tiga bilangan kedua adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">0</li>
+                <li data-opt="b">1</li>
+                <li data-opt="c">2</li>
+                <li data-opt="d">3</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 0</b><br />
+                <b>Analisis:</b> Jumlah nilai = rata-rata $\times$ banyak data.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Persamaan jumlah: $4(2k+1) + 3(k+2) = 7(3)$.<br>
+                2. $8k + 4 + 3k + 6 = 21 \implies 11k + 10 = 21 \implies k = 1$.<br>
+                3. Rata-rata pertama: $2(1)+1 = 3$. Rata-rata kedua: $1+2 = 3$. Selisih = 0.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 6 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Rata-rata Gabungan</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">6.</div>
+            <div class="soal-konten">
+              Ani telah mengikuti tes Matematika sebanyak $n$ kali. Pada tes berikutnya ia memperoleh nilai 60 sehingga nilai rata-ratanya menjadi 72. Jika nilai tes Ani (pada tes berikutnya itu) adalah 64, maka rata-ratanya menjadi 74. Nilai $n$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">1</li>
+                <li data-opt="b">2</li>
+                <li data-opt="c">4</li>
+                <li data-opt="d">5</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 1</b><br />
+                <b>Analisis:</b> Bandingkan dua kondisi rata-rata. Misalkan $S$ jumlah nilai awal.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. $S + 60 = 72(n+1) \implies S = 72n + 12$.<br>
+                2. $S + 64 = 74(n+1) \implies S = 74n + 10$.<br>
+                3. $72n + 12 = 74n + 10 \implies 2n = 2 \implies n = 1$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 7 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Rata-rata & Aljabar</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">7.</div>
+            <div class="soal-konten">
+              Jika rata-rata dari $n+1$, $m+n$, $m+5$ adalah 2 dan $2m+3n=4$ dengan $m$ dan $n$ adalah bilangan bulat, maka nilai terbesar dari ketiga bilangan tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">5</li>
+                <li data-opt="b">6</li>
+                <li data-opt="c">7</li>
+                <li data-opt="d">8</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 5</b><br />
+                <b>Analisis:</b> Substitusi sistem persamaan.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. $\frac{(n+1) + (m+n) + (m+5)}{3} = 2 \implies 2m + 2n = 0 \implies m = -n$.<br>
+                2. Substitusi ke $2m+3n=4$: $2(-n)+3n=4 \implies n=4$, maka $m=-4$.<br>
+                3. Bilangan: $5, 0, 1$. Terbesar 5.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Rata-rata Data Majemuk</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">8.</div>
+            <div class="soal-konten">
+              Diberikan data-data berikut: $6, 13, 20, 8, 19, 8, x, y, 19, 8$. <br>
+              Rata-rata data di atas adalah 11 dengan $y=2x$. Nilai dari $xy(x+y)$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">162</li>
+                <li data-opt="b">163</li>
+                <li data-opt="c">164</li>
+                <li data-opt="d">165</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 162</b><br />
+                <b>Analisis:</b> Cari $x$ dan $y$. Total data = 10.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. $\frac{101 + x + y}{10} = 11 \implies x + y = 9$.<br>
+                2. $y=2x \implies x+2x=9 \implies x=3, y=6$.<br>
+                3. $xy(x+y) = 3 \cdot 6 \cdot 9 = 162$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 9 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Peluang Dadu</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">9.</div>
+            <div class="soal-konten">
+              Sebuah dadu dilempar sebanyak dua kali. Peluang untuk mendapatkan jumlah mata dadu kurang dari 6 adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">8/9</li>
+                <li data-opt="b">1/3</li>
+                <li data-opt="c">5/18</li>
+                <li data-opt="d">1/9</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 5/18</b><br />
+                <b>Analisis:</b> Peluang 2 dadu jumlah < 6.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Kejadian: $(1,1), (1,2), (1,3), (1,4), (2,1), (2,2), (2,3), (3,1), (3,2), (4,1)$. Total 10.<br>
+                2. Peluang $= \frac{10}{36} = \frac{5}{18}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Peluang Kombinasi</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">10.</div>
+            <div class="soal-konten">
+              Dua huruf dipilih dari kata 'JAKARTA' secara acak. Nilai peluang bahwa 2 huruf yang terpilih tersebut <b>termasuk</b> huruf R adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">14/17</li>
+                <li data-opt="b">14/21</li>
+                <li data-opt="c">4/21</li>
+                <li data-opt="d">3/21</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban Matematis: 6/21 (Setara 2/7)</b><br />
+                <b>Analisis:</b> Kombinasi pengambilan huruf J, A, K, A, R, T, A (7 huruf).<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Ruang sampel $C(7,2) = 21$.<br>
+                2. Kejadian ada R: Pilih 1 R (1 cara) dan 1 huruf lain (6 cara). Total 6 cara.<br>
+                3. Peluang $= \frac{6}{21} = \frac{2}{7}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 11 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Statistika Data Tunggal (HOTS)</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">11.</div>
+            <div class="soal-konten">
+              Sekelompok data terdiri dari 5 bilangan asli berbeda. Diketahui rata-rata data tersebut adalah 12, median 10, dan jangkauan 15. Bilangan terbesar yang mungkin dari data tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">19</li>
+                <li data-opt="b">20</li>
+                <li data-opt="c">21</li>
+                <li data-opt="d">22</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: d. 22</b><br />
+                <b>Analisis:</b> Statistik data tunggal. Misalkan data terurut $x_1 < x_2 < x_3 < x_4 < x_5$ (bilangan asli berbeda).<br>
+                - Median = 10 $\implies x_3 = 10$.<br>
+                - Rata-rata = 12 $\implies \sum x = 60$.<br>
+                - Jangkauan = 15 $\implies x_5 - x_1 = 15 \implies x_1 = x_5 - 15$.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Persamaan jumlah: $x_1 + x_2 + 10 + x_4 + x_5 = 60$.<br>
+                2. Substitusi $x_1$: $(x_5 - 15) + x_2 + x_4 + x_5 = 50 \implies 2x_5 + x_2 + x_4 = 65$.<br>
+                3. Mencoba opsi maksimal: Coba $x_5 = 22$:<br>
+                $x_1 = 22 - 15 = 7$.<br>
+                Persamaan menjadi: $2(22) + x_2 + x_4 = 65 \implies x_2 + x_4 = 21$.<br>
+                Syarat: $7 < x_2 < 10$ dan $10 < x_4 < 22$.<br>
+                Jika kita ambil $x_2 = 8$, maka $x_4 = 21 - 8 = 13$.<br>
+                Cek urutan: $7 < 8 < 10 < 13 < 22$. <b>Valid</b>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 12 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Mean, Median, Modus</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">12.</div>
+            <div class="soal-konten">
+              Empat bilangan asli $a, b, c, d$ dengan $a \le b \le c \le d$ memiliki rata-rata, median, dan modus yang bernilai sama, yaitu 8. Jika data tersebut memiliki modus tunggal, maka nilai $d-a$ terbesar yang mungkin adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">12</li>
+                <li data-opt="b">13</li>
+                <li data-opt="c">14</li>
+                <li data-opt="d">15</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 14</b><br />
+                <b>Analisis:</b> 4 bilangan asli $a \le b \le c \le d$.<br>
+                - Mean = Median = Modus = 8. Modus tunggal.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Median 4 data genap adalah $\frac{b+c}{2} = 8 \implies b+c = 16$.<br>
+                2. Agar modus tunggal dan bernilai 8, maka pasangan terbaik adalah $b=8$ dan $c=8$.<br>
+                3. Rata-rata = 8 $\implies$ Jumlah data = 32. $a + 8 + 8 + d = 32 \implies a + d = 16$.<br>
+                4. Agar $d-a$ bernilai maksimum, $a$ harus sekecil mungkin. Bilangan asli terkecil $a=1$. Maka $d=15$.<br>
+                5. $d-a = 15 - 1 = 14$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 13 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Peluang Pertandingan</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">13.</div>
+            <div class="soal-konten">
+              Budi dan Candra bermain bulu tangkis. Pemain dinyatakan menang jika memenangkan 2 set lebih dahulu (misal skor 2-0 atau 2-1). Jika peluang Budi menang dalam satu set adalah 0,6 dan diasumsikan tidak ada hasil seri, maka peluang Budi memenangkan pertandingan adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">0,360</li>
+                <li data-opt="b">0,432</li>
+                <li data-opt="c">0,648</li>
+                <li data-opt="d">0,720</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 0,648</b><br />
+                <b>Analisis:</b> Peluang menang per set $P(M) = 0,6$. Kalah $P(K) = 0,4$.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                Skenario Budi menang:<br>
+                1. Menang 2 set langsung (M-M): $0,6 \times 0,6 = 0,36$.<br>
+                2. Menang 2-1 (Rubber Set):<br>
+                - Menang-Kalah-Menang (M-K-M): $0,6 \times 0,4 \times 0,6 = 0,144$.<br>
+                - Kalah-Menang-Menang (K-M-M): $0,4 \times 0,6 \times 0,6 = 0,144$.<br>
+                3. Total Peluang: $0,36 + 0,144 + 0,144 = 0,648$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 14 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Prinsip Komplemen</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">14.</div>
+            <div class="soal-konten">
+              Tiga orang dipilih secara acak. Peluang bahwa setidaknya ada dua orang yang lahir pada hari yang sama (Senin s.d. Minggu) adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">19/49</li>
+                <li data-opt="b">30/49</li>
+                <li data-opt="c">5/7</li>
+                <li data-opt="d">2/7</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: a. 19/49</b><br />
+                <b>Analisis:</b> Prinsip Komplemen (Total Peluang - Peluang Semua Beda).<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. Ruang sampel 3 orang (7 hari dalam seminggu): $7^3 = 343$.<br>
+                2. Kejadian semua lahir di hari berbeda: Orang 1 (7 opsi) $\times$ Orang 2 (6 opsi) $\times$ Orang 3 (5 opsi) = 210.<br>
+                3. Peluang semua beda: $\frac{210}{343} = \frac{30}{49}$.<br>
+                4. Peluang setidaknya 2 sama: $1 - \frac{30}{49} = \frac{19}{49}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- SOAL 15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card">
+            <tr>
+              <td>Topik</td>
+              <td>Peluang Bersyarat</td>
+            </tr>
+          </table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">15.</div>
+            <div class="soal-konten">
+              Sebuah dadu sisi enam dilempar. Jika muncul mata dadu prima, nilainya menjadi mata dadu tersebut ditambah 1. Jika muncul bukan prima, nilainya menjadi mata dadu tersebut dikurangi 1. Peluang mendapatkan nilai akhir ganjil adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">1/6</li>
+                <li data-opt="b">1/3</li>
+                <li data-opt="c">1/2</li>
+                <li data-opt="d">2/3</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: c. 1/2</b><br />
+                <b>Analisis:</b> Transformasi nilai dadu.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                Cek setiap sisi dadu:<br>
+                - 1 (Bukan Prima) $\rightarrow 1 - 1 = 0$ (Genap).<br>
+                - 2 (Prima) $\rightarrow 2 + 1 = 3$ (Ganjil).<br>
+                - 3 (Prima) $\rightarrow 3 + 1 = 4$ (Genap).<br>
+                - 4 (Bukan Prima) $\rightarrow 4 - 1 = 3$ (Ganjil).<br>
+                - 5 (Prima) $\rightarrow 5 + 1 = 6$ (Genap).<br>
+                - 6 (Bukan Prima) $\rightarrow 6 - 1 = 5$ (Ganjil).<br>
+                Hasil ganjil didapat dari mata dadu awal: 2, 4, 6 (Ada 3 kejadian).<br>
+                Peluang = $\frac{3}{6} = \frac{1}{2}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    </div>
+  </body>
+</html>
