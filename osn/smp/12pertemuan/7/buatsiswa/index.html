@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS07BS - PERTEMUAN 07 - Statistika & Peluang 1</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 15px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .soal-container {
+        page-break-inside: avoid;
+        /* border-bottom: 1px dashed #eee; */
+        padding-bottom: 2px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 2px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: Soal 1-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 1 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Nilai rata-rata 40 siswa dalam suatu kelas adalah 7,6 dan nilai rata-rata 24 siswa perempuan adalah 7,7. Rata-rata nilai siswa laki-laki adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">7</li>
+                    <li data-opt="B">7,45</li>
+                    <li data-opt="C">7,54</li>
+                    <li data-opt="D">8,45</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 2 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Nilai ujian Bahasa Inggris dari 10 siswa adalah 85, 70, 90, 82, 75, 95, 88, 78, 80, 85. Jangkauan dari data tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">15</li>
+                    <li data-opt="B">20</li>
+                    <li data-opt="C">25</li>
+                    <li data-opt="D">35</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 3 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Diketahui data nilai ulangan Matematika adalah 7, 8, 9, 6, 10, 8, 7. Nilai dari kuartil bawah, kuartil tengah, dan kuartil atas berturut-turut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">7, 8, dan 9</li>
+                    <li data-opt="B">7, 9, dan 10</li>
+                    <li data-opt="C">6, 7, dan 8</li>
+                    <li data-opt="D">6, 8, dan 10</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 4 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Sebuah dadu dan sekeping koin dilempar satu kali secara bersama-sama. Berapa besarnya kemungkinan munculnya sisi angka pada uang logam dan angka prima pada mata dadu?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1/2</li>
+                    <li data-opt="B">1/3</li>
+                    <li data-opt="C">1/4</li>
+                    <li data-opt="D">1/5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 5 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Rata-rata tujuh bilangan adalah 3. Rata-rata empat bilangan pertama adalah $2k+1$ dengan $k$ adalah bilangan bulat positif. Sementara itu, rata-rata tiga bilangan kedua adalah $k+2$. Selisih dari rata-rata empat bilangan pertama dan rata-rata tiga bilangan kedua adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">0</li>
+                    <li data-opt="B">1</li>
+                    <li data-opt="C">2</li>
+                    <li data-opt="D">3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 6 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Ani telah mengikuti tes Matematika sebanyak $n$ kali. Pada tes berikutnya ia memperoleh nilai 60 sehingga nilai rata-ratanya menjadi 72. Jika nilai tes Ani (pada tes berikutnya itu) adalah 64, maka rata-ratanya menjadi 74. Nilai $n$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1</li>
+                    <li data-opt="B">2</li>
+                    <li data-opt="C">4</li>
+                    <li data-opt="D">5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 7 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Jika rata-rata dari $n+1$, $m+n$, $m+5$ adalah 2 dan $2m+3n=4$ dengan $m$ dan $n$ adalah bilangan bulat, maka nilai terbesar dari ketiga bilangan tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">7</li>
+                    <li data-opt="D">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 8 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Diberikan data-data berikut: $6, 13, 20, 8, 19, 8, x, y, 19, 8$. <br>
+                  Rata-rata data di atas adalah 11 dengan $y=2x$. Nilai dari $xy(x+y)$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">162</li>
+                    <li data-opt="B">163</li>
+                    <li data-opt="C">164</li>
+                    <li data-opt="D">165</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2: Soal 9-15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 7 | Statistika dan Peluang 1
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 9 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Sebuah dadu dilempar sebanyak dua kali. Peluang untuk mendapatkan jumlah mata dadu kurang dari 6 adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8/9</li>
+                    <li data-opt="B">1/3</li>
+                    <li data-opt="C">5/18</li>
+                    <li data-opt="D">1/9</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 10 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Dua huruf dipilih dari kata 'JAKARTA' secara acak. Nilai peluang bahwa 2 huruf yang terpilih tersebut <b>termasuk</b> huruf R adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">14/17</li>
+                    <li data-opt="B">14/21</li>
+                    <li data-opt="C">4/21</li>
+                    <li data-opt="D">3/21</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 11 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Sekelompok data terdiri dari 5 bilangan asli berbeda. Diketahui rata-rata data tersebut adalah 12, median 10, dan jangkauan 15. Bilangan terbesar yang mungkin dari data tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">19</li>
+                    <li data-opt="B">20</li>
+                    <li data-opt="C">21</li>
+                    <li data-opt="D">22</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 12 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Empat bilangan asli $a, b, c, d$ dengan $a \le b \le c \le d$ memiliki rata-rata, median, dan modus yang bernilai sama, yaitu 8. Jika data tersebut memiliki modus tunggal, maka nilai $d-a$ terbesar yang mungkin adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">12</li>
+                    <li data-opt="B">13</li>
+                    <li data-opt="C">14</li>
+                    <li data-opt="D">15</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 13 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Budi dan Candra bermain bulu tangkis. Pemain dinyatakan menang jika memenangkan 2 set lebih dahulu (misal skor 2-0 atau 2-1). Jika peluang Budi menang dalam satu set adalah 0,6 dan diasumsikan tidak ada hasil seri, maka peluang Budi memenangkan pertandingan adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">0,360</li>
+                    <li data-opt="B">0,432</li>
+                    <li data-opt="C">0,648</li>
+                    <li data-opt="D">0,720</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 14 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Tiga orang dipilih secara acak. Peluang bahwa setidaknya ada dua orang yang lahir pada hari yang sama (Senin s.d. Minggu) adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">19/49</li>
+                    <li data-opt="B">30/49</li>
+                    <li data-opt="C">5/7</li>
+                    <li data-opt="D">2/7</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 15 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Sebuah dadu sisi enam dilempar. Jika muncul mata dadu prima, nilainya menjadi mata dadu tersebut ditambah 1. Jika muncul bukan prima, nilainya menjadi mata dadu tersebut dikurangi 1. Peluang mendapatkan nilai akhir ganjil adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1/6</li>
+                    <li data-opt="B">1/3</li>
+                    <li data-opt="C">1/2</li>
+                    <li data-opt="D">2/3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    </div>
+  </body>
+</html>
