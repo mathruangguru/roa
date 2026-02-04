@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS08BS - PERTEMUAN 08 - Statistika & Peluang 2 - Bank Aktivitas</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 5px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .soal-container {
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 0px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .page-footer {
+        text-align: left;
+        font-size: 6pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 2px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <!-- HALAMAN 1: Soal 1-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 8 | Statistika & Peluang 2
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 1 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Jika rata-rata 5 bilangan adalah 12 dan salah satu bilangan
+                  diganti dengan 2, rata-ratanya menjadi 10. Berapa bilangan
+                  yang diganti?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8</li>
+                    <li data-opt="B">10</li>
+                    <li data-opt="C">12</li>
+                    <li data-opt="D">16</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 2 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Dari 5 buku matematika dan 4 buku fisika, berapa cara memilih
+                  3 buku dengan minimal 1 buku fisika?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">120</li>
+                    <li data-opt="B">84</li>
+                    <li data-opt="C">74</li>
+                    <li data-opt="D">65</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 3 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Jika dua dadu dilempar bersamaan, maka peluang jumlah mata
+                  dadu yang muncul merupakan bilangan prima adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5/12</li>
+                    <li data-opt="B">1/12</li>
+                    <li data-opt="C">1/2</li>
+                    <li data-opt="D">7/12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 4 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Diberikan data dengan rata-rata 20 dan jangkauan 10. Jika
+                  setiap data dikali 2 lalu ditambah 5, berapa akar dari
+                  rata-rata dikurangi jangkauan barunya?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">2</li>
+                    <li data-opt="B">3</li>
+                    <li data-opt="C">4</li>
+                    <li data-opt="D">5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 5 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Sebuah kantong berisi 6 kelereng merah dan 4 kelereng biru.
+                  Jika diambil 3 kelereng tanpa pengembalian, berapa peluang
+                  terambil ketiganya merah?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1/6</li>
+                    <li data-opt="B">1/4</li>
+                    <li data-opt="C">1/3</li>
+                    <li data-opt="D">1/2</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 6 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Sebuah bimbingan belajar memiliki 90 siswa. 50 siswa mengikuti
+                  bimbel Fisika, 60 siswa bimbel Bahasa Inggris, dan 55 siswa
+                  bimbel Matematika. 30 siswa mengikuti Fisika dan Bahasa
+                  Inggris, 10 siswa mengikuti Bahasa Inggris dan Matematika tapi
+                  <b>tidak</b> mengikuti Fisika, dan 20 siswa mengikuti
+                  ketiganya. Berapa banyaknya siswa yang paling sedikit
+                  mengikuti 2 bimbel?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">45</li>
+                    <li data-opt="B">55</li>
+                    <li data-opt="C">65</li>
+                    <li data-opt="D">75</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 7 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Sebuah roda dibagi menjadi 24 bagian. Terdapat bagian berwarna
+                  Ungu ($1/3$ bagian), Kuning ($1/6$ bagian), Biru ($1/4$
+                  bagian), dan sisanya Merah. Warna yang paling sulit didapatkan
+                  (peluang terkecil) saat memutar panah adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Biru</li>
+                    <li data-opt="B">Ungu</li>
+                    <li data-opt="C">Kuning</li>
+                    <li data-opt="D">Merah</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 8 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Andi dapat membuat sebuah gardu dalam waktu 45 hari, sedangkan
+                  Budi dapat membuat gardu yang sama dalam 36 hari. Jika Andi
+                  dan Budi bekerja bersama-sama, maka gardu akan selesai dalam
+                  ... hari.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">19</li>
+                    <li data-opt="B">20</li>
+                    <li data-opt="C">35</li>
+                    <li data-opt="D">40</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b
+          ><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2: Soal 9-15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 8 | Statistika & Peluang 2
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 9 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Diberikan 5 truk. Truk A dan B masing-masing memuat 4 ton.
+                  Truk C dan D masing-masing memuat 6 ton. Jika truk E memuat 1
+                  ton lebih dari rata-rata muatan kelima truk, maka muatan truk
+                  A + muatan truk E adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5,25</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">10</li>
+                    <li data-opt="D">10,25</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 10 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Delapan bilangan asli memiliki rata-rata 6,5. Empat dari
+                  delapan bilangan tersebut adalah 4, 5, 7, dan 8. Selisih
+                  bilangan terbesar dan terkecilnya 10. Jika kedelapan bilangan
+                  diurutkan dari kecil ke besar, maka banyak kemungkinan susunan
+                  himpunan bilangan tersebut adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">48</li>
+                    <li data-opt="B">36</li>
+                    <li data-opt="C">24</li>
+                    <li data-opt="D">16</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 11 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Rata-rata nilai ulangan kelas A adalah $\bar{x}_A$ dan kelas B
+                  adalah $\bar{x}_B$. Jika kedua kelas digabung, rata-ratanya
+                  adalah 58. Jika rasio jumlah siswa kelas A dan B adalah $2:3$,
+                  dan $\bar{x}_A = \bar{x}_B + 5$, tentukan nilai $\bar{x}_A$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">56</li>
+                    <li data-opt="B">58</li>
+                    <li data-opt="C">61</li>
+                    <li data-opt="D">63</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 12 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Diberikan 8 titik pada sebuah lingkaran. Berapa banyak
+                  segitiga yang dapat dibentuk dengan menghubungkan ketiga titik
+                  tersebut sebagai titik sudutnya?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">24</li>
+                    <li data-opt="B">28</li>
+                    <li data-opt="C">56</li>
+                    <li data-opt="D">336</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 13 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Dua dadu dilempar bersamaan. Diketahui bahwa jumlah mata dadu
+                  yang muncul adalah bilangan genap. Berapa peluang bahwa salah
+                  satu mata dadu yang muncul adalah angka 2?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5/36</li>
+                    <li data-opt="B">1/6</li>
+                    <li data-opt="C">5/18</li>
+                    <li data-opt="D">1/3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 14 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Diketahui data bilangan bulat positif terurut: $2, x, 6, y,
+                  10$. Jika rata-ratanya adalah 6 dan modus data tersebut
+                  tunggal, tentukan nilai $y - x$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">0</li>
+                    <li data-opt="B">2</li>
+                    <li data-opt="C">4</li>
+                    <li data-opt="D">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 15 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Dalam sebuah kotak terdapat $n$ bola merah dan $2n$ bola
+                  putih. Jika peluang mengambil dua bola merah sekaligus secara
+                  acak adalah $\frac{1}{15}$, tentukan nilai $n$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">2</li>
+                    <li data-opt="B">3</li>
+                    <li data-opt="C">4</li>
+                    <li data-opt="D">5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b
+          ><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+    </div>
+  </body>
+</html>
