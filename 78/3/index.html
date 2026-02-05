@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Competition Practice - Grade 7-8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax Configuration for LaTeX rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem; /* 30px */
+            font-weight: 700;
+            color: #3730a3; /* indigo-800 */
+            border-bottom: 3px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .subsection-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #4f46e5;
+            padding-left: 0.75rem;
+            background-color: #eef2ff;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .item-container {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .solution-step {
+             margin-bottom: 0.75rem;
+             padding-left: 1rem;
+             border-left: 3px solid #cbd5e1; /* slate-300 */
+             color: #334155; /* slate-700 */
+         }
+        .final-answer {
+            font-weight: 700;
+            color: #166534; /* green-800 */
+            background-color: #dcfce7; /* green-100 */
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid #86efac;
+        }
+        .concept {
+            background-color: #fff7ed; /* orange-50 */
+            border-left: 4px solid #f97316; /* orange-500 */
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        .concept h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #9a3412; /* orange-800 */
+        }
+        .concept ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        .bilingual-split {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .lang-en {
+            font-weight: 500;
+            color: #1e293b;
+        }
+        .lang-id {
+            color: #64748b;
+            /* font-style: italic; */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 4</h1>
+            <p class="text-gray-600 mt-2">Grade 7 - 8 | Quadratic Equations & Polynomials</p>
+        </header>
+
+        <main>
+            <!-- Questions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Questions / Soal-Soal</h2>
+
+                <div class="subsection-title">Part A: Quadratic Equations & Vieta's Formulas</div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>1.</strong> Find the sum and product of the roots of the equation $2x^2 - 8x + 5 = 0$.</div>
+                        <div class="lang-id">Tentukan jumlah dan hasil kali akar-akar dari persamaan $2x^2 - 8x + 5 = 0$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>2.</strong> If $\alpha$ and $\beta$ are the roots of $x^2 - 6x + 2 = 0$, find the value of $\frac{1}{\alpha} + \frac{1}{\beta}$.</div>
+                        <div class="lang-id">Jika $\alpha$ dan $\beta$ adalah akar-akar dari $x^2 - 6x + 2 = 0$, tentukan nilai dari $\frac{1}{\alpha} + \frac{1}{\beta}$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>3.</strong> Find the value of $k$ if the equation $x^2 - 10x + k = 0$ has two equal real roots.</div>
+                        <div class="lang-id">Tentukan nilai $k$ jika persamaan $x^2 - 10x + k = 0$ memiliki dua akar real yang kembar.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>4.</strong> Find the value of $x = \sqrt{30 + \sqrt{30 + \sqrt{30 + \dots}}}$.</div>
+                        <div class="lang-id">Tentukan nilai dari $x = \sqrt{30 + \sqrt{30 + \sqrt{30 + \dots}}}$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>5.</strong> Construct a quadratic equation whose roots are 3 and -5.</div>
+                        <div class="lang-id">Susunlah persamaan kuadrat yang akar-akarnya adalah 3 dan -5.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>6.</strong> If one root of the equation $x^2 + px + 12 = 0$ is three times the other, find the possible values of $p$.</div>
+                        <div class="lang-id">Jika salah satu akar dari persamaan $x^2 + px + 12 = 0$ adalah tiga kali akar yang lain, tentukan nilai $p$ yang mungkin.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>7.</strong> Find the minimum value of the function $f(x) = x^2 + 6x + 15$.</div>
+                        <div class="lang-id">Tentukan nilai minimum dari fungsi $f(x) = x^2 + 6x + 15$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>8.</strong> Given that $x + \frac{1}{x} = 5$, find the value of $x^2 + \frac{1}{x^2}$.</div>
+                        <div class="lang-id">Diketahui $x + \frac{1}{x} = 5$, tentukan nilai dari $x^2 + \frac{1}{x^2}$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>9.</strong> Evaluate the value of $y$ if $y = \frac{12}{4 + \frac{12}{4 + \frac{12}{4 + \dots}}}$.</div>
+                        <div class="lang-id">Hitunglah nilai $y$ jika $y = \frac{12}{4 + \frac{12}{4 + \frac{12}{4 + \dots}}}$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>10.</strong> If $\alpha$ and $\beta$ are roots of $x^2 - 4x - 3 = 0$, find the value of $\alpha^2 + \beta^2$.</div>
+                        <div class="lang-id">Jika $\alpha$ dan $\beta$ adalah akar-akar dari $x^2 - 4x - 3 = 0$, tentukan nilai dari $\alpha^2 + \beta^2$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>11.</strong> Find the range of values of $m$ for which the equation $x^2 + 4x + m = 0$ has no real roots.</div>
+                        <div class="lang-id">Tentukan rentang nilai $m$ agar persamaan $x^2 + 4x + m = 0$ tidak memiliki akar real.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>12.</strong> Solve for $x$: $(x^2 - 3x)^2 - 2(x^2 - 3x) - 8 = 0$.</div>
+                        <div class="lang-id">Selesaikan untuk $x$: $(x^2 - 3x)^2 - 2(x^2 - 3x) - 8 = 0$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>13.</strong> If the sum of the roots of $(a+1)x^2 - (2a+6)x + 3 = 0$ is 4, find the value of $a$.</div>
+                        <div class="lang-id">Jika jumlah akar-akar dari $(a+1)x^2 - (2a+6)x + 3 = 0$ adalah 4, tentukan nilai $a$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>14.</strong> Find the positive difference between the roots of $2x^2 - 10x + 7 = 0$. (i.e., $|\alpha - \beta|$).</div>
+                        <div class="lang-id">Tentukan selisih positif antara akar-akar persamaan $2x^2 - 10x + 7 = 0$ (yaitu, $|\alpha - \beta|$).</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>15.</strong> A rectangle has a perimeter of 24 cm and an area of 32 cm$^2$. Find the length and width of the rectangle.</div>
+                        <div class="lang-id">Sebuah persegi panjang memiliki keliling 24 cm dan luas 32 cm$^2$. Tentukan panjang dan lebar persegi panjang tersebut.</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Part B: Polynomials & Remainder Theorem</div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>16.</strong> Find the remainder when $P(x) = 2x^3 - 4x^2 + 5x - 1$ is divided by $(x - 2)$.</div>
+                        <div class="lang-id">Tentukan sisa pembagian ketika $P(x) = 2x^3 - 4x^2 + 5x - 1$ dibagi oleh $(x - 2)$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>17.</strong> Factorize completely: $x^3 - 4x^2 - x + 4$.</div>
+                        <div class="lang-id">Faktorkan sepenuhnya: $x^3 - 4x^2 - x + 4$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>18.</strong> If $(x - 1)$ is a factor of $x^3 + kx^2 + x - 6$, find the value of $k$.</div>
+                        <div class="lang-id">Jika $(x - 1)$ adalah faktor dari $x^3 + kx^2 + x - 6$, tentukan nilai $k$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>19.</strong> Find the coefficient of $x^2$ in the expansion of $(2x + 3)^3$.</div>
+                        <div class="lang-id">Tentukan koefisien dari $x^2$ dalam penjabaran $(2x + 3)^3$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>20.</strong> If the polynomial $P(x) = x^3 + ax + b$ is divisible by $(x-1)(x+2)$, find the values of $a$ and $b$.</div>
+                        <div class="lang-id">Jika polinomial $P(x) = x^3 + ax + b$ habis dibagi oleh $(x-1)(x+2)$, tentukan nilai $a$ dan $b$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>21.</strong> Find the sum of the coefficients of the polynomial $P(x) = (3x^2 - 2x + 1)^4$.</div>
+                        <div class="lang-id">Tentukan jumlah koefisien dari polinomial $P(x) = (3x^2 - 2x + 1)^4$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>22.</strong> When a polynomial $P(x)$ is divided by $(x-1)$, the remainder is 3. When divided by $(x-2)$, the remainder is 5. Find the remainder when $P(x)$ is divided by $(x-1)(x-2)$.</div>
+                        <div class="lang-id">Ketika polinomial $P(x)$ dibagi oleh $(x-1)$, sisanya adalah 3. Ketika dibagi oleh $(x-2)$, sisanya adalah 5. Tentukan sisanya jika $P(x)$ dibagi oleh $(x-1)(x-2)$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>23.</strong> Factorize the algebraic expression: $x^2 - y^2 + 6x + 9$.</div>
+                        <div class="lang-id">Faktorkan bentuk aljabar: $x^2 - y^2 + 6x + 9$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>24.</strong> Find the value of $a$ if the division of $2x^3 - ax^2 + 7x - 2$ by $(x - 3)$ yields a remainder of 28.</div>
+                        <div class="lang-id">Tentukan nilai $a$ jika pembagian $2x^3 - ax^2 + 7x - 2$ oleh $(x - 3)$ menghasilkan sisa 28.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>25.</strong> If $x^3 + 2x^2 - 5x - 6 = (x+1)(x-2)(x+c)$, find the value of $c$.</div>
+                        <div class="lang-id">Jika $x^3 + 2x^2 - 5x - 6 = (x+1)(x-2)(x+c)$, tentukan nilai $c$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>26.</strong> Evaluate $P(x) = x^4 - 10x^3 + 20x^2 - 15x + 5$ for $x = 1$.</div>
+                        <div class="lang-id">Hitunglah nilai $P(x) = x^4 - 10x^3 + 20x^2 - 15x + 5$ untuk $x = 1$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>27.</strong> Simplify: $\frac{x^2 - 5x + 6}{x^2 - 4}$.</div>
+                        <div class="lang-id">Sederhanakan: $\frac{x^2 - 5x + 6}{x^2 - 4}$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>28.</strong> Factorize $x^3 + 27$.</div>
+                        <div class="lang-id">Faktorkan $x^3 + 27$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>29.</strong> Given that $P(x) = ax^5 + bx^3 + cx + 4$. If $P(2) = 15$, find the value of $P(-2)$.</div>
+                        <div class="lang-id">Diketahui $P(x) = ax^5 + bx^3 + cx + 4$. Jika $P(2) = 15$, tentukan nilai dari $P(-2)$.</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <div class="bilingual-split">
+                        <div class="lang-en"><strong>30.</strong> If $x = 2$ is a root of $2x^3 - 3x^2 - 11x + p = 0$, find the value of $p$ and the other roots.</div>
+                        <div class="lang-id">Jika $x = 2$ adalah akar dari $2x^3 - 3x^2 - 11x + p = 0$, tentukan nilai $p$ dan akar-akar lainnya.</div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Solutions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions / Pembahasan</h2>
+
+                <!-- General Concept Part A -->
+                <div class="concept">
+                    <h3>Key Concept: Vieta's Formulas / Konsep Kunci: Rumus Vieta</h3>
+                    <p>For a quadratic equation $ax^2 + bx + c = 0$ with roots $\alpha$ and $\beta$:</p>
+                    <p>Untuk persamaan kuadrat $ax^2 + bx + c = 0$ dengan akar-akar $\alpha$ dan $\beta$:</p>
+                    <ul>
+                        <li>Sum of roots / Jumlah akar: $\alpha + \beta = -\frac{b}{a}$</li>
+                        <li>Product of roots / Hasil kali akar: $\alpha \cdot \beta = \frac{c}{a}$</li>
+                    </ul>
+                </div>
+
+                <!-- S1 -->
+                <div class="item-container">
+                    <p><strong>1. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Identify coefficients: $a=2, b=-8, c=5$.<br/>
+                    Identifikasi koefisien: $a=2, b=-8, c=5$.</p>
+                    <p class="solution-step">Sum of Roots Formula ($\alpha + \beta$): $-\frac{b}{a} = -\frac{-8}{2} = \frac{8}{2} = 4$.<br/>
+                    Rumus Jumlah Akar ($\alpha + \beta$): $-\frac{b}{a} = -\frac{-8}{2} = \frac{8}{2} = 4$.</p>
+                    <p class="solution-step">Product of Roots Formula ($\alpha \beta$): $\frac{c}{a} = \frac{5}{2} = 2.5$.<br/>
+                    Rumus Hasil Kali Akar ($\alpha \beta$): $\frac{c}{a} = \frac{5}{2} = 2.5$.</p>
+                    <div class="final-answer">Final Answer: Sum = 4, Product = 2.5</div>
+                </div>
+
+                <!-- S2 -->
+                <div class="item-container">
+                    <p><strong>2. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Identify coefficients from $x^2 - 6x + 2 = 0 \Rightarrow a=1, b=-6, c=2$.<br/>
+                    Identifikasi koefisien dari $x^2 - 6x + 2 = 0 \Rightarrow a=1, b=-6, c=2$.</p>
+                    <p class="solution-step">Calculate Vieta: $\alpha + \beta = -\frac{-6}{1} = 6$ and $\alpha\beta = \frac{2}{1} = 2$.<br/>
+                    Hitung Vieta: $\alpha + \beta = -\frac{-6}{1} = 6$ dan $\alpha\beta = \frac{2}{1} = 2$.</p>
+                    <p class="solution-step">Equate the denominators of the expression: $\frac{1}{\alpha} + \frac{1}{\beta} = \frac{\beta + \alpha}{\alpha\beta}$.<br/>
+                    Samakan penyebut bentuk yang dicari: $\frac{1}{\alpha} + \frac{1}{\beta} = \frac{\beta + \alpha}{\alpha\beta}$.</p>
+                    <p class="solution-step">Substitute values: $\frac{6}{2} = 3$.<br/>
+                    Substitusi nilai: $\frac{6}{2} = 3$.</p>
+                    <div class="final-answer">Final Answer: 3</div>
+                </div>
+
+                <!-- S3 -->
+                <div class="item-container">
+                    <p><strong>3. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Condition for equal roots is Discriminant ($D$) = 0.<br/>
+                    Syarat agar akar kembar adalah Diskriminan ($D$) = 0.</p>
+                    <p class="solution-step">Formula $D = b^2 - 4ac$. Here $a=1, b=-10, c=k$.<br/>
+                    Rumus $D = b^2 - 4ac$. Di sini $a=1, b=-10, c=k$.</p>
+                    <p class="solution-step">Substitute into equation: $(-10)^2 - 4(1)(k) = 0$.<br/>
+                    Masukkan ke persamaan: $(-10)^2 - 4(1)(k) = 0$.</p>
+                    <p class="solution-step">$100 - 4k = 0 \Rightarrow 100 = 4k \Rightarrow k = 25$.<br/>
+                    $100 - 4k = 0 \Rightarrow 100 = 4k \Rightarrow k = 25$.</p>
+                    <div class="final-answer">Final Answer: k = 25</div>
+                </div>
+
+                <!-- S4 -->
+                <div class="item-container">
+                    <p><strong>4. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Let the entire value be $x$.<br/>
+                    Misalkan keseluruhan nilai tersebut adalah $x$.</p>
+                    <p class="solution-step">Notice the repeating pattern: $x = \sqrt{30 + \underbrace{\sqrt{30 + \dots}}_{x}}$.<br/>
+                    Perhatikan pola berulang: $x = \sqrt{30 + \underbrace{\sqrt{30 + \dots}}_{x}}$.</p>
+                    <p class="solution-step">Write the equation: $x = \sqrt{30 + x}$.<br/>
+                    Tulis persamaan: $x = \sqrt{30 + x}$.</p>
+                    <p class="solution-step">Square both sides: $x^2 = 30 + x$.<br/>
+                    Kuadratkan kedua ruas: $x^2 = 30 + x$.</p>
+                    <p class="solution-step">Rearrange into quadratic equation: $x^2 - x - 30 = 0$.<br/>
+                    Susun persamaan kuadrat: $x^2 - x - 30 = 0$.</p>
+                    <p class="solution-step">Factorize: $(x - 6)(x + 5) = 0$.<br/>
+                    Faktorkan: $(x - 6)(x + 5) = 0$.</p>
+                    <p class="solution-step">Solution: $x = 6$ or $x = -5$. Since the root result must be positive, take $x = 6$.<br/>
+                    Solusi: $x = 6$ atau $x = -5$. Karena hasil akar harus positif, ambil $x = 6$.</p>
+                    <div class="final-answer">Final Answer: 6</div>
+                </div>
+
+                <!-- S5 -->
+                <div class="item-container">
+                    <p><strong>5. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Given roots $\alpha = 3$ and $\beta = -5$.<br/>
+                    Diketahui akar $\alpha = 3$ dan $\beta = -5$.</p>
+                    <p class="solution-step">Calculate Sum: $\alpha + \beta = 3 + (-5) = -2$.<br/>
+                    Hitung Jumlah: $\alpha + \beta = 3 + (-5) = -2$.</p>
+                    <p class="solution-step">Calculate Product: $\alpha \cdot \beta = 3 \cdot (-5) = -15$.<br/>
+                    Hitung Hasil Kali: $\alpha \cdot \beta = 3 \cdot (-5) = -15$.</p>
+                    <p class="solution-step">Substitute into formula: $x^2 - (\text{Sum})x + (\text{Product}) = 0$.<br/>
+                    Masukkan ke rumus: $x^2 - (\text{Jumlah})x + (\text{Kali}) = 0$.</p>
+                    <p class="solution-step">Result: $x^2 - (-2)x + (-15) = 0 \Rightarrow x^2 + 2x - 15 = 0$.<br/>
+                    Hasil: $x^2 - (-2)x + (-15) = 0 \Rightarrow x^2 + 2x - 15 = 0$.</p>
+                    <div class="final-answer">Final Answer: $x^2 + 2x - 15 = 0$</div>
+                </div>
+
+                <!-- S6 -->
+                <div class="item-container">
+                    <p><strong>6. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Let the roots be $y$ and $3y$ (since one root is 3 times the other).<br/>
+                    Misalkan akar-akarnya adalah $y$ dan $3y$ (karena satu akar 3 kali yang lain).</p>
+                    <p class="solution-step">From Product ($c/a$): $y \cdot 3y = \frac{12}{1} \Rightarrow 3y^2 = 12 \Rightarrow y^2 = 4$.<br/>
+                    Dari Hasil Kali ($c/a$): $y \cdot 3y = \frac{12}{1} \Rightarrow 3y^2 = 12 \Rightarrow y^2 = 4$.</p>
+                    <p class="solution-step">So $y = 2$ or $y = -2$.<br/>
+                    Maka $y = 2$ atau $y = -2$.</p>
+                    <p class="solution-step">From Sum ($-b/a$): $y + 3y = -p \Rightarrow 4y = -p$.<br/>
+                    Dari Jumlah ($-b/a$): $y + 3y = -p \Rightarrow 4y = -p$.</p>
+                    <p class="solution-step">If $y=2$: $4(2) = -p \Rightarrow 8 = -p \Rightarrow p = -8$.<br/>
+                    Jika $y=2$: $4(2) = -p \Rightarrow 8 = -p \Rightarrow p = -8$.</p>
+                    <p class="solution-step">If $y=-2$: $4(-2) = -p \Rightarrow -8 = -p \Rightarrow p = 8$.<br/>
+                    Jika $y=-2$: $4(-2) = -p \Rightarrow -8 = -p \Rightarrow p = 8$.</p>
+                    <div class="final-answer">Final Answer: $p = \pm 8$</div>
+                </div>
+
+                <!-- S7 -->
+                <div class="item-container">
+                    <p><strong>7. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">For quadratic function $f(x)=ax^2+bx+c$ with $a>0$, minimum value is at the axis of symmetry.<br/>
+                    Untuk fungsi kuadrat $f(x)=ax^2+bx+c$ dengan $a>0$, nilai minimum ada di sumbu simetri.</p>
+                    <p class="solution-step">Axis of symmetry $x_{min} = -\frac{b}{2a} = -\frac{6}{2(1)} = -3$.<br/>
+                    Sumbu simetri $x_{min} = -\frac{b}{2a} = -\frac{6}{2(1)} = -3$.</p>
+                    <p class="solution-step">Substitute $x=-3$ into the function: $f(-3) = (-3)^2 + 6(-3) + 15$.<br/>
+                    Substitusi $x=-3$ ke fungsi: $f(-3) = (-3)^2 + 6(-3) + 15$.</p>
+                    <p class="solution-step">Calculate: $9 - 18 + 15 = 6$.<br/>
+                    Hitung: $9 - 18 + 15 = 6$.</p>
+                    <div class="final-answer">Final Answer: 6</div>
+                </div>
+
+                <!-- S8 -->
+                <div class="item-container">
+                    <p><strong>8. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Given $x + \frac{1}{x} = 5$.<br/>
+                    Diketahui $x + \frac{1}{x} = 5$.</p>
+                    <p class="solution-step">Square both sides: $(x + \frac{1}{x})^2 = 5^2$.<br/>
+                    Kuadratkan kedua ruas: $(x + \frac{1}{x})^2 = 5^2$.</p>
+                    <p class="solution-step">Expand: $x^2 + 2(x)(\frac{1}{x}) + \frac{1}{x^2} = 25$.<br/>
+                    Uraikan: $x^2 + 2(x)(\frac{1}{x}) + \frac{1}{x^2} = 25$.</p>
+                    <p class="solution-step">Simplify the middle term: $x^2 + 2 + \frac{1}{x^2} = 25$.<br/>
+                    Sederhanakan tengahnya: $x^2 + 2 + \frac{1}{x^2} = 25$.</p>
+                    <p class="solution-step">Move 2 to the right: $x^2 + \frac{1}{x^2} = 25 - 2 = 23$.<br/>
+                    Pindahkan 2 ke kanan: $x^2 + \frac{1}{x^2} = 25 - 2 = 23$.</p>
+                    <div class="final-answer">Final Answer: 23</div>
+                </div>
+
+                <!-- S9 -->
+                <div class="item-container">
+                    <p><strong>9. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Let $y = \frac{12}{4 + \dots}$. Notice the denominator pattern is $4 + y$.<br/>
+                    Misalkan $y = \frac{12}{4 + \dots}$. Perhatikan pola penyebutnya adalah $4 + y$.</p>
+                    <p class="solution-step">Equation: $y = \frac{12}{4 + y}$.<br/>
+                    Persamaan: $y = \frac{12}{4 + y}$.</p>
+                    <p class="solution-step">Cross multiply: $y(4 + y) = 12 \Rightarrow 4y + y^2 = 12$.<br/>
+                    Kalikan silang: $y(4 + y) = 12 \Rightarrow 4y + y^2 = 12$.</p>
+                    <p class="solution-step">Rearrange: $y^2 + 4y - 12 = 0$.<br/>
+                    Susun ulang: $y^2 + 4y - 12 = 0$.</p>
+                    <p class="solution-step">Factorize: $(y + 6)(y - 2) = 0$.<br/>
+                    Faktorkan: $(y + 6)(y - 2) = 0$.</p>
+                    <p class="solution-step">Solution: $y = -6$ or $y = 2$. Since the fraction involves positive numbers, $y = 2$.<br/>
+                    Solusi: $y = -6$ atau $y = 2$. Karena pecahan bernilai positif, $y = 2$.</p>
+                    <div class="final-answer">Final Answer: 2</div>
+                </div>
+
+                <!-- S10 -->
+                <div class="item-container">
+                    <p><strong>10. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">From $x^2 - 4x - 3 = 0$: Sum ($\alpha+\beta$) = 4, Product ($\alpha\beta$) = -3.<br/>
+                    Dari $x^2 - 4x - 3 = 0$: Jumlah ($\alpha+\beta$) = 4, Hasil kali ($\alpha\beta$) = -3.</p>
+                    <p class="solution-step">Use algebraic identity: $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$.<br/>
+                    Gunakan identitas aljabar: $\alpha^2 + \beta^2 = (\alpha + \beta)^2 - 2\alpha\beta$.</p>
+                    <p class="solution-step">Substitute: $(4)^2 - 2(-3) = 16 + 6 = 22$.<br/>
+                    Substitusi: $(4)^2 - 2(-3) = 16 + 6 = 22$.</p>
+                    <div class="final-answer">Final Answer: 22</div>
+                </div>
+
+                <!-- S11 -->
+                <div class="item-container">
+                    <p><strong>11. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Condition for "no real roots" is Discriminant $D < 0$.<br/>
+                    Syarat "tidak ada akar real" adalah Diskriminan $D < 0$.</p>
+                    <p class="solution-step">$b^2 - 4ac < 0 \Rightarrow 4^2 - 4(1)(m) < 0$.<br/>
+                    $b^2 - 4ac < 0 \Rightarrow 4^2 - 4(1)(m) < 0$.</p>
+                    <p class="solution-step">$16 - 4m < 0 \Rightarrow 16 < 4m$.<br/>
+                    $16 - 4m < 0 \Rightarrow 16 < 4m$.</p>
+                    <p class="solution-step">Divide both sides by 4: $4 < m$ or $m > 4$.<br/>
+                    Bagi kedua ruas dengan 4: $4 < m$ atau $m > 4$.</p>
+                    <div class="final-answer">Final Answer: $m > 4$</div>
+                </div>
+
+                <!-- S12 -->
+                <div class="item-container">
+                    <p><strong>12. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">This is a hidden quadratic equation. Let $u = x^2 - 3x$.<br/>
+                    Ini adalah persamaan kuadrat terselubung. Misalkan $u = x^2 - 3x$.</p>
+                    <p class="solution-step">Equation becomes: $u^2 - 2u - 8 = 0$.<br/>
+                    Persamaan menjadi: $u^2 - 2u - 8 = 0$.</p>
+                    <p class="solution-step">Factorize $u$: $(u - 4)(u + 2) = 0 \Rightarrow u = 4$ or $u = -2$.<br/>
+                    Faktorkan $u$: $(u - 4)(u + 2) = 0 \Rightarrow u = 4$ atau $u = -2$.</p>
+                    <p class="solution-step">Case 1 ($u=4$): $x^2 - 3x = 4 \Rightarrow x^2 - 3x - 4 = 0 \Rightarrow (x-4)(x+1)=0$. Roots: $4, -1$.<br/>
+                    Kasus 1 ($u=4$): $x^2 - 3x = 4 \Rightarrow x^2 - 3x - 4 = 0 \Rightarrow (x-4)(x+1)=0$. Akar: $4, -1$.</p>
+                    <p class="solution-step">Case 2 ($u=-2$): $x^2 - 3x = -2 \Rightarrow x^2 - 3x + 2 = 0 \Rightarrow (x-2)(x-1)=0$. Roots: $2, 1$.<br/>
+                    Kasus 2 ($u=-2$): $x^2 - 3x = -2 \Rightarrow x^2 - 3x + 2 = 0 \Rightarrow (x-2)(x-1)=0$. Akar: $2, 1$.</p>
+                    <div class="final-answer">Final Answer: $x = 4, -1, 1, 2$</div>
+                </div>
+
+                <!-- S13 -->
+                <div class="item-container">
+                    <p><strong>13. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Sum of roots formula: $-\frac{b}{a}$. Note: here $a_{formula} = (a+1)$ and $b_{formula} = -(2a+6)$.<br/>
+                    Rumus jumlah akar: $-\frac{b}{a}$. Hati-hati, disini $a_{rumus} = (a+1)$ dan $b_{rumus} = -(2a+6)$.</p>
+                    <p class="solution-step">Equation for sum: $\frac{-(-(2a+6))}{a+1} = 4$.<br/>
+                    Persamaan jumlah: $\frac{-(-(2a+6))}{a+1} = 4$.</p>
+                    <p class="solution-step">$\frac{2a+6}{a+1} = 4$.<br/>
+                    $\frac{2a+6}{a+1} = 4$.</p>
+                    <p class="solution-step">Cross multiply: $2a + 6 = 4(a + 1) \Rightarrow 2a + 6 = 4a + 4$.<br/>
+                    Kalikan silang: $2a + 6 = 4(a + 1) \Rightarrow 2a + 6 = 4a + 4$.</p>
+                    <p class="solution-step">Rearrange: $6 - 4 = 4a - 2a \Rightarrow 2 = 2a \Rightarrow a = 1$.<br/>
+                    Pindahkan ruas: $6 - 4 = 4a - 2a \Rightarrow 2 = 2a \Rightarrow a = 1$.</p>
+                    <p class="solution-step">Check Discriminant for $a=1$: Equation becomes $2x^2 - 8x + 3 = 0$. $D = 64 - 24 > 0$ (Valid/Real).<br/>
+                    Cek Diskriminan untuk $a=1$: Persamaan jadi $2x^2 - 8x + 3 = 0$. $D = 64 - 24 > 0$ (Valid/Real).</p>
+                    <div class="final-answer">Final Answer: $a = 1$</div>
+                </div>
+
+                <!-- S14 -->
+                <div class="item-container">
+                    <p><strong>14. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Difference of roots formula $|\alpha - \beta| = \frac{\sqrt{D}}{|a|}$.<br/>
+                    Rumus selisih akar $|\alpha - \beta| = \frac{\sqrt{D}}{|a|}$.</p>
+                    <p class="solution-step">Calculate $D = (-10)^2 - 4(2)(7) = 100 - 56 = 44$.<br/>
+                    Hitung $D = (-10)^2 - 4(2)(7) = 100 - 56 = 44$.</p>
+                    <p class="solution-step">Substitute into formula: $\frac{\sqrt{44}}{2} = \frac{2\sqrt{11}}{2} = \sqrt{11}$.<br/>
+                    Masukkan ke rumus: $\frac{\sqrt{44}}{2} = \frac{2\sqrt{11}}{2} = \sqrt{11}$.</p>
+                    <div class="final-answer">Final Answer: $\sqrt{11}$</div>
+                </div>
+
+                <!-- S15 -->
+                <div class="item-container">
+                    <p><strong>15. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Perimeter = 24 $\Rightarrow 2(p+l) = 24 \Rightarrow p+l = 12 \Rightarrow l = 12-p$.<br/>
+                    Keliling = 24 $\Rightarrow 2(p+l) = 24 \Rightarrow p+l = 12 \Rightarrow l = 12-p$.</p>
+                    <p class="solution-step">Area = 32 $\Rightarrow p \cdot l = 32$.<br/>
+                    Luas = 32 $\Rightarrow p \cdot l = 32$.</p>
+                    <p class="solution-step">Substitute: $p(12-p) = 32 \Rightarrow 12p - p^2 = 32$.<br/>
+                    Substitusi: $p(12-p) = 32 \Rightarrow 12p - p^2 = 32$.</p>
+                    <p class="solution-step">Make quadratic equation: $p^2 - 12p + 32 = 0$.<br/>
+                    Jadikan persamaan kuadrat: $p^2 - 12p + 32 = 0$.</p>
+                    <p class="solution-step">Factorize: $(p-8)(p-4) = 0$.<br/>
+                    Faktorkan: $(p-8)(p-4) = 0$.</p>
+                    <p class="solution-step">So the dimensions are 8 cm and 4 cm.<br/>
+                    Jadi dimensi persegi panjang adalah 8 cm dan 4 cm.</p>
+                    <div class="final-answer">Final Answer: Length/Panjang 8 cm, Width/Lebar 4 cm</div>
+                </div>
+
+                <!-- General Concept Part B -->
+                <div class="concept" style="margin-top: 2rem;">
+                    <h3>Key Concept: Polynomials & Remainder Theorem / Konsep Kunci: Polinomial & Teorema Sisa</h3>
+                    <p>If a polynomial $P(x)$ is divided by $(x-c)$, then the remainder is the value of $P(c)$.</p>
+                    <p>Jika polinomial $P(x)$ dibagi oleh $(x-c)$, maka sisanya adalah nilai dari $P(c)$.</p>
+                </div>
+
+                <!-- S16 -->
+                <div class="item-container">
+                    <p><strong>16. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">The divisor is $(x-2)$, so $c = 2$. Find $P(2)$.<br/>
+                    Pembagi adalah $(x-2)$, maka $c = 2$. Cari $P(2)$.</p>
+                    <p class="solution-step">$P(2) = 2(2)^3 - 4(2)^2 + 5(2) - 1$.<br/>
+                    $P(2) = 2(2)^3 - 4(2)^2 + 5(2) - 1$.</p>
+                    <p class="solution-step">Calculate: $2(8) - 4(4) + 10 - 1 = 16 - 16 + 10 - 1 = 9$.<br/>
+                    Hitung: $2(8) - 4(4) + 10 - 1 = 16 - 16 + 10 - 1 = 9$.</p>
+                    <div class="final-answer">Final Answer: 9</div>
+                </div>
+
+                <!-- S17 -->
+                <div class="item-container">
+                    <p><strong>17. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Group terms: $(x^3 - 4x^2) - (x - 4)$.<br/>
+                    Kelompokkan suku: $(x^3 - 4x^2) - (x - 4)$.</p>
+                    <p class="solution-step">Factor out $x^2$: $x^2(x - 4) - 1(x - 4)$.<br/>
+                    Keluarkan $x^2$: $x^2(x - 4) - 1(x - 4)$.</p>
+                    <p class="solution-step">Distribute: $(x - 4)(x^2 - 1)$.<br/>
+                    Distribusi: $(x - 4)(x^2 - 1)$.</p>
+                    <p class="solution-step">Factorize $x^2 - 1$ to $(x-1)(x+1)$.<br/>
+                    Faktorkan $x^2 - 1$ menjadi $(x-1)(x+1)$.</p>
+                    <div class="final-answer">Final Answer: $(x-4)(x-1)(x+1)$</div>
+                </div>
+
+                <!-- S18 -->
+                <div class="item-container">
+                    <p><strong>18. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Since $(x-1)$ is a factor, the remainder is 0. Meaning $P(1) = 0$.<br/>
+                    Karena $(x-1)$ adalah faktor, maka sisa pembagian adalah 0. Artinya $P(1) = 0$.</p>
+                    <p class="solution-step">Substitute $x=1$: $1^3 + k(1)^2 + 1 - 6 = 0$.<br/>
+                    Substitusi $x=1$: $1^3 + k(1)^2 + 1 - 6 = 0$.</p>
+                    <p class="solution-step">$1 + k + 1 - 6 = 0 \Rightarrow k - 4 = 0 \Rightarrow k = 4$.<br/>
+                    $1 + k + 1 - 6 = 0 \Rightarrow k - 4 = 0 \Rightarrow k = 4$.</p>
+                    <div class="final-answer">Final Answer: $k = 4$</div>
+                </div>
+
+                <!-- S19 -->
+                <div class="item-container">
+                    <p><strong>19. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Use Pascal's Triangle for power 3: Coefficients 1, 3, 3, 1.<br/>
+                    Gunakan Segitiga Pascal untuk pangkat 3: Koefisien 1, 3, 3, 1.</p>
+                    <p class="solution-step">Pattern $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.<br/>
+                    Pola $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.</p>
+                    <p class="solution-step">Here $a=2x$ and $b=3$. The term producing $x^2$ is $3a^2b$.<br/>
+                    Disini $a=2x$ dan $b=3$. Suku yang menghasilkan $x^2$ adalah $3a^2b$.</p>
+                    <p class="solution-step">Calculate: $3(2x)^2(3) = 3(4x^2)(3) = 36x^2$. Coefficient is 36.<br/>
+                    Hitung: $3(2x)^2(3) = 3(4x^2)(3) = 36x^2$. Koefisiennya 36.</p>
+                    <div class="final-answer">Final Answer: 36</div>
+                </div>
+
+                <!-- S20 -->
+                <div class="item-container">
+                    <p><strong>20. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Divisible by $(x-1)$ means $P(1)=0 \Rightarrow 1 + a + b = 0 \Rightarrow a+b = -1$.<br/>
+                    Habis dibagi $(x-1)$ artinya $P(1)=0 \Rightarrow 1 + a + b = 0 \Rightarrow a+b = -1$.</p>
+                    <p class="solution-step">Divisible by $(x+2)$ means $P(-2)=0 \Rightarrow -8 - 2a + b = 0 \Rightarrow -2a+b = 8$.<br/>
+                    Habis dibagi $(x+2)$ artinya $P(-2)=0 \Rightarrow -8 - 2a + b = 0 \Rightarrow -2a+b = 8$.</p>
+                    <p class="solution-step">Elimination: $(a+b) - (-2a+b) = -1 - 8 \Rightarrow 3a = -9 \Rightarrow a = -3$.<br/>
+                    Eliminasi: $(a+b) - (-2a+b) = -1 - 8 \Rightarrow 3a = -9 \Rightarrow a = -3$.</p>
+                    <p class="solution-step">Find $b$: $-3 + b = -1 \Rightarrow b = 2$.<br/>
+                    Cari $b$: $-3 + b = -1 \Rightarrow b = 2$.</p>
+                    <div class="final-answer">Final Answer: $a = -3, b = 2$</div>
+                </div>
+
+                <!-- S21 -->
+                <div class="item-container">
+                    <p><strong>21. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Sum of polynomial coefficients is found by substituting $x=1$.<br/>
+                    Jumlah koefisien polinomial didapat dengan mensubstitusi $x=1$.</p>
+                    <p class="solution-step">$P(1) = (3(1)^2 - 2(1) + 1)^4$.<br/>
+                    $P(1) = (3(1)^2 - 2(1) + 1)^4$.</p>
+                    <p class="solution-step">$(3 - 2 + 1)^4 = (2)^4 = 16$.<br/>
+                    $(3 - 2 + 1)^4 = (2)^4 = 16$.</p>
+                    <div class="final-answer">Final Answer: 16</div>
+                </div>
+
+                <!-- S22 -->
+                <div class="item-container">
+                    <p><strong>22. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Given $P(1) = 3$ and $P(2) = 5$.<br/>
+                    Diketahui $P(1) = 3$ dan $P(2) = 5$.</p>
+                    <p class="solution-step">Remainder when divided by quadratic $(x-1)(x-2)$ is of form $S(x) = Ax + B$.<br/>
+                    Sisa pembagian oleh kuadrat $(x-1)(x-2)$ berbentuk $S(x) = Ax + B$.</p>
+                    <p class="solution-step">Substitute x=1: $A(1) + B = 3$.<br/>
+                    Masukkan x=1: $A(1) + B = 3$.</p>
+                    <p class="solution-step">Substitute x=2: $A(2) + B = 5$.<br/>
+                    Masukkan x=2: $A(2) + B = 5$.</p>
+                    <p class="solution-step">Subtract: $(2A+B) - (A+B) = 5 - 3 \Rightarrow A = 2$.<br/>
+                    Kurangkan: $(2A+B) - (A+B) = 5 - 3 \Rightarrow A = 2$.</p>
+                    <p class="solution-step">Substitute: $2 + B = 3 \Rightarrow B = 1$. Remainder = $2x + 1$.<br/>
+                    Substitusi: $2 + B = 3 \Rightarrow B = 1$. Sisa = $2x + 1$.</p>
+                    <div class="final-answer">Final Answer: $2x + 1$</div>
+                </div>
+
+                <!-- S23 -->
+                <div class="item-container">
+                    <p><strong>23. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Group the perfect square part: $(x^2 + 6x + 9) - y^2$.<br/>
+                    Kelompokkan bagian kuadrat sempurna: $(x^2 + 6x + 9) - y^2$.</p>
+                    <p class="solution-step">Factorize: $(x+3)^2 - y^2$.<br/>
+                    Faktorkan: $(x+3)^2 - y^2$.</p>
+                    <p class="solution-step">Use formula $A^2 - B^2 = (A-B)(A+B)$.<br/>
+                    Gunakan rumus $A^2 - B^2 = (A-B)(A+B)$.</p>
+                    <p class="solution-step">Result: $(x+3 - y)(x+3 + y)$.<br/>
+                    Hasil: $(x+3 - y)(x+3 + y)$.</p>
+                    <div class="final-answer">Final Answer: $(x+3-y)(x+3+y)$</div>
+                </div>
+
+                <!-- S24 -->
+                <div class="item-container">
+                    <p><strong>24. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Use Remainder Theorem: $P(3) = 28$.<br/>
+                    Gunakan Teorema Sisa: $P(3) = 28$.</p>
+                    <p class="solution-step">$2(3)^3 - a(3)^2 + 7(3) - 2 = 28$.<br/>
+                    $2(3)^3 - a(3)^2 + 7(3) - 2 = 28$.</p>
+                    <p class="solution-step">$54 - 9a + 21 - 2 = 28$.<br/>
+                    $54 - 9a + 21 - 2 = 28$.</p>
+                    <p class="solution-step">$73 - 9a = 28 \Rightarrow 73 - 28 = 9a \Rightarrow 45 = 9a$.<br/>
+                    $73 - 9a = 28 \Rightarrow 73 - 28 = 9a \Rightarrow 45 = 9a$.</p>
+                    <p class="solution-step">$a = 5$.<br/>
+                    $a = 5$.</p>
+                    <div class="final-answer">Final Answer: $a = 5$</div>
+                </div>
+
+                <!-- S25 -->
+                <div class="item-container">
+                    <p><strong>25. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Observe the constants on both sides.<br/>
+                    Perhatikan konstanta pada kedua ruas.</p>
+                    <p class="solution-step">Left side constant is $-6$.<br/>
+                    Ruas kiri konstantanya $-6$.</p>
+                    <p class="solution-step">Right side is product of constant terms of factors: $1 \cdot (-2) \cdot c = -2c$.<br/>
+                    Ruas kanan hasil kali konstanta faktor-faktornya: $1 \cdot (-2) \cdot c = -2c$.</p>
+                    <p class="solution-step">So $-2c = -6 \Rightarrow c = 3$.<br/>
+                    Maka $-2c = -6 \Rightarrow c = 3$.</p>
+                    <div class="final-answer">Final Answer: $c = 3$</div>
+                </div>
+
+                <!-- S26 -->
+                <div class="item-container">
+                    <p><strong>26. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Substitute $x=1$ into equation.<br/>
+                    Substitusi $x=1$ ke persamaan.</p>
+                    <p class="solution-step">$1 - 10 + 20 - 15 + 5$.<br/>
+                    $1 - 10 + 20 - 15 + 5$.</p>
+                    <p class="solution-step">$1 + 20 + 5 - 10 - 15 = 26 - 25 = 1$.<br/>
+                    $1 + 20 + 5 - 10 - 15 = 26 - 25 = 1$.</p>
+                    <div class="final-answer">Final Answer: 1</div>
+                </div>
+
+                <!-- S27 -->
+                <div class="item-container">
+                    <p><strong>27. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Factorize numerator $x^2 - 5x + 6$: Find two numbers multiply to 6, sum to -5 $\Rightarrow (x-2)(x-3)$.<br/>
+                    Faktorkan pembilang $x^2 - 5x + 6$: Cari dua angka dikali 6, dijumlah -5 $\Rightarrow (x-2)(x-3)$.</p>
+                    <p class="solution-step">Factorize denominator $x^2 - 4$: Difference of squares $\Rightarrow (x-2)(x+2)$.<br/>
+                    Faktorkan penyebut $x^2 - 4$: Selisih kuadrat $\Rightarrow (x-2)(x+2)$.</p>
+                    <p class="solution-step">Cancel common factor $(x-2)$. Result: $\frac{x-3}{x+2}$.<br/>
+                    Coret faktor yang sama $(x-2)$. Hasil: $\frac{x-3}{x+2}$.</p>
+                    <div class="final-answer">Final Answer: $\frac{x-3}{x+2}$</div>
+                </div>
+
+                <!-- S28 -->
+                <div class="item-container">
+                    <p><strong>28. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Form $a^3 + b^3$ with $a=x, b=3$.<br/>
+                    Bentuk $a^3 + b^3$ dengan $a=x, b=3$.</p>
+                    <p class="solution-step">Formula: $(a+b)(a^2 - ab + b^2)$.<br/>
+                    Rumus: $(a+b)(a^2 - ab + b^2)$.</p>
+                    <p class="solution-step">Substitute values: $(x+3)(x^2 - 3x + 3^2) = (x+3)(x^2 - 3x + 9)$.<br/>
+                    Masukkan nilai: $(x+3)(x^2 - 3x + 3^2) = (x+3)(x^2 - 3x + 9)$.</p>
+                    <div class="final-answer">Final Answer: $(x+3)(x^2 - 3x + 9)$</div>
+                </div>
+
+                <!-- S29 -->
+                <div class="item-container">
+                    <p><strong>29. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">Let $f(x) = ax^5 + bx^3 + cx$. This is an odd function, $f(-x) = -f(x)$.<br/>
+                    Misalkan $f(x) = ax^5 + bx^3 + cx$. Fungsi ini adalah fungsi ganjil, $f(-x) = -f(x)$.</p>
+                    <p class="solution-step">$P(x) = f(x) + 4$.<br/>
+                    $P(x) = f(x) + 4$.</p>
+                    <p class="solution-step">Given $P(2) = 15 \Rightarrow f(2) + 4 = 15 \Rightarrow f(2) = 11$.<br/>
+                    Diketahui $P(2) = 15 \Rightarrow f(2) + 4 = 15 \Rightarrow f(2) = 11$.</p>
+                    <p class="solution-step">So $f(-2) = -11$.<br/>
+                    Maka $f(-2) = -11$.</p>
+                    <p class="solution-step">Find $P(-2) = f(-2) + 4 = -11 + 4 = -7$.<br/>
+                    Cari $P(-2) = f(-2) + 4 = -11 + 4 = -7$.</p>
+                    <div class="final-answer">Final Answer: -7</div>
+                </div>
+
+                <!-- S30 -->
+                <div class="item-container">
+                    <p><strong>30. Solution / Pembahasan:</strong></p>
+                    <p class="solution-step">If $x=2$ is a root, then $P(2)=0$.<br/>
+                    Jika $x=2$ akar, maka $P(2)=0$.</p>
+                    <p class="solution-step">$2(2)^3 - 3(2)^2 - 11(2) + p = 0 \Rightarrow 16 - 12 - 22 + p = 0 \Rightarrow -18 + p = 0 \Rightarrow p = 18$.<br/>
+                    $2(2)^3 - 3(2)^2 - 11(2) + p = 0 \Rightarrow 16 - 12 - 22 + p = 0 \Rightarrow -18 + p = 0 \Rightarrow p = 18$.</p>
+                    <p class="solution-step">Perform polynomial division $(2x^3 - 3x^2 - 11x + 18) \div (x-2)$.<br/>
+                    Lakukan pembagian polinomial $(2x^3 - 3x^2 - 11x + 18) \div (x-2)$.</p>
+                    <p class="solution-step">Quotient is $2x^2 + x - 9$.<br/>
+                    Hasil bagi adalah $2x^2 + x - 9$.</p>
+                    <p class="solution-step">Other roots are found using Quadratic Formula on $2x^2 + x - 9 = 0$.<br/>
+                    Akar-akar lain didapat dari rumus ABC pada $2x^2 + x - 9 = 0$.</p>
+                    <div class="final-answer">Final Answer: $p = 18$, roots: $\frac{-1 \pm \sqrt{73}}{4}$</div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
