@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0405MAT12SESSIONS09 - PERTEMUAN 09 - Kombinatorika: Teknik Mencacah</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      /* Watermark */
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 2cm 15px 2cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+      
+      /* Materi Styles */
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 11pt;
+        border-radius: 0 5px 5px 0;
+      }
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 10px;
+      }
+
+      /* Soal Card Style - Simple */
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 8px 15px;
+        font-size: 10pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        width: 100px; /* Lebar kolom label */
+        color: var(--secondary-text);
+        background-color: #fafafa; /* Sangat tipis */
+      }
+
+      /* Layout Soal & Nomor */
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 30px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 12pt;
+      }
+
+      /* Pilihan Ganda */
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 kolom */
+        gap: 10px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 25px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+
+      /* Pembahasan Detail - Simple Box */
+      .pembahasan-detail {
+        margin-top: 20px;
+        background-color: var(--highlight-box-bg);
+        border-left: 4px solid var(--header-title-color);
+        padding: 15px;
+        border-radius: 4px;
+        font-size: 11pt;
+        border: 1px solid #eee;
+        border-left-width: 4px;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 10pt;
+      }
+      .step-list {
+        margin-top: 5px;
+        padding-left: 20px;
+      }
+      .step-list li {
+        margin-bottom: 5px;
+      }
+
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page { size: A4; margin: 0; }
+        body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: MATERI -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Ringkasan Materi & Strategi Guru</h2>
+
+          <div class="konsep-box">
+            <h3>1. Aturan Penjumlahan vs Perkalian</h3>
+            <ul class="custom-list">
+              <li>
+                <b>Aturan Perkalian (Kata kunci: DAN / Tahapan):</b><br />
+                Jika kegiatan A punya $m$ cara, lalu dilanjutkan kegiatan B punya $n$ cara, maka total cara = $m \times n$.
+                <br /><i>Contoh: Memilih pasangan Baju DAN Celana.</i>
+              </li>
+              <li>
+                <b>Aturan Penjumlahan (Kata kunci: ATAU / Pilihan):</b><br />
+                Jika kita harus memilih satu opsi dari kegiatan A ($m$ cara) ATAU kegiatan B ($n$ cara), maka total cara = $m + n$.
+                <br /><i>Contoh: Pergi ke sekolah naik Bus ATAU naik Sepeda (tidak mungkin keduanya sekaligus).</i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="konsep-box">
+            <h3>2. Strategi "Filling Slots" (Pengisian Tempat)</h3>
+            <p>Gunakan kotak kosong untuk memvisualisasikan masalah penyusunan angka atau pemilihan jabatan. Ini membantu siswa melihat struktur masalah secara konkret.</p>
+            $$ \boxed{\text{Ribuan}} \times \boxed{\text{Ratusan}} \times \boxed{\text{Puluhan}} \times \boxed{\text{Satuan}} $$
+            <p><b>Tips Penting:</b> Selalu isi kotak yang memiliki syarat paling ketat terlebih dahulu (misalnya: "harus bilangan genap" atau "harus kelipatan 5").</p>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 1: MATERI -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+
+          <div class="tips-box">
+            <h3>3. Strategi Operasi Bilangan</h3>
+            <p>Untuk soal teka-teki bilangan ("Aku adalah bilangan..."):</p>
+            <ul class="custom-list">
+              <li><b>Listing (Mendaftar):</b> Jika angkanya kecil, tulis semua kemungkinannya. Jangan menebak.</li>
+              <li><b>Aljabar Sederhana (Model Bar):</b>
+                <ul>
+                  <li>"Jumlah dua bilangan adalah $X$" $\rightarrow A + B = X$.</li>
+                  <li>"Selisihnya $Y$" $\rightarrow A - B = Y$.</li>
+                  <li>"Dibagi sisa $Z$" $\rightarrow A = (\text{Pembagi} \times B) + \text{Sisa}$.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- ================================================================================== -->
+      <!-- LEVEL 1: PEMAHAMAN DASAR -->
+      <!-- ================================================================================== -->
+
+      <!-- Soal 1 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinasi Sederhana</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">1.</div>
+            <div class="soal-konten">
+              Untuk mengikuti lomba cerdas cermat, sekolah akan memilih 2 orang wakil dari 5 siswa terbaik. Berapa banyak pasangan wakil yang mungkin terbentuk?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5</li>
+                <li data-opt="B">10</li>
+                <li data-opt="C">15</li>
+                <li data-opt="D">20</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 10</b><br />
+                <b>Pembahasan:</b><br />
+                Soal ini meminta memilih 2 dari 5 tanpa memperhatikan urutan (Kombinasi).
+                <ol class="step-list">
+                  <li>Rumus Kombinasi $C(n, r) = \frac{n \times (n-1)}{2}$.</li>
+                  <li>Di sini $n=5$ dan $r=2$.</li>
+                  <li>Hitung: $\frac{5 \times 4}{2} = \frac{20}{2} = 10$.</li>
+                </ol>
+                Jadi, ada 10 kemungkinan pasangan.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Operasi Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">2.</div>
+            <div class="soal-konten">
+              Diketahui dua bilangan cacah memiliki selisih 5 dan hasil kalinya 84. Berapakah jumlah kedua bilangan tersebut?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">17</li>
+                <li data-opt="B">19</li>
+                <li data-opt="C">21</li>
+                <li data-opt="D">23</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 19</b><br />
+                <b>Pembahasan:</b><br />
+                Gunakan strategi faktorisasi (tebak-periksa terarah).
+                <ol class="step-list">
+                  <li>Cari pasangan faktor dari 84: (1,84), (2,42), (3,28), (4,21), (6,14), (7,12).</li>
+                  <li>Cari pasangan yang selisihnya 5. Dari daftar di atas, pasangan 7 dan 12 memiliki selisih $12 - 7 = 5$.</li>
+                  <li>Jumlahkan kedua bilangan tersebut: $7 + 12 = 19$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 3 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aturan Perkalian</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">3.</div>
+            <div class="soal-konten">
+              Budi memiliki 4 kemeja batik yang berbeda dan 3 celana panjang yang berbeda. Berapa banyak variasi pakaian lengkap (pasangan kemeja dan celana) yang dapat dipakai Budi?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">7</li>
+                <li data-opt="B">10</li>
+                <li data-opt="C">12</li>
+                <li data-opt="D">16</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 12</b><br />
+                <b>Pembahasan:</b><br />
+                Ini adalah kejadian berurutan (memakai baju DAN celana), maka gunakan aturan perkalian.
+                <ol class="step-list">
+                  <li>Jumlah pilihan kemeja = 4.</li>
+                  <li>Jumlah pilihan celana = 3.</li>
+                  <li>Total variasi = $4 \times 3 = 12$ cara.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Filling Slots</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">4.</div>
+            <div class="soal-konten">
+              Dari angka 1, 2, 3, 4, dan 5 akan dibentuk bilangan genap yang terdiri dari 3 digit. Jika angka <b>boleh berulang</b>, berapa banyak bilangan yang terbentuk?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">25</li>
+                <li data-opt="B">50</li>
+                <li data-opt="C">60</li>
+                <li data-opt="D">125</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 50</b><br />
+                <b>Pembahasan:</b><br />
+                Gunakan 3 kotak slot: [Ratusan][Puluhan][Satuan].
+                <ol class="step-list">
+                  <li>Isi slot <b>Satuan</b> dulu (Syarat Genap): Hanya angka 2 dan 4 yang boleh. (Ada 2 pilihan).</li>
+                  <li>Isi slot <b>Ratusan</b>: Angka 1-5 boleh semua karena boleh berulang. (Ada 5 pilihan).</li>
+                  <li>Isi slot <b>Puluhan</b>: Angka 1-5 boleh semua. (Ada 5 pilihan).</li>
+                  <li>Total = $5 \times 5 \times 2 = 50$ bilangan.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Problem Jabat Tangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">5.</div>
+            <div class="soal-konten">
+              Dalam sebuah kelompok belajar terdapat 6 siswa. Jika mereka semua saling berjabat tangan satu kali sebelum belajar dimulai, ada berapa total jabat tangan yang terjadi?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">10</li>
+                <li data-opt="B">12</li>
+                <li data-opt="C">15</li>
+                <li data-opt="D">30</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 15</b><br />
+                <b>Pembahasan:</b><br />
+                Masalah jabat tangan identik dengan memilih 2 orang dari sekelompok orang.
+                <ol class="step-list">
+                  <li>Gunakan rumus kombinasi 2 dari 6: $\frac{6 \times 5}{2}$.</li>
+                  <li>Hitung: $\frac{30}{2} = 15$.</li>
+                  <li>Atau gunakan pola penjumlahan: $5 + 4 + 3 + 2 + 1 = 15$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- ================================================================================== -->
+      <!-- LEVEL 2: PEMAHAMAN MENENGAH -->
+      <!-- ================================================================================== -->
+
+      <!-- Soal 6 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pasangan Faktor</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">6.</div>
+            <div class="soal-konten">
+              Sepasang bilangan bulat positif $(a, b)$ memenuhi persamaan $a \times b = 36$. Berapa banyak pasangan $(a, b)$ yang mungkin jika diketahui $a < b$?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">4</li>
+                <li data-opt="B">5</li>
+                <li data-opt="C">8</li>
+                <li data-opt="D">9</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 4</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Daftar faktor perkalian 36: $(1, 36), (2, 18), (3, 12), (4, 9), (6, 6)$.</li>
+                  <li>Pilih pasangan yang memenuhi syarat $a < b$.</li>
+                  <li>Pasangan yang valid: $(1, 36), (2, 18), (3, 12), (4, 9)$.</li>
+                  <li>Pasangan $(6, 6)$ tidak dihitung karena $a = b$.</li>
+                  <li>Total ada 4 pasangan.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 7 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Inklusi Eksklusi</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">7.</div>
+            <div class="soal-konten">
+              Berapa banyak bilangan asli kurang dari 50 yang merupakan kelipatan 3 atau 5, tetapi <b>bukan</b> kelipatan keduanya (bukan kelipatan 15)?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">16</li>
+                <li data-opt="B">19</li>
+                <li data-opt="C">22</li>
+                <li data-opt="D">25</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 19</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Hitung kelipatan 3 (< 50): $49/3 = 16$ bilangan.</li>
+                  <li>Hitung kelipatan 5 (< 50): $49/5 = 9$ bilangan.</li>
+                  <li>Hitung kelipatan 15 (KPK): $49/15 = 3$ bilangan (15, 30, 45).</li>
+                  <li>Bilangan yang HANYA 3 atau HANYA 5:</li>
+                  <li>(Total 3 - Irisan) + (Total 5 - Irisan) = $(16-3) + (9-3) = 13 + 6 = 19$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinasi Geometri</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">8.</div>
+            <div class="soal-konten">
+              Terdapat 6 titik pada sebuah kertas, di mana tidak ada 3 titik yang segaris lurus. Berapa banyak garis lurus yang dapat dibuat dengan menghubungkan dua titik sembarang?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">12</li>
+                <li data-opt="B">15</li>
+                <li data-opt="C">18</li>
+                <li data-opt="D">30</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 15</b><br />
+                <b>Pembahasan:</b><br />
+                Satu garis membutuhkan 2 titik. Ini sama dengan memilih 2 titik dari 6 titik yang tersedia.
+                <ol class="step-list">
+                  <li>Rumus $C(6, 2) = \frac{6 \times 5}{2}$.</li>
+                  <li>Hitung: $\frac{30}{2} = 15$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 9 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Peluang Dadu</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">9.</div>
+            <div class="soal-konten">
+              Sebuah dadu dilempar dua kali. Berapa banyak kemungkinan munculnya jumlah mata dadu sama dengan 7 atau 11?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">6</li>
+                <li data-opt="B">7</li>
+                <li data-opt="C">8</li>
+                <li data-opt="D">9</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 8</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Daftar jumlah 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) -> Ada 6 cara.</li>
+                  <li>Daftar jumlah 11: (5,6), (6,5) -> Ada 2 cara.</li>
+                  <li>Total kemungkinan = $6 + 2 = 8$ cara.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pola Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">10.</div>
+            <div class="soal-konten">
+              Berapa banyak bilangan 2 digit yang jumlah angka-angka penyusunnya sama dengan 9? (Contoh: 18, karena $1+8=9$).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">8</li>
+                <li data-opt="B">9</li>
+                <li data-opt="C">10</li>
+                <li data-opt="D">18</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 9</b><br />
+                <b>Pembahasan:</b><br />
+                Daftar semua bilangan 2 digit yang digitnya jika dijumlahkan hasilnya 9:
+                <br>18, 27, 36, 45, 54, 63, 72, 81, 90.
+                <br>Total ada 9 bilangan.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 11 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar Sisa</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">11.</div>
+            <div class="soal-konten">
+              Jumlah dua bilangan adalah 40. Jika bilangan pertama dibagi bilangan kedua hasilnya adalah 3 dengan sisa 4. Tentukan selisih kedua bilangan tersebut.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">18</li>
+                <li data-opt="B">22</li>
+                <li data-opt="C">28</li>
+                <li data-opt="D">31</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 22</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Modelkan: $A + B = 40$ dan $A = 3B + 4$.</li>
+                  <li>Substitusi A ke persamaan pertama: $(3B + 4) + B = 40$.</li>
+                  <li>$4B = 36 \to B = 9$.</li>
+                  <li>Cari A: $A = 40 - 9 = 31$.</li>
+                  <li>Selisih: $31 - 9 = 22$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 12 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Permutasi Unsur Sama</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">12.</div>
+            <div class="soal-konten">
+              Berapa banyak cara menyusun huruf-huruf pada kata "KATAK"?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">15</li>
+                <li data-opt="B">30</li>
+                <li data-opt="C">60</li>
+                <li data-opt="D">120</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 30</b><br />
+                <b>Pembahasan:</b><br />
+                Kata KATAK terdiri dari 5 huruf, dengan huruf kembar K (2) dan A (2).
+                <ol class="step-list">
+                  <li>Rumus: $\frac{5!}{2! \times 2!}$.</li>
+                  <li>Hitung: $\frac{120}{2 \times 2} = \frac{120}{4} = 30$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 13 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Stars and Bars</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">13.</div>
+            <div class="soal-konten">
+              Pak Guru ingin membagikan 6 permen identik kepada 3 siswa. Setiap siswa harus mendapatkan minimal 1 permen. Ada berapa cara pembagian yang mungkin?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">6</li>
+                <li data-opt="B">10</li>
+                <li data-opt="C">15</li>
+                <li data-opt="D">21</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 10</b><br />
+                <b>Pembahasan:</b><br />
+                Gunakan metode sekat (Stars and Bars).
+                <ol class="step-list">
+                  <li>Bayangkan 6 permen memiliki 5 celah di antaranya.</li>
+                  <li>Untuk membagi ke 3 anak, kita butuh 2 sekat.</li>
+                  <li>Pilih 2 posisi sekat dari 5 celah: $C(5, 2)$.</li>
+                  <li>Hitung: $\frac{5 \times 4}{2} = 10$ cara.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 14 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Bilangan Palindrom</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">14.</div>
+            <div class="soal-konten">
+              Berapa banyak bilangan <i>palindrome</i> (bilangan yang dibaca dari depan dan belakang sama) yang bernilai antara 100 dan 500?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">30</li>
+                <li data-opt="B">36</li>
+                <li data-opt="C">40</li>
+                <li data-opt="D">50</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 40</b><br />
+                <b>Pembahasan:</b><br />
+                Bilangan palindrom 3 digit berbentuk ABA.
+                <ol class="step-list">
+                  <li>Digit Ratusan (A): Bisa angka 1, 2, 3, 4 (sesuai batas 100-500). Ada 4 pilihan.</li>
+                  <li>Digit Puluhan (B): Bisa angka 0-9. Ada 10 pilihan.</li>
+                  <li>Digit Satuan (A): Harus sama dengan ratusan (1 pilihan).</li>
+                  <li>Total: $4 \times 10 \times 1 = 40$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Himpunan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">15.</div>
+            <div class="soal-konten">
+              Di sebuah kelas terdapat 30 siswa. Diketahui 18 siswa suka Matematika, 15 siswa suka IPA, dan 4 siswa tidak suka keduanya. Berapa banyak siswa yang suka Matematika <b>dan</b> IPA?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5</li>
+                <li data-opt="B">6</li>
+                <li data-opt="C">7</li>
+                <li data-opt="D">8</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 7</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Rumus Semesta: $S = (A + B - Irisan) + Tidak Suka$.</li>
+                  <li>$30 = (18 + 15 - x) + 4$.</li>
+                  <li>$30 = 33 - x + 4$.</li>
+                  <li>$30 = 37 - x$.</li>
+                  <li>$x = 7$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Filling Slots (Syarat)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">16.</div>
+            <div class="soal-konten">
+              Dari himpunan angka $\{0, 1, 2, 3, 4, 5\}$, akan dibentuk bilangan ganjil 3 digit <b>berbeda</b>. Berapa banyak bilangan yang terbentuk? (Ingat: 0 tidak boleh di posisi ratusan).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">48</li>
+                <li data-opt="B">60</li>
+                <li data-opt="C">72</li>
+                <li data-opt="D">96</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 48</b><br />
+                <b>Pembahasan:</b><br />
+                Kotak: [Ratusan] [Puluhan] [Satuan]
+                <ol class="step-list">
+                  <li>Isi <b>Satuan</b> dulu (Syarat Ganjil 1,3,5): 3 pilihan.</li>
+                  <li>Isi <b>Ratusan</b>: Dari 6 angka, kurangi 1 untuk satuan, kurangi 0 (tidak boleh di depan). Sisa 4 pilihan.</li>
+                  <li>Isi <b>Puluhan</b>: Dari 6 angka, kurangi 2 angka yg sudah dipakai. Sisa 4 pilihan.</li>
+                  <li>Total: $4 \times 4 \times 3 = 48$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 17 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Faktorial</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">17.</div>
+            <div class="soal-konten">
+              Tentukan digit satuan dari hasil penjumlahan $1! + 2! + 3! + 4! + \dots + 10!$.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">0</li>
+                <li data-opt="B">1</li>
+                <li data-opt="C">3</li>
+                <li data-opt="D">5</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 3</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>$1! = 1$, $2! = 2$, $3! = 6$, $4! = 24$.</li>
+                  <li>Mulai $5! = 120$ dan seterusnya, digit satuan selalu 0.</li>
+                  <li>Jumlahkan yang bukan nol: $1 + 2 + 6 + 4 (\text{satuan 24}) = 13$.</li>
+                  <li>Digit terakhirnya adalah 3.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 18 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Operasi Kebalikan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">18.</div>
+            <div class="soal-konten">
+              Sebuah bilangan jika dikali 3 kemudian ditambah 5 hasilnya adalah 50. Bilangan berapakah itu?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">12</li>
+                <li data-opt="B">15</li>
+                <li data-opt="C">18</li>
+                <li data-opt="D">45</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 15</b><br />
+                <b>Pembahasan:</b><br />
+                Gunakan operasi mundur (invers):
+                <ol class="step-list">
+                  <li>Dari 50, kurangi 5: $50 - 5 = 45$.</li>
+                  <li>Lalu bagi 3: $45 \div 3 = 15$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 19 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">19.</div>
+            <div class="soal-konten">
+              Berapa banyak persegi panjang (termasuk persegi) yang dapat ditemukan pada papan catur ukuran $3 \times 3$?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">20</li>
+                <li data-opt="B">25</li>
+                <li data-opt="C">30</li>
+                <li data-opt="D">36</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 36</b><br />
+                <b>Pembahasan:</b><br />
+                Rumus banyak persegi panjang pada grid $n \times m$:
+                <br>$\text{Jumlah} = (1+2+...+n) \times (1+2+...+m)$.
+                <br>Untuk $3 \times 3$: $(1+2+3) \times (1+2+3) = 6 \times 6 = 36$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 20 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Manipulasi Aljabar</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">20.</div>
+            <div class="soal-konten">
+              Tentukan banyaknya bilangan asli $n$ sehingga pecahan $\frac{n+12}{n+2}$ menghasilkan bilangan bulat.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1</li>
+                <li data-opt="B">2</li>
+                <li data-opt="C">3</li>
+                <li data-opt="D">4</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 2</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Ubah bentuk: $\frac{n+12}{n+2} = \frac{(n+2)+10}{n+2} = 1 + \frac{10}{n+2}$.</li>
+                  <li>Agar bulat, $(n+2)$ harus faktor dari 10: {1, 2, 5, 10}.</li>
+                  <li>Karena $n$ bilangan asli ($n \ge 1$), maka $(n+2) \ge 3$.</li>
+                  <li>Faktor yang memenuhi hanya 5 dan 10.</li>
+                  <li>Jadi ada 2 nilai $n$ ($n=3$ dan $n=8$).</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- ================================================================================== -->
+      <!-- LEVEL 3: HOTS / OLIMPIADE -->
+      <!-- ================================================================================== -->
+
+      <!-- Soal 21 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinasi Murni</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">21.</div>
+            <div class="soal-konten">
+              Sebuah bilangan 3 digit $ABC$ memiliki nilai $100A + 10B + C$. Jika diketahui $A > B > C > 0$, ada berapa banyak bilangan $ABC$ yang mungkin terbentuk?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">72</li>
+                <li data-opt="B">84</li>
+                <li data-opt="C">120</li>
+                <li data-opt="D">504</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 84</b><br />
+                <b>Pembahasan:</b><br />
+                Karena urutan angka terkunci ($A>B>C$), kita cukup memilih 3 angka berbeda dari himpunan {1, 2, ..., 9}.
+                <ol class="step-list">
+                  <li>Ini adalah soal Kombinasi 3 dari 9.</li>
+                  <li>Hitung: $C(9,3) = \frac{9 \times 8 \times 7}{3 \times 2 \times 1}$.</li>
+                  <li>Hasil: $3 \times 4 \times 7 = 84$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 22 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Round Robin</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">22.</div>
+            <div class="soal-konten">
+              Dalam sebuah turnamen catur <i>round-robin</i> (setiap peserta bertemu satu kali), total pertandingan yang terjadi adalah 45 pertandingan. Berapa jumlah peserta turnamen tersebut?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">9</li>
+                <li data-opt="B">10</li>
+                <li data-opt="C">11</li>
+                <li data-opt="D">12</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 10</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Rumus: $\frac{n(n-1)}{2} = 45$.</li>
+                  <li>$n(n-1) = 90$.</li>
+                  <li>Cari dua bilangan berurutan hasil kalinya 90: $10 \times 9$.</li>
+                  <li>Jadi $n = 10$ peserta.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 23 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Komplemen</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">23.</div>
+            <div class="soal-konten">
+              Dari 8 orang (5 Pria, 3 Wanita) akan dipilih 3 orang untuk menjadi panitia inti. Berapa banyak cara memilih jika panitia tersebut harus memuat <b>paling sedikit</b> 1 Wanita?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">46</li>
+                <li data-opt="B">50</li>
+                <li data-opt="C">56</li>
+                <li data-opt="D">60</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 46</b><br />
+                <b>Pembahasan:</b><br />
+                Gunakan komplemen: Total Cara dikurangi Cara Tanpa Wanita (Semua Pria).
+                <ol class="step-list">
+                  <li>Total memilih 3 dari 8: $C(8,3) = 56$.</li>
+                  <li>Memilih 3 dari 5 Pria: $C(5,3) = 10$.</li>
+                  <li>Minimal 1 Wanita = $56 - 10 = 46$ cara.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 24 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Sisa Bagi</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">24.</div>
+            <div class="soal-konten">
+              Sebuah bilangan jika dibagi 3 bersisa 2, dibagi 4 bersisa 3, dan dibagi 5 bersisa 4. Tentukan bilangan bulat positif terkecil yang memenuhi sifat tersebut.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">58</li>
+                <li data-opt="B">59</li>
+                <li data-opt="C">60</li>
+                <li data-opt="D">119</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 59</b><br />
+                <b>Pembahasan:</b><br />
+                Pola sisa: Kurang 1 dari pembagi (3-2=1, 4-3=1, 5-4=1).
+                <ol class="step-list">
+                  <li>Cari KPK dari 3, 4, 5 = 60.</li>
+                  <li>Bilangan = KPK - 1.</li>
+                  <li>$60 - 1 = 59$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 25 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pecahan Aljabar</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">25.</div>
+            <div class="soal-konten">
+              Tentukan banyaknya pasangan bilangan asli $(x, y)$ yang memenuhi persamaan $\frac{1}{x} + \frac{1}{y} = \frac{1}{5}$ dengan syarat $x \le y$.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1</li>
+                <li data-opt="B">2</li>
+                <li data-opt="C">3</li>
+                <li data-opt="D">4</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 2</b><br />
+                <b>Pembahasan:</b><br />
+                Ubah persamaan menjadi $(x-5)(y-5) = 25$.
+                <ol class="step-list">
+                  <li>Cari faktor 25: (1, 25) dan (5, 5).</li>
+                  <li>Pasangan 1: $x-5=1 \to x=6, y=30$.</li>
+                  <li>Pasangan 2: $x-5=5 \to x=10, y=10$.</li>
+                  <li>Ada 2 pasang solusi.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 26 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pola Digit</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">26.</div>
+            <div class="soal-konten">
+              Sebuah buku memiliki halaman yang dinomori dari 1 sampai $N$. Jika total digit yang digunakan untuk menomori seluruh halaman tersebut adalah 192 digit, berapakah $N$?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">99</li>
+                <li data-opt="B">100</li>
+                <li data-opt="C">101</li>
+                <li data-opt="D">102</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 100</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Hal 1-9: 9 digit. Sisa = $192-9=183$.</li>
+                  <li>Hal 10-99 (90 hal): $90 \times 2 = 180$ digit. Sisa = $183-180=3$.</li>
+                  <li>Sisa 3 digit cukup untuk tepat 1 halaman 3 digit (Halaman 100).</li>
+                  <li>Jadi $N=100$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 27 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Deret Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">27.</div>
+            <div class="soal-konten">
+              Ada berapa banyak cara menuliskan bilangan 15 sebagai penjumlahan dari 3 bilangan asli berurutan?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">0</li>
+                <li data-opt="B">1</li>
+                <li data-opt="C">2</li>
+                <li data-opt="D">3</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 1</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Misal bilangan itu: $(n-1), n, (n+1)$.</li>
+                  <li>Jumlah = $3n = 15 \to n = 5$.</li>
+                  <li>Bilangannya: 4, 5, 6.</li>
+                  <li>Hanya ada 1 kemungkinan.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 28 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika Logis</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">28.</div>
+            <div class="soal-konten">
+              Diketahui $abcd$ adalah bilangan 4 digit dengan angka berbeda yang dibentuk dari $\{1, 2, 3, 4\}$. Jika $a+b = c+d$, berapa banyak bilangan yang memenuhi?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">4</li>
+                <li data-opt="B">6</li>
+                <li data-opt="C">8</li>
+                <li data-opt="D">12</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 8</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Cari pasangan jumlah sama dari {1,2,3,4}: Hanya $\{1,4\}$ dan $\{2,3\}$ (jumlah 5).</li>
+                  <li>Kelompok pertama (a,b) bisa {1,4} atau {2,3}.</li>
+                  <li>Jika (a,b)={1,4}: 2 variasi. (c,d)={2,3}: 2 variasi. Total $2 \times 2 = 4$.</li>
+                  <li>Jika (a,b)={2,3}: 2 variasi. (c,d)={1,4}: 2 variasi. Total $2 \times 2 = 4$.</li>
+                  <li>Total = $4 + 4 = 8$ bilangan.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 29 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinasi</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">29.</div>
+            <div class="soal-konten">
+              Berapa banyak bilangan cacah 4 digit yang digit-digitnya tersusun naik tegas? (Contoh: 1234, 2589, tapi 1223 tidak boleh).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">84</li>
+                <li data-opt="B">120</li>
+                <li data-opt="C">126</li>
+                <li data-opt="D">210</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 126</b><br />
+                <b>Pembahasan:</b><br />
+                <ol class="step-list">
+                  <li>Karena urutan naik, kita cukup memilih 4 angka berbeda dari 9 angka (1-9).</li>
+                  <li>Angka 0 tidak boleh karena jika terpilih pasti di depan (paling kecil), padahal digit pertama tidak boleh 0.</li>
+                  <li>Hitung $C(9,4) = \frac{9 \times 8 \times 7 \times 6}{4 \times 3 \times 2 \times 1} = 126$.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- Soal 30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+             <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+             <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 9 | Kombinatorika: Teknik Mencacah</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Fibonacci</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">30.</div>
+            <div class="soal-konten">
+              Budi menaiki 10 anak tangga. Ia bisa naik 1 langkah atau 2 langkah sekaligus. Berapa banyak cara berbeda Budi bisa sampai ke anak tangga ke-10?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">55</li>
+                <li data-opt="B">89</li>
+                <li data-opt="C">144</li>
+                <li data-opt="D">233</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 89</b><br />
+                <b>Pembahasan:</b><br />
+                Pola penjumlahan 2 angka sebelumnya (Fibonacci):
+                <br>1, 2, 3, 5, 8, 13, 21, 34, 55, 89.
+                <br>Suku ke-10 adalah 89.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+    </div>
+  </body>
+</html>
