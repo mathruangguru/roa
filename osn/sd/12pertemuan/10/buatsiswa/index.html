@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0405MAT12SESSIONS10BS - PERTEMUAN 10 - Logika: Pola dengan Kombinasi - Panduan Mengajar</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Noto+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 15px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .soal-container {
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 10px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: Soal 1-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 10 | Logika: Pola dengan Kombinasi</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 1 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Perhatikan pola bilangan berikut: $2, 5, 8, 11, \dots$ <br>
+                  Tiga bilangan selanjutnya adalah?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">13, 16, 19</li>
+                    <li data-opt="B">14, 17, 20</li>
+                    <li data-opt="C">14, 16, 18</li>
+                    <li data-opt="D">15, 18, 21</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 2 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Berapa banyak bilangan bulat antara 1 sampai 100 yang memuat angka "3" sebagai digitnya?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">10</li>
+                    <li data-opt="B">18</li>
+                    <li data-opt="C">19</li>
+                    <li data-opt="D">20</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 3 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Andi memiliki 3 baju (Merah, Kuning, Hijau) dan 2 celana (Hitam, Biru). Berapa banyak pasangan baju dan celana berbeda yang bisa dipakai Andi?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">8</li>
+                    <li data-opt="D">9</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 4 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Jika HARI = 4, MAKAN = 5, dan BELAJAR = 7. Maka MATEMATIKA = ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8</li>
+                    <li data-opt="B">9</li>
+                    <li data-opt="C">10</li>
+                    <li data-opt="D">11</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 5 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Pilih pernyataan yang <b>SALAH</b> (Mustahil). Bilangan 15 dapat dinyatakan sebagai:
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Jumlah dua bilangan prima</li>
+                    <li data-opt="B">Selisih dua bilangan kuadrat</li>
+                    <li data-opt="C">Hasil kali dua bilangan ganjil</li>
+                    <li data-opt="D">Jumlah dua bilangan ganjil</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 6 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Hari ini hari Senin. 100 hari lagi adalah hari...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Senin</li>
+                    <li data-opt="B">Selasa</li>
+                    <li data-opt="C">Rabu</li>
+                    <li data-opt="D">Kamis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 7 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Berapa hasil dari $1 - 2 + 3 - 4 + 5 - 6 + \dots + 19 - 20$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">10</li>
+                    <li data-opt="B">-10</li>
+                    <li data-opt="C">0</li>
+                    <li data-opt="D">-20</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 8 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Sebuah buku memiliki halaman 1 sampai 50. Berapa kali angka 5 muncul pada nomor halaman?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">10</li>
+                    <li data-opt="D">11</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 2: Soal 9-16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 10 | Logika: Pola dengan Kombinasi</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 9 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Di sebuah kandang ada Ayam dan Kambing. Jumlah kepala ada 10, jumlah kaki ada 30. Berapa banyak kambing?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">3</li>
+                    <li data-opt="B">4</li>
+                    <li data-opt="C">5</li>
+                    <li data-opt="D">6</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 10 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Berapa banyak persegi pada gambar papan catur $3 \times 3$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">9</li>
+                    <li data-opt="B">10</li>
+                    <li data-opt="C">13</li>
+                    <li data-opt="D">14</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 11 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Dalam sebuah antrian, Budi berada di urutan ke-5 dari depan dan urutan ke-12 dari belakang. Berapa jumlah orang dalam antrian itu?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">16</li>
+                    <li data-opt="B">17</li>
+                    <li data-opt="C">15</li>
+                    <li data-opt="D">18</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 12 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Jumlah dua bilangan cacah adalah 25. Selisih kedua bilangan tersebut adalah 5. Berapakah hasil kali kedua bilangan tersebut?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">100</li>
+                    <li data-opt="B">125</li>
+                    <li data-opt="C">150</li>
+                    <li data-opt="D">140</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 13 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Teka-teki Cryptarithm: $AB + B = BA$. Berapakah nilai $A + B$? (A dan B adalah angka berbeda).
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">10</li>
+                    <li data-opt="B">11</li>
+                    <li data-opt="C">17</li>
+                    <li data-opt="D">18</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 14 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Berapa banyak bilangan 3 digit yang dapat dibentuk dari angka 0, 1, 2, 3 jika angka boleh berulang?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">64</li>
+                    <li data-opt="B">48</li>
+                    <li data-opt="C">36</li>
+                    <li data-opt="D">24</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 15 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Ada 5 orang dalam ruangan. Jika setiap orang berjabat tangan satu kali dengan orang lainnya, berapa total jabat tangan?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">10</li>
+                    <li data-opt="C">20</li>
+                    <li data-opt="D">25</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 16 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">16.</div>
+                <div class="soal-konten">
+                  Jika 3 Kucing menangkap 3 Tikus dalam 3 Menit. Berapa menit yang dibutuhkan 100 Kucing untuk menangkap 100 Tikus?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">100 Menit</li>
+                    <li data-opt="B">3 Menit</li>
+                    <li data-opt="C">30 Menit</li>
+                    <li data-opt="D">1 Menit</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: Soal 17-24 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 10 | Logika: Pola dengan Kombinasi</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 17 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">17.</div>
+                <div class="soal-konten">
+                  Jumlah dua bilangan prima adalah 99. Selisih kedua bilangan tersebut adalah...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">99</li>
+                    <li data-opt="B">97</li>
+                    <li data-opt="C">95</li>
+                    <li data-opt="D">93</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 18 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">18.</div>
+                <div class="soal-konten">
+                  Pada jam digital menunjukkan pukul 20:20. Berapa menit lagi jam akan menunjukkan angka yang sama persis (Palindrom) untuk pertama kalinya?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">42 menit</li>
+                    <li data-opt="B">52 menit</li>
+                    <li data-opt="C">60 menit</li>
+                    <li data-opt="D">71 menit</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 19 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">19.</div>
+                <div class="soal-konten">
+                  Ada berapa banyak persegi panjang pada gambar grid $2 \times 2$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">4</li>
+                    <li data-opt="B">5</li>
+                    <li data-opt="C">8</li>
+                    <li data-opt="D">9</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 20 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">20.</div>
+                <div class="soal-konten">
+                  Selembar kertas dipotong menjadi 3 bagian. Salah satu potongan diambil dan dipotong lagi menjadi 3 bagian. Proses ini dilakukan 5 kali pemotongan total. Berapa banyak potongan kertas sekarang?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">9</li>
+                    <li data-opt="B">11</li>
+                    <li data-opt="C">13</li>
+                    <li data-opt="D">15</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 21 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">21.</div>
+                <div class="soal-konten">
+                  Berapa banyak bilangan antara 1 sampai 100 yang habis dibagi 3 ATAU habis dibagi 5?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">47</li>
+                    <li data-opt="B">53</li>
+                    <li data-opt="C">33</li>
+                    <li data-opt="D">20</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 22 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">22.</div>
+                <div class="soal-konten">
+                  Dalam sebuah laci terdapat 10 kaos kaki merah dan 10 kaos kaki biru. Berapa minimal kaos kaki yang harus diambil dengan mata tertutup agar PASTI mendapatkan sepasang kaos kaki dengan warna sama?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">3</li>
+                    <li data-opt="B">11</li>
+                    <li data-opt="C">21</li>
+                    <li data-opt="D">2</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 23 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">23.</div>
+                <div class="soal-konten">
+                  Sebuah bilangan terdiri dari 4 digit berbeda. Digit pertama adalah 3 kali digit terakhir. Digit kedua adalah penjumlahan digit pertama dan terakhir. Berapa bilangan tersebut jika jumlah seluruh digitnya adalah 14?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">3461</li>
+                    <li data-opt="B">6802</li>
+                    <li data-opt="C">3401</li>
+                    <li data-opt="D">6822</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 24 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">24.</div>
+                <div class="soal-konten">
+                  Berapa banyak bilangan palindrome 3 digit (contoh: 121, 353) yang habis dibagi 5?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">9</li>
+                    <li data-opt="B">10</li>
+                    <li data-opt="C">18</li>
+                    <li data-opt="D">90</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 4: Soal 25-30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 10 | Logika: Pola dengan Kombinasi</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <div class="column">
+            <!-- Soal 25 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">25.</div>
+                <div class="soal-konten">
+                  Pak Guru menulis bilangan 1, 2, 3, ..., 11 di papan tulis. Salah satu bilangan dihapus, dan rata-rata bilangan yang tersisa adalah 6. Bilangan berapakah yang dihapus?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">7</li>
+                    <li data-opt="D">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 26 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">26.</div>
+                <div class="soal-konten">
+                  Berapa banyak cara menyusun huruf-huruf pada kata "MALAM"?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">120</li>
+                    <li data-opt="B">60</li>
+                    <li data-opt="C">30</li>
+                    <li data-opt="D">20</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 27 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">27.</div>
+                <div class="soal-konten">
+                  Jika $2^x = 10$ dan $5^y = 10$, berapakah nilai $1/x + 1/y$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1</li>
+                    <li data-opt="B">2</li>
+                    <li data-opt="C">5</li>
+                    <li data-opt="D">10</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <!-- Soal 28 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">28.</div>
+                <div class="soal-konten">
+                  Seekor katak melompat di garis bilangan. Mulai dari 0. Lompatan ganjil (ke-1, ke-3, ...) sejauh 5 satuan ke kanan. Lompatan genap (ke-2, ke-4, ...) sejauh 2 satuan ke kiri. Di posisi mana katak setelah lompatan ke-50?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">75</li>
+                    <li data-opt="B">100</li>
+                    <li data-opt="C">150</li>
+                    <li data-opt="D">50</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 29 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">29.</div>
+                <div class="soal-konten">
+                  Berapa sudut terkecil yang dibentuk jarum jam dan jarum menit pada pukul 03.30?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$90^{\circ}$</li>
+                    <li data-opt="B">$75^{\circ}$</li>
+                    <li data-opt="C">$85^{\circ}$</li>
+                    <li data-opt="D">$105^{\circ}$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 30 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">30.</div>
+                <div class="soal-konten">
+                  Tiga bilangan bulat positif $a, b, c$ memiliki sifat: $a < b < c$. Jika $a + b + c = 12$, berapa nilai terbesar yang mungkin untuk hasil kali $a \times b \times c$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">48</li>
+                    <li data-opt="B">60</li>
+                    <li data-opt="C">42</li>
+                    <li data-opt="D">36</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+    </div>
+  </body>
+</html>
