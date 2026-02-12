@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0405MAT12SESSIONS11BS - PERTEMUAN 11 - Integrated Problem Solving - Bank Aktivitas</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 15px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .soal-container {
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 3px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .page-footer {
+        text-align: justify;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 2px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page { size: A4; margin: 0; }
+        body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: Soal 1-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 11 | Integrated Problem Solving</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 1 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Andi mengurutkan bilangan asli kelipatan 3 dari terkecil ke terbesar, sedangkan Budi mengurutkan bilangan asli kelipatan 4 dari terkecil ke terbesar. Jumlah dari bilangan Andi pada urutan ke-30 dan bilangan Budi pada urutan ke-25 adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">180</li>
+                    <li data-opt="B">190</li>
+                    <li data-opt="C">200</li>
+                    <li data-opt="D">210</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 2 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Bilangan ratusan $x$ dan $y$ di mana $x = a6c$ dan $y = a4e$ memenuhi sifat $x - y = 24$. Jika $c + e = 10$, maka hasil dari $c \times e$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">16</li>
+                    <li data-opt="B">21</li>
+                    <li data-opt="C">24</li>
+                    <li data-opt="D">25</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 3 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Hasil operasi dari $\left(125\% \times \frac{4}{5}\right) \div 0,5 \times 1\frac{1}{2} \div 1,5$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">1</li>
+                    <li data-opt="B">1,5</li>
+                    <li data-opt="C">2</li>
+                    <li data-opt="D">2,5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 4 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Jika $a$ dan $b$ bilangan bulat positif yang memenuhi $a^2 - b^2 = 6^3$, maka nilai berikut yang <b>bukan</b> merupakan hasil dari $a \times b$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">45</li>
+                    <li data-opt="B">135</li>
+                    <li data-opt="C">315</li>
+                    <li data-opt="D">2915</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 5 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Sebuah bilangan asli $K$ bersisa 2 jika dibagi 5, bersisa 4 jika dibagi 7, dan bersisa 1 jika dibagi 3. Nilai minimum bilangan $K$ yang memenuhi kondisi tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">47</li>
+                    <li data-opt="B">52</li>
+                    <li data-opt="C">67</li>
+                    <li data-opt="D">82</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 6 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Tiga bilangan kelipatan 5 yang berurutan memiliki jumlah 75. Selisih antara kuadrat bilangan terbesar dan bilangan terkecilnya adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">200</li>
+                    <li data-opt="B">300</li>
+                    <li data-opt="C">400</li>
+                    <li data-opt="D">500</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 7 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Usia Kakek saat ini adalah enam kali usia Cucu. Empat tahun yang lalu, usia Kakek adalah delapan kali usia Cucu. Jumlah usia Kakek dan Cucu empat tahun yang akan datang adalah ... tahun.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">98</li>
+                    <li data-opt="B">104</li>
+                    <li data-opt="C">106</li>
+                    <li data-opt="D">112</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 8 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  Ali, Budi, dan Candra menabung di Bank X. Perbandingan tabungan Ali dan Budi adalah $3 : 4$, sedangkan perbandingan tabungan Budi dan Candra adalah $2 : 5$. Jika selisih tabungan Candra dan Ali adalah Rp2.100.000,00, maka jumlah tabungan Budi adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">Rp900.000,00</li>
+                    <li data-opt="B">Rp1.200.000,00</li>
+                    <li data-opt="C">Rp1.500.000,00</li>
+                    <li data-opt="D">Rp1.800.000,00</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 2: Soal 9-14 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 11 | Integrated Problem Solving</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 9 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Danang berolahraga selama 1,5 jam. Ia berjalan kaki selama 40 menit dengan kecepatan 6 km/jam, lalu berlari selama 50 menit dengan kecepatan 12 km/jam. Kecepatan rata-rata Danang selama berolahraga tersebut adalah ... km/jam.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8,5</li>
+                    <li data-opt="B">9,0</li>
+                    <li data-opt="C">9,33</li>
+                    <li data-opt="D">10,0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 10 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Dina akan mengoperasikan suatu bilangan dengan aturan berikut: dikurangi 4, hasilnya dibagi 3, kemudian ditambah 5, dan terakhir dikali 2. Jika Dina memasukkan bilangan 22, kemudian hasil akhirnya dimasukkan kembali ke mesin operasi yang sama, hasil akhir pada putaran kedua adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">18</li>
+                    <li data-opt="B">20</li>
+                    <li data-opt="C">22</li>
+                    <li data-opt="D">24</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 11 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Perhatikan ilustrasi potongan di bawah ini! Sebuah persegi dengan keliling 40 cm dipotong menjadi 5 persegi panjang kecil yang identik dengan irisan saling sejajar.
+                  <div style="text-align: center; margin: 15px 0;">
+                    <svg width="100" height="100" viewBox="-2 -2 54 54">
+                      <rect x="0" y="0" width="50" height="50" fill="none" stroke="black" stroke-width="1.5"/>
+                      <line x1="10" y1="0" x2="10" y2="50" stroke="black" stroke-width="1.5"/>
+                      <line x1="20" y1="0" x2="20" y2="50" stroke="black" stroke-width="1.5"/>
+                      <line x1="30" y1="0" x2="30" y2="50" stroke="black" stroke-width="1.5"/>
+                      <line x1="40" y1="0" x2="40" y2="50" stroke="black" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                  Keliling satu persegi panjang kecil tersebut adalah ... cm.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">12</li>
+                    <li data-opt="B">24</li>
+                    <li data-opt="C">28</li>
+                    <li data-opt="D">30</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 12 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Perbandingan panjang, lebar, dan tinggi suatu balok adalah $3 : 2 : 1$. Jika luas permukaan balok tersebut adalah 352 cm$^2$, maka volume balok tersebut adalah ... cm$^3$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">192</li>
+                    <li data-opt="B">384</li>
+                    <li data-opt="C">576</li>
+                    <li data-opt="D">768</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 13 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Perhatikan bangun datar di bawah ini! ABCD adalah persegi dengan panjang sisi 10 cm, di dalamnya terdapat sebuah lingkaran yang menyinggung keempat sisi persegi tersebut.
+                  <div style="text-align: center; margin: 15px 0;">
+                    <svg width="110" height="110" viewBox="-10 -10 60 60">
+                      <rect x="0" y="0" width="40" height="40" fill="#d1d5db" stroke="black" stroke-width="1.5"/>
+                      <circle cx="20" cy="20" r="20" fill="white" stroke="black" stroke-width="1.5"/>
+                      <text x="-6" y="45" font-size="5" font-family="sans-serif" font-weight="bold">A</text>
+                      <text x="42" y="45" font-size="5" font-family="sans-serif" font-weight="bold">B</text>
+                      <text x="42" y="-2" font-size="5" font-family="sans-serif" font-weight="bold">C</text>
+                      <text x="-6" y="-2" font-size="5" font-family="sans-serif" font-weight="bold">D</text>
+                    </svg>
+                  </div>
+                  Luas daerah yang diarsir (di dalam persegi tetapi di luar lingkaran) adalah ... cm$^2$. ($\pi = 3,14$)
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">21,5</li>
+                    <li data-opt="B">24,5</li>
+                    <li data-opt="C">31,4</li>
+                    <li data-opt="D">78,5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 14 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Dua buah tabung, P dan Q. Tabung P memiliki jari-jari $r$ dan tinggi $2r$. Tabung Q memiliki jari-jari $2r$ dan tinggi $r$. Perbandingan luas selimut tabung P dan luas selimut tabung Q adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">$1 : 1$</li>
+                    <li data-opt="B">$1 : 2$</li>
+                    <li data-opt="C">$2 : 1$</li>
+                    <li data-opt="D">$1 : 4$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: Soal 15-22 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 11 | Integrated Problem Solving</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 15 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Perhatikan gambar persegi panjang ABCD di bawah ini! Titik E terletak pada sisi AB sedemikian rupa sehingga AE : EB = 1 : 3. 
+                  <div style="text-align: center; margin: 15px 0;">
+                    <svg width="150" height="100" viewBox="-10 -10 100 60">
+                      <rect x="0" y="0" width="80" height="40" fill="none" stroke="black" stroke-width="1.5"/>
+                      <polygon points="0,40 20,0 80,40" fill="#d1d5db" stroke="black" stroke-width="1.5"/>
+                      <text x="-6" y="-2" font-size="5" font-family="sans-serif" font-weight="bold">A</text>
+                      <text x="82" y="-2" font-size="5" font-family="sans-serif" font-weight="bold">B</text>
+                      <text x="82" y="45" font-size="5" font-family="sans-serif" font-weight="bold">C</text>
+                      <text x="-6" y="45" font-size="5" font-family="sans-serif" font-weight="bold">D</text>
+                      <text x="18" y="-3" font-size="5" font-family="sans-serif" font-weight="bold">E</text>
+                    </svg>
+                  </div>
+                  Jika luas segitiga CDE (daerah yang diarsir) adalah 40 cm$^2$, maka luas persegi panjang ABCD adalah ... cm$^2$.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">60</li>
+                    <li data-opt="B">80</li>
+                    <li data-opt="C">100</li>
+                    <li data-opt="D">120</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 16 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">16.</div>
+                <div class="soal-konten">
+                  Hasil ujian matematika di suatu kelas yang terdiri dari 25 siswa memiliki rata-rata 72. Terdapat 4 siswa yang mengikuti remedial dengan nilai awal berturut-turut 50, 52, 55, dan 60. Jika nilai maksimal setelah remedial dibatasi maksimal 80, maka rata-rata tertinggi yang mungkin dicapai kelas tersebut setelah remedial adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">74,12</li>
+                    <li data-opt="B">75,50</li>
+                    <li data-opt="C">76,12</li>
+                    <li data-opt="D">78,00</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 17 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">17.</div>
+                <div class="soal-konten">
+                  Banyaknya bilangan bulat dari 100 sampai 499 yang memuat setidaknya satu angka "3" adalah ... bilangan.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">138</li>
+                    <li data-opt="B">146</li>
+                    <li data-opt="C">157</li>
+                    <li data-opt="D">160</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 18 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">18.</div>
+                <div class="soal-konten">
+                  Dalam perlombaan estafet $4 \times 100$ meter, Pelari I berlari dengan kecepatan 10 m/s, Pelari II dengan 8 m/s, Pelari III dengan 12,5 m/s, dan Pelari IV dengan 10 m/s. Total waktu yang ditempuh tim tersebut hingga garis finis adalah ... detik.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">36,5</li>
+                    <li data-opt="B">38,0</li>
+                    <li data-opt="C">40,5</li>
+                    <li data-opt="D">42,0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 19 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">19.</div>
+                <div class="soal-konten">
+                  Sebuah kotak berisi 4 bola merah, 3 bola kuning, dan 2 bola hijau. Andi akan mengambil 3 bola sekaligus secara acak. Banyak cara pengambilan jika bola hijau <b>wajib</b> terambil tepat 1 buah adalah ... cara.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">21</li>
+                    <li data-opt="B">42</li>
+                    <li data-opt="C">64</li>
+                    <li data-opt="D">84</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 20 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">20.</div>
+                <div class="soal-konten">
+                  Jika $a \nabla b = a^2 - a \times b + b$, maka nilai dari $5 \nabla (3 \nabla 2)$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">0</li>
+                    <li data-opt="B">5</li>
+                    <li data-opt="C">10</li>
+                    <li data-opt="D">15</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 4: Soal 23-30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 11 | Integrated Problem Solving</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 21 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">21.</div>
+                <div class="soal-konten">
+                  Rina sedang membaca buku. Ia menyadari bahwa jumlah digit halaman buku yang dibacanya dari awal sampai akhir membutuhkan angka "7" dicetak sebanyak 41 kali. Jika penomoran dimulai dari halaman 1, berapa maksimal halaman yang mungkin dimiliki buku Rina?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">206</li>
+                    <li data-opt="B">216</li>
+                    <li data-opt="C">217</li>
+                    <li data-opt="D">226</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 22 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">22.</div>
+                <div class="soal-konten">
+                  Sebuah balok kayu berukuran $60 \text{ cm} \times 48 \text{ cm} \times 36 \text{ cm}$ akan dipotong menjadi kubus-kubus kecil berukuran seragam. Agar balok habis terpotong tanpa sisa dan menghasilkan jumlah kubus sesedikit mungkin, banyaknya kubus yang terbentuk adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">30</li>
+                    <li data-opt="B">60</li>
+                    <li data-opt="C">90</li>
+                    <li data-opt="D">120</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 23 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">23.</div>
+                <div class="soal-konten">
+                  Perbandingan jumlah kelereng Dika dan Eza mula-mula adalah $3 : 5$. Setelah Dika membeli 15 kelereng lagi dan Eza memberikan 5 kelerengnya kepada adiknya, jumlah kelereng mereka menjadi sama. Banyak kelereng Eza mula-mula adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">30</li>
+                    <li data-opt="B">40</li>
+                    <li data-opt="C">50</li>
+                    <li data-opt="D">60</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 24 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">24.</div>
+                <div class="soal-konten">
+                  Tim Bintang mengikuti kompetisi futsal yang terdiri dari 12 babak. Poin kemenangan adalah 3, seri adalah 1, dan kalah adalah 0. Jika di akhir kompetisi Tim Bintang tidak pernah kalah dan mengumpulkan total poin 28, berapa kali mereka mendapatkan hasil seri?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">2</li>
+                    <li data-opt="B">4</li>
+                    <li data-opt="C">6</li>
+                    <li data-opt="D">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 25 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">25.</div>
+                <div class="soal-konten">
+                  Angka satuan dari hasil operasi $8^{2025} + 3^{2024} - 7^{2023}$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">4</li>
+                    <li data-opt="B">5</li>
+                    <li data-opt="C">6</li>
+                    <li data-opt="D">7</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 26 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">26.</div>
+                <div class="soal-konten">
+                  Terdapat pecahan tak sederhana $\frac{A}{B}$. Jika pembilang dan penyebut masing-masing ditambah 2, nilai pecahannya menjadi $\frac{3}{4}$. Jika pembilang dikurangi 2 dan penyebut tetap, nilainya menjadi $\frac{1}{2}$. Nilai dari $B - A$ mula-mula adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">2</li>
+                    <li data-opt="B">3</li>
+                    <li data-opt="C">4</li>
+                    <li data-opt="D">5</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 4: Soal 23-30 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SD | Pertemuan 11 | Integrated Problem Solving</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 27 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">27.</div>
+                <div class="soal-konten">
+                  Pak Budi, seorang tukang cat, dijadwalkan dapat mengecat tembok dalam waktu 12 hari. Pak Cipto dapat menyelesaikan tembok yang sama dalam 24 hari. Mereka bekerja bersama-sama selama 4 hari, lalu Pak Budi ditugaskan ke tempat lain. Berapa hari lagi yang dibutuhkan Pak Cipto bekerja sendirian untuk menyelesaikan sisa tembok tersebut?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">8 hari</li>
+                    <li data-opt="B">10 hari</li>
+                    <li data-opt="C">12 hari</li>
+                    <li data-opt="D">16 hari</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 28 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">28.</div>
+                <div class="soal-konten">
+                  Banyaknya cara menyusun 3 bilangan asli genap berbeda (contoh: 2, 4, 6) yang jumlah ketiganya kurang dari atau sama dengan 18 adalah ... cara.
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">5</li>
+                    <li data-opt="B">6</li>
+                    <li data-opt="C">7</li>
+                    <li data-opt="D">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 29 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">29.</div>
+                <div class="soal-konten">
+                  Nilai $X$ pada barisan $2, 3, 5, 8, 13, 21, X, 55$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">34</li>
+                    <li data-opt="B">35</li>
+                    <li data-opt="C">37</li>
+                    <li data-opt="D">42</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 30 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">30.</div>
+                <div class="soal-konten">
+                  Jika kelipatan persekutuan terkecil (KPK) dari $A$ dan 18 adalah 90, dan faktor persekutuan terbesar (FPB) dari $A$ dan 18 adalah 6. Berapakah nilai $A$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="A">12</li>
+                    <li data-opt="B">24</li>
+                    <li data-opt="C">30</li>
+                    <li data-opt="D">45</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+    </div>
+  </body>
+</html>
