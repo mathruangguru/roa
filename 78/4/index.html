@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Competition Practice - Grade 7-8</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax Configuration for LaTeX rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="Math-Jax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #3730a3;
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .subsection-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4f46e5;
+            padding-left: 0.75rem;
+            background-color: #eef2ff;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Unified Box Styles */
+        .unified-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        }
+        .unified-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .unified-divider {
+            border-top: 2px dashed #cbd5e1;
+            margin: 0.5rem 0;
+        }
+        .text-en {
+            color: #1e293b;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        .text-id {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        /* Concept Box */
+        .concept {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1.25rem;
+            margin: 1.5rem 0 2rem 0;
+            border-radius: 0.25rem;
+        }
+
+        /* Solution Specifics */
+        ul.solution-list {
+            list-style-type: none; /* Removed bullet points for cleaner step look */
+            margin-left: 0;
+            color: #334155;
+        }
+        ul.solution-list li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            padding-left: 1rem;
+            border-left: 2px solid #e2e8f0;
+        }
+        .lang-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.25rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .tag-en { background-color: #e2e8f0; color: #475569; }
+        .tag-id { background-color: #e0e7ff; color: #4338ca; }
+        
+        .final-answer {
+            font-weight: 700;
+            color: #166534; 
+            background-color: #dcfce7; 
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            border: 1px solid #86efac;
+        }
+        .final-answer-id {
+            font-weight: 700;
+            color: #3730a3; 
+            background-color: #e0e7ff; 
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            border: 1px solid #a5b4fc;
+        }
+
+        @media (max-width: 640px) {
+            .unified-content {
+                padding: 1.25rem 1rem;
+            }
+            .content-card {
+                padding: 1.25rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_zekej2_3984.png" alt="Logo" class="mx-auto h-28">
+        </div>
+        
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">Olympiad Math Practice Worksheet 5</h1>
+            <p class="text-gray-600 mt-2 text-lg">Grade 7 - 8 | Lines, Angles, Triangles &amp; Similarity</p>
+        </header>
+
+        <main>
+            <!-- Questions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Questions / Soal-Soal</h2>
+
+                <div class="subsection-title">Part A: Lines, Angles &amp; Triangles (Garis, Sudut &amp; Segitiga)</div>
+                
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>1.</strong> An interior angle of a regular n-sided polygon is 17 times of its exterior angle. Find n.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>1.</strong> Sebuah sudut dalam dari segi-n beraturan adalah 17 kali lebih besar dari sudut luarnya. Carilah nilai n.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>2.</strong> The interior angles of an irregular eleven-sided polygon measure $155^\circ, 136^\circ, 153^\circ, 146^\circ, 112^\circ, 161^\circ, 138^\circ, 127^\circ, 154^\circ$, and $176^\circ$. What is the size of the eleventh interior angle?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>2.</strong> Sudut dalam poligon bersisi sebelas yang tidak beraturan adalah $155^\circ, 136^\circ, 153^\circ, 146^\circ, 112^\circ, 161^\circ, 138^\circ, 127^\circ, 154^\circ$, dan $176^\circ$. Berapakah besar sudut dalam kesebelas?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>3.</strong> The exterior angles of an irregular octagon measure $37^\circ, 24^\circ, 81^\circ, 12^\circ, 97^\circ, 26^\circ$ and $44^\circ$. What is the size of the eighth exterior angle?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>3.</strong> Besar sudut luar segi delapan tidak beraturan adalah $37^\circ, 24^\circ, 81^\circ, 12^\circ, 97^\circ, 26^\circ$, dan $44^\circ$. Berapakah besar sudut luar kedelapannya?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>4.</strong> An interior angle of an n-sided polygon is $(5n+115)^\circ$. Find the maximum integer value of n.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>4.</strong> Sebuah sudut dalam segi banyak bersisi n adalah $(5n+115)^\circ$. Tentukan nilai bilangan bulat maksimum untuk n.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>5.</strong> Triangles ABC and ADC are isosceles with $AB=BC$ and $AD=DC$. Point D is inside triangle ABC. Angle ABC measures 40 degrees, and angle ADC measures 140 degrees. What is the degree measure of angle BAD?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>5.</strong> Segitiga ABC dan ADC adalah segitiga sama kaki dengan $AB=BC$ dan $AD=DC$. Titik D berada di dalam segitiga ABC. Sudut ABC besarnya $40^\circ$, dan sudut ADC besarnya $140^\circ$. Berapakah besar sudut BAD?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>6.</strong> The diagram shows an isosceles triangle where $PQ=RQ$. The base angles are $(x+18)^\circ$ and $(3x-9)^\circ$. Find the value of x.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>6.</strong> Diagram menunjukkan segitiga sama kaki di mana $PQ=RQ$. Sudut alasnya adalah $(x+18)^\circ$ dan $(3x-9)^\circ$. Tentukan nilai x.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>7.</strong> Three points A, B, and C have coordinates $(0, 4)$, $(6, 2)$, and $(10, 4)$, respectively. Then $\angle ABC$ equals...</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>7.</strong> Tiga titik A, B, dan C berturut-turut memiliki koordinat $(0, 4)$, $(6, 2)$, dan $(10, 4)$. Maka besar $\angle ABC$ sama dengan...</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>8.</strong> Given the side lengths of a triangle are 13, 14, and 15. Find the area of this triangle.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>8.</strong> Diketahui panjang sisi sebuah segitiga adalah 13, 14, dan 15. Tentukan luas segitiga ini.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>9.</strong> Consider three identical regular pentagons. In how many ways can 3 such pentagons be arranged around a single vertex so that they form a tessellation (without overlapping or leaving gaps)?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>9.</strong> Perhatikan tiga buah segilima beraturan yang identik. Ada berapa banyak cara untuk menyusun 3 segilima tersebut mengelilingi satu titik sudut sehingga membentuk teselasi (tanpa tumpang tindih atau celah)?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>10.</strong> Segment AB is parallel to segment EF, and segment AC is parallel to DE. If $\angle BAC = 113^\circ$, and both angles are acute or obtuse together based on orientation, what is the value of $\angle DEF$?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>10.</strong> Segmen AB sejajar dengan segmen EF, dan segmen AC sejajar dengan DE. Jika $\angle BAC = 113^\circ$ (dan asumsikan kedua sudut menghadap arah divergensi yang sama sehingga jenis sudutnya ekuivalen), berapakah nilai $\angle DEF$?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>11.</strong> In the figure PQRST (a pentagon), angles at P, T, and Q are $3x^\circ$, $4x^\circ$, and $134^\circ$ respectively. If the interior angles at R and S are both $90^\circ$, find the value of $x$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>11.</strong> Pada segi lima PQRST, sudut di P, T, dan Q berturut-turut adalah $3x^\circ$, $4x^\circ$, dan $134^\circ$. Jika sudut dalam di R dan S keduanya adalah sudut siku-siku ($90^\circ$), tentukan nilai $x$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>12.</strong> In $\triangle ABC$, $\angle A = 50^\circ$. The angle bisectors of $\angle B$ and $\angle C$ intersect at point $I$. Find $\angle BIC$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>12.</strong> Pada $\triangle ABC$, $\angle A = 50^\circ$. Garis bagi sudut $\angle B$ dan $\angle C$ berpotongan di titik $I$. Tentukan $\angle BIC$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>13.</strong> Find the sum of the angles at the 5 vertices of a regular 5-pointed star.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>13.</strong> Tentukan jumlah sudut pada ke-5 titik puncak dari sebuah bintang beraturan bersudut 5.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>14.</strong> The lengths of the sides of a triangle are $x, 15,$ and $24$. How many possible integer values can $x$ take?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>14.</strong> Panjang sisi-sisi sebuah segitiga adalah $x, 15,$ dan $24$. Berapa banyak nilai bilangan bulat yang mungkin untuk $x$?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>15.</strong> In an isosceles triangle $\triangle ABC$, $AB=AC$. If the vertex angle $\angle A = 40^\circ$, find the exterior angle at vertex $B$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>15.</strong> Pada segitiga sama kaki $\triangle ABC$, $AB=AC$. Jika sudut puncak $\angle A = 40^\circ$, tentukan sudut luar di titik $B$.</div>
+                    </div>
+                </div>
+
+                <div class="subsection-title">Part B: Similarity &amp; Congruence (Kesebangunan &amp; Kekongruenan)</div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>16.</strong> The areas of two similar triangles are 90 cm<sup>2</sup> and 360 cm<sup>2</sup>. The sum of their perimeters is 36 cm. What is the positive difference between their perimeters?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>16.</strong> Luas dua segitiga sebangun adalah 90 cm<sup>2</sup> dan 360 cm<sup>2</sup>. Jumlah keliling keduanya adalah 36 cm. Berapakah selisih positif keliling keduanya?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>17.</strong> In a right-angled triangle $ABC$, angle $C$ is the right angle ($90^\circ$). $CD$ is the altitude to the hypotenuse $AB$. If $AD=4$ and $CD=6$, find the length of $DB$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>17.</strong> Pada segitiga siku-siku $ABC$, sudut $C$ adalah siku-siku ($90^\circ$). $CD$ adalah garis tinggi yang ditarik ke sisi miring $AB$. Jika $AD=4$ dan $CD=6$, tentukan panjang $DB$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>18.</strong> In right-angled triangle $ABC$, angle $A$ is the right angle and $AD$ is the height to the hypotenuse. If $AD=4$, find the value of $BD \times CD$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>18.</strong> Pada segitiga siku-siku $ABC$, sudut $A$ adalah sudut siku-siku dan $AD$ adalah garis tinggi ke sisi miring. Jika $AD=4$, tentukan nilai dari $BD \times CD$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>19.</strong> Given that there is a pair of similar right-angled triangles $\triangle ABC \sim \triangle DEF$. Two perpendicular legs of $\triangle ABC$ are $AB=18$ cm and $AC=80$ cm. Find the ratio of $\frac{DE}{EF}$ if $DE$ corresponds to $AB$ and $EF$ corresponds to hypotenuse $BC$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>19.</strong> Diketahui sepasang segitiga siku-siku sebangun $\triangle ABC \sim \triangle DEF$. Dua sisi tegak lurus $\triangle ABC$ adalah $AB=18$ cm dan $AC=80$ cm. Tentukan rasio $\frac{DE}{EF}$ jika $DE$ bersesuaian dengan $AB$ dan $EF$ bersesuaian dengan sisi miring $BC$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>20.</strong> In the following figure, points $E$ and $D$ are the midpoints of $AB$ and $AC$ respectively. $CE$ and $BD$ intersect at point $P$. Line $GC$ is parallel to $AB$, intersecting the extension of $BD$ at point $G$. If $BP=14$ cm, what is the length of $BG$ in cm?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>20.</strong> Pada gambar, titik $E$ dan $D$ berturut-turut adalah titik tengah $AB$ dan $AC$. $CE$ dan $BD$ berpotongan di titik $P$. Garis $GC$ sejajar dengan $AB$, memotong perpanjangan $BD$ di titik $G$. Jika $BP=14$ cm, berapakah panjang $BG$ dalam cm?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>21.</strong> Given that the area of $\triangle ABC$ is 1. Points $D, E, F$ are on segments $BC, CA, AB$ respectively such that the ratios are $\frac{BD}{DC} = \frac{CE}{EA} = \frac{AF}{FB} = \frac{1}{2}$. What is the area of $\triangle DEF$?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>21.</strong> Diketahui luas $\triangle ABC$ adalah 1. Titik $D, E, F$ berturut-turut terletak pada ruas garis $BC, CA, AB$ sedemikian sehingga perbandingan $\frac{BD}{DC} = \frac{CE}{EA} = \frac{AF}{FB} = \frac{1}{2}$. Berapakah luas $\triangle DEF$?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>22.</strong> A model of a building is made with a scale of $1:50$. If the volume of the model is $400$ cm<sup>3</sup>, what is the volume of the actual building in m<sup>3</sup>?</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>22.</strong> Sebuah model gedung dibuat dengan skala $1:50$. Jika volume model adalah $400$ cm<sup>3</sup>, berapakah volume gedung sebenarnya dalam satuan m<sup>3</sup>?</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>23.</strong> In trapezoid $ABCD$ ($AB \parallel CD$), diagonals intersect at $O$. If $AB=10, CD=15$, and altitude of $\triangle AOB$ is $4$, find the altitude of $\triangle COD$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>23.</strong> Pada trapesium $ABCD$ ($AB \parallel CD$), diagonal berpotongan di $O$. Jika $AB=10, CD=15$, dan tinggi $\triangle AOB$ adalah $4$, tentukan tinggi $\triangle COD$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>24.</strong> Two poles of height 10 and 15 stand vertically on flat ground. A line is drawn from the top of each pole to the bottom of the other. The lines intersect at height $h$. Find $h$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>24.</strong> Dua tiang dengan tinggi 10 dan 15 berdiri tegak di tanah datar. Garis ditarik dari puncak setiap tiang ke dasar tiang lainnya. Garis berpotongan di ketinggian $h$. Tentukan $h$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>25.</strong> $\triangle ABC \sim \triangle DEF$. If $AB=6, DE=4$, and the area of $\triangle ABC$ is $45$ cm<sup>2</sup>, find the area of $\triangle DEF$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>25.</strong> $\triangle ABC \sim \triangle DEF$ (sebangun). Jika $AB=6, DE=4$, dan luas $\triangle ABC$ adalah $45$ cm<sup>2</sup>, tentukan luas $\triangle DEF$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>26.</strong> In $\triangle ABC$, $D$ and $E$ are on $AB$ and $AC$ respectively. $DE \parallel BC$. If $AD=3, DB=2$, and Area of $\triangle ADE = 18$, find Area of trapezoid $DBCE$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>26.</strong> Pada $\triangle ABC$, $D$ dan $E$ masing-masing pada $AB$ dan $AC$. $DE \parallel BC$. Jika $AD=3, DB=2$, dan Luas $\triangle ADE = 18$, tentukan Luas trapesium $DBCE$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>27.</strong> Which of the following acronyms is NOT a valid condition to prove that two triangles are congruent?<br>(A) SSS &nbsp;&nbsp; (B) SAS &nbsp;&nbsp; (C) ASA &nbsp;&nbsp; (D) SSA &nbsp;&nbsp; (E) RHS</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>27.</strong> Manakah singkatan berikut yang BUKAN syarat valid untuk membuktikan kekongruenan dua segitiga?<br>(A) SSS &nbsp;&nbsp; (B) SAS &nbsp;&nbsp; (C) ASA &nbsp;&nbsp; (D) SSA &nbsp;&nbsp; (E) RHS</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>28.</strong> $M$ is the midpoint of side $BC$ of a parallelogram $ABCD$. The line segment $DM$ intersects the diagonal $AC$ at point $P$. Find the ratio of $AP : PC$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>28.</strong> $M$ adalah titik tengah sisi $BC$ pada jajargenjang $ABCD$. Ruas garis $DM$ memotong diagonal $AC$ di titik $P$. Tentukan rasio $AP : PC$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>29.</strong> Two similar triangles have areas of 16 cm<sup>2</sup> and 25 cm<sup>2</sup>. If the base of the smaller triangle is $x$ cm and the corresponding base of the larger triangle is $(x+1)$ cm. Find $x$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>29.</strong> Dua segitiga sebangun memiliki luas 16 cm<sup>2</sup> dan 25 cm<sup>2</sup>. Jika alas segitiga kecil $x$ cm dan alas segitiga besar $(x+1)$ cm. Tentukan $x$.</div>
+                    </div>
+                </div>
+
+                <div class="unified-box">
+                    <div class="unified-content">
+                        <div class="text-en"><strong>30.</strong> In $\triangle ABC$, point $D$ lies on $AC$ such that $\angle ABD = \angle C$. If $AB=6$ and $AD=4$, find the length of $AC$.</div>
+                        <div class="unified-divider"></div>
+                        <div class="text-id"><strong>30.</strong> Pada $\triangle ABC$, titik $D$ terletak pada $AC$ sedemikian sehingga $\angle ABD = \angle C$. Jika $AB=6$ dan $AD=4$, tentukan panjang sisi $AC$.</div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Solutions Section -->
+            <section class="content-card">
+                <h2 class="section-title">Solutions / Pembahasan</h2>
+                
+                <div class="concept mb-8">
+                    <div class="text-en mb-2">
+                        <h3 class="font-bold text-orange-800 mb-1">Key Concept: Singapore Math - Bar Models</h3>
+                        <p class="text-slate-800">Singapore Math commonly uses <strong>Bar Models</strong> to visually represent abstract geometric or algebraic ratios, simplifying complex logic into tangible proportional units.</p>
+                    </div>
+                    <div class="unified-divider border-orange-200"></div>
+                    <div class="text-id mt-2">
+                        <h3 class="font-bold text-orange-700 mb-1">Konsep Kunci: Singapore Math - Model Bar</h3>
+                        <p class="text-slate-800">Metode <em>Singapore Math</em> sangat sering menggunakan <strong>Model Bar</strong> untuk memvisualisasikan rasio geometri atau aljabar yang abstrak, menyederhanakan logika rumit menjadi unit proporsi yang mudah dipahami.</p>
+                    </div>
+                </div>
+
+                <!-- S1 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>1.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Bar Model):</strong> The exterior angle and interior angle form a straight line ($180^\circ$). Let the exterior angle be 1 unit box. Thus, the interior angle is 17 unit boxes.</li>
+                                <li><strong>Step 2 (Total Units):</strong> $17 \text{ units} + 1 \text{ unit} = 18 \text{ units} = 180^\circ$.</li>
+                                <li><strong>Step 3 (Value per Unit):</strong> $180^\circ \div 18 = 10^\circ$ (This is the exterior angle).</li>
+                                <li><strong>Step 4 (Number of sides $n$):</strong> The formula for the number of sides is $360^\circ$ divided by its exterior angle. $n = 360^\circ \div 10^\circ = 36$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 36</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>1.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Model Visual):</strong> Sudut luar dan sudut dalam membentuk garis lurus ($180^\circ$). Anggap sudut luar sebagai 1 unit kotak. Maka sudut dalam adalah 17 unit kotak.</li>
+                                <li><strong>Langkah 2 (Total Unit):</strong> $17 \text{ unit} + 1 \text{ unit} = 18 \text{ unit} = 180^\circ$.</li>
+                                <li><strong>Langkah 3 (Nilai 1 Unit):</strong> $180^\circ \div 18 = 10^\circ$ (Ini adalah besar sudut luar).</li>
+                                <li><strong>Langkah 4 (Banyak Sisi $n$):</strong> Rumus paten banyak sisi poligon adalah $360^\circ$ dibagi sudut luarnya. $n = 360^\circ \div 10^\circ = 36$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 36</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S2 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>2.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Calculate the total sum of interior angles for an 11-sided polygon using the formula $(n-2) \times 180^\circ$.<br>$(11 - 2) \times 180^\circ = 9 \times 180^\circ = 1620^\circ$</li>
+                                <li><strong>Step 2:</strong> Find the sum of the 10 known angles.<br>$155 + 136 + 153 + 146 + 112 + 161 + 138 + 127 + 154 + 176 = 1458^\circ$</li>
+                                <li><strong>Step 3:</strong> The eleventh angle is the difference. $1620^\circ - 1458^\circ = 162^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $162^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>2.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Hitung total sudut dalam Segi-11 menggunakan rumus $(n-2) \times 180^\circ$.<br>$(11 - 2) \times 180^\circ = 9 \times 180^\circ = 1620^\circ$</li>
+                                <li><strong>Langkah 2:</strong> Jumlahkan ke-10 sudut yang sudah diketahui.<br>$155 + 136 + 153 + 146 + 112 + 161 + 138 + 127 + 154 + 176 = 1458^\circ$</li>
+                                <li><strong>Langkah 3:</strong> Sudut kesebelas adalah sisa selisihnya. $1620^\circ - 1458^\circ = 162^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $162^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S3 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>3.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Core Principle):</strong> The sum of exterior angles for any convex polygon is always exactly $360^\circ$ (one full rotation).</li>
+                                <li><strong>Step 2:</strong> Add the given 7 exterior angles: $37 + 24 + 81 + 12 + 97 + 26 + 44 = 321^\circ$.</li>
+                                <li><strong>Step 3:</strong> The remaining eighth angle is $360^\circ - 321^\circ = 39^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $39^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>3.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Prinsip Dasar):</strong> Total sudut luar pada poligon konveks apapun selalu bernilai tepat $360^\circ$ (1 putaran penuh).</li>
+                                <li><strong>Langkah 2:</strong> Jumlahkan 7 sudut yang ada: $37 + 24 + 81 + 12 + 97 + 26 + 44 = 321^\circ$.</li>
+                                <li><strong>Langkah 3:</strong> Sudut sisa kedelapannya adalah $360^\circ - 321^\circ = 39^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $39^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S4 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>4.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Logical Concept):</strong> An interior angle of a convex polygon must be strictly less than a straight line, meaning $< 180^\circ$.</li>
+                                <li><strong>Step 2 (Algebraic Inequality):</strong><br>$5n + 115 < 180 \implies 5n < 65 \implies n < 13$</li>
+                                <li><strong>Step 3:</strong> Since $n$ is an integer strictly less than 13, its maximum possible value is 12.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 12</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>4.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Konsep Logis):</strong> Sudut dalam sebuah poligon konveks harus kurang dari garis lurus, yaitu $< 180^\circ$.</li>
+                                <li><strong>Langkah 2 (Ketaksamaan Aljabar):</strong><br>$5n + 115 < 180 \implies 5n < 65 \implies n < 13$</li>
+                                <li><strong>Langkah 3:</strong> Karena $n$ adalah bilangan bulat dan harus lebih kecil dari 13, nilai maksimumnya adalah 12.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 12</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S5 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>5.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Analyze $\triangle ABC$):</strong> Since $AB=BC$, the base angles are equal ($\angle BAC = \angle BCA$).<br>$\angle BAC = \frac{180^\circ - 40^\circ}{2} = 70^\circ$</li>
+                                <li><strong>Step 2 (Analyze $\triangle ADC$):</strong> Since $AD=DC$, its base angles are equal ($\angle DAC = \angle DCA$).<br>$\angle DAC = \frac{180^\circ - 140^\circ}{2} = 20^\circ$</li>
+                                <li><strong>Step 3 (Calculate $\angle BAD$):</strong> Based on point D being inside, $\angle BAC = \angle BAD + \angle DAC$.<br>$70^\circ = \angle BAD + 20^\circ \implies \angle BAD = 50^\circ$</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $50^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>5.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Analisis $\triangle ABC$):</strong> Karena $AB=BC$, sudut alasnya sama besar ($\angle BAC = \angle BCA$).<br>$\angle BAC = \frac{180^\circ - 40^\circ}{2} = 70^\circ$</li>
+                                <li><strong>Langkah 2 (Analisis $\triangle ADC$):</strong> Karena $AD=DC$, sudut alasnya sama besar ($\angle DAC = \angle DCA$).<br>$\angle DAC = \frac{180^\circ - 140^\circ}{2} = 20^\circ$</li>
+                                <li><strong>Langkah 3 (Hitung $\angle BAD$):</strong> Berdasarkan posisi titik D di dalam, $\angle BAC = \angle BAD + \angle DAC$.<br>$70^\circ = \angle BAD + 20^\circ \implies \angle BAD = 50^\circ$</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $50^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S6 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>6.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> In an isosceles triangle, angles opposite to equal sides are equal in measure.</li>
+                                <li><strong>Step 2 (Equation):</strong> $x + 18 = 3x - 9$</li>
+                                <li><strong>Step 3:</strong> $18 + 9 = 3x - x \implies 27 = 2x \implies x = 13.5$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 13.5</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>6.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Pada segitiga sama kaki, sudut yang berhadapan dengan sisi yang sama panjang memiliki besar yang sama.</li>
+                                <li><strong>Langkah 2 (Persamaan):</strong> $x + 18 = 3x - 9$</li>
+                                <li><strong>Langkah 3:</strong> $18 + 9 = 3x - x \implies 27 = 2x \implies x = 13.5$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 13.5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S7 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>7.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Find the squared lengths of the sides of $\triangle ABC$ using the distance formula. $A=(0,4), B=(6,2), C=(10,4)$.</li>
+                                <li><strong>Step 2:</strong> $AB^2 = (0-6)^2 + (4-2)^2 = 36 + 4 = 40$.<br>$BC^2 = (10-6)^2 + (4-2)^2 = 16 + 4 = 20$.<br>$AC^2 = (10-0)^2 + (4-4)^2 = 100 + 0 = 100$.</li>
+                                <li><strong>Step 3 (Law of Cosines):</strong> $AC^2 = AB^2 + BC^2 - 2(AB)(BC)\cos(\angle ABC)$.<br>$100 = 40 + 20 - 2(\sqrt{40})(\sqrt{20})\cos(\angle ABC)$.</li>
+                                <li><strong>Step 4:</strong> $100 = 60 - 2(\sqrt{800})\cos(\angle ABC) \implies 40 = -40\sqrt{2}\cos(\angle ABC) \implies \cos(\angle ABC) = -\frac{1}{\sqrt{2}}$.</li>
+                                <li><strong>Step 5:</strong> The angle whose cosine is $-1/\sqrt{2}$ is $135^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $135^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>7.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Cari kuadrat panjang sisi-sisi $\triangle ABC$ dengan rumus jarak koordinat. $A=(0,4), B=(6,2), C=(10,4)$.</li>
+                                <li><strong>Langkah 2:</strong> $AB^2 = (0-6)^2 + (4-2)^2 = 36 + 4 = 40$.<br>$BC^2 = (10-6)^2 + (4-2)^2 = 16 + 4 = 20$.<br>$AC^2 = (10-0)^2 + (4-4)^2 = 100 + 0 = 100$.</li>
+                                <li><strong>Langkah 3 (Aturan Kosinus):</strong> $AC^2 = AB^2 + BC^2 - 2(AB)(BC)\cos(\angle ABC)$.<br>$100 = 40 + 20 - 2(\sqrt{40})(\sqrt{20})\cos(\angle ABC)$.</li>
+                                <li><strong>Langkah 4:</strong> $100 = 60 - 2(\sqrt{800})\cos(\angle ABC) \implies 40 = -40\sqrt{2}\cos(\angle ABC) \implies \cos(\angle ABC) = -\frac{1}{\sqrt{2}}$.</li>
+                                <li><strong>Langkah 5:</strong> Sudut yang memiliki nilai kosinus $-1/\sqrt{2}$ adalah sudut tumpul $135^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $135^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S8 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>8.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Heron's Formula):</strong> Very useful when the height is unknown. $L = \sqrt{s(s-a)(s-b)(s-c)}$.</li>
+                                <li><strong>Step 2 (Semi-perimeter $s$):</strong> $s = \frac{13 + 14 + 15}{2} = 21$.</li>
+                                <li><strong>Step 3 (Substitute):</strong> $L = \sqrt{21 \times (21-13) \times (21-14) \times (21-15)}$.<br>$L = \sqrt{21 \times 8 \times 7 \times 6} = \sqrt{(7 \times 3) \times 8 \times 7 \times (2 \times 3)} = \sqrt{7^2 \times 3^2 \times 16} = 7 \times 3 \times 4 = 84$</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 84</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>8.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Rumus Heron):</strong> Sangat berguna jika tinggi tidak diketahui. $L = \sqrt{s(s-a)(s-b)(s-c)}$.</li>
+                                <li><strong>Langkah 2 (Semi-perimeter $s$):</strong> $s = \frac{13 + 14 + 15}{2} = 21$.</li>
+                                <li><strong>Langkah 3 (Substitusi):</strong> $L = \sqrt{21 \times (21-13) \times (21-14) \times (21-15)}$.<br>$L = \sqrt{21 \times 8 \times 7 \times 6} = \sqrt{(7 \times 3) \times 8 \times 7 \times (2 \times 3)} = \sqrt{7^2 \times 3^2 \times 16} = 7 \times 3 \times 4 = 84$</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 84</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S9 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>9.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Tessellation Concept):</strong> A shape can tessellate around a point if the sum of angles meeting at that point is exactly $360^\circ$.</li>
+                                <li><strong>Step 2 (Interior Angle):</strong> A regular pentagon's interior angle is $\frac{(5-2) \times 180^\circ}{5} = \frac{540^\circ}{5} = 108^\circ$.</li>
+                                <li><strong>Step 3:</strong> If we join 3 pentagons at a vertex, the total angle is $3 \times 108^\circ = 324^\circ$.</li>
+                                <li><strong>Step 4:</strong> Since $324^\circ < 360^\circ$ (leaving a $36^\circ$ gap), it is impossible to form a closed tessellation (zero ways).</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: Zero (0)</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>9.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Konsep Teselasi):</strong> Suatu bentuk dapat melakukan teselasi di sebuah titik jika jumlah sudut-sudut yang bertemu di titik tersebut tepat $360^\circ$.</li>
+                                <li><strong>Langkah 2 (Sudut Dalam):</strong> Sudut dalam segilima beraturan adalah $\frac{(5-2) \times 180^\circ}{5} = \frac{540^\circ}{5} = 108^\circ$.</li>
+                                <li><strong>Langkah 3:</strong> Jika kita menggabungkan 3 segilima di satu titik, total sudutnya adalah $3 \times 108^\circ = 324^\circ$.</li>
+                                <li><strong>Langkah 4:</strong> Karena $324^\circ < 360^\circ$ (menyisakan celah $36^\circ$), maka mustahil (nol cara) membuat teselasi tertutup.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: Nol (0)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S10 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>10.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> If two angles have their respective arms parallel to each other ($AB \parallel EF$ and $AC \parallel DE$), the angles are either <strong>Equal</strong> or <strong>Supplementary</strong> (add up to $180^\circ$).</li>
+                                <li><strong>Step 2:</strong> Given they share the same orientation (both are obtuse), they must be equal.</li>
+                                <li><strong>Step 3:</strong> Therefore, $\angle DEF = \angle BAC = 113^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $113^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>10.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Jika dua sudut memiliki sepasang kaki-kaki sudut yang saling sejajar ($AB \parallel EF$ dan $AC \parallel DE$), maka hubungan kedua sudut tersebut hanya ada dua kemungkinan: <strong>Sama Besar</strong> atau <strong>Saling Berpelurus</strong> (jumlah $180^\circ$).</li>
+                                <li><strong>Langkah 2:</strong> Karena orientasinya sama (keduanya membentuk sudut tumpul/ekuivalen), maka besarnya sama.</li>
+                                <li><strong>Langkah 3:</strong> Oleh karena itu, $\angle DEF = \angle BAC = 113^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $113^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S11 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>11.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> The total sum of interior angles in a pentagon is $(5-2) \times 180^\circ = 540^\circ$.</li>
+                                <li><strong>Step 2 (Equation):</strong> $3x + 4x + 134^\circ + 90^\circ + 90^\circ = 540^\circ$.</li>
+                                <li><strong>Step 3:</strong> $7x + 314 = 540 \implies 7x = 226 \implies x = 226/7 \approx 32.28$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $226/7$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>11.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Total jumlah sudut dalam segi lima adalah $(5-2) \times 180^\circ = 540^\circ$.</li>
+                                <li><strong>Langkah 2 (Persamaan):</strong> $3x + 4x + 134^\circ + 90^\circ + 90^\circ = 540^\circ$.</li>
+                                <li><strong>Langkah 3:</strong> $7x + 314 = 540 \implies 7x = 226 \implies x = 226/7 \approx 32.28$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $226/7$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S12 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>12.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Incenter Formula):</strong> The intersection of base angle bisectors always forms an angle of $\angle BIC = 90^\circ + \frac{1}{2}\angle A$.</li>
+                                <li><strong>Step 2:</strong> $\angle BIC = 90^\circ + \frac{1}{2}(50^\circ) = 90^\circ + 25^\circ = 115^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $115^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>12.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Rumus Incenter):</strong> Perpotongan garis bagi sudut alas selalu membentuk sudut $\angle BIC = 90^\circ + \frac{1}{2}\angle A$.</li>
+                                <li><strong>Langkah 2:</strong> $\angle BIC = 90^\circ + \frac{1}{2}(50^\circ) = 90^\circ + 25^\circ = 115^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $115^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S13 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>13.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Visual Reasoning):</strong> A 5-pointed star is formed by drawing diagonals of a regular pentagon. The sum of the 5 vertex angles is equivalent to the sum of interior angles in a single triangle.</li>
+                                <li><strong>Step 2:</strong> The total sum is $180^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $180^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>13.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Penalaran Visual):</strong> Bintang berujung 5 dibuat dengan menghubungkan diagonal-diagonal segi lima beraturan. Jumlah total kelima sudut puncaknya setara dengan jumlah sudut dalam sebuah segitiga tunggal.</li>
+                                <li><strong>Langkah 2:</strong> Total jumlah sudutnya adalah $180^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $180^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S14 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>14.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Triangle Inequality):</strong> The third side $x$ must be strictly between the difference and the sum of the other two sides.</li>
+                                <li><strong>Step 2 (Boundaries):</strong> Lower bound: $x > 24 - 15 \implies x > 9$. Upper bound: $x < 24 + 15 \implies x < 39$.</li>
+                                <li><strong>Step 3:</strong> The number of integers between 9 and 39 (exclusive) is: $38 - 10 + 1 = 29$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 29</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>14.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Ketaksamaan Segitiga):</strong> Sisi ketiga $x$ harus berada di antara selisih dan jumlah dari dua sisi lainnya.</li>
+                                <li><strong>Langkah 2 (Batas):</strong> Batas Bawah: $x > 24 - 15 \implies x > 9$. Batas Atas: $x < 24 + 15 \implies x < 39$.</li>
+                                <li><strong>Langkah 3:</strong> Banyak bilangan bulat di antara 9 dan 39 adalah: $38 - 10 + 1 = 29$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 29</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S15 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>15.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Since $AB=AC$, the base angles are equal. Interior $\angle B = (180^\circ - 40^\circ) / 2 = 70^\circ$.</li>
+                                <li><strong>Step 2:</strong> The exterior angle and interior angle form a straight line. Exterior $\angle B = 180^\circ - 70^\circ = 110^\circ$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $110^\circ$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>15.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Karena $AB=AC$, sudut alasnya sama. Sudut dalam $\angle B = (180^\circ - 40^\circ) / 2 = 70^\circ$.</li>
+                                <li><strong>Langkah 2:</strong> Sudut luar dan dalam membentuk garis lurus. Sudut luar di $B = 180^\circ - 70^\circ = 110^\circ$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $110^\circ$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept mb-8 mt-8">
+                    <div class="text-en mb-2">
+                        <h3 class="font-bold text-orange-800 mb-1">Key Concept: Geometric Similarity</h3>
+                        <p class="text-slate-800">When solving similarity problems in right triangles (like the Geometric Mean Theorem) and trapezoids, observing proportional ratios is crucial. For 2D shapes, if the sides have a ratio of $1:k$, their areas will have a ratio of $1:k^2$.</p>
+                    </div>
+                    <div class="unified-divider border-orange-200"></div>
+                    <div class="text-id mt-2">
+                        <h3 class="font-bold text-orange-700 mb-1">Konsep Kunci: Kesebangunan Geometri</h3>
+                        <p class="text-slate-800">Dalam memecahkan masalah kesebangunan pada segitiga siku-siku (terutama Teorema Air Mancur) dan trapesium, penting untuk melihat pola perbandingan rasio. Pada bangun 2 dimensi, jika sisi-sisinya berbanding $1:k$, maka perbandingan luasnya adalah $1:k^2$.</p>
+                    </div>
+                </div>
+
+                <!-- S16 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>16.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Area vs Side Ratio):</strong> Area Ratio = $90 : 360 = 1 : 4$.</li>
+                                <li><strong>Step 2:</strong> The side ratio (and thus perimeter ratio) is the square root of the area ratio $\implies k = \sqrt{1} : \sqrt{4} = 1 : 2$.</li>
+                                <li><strong>Step 3 (Perimeter Bar Model):</strong> Small perimeter ($1x$) + Large perimeter ($2x$) = 36 cm.<br>$3x = 36 \implies x = 12$.</li>
+                                <li><strong>Step 4:</strong> Large perimeter = 24, Small perimeter = 12. Difference = $24 - 12 = 12$ cm.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 12 cm</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>16.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Rasio Luas vs Rasio Sisi):</strong> Rasio Luas = $90 : 360 = 1 : 4$.</li>
+                                <li><strong>Langkah 2:</strong> Rasio Sisi (dan juga rasio Keliling) adalah akar dari rasio luas $\implies k = \sqrt{1} : \sqrt{4} = 1 : 2$.</li>
+                                <li><strong>Langkah 3 (Model Bar Keliling):</strong> Keliling kecil ($1x$) + Keliling besar ($2x$) = 36 cm.<br>$3x = 36 \implies x = 12$.</li>
+                                <li><strong>Langkah 4:</strong> Keliling besar = 24, Keliling kecil = 12. Selisihnya = $24 - 12 = 12$ cm.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 12 cm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S17 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>17.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Geometric Mean Theorem):</strong> In a right-angled triangle with an altitude drawn to the hypotenuse, the square of the altitude equals the product of the two segments on the hypotenuse.</li>
+                                <li><strong>Step 2 (Formula):</strong> $CD^2 = AD \times DB$.</li>
+                                <li><strong>Step 3:</strong> $6^2 = 4 \times DB \implies 36 = 4 \times DB \implies DB = 9$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 9</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>17.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Teorema Air Mancur):</strong> Pada segitiga siku-siku dengan garis tinggi ke sisi miring, kuadrat garis tinggi sama dengan hasil kali dua segmen pada sisi miring.</li>
+                                <li><strong>Langkah 2 (Rumus):</strong> $CD^2 = AD \times DB$.</li>
+                                <li><strong>Langkah 3:</strong> $6^2 = 4 \times DB \implies 36 = 4 \times DB \implies DB = 9$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S18 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>18.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> This is a direct application of the concept from Question 17.</li>
+                                <li><strong>Step 2:</strong> $AD^2 = BD \times CD \implies 4^2 = 16$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 16</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>18.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Ini adalah aplikasi langsung dari konsep pada Soal 17.</li>
+                                <li><strong>Langkah 2:</strong> $AD^2 = BD \times CD \implies 4^2 = 16$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 16</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S19 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>19.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Due to similarity, corresponding side ratios are constant. Thus, $\frac{DE}{EF} = \frac{AB}{BC}$.</li>
+                                <li><strong>Step 2 (Pythagoras):</strong> Find hypotenuse $BC = \sqrt{18^2 + 80^2} = \sqrt{324 + 6400} = \sqrt{6724} = 82$.</li>
+                                <li><strong>Step 3:</strong> $\frac{DE}{EF} = \frac{18}{82} = \frac{9}{41}$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $\frac{9}{41}$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>19.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Karena sebangun, rasio sisi-sisi bersesuaian adalah tetap. Maka $\frac{DE}{EF} = \frac{AB}{BC}$.</li>
+                                <li><strong>Langkah 2 (Pythagoras):</strong> Cari sisi miring $BC = \sqrt{18^2 + 80^2} = \sqrt{324 + 6400} = \sqrt{6724} = 82$.</li>
+                                <li><strong>Langkah 3:</strong> $\frac{DE}{EF} = \frac{18}{82} = \frac{9}{41}$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $\frac{9}{41}$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S20 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>20.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Identify Centroid):</strong> Since $E$ and $D$ are midpoints, $CE$ and $BD$ are medians. Point $P$ is the centroid of $\triangle ABC$.</li>
+                                <li><strong>Step 2:</strong> The centroid divides medians in a $2:1$ ratio. Thus $BP : PD = 2 : 1$.</li>
+                                <li><strong>Step 3:</strong> If $BP = 14$, then $PD = 7$. The total length of median $BD = 14 + 7 = 21$.</li>
+                                <li><strong>Step 4 (Triangle Congruence):</strong> Look at $\triangle ABD$ and $\triangle CGD$.<br>- $\angle ADB = \angle CDG$ (vertically opposite).<br>- $AD = DC$ ($D$ is midpoint).<br>- Since $AB \parallel GC$, alternate interior angles $\angle DAB = \angle DCG$.<br>By ASA (Angle-Side-Angle), $\triangle ABD \cong \triangle CGD$.</li>
+                                <li><strong>Step 5:</strong> Due to congruence, $DG = BD = 21$.</li>
+                                <li><strong>Step 6 (Total Length):</strong> $BG = BD + DG = 21 + 21 = 42$ cm.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 42 cm</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>20.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Identifikasi Titik Berat):</strong> Karena $E$ dan $D$ titik tengah, $CE$ dan $BD$ adalah garis berat. $P$ adalah titik berat (centroid) $\triangle ABC$.</li>
+                                <li><strong>Langkah 2:</strong> Sifat titik berat membagi garis berat dengan rasio $2:1$. Maka $BP : PD = 2 : 1$.</li>
+                                <li><strong>Langkah 3:</strong> Jika $BP = 14$, maka $PD = 7$. Panjang total garis berat $BD = 14 + 7 = 21$.</li>
+                                <li><strong>Langkah 4 (Kekongruenan Segitiga):</strong> Perhatikan $\triangle ABD$ dan $\triangle CGD$.<br>- $\angle ADB = \angle CDG$ (bertolak belakang).<br>- Karena $D$ titik tengah $AC$, maka $AD = DC$.<br>- Karena $AB \parallel GC$, sudut berseberangan dalam $\angle DAB = \angle DCG$.<br>Berdasarkan kriteria ASA (Sudut-Sisi-Sudut), $\triangle ABD \cong \triangle CGD$.</li>
+                                <li><strong>Langkah 5:</strong> Akibat kekongruenan, ruas garis $DG = BD = 21$.</li>
+                                <li><strong>Langkah 6 (Total Panjang):</strong> $BG = BD + DG = 21 + 21 = 42$ cm.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 42 cm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S21 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>21.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Area Subtraction Strategy):</strong> Find the area of $\triangle DEF$ by subtracting the areas of the 3 corner triangles ($\triangle AFE, \triangle BDF, \triangle CED$) from the total area of $\triangle ABC$.</li>
+                                <li><strong>Step 2 (Corner Area Fractions):</strong> Look at $\triangle AFE$. Length $AF = \frac{1}{3} AB$, and $AE = \frac{2}{3} AC$.<br>Area of $\triangle AFE = (\frac{1}{3} \times \frac{2}{3}) \times \text{Area of } ABC = \frac{2}{9}$.</li>
+                                <li><strong>Step 3:</strong> Due to symmetrical ratios, Area $\triangle BDF = \frac{2}{9}$ and Area $\triangle CED = \frac{2}{9}$.</li>
+                                <li><strong>Step 4 (Middle Area):</strong> Area $\triangle DEF = 1 - (3 \times \frac{2}{9}) = 1 - \frac{6}{9} = \frac{3}{9} = \frac{1}{3}$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $1/3$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>21.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Strategi Pemotongan Luas):</strong> Luas $\triangle DEF$ didapat dengan mengurangkan Luas $\triangle ABC$ dengan luas 3 segitiga sudut ($\triangle AFE, \triangle BDF, \triangle CED$).</li>
+                                <li><strong>Langkah 2 (Analisis Fraksi Luas Sudut):</strong> Perhatikan $\triangle AFE$. Panjang $AF = \frac{1}{3} AB$, dan $AE = \frac{2}{3} AC$.<br>Luas $\triangle AFE = (\frac{1}{3} \times \frac{2}{3}) \times \text{Luas } ABC = \frac{2}{9}$.</li>
+                                <li><strong>Langkah 3:</strong> Karena polanya simetris, luas $\triangle BDF = \frac{2}{9}$ dan luas $\triangle CED = \frac{2}{9}$.</li>
+                                <li><strong>Langkah 4 (Luas Tengah):</strong> Luas $\triangle DEF = 1 - (3 \times \frac{2}{9}) = 1 - \frac{6}{9} = \frac{3}{9} = \frac{1}{3}$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $1/3$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S22 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>22.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1 (Volume Ratio):</strong> If the linear scale is $1:k$, then the volume scale is $1:k^3$.</li>
+                                <li><strong>Step 2:</strong> $k^3 = 50^3 = 125,000$.</li>
+                                <li><strong>Step 3:</strong> Actual Volume = $400 \times 125,000 = 50,000,000$ cm<sup>3</sup>.</li>
+                                <li><strong>Step 4 (Conversion):</strong> Convert to m<sup>3</sup> by dividing by $1,000,000 \implies 50,000,000 / 1,000,000 = 50$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 50 m<sup>3</sup></div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>22.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1 (Rasio Volume):</strong> Jika skala linier $1:k$, maka skala volume $1:k^3$.</li>
+                                <li><strong>Langkah 2:</strong> $k^3 = 50^3 = 125.000$.</li>
+                                <li><strong>Langkah 3:</strong> Volume Aktual = $400 \times 125.000 = 50.000.000$ cm<sup>3</sup>.</li>
+                                <li><strong>Langkah 4 (Konversi):</strong> Konversi ke m<sup>3</sup> dengan dibagi $1.000.000 \implies 50.000.000 / 1.000.000 = 50$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 50 m<sup>3</sup></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S23 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>23.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> $\triangle AOB \sim \triangle COD$ (Angle-Angle Similarity due to parallel lines).</li>
+                                <li><strong>Step 2:</strong> The scale factor from $\triangle AOB$ to $\triangle COD$ is $k = \frac{15}{10} = 1.5$.</li>
+                                <li><strong>Step 3:</strong> Altitude of $\triangle COD = 4 \times 1.5 = 6$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 6</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>23.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> $\triangle AOB \sim \triangle COD$ (Kesebangunan sudut, karena garis sejajar).</li>
+                                <li><strong>Langkah 2:</strong> Faktor skala pembesaran dari $\triangle AOB$ ke $\triangle COD$ adalah $k = \frac{15}{10} = 1.5$.</li>
+                                <li><strong>Langkah 3:</strong> Tinggi $\triangle COD = 4 \times 1.5 = 6$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S24 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>24.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Applying similarity rules on overlapping triangles yields the shortcut formula: $\frac{1}{h} = \frac{1}{a} + \frac{1}{b}$.</li>
+                                <li><strong>Step 2:</strong> $\frac{1}{h} = \frac{1}{10} + \frac{1}{15} = \frac{3}{30} + \frac{2}{30} = \frac{5}{30} = \frac{1}{6}$.</li>
+                                <li><strong>Step 3:</strong> Therefore, $h = 6$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 6</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>24.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Aplikasi kesebangunan pada segitiga tumpang tindih menghasilkan rumus cepat: $\frac{1}{h} = \frac{1}{a} + \frac{1}{b}$.</li>
+                                <li><strong>Langkah 2:</strong> $\frac{1}{h} = \frac{1}{10} + \frac{1}{15} = \frac{3}{30} + \frac{2}{30} = \frac{5}{30} = \frac{1}{6}$.</li>
+                                <li><strong>Langkah 3:</strong> Maka, $h = 6$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S25 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>25.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> Linear Scale Factor ($k$) = $\frac{DE}{AB} = \frac{4}{6} = \frac{2}{3}$.</li>
+                                <li><strong>Step 2:</strong> Area Scale Factor ($k^2$) = $(\frac{2}{3})^2 = \frac{4}{9}$.</li>
+                                <li><strong>Step 3:</strong> Area $DEF = 45 \times \frac{4}{9} = 20$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 20 cm<sup>2</sup></div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>25.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Faktor Skala Linier ($k$) = $\frac{DE}{AB} = \frac{4}{6} = \frac{2}{3}$.</li>
+                                <li><strong>Langkah 2:</strong> Faktor Skala Luas ($k^2$) = $(\frac{2}{3})^2 = \frac{4}{9}$.</li>
+                                <li><strong>Langkah 3:</strong> Luas $DEF = 45 \times \frac{4}{9} = 20$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 20 cm<sup>2</sup></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S26 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>26.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> The total side $AB = AD + DB = 3 + 2 = 5$.</li>
+                                <li><strong>Step 2:</strong> $\triangle ADE \sim \triangle ABC$ with a side ratio of $\frac{3}{5}$.</li>
+                                <li><strong>Step 3:</strong> Area Ratio = $(\frac{3}{5})^2 = \frac{9}{25}$.</li>
+                                <li><strong>Step 4:</strong> $\frac{18}{\text{Area } ABC} = \frac{9}{25} \implies \text{Area } ABC = \frac{18 \times 25}{9} = 50$.</li>
+                                <li><strong>Step 5:</strong> Area of Trapezoid = Total Area - Area $\triangle ADE$ = $50 - 18 = 32$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 32</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>26.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Panjang sisi total $AB = AD + DB = 3 + 2 = 5$.</li>
+                                <li><strong>Langkah 2:</strong> $\triangle ADE \sim \triangle ABC$ dengan rasio sisi $\frac{3}{5}$.</li>
+                                <li><strong>Langkah 3:</strong> Rasio Luas = $(\frac{3}{5})^2 = \frac{9}{25}$.</li>
+                                <li><strong>Langkah 4:</strong> $\frac{18}{\text{Luas } ABC} = \frac{9}{25} \implies \text{Luas } ABC = \frac{18 \times 25}{9} = 50$.</li>
+                                <li><strong>Langkah 5:</strong> Luas Trapesium = Luas Total - Luas $\triangle ADE$ = $50 - 18 = 32$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 32</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S27 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>27.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> SSS (Side-Side-Side), SAS (Side-Angle-Side), ASA (Angle-Side-Angle), and RHS (Right angle-Hypotenuse-Side) are valid congruence rules.</li>
+                                <li><strong>Step 2:</strong> SSA (Side-Side-Angle) is NOT valid because it leads to an ambiguous case.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: (D) SSA</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>27.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> SSS (Sisi-Sisi-Sisi), SAS (Sisi-Sudut-Sisi), ASA (Sudut-Sisi-Sudut), dan RHS (Siku-siku-Miring-Sisi) adalah aturan kongruensi yang baku.</li>
+                                <li><strong>Langkah 2:</strong> SSA (Sisi-Sisi-Sudut) TIDAK valid karena dapat membentuk lebih dari satu jenis segitiga (kasus ambigu).</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: (D) SSA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S28 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>28.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> $\triangle APD \sim \triangle CPM$ because $AD \parallel CM$ (opposite sides of a parallelogram are parallel).</li>
+                                <li><strong>Step 2:</strong> The side of the parallelogram $AD = BC$. Since $M$ is the midpoint of $BC$, then $AD = 2 CM$.</li>
+                                <li><strong>Step 3:</strong> The similarity ratio is $\frac{AD}{CM} = \frac{2}{1}$.</li>
+                                <li><strong>Step 4:</strong> Corresponding sides follow the same ratio, thus $\frac{AP}{PC} = \frac{2}{1}$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: $2 : 1$</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>28.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> $\triangle APD \sim \triangle CPM$ karena $AD \parallel CM$ (sisi berhadapan jajargenjang sejajar).</li>
+                                <li><strong>Langkah 2:</strong> Sisi jajargenjang $AD = BC$. Karena $M$ titik tengah $BC$, maka $AD = 2 CM$.</li>
+                                <li><strong>Langkah 3:</strong> Rasio Kesebangunannya $\frac{AD}{CM} = \frac{2}{1}$.</li>
+                                <li><strong>Langkah 4:</strong> Maka sisi yang bersesuaian, $\frac{AP}{PC} = \frac{2}{1}$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: $2 : 1$</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S29 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>29.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> The length ratio ($k$) is the square root of the area ratio. $k = \sqrt{16} : \sqrt{25} = 4 : 5$.</li>
+                                <li><strong>Step 2 (Equation):</strong> $\frac{x}{x+1} = \frac{4}{5}$.</li>
+                                <li><strong>Step 3 (Cross multiply):</strong> $5x = 4x + 4 \implies x = 4$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 4</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>29.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> Rasio panjang (k) adalah akar dari rasio luas. $k = \sqrt{16} : \sqrt{25} = 4 : 5$.</li>
+                                <li><strong>Langkah 2 (Persamaan):</strong> $\frac{x}{x+1} = \frac{4}{5}$.</li>
+                                <li><strong>Langkah 3:</strong> Kali silang: $5x = 4x + 4 \implies x = 4$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- S30 -->
+                <div class="unified-box">
+                    <div class="unified-content gap-6">
+                        <!-- English Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-2"><span class="lang-tag tag-en">EN</span><strong>30.</strong> Solution:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Step 1:</strong> $\triangle ABD \sim \triangle ACB$ because they share $\angle A$ and it's given that $\angle ABD = \angle C$.</li>
+                                <li><strong>Step 2 (Ratios):</strong> The corresponding sides form the ratio: $\frac{AB}{AC} = \frac{AD}{AB}$.</li>
+                                <li><strong>Step 3:</strong> Substitute values: $\frac{6}{AC} = \frac{4}{6} \implies 4 \times AC = 36 \implies AC = 9$.</li>
+                            </ul>
+                            <div class="final-answer">Final Answer: 9</div>
+                        </div>
+                        
+                        <div class="unified-divider"></div>
+                        
+                        <!-- Indonesian Block -->
+                        <div>
+                            <h4 class="text-lg font-bold text-indigo-700 mb-2"><span class="lang-tag tag-id">ID</span><strong>30.</strong> Langkah Penyelesaian:</h4>
+                            <ul class="solution-list">
+                                <li><strong>Langkah 1:</strong> $\triangle ABD \sim \triangle ACB$ karena $\angle A$ berimpit (dipakai bersama) dan $\angle ABD = \angle C$.</li>
+                                <li><strong>Langkah 2 (Rasio):</strong> Susunan sisi bersesuaian: $\frac{AB}{AC} = \frac{AD}{AB}$.</li>
+                                <li><strong>Langkah 3:</strong> Substitusi angka: $\frac{6}{AC} = \frac{4}{6} \implies 4 \times AC = 36 \implies AC = 9$.</li>
+                            </ul>
+                            <div class="final-answer-id">Jawaban Akhir: 9</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+</html>
