@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0405MAT12SESSIONS12 - PERTEMUAN 12 - Review dan Strategi Pengerjaan Soal</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 2cm 15px 2cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 11pt;
+        border-radius: 0 5px 5px 0;
+      }
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      ul.custom-list li {
+        margin-bottom: 10px;
+      }
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--border-color);
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .summary-table td,
+      .summary-table th {
+        border: 1px solid var(--border-color);
+        padding: 10px 15px;
+        vertical-align: top;
+        font-size: 11pt;
+      }
+      .summary-table .summary-table-header td,
+      .summary-table th {
+        background-color: var(--table-header-bg);
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 8px 15px;
+        font-size: 10pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 150px;
+        color: var(--secondary-text);
+      }
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 35px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 11.5pt;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 10px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 5px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 25px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .pembahasan-detail {
+        margin-top: 15px;
+        background-color: var(--highlight-box-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 15px;
+        border-radius: 0 8px 8px 0;
+        font-size: 10.5pt;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 9pt;
+      }
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: STRATEGI -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SD</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+                OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Bagian I: Strategi "3 Putaran" (The 3-Round Strategy)</h2>
+          <p>Mengingat waktu pengerjaan OSN-K yang terbatas (biasanya 60-90 menit) dan adanya gradasi kesulitan, siswa disarankan menggunakan strategi berikut:</p>
+          
+          <div class="konsep-box">
+            <h3>Teknik Manajemen Waktu OSN-K</h3>
+            <ul class="custom-list">
+              <li><b>Putaran 1 (15-20 menit pertama):</b> Kerjakan hanya soal-soal <b>MUDAH</b> (Nomor 1-8) dan soal SEDANG yang konsepnya langsung terbayang. Jika dalam membaca soal 30 detik tidak tahu caranya, <b>LEWATI</b>. <br><i>Target: Mengamankan poin dasar (8-10 poin).</i></li>
+              <li><b>Putaran 2 (30-40 menit berikutnya):</b> Fokus pada soal-soal <b>SEDANG</b> (Nomor 9-22) dan soal SULIT yang tipenya familiar. Gunakan coretan yang rapi agar jika macet, tidak perlu mengulang hitungan dari nol. <br><i>Target: Mengumpulkan poin mayoritas.</i></li>
+              <li><b>Putaran 3 (Sisa waktu):</b> Kerjakan soal <b>SULIT</b> yang tersisa atau soal yang tadi dilewati ("stuck"). Gunakan teknik <i>eliminasi jawaban</i> atau <i>trial and error</i> (coba-coba) yang cerdas jika buntu.</li>
+            </ul>
+          </div>
+
+          <div class="tips-box">
+            <b>Tips Penting:</b> Soal simulasi ini disusun dengan komposisi: <b>8 Soal Mudah, 14 Soal Sedang, dan 8 Soal Sulit</b>. Jangan terpaku pada satu nomor yang sulit, pastikan semua soal mudah dan sedang terjawab dengan benar.
+          </div>
+        </div>
+        
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN 2: SOAL 1-5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aritmatika (Sifat Operasi)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">1.</div>
+            <div class="soal-konten">
+              Hasil dari $(25 \times 13) + (25 \times 87)$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">250</li><li data-opt="B">2.500</li>
+                <li data-opt="C">25.000</li><li data-opt="D">250.000</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 2.500</b><br />
+                <b>Pembahasan:</b><br>
+                Gunakan sifat distributif perkalian:<br>
+                $25 \times 13 + 25 \times 87 = 25 \times (13 + 87)$<br>
+                $= 25 \times 100 = 2.500$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan (KPK & Kelipatan)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">2.</div>
+            <div class="soal-konten">
+              Bilangan kelipatan 4 terkecil yang lebih besar dari 100 dan habis dibagi 3 adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">102</li><li data-opt="B">104</li>
+                <li data-opt="C">108</li><li data-opt="D">112</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 108</b><br />
+                <b>Pembahasan:</b><br>
+                Cari kelipatan 4 di atas 100: 104, 108, 112...<br>
+                Cek syarat habis dibagi 3 (jumlah digit kelipatan 3):<br>
+                - 104 $\rightarrow 1+0+4=5$ (Tidak).<br>
+                - 108 $\rightarrow 1+0+8=9$ (Ya).
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 2: SOAL 1-5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pola Bilangan (Geometri)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">3.</div>
+            <div class="soal-konten">
+              Perhatikan pola bilangan berikut: $3, 6, 12, 24, \dots$ Angka pada urutan ke-7 adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">96</li><li data-opt="B">144</li>
+                <li data-opt="C">192</li><li data-opt="D">384</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 192</b><br />
+                <b>Pembahasan:</b><br>
+                Pola barisan geometri dengan rasio ($\times 2$).<br>
+                $3, 6, 12, 24, 48, 96, \mathbf{192}$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Sudut)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">4.</div>
+            <div class="soal-konten">
+              Sebuah segitiga memiliki perbandingan sudut $1 : 2 : 3$. Besar sudut terbesarnya adalah ... derajat.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">60</li><li data-opt="B">90</li>
+                <li data-opt="C">120</li><li data-opt="D">150</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 90</b><br />
+                <b>Pembahasan:</b><br>
+                Jumlah sudut segitiga = $180^\circ$.<br>
+                Total bagian perbandingan = $1+2+3 = 6$.<br>
+                Sudut terbesar = $\frac{3}{6} \times 180^\circ = \frac{1}{2} \times 180^\circ = 90^\circ$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: SOAL 6-10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aritmatika (Pecahan & Persen)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">5.</div>
+            <div class="soal-konten">
+              Jika $A = 50\%$ dari 60 dan $B = \frac{1}{3}$ dari 90, maka hubungan A dan B adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$A > B$</li><li data-opt="B">$A < B$</li>
+                <li data-opt="C">$A = B$</li><li data-opt="D">$A = 2B$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. A = B</b><br />
+                <b>Pembahasan:</b><br>
+                $A = 50\% \times 60 = 0,5 \times 60 = 30$.<br>
+                $B = \frac{1}{3} \times 90 = 30$.<br>
+                Maka $A = B$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Satuan Berat</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">6.</div>
+            <div class="soal-konten">
+              Pak Budi memiliki persediaan beras 1,5 ton. Ia menyumbangkan 3 kuintal beras ke panti asuhan. Sisa beras Pak Budi adalah ... kg.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1.200</li><li data-opt="B">1.350</li>
+                <li data-opt="C">12.000</li><li data-opt="D">13.500</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 1.200</b><br />
+                <b>Pembahasan:</b><br>
+                Samakan satuan ke kg.<br>
+                1,5 ton = $1,5 \times 1.000 = 1.500$ kg.<br>
+                3 kuintal = $3 \times 100 = 300$ kg.<br>
+                Sisa = $1.500 - 300 = 1.200$ kg.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: SOAL 6-10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Persegi Panjang)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">7.</div>
+            <div class="soal-konten">
+              Keliling sebuah persegi panjang adalah 60 cm. Jika panjangnya 20 cm, maka luas persegi panjang tersebut adalah ... cm$^2$.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">100</li><li data-opt="B">200</li>
+                <li data-opt="C">400</li><li data-opt="D">800</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 200</b><br />
+                <b>Pembahasan:</b><br>
+                Keliling $K = 2(p+l) \Rightarrow 60 = 2(20+l)$.<br>
+                $30 = 20+l \Rightarrow l = 10$.<br>
+                Luas $= p \times l = 20 \times 10 = 200$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Operasi Bilangan (Definisi Baru)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">8.</div>
+            <div class="soal-konten">
+              Operasi $\Delta$ didefinisikan sebagai $a \, \Delta \, b = (a \times b) + (a - b)$. Nilai dari $5 \, \Delta \, 3$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">13</li><li data-opt="B">15</li>
+                <li data-opt="C">17</li><li data-opt="D">19</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 17</b><br />
+                <b>Pembahasan:</b><br>
+                Ikuti aturan operasi $\Delta$:<br>
+                $5 \, \Delta \, 3 = (5 \times 3) + (5 - 3) = 15 + 2 = 17$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: SOAL 6-10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pecahan (Soal Cerita)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">9.</div>
+            <div class="soal-konten">
+              Sebuah buku memiliki 200 halaman. Budi membaca $\frac{1}{4}$ bagian pada hari pertama, dan $\frac{2}{5}$ bagian <b>dari sisanya</b> pada hari kedua. Berapa halaman yang belum dibaca Budi?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">60</li><li data-opt="B">70</li>
+                <li data-opt="C">80</li><li data-opt="D">90</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 90</b><br />
+                <b>Pembahasan:</b><br>
+                Hari 1: Membaca $\frac{1}{4} \times 200 = 50$ halaman. Sisa = 150.<br>
+                Hari 2: Membaca $\frac{2}{5} \times 150 = 60$ halaman.<br>
+                Sisa belum dibaca = $150 - 60 = 90$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Statistika (Rata-rata Gabungan)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">10.</div>
+            <div class="soal-konten">
+              Rata-rata nilai ulangan matematika dari 24 siswa adalah 75. Jika nilai Andi dan Budi digabungkan, rata-ratanya menjadi 76. Jika nilai Andi adalah 80, berapakah nilai Budi?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">85</li><li data-opt="B">88</li>
+                <li data-opt="C">90</li><li data-opt="D">96</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 96</b><br />
+                <b>Pembahasan:</b><br>
+                Total nilai 24 siswa = $24 \times 75 = 1.800$.<br>
+                Total nilai 26 siswa (tambah 2 orang) = $26 \times 76 = 1.976$.<br>
+                Jumlah nilai Andi + Budi = $1.976 - 1.800 = 176$.<br>
+                Nilai Budi = $176 - 80 = 96$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 4: SOAL 11-15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Luas Daerah)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">11.</div>
+            <div class="soal-konten">
+              Perhatikan gambar berikut. Sebuah lingkaran dengan jari-jari 7 cm berada tepat di dalam sebuah persegi (menyinggung sisi-sisi persegi).
+              <div style="text-align: center; margin: 15px 0;">
+                <svg class="geo-image" width="150" height="150" viewBox="0 0 100 100">
+                  <rect x="10" y="10" width="80" height="80" fill="none" stroke="black" stroke-width="2" />
+                  <circle cx="50" cy="50" r="40" fill="#e0f7fa" stroke="black" stroke-width="2" />
+                  <line x1="50" y1="50" x2="90" y2="50" stroke="black" stroke-dasharray="3,3" />
+                  <text x="60" y="45" font-family="Nunito" font-size="10">r = 7</text>
+                </svg>
+              </div>
+              Luas daerah di dalam persegi tetapi di luar lingkaran adalah ... cm$^2$. ($\pi = \frac{22}{7}$)
+              <ul class="pilihan-ganda">
+                <li data-opt="A">42</li><li data-opt="B">84</li>
+                <li data-opt="C">154</li><li data-opt="D">196</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 42</b><br />
+                <b>Pembahasan:</b><br>
+                Diameter lingkaran = sisi persegi = $2 \times 7 = 14$ cm.<br>
+                Luas Persegi $= 14 \times 14 = 196$.<br>
+                Luas Lingkaran $= \frac{22}{7} \times 7 \times 7 = 154$.<br>
+                Luas Arsir = $196 - 154 = 42$ cm$^2$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+       <!-- HALAMAN 4: SOAL 11-15 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Sistem Persamaan)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">12.</div>
+            <div class="soal-konten">
+              Harga 2 buah buku dan 3 buah pensil adalah Rp19.000,00. Harga 1 buah buku dan 4 buah pensil adalah Rp17.000,00. Berapakah harga 1 buah buku?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">Rp3.000,00</li><li data-opt="B">Rp4.000,00</li>
+                <li data-opt="C">Rp5.000,00</li><li data-opt="D">Rp6.000,00</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. Rp5.000,00</b><br />
+                <b>Pembahasan:</b><br>
+                (1) $2B + 3P = 19.000$<br>
+                (2) $1B + 4P = 17.000 \rightarrow$ kali 2 $\rightarrow 2B + 8P = 34.000$.<br>
+                Kurangkan (2) dengan (1): $5P = 15.000 \Rightarrow P = 3.000$.<br>
+                Substitusi ke (2): $1B + 12.000 = 17.000 \Rightarrow B = 5.000$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Peluang</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">13.</div>
+            <div class="soal-konten">
+              Dua buah dadu dilempar bersamaan satu kali. Peluang munculnya jumlah mata dadu sama dengan 9 adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1/6</li><li data-opt="B">1/9</li>
+                <li data-opt="C">1/12</li><li data-opt="D">5/36</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 1/9</b><br />
+                <b>Pembahasan:</b><br>
+                Ruang sampel 2 dadu = $6 \times 6 = 36$.<br>
+                Kejadian jumlah 9: $(3,6), (4,5), (5,4), (6,3)$. Ada 4 kejadian.<br>
+                Peluang $= \frac{4}{36} = \frac{1}{9}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Debit & Volume</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">14.</div>
+            <div class="soal-konten">
+              Sebuah akuarium berbentuk balok dengan ukuran $60 \text{ cm} \times 40 \text{ cm} \times 50 \text{ cm}$. Akuarium tersebut bocor sehingga air berkurang dengan kecepatan 2 liter per menit. Jika awalnya akuarium penuh, waktu yang dibutuhkan hingga air habis adalah ... jam.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1</li><li data-opt="B">1,5</li>
+                <li data-opt="C">2</li><li data-opt="D">2,5</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 1</b><br />
+                <b>Pembahasan:</b><br>
+                Volume $= 60 \times 40 \times 50 = 120.000$ cm$^3 = 120$ liter.<br>
+                Waktu $= 120 : 2 = 60$ menit $= 1$ jam.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan (Prima)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">15.</div>
+            <div class="soal-konten">
+              Jumlah dua bilangan prima adalah 103. Selisih kedua bilangan prima tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">97</li><li data-opt="B">99</li>
+                <li data-opt="C">101</li><li data-opt="D">102</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 99</b><br />
+                <b>Pembahasan:</b><br>
+                Jumlah ganjil (103) berarti salah satu bilangan prima harus genap (yaitu 2).<br>
+                $x + 2 = 103 \Rightarrow x = 101$ (prima).<br>
+                Selisih $= 101 - 2 = 99$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 5: SOAL 16-20 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Sudut Jam)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">16.</div>
+            <div class="soal-konten">
+              Sudut yang dibentuk oleh jarum jam pada pukul 09.30 adalah ... derajat.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">90</li><li data-opt="B">95</li>
+                <li data-opt="C">100</li><li data-opt="D">105</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 105</b><br />
+                <b>Pembahasan:</b><br>
+                Jarum panjang di 6. Jarum pendek di tengah 9 dan 10 (9,5).<br>
+                Jarak langkah $= 9,5 - 6 = 3,5$ langkah.<br>
+                Sudut $= 3,5 \times 30^\circ = 105^\circ$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>FPB</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">17.</div>
+            <div class="soal-konten">
+              Pak guru ingin membagikan 48 permen rasa coklat dan 60 permen rasa jeruk kepada beberapa siswa dengan jumlah yang sama rata untuk setiap rasa. Paling banyak berapa siswa yang bisa menerima permen tersebut?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">6</li><li data-opt="B">12</li>
+                <li data-opt="C">16</li><li data-opt="D">24</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 12</b><br />
+                <b>Pembahasan:</b><br>
+                FPB dari 48 dan 60.<br>
+                $48 = 12 \times 4$.<br>
+                $60 = 12 \times 5$.<br>
+                FPB = 12.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 5: SOAL 16-20 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Aritmatika (Kalender)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">18.</div>
+            <div class="soal-konten">
+              Jika tanggal 17 Agustus 2024 jatuh pada hari Sabtu, maka tanggal 17 Agustus 2025 akan jatuh pada hari ... (Tahun 2024 adalah tahun kabisat, 2025 bukan).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">Minggu</li><li data-opt="B">Senin</li>
+                <li data-opt="C">Selasa</li><li data-opt="D">Rabu</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. Minggu</b><br />
+                <b>Pembahasan:</b><br>
+                Dari 17 Agustus 2024 ke 17 Agustus 2025 adalah 1 tahun (365 hari, karena Feb 2025 hanya 28 hari).<br>
+                $365 \div 7 = 52$ minggu sisa 1 hari.<br>
+                Maka hari bergeser maju 1 hari: Sabtu $\rightarrow$ Minggu.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Logika</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">19.</div>
+            <div class="soal-konten">
+              Dalam sebuah antrian tiket, Andi berada di urutan ke-15 dari depan dan ke-24 dari belakang. Berapa banyak orang dalam antrian tersebut?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">37</li><li data-opt="B">38</li>
+                <li data-opt="C">39</li><li data-opt="D">40</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 38</b><br />
+                <b>Pembahasan:</b><br>
+                Posisi Andi dihitung dua kali (dari depan dan belakang).<br>
+                Total $= (15 + 24) - 1 = 39 - 1 = 38$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Kecepatan Rata-rata</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">20.</div>
+            <div class="soal-konten">
+              Jarak kota A dan B adalah 180 km. Ayah berkendara dari A ke B dengan kecepatan 60 km/jam, lalu kembali dari B ke A dengan kecepatan 90 km/jam. Kecepatan rata-rata Ayah untuk seluruh perjalanan pulang-pergi adalah ... km/jam.
+              <ul class="pilihan-ganda">
+                <li data-opt="A">72</li><li data-opt="B">75</li>
+                <li data-opt="C">78</li><li data-opt="D">80</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 72</b><br />
+                <b>Pembahasan:</b><br>
+                Kecepatan Rata-rata Harmonik:<br>
+                $V_{avg} = \frac{2 \times 60 \times 90}{60 + 90} = \frac{10.800}{150} = 72$ km/jam.
+              </div>
+            </div>
+          </div>
+          
+          <table class="soal-card"><tr><td>Topik</td><td>Perbandingan Umur</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">21.</div>
+            <div class="soal-konten">
+              Umur Ibu saat ini adalah 3 kali umur Anaknya. Sepuluh tahun yang akan datang, umur Ibu menjadi 2 kali umur Anaknya. Berapakah umur Ibu saat ini?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">20 tahun</li><li data-opt="B">30 tahun</li>
+                <li data-opt="C">35 tahun</li><li data-opt="D">40 tahun</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 30 tahun</b><br />
+                <b>Pembahasan:</b><br>
+                $I = 3A$.<br>
+                $I+10 = 2(A+10) \Rightarrow 3A+10 = 2A+20 \Rightarrow A = 10$.<br>
+                $I = 3 \times 10 = 30$ tahun.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pecahan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">22.</div>
+            <div class="soal-konten">
+              Bilangan pecahan yang nilainya terletak di antara $\frac{1}{3}$ dan $\frac{1}{2}$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5/12</li><li data-opt="B">2/7</li>
+                <li data-opt="C">4/9</li><li data-opt="D">7/12</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 5/12</b><br />
+                <b>Pembahasan:</b><br>
+                Samakan penyebut ke 12. $\frac{1}{3} = \frac{4}{12}$ dan $\frac{1}{2} = \frac{6}{12}$.<br>
+                Di antara 4 dan 6 adalah 5. Jadi $\frac{5}{12}$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>KPK & FPB</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">23.</div>
+            <div class="soal-konten">
+              Bilangan $N$ adalah bilangan bulat positif 4 angka terkecil yang habis dibagi 3, 4, dan 5. Jumlah digit-digit dari $N$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">3</li><li data-opt="B">6</li>
+                <li data-opt="C">9</li><li data-opt="D">12</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 3</b><br />
+                <b>Pembahasan:</b><br>
+                Cari KPK(3,4,5) = 60.<br>
+                Bilangan 4 angka terkecil kelipatan 60.<br>
+                $1000 \div 60 = 16$ sisa 40.<br>
+                Maka $N = 1000 + (60-40) = 1020$.<br>
+                Jumlah digit $= 1+0+2+0 = 3$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Perbandingan Luas)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">24.</div>
+            <div class="soal-konten">
+              Sebuah persegi panjang dipotong menjadi 4 bagian seperti gambar berikut. Luas dari tiga bagian sudah diketahui yaitu 12 cm$^2$, 18 cm$^2$, dan 20 cm$^2$. Berapakah luas bagian yang keempat (daerah yang diarsir)?
+              <div style="text-align: center; margin: 15px 0;">
+                <svg class="geo-image" width="200" height="150" viewBox="0 0 200 150">
+                  <rect x="0" y="0" width="200" height="150" stroke="black" fill="none" stroke-width="2"/>
+                  <line x1="80" y1="0" x2="80" y2="150" stroke="black" stroke-width="2"/>
+                  <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="2"/>
+                  <text x="35" y="50" font-family="Nunito">12</text>
+                  <text x="135" y="50" font-family="Nunito">18</text>
+                  <text x="35" y="125" font-family="Nunito">20</text>
+                  <text x="135" y="125" font-family="Nunito" font-weight="bold">?</text>
+                  <rect x="80" y="100" width="120" height="50" fill="#e0f7fa" opacity="0.5"/>
+                </svg>
+              </div>
+              <ul class="pilihan-ganda">
+                <li data-opt="A">24</li><li data-opt="B">28</li>
+                <li data-opt="C">30</li><li data-opt="D">32</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 30</b><br />
+                <b>Pembahasan:</b><br>
+                Sifat perpotongan tegak lurus pada persegi panjang:<br>
+                $\frac{\text{Luas Kiri Bawah}}{\text{Luas Kiri Atas}} = \frac{\text{Luas Kanan Bawah}}{\text{Luas Kanan Atas}}$<br>
+                $\frac{20}{12} = \frac{X}{18} \Rightarrow X = \frac{20 \times 18}{12} = \frac{360}{12} = 30$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan (Sisa Bagi)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">25.</div>
+            <div class="soal-konten">
+              Jika $2024^{2024}$ dibagi dengan 5, maka sisa pembagiannya adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1</li><li data-opt="B">2</li>
+                <li data-opt="C">3</li><li data-opt="D">4</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 1</b><br />
+                <b>Pembahasan:</b><br>
+                Perhatikan angka satuan dari basisnya ($2024 \rightarrow 4$).<br>
+                Pola satuan $4^n$: $4, 6, 4, 6, \dots$ (Ganjil=4, Genap=6).<br>
+                Pangkat 2024 adalah genap, maka angka satuannya adalah 6.<br>
+                Sisa pembagian $6$ oleh $5$ adalah $1$.
+              </div>
+            </div>
+          </div>
+
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">26.</div>
+            <div class="soal-konten">
+              Ada 5 titik pada sebuah lingkaran. Berapa banyak segitiga yang dapat dibentuk dengan menghubungkan ketiga titik tersebut sebagai titik sudutnya?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5</li><li data-opt="B">10</li>
+                <li data-opt="C">15</li><li data-opt="D">20</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 10</b><br />
+                <b>Pembahasan:</b><br>
+                Soal ini menanyakan banyaknya kombinasi memilih 3 titik dari 5 titik yang tersedia.<br>
+                $C(5,3) = \frac{5!}{3!(5-3)!} = \frac{5 \times 4 \times 3}{3 \times 2 \times 1} = 10$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Deret Teleskopik</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">27.</div>
+            <div class="soal-konten">
+              Diberikan bilangan pecahan $\frac{1}{1 \times 2} + \frac{1}{2 \times 3} + \frac{1}{3 \times 4} + \dots + \frac{1}{2023 \times 2024}$. Hasil penjumlahan tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">2022/2023</li><li data-opt="B">2023/2024</li>
+                <li data-opt="C">2024/2025</li><li data-opt="D">1</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 2023/2024</b><br />
+                <b>Pembahasan:</b><br>
+                Ini adalah deret teleskopik: $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$.<br>
+                $= (1 - \frac{1}{2}) + (\frac{1}{2} - \frac{1}{3}) + \dots + (\frac{1}{2023} - \frac{1}{2024})$.<br>
+                $= 1 - \frac{1}{2024} = \frac{2023}{2024}$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Perbandingan Bertingkat</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">28.</div>
+            <div class="soal-konten">
+              Sebuah kotak berisi bola merah, kuning, dan hijau. Rasio merah : kuning adalah 3 : 4. Rasio kuning : hijau adalah 2 : 5. Jika jumlah bola hijau ada 40 butir, berapa jumlah bola merah?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">12</li><li data-opt="B">16</li>
+                <li data-opt="C">18</li><li data-opt="D">24</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 12</b><br />
+                <b>Pembahasan:</b><br>
+                K : H = 2 : 5. Karena Hijau = 40, maka 1 bagian = $40/5 = 8$.<br>
+                Jadi Kuning = $2 \times 8 = 16$.<br>
+                M : K = 3 : 4. Karena Kuning = 16, maka 1 bagian = $16/4 = 4$.<br>
+                Jadi Merah = $3 \times 4 = 12$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pola Bilangan (Invarian)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">29.</div>
+            <div class="soal-konten">
+              Pak Guru menuliskan bilangan 1, 2, 3, ..., 100 di papan tulis. Kemudian ia menghapus dua bilangan $a$ dan $b$, lalu menggantinya dengan $a+b+1$. Ia melakukan hal ini terus menerus hingga tersisa satu bilangan saja di papan tulis. Bilangan berapakah itu?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5050</li><li data-opt="B">5100</li>
+                <li data-opt="C">5149</li><li data-opt="D">5150</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 5149</b><br />
+                <b>Pembahasan:</b><br>
+                Mula-mula: Hapus $a, b$, tambah $a+b+1$. Selisih bersih = $+1$ setiap langkah.<br>
+                Ada 100 bilangan, butuh 99 langkah untuk menjadi 1 bilangan.<br>
+                Total kenaikan = $99 \times 1 = 99$.<br>
+                Jumlah awal deret 1 sampai 100 = $\frac{100 \times 101}{2} = 5050$.<br>
+                Bilangan akhir = $5050 + 99 = 5149$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SD</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SD | Pertemuan 12 | Review dan Strategi Pengerjaan Soal</div></div>
+        </header>
+        <div class="content-wrapper">
+          <table class="soal-card"><tr><td>Topik</td><td>Pencacahan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">30.</div>
+            <div class="soal-konten">
+              Berapa banyak bilangan bulat positif kurang dari 500 yang memuat angka "7" dalam penulisannya? (Contoh: 7, 17, 70, 71, 172, dll).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">95</li><li data-opt="B">100</li>
+                <li data-opt="C">107</li><li data-opt="D">176</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 95</b><br />
+                <b>Pembahasan:</b><br>
+                Hitung total bilangan dikurangi bilangan yang TIDAK memuat angka 7.<br>
+                Total bilangan 1 s.d. 499 (ada 499 bilangan).<br>
+                Bilangan TANPA angka 7:<br>
+                - Ratusan (0-4): 5 pilihan.<br>
+                - Puluhan (0-6, 8-9): 9 pilihan.<br>
+                - Satuan (0-6, 8-9): 9 pilihan.<br>
+                Banyak bilangan tanpa 7 = $5 \times 9 \times 9 = 405$. (Termasuk 000).<br>
+                Real tanpa 7 = 404.<br>
+                Banyak bilangan DENGAN 7 = $499 - 404 = 95$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+    </div>
+  </body>
+</html>
