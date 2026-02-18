@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS12 - PERTEMUAN 12 - Latihan Soal Campuran - 4</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+        --alert-bg: #ffebee;
+        --alert-border: #ef5350;
+        --info-bg: #e3f2fd;
+        --info-border: #2196f3;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+        margin-bottom: 20px;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 2cm 2px 2cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+      }
+      .section-title {
+        font-size: 14pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        margin-top: 5px;
+      }
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 3px;
+        margin-top: 0px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 6px 15px;
+        font-size: 9pt;
+        vertical-align: top;
+      }
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 120px;
+        color: var(--secondary-text);
+      }
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 5px;
+        margin-bottom: 25px;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 20px;
+      }
+      .soal-pembahasan:last-child {
+        border-bottom: none;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 30px;
+        color: var(--header-title-color);
+        background: #e0f7fa;
+        text-align: center;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 11pt;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 25px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .pembahasan-detail {
+        margin-top: 15px;
+        background-color: var(--highlight-box-bg);
+        border-left: 4px solid var(--header-title-color);
+        padding: 12px;
+        border-radius: 0 6px 6px 0;
+        font-size: 10pt;
+      }
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 8px;
+        font-size: 9pt;
+      }
+      
+      /* Styles for Strategy Section */
+      .strategy-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 10.5pt;
+      }
+      .strategy-table th {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+      .strategy-table td {
+        border: 1px solid var(--border-color);
+        padding: 10px;
+      }
+      .strategy-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      
+      .tips-box {
+        background-color: var(--alert-bg);
+        border-left: 5px solid var(--alert-border);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+        font-size: 10.5pt;
+      }
+      .tips-title {
+        font-weight: 800;
+        color: #d32f2f;
+        display: block;
+        margin-bottom: 5px;
+        font-size: 11pt;
+      }
+      
+      .info-box {
+        background-color: var(--info-bg);
+        border-left: 5px solid var(--info-border);
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+        font-size: 10.5pt;
+      }
+
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 2px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      .footer-content {
+          display: inline-block;
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: STRATEGI & TEKNIS -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Teknis Pelaksanaan & Penilaian</h2>
+          <p>Berdasarkan pedoman OSN Tingkat Kabupaten (OSN-K) Matematika SMP, berikut adalah struktur dan sistem penilaian yang berlaku:</p>
+          
+          <table class="strategy-table">
+            <thead>
+              <tr>
+                <th width="35%">Komponen</th>
+                <th>Keterangan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Durasi Pengerjaan</strong></td>
+                <td>150 Menit (2 Jam 30 Menit)</td>
+              </tr>
+              <tr>
+                <td><strong>Jumlah Soal</strong></td>
+                <td>25 Butir Soal Pilihan Jamak</td>
+              </tr>
+              <tr>
+                <td><strong>Poin Jawaban Benar</strong></td>
+                <td>+4 (Empat)</td>
+              </tr>
+              <tr>
+                <td><strong>Poin Jawaban Salah</strong></td>
+                <td>0 (Nol) - <em>Tidak ada pengurangan nilai</em></td>
+              </tr>
+              <tr>
+                <td><strong>Poin Tidak Menjawab</strong></td>
+                <td>0 (Nol)</td>
+              </tr>
+              <tr>
+                <td><strong>Nilai Maksimum</strong></td>
+                <td>100 Poin</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Strategi Pengerjaan Soal</h2>
+          
+          <div class="tips-box">
+            <span class="tips-title">⚠️ ATURAN TIE-BREAKER (PENENTU PERINGKAT)</span>
+            <p>Jika terdapat peserta dengan nilai total yang sama, penentuan peringkat didasarkan pada <strong>jumlah jawaban salah paling sedikit</strong>.</p>
+            <p style="font-size: 10pt; margin-top: 8px; background: rgba(255,255,255,0.7); padding: 8px; border-radius: 4px;">
+            <strong>Contoh Kasus (Skor sama-sama 80):</strong><br>
+            • <strong>Siswa A:</strong> 20 Benar, 5 Salah. (Jumlah Salah = 5)<br>
+            • <strong>Siswa B:</strong> 20 Benar, 0 Salah, 5 Kosong. (Jumlah Salah = 0)<br>
+            🏆 <strong>Pemenang: Siswa B</strong> (karena lebih sedikit menjawab salah).
+            </p>
+          </div>
+
+          <div class="info-box">
+            <span class="tips-title">💡 Tips Manajemen Waktu & Menebak</span>
+            <ul>
+              <li><strong>Alokasi Waktu:</strong> Rata-rata <strong>6 menit per soal</strong>. Ini waktu yang cukup panjang untuk pilihan ganda. Manfaatkan untuk mengecek ulang perhitungan.</li>
+              <li><strong>Strategi Menebak:</strong>
+                <ul style="margin-top:5px;">
+                  <li>Jika Anda bisa mengeliminasi 2 opsi jawaban yang pasti salah, <strong>sangat disarankan untuk menebak</strong> (peluang +4 lebih besar).</li>
+                  <li>Jika Anda benar-benar tidak tahu (blank), <strong>lebih aman dikosongkan</strong>. Meskipun poinnya sama-sama 0, jawaban kosong lebih menguntungkan dalam aturan <em>tie-breaker</em> dibandingkan jawaban salah.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- HALAMAN 2: SOAL 1-5 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- SOAL 1 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Sistem Persamaan Linear</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">1</div>
+            <div class="soal-konten">
+              Jika $A, B$ memenuhi sistem persamaan:
+              \[
+              \begin{cases}
+              \frac{2A}{A-2B}-\frac{6B}{A+2B}=3\\
+              \frac{-A}{A-2B}+\frac{6B}{A+2B}=-1
+              \end{cases}
+              \]
+              Maka nilai dari $\displaystyle \frac{AB}{A^{2}-4B^{2}} = ...$
+              <ul class="pilihan-ganda">
+                <li data-opt="a">$\frac{1}{3}$</li>
+                <li data-opt="b">$-3$</li>
+                <li data-opt="c">$\frac{1}{6}$</li>
+                <li data-opt="d">$-6$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A</b><br />
+                <b>Analisis Soal:</b><br>
+                Soal ini terlihat rumit karena bentuk pecahannya yang besar. Kuncinya adalah <b>pemisalan variabel</b> (Substitusi). Perhatikan bahwa penyebutnya berulang: $(A-2B)$ dan $(A+2B)$.<br><br>
+                <b>Langkah Pengerjaan:</b><br>
+                1. <b>Misalkan:</b> $X = \frac{A}{A-2B}$ dan $Y = \frac{B}{A+2B}$. Maka persamaan menjadi sederhana:<br>
+                   (i) $2X - 6Y = 3$<br>
+                   (ii) $-X + 6Y = -1$<br>
+                2. <b>Eliminasi:</b> Jumlahkan kedua persamaan:<br>
+                   $(2X - X) + (-6Y + 6Y) = 3 + (-1)$<br>
+                   $X = 2$.<br>
+                3. <b>Kembalikan ke bentuk asal:</b><br>
+                   $X = \frac{A}{A-2B} = 2 \implies A = 2(A-2B) \implies A = 2A - 4B \implies A = 4B$.<br>
+                4. <b>Substitusi ke Pertanyaan:</b><br>
+                   Soal meminta nilai $\frac{AB}{A^2 - 4B^2}$. Ganti setiap $A$ dengan $4B$.<br>
+                   $\frac{(4B)(B)}{(4B)^2 - 4B^2} = \frac{4B^2}{16B^2 - 4B^2} = \frac{4B^2}{12B^2} = \frac{4}{12} = \frac{1}{3}$.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- SOAL 2 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Kesebangunan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">2</div>
+            <div class="soal-konten">
+              Dua buah persegi memiliki perbandingan keliling $4:5$. Perbandingan luas kedua persegi tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">$5:4$</li>
+                <li data-opt="b">$16:25$</li>
+                <li data-opt="c">$25:16$</li>
+                <li data-opt="d">$2:5$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B</b><br />
+                <b>Konsep Dasar:</b><br>
+                Pada bangun datar sebangun (seperti semua persegi), berlaku aturan:<br>
+                - Rasio Keliling = Rasio Panjang Sisi ($a : b$)<br>
+                - Rasio Luas = Kuadrat dari Rasio Sisi ($a^2 : b^2$)<br><br>
+                <b>Pengerjaan:</b><br>
+                Diketahui $K_1 : K_2 = 4 : 5$.<br>
+                Maka $L_1 : L_2 = (4)^2 : (5)^2 = 16 : 25$.
+              </div>
+            </div>
+          </div>
+
+          <!-- SOAL 3 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Belah Ketupat)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">3</div>
+            <div class="soal-konten">
+              Diberikan sebuah belah ketupat $ABCD$ dengan $AC$ dan $BD$ sebagai diagonalnya. Jika panjang $AC=10$ cm dan luas belah ketupat tersebut $120 \text{ cm}^{2}$, maka kelilingnya adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">60 cm</li>
+                <li data-opt="b">56 cm</li>
+                <li data-opt="c">52 cm</li>
+                <li data-opt="d">46 cm</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C</b><br />
+                <b>Langkah Pengerjaan:</b><br>
+                1. <b>Cari Diagonal Kedua ($BD$):</b><br>
+                   Luas $= \frac{1}{2} \times d_1 \times d_2$<br>
+                   $120 = \frac{1}{2} \times 10 \times BD \implies 120 = 5 \times BD \implies BD = 24$ cm.<br>
+                2. <b>Cari Sisi Miring:</b><br>
+                   Diagonal belah ketupat saling membagi dua tegak lurus. Maka kita punya segitiga siku-siku dengan alas = $1/2 \times 10 = 5$ dan tinggi = $1/2 \times 24 = 12$.<br>
+                   Sisi miring ($s$) = $\sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$ cm (Tripel Pythagoras 5-12-13).<br>
+                3. <b>Hitung Keliling:</b><br>
+                   Keliling = $4 \times s = 4 \times 13 = 52$ cm.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+              OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+
+          <!-- SOAL 4 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Persamaan Garis Lurus</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">4</div>
+            <div class="soal-konten">
+              Diketahui persamaan-persamaan garis lurus berikut:<br>
+              (1) $2x+3y=6$; (2) $3x+2y=6$; (3) $2x-3y=6$; (4) $3x-2y=6$.<br>
+              Pernyataan yang benar mengenai hubungan antargaris tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">(1) & (2) serta (2) & (4) tegak lurus</li>
+                <li data-opt="b">(1) & (3) serta (2) & (4) tegak lurus</li>
+                <li data-opt="c">(2) & (3) serta (1) & (4) tegak lurus</li>
+                <li data-opt="d">Semua garis saling tegak lurus</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C</b><br />
+                <b>Konsep:</b> Dua garis saling tegak lurus jika hasil kali gradiennya ($m_1 \times m_2$) adalah $-1$.<br>
+                <b>Analisis Gradien ($m = -A/B$):</b><br>
+                (1) $2x+3y=6 \to m_1 = -2/3$<br>
+                (2) $3x+2y=6 \to m_2 = -3/2$<br>
+                (3) $2x-3y=6 \to m_3 = -2/(-3) = 2/3$<br>
+                (4) $3x-2y=6 \to m_4 = -3/(-2) = 3/2$<br><br>
+                <b>Pengecekan:</b><br>
+                - Cek pasangan (2) & (3): $m_2 \times m_3 = (-3/2) \times (2/3) = -1$. (Tegak Lurus ✅)<br>
+                - Cek pasangan (1) & (4): $m_1 \times m_4 = (-2/3) \times (3/2) = -1$. (Tegak Lurus ✅)
+              </div>
+            </div>
+          </div>
+
+          <!-- SOAL 5 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Fungsi Rasional</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">5</div>
+            <div class="soal-konten">
+              Untuk setiap $x$ bilangan real, maka bentuk fungsi $f(x) = \frac{6x-8}{2x+4}$ tidak akan pernah bernilai sama dengan ...
+              <ul class="pilihan-ganda">
+                <li data-opt="a">$-2$</li>
+                <li data-opt="b">$0$</li>
+                <li data-opt="c">$1$</li>
+                <li data-opt="d">$3$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D</b><br />
+                <b>Konsep Asimtot Datar:</b><br>
+                Pada fungsi rasional bentuk $f(x) = \frac{ax+b}{cx+d}$, nilai fungsi tidak akan pernah menyentuh asimtot datarnya, yaitu $y = \frac{a}{c}$.<br>
+                Di soal ini, $a=6$ dan $c=2$.
+                Maka nilai yang tak mungkin dicapai adalah $y = \frac{6}{2} = 3$.<br><br>
+                <b>Pembuktian:</b><br>
+                Jika kita paksa $f(x)=3$, maka:<br>
+                $\frac{6x-8}{2x+4} = 3 \implies 6x-8 = 3(2x+4) \implies 6x-8 = 6x+12$.<br>
+                $-8 = 12$ (Pernyataan salah/kontradiksi). Jadi fungsi tidak mungkin bernilai 3.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- HALAMAN 3 -->
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            
+            <!-- SOAL 6 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Aljabar</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">6</div>
+                <div class="soal-konten">
+                    Bentuk aljabar $\displaystyle \frac{(x+y)^{2}-2xy}{xy}$ setara dengan ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">$\frac{x}{y}+\frac{y}{x}$</li>
+                        <li data-opt="b">$\frac{x}{y}-\frac{y}{x}$</li>
+                        <li data-opt="c">$\frac{y}{x}-\frac{x}{y}$</li>
+                        <li data-opt="d">$\frac{1}{x}-\frac{1}{y}$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Pembahasan:</b><br>
+                        Langkah pertama, jabarkan pembilang:<br>
+                        $(x+y)^2 - 2xy = (x^2 + 2xy + y^2) - 2xy = x^2 + y^2$.<br>
+                        Sekarang bentuknya menjadi $\frac{x^2 + y^2}{xy}$.<br>
+                        Pecah menjadi dua pecahan terpisah:<br>
+                        $\frac{x^2}{xy} + \frac{y^2}{xy} = \frac{x}{y} + \frac{y}{x}$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 7 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Garis Sejajar</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">7</div>
+                <div class="soal-konten">
+                    Garis dengan persamaan $4x-5y=1$ dan garis $3x+ay=2$ tidak akan pernah berpotongan (sejajar) untuk nilai $a = ...$
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">$-5/4$</li>
+                        <li data-opt="b">$4/5$</li>
+                        <li data-opt="c">$-15/4$</li>
+                        <li data-opt="d">$-12/5$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Konsep:</b> Dua garis linear sejajar jika dan hanya jika gradiennya sama ($m_1 = m_2$).<br>
+                        <b>Langkah:</b><br>
+                        1. Cari gradien garis pertama: $4x - 5y = 1 \to 5y = 4x - 1 \to y = \frac{4}{5}x - \frac{1}{5}$. Jadi $m_1 = \frac{4}{5}$.<br>
+                        2. Cari gradien garis kedua: $3x + ay = 2 \to ay = -3x + 2 \to y = \frac{-3}{a}x + \frac{2}{a}$. Jadi $m_2 = \frac{-3}{a}$.<br>
+                        3. Samakan gradien: $\frac{4}{5} = \frac{-3}{a}$.<br>
+                        4. Kali silang: $4a = -15 \implies a = -\frac{15}{4}$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 8 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Lingkaran</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">8</div>
+                <div class="soal-konten">
+                    $P$ adalah pusat lingkaran yang kelilingnya $4\pi$ cm. Diketahui titik $A$ dan $B$ pada lingkaran dan garis $PB$ diperpanjang menjadi diameter. Jika $\angle APB=50^{\circ}$, luas juring pelurusnya (yang diarsir) adalah ... $\pi \text{ cm}^{2}$.
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">$1\frac{1}{3}$</li>
+                        <li data-opt="b">$1\frac{4}{9}$</li>
+                        <li data-opt="c">$\frac{1}{3}$</li>
+                        <li data-opt="d">$1$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        1. <b>Cari Jari-jari:</b> $K = 2\pi r = 4\pi \implies r = 2$ cm.<br>
+                        2. <b>Luas Lingkaran Total:</b> $L = \pi r^2 = \pi (2)^2 = 4\pi$ cm$^2$.<br>
+                        3. <b>Sudut Juring:</b> Karena garis PB diperpanjang menjadi diameter (garis lurus), total sudut adalah $180^{\circ}$. Sudut daerah yang diarsir adalah pelurus dari $50^{\circ}$, yaitu $180^{\circ} - 50^{\circ} = 130^{\circ}$.<br>
+                        4. <b>Hitung Luas:</b> $\frac{130}{360} \times 4\pi = \frac{13}{36} \times 4\pi = \frac{13}{9}\pi = 1\frac{4}{9}\pi$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 9 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Transformasi Geometri</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">9</div>
+                <div class="soal-konten">
+                    Titik $A(5,1)$ dicerminkan terhadap garis $x=a$ kemudian ditranslasikan oleh $T(-3,4)$ menghasilkan bayangan $A'(-4,5)$. Nilai $a$ adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">1</li>
+                        <li data-opt="b">2</li>
+                        <li data-opt="c">3</li>
+                        <li data-opt="d">4</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        <b>Langkah 1 (Refleksi):</b> Rumus refleksi terhadap $x=h$ adalah $(2h-x, y)$.<br>
+                        Titik $A(5,1)$ dicerminkan $x=a \to A'(2a-5, 1)$.<br>
+                        <b>Langkah 2 (Translasi):</b> Tambahkan dengan vektor translasi $(-3, 4)$.<br>
+                        $x' = (2a-5) + (-3) = 2a - 8$.<br>
+                        $y' = 1 + 4 = 5$.<br>
+                        <b>Langkah 3 (Persamaan):</b> Diketahui hasil akhirnya $x' = -4$.<br>
+                        $2a - 8 = -4 \implies 2a = 4 \implies a = 2$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 10 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Bentuk Akar</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">10</div>
+                <div class="soal-konten">
+                    Nilai $ab$ jika diketahui persamaan $\sqrt{9+a-6\sqrt{ab}} = 3-\sqrt{2}$ adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">1</li>
+                        <li data-opt="b">2</li>
+                        <li data-opt="c">4</li>
+                        <li data-opt="d">8</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        Untuk menghilangkan akar besar, kuadratkan kedua ruas:<br>
+                        $(\sqrt{9+a-6\sqrt{ab}})^2 = (3-\sqrt{2})^2$<br>
+                        $9+a - 6\sqrt{ab} = 9 - 6\sqrt{2} + 2$<br>
+                        $9+a - 6\sqrt{ab} = 11 - 6\sqrt{2}$<br><br>
+                        Sekarang, samakan posisi bilangan Rasional dan Irasional:<br>
+                        - Bagian Rasional: $9+a = 11 \implies a = 2$.<br>
+                        - Bagian Irasional: $-6\sqrt{ab} = -6\sqrt{2} \implies \sqrt{ab} = \sqrt{2} \implies ab = 2$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 11 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">11</div>
+                <div class="soal-konten">
+                    Sebuah bilangan disebut "Bilangan Stabil" jika jumlah digit-digitnya membagi bilangan itu sendiri. Berapakah bilangan bulat positif 2 digit terbesar yang merupakan "Bilangan Stabil"?
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">90</li>
+                        <li data-opt="b">84</li>
+                        <li data-opt="c">81</li>
+                        <li data-opt="d">80</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Strategi:</b> Cek pilihan jawaban dari yang terbesar.<br>
+                        1. <b>Cek 90:</b> Jumlah digit = $9+0=9$. Apakah 90 habis dibagi 9? Ya ($90/9=10$). Jadi 90 Stabil.<br>
+                        2. Karena kita mencari yang <b>terbesar</b> dan 90 adalah opsi terbesar, maka kita tidak perlu mengecek opsi lain. (Sebagai catatan: 84 juga stabil karena $8+4=12$ dan $84/12=7$, tapi $90 > 84$).
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- HALAMAN 4 -->
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 12 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Sistem Persamaan</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">12</div>
+                <div class="soal-konten">
+                    Diketahui $x$ dan $y$ bilangan real: $\begin{cases} x + y = 5 \\ x^3 + y^3 = 35 \end{cases}$. Nilai $x^2 + y^2 = ...$
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">13</li>
+                        <li data-opt="b">15</li>
+                        <li data-opt="c">17</li>
+                        <li data-opt="d">19</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Pembahasan:</b><br>
+                        Kita gunakan identitas aljabar: $x^3+y^3 = (x+y)^3 - 3xy(x+y)$.<br>
+                        Substitusi nilai yang diketahui:<br>
+                        $35 = (5)^3 - 3xy(5)$<br>
+                        $35 = 125 - 15xy$<br>
+                        $15xy = 125 - 35 = 90 \implies xy = 6$.<br><br>
+                        Sekarang cari $x^2 + y^2$ menggunakan identitas $(x+y)^2 = x^2 + y^2 + 2xy$.<br>
+                        $5^2 = x^2 + y^2 + 2(6)$<br>
+                        $25 = x^2 + y^2 + 12 \implies x^2 + y^2 = 13$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 13 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Geometri Lanjut</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">13</div>
+                <div class="soal-konten">
+                    $ABCD$ adalah jajargenjang dengan luas 96 cm$^2$. Titik $E$ berada pada $AB$ sehingga $AE:EB = 1:1$. Titik $F$ adalah titik tengah $CD$. Luas segitiga $EFG$ (dengan $G$ adalah perpotongan $AF$ dan $DE$) adalah ...
+                    <div style="text-align: center; margin: 15px 0;">
+                        <!-- Simple SVG for Parallelogram -->
+                        <svg width="200" height="100" viewBox="0 0 250 100">
+                            <polygon points="40,90 140,90 160,10 60,10" fill="none" stroke="black" stroke-width="2"/>
+                            <text x="25" y="95">A</text> <text x="145" y="95">B</text>
+                            <text x="165" y="10">C</text> <text x="50" y="10">D</text>
+                            <!-- Midpoints E and F -->
+                            <circle cx="90" cy="90" r="2" fill="black"/> <text x="90" y="105">E</text>
+                            <circle cx="110" cy="10" r="2" fill="black"/> <text x="110" y="5">F</text>
+                            <!-- Lines AF and DE -->
+                            <line x1="40" y1="90" x2="110" y2="10" stroke="blue" stroke-width="1.5"/>
+                            <line x1="90" y1="90" x2="60" y2="10" stroke="blue" stroke-width="1.5"/>
+                            <text x="80" y="55" fill="red">G</text>
+                        </svg>
+                    </div>
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">8 cm$^2$</li>
+                        <li data-opt="b">10 cm$^2$</li>
+                        <li data-opt="c">12 cm$^2$</li>
+                        <li data-opt="d">16 cm$^2$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Pembahasan Visual:</b><br>
+                        1. Karena $E$ dan $F$ adalah titik tengah $AB$ dan $CD$, maka garis $EF$ membagi jajargenjang $ABCD$ menjadi dua jajargenjang yang kongruen: $AEFD$ dan $EBCF$.<br>
+                        2. Luas jajargenjang $AEFD$ adalah setengah dari luas total: $96 / 2 = 48$ cm$^2$.<br>
+                        3. Perhatikan jajargenjang $AEFD$. Garis $AF$ dan $DE$ adalah diagonal-diagonalnya. <br>
+                        4. Sifat penting jajargenjang: Diagonal-diagonal membagi jajargenjang menjadi 4 segitiga yang memiliki <b>luas yang sama</b>.<br>
+                        5. Segitiga $EFG$ adalah salah satu dari 4 segitiga tersebut.<br>
+                        6. Luas $\triangle EFG = \frac{1}{4} \times \text{Luas } AEFD = \frac{1}{4} \times 48 = 12$ cm$^2$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 14 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan (Modulo)</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">14</div>
+                <div class="soal-konten">
+                    Sisa pembagian $2^{2025} + 3^{2025}$ oleh 5 adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">0</li>
+                        <li data-opt="b">1</li>
+                        <li data-opt="c">2</li>
+                        <li data-opt="d">3</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Pembahasan:</b><br>
+                        Kita gunakan pola sisa pembagian (modulo 5):<br>
+                        - Pola pangkat 2: $2^1=2, 2^2=4, 2^3=3, 2^4=1$ (Siklus berulang tiap 4).<br>
+                        - Pangkat 2025 dibagi 4 bersisa 1. Maka $2^{2025} \equiv 2^1 \equiv 2 \pmod 5$.<br>
+                        - Pola pangkat 3: $3^1=3, 3^2=4, 3^3=2, 3^4=1$ (Siklus berulang tiap 4).<br>
+                        - Pangkat 2025 dibagi 4 bersisa 1. Maka $3^{2025} \equiv 3^1 \equiv 3 \pmod 5$.<br><br>
+                        Jumlahkan sisanya: $2 + 3 = 5$.<br>
+                        Karena 5 habis dibagi 5, maka sisa akhirnya adalah <b>0</b>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 15 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">15</div>
+                <div class="soal-konten">
+                    Jalur semut dari $(0,0)$ ke $(4,3)$ (langkah kanan/atas). Berapa banyak jalur jika <b>tidak boleh</b> melewati $(2,2)$?
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">35</li>
+                        <li data-opt="b">23</li>
+                        <li data-opt="c">17</li>
+                        <li data-opt="d">12</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Pembahasan:</b><br>
+                        Gunakan Prinsip Inklusi-Eksklusi: <b>Total Jalur - Jalur Dilarang</b>.<br>
+                        1. <b>Total Jalur:</b> Dari $(0,0)$ ke $(4,3)$ butuh 4 langkah Kanan (R) dan 3 langkah Atas (U). Total 7 langkah.<br>
+                           $C(7,3) = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35$.<br>
+                        2. <b>Jalur Lewat $(2,2)$:</b>
+                           - Tahap 1: $(0,0) \to (2,2)$. Langkah 2R, 2U. $C(4,2) = 6$.<br>
+                           - Tahap 2: $(2,2) \to (4,3)$. Langkah 2R, 1U. $C(3,1) = 3$.<br>
+                           - Total jalur dilarang = $6 \times 3 = 18$.<br>
+                        3. <b>Hasil:</b> $35 - 18 = 17$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- HALAMAN 5 -->
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+
+            <!-- SOAL 16 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Fungsi</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">16</div>
+                <div class="soal-konten">
+                    Jika $f(x) = \frac{x}{x-1}$, maka nilai dari $\underbrace{f(f(f(\dots f(2025)\dots)))}_{2024 \text{ kali}}$ adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">2025</li>
+                        <li data-opt="b">$\frac{2025}{2024}$</li>
+                        <li data-opt="c">$\frac{1}{2025}$</li>
+                        <li data-opt="d">1</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Pembahasan:</b><br>
+                        Cari pola komposisi fungsinya:<br>
+                        - $f(x) = \frac{x}{x-1}$<br>
+                        - $f(f(x)) = \frac{f(x)}{f(x)-1} = \frac{\frac{x}{x-1}}{\frac{x}{x-1} - 1}$<br>
+                        Kalikan atas dan bawah dengan $(x-1)$:<br>
+                        - $f(f(x)) = \frac{x}{x - (x-1)} = \frac{x}{1} = x$.<br>
+                        Ternyata, jika fungsi ini dikomposisikan 2 kali, ia kembali ke $x$ (Identitas).<br>
+                        Karena 2024 adalah bilangan genap (kelipatan 2), maka hasil akhirnya akan kembali ke nilai awal $x$.<br>
+                        Jadi jawabannya adalah 2025.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 17 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Geometri Segitiga</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">17</div>
+                <div class="soal-konten">
+                    Segitiga siku-siku bersisi 6 cm, 8 cm, 10 cm. Jari-jari lingkaran dalamnya adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">1 cm</li>
+                        <li data-opt="b">2 cm</li>
+                        <li data-opt="c">2,5 cm</li>
+                        <li data-opt="d">3 cm</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        Untuk segitiga siku-siku, terdapat rumus cepat mencari jari-jari lingkaran dalam ($r$):<br>
+                        $r = \frac{\text{Alas} + \text{Tinggi} - \text{Sisi Miring}}{2}$<br>
+                        Diketahui sisi-sisi adalah 6, 8, 10 (10 adalah sisi miring karena terbesar).<br>
+                        $r = \frac{6 + 8 - 10}{2} = \frac{4}{2} = 2$ cm.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+
+            <!-- SOAL 18 -->
+            <table class="soal-card"><tr><td>Topik</td><td>KPK & FPB</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">18</div>
+                <div class="soal-konten">
+                    Jika $\text{KPK}(a,b) = 72$ dan $a \times b = 432$, maka $\text{FPB}(a,b) = ...$
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">4</li>
+                        <li data-opt="b">6</li>
+                        <li data-opt="c">8</li>
+                        <li data-opt="d">12</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        Sifat fundamental Teori Bilangan:<br>
+                        $\text{KPK}(a,b) \times \text{FPB}(a,b) = a \times b$.<br>
+                        Substitusi nilai:<br>
+                        $72 \times \text{FPB} = 432$<br>
+                        $\text{FPB} = \frac{432}{72} = 6$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 19 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Peluang</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">19</div>
+                <div class="soal-konten">
+                    Dua dadu dilempar. Peluang hasil kali kedua mata dadu genap adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">1/4</li>
+                        <li data-opt="b">1/2</li>
+                        <li data-opt="c">3/4</li>
+                        <li data-opt="d">5/6</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Strategi Peluang Komplemen:</b><br>
+                        Daripada menghitung perkalian genap (Genap x Genap, Genap x Ganjil, Ganjil x Genap), lebih mudah menghitung lawannya.<br>
+                        Lawan dari Genap adalah Ganjil. Perkalian dua bilangan hanya ganjil jika KEDUANYA ganjil.<br>
+                        - Peluang dadu ganjil (1,3,5) = $3/6 = 1/2$.<br>
+                        - Peluang (Ganjil dan Ganjil) = $1/2 \times 1/2 = 1/4$.<br>
+                        Maka, Peluang Genap = $1 - 1/4 = 3/4$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+
+            <!-- SOAL 20 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Statistika</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">20</div>
+                <div class="soal-konten">
+                    Rata-rata 35 siswa = 78. Gabung Andi & Budi jadi 79. Nilai Andi 4 lebih tinggi dari Budi. Nilai Andi = ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">94,5</li>
+                        <li data-opt="b">96,5</li>
+                        <li data-opt="c">98,5</li>
+                        <li data-opt="d">100</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Pembahasan:</b><br>
+                        1. <b>Total Nilai Lama (35 siswa):</b> $35 \times 78 = 2730$.<br>
+                        2. <b>Total Nilai Baru (37 siswa):</b> $37 \times 79 = 2923$.<br>
+                        3. <b>Jumlah Nilai Andi + Budi:</b> Selisih total = $2923 - 2730 = 193$.<br>
+                        4. <b>Sistem Persamaan:</b><br>
+                           $A + B = 193$<br>
+                           $A = B + 4$<br>
+                           Substitusi: $(B + 4) + B = 193 \implies 2B = 189 \implies B = 94,5$.<br>
+                           $A = 94,5 + 4 = 98,5$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 21 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Aljabar Teleskoping</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">21</div>
+                <div class="soal-konten">
+                    Hasil dari $\frac{1}{1\times 2} + \frac{1}{2\times 3} + \dots + \frac{1}{2024 \times 2025}$ adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">$\frac{2023}{2024}$</li>
+                        <li data-opt="b">$\frac{2024}{2025}$</li>
+                        <li data-opt="c">$\frac{2025}{2026}$</li>
+                        <li data-opt="d">$1$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        Gunakan sifat Teleskoping: $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$.<br>
+                        Deret menjadi:<br>
+                        $(1 - \frac{1}{2}) + (\frac{1}{2} - \frac{1}{3}) + (\frac{1}{3} - \frac{1}{4}) + \dots + (\frac{1}{2024} - \frac{1}{2025})$.<br>
+                        Perhatikan bahwa suku tengah saling menghilangkan $(-1/2 + 1/2 = 0, \text{dst})$.<br>
+                        Yang tersisa hanya Suku Pertama dan Suku Terakhir:<br>
+                        $1 - \frac{1}{2025} = \frac{2024}{2025}$.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <!-- HALAMAN 6 -->
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+
+            <!-- SOAL 22 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Sudut Poligon</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">22</div>
+                <div class="soal-konten">
+                    Besar masing-masing sudut dalam dari segilima beraturan adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">$108^{\circ}$</li>
+                        <li data-opt="b">$120^{\circ}$</li>
+                        <li data-opt="c">$135^{\circ}$</li>
+                        <li data-opt="d">$144^{\circ}$</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: A</b><br />
+                        <b>Pembahasan:</b><br>
+                        Rumus besar satu sudut dalam segi-$n$ beraturan:<br>
+                        $\text{Sudut} = \frac{(n-2) \times 180^{\circ}}{n}$.<br>
+                        Untuk segilima ($n=5$):<br>
+                        $\text{Sudut} = \frac{(5-2) \times 180}{5} = \frac{3 \times 180}{5} = 3 \times 36 = 108^{\circ}$.
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOAL 23 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Prinsip Sarang Merpati</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">23</div>
+                <div class="soal-konten">
+                    Dalam kotak ada 8 merah, 7 biru, 6 kuning. Minimal ambil berapa bola agar pasti dapat 3 bola sewarna?
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">3</li>
+                        <li data-opt="b">7</li>
+                        <li data-opt="c">9</li>
+                        <li data-opt="d">22</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: B</b><br />
+                        <b>Pembahasan:</b><br>
+                        Gunakan prinsip <i>Worst Case Scenario</i> (Skenario Terburuk/Paling Sial).<br>
+                        Kita ingin 3 bola sewarna. Kesialan maksimal terjadi jika kita mengambil 2 bola dari setiap warna, tapi belum ada warna yang mencapai 3.<br>
+                        - Ambil 2 Merah<br>
+                        - Ambil 2 Biru<br>
+                        - Ambil 2 Kuning<br>
+                        Total = 6 bola. Saat ini belum ada yang berjumlah 3.<br>
+                        Pengambilan ke-7 (bola apapun warnanya) pasti akan melengkapi salah satu warna menjadi 3 bola.<br>
+                        Jadi minimal ambil 7 bola.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+
+            <!-- SOAL 24 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">24</div>
+                <div class="soal-konten">
+                    Banyaknya pasangan bulat positif $(x,y)$ untuk $\frac{1}{x} + \frac{1}{y} = \frac{1}{5}$ adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">1</li>
+                        <li data-opt="b">2</li>
+                        <li data-opt="c">3</li>
+                        <li data-opt="d">4</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: C</b><br />
+                        <b>Pembahasan:</b><br>
+                        Ubah bentuk persamaan pecahan menjadi perkalian faktor (Trik Simon):<br>
+                        $\frac{x+y}{xy} = \frac{1}{5} \implies 5x + 5y = xy \implies xy - 5x - 5y = 0$.<br>
+                        Tambahkan 25 ke kedua ruas agar bisa difaktorkan:<br>
+                        $xy - 5x - 5y + 25 = 25$<br>
+                        $(x-5)(y-5) = 25$.<br>
+                        Kita cari pasangan faktor positif dari 25:<br>
+                        1. $1 \times 25 \implies x-5=1, y-5=25 \implies (6, 30)$<br>
+                        2. $5 \times 5 \implies x-5=5, y-5=5 \implies (10, 10)$<br>
+                        3. $25 \times 1 \implies x-5=25, y-5=1 \implies (30, 6)$<br>
+                        Jadi ada 3 pasangan solusi.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+            <div class="header-top-box">
+              <div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika</div></div>
+              <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo"/>
+            </div>
+            <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4 </div></div>
+        </header>
+        <div class="content-wrapper">
+            <!-- SOAL 25 -->
+            <table class="soal-card"><tr><td>Topik</td><td>Logika</td></tr></table>
+            <div class="soal-pembahasan">
+                <div class="soal-nomor">25</div>
+                <div class="soal-konten">
+                    Buku dinomori dari 1. Satu lembar hilang. Sisa jumlah halaman = 2025. Jumlah halaman pada lembar yang hilang adalah ...
+                    <ul class="pilihan-ganda">
+                        <li data-opt="a">41</li>
+                        <li data-opt="b">43</li>
+                        <li data-opt="c">53</li>
+                        <li data-opt="d">55</li>
+                    </ul>
+                    <div class="pembahasan-detail">
+                        <b class="jawaban">Jawaban: D</b><br />
+                        <b>Analisis Logika:</b><br>
+                        1. Jumlah halaman 1 sampai $n$ adalah $S_n = \frac{n(n+1)}{2}$.<br>
+                        2. Kita cari $n$ yang jumlahnya sedikit di atas 2025.<br>
+                           Coba $n=63 \to S_{63} = 2016$ (Kurang dari 2025, tidak mungkin).<br>
+                           Coba $n=64 \to S_{64} = \frac{64 \times 65}{2} = 2080$.<br>
+                        3. Selisih = Total Seharusnya - Total Sisa = $2080 - 2025 = 55$.<br>
+                        4. Cek validitas: Satu lembar terdiri dari 2 halaman berurutan (Ganjil, Genap). Misal $k$ dan $k+1$. Jumlahnya $2k+1$ (pasti ganjil).<br>
+                           $55$ adalah bilangan ganjil, jadi valid.<br>
+                           Halaman yang hilang adalah 27 dan 28 ($27+28=55$).
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="page-footer"><span class="footer-content"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></span></footer>
+      </section>
+
+    </div>
+  </body>
+</html>
