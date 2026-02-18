@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS12BS - PERTEMUAN 12 - Latihan Soal Campuran - 4 - Bank Aktivitas</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.4;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 1.5cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .page-header {
+        margin: -1.5cm -1.5cm 0 -1.5cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 1.5cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+      .header-bottom-box {
+        padding: 0 1.5cm 15px 1.5cm;
+        text-align: left;
+      }
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 15px;
+        display: flex;
+        gap: 1cm;
+      }
+      .column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .soal-container {
+        page-break-inside: avoid;
+        border-bottom: 1px dashed #eee;
+        padding-bottom: 3px;
+      }
+      .soal-container:last-child {
+        border-bottom: none;
+      }
+      .soal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 12pt;
+        min-width: 25px;
+        color: var(--header-title-color);
+      }
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+      }
+      .soal-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 8px auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 2px;
+      }
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 8px;
+      }
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 2px;
+      }
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 20px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 5px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      @media print {
+        @page { size: A4; margin: 0; }
+        body { background-color: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .page { box-shadow: none; margin: 0; width: 21cm; min-height: 29.7cm; page-break-after: always; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: Soal 1-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 1 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">1.</div>
+                <div class="soal-konten">
+                  Jika $A, B$ memenuhi sistem persamaan:
+                  \[
+                  \begin{cases}
+                  \frac{2A}{A-2B}-\frac{6B}{A+2B}=3\\
+                  \frac{-A}{A-2B}+\frac{6B}{A+2B}=-1
+                  \end{cases}
+                  \]
+                  Maka nilai dari $\displaystyle \frac{AB}{A^{2}-4B^{2}} = \dots$
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$\frac{1}{3}$</li>
+                    <li data-opt="b">$-3$</li>
+                    <li data-opt="c">$\frac{1}{6}$</li>
+                    <li data-opt="d">$-6$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 2 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">2.</div>
+                <div class="soal-konten">
+                  Dua buah persegi memiliki perbandingan keliling $4:5$. Perbandingan luas kedua persegi tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$5:4$</li>
+                    <li data-opt="b">$16:25$</li>
+                    <li data-opt="c">$25:16$</li>
+                    <li data-opt="d">$2:5$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 3 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">3.</div>
+                <div class="soal-konten">
+                  Diberikan sebuah belah ketupat $ABCD$ dengan $AC$ dan $BD$ sebagai diagonalnya. Jika panjang $AC=10$ cm dan luas belah ketupat tersebut $120 \text{ cm}^{2}$, maka kelilingnya adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">60 cm</li>
+                    <li data-opt="b">56 cm</li>
+                    <li data-opt="c">52 cm</li>
+                    <li data-opt="d">46 cm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 4 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">4.</div>
+                <div class="soal-konten">
+                  Diketahui persamaan-persamaan garis lurus berikut:<br>
+                  (1) $2x+3y=6$; <br>
+                  (2) $3x+2y=6$; <br>
+                  (3) $2x-3y=6$; <br>
+                  (4) $3x-2y=6$.<br>
+                  Pernyataan yang benar mengenai hubungan antargaris tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">(1) & (2) serta (2) & (4) tegak lurus</li>
+                    <li data-opt="b">(1) & (3) serta (2) & (4) tegak lurus</li>
+                    <li data-opt="c">(2) & (3) serta (1) & (4) tegak lurus</li>
+                    <li data-opt="d">Semua garis saling tegak lurus</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 5 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">5.</div>
+                <div class="soal-konten">
+                  Untuk setiap $x$ bilangan real, maka bentuk fungsi $f(x) = \frac{6x-8}{2x+4}$ tidak akan pernah bernilai sama dengan ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$-2$</li>
+                    <li data-opt="b">$0$</li>
+                    <li data-opt="c">$1$</li>
+                    <li data-opt="d">$3$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 6 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">6.</div>
+                <div class="soal-konten">
+                  Bentuk aljabar $\displaystyle \frac{(x+y)^{2}-2xy}{xy}$ setara dengan ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$\frac{x}{y}+\frac{y}{x}$</li>
+                    <li data-opt="b">$\frac{x}{y}-\frac{y}{x}$</li>
+                    <li data-opt="c">$\frac{y}{x}-\frac{x}{y}$</li>
+                    <li data-opt="d">$\frac{1}{x}-\frac{1}{y}$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 7 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">7.</div>
+                <div class="soal-konten">
+                  Garis dengan persamaan $4x-5y=1$ dan garis $3x+ay=2$ tidak akan pernah berpotongan (sejajar) untuk nilai $a = \dots$
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$-5/4$</li>
+                    <li data-opt="b">$4/5$</li>
+                    <li data-opt="c">$-15/4$</li>
+                    <li data-opt="d">$-12/5$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 2: Soal 9-16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 8 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">8.</div>
+                <div class="soal-konten">
+                  $P$ adalah pusat lingkaran yang kelilingnya $4\pi$ cm. Diketahui titik $A$ dan $B$ pada lingkaran dan garis $PB$ diperpanjang menjadi diameter. Jika $\angle APB=50^{\circ}$, luas juring pelurusnya (yang diarsir) adalah ... $\pi \text{ cm}^{2}$.
+                  <img
+                  src="https://imgix3.ruangguru.com/assets/miscellaneous/png_2fwd9w_8042.png"
+                  class="soal-img"
+                  width="150px"
+                  >
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$1\frac{1}{3}$</li>
+                    <li data-opt="b">$1\frac{4}{9}$</li>
+                    <li data-opt="c">$\frac{1}{3}$</li>
+                    <li data-opt="d">$1$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 9 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">9.</div>
+                <div class="soal-konten">
+                  Titik $A(5,1)$ dicerminkan terhadap garis $x=a$ kemudian ditranslasikan oleh $T(-3,4)$ menghasilkan bayangan $A'(-4,5)$. Nilai $a$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">1</li>
+                    <li data-opt="b">2</li>
+                    <li data-opt="c">3</li>
+                    <li data-opt="d">4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 10 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">10.</div>
+                <div class="soal-konten">
+                  Nilai $ab$ jika diketahui persamaan $\sqrt{9+a-6\sqrt{ab}} = 3-\sqrt{2}$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">1</li>
+                    <li data-opt="b">2</li>
+                    <li data-opt="c">4</li>
+                    <li data-opt="d">8</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 11 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">11.</div>
+                <div class="soal-konten">
+                  Sebuah bilangan disebut "Bilangan Stabil" jika jumlah digit-digitnya membagi bilangan itu sendiri. Berapakah bilangan bulat positif 2 digit terbesar yang merupakan "Bilangan Stabil"?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">90</li>
+                    <li data-opt="b">84</li>
+                    <li data-opt="c">81</li>
+                    <li data-opt="d">80</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 12 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">12.</div>
+                <div class="soal-konten">
+                  Diketahui $x$ dan $y$ adalah bilangan real yang memenuhi sistem persamaan:
+                  \[ \begin{cases} x + y = 5 \\ x^3 + y^3 = 35 \end{cases} \]
+                  Nilai dari $x^2 + y^2$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">13</li>
+                    <li data-opt="b">15</li>
+                    <li data-opt="c">17</li>
+                    <li data-opt="d">19</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 13 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">13.</div>
+                <div class="soal-konten">
+                  Perhatikan gambar berikut. $ABCD$ adalah jajargenjang dengan luas 96 cm$^2$. Titik $E$ berada pada $AB$ sehingga $AE:EB = 1:1$ (E titik tengah AB). Titik $F$ adalah titik tengah $CD$. Luas segitiga $EFG$ (dengan $G$ adalah perpotongan $AF$ dan $DE$) adalah ...
+                  <div style="text-align: center; margin: 15px 0;">
+                    <svg width="150" height="75" viewBox="0 0 250 100">
+                      <polygon points="40,90 140,90 160,10 60,10" fill="none" stroke="black" stroke-width="2"/>
+                      <text x="30" y="95">A</text> <text x="145" y="95">B</text>
+                      <text x="165" y="10">C</text> <text x="50" y="10">D</text>
+                      <circle cx="90" cy="90" r="2" fill="black"/> <text x="90" y="105">E</text>
+                      <circle cx="110" cy="10" r="2" fill="black"/> <text x="110" y="5">F</text>
+                      <line x1="40" y1="90" x2="110" y2="10" stroke="blue" stroke-width="1.5"/>
+                      <line x1="90" y1="90" x2="60" y2="10" stroke="blue" stroke-width="1.5"/>
+                      <text x="80" y="50" fill="red">G</text>
+                    </svg>
+                  </div>
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">8 cm$^2$</li>
+                    <li data-opt="b">10 cm$^2$</li>
+                    <li data-opt="c">12 cm$^2$</li>
+                    <li data-opt="d">16 cm$^2$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN 3: Soal 17-25 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 14 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">14.</div>
+                <div class="soal-konten">
+                  Sisa pembagian $2^{2025} + 3^{2025}$ oleh 5 adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">0</li>
+                    <li data-opt="b">1</li>
+                    <li data-opt="c">2</li>
+                    <li data-opt="d">3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 15 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">15.</div>
+                <div class="soal-konten">
+                  Seekor semut bergerak dari titik $(0,0)$ ke titik $(4,3)$ pada bidang koordinat. Semut hanya boleh bergerak ke kanan (sumbu x positif) atau ke atas (sumbu y positif) sejauh 1 satuan setiap langkah. Berapa banyak jalur berbeda yang dapat ditempuh semut jika ia <b>tidak boleh</b> melewati titik $(2,2)$?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">35</li>
+                    <li data-opt="b">23</li>
+                    <li data-opt="c">17</li>
+                    <li data-opt="d">12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 16 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">16.</div>
+                <div class="soal-konten">
+                  Jika $f(x) = \frac{x}{x-1}$, maka nilai dari $\underbrace{f(f(f(\dots f(2025)\dots)))}_{2024 \text{ kali}}$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">2025</li>
+                    <li data-opt="b">$\frac{2025}{2024}$</li>
+                    <li data-opt="c">$\frac{1}{2025}$</li>
+                    <li data-opt="d">1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 17 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">17.</div>
+                <div class="soal-konten">
+                  Sebuah segitiga siku-siku memiliki panjang sisi 6 cm, 8 cm, dan 10 cm. Panjang jari-jari lingkaran dalam segitiga tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">1 cm</li>
+                    <li data-opt="b">2 cm</li>
+                    <li data-opt="c">2,5 cm</li>
+                    <li data-opt="d">3 cm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            <!-- Soal 18 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">18.</div>
+                <div class="soal-konten">
+                  Diketahui dua bilangan bulat positif $a$ dan $b$. Jika $\text{KPK}(a,b) = 72$ dan $a \times b = 432$, maka nilai $\text{FPB}(a,b)$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">4</li>
+                    <li data-opt="b">6</li>
+                    <li data-opt="c">8</li>
+                    <li data-opt="d">12</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 19 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">19.</div>
+                <div class="soal-konten">
+                  Dua buah dadu setimbang dilempar bersamaan satu kali. Peluang hasil kali kedua mata dadu tersebut merupakan bilangan genap adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">1/4</li>
+                    <li data-opt="b">1/2</li>
+                    <li data-opt="c">3/4</li>
+                    <li data-opt="d">5/6</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 20 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">20.</div>
+                <div class="soal-konten">
+                  Rata-rata nilai matematika dari 35 siswa adalah 78. Jika nilai dua siswa yang mengikuti susulan, yaitu Andi dan Budi, digabungkan, rata-rata kelas menjadi 79. Jika nilai Andi 4 poin lebih tinggi dari nilai Budi, maka nilai Andi adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">94,5</li>
+                    <li data-opt="b">96,5</li>
+                    <li data-opt="c">98,5</li>
+                    <li data-opt="d">100</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 21 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">21.</div>
+                <div class="soal-konten">
+                  Hasil dari penjumlahan berikut adalah:
+                  \[ \frac{1}{1\times 2} + \frac{1}{2\times 3} + \frac{1}{3\times 4} + \dots + \frac{1}{2024 \times 2025} \]
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$\frac{2023}{2024}$</li>
+                    <li data-opt="b">$\frac{2024}{2025}$</li>
+                    <li data-opt="c">$\frac{2025}{2026}$</li>
+                    <li data-opt="d">$1$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Mengajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">OSNK SMP | Pertemuan 12 | Latihan Soal Campuran - 4</div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <!-- KOLOM KIRI -->
+          <div class="column">
+            <!-- Soal 22 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">22.</div>
+                <div class="soal-konten">
+                  Besar masing-masing sudut dalam dari sebuah segilima beraturan (pentagon) adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">$108^{\circ}$</li>
+                    <li data-opt="b">$120^{\circ}$</li>
+                    <li data-opt="c">$135^{\circ}$</li>
+                    <li data-opt="d">$144^{\circ}$</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 23 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">23.</div>
+                <div class="soal-konten">
+                  Di dalam sebuah kotak terdapat 8 bola merah, 7 bola biru, dan 6 bola kuning. Berapa jumlah minimal bola yang harus diambil secara acak (dengan mata tertutup) untuk memastikan terambil setidaknya 3 bola dengan warna yang sama?
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">3</li>
+                    <li data-opt="b">7</li>
+                    <li data-opt="c">9</li>
+                    <li data-opt="d">22</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN -->
+          <div class="column">
+            
+            <!-- Soal 24 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">24.</div>
+                <div class="soal-konten">
+                  Banyaknya pasangan bilangan bulat positif $(x,y)$ yang memenuhi persamaan $\frac{1}{x} + \frac{1}{y} = \frac{1}{5}$ adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">1</li>
+                    <li data-opt="b">2</li>
+                    <li data-opt="c">3</li>
+                    <li data-opt="d">4</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Soal 25 -->
+            <div class="soal-container">
+              <div class="soal-header">
+                <div class="soal-nomor">25.</div>
+                <div class="soal-konten">
+                  Sebuah buku memiliki halaman yang dinomori mulai dari 1. Satu lembar kertas (terdiri dari 2 halaman bolak-balik) sobek dan hilang. Jika jumlah nomor halaman yang tersisa adalah 2025, maka jumlah nomor halaman pada lembar yang hilang tersebut adalah ...
+                  <ul class="pilihan-ganda">
+                    <li data-opt="a">41</li>
+                    <li data-opt="b">43</li>
+                    <li data-opt="c">53</li>
+                    <li data-opt="d">55</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+    </div>
+  </body>
+</html>
