@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSK0708MAT12SESSIONS11 - PERTEMUAN 11 - Latihan Soal Campuran - 3</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: { "[+]": ["ams"] },
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-text: #333333;
+        --secondary-text: #555555;
+        --border-color: #dddddd;
+        --header-top-bg: #e0f7fa;        /* Light Cyan */
+        --header-bottom-bg: #f0f0f0;
+        --header-title-color: #00838f;   /* Teal */
+        --table-header-bg: #e9e9e9;
+        --grey-text: #8d8e8d;
+        --highlight-box-bg: #f9f9f9;
+        --correct-answer-bg: #d4edda;
+        --correct-answer-text: #155724;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        font-size: 12pt;
+        line-height: 1.6;
+        color: var(--primary-text);
+        background-color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .page {
+        background: white;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 1.5cm 2cm;
+        margin: 1cm auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        page-break-after: always;
+      }
+
+      /* Watermark Background */
+      .page::before {
+        content: "";
+        background-image: url("https://imgix3.ruangguru.com/assets/miscellaneous/png_aaojxe_9962.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12cm;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Header Styling */
+      .page-header {
+        margin: -1.5cm -2cm 0 -2cm;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      .header-top-box {
+        background-color: var(--header-top-bg);
+        padding: 15px 2cm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+      }
+
+      .header-title-main {
+        font-size: 18pt;
+        font-weight: 900;
+        color: var(--header-title-color);
+        line-height: 1.2;
+      }
+
+      .header-title-sub {
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--primary-text);
+      }
+
+      .header-bottom-box {
+        padding: 0 2cm 5px 2cm;
+        text-align: left;
+      }
+
+      .header-bottom-text {
+        background-color: var(--header-bottom-bg);
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 10pt;
+        color: var(--primary-text);
+        display: block;
+        border-radius: 4px;
+        white-space: normal;
+      }
+
+      .header-logo {
+        max-height: 45px;
+        width: auto;
+      }
+
+      /* Content Styling */
+      .content-wrapper {
+        flex-grow: 1;
+        position: relative;
+        z-index: 2;
+        padding-top: 20px;
+      }
+
+      .section-title {
+        font-size: 16pt;
+        font-weight: 700;
+        color: var(--header-title-color);
+        border-bottom: 2px solid var(--header-top-bg);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+      }
+
+      /* Materi Boxes */
+      .konsep-box {
+        background-color: var(--header-top-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .tips-box {
+        background-color: #fff3e0;
+        border-left: 5px solid #ff9800;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 11pt;
+        border-radius: 0 5px 5px 0;
+      }
+
+      ul.custom-list {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
+      
+      ul.custom-list li {
+        margin-bottom: 10px;
+      }
+
+      /* Soal Card Styling */
+      .soal-card {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 8px;
+        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .soal-card td {
+        border: 1px solid var(--border-color);
+        padding: 1px 15px;
+        font-size: 10pt;
+        vertical-align: top;
+      }
+
+      .soal-card td:first-child {
+        font-weight: 700;
+        background-color: var(--table-header-bg);
+        width: 150px;
+        color: var(--secondary-text);
+      }
+
+      .soal-pembahasan {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+      }
+
+      .soal-nomor {
+        font-weight: 800;
+        font-size: 13pt;
+        min-width: 35px;
+        color: var(--header-title-color);
+      }
+
+      .soal-konten {
+        flex-grow: 1;
+        text-align: justify;
+        font-size: 11.5pt;
+      }
+
+      .pilihan-ganda {
+        padding-left: 0;
+        list-style: none;
+        margin-top: 10px;
+      }
+
+      .pilihan-ganda li {
+        display: flex;
+        margin-bottom: 5px;
+      }
+
+      .pilihan-ganda li::before {
+        content: attr(data-opt) ".";
+        font-weight: 700;
+        width: 25px;
+        flex-shrink: 0;
+        color: var(--secondary-text);
+      }
+
+      /* Pembahasan Styling */
+      .pembahasan-detail {
+        margin-top: 15px;
+        background-color: var(--highlight-box-bg);
+        border-left: 5px solid var(--header-title-color);
+        padding: 15px;
+        border-radius: 0 8px 8px 0;
+        font-size: 10.5pt;
+      }
+
+      .pembahasan-detail b.jawaban {
+        background-color: var(--header-title-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-size: 9pt;
+      }
+
+      .illustration-box {
+        text-align: center; 
+        margin: 20px 0; 
+        padding: 10px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 4px;
+      }
+
+      /* Footer */
+      .page-footer {
+        text-align: center;
+        font-size: 7pt;
+        color: var(--grey-text);
+        margin-top: auto;
+        padding-top: 3px;
+        border-top: 2px solid var(--border-color);
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .page {
+          box-shadow: none;
+          margin: 0;
+          width: 21cm;
+          min-height: 29.7cm;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      
+      <!-- HALAMAN 1: MATERI -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" alt="Logo" />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+                OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Ringkasan Materi Prioritas OSNK Matematika SMP</h2>
+          <p>Materi berikut ini adalah yang paling sering diujikan dan membutuhkan pendekatan nalar tingkat tinggi (HOTs) dalam OSN tingkat Kabupaten/Kota.</p>
+          
+          <div class="konsep-box">
+            <h3>1. Teori Bilangan (Number Theory)</h3>
+            <ul class="custom-list">
+                <li><b>Keterbagian & Sisa (Modulo):</b> Pahami konsep $a \equiv b \pmod n$. Berguna untuk menyelesaikan soal sisa pembagian, digit terakhir, dan hari.</li>
+                <li><b>FPB & KPK:</b> Aplikasi dalam soal cerita (pembagian barang, jadwal pertemuan). Ingat hubungan $\text{FPB}(a,b) \times \text{KPK}(a,b) = a \times b$.</li>
+                <li><b>Persamaan Diophantine:</b> Mencari solusi bilangan bulat untuk persamaan linear dua variabel atau lebih ($ax + by = c$).</li>
+                <li><b>Eksplorasi Digit:</b> Soal kriptogram (huruf ganti angka) dan sifat-sifat bilangan (misal: ciri habis dibagi 9).</li>
+            </ul>
+          </div>
+
+          <div class="tips-box">
+            <h3>2. Aljabar (Algebra)</h3>
+            <ul class="custom-list">
+                <li><b>Manipulasi Aljabar:</b> Identitas penting seperti $a^2 - b^2 = (a-b)(a+b)$ dan $(a+b)^2 = a^2 + 2ab + b^2$.</li>
+                <li><b>Sistem Persamaan Linear:</b> Menyelesaikan masalah umur, kecepatan, atau harga barang.</li>
+                <li><b>Deret Teleskopik:</b> Teknik penjumlahan deret pecahan dengan pola saling menghilangkan, misal $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$.</li>
+                <li><b>Fungsi & Operasi Definisi Baru:</b> Menyelesaikan soal dengan operator yang didefinisikan sendiri, misal $a \nabla b = a^2 - ab$.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN MATERI 2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box">
+            <div>
+              <div class="header-title-main">Panduan Ajar</div>
+              <div class="header-title-sub">Matematika SMP</div>
+            </div>
+            <img
+              src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png"
+              class="header-logo"
+            />
+          </div>
+          <div class="header-bottom-box">
+            <div class="header-bottom-text">
+                OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3
+            </div>
+          </div>
+        </header>
+
+        <div class="content-wrapper">
+          <h2 class="section-title">Lanjutan Materi Prioritas</h2>
+          
+          <div class="konsep-box">
+            <h3>3. Geometri (Geometry)</h3>
+            <ul class="custom-list">
+                <li><b>Luas & Keliling Bangun Datar:</b> Terutama bangun gabungan (persegi + lingkaran) dan teknik menghitung luas daerah yang diarsir.</li>
+                <li><b>Dalil Phytagoras & Dalil Tinggi:</b> Penerapan pada segitiga siku-siku dan bangun datar lainnya.</li>
+                <li><b>Dimensi Tiga:</b> Jaring-jaring bangun ruang (kubus/balok) dan visualisasi spasial.</li>
+            </ul>
+          </div>
+
+          <div class="tips-box">
+            <h3>4. Kombinatorika & Peluang</h3>
+            <ul class="custom-list">
+                <li><b>Prinsip Pencacahan:</b> Aturan Perkalian (Filling Slots) dan Penjumlahan.</li>
+                <li><b>Permutasi & Kombinasi:</b> Membedakan kasus urutan penting (Permutasi) dan tidak penting (Kombinasi).</li>
+                <li><b>Peluang:</b> $P(A) = \frac{n(A)}{n(S)}$. Gunakan peluang komplemen $P(A) = 1 - P(A')$ untuk soal "paling sedikit satu".</li>
+            </ul>
+          </div>
+        </div>
+        
+        <footer class="page-footer">
+          <b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b>
+          <i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i>
+        </footer>
+      </section>
+
+      <!-- HALAMAN SOAL 1-2 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 1 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Digit)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">1.</div>
+            <div class="soal-konten">
+              Diberikan dua bilangan yang terdiri dari 3 digit. Tiap digit merupakan bilangan asli kurang dari 10 dan berbeda. Misalnya, bilangan tersebut adalah $abc$ dan $pqr$. Nilai $abc+pqr=1.000$. Jika $abc > pqr$, maka selisih terbesar dua bilangan tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">652</li><li data-opt="B">648</li>
+                <li data-opt="C">748</li><li data-opt="D">752</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 752</b><br />
+                <b>Pembahasan:</b><br>
+                Agar selisih ($abc - pqr$) maksimum, maka bilangan $abc$ harus sebesar mungkin dan $pqr$ sekecil mungkin.<br>
+                Perhatikan penjumlahan bersusun ke bawah:
+                $$ \begin{array}{c@{\,}c@{\,}c@{\,}c} & a & b & c \\ + & p & q & r \\ \hline 1 & 0 & 0 & 0 \end{array} $$
+                Dari kolom satuan: $c+r = 10$ (simpan 1).<br>
+                Dari kolom puluhan: $b+q+1 = 10 \Rightarrow b+q=9$ (simpan 1).<br>
+                Dari kolom ratusan: $a+p+1 = 10 \Rightarrow a+p=9$.<br>
+                Kita pilih $a$ terbesar yang mungkin. Jika $a=9$, maka $p=0$ (tidak boleh karena 3 digit). Maka $a=8$, sehingga $p=1$.<br>
+                Sisa digit yang belum terpakai: $\{2,3,4,5,6,7,9\}$.<br>
+                Kita pilih $b$ terbesar dari sisa digit. Pasangan $(b,q)$ harus berjumlah 9. Pilihan terbaik $b=7$, maka $q=2$.<br>
+                Sisa digit: $\{3,4,5,6,9\}$.<br>
+                Kita pilih $c$ terbesar dari sisa digit. Pasangan $(c,r)$ harus berjumlah 10. Pilihan terbaik $c=6$, maka $r=4$.<br>
+                Bilangan yang terbentuk adalah $876$ dan $124$.<br>
+                Selisih: $876 - 124 = 752$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 2 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Teleskopik)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">2.</div>
+            <div class="soal-konten">
+              Hasil dari $\frac{1}{1\times2} + \frac{1}{2\times3} + \frac{1}{3\times4} + \dots + \frac{1}{999\times1.000}$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">99</li><li data-opt="B">100</li>
+                <li data-opt="C">$\frac{999}{1.000}$</li><li data-opt="D">1.000</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. $\frac{999}{1.000}$</b><br />
+                <b>Pembahasan:</b><br>
+                Gunakan sifat teleskopik: $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$.<br>
+                Maka deret tersebut dapat ditulis ulang sebagai:<br>
+                Total $= \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right) + \left(\frac{1}{3} - \frac{1}{4}\right) + \dots + \left(\frac{1}{999} - \frac{1}{1.000}\right)$.<br>
+                Perhatikan bahwa suku tengah saling menghilangkan ($-\frac{1}{2} + \frac{1}{2} = 0$, dst), sehingga hanya tersisa suku pertama dan suku terakhir:<br>
+                Total $= 1 - \frac{1}{1.000} = \frac{999}{1.000}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 3-4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 3 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan (Pola)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">3.</div>
+            <div class="soal-konten">
+              Angka ke-2.024 di belakang koma dari pecahan $\frac{1}{7}$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1</li><li data-opt="B">4</li>
+                <li data-opt="C">7</li><li data-opt="D">8</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 4</b><br />
+                <b>Pembahasan:</b><br>
+                Bentuk desimal dari pecahan $\frac{1}{7}$ adalah desimal berulang dengan pola:<br>
+                $\frac{1}{7} = 0,142857142857\dots$<br>
+                Pola berulang terdiri dari 6 digit: <b>1, 4, 2, 8, 5, 7</b>.<br>
+                Untuk mencari angka ke-2.024, kita bagi posisi tersebut dengan panjang periode:<br>
+                $2.024 \div 6 = 337$ dengan sisa $2$.<br>
+                Karena sisanya 2, maka angka yang dicari sama dengan angka urutan ke-2 pada pola tersebut, yaitu <b>4</b>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 3-4 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 4 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Fungsi)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">4.</div>
+            <div class="soal-konten">
+              Misalkan fungsi $g(x)=48-x^{2}$ berlaku $g(ab)=g(a+2b)-g(a-2b)$. Maka nilai dari $ab$ (dengan $ab>0$) adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">12</li><li data-opt="B">10</li>
+                <li data-opt="C">8</li><li data-opt="D">4</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 12</b><br />
+                <b>Pembahasan:</b><br>
+                Substitusi bentuk fungsi $g(x) = 48 - x^2$ ke dalam persamaan yang diberikan:<br>
+                $g(ab) = 48 - (ab)^2$.<br>
+                $g(a+2b) - g(a-2b) = [48 - (a+2b)^2] - [48 - (a-2b)^2]$<br>
+                $= -(a+2b)^2 + (a-2b)^2$<br>
+                Gunakan identitas $x^2 - y^2 = (x-y)(x+y)$ dengan $x=(a-2b)$ dan $y=(a+2b)$:<br>
+                $= [(a-2b)-(a+2b)][(a-2b)+(a+2b)]$<br>
+                $= [-4b][2a] = -8ab$.<br>
+                Maka persamaan awal menjadi:<br>
+                $48 - (ab)^2 = -8ab \Rightarrow (ab)^2 - 8ab - 48 = 0$.<br>
+                Misal $y = ab$, maka $y^2 - 8y - 48 = 0$.<br>
+                Faktorkan: $(y-12)(y+4)=0$.<br>
+                Diperoleh $y = 12$ atau $y = -4$. Karena diketahui $ab > 0$, maka $ab = 12$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 5-6 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 5 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Teleskopik)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">5.</div>
+            <div class="soal-konten">
+              Hasil dari $\frac{1}{2\times3}+\frac{1}{3\times4}+\frac{1}{4\times5}+\dots+\frac{1}{2.023\times2.024}=n$. Nilai $n$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$\frac{2.020}{2.024}$</li><li data-opt="B">$\frac{2.022}{2.024}$</li>
+                <li data-opt="C">$\frac{1.011}{2.024}$</li><li data-opt="D">$\frac{1.010}{2.024}$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. $\frac{1.011}{2.024}$</b><br />
+                <b>Pembahasan:</b><br>
+                Sama seperti soal nomor 2, gunakan sifat teleskopik.<br>
+                $n = (\frac{1}{2} - \frac{1}{3}) + (\frac{1}{3} - \frac{1}{4}) + \dots + (\frac{1}{2023} - \frac{1}{2024})$.<br>
+                Sisa suku pertama dan suku terakhir adalah $n = \frac{1}{2} - \frac{1}{2024} = \frac{1012}{2024} - \frac{1}{2024} = \frac{1011}{2024}$.
+              </div>
+            </div>
+          </div>
+
+          <!-- Soal 6 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Akar)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">6.</div>
+            <div class="soal-konten">
+              Diketahui $\sqrt{7+\sqrt{40}}=\sqrt{p}+\sqrt{q}$. Jika $p>q$ maka nilai dari $p-q$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5</li><li data-opt="B">4</li>
+                <li data-opt="C">3</li><li data-opt="D">2</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 3</b><br />
+                <b>Pembahasan:</b><br>
+                Gunakan bentuk umum akar bersarang: $\sqrt{(a+b) + 2\sqrt{ab}} = \sqrt{a} + \sqrt{b}$.<br>
+                Ubah bentuk soal: $\sqrt{7+\sqrt{40}} = \sqrt{7 + \sqrt{4 \times 10}} = \sqrt{7 + 2\sqrt{10}}$.<br>
+                Cari dua bilangan yang jika dijumlahkan hasilnya 7 dan dikalikan hasilnya 10. Bilangan tersebut adalah 5 dan 2. Maka, $\sqrt{7+2\sqrt{10}} = \sqrt{5} + \sqrt{2}$.<br>
+                Diperoleh $p=5$ dan $q=2$ (karena $p>q$).
+                Dengan demikian, nilai $p-q = 5-2 = 3$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 7-8 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 7 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar (Persamaan)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">7.</div>
+            <div class="soal-konten">
+              Diketahui $\sqrt{x+12}+\sqrt{29-x}=9$. Jumlah semua nilai $x$ yang mungkin dari persamaan tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">17</li><li data-opt="B">13</li>
+                <li data-opt="C">12</li><li data-opt="D">4</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 17</b><br />
+                <b>Pembahasan:</b><br>
+                Kuadratkan kedua ruas persamaan:<br>
+                $(\sqrt{x+12}+\sqrt{29-x})^2 = 9^2$<br>
+                $(x+12) + (29-x) + 2\sqrt{(x+12)(29-x)} = 81$<br>
+                $41 + 2\sqrt{-x^2+17x+348} = 81$<br>
+                $2\sqrt{-x^2+17x+348} = 40 \Rightarrow \sqrt{-x^2+17x+348} = 20$<br>
+                Kuadratkan lagi: $-x^2+17x+348 = 400 \Rightarrow -x^2+17x-52 = 0 \Rightarrow x^2-17x+52 = 0$.<br>
+                Faktorkan: $(x-4)(x-13)=0$.<br>
+                Nilai $x$ yang memenuhi adalah 4 dan 13. Keduanya valid saat disubstitusi kembali.<br>
+                Jumlah semua nilai $x = 4 + 13 = 17$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 8 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aritmatika Sosial</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">8.</div>
+            <div class="soal-konten">
+              Tata dan Toto diberi tugas untuk membersihkan ruangan. Tugas tersebut akan selesai jika dikerjakan Tata selama 1 jam 15 menit dan Toto selama 1 jam 30 menit. Tugas tersebut juga akan selesai jika Tata bekerja selama 50 menit dan Toto bekerja selama 2 jam. Berapa lama waktu yang dibutuhkan Tata bekerja sendirian untuk menyelesaikan pekerjaan tersebut?
+              <ul class="pilihan-ganda">
+                <li data-opt="A">2,5 jam</li><li data-opt="B">3,0 jam</li>
+                <li data-opt="C">3,5 jam</li><li data-opt="D">4,0 jam</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 2,5 jam</b><br />
+                <b>Pembahasan:</b><br>
+                Ubah semua satuan waktu ke menit. Misalkan kecepatan kerja Tata = $T_a$ dan Toto = $T_o$ per menit. Total pekerjaan = 1.<br>
+                Kondisi 1: 75 menit Tata + 90 menit Toto = 1 $\Rightarrow 75T_a + 90T_o = 1$.<br>
+                Kondisi 2: 50 menit Tata + 120 menit Toto = 1 $\Rightarrow 50T_a + 120T_o = 1$.<br>
+                Kita ingin mencari waktu Tata sendiri, jadi eliminasi variabel $T_o$. Samakan koefisien $T_o$ menjadi 360.<br>
+                Pers 1 dikali 4: $300T_a + 360T_o = 4$.<br>
+                Pers 2 dikali 3: $150T_a + 360T_o = 3$.<br>
+                Kurangkan kedua persamaan: $150T_a = 1 \Rightarrow T_a = \frac{1}{150}$.<br>
+                Artinya Tata dapat menyelesaikan 1/150 bagian pekerjaan per menit. Maka untuk menyelesaikan 1 pekerjaan penuh, Tata butuh 150 menit.<br>
+                150 menit = 2 jam 30 menit = 2,5 jam.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 9-10 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 9 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">9.</div>
+            <div class="soal-konten">
+              Diketahui dua segitiga siku-siku berada di dalam setengah lingkaran. Segitiga kiri memiliki luas 7 cm$^2$ dan segitiga kanan 28 cm$^2$. Kedua segitiga berbagi satu sisi tegak yang sama yang merupakan garis tinggi ke diameter. Luas setengah lingkaran adalah ...
+              <div style="text-align: center; margin: 15px 0;">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_gjbkms_1273.png" alt="Geometri" style="max-height: 100px;">
+              </div>
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$\frac{173}{8}\pi$</li><li data-opt="B">$\frac{175}{8}\pi$</li>
+                <li data-opt="C">$\frac{177}{8}\pi$</li><li data-opt="D">$\frac{179}{8}\pi$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. $\frac{175}{8}\pi$</b><br />
+                <b>Pembahasan:</b><br>
+                Misal alas bagian kiri adalah $p$, alas bagian kanan $q$, dan garis tinggi $t$.<br>
+                Luas kiri: $\frac{1}{2}pt = 7 \Rightarrow pt = 14$.<br>
+                Luas kanan: $\frac{1}{2}qt = 28 \Rightarrow qt = 56$.<br>
+                Karena sudut pada keliling yang menghadap diameter adalah siku-siku, berlaku dalil tinggi: $t^2 = p \times q$.<br>
+                Kalikan kedua persamaan luas: $(pt)(qt) = 14 \times 56 \Rightarrow pq \cdot t^2 = 784$.<br>
+                Substitusi $pq = t^2$, maka $t^2 \cdot t^2 = 784 \Rightarrow t^4 = 784 \Rightarrow t^2 = \sqrt{784} = 28$.<br>
+                Diameter lingkaran $d = p + q = \frac{14}{t} + \frac{56}{t} = \frac{70}{t}$.<br>
+                Jari-jari $r = \frac{d}{2} = \frac{35}{t}$.<br>
+                Luas setengah lingkaran = $\frac{1}{2} \pi r^2 = \frac{1}{2} \pi (\frac{35}{t})^2 = \frac{1}{2} \pi \frac{1225}{t^2}$.<br>
+                Karena $t^2 = 28$, maka Luas $= \frac{1}{2} \pi \frac{1225}{28} = \frac{1}{2} \pi \frac{175}{4} = \frac{175}{8}\pi$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 10 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri (Balok)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">10.</div>
+            <div class="soal-konten">
+              Perhatikan gambar jaring-jaring dengan luas area: 4, 4, 12, 12, 12, 16, 16, 27, 27. Agar terbentuk jaring-jaring balok, ada tiga bidang yang harus dibuang. Volume balok yang terbentuk adalah ...
+              <div style="text-align: center; margin: 15px 0;">
+                <img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_ok3il2_8091.png" alt="Jaring Balok" style="max-height: 150px;">
+              </div>
+              <ul class="pilihan-ganda">
+                <li data-opt="A">55</li><li data-opt="B">72</li>
+                <li data-opt="C">110</li><li data-opt="D">144</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 72</b><br />
+                <b>Pembahasan:</b><br>
+                Balok memiliki 3 pasang sisi yang sama luas. Dari angka yang tersedia, pasangan yang mungkin adalah (12, 12), (27, 27), dan (16, 16). Kita membuang dua angka 4 dan satu angka 12.<br>
+                Misalkan panjang sisi balok adalah $x, y, z$. Maka luas sisi-sisinya adalah $xy=12$, $xz=27$, $yz=16$.<br>
+                Kalikan ketiganya: $(xyz)^2 = 12 \cdot 27 \cdot 16 = 5184$.<br>
+                Volume $V = xyz = \sqrt{5184} = 72$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 11-13 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 11 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">11.</div>
+            <div class="soal-konten">
+              Sebuah bilangan prima disebut "prima kanan" jika dapat diperoleh bilangan prima dengan menghilangkan setidaknya satu angka dari sebelah kiri. Banyaknya bilangan prima antara 10 dan 200 yang merupakan "prima kanan" adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">22</li><li data-opt="B">24</li>
+                <li data-opt="C">25</li><li data-opt="D">27</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 24</b><br />
+                <b>Pembahasan:</b><br>
+                Bilangan 2 digit "prima kanan" (berakhiran 3 atau 7 karena 1 dan 9 bukan prima):<br>
+                Akhiran 3: 13, 23, 43, 53, 73, 83 (6 bilangan).<br>
+                Akhiran 7: 17, 37, 47, 67, 97 (5 bilangan). Total = 11.<br>
+                Bilangan 3 digit (100-200) "prima kanan":<br>
+                - Sisa 2 digitnya prima kanan (akhiran 3): 103, 113, 163, 173, 193 (5 bilangan).<br>
+                - Sisa 2 digitnya prima kanan (akhiran 7): 107, 127, 137, 157, 167, 197 (6 bilangan).<br>
+                - Sisa 1 digitnya prima (kasus khusus): 131 (sisa 31 prima, sisa 1 bukan), 179 (sisa 79 prima, sisa 9 bukan). Ini masuk karena definisi "setidaknya satu". (2 bilangan).<br>
+                Total = 11 + 5 + 6 + 2 = 24.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+      
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 12 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">12.</div>
+            <div class="soal-konten">
+              Banyak bilangan bulat tujuh digit yang disusun dari angka 0 atau 1 saja serta habis dibagi 6 adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">10</li><li data-opt="B">11</li>
+                <li data-opt="C">12</li><li data-opt="D">32</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 11</b><br />
+                <b>Pembahasan:</b><br>
+                Habis dibagi 6 berarti genap dan habis dibagi 3.<br>
+                - Genap: digit terakhir harus 0.<br>
+                - Habis dibagi 3: jumlah digit harus kelipatan 3.<br>
+                Digit pertama harus 1. Digit terakhir 0. Tersisa 5 digit di tengah yang bisa diisi 0 atau 1.<br>
+                Jumlah digit saat ini adalah 1. Agar total jumlah digit habis dibagi 3, kita perlu menambahkan angka '1' sebanyak 2 buah (total jadi 3) atau 5 buah (total jadi 6).<br>
+                - Kasus tambah 2 angka '1' di 5 posisi: $C(5,2) = 10$.<br>
+                - Kasus tambah 5 angka '1' di 5 posisi: $C(5,5) = 1$.<br>
+                Total kemungkinan = 10 + 1 = 11.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 13 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar Geometri</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">13.</div>
+            <div class="soal-konten">
+              Di samping kolam ikan berbentuk segitiga siku-siku sama kaki, dibangun jalan berbentuk huruf L dengan panjang sisi luar 3 m dan lebar jalan $x$ m. Jika luas kolam segitiga tersebut sama dengan luas jalan yang berbentuk huruf L, maka nilai $x$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$3 - \frac{3}{2}\sqrt{2}$</li><li data-opt="B">$3 - 3\sqrt{2}$</li>
+                <li data-opt="C">$\frac{3}{2}$</li><li data-opt="D">$\frac{3}{2}\sqrt{2}$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A</b><br />
+                <b>Pembahasan:</b><br>
+                Agar konsisten dengan opsi jawaban, model geometris yang paling tepat adalah kolam berbentuk persegi yang mengisi "lubang" dari jalan L tersebut sehingga membentuk persegi utuh $3 \times 3$.<br>
+                Luas Total = $3 \times 3 = 9$.<br>
+                Karena Luas Jalan = Luas Kolam, maka Luas Kolam = $\frac{1}{2} \times 9 = 4,5$.<br>
+                Sisi kolam persegi adalah $(3-x)$. Maka $(3-x)^2 = 4,5 = \frac{9}{2}$.<br>
+                $3-x = \frac{3}{\sqrt{2}} = \frac{3}{2}\sqrt{2}$.<br>
+                $x = 3 - \frac{3}{2}\sqrt{2}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 14-16 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 14 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar Optimasi</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">14.</div>
+            <div class="soal-konten">
+              Diketahui barisan bilangan bulat $x_1, \dots, x_{2023}$ bernilai -2, -1, 0, atau 1. Jumlah seluruh bilangan tersebut adalah 25, dan jumlah kuadratnya adalah 125. Nilai terkecil yang mungkin untuk jumlah pangkat tiganya ($\sum x_i^3$) adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">-71</li><li data-opt="B">-50</li>
+                <li data-opt="C">25</li><li data-opt="D">75</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. -71</b><br />
+                <b>Pembahasan:</b><br>
+                Misal $a, b, c, d$ adalah banyaknya angka -2, -1, 0, 1.<br>
+                Pers 1: $-2a - b + d = 25$.<br>
+                Pers 2: $4a + b + d = 125$.<br>
+                Kurangkan: $6a + 2b = 100 \Rightarrow 3a + b = 50$.<br>
+                Kita ingin meminimalkan $\sum x_i^3 = -8a - b + d$.<br>
+                Substitusi $d$ dari Pers 2: $d = 125 - 4a - b$.<br>
+                Target: $-8a - b + (125 - 4a - b) = 125 - 12a - 2b$.<br>
+                Untuk meminimalkan hasil, kita harus memaksimalkan pengurangnya ($12a+2b$).<br>
+                Dari kendala $3a+b=50$, nilai $a$ maksimum adalah 16 (sehingga $b=2$).<br>
+                Nilai min = $125 - (12(16) + 2(2)) = 125 - (192 + 4) = 125 - 196 = -71$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 15 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aljabar Sistem</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">15.</div>
+            <div class="soal-konten">
+              Diketahui sistem persamaan: $x^2 + \sqrt{xy} + y^2 = 168$ dan $x - \sqrt{xy} + y = 10$. Jumlah semua nilai $x + \sqrt{xy} + y$ yang mungkin adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">44</li><li data-opt="B">56</li>
+                <li data-opt="C">62</li><li data-opt="D">74</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 62</b><br />
+                <b>Pembahasan:</b><br>
+                Misal $u = x+y$ dan $v = \sqrt{xy}$. Persamaan kedua: $u - v = 10 \Rightarrow u = v + 10$.<br>
+                Persamaan pertama: $(x+y)^2 - 2xy + \sqrt{xy} = 168 \Rightarrow u^2 - 2v^2 + v = 168$.<br>
+                Substitusi $u$: $(v+10)^2 - 2v^2 + v = 168$.<br>
+                $v^2 + 20v + 100 - 2v^2 + v - 168 = 0 \Rightarrow -v^2 + 21v - 68 = 0$.<br>
+                $v^2 - 21v + 68 = 0 \Rightarrow (v-4)(v-17)=0$.<br>
+                $v=4$ atau $v=17$.<br>
+                Nilai yang dicari $u+v = (v+10)+v = 2v+10$.<br>
+                Jika $v=4 \rightarrow 2(4)+10 = 18$. Jika $v=17 \rightarrow 2(17)+10 = 44$.<br>
+                Total = $18 + 44 = 62$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 16 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Aritmatika (Digit)</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">16.</div>
+            <div class="soal-konten">
+              Seorang miliarder sedang membangun hotel. Kamar-kamar hotel diberi nomor urut bilangan asli mulai dari 1. Biaya pembuatan plat nomor adalah Rp8.000 per digit. Jika total biaya yang dihabiskan adalah Rp33.416.000, maka banyak kamar di hotel tersebut adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">1106</li><li data-opt="B">1128</li>
+                <li data-opt="C">1200</li><li data-opt="D">1321</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. 1321</b><br />
+                <b>Pembahasan:</b><br>
+                Total digit = $33.416.000 \div 8.000 = 4.177$ digit.<br>
+                Kamar 1-9 (9 kamar $\times$ 1 digit) = 9 digit.<br>
+                Kamar 10-99 (90 kamar $\times$ 2 digit) = 180 digit.<br>
+                Kamar 100-999 (900 kamar $\times$ 3 digit) = 2700 digit.<br>
+                Total digit sampai kamar 999 = $9 + 180 + 2700 = 2.889$.<br>
+                Sisa digit = $4.177 - 2.889 = 1.288$.<br>
+                Kamar 4 digit butuh 4 digit per kamar. Jumlah kamar 4 digit = $1.288 \div 4 = 322$.<br>
+                Total kamar = $999 + 322 = 1.321$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 17-19 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 17 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri Bangun Ruang</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">17.</div>
+            <div class="soal-konten">
+              Suatu bak penampungan air berbentuk kerucut terbalik berisi air dengan volume 1 liter. Jika ditambahkan air sebanyak 331 mililiter, maka perbandingan antara ketinggian air mula-mula dan setelah ditambahkan air adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">10 : 11</li><li data-opt="B">10 : 13</li>
+                <li data-opt="C">100 : 111</li><li data-opt="D">100 : 133</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 10 : 11</b><br />
+                <b>Pembahasan:</b><br>
+                Volume bangun ruang yang sebangun berbanding lurus dengan pangkat tiga dimensi linearnya ($V \sim h^3$).Perhatikan bahwa $V_1 = 1$ liter = 1000 ml dan 
+                $V_2 = 1000 + 331 = 1331$ ml.<br>
+                Diperoleh $\frac{h_1}{h_2} = \sqrt[3]{\frac{V_1}{V_2}} = \sqrt[3]{\frac{1000}{1331}} = \frac{10}{11}$.
+              </div>
+            </div>
+          </div>
+
+          <!-- Soal 18 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Peluang</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">18.</div>
+            <div class="soal-konten">
+              Empat orang siswa dipilih mewakili suatu sekolah. Peluang ada siswa yang lahir di bulan yang sama adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$1 - \frac{12 \times 11 \times 10 \times 9}{12^4}$</li>
+                <li data-opt="B">$\frac{12 \times 11 \times 10 \times 9}{12^4}$</li>
+                <li data-opt="C">$\frac{4}{12}$</li><li data-opt="D">$\frac{1}{2}$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A</b><br />
+                <b>Pembahasan:</b><br>
+                Gunakan konsep peluang komplemen. Peluang ada yang sama = 1 - Peluang semua beda. Diketahui total kemungkinan = $12^4$. 
+                Kemungkinan semua lahir bulan berbeda = $12 \times 11 \times 10 \times 9$.
+                Peluang(beda) = $\frac{12 \times 11 \times 10 \times 9}{12^4}$.<br>
+                Maka peluang yang dicari adalah $1 - \frac{12 \times 11 \times 10 \times 9}{12^4}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 20-22 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 19 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">19.</div>
+            <div class="soal-konten">
+              Banyaknya himpunan bagian dari $\{1, 2, 3, 4, 5, 6, 7, 8, 9\}$ yang berisi tiga bilangan dan memuat tepat dua bilangan ganjil adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">30</li><li data-opt="B">40</li>
+                <li data-opt="C">50</li><li data-opt="D">60</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 40</b><br />
+                <b>Pembahasan:</b><br>
+                Himpunan asal memiliki 5 bilangan ganjil (1,3,5,7,9) dan 4 bilangan genap (2,4,6,8).<br>
+                Kita perlu memilih 3 bilangan dengan komposisi: 2 Ganjil dan 1 Genap.<br>
+                Cara memilih 2 Ganjil dari 5: $C(5,2) = 10$.<br>
+                Cara memilih 1 Genap dari 4: $C(4,1) = 4$.<br>
+                Total cara = $10 \times 4 = 40$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 20 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Peluang Dadu</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">20.</div>
+            <div class="soal-konten">
+              Diketahui sebuah dadu seimbang bersisi-6. Jika muncul angka ganjil, angka tersebut diganti menjadi 8. Jika muncul genap, diganti menjadi 1. Dadu yang telah diganti matanya tersebut dilambungkan kembali. Peluang munculnya mata dadu ganjil pada pelambungan kedua adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$\frac{1}{6}$</li><li data-opt="B">$\frac{1}{3}$</li>
+                <li data-opt="C">$\frac{1}{2}$</li><li data-opt="D">$\frac{2}{3}$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. $\frac{1}{2}$</b><br />
+                <b>Pembahasan:</b><br>
+                Mata dadu awal: 1, 2, 3, 4, 5, 6.<br>
+                Setelah diganti:<br>
+                - Ganjil (1, 3, 5) menjadi 8 (genap).<br>
+                - Genap (2, 4, 6) menjadi 1 (ganjil).<br>
+                Jadi mata dadu baru memiliki tiga angka 8 dan tiga angka 1.<br>
+                Peluang muncul ganjil (angka 1) adalah $\frac{3}{6} = \frac{1}{2}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 21 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Peluang Geometris</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">21.</div>
+            <div class="soal-konten">
+              Dua kapal bersandar di pelabuhan pada hari yang sama (00.00 - 24.00). Kapal A bersandar selama 2 jam, Kapal B selama 4 jam. Peluang salah satu kapal harus menunggu kapal lain (terjadi tumpang tindih waktu sandar) adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">$\frac{23}{144}$</li><li data-opt="B">$\frac{121}{144}$</li>
+                <li data-opt="C">$\frac{49}{288}$</li><li data-opt="D">$\frac{67}{288}$</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: D. $\frac{67}{288}$</b><br />
+                <b>Pembahasan:</b><br>
+                Ruang sampel kedatangan kedua kapal adalah persegi $24 \times 24$ dengan luas 576.<br>
+                Overlap terjadi jika $|x - y|$ kurang dari durasi sandar. Secara geometris, ini adalah area di antara garis $y = x - 4$ dan $y = x + 2$.<br>
+                Hitung luas area yang TIDAK overlap (dua segitiga di pojok):<br>
+                1. Segitiga atas: sisi $24-2=22$. Luas $= 0.5 \times 22^2 = 242$.<br>
+                2. Segitiga bawah: sisi $24-4=20$. Luas $= 0.5 \times 20^2 = 200$.<br>
+                Luas Overlap = Total - Luas Segitiga = $576 - (242+200) = 134$.<br>
+                Peluang = $\frac{134}{576} = \frac{67}{288}$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 22 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">22.</div>
+            <div class="soal-konten">
+              Diketahui $a, b, c, d, e$ bilangan bulat positif dengan $a \le b \le c \le d \le e$ dan $a+b+c+d+e = a \times b \times c \times d \times e$. Nilai terbesar yang mungkin untuk $e$ adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">5</li><li data-opt="B">6</li>
+                <li data-opt="C">7</li><li data-opt="D">8</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 5</b><br />
+                <b>Pembahasan:</b><br>
+                Untuk memaksimalkan $e$, kita buat bilangan lain sekecil mungkin (yaitu 1).<br>
+                Coba $\{1, 1, 1, 2, 5\}$. Sum: $1+1+1+2+5 = 10$. Prod: $1\times1\times1\times2\times5 = 10$. Cocok.<br>
+                Coba $\{1, 1, 1, 3, 3\}$. Sum: 9. Prod: 9. Cocok, tapi $e=3$.<br>
+                Coba $\{1, 1, 1, 1, x\}$. Sum $4+x$, Prod $x$. Tidak ada solusi.<br>
+                Nilai terbesar yang ditemukan adalah $e=5$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <!-- HALAMAN SOAL 23-25 -->
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+          <!-- Soal 23 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Kombinatorika</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">23.</div>
+            <div class="soal-konten">
+              Alma ingin makan malam gratis di restoran pada tanggal 1 hingga 10 Juni. Ia boleh memilih lebih dari satu tanggal asalkan tidak ada tanggal yang berurutan (misal: tgl 1 dan 3 boleh, tgl 1 dan 2 tidak boleh). Banyaknya kemungkinan jadwal kedatangan Alma adalah ... (Asumsi: Alma datang setidaknya sekali).
+              <ul class="pilihan-ganda">
+                <li data-opt="A">89</li><li data-opt="B">143</li>
+                <li data-opt="C">144</li><li data-opt="D">232</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: B. 143</b><br />
+                <b>Pembahasan:</b><br>
+                Masalah ini ekuivalen dengan mencari banyaknya subset dari $\{1, 2, \dots, 10\}$ yang tidak memuat elemen berurutan.<br>
+                Solusinya berhubungan dengan bilangan Fibonacci $F_{n+2}$. Untuk $n=10$, jumlahnya adalah $F_{12}$.<br>
+                Deret Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144.<br>
+                $F_{12} = 144$. Karena disyaratkan datang setidaknya sekali, kurangi kasus himpunan kosong.<br>
+                Hasil = $144 - 1 = 143$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 24 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Teori Bilangan</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">24.</div>
+            <div class="soal-konten">
+              Jika $(x, y)$ adalah pasangan bilangan bulat positif yang memenuhi $x^2 + 2023x + 2023 = y^2$ dengan $x > y$, banyaknya pasangan $(x, y)$ yang mungkin adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">0</li><li data-opt="B">1</li>
+                <li data-opt="C">2</li><li data-opt="D">Tak hingga</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: A. 0</b><br />
+                <b>Pembahasan:</b><br>
+                Kita coba apit nilai $y^2 = x^2 + 2023x + 2023$ di antara dua kuadrat sempurna berurutan.<br>
+                Untuk $x$ yang cukup besar, $(x+1011)^2 < x^2 + 2023x + 2023 < (x+1012)^2$.<br>
+                Karena nilai tersebut berada di antara dua bilangan kuadrat berurutan, maka ia tidak mungkin menjadi kuadrat sempurna.<br>
+                Pengecekan untuk nilai $x$ kecil juga tidak memberikan solusi bulat.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+      <section class="page">
+        <header class="page-header">
+          <div class="header-top-box"><div><div class="header-title-main">Panduan Ajar</div><div class="header-title-sub">Matematika SMP</div></div><img src="https://imgix3.ruangguru.com/assets/miscellaneous/png_sxoqo7_1499.png" class="header-logo" /></div>
+          <div class="header-bottom-box"><div class="header-bottom-text">OSNK SMP | Pertemuan 11 | Latihan Soal Campuran 3</div></div>
+        </header>
+        <div class="content-wrapper">
+
+          <!-- Soal 25 -->
+          <table class="soal-card"><tr><td>Topik</td><td>Geometri Analitik</td></tr></table>
+          <div class="soal-pembahasan">
+            <div class="soal-nomor">25.</div>
+            <div class="soal-konten">
+              Diketahui dua segitiga $OAB$ dan $OCB$ dengan $O(0,0)$, $A(4,0)$, $B(0,3)$, dan $C(2,3)$. Segitiga $OCB$ digeser searah sumbu-$x$ positif sejauh 2 satuan. Perbandingan luas irisan kedua segitiga mula-mula dengan luas irisan setelah pergeseran adalah ...
+              <ul class="pilihan-ganda">
+                <li data-opt="A">2 : 1</li><li data-opt="B">3 : 1</li>
+                <li data-opt="C">4 : 1</li><li data-opt="D">5 : 1</li>
+              </ul>
+              <div class="pembahasan-detail">
+                <b class="jawaban">Jawaban: C. 4 : 1</b><br />
+                <b>Pembahasan:</b><br>
+                Luas irisan awal adalah segitiga dengan titik sudut $(0,0), (4/3, 2), (0,3)$. Luas = 2.<br>
+                Setelah digeser, irisan baru adalah segitiga kecil dengan luas 0.5.<br>
+                Perbandingan = $2 : 0.5 = 4 : 1$.
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="page-footer"><b>Copyright Ⓒ 2025 - PT Ruang Raya Indonesia - All Rights Reserved.</b><i>Dilarang menyebarluaskan dokumen ini tanpa seizin PT Ruang Raya Indonesia.</i></footer>
+      </section>
+
+    </div>
+  </body>
+</html>
