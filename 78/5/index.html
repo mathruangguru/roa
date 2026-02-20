@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Geometry & Circles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #3730a3;
+        border-bottom: 3px solid #6366f1;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4338ca;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc;
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534;
+        background-color: #dcfce7;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+        border: 1px solid #bbf7d0;
+      }
+      .concept {
+        background-color: #eef2ff;
+        border-left: 4px solid #4f46e5;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .solution-wrapper {
+        margin-top: 1rem;
+      }
+      .solution-step {
+        margin-bottom: 1rem;
+        background-color: #fafafa;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #f3f4f6;
+      }
+      .solution-step p {
+        margin: 0.25rem 0;
+        font-size: 1.05rem;
+      }
+      .solution-step p.math-block {
+        margin-top: 0.5rem;
+        overflow-x: auto;
+      }
+      .lang-en {
+        color: #1f2937;
+        font-weight: 500;
+      }
+      .lang-id {
+        color: #4b5563;
+        font-style: italic;
+      }
+      svg {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 6
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Grade 7-8 | Pythagoras, Luas, Lingkaran & Garis Singgung 
+        </p>
+      </header>
+
+      <main>
+        <!-- Bagian Soal -->
+        <section class="content-card">
+          <h2 class="section-title">Competition Problems / Soal Kompetisi</h2>
+
+          <h3 class="topic-title">Topik 1: Teorema Pythagoras & Luas</h3>
+          
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> Robert goes 35 km due west, then 56 km due south, and finally 2 km due east. How far is he from the original position in km?<br /><br />
+              Robert berjalan 35 km ke arah barat, kemudian 56 km ke arah selatan, dan akhirnya 2 km ke arah timur. Seberapa jauh dia dari posisi semula dalam km?
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> Given that the side lengths of a right-angled triangle are all integers. If the length of one of its legs is 2023, what is the shortest possible length of its hypotenuse?<br /><br />
+              Diketahui panjang sisi-sisi sebuah segitiga siku-siku semuanya merupakan bilangan bulat. Jika panjang salah satu penyikunya adalah 2023, berapakah kemungkinan panjang sisi miring yang paling pendek?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> The side lengths of a triangle are 11, 16, and 19. Find the area of this triangle. (Answer in terms of surd form)<br /><br />
+              Panjang sisi sebuah segitiga adalah 11, 16, dan 19. Carilah luas segitiga tersebut. (Jawablah dalam bentuk akar)
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> A triangle has side lengths of 28, 100, and 96. Find the area of the triangle.<br /><br />
+              Sebuah segitiga memiliki panjang sisi 28, 100, dan 96. Hitunglah luas segitiga tersebut.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> Combine 612 squares, each with a side length of 1 unit, to form a large rectangle. Find the minimum perimeter of that rectangle.<br /><br />
+              Kombinasikan 612 bujursangkar (masing-masing bersisi 1 satuan) untuk membentuk sebuah persegi panjang besar. Carilah keliling minimum dari persegi panjang tersebut.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> A rhombus has a side length of 17 and one of its diagonals is 16. Find the length of the other diagonal.<br /><br />
+              Sebuah belah ketupat memiliki panjang sisi 17 dan salah satu diagonalnya memiliki panjang 16. Carilah panjang diagonal yang lain.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> A rectangular piece of paper is such that its breadth is 65% as long as its length. It is cut into two equal pieces along the dashed line. One piece is rotated 90° and placed beside the other piece to obtain a new figure as shown. Find the percentage increase in the perimeter.<br /><br />
+              Sebuah kertas persegi panjang memiliki lebar 65% dari panjangnya. Kertas ini dipotong menjadi dua bagian yang sama besar menyusuri garis putus-putus. Salah satu potongannya diputar 90° dan diletakkan menempel di samping potongan lainnya untuk membentuk figur baru seperti pada gambar. Carilah persentase peningkatan kelilingnya!
+            </p>
+            <svg viewBox="-50 -20 500 240" class="mx-auto h-40 w-full max-w-lg">
+              <!-- Original Rectangle -->
+              <rect x="0" y="20" width="160" height="104" fill="#eff6ff" stroke="#1e3a8a" stroke-width="2"/>
+              <line x1="80" y1="20" x2="80" y2="124" stroke="#1e3a8a" stroke-width="2" stroke-dasharray="6,6"/>
+              <text x="80" y="150" text-anchor="middle" font-weight="bold" fill="#1e3a8a">Original Figure</text>
+              <text x="80" y="170" text-anchor="middle" font-weight="normal" font-size="14" fill="#4b5563">Gambar Asli</text>
+              
+              <!-- Arrow -->
+              <text x="210" y="80" font-weight="bold" font-size="30" fill="#6366f1">➔</text>
+              
+              <!-- New Figure (T-shape sideways) -->
+              <rect x="270" y="20" width="80" height="104" fill="#eff6ff" stroke="#1e3a8a" stroke-width="2"/>
+              <!-- Rotated piece: original is 80x104, rotated becomes 104x80 -->
+              <rect x="350" y="32" width="104" height="80" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+              <text x="360" y="150" text-anchor="middle" font-weight="bold" fill="#1e3a8a">New Figure</text>
+              <text x="360" y="170" text-anchor="middle" font-weight="normal" font-size="14" fill="#4b5563">Figur Baru</text>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> Put four identical rectangular cards on the bottom of a rectangular box 48 cm long and 40 cm wide without overlapping as shown. Find the sum of the perimeters of the two shaded regions in cm.<br /><br />
+              Letakkan empat kartu persegi panjang yang identik di dasar kotak berukuran panjang 48 cm dan lebar 40 cm tanpa tumpang tindih seperti pada gambar. Hitunglah jumlah keliling dari kedua area kosong (berwarna biru muda) tersebut dalam cm!
+            </p>
+            <svg viewBox="-20 -20 300 300" class="mx-auto h-48 w-full max-w-sm">
+              <!-- Background Box -->
+              <rect x="0" y="0" width="240" height="200" fill="#cffafe"/> 
+              
+              <!-- Cards -->
+              <!-- Card 1 & 2 (Horizontal at the bottom right) -->
+              <rect x="90" y="100" width="150" height="50" fill="white" stroke="#1e3a8a" stroke-width="2"/>
+              <rect x="90" y="150" width="150" height="50" fill="white" stroke="#1e3a8a" stroke-width="2"/>
+              <!-- Card 3 & 4 (Vertical at the top left) -->
+              <rect x="0" y="0" width="50" height="150" fill="white" stroke="#1e3a8a" stroke-width="2"/>
+              <rect x="50" y="0" width="50" height="150" fill="white" stroke="#1e3a8a" stroke-width="2"/>
+              
+              <!-- Outline -->
+              <rect x="0" y="0" width="240" height="200" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+              
+              <!-- Labels -->
+              <line x1="0" y1="215" x2="240" y2="215" stroke="black" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+              <text x="120" y="235" text-anchor="middle" font-weight="bold" font-size="16">48 cm</text>
+              
+              <line x1="255" y1="0" x2="255" y2="200" stroke="black" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+              <text x="285" y="105" text-anchor="middle" font-weight="bold" font-size="16">40 cm</text>
+
+              <!-- SVG Arrow Marker Definition -->
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M 0 2 L 10 5 L 0 8 z" fill="black" />
+                </marker>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> There are three identical wooden cuboids. In the 2D figures, the length of the lateral face of the cuboid is 3 times its width. Arrange the three cuboids and the table as shown in the left figure and the right figure. Find the perimeter of the lateral face of the cuboid in cm.<br /><br />
+              Terdapat tiga balok kayu identik. Pada gambar 2D, panjang sisi tegak balok adalah 3 kali lebarnya. Susun tiga balok dan sebuah meja seperti pada Gambar Kiri dan Kanan. Berdasarkan selisih jarak yang diukur, carilah keliling dari wajah tegak balok tersebut.
+            </p>
+            <svg viewBox="-80 -10 550 250" class="mx-auto h-48 w-full max-w-xl">
+              <!-- Ground Line -->
+              <line x1="-60" y1="200" x2="150" y2="200" stroke="black" stroke-width="3"/>
+              
+              <!-- Left Arrangement -->
+              <!-- Table -->
+              <rect x="0" y="80" width="120" height="15" fill="#fdba74" stroke="#c2410c" stroke-width="2"/>
+              <rect x="10" y="95" width="15" height="105" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+              <rect x="95" y="95" width="15" height="105" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+              <!-- Blocks on ground -->
+              <rect x="-40" y="170" width="60" height="15" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+              <rect x="-40" y="185" width="60" height="15" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+              <!-- Block on table -->
+              <rect x="40" y="20" width="15" height="60" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+              
+              <!-- Measure Lines Left -->
+              <line x1="-55" y1="163" x2="-55" y2="23" stroke="#374151" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+              <text x="-85" y="100" font-weight="bold" font-size="14" fill="#374151">106</text>
+              <line x1="-55" y1="20" x2="40" y2="20" stroke="#9ca3af" stroke-dasharray="4,4"/>
+              <line x1="-55" y1="170" x2="-40" y2="170" stroke="#9ca3af" stroke-dasharray="4,4"/>
+              
+              <!-- Right Arrangement -->
+              <g transform="translate(260, 0)">
+                <!-- Ground Line -->
+                <line x1="-50" y1="200" x2="160" y2="200" stroke="black" stroke-width="3"/>
+                <!-- Table -->
+                <rect x="0" y="80" width="120" height="15" fill="#fdba74" stroke="#c2410c" stroke-width="2"/>
+                <rect x="10" y="95" width="15" height="105" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+                <rect x="95" y="95" width="15" height="105" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+                <!-- Blocks on ground -->
+                <rect x="-25" y="140" width="15" height="60" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+                <!-- Block on table -->
+                <rect x="30" y="50" width="60" height="15" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+                <rect x="30" y="65" width="60" height="15" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+                
+                <!-- Measure Lines Right -->
+                <line x1="-40" y1="133" x2="-40" y2="58" stroke="#374151" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+                <text x="-65" y="100" font-weight="bold" font-size="14" fill="#374151">98</text>
+                <line x1="-40" y1="50" x2="30" y2="50" stroke="#9ca3af" stroke-dasharray="4,4"/>
+                <line x1="-40" y1="140" x2="-25" y2="140" stroke="#9ca3af" stroke-dasharray="4,4"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> In parallelogram ABCD, heights $AE \perp BC$ and $AF \perp CD$ are drawn. Given $\angle EAF=60^\circ$, $BE=2$, and $DF=3$, find the length of side $CD$.<br /><br />
+              Pada jajaran genjang ABCD di bawah, ditarik garis tinggi $AE \perp BC$ dan $AF \perp CD$. Jika diketahui besar sudut $\angle EAF=60^\circ$, panjang $BE=2$, dan $DF=3$, carilah panjang sisi $CD$.
+            </p>
+            <svg viewBox="-20 -20 320 180" class="mx-auto h-40 w-full max-w-sm">
+              <!-- Perfect Parallelogram: A(60,20), B(0,140), C(200,140), D(260,20) -->
+              <polygon points="60,20 260,20 200,140 0,140" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+              <polygon points="60,20 60,140 200,140" fill="none" stroke="none" />
+              <polygon points="60,20 260,20 200,140 0,140" fill="none" stroke="#374151" stroke-width="2"/>
+              
+              <!-- Perfect Perpendicular Lines -->
+              <line x1="60" y1="20" x2="60" y2="140" stroke="#374151" stroke-width="2"/>
+              <!-- F calculated precisely at (220,100) mathematically intersecting CD perpendicularly -->
+              <line x1="60" y1="20" x2="220" y2="100" stroke="#374151" stroke-width="2"/>
+              
+              <text x="50" y="10" font-weight="bold">A</text>
+              <text x="-15" y="145" font-weight="bold">B</text>
+              <text x="210" y="145" font-weight="bold">C</text>
+              <text x="270" y="15" font-weight="bold">D</text>
+              <text x="55" y="160" font-weight="bold">E</text>
+              <text x="230" y="105" font-weight="bold">F</text>
+              
+              <!-- Perfect Right angle symbols -->
+              <polyline points="60,130 70,130 70,140" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+              <!-- Calculated exactly for F(220,100) using normalized vectors -->
+              <polyline points="215.53,108.94 206.59,104.47 211.06,95.53" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+              
+              <!-- Angle -->
+              <path d="M 60 60 A 40 40 0 0 0 95.8 37.9" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <text x="75" y="70" font-weight="bold" font-size="14" fill="#ef4444">60°</text>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> The length of the diagonal of a square is 80 cm. What is the length of the side of the square?<br /><br />
+              Panjang diagonal sebuah persegi adalah 80 cm. Berapakah panjang sisinya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> The area of an equilateral triangle is $25\sqrt{3}$. What is its side length?<br /><br />
+              Luas sebuah segitiga sama sisi adalah $25\sqrt{3}$. Berapakah panjang sisinya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> Given the area of a triangle is 350. If the radius of the inscribed circle (inradius) of the triangle is 20, what is the perimeter of the triangle?<br /><br />
+              Luas sebuah segitiga adalah 350. Jika jari-jari lingkaran di dalamnya (lingkaran singgung dalam) adalah 20, berapakah keliling segitiga tersebut?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> The sum of the areas of two distinct squares is 100. If the side length of the first square is 6, what is the side length of the second square?<br /><br />
+              Jumlah luas dari dua buah bujursangkar adalah 100. Jika sisi bujursangkar pertama adalah 6, berapakah panjang sisi bujursangkar kedua?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> Three numbers 7, 24, and 25 form a Pythagorean Triple. Calculate the area of a triangle with these side lengths using the regular base-height concept, and prove it matches the result using Heron's formula.<br /><br />
+              Tiga bilangan 7, 24, dan 25 membentuk sebuah Tripel Pythagoras. Hitunglah luas segitiga tersebut menggunakan konsep alas-tinggi biasa, dan buktikan hasilnya sama jika menggunakan rumus Heron.
+            </p>
+          </div>
+
+          <h3 class="topic-title">Topik 2: Lingkaran & Garis Singgung</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> Given the radius of a circular sector is 20. If the area of the sector is 720, what is its full perimeter?<br /><br />
+              Jari-jari dari sebuah sektor (juring lingkaran) adalah 20. Jika luas sektor tersebut adalah 720, berapakah keliling total pinggirannya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> ABCD is a square with a side length of 12. Two circles are inscribed along the diagonal as shown. If the radius of the smaller circle is half of the radius of the bigger circle, find the area of the smaller circle.<br /><br />
+              ABCD adalah sebuah bujur sangkar dengan panjang sisi 12. Terdapat lingkaran besar dan kecil di dalamnya yang saling bersinggungan di titik tengah dan terletak persis di atas garis diagonal persegi. Jika jari-jari lingkaran kecil adalah setengah dari lingkaran besar, carilah luas lingkaran kecil.
+            </p>
+            <svg viewBox="-20 -20 160 160" class="mx-auto h-48 w-full max-w-xs">
+              <rect x="0" y="0" width="120" height="120" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+              <text x="-15" y="-5" font-weight="bold">A</text>
+              <text x="125" y="-5" font-weight="bold">B</text>
+              <text x="125" y="135" font-weight="bold">C</text>
+              <text x="-15" y="135" font-weight="bold">D</text>
+              <line x1="0" y1="0" x2="120" y2="120" stroke="#9ca3af" stroke-dasharray="4,4" stroke-width="2"/>
+              <!-- Circles placed precisely mathematically flush based on R=46.86 and r=23.43 -->
+              <circle cx="73.14" cy="73.14" r="46.86" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+              <circle cx="23.43" cy="23.43" r="23.43" fill="#fce7f3" stroke="#be185d" stroke-width="2"/>
+              <circle cx="73.14" cy="73.14" r="2" fill="#0284c7"/>
+              <circle cx="23.43" cy="23.43" r="2" fill="#be185d"/>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> The diagram shows a semicircle where $PQ=12$ is a straight diameter. R is a point on the semicircular arc such that $PR=QR$. Find the area of the shaded region.<br /><br />
+              Gambar menunjukkan setengah lingkaran dengan diameter lurus $PQ=12$. R adalah titik puncak pada busur melengkung sehingga $PR=QR$. Carilah luas daerah yang diarsir (sisa ruang antara segitiga dan lengkung lingkaran).
+            </p>
+            <svg viewBox="-20 -10 320 100" class="mx-auto h-48 w-full max-w-xs">
+              <path d="M 0 100 A 100 100 0 0 1 200 100" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+              <polygon points="0,100 100,0 200,100" fill="white" stroke="#374151" stroke-width="2"/>
+              <line x1="0" y1="100" x2="200" y2="100" stroke="#374151" stroke-width="2"/>
+              <text x="-15" y="115" font-weight="bold">P</text>
+              <text x="205" y="115" font-weight="bold">Q</text>
+              <text x="95" y="-10" font-weight="bold">R</text>
+              <line x1="0" y1="115" x2="200" y2="115" stroke="black" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+              <text x="100" y="135" text-anchor="middle" font-weight="bold">12</text>
+              <!-- Right angle at R -->
+              <polyline points="93,7 100,14 107,7" fill="none" stroke="black" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> A circular coin with a circumference of 2 m rolls around the outside of an equilateral triangle with a perimeter of 6 m. How many full turns does the coin make as it rolls around the triangle once, without slipping?<br /><br />
+              Sebuah koin bundar dengan keliling 2 meter menggelinding memutari bagian luar sebuah bidang segitiga sama sisi yang kelilingnya 6 meter. Berapa putaran penuh yang dilakukan koin tersebut saat mengelilingi segitiga tepat satu kali tanpa tergelincir?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> A right-angled triangle has semicircles A, B, and C constructed on its sides. If the area of semicircle A is $50\pi$ and the area of semicircle B is $18\pi$, what is the radius of semicircle C?<br /><br />
+              Sebuah segitiga siku-siku memiliki hiasan berbentuk setengah lingkaran pada masing-masing ketiga sisinya (A pada sisi miring, B dan C pada penyiku). Jika Luas area A = $50\pi$, dan Luas area B = $18\pi$, berapakah jari-jari setengah lingkaran C?
+            </p>
+            <svg viewBox="-60 -40 240 220" class="mx-auto h-56 w-full max-w-sm">
+              <!-- Triangle (Right angle at bottom-left corner 0,90) -->
+              <polygon points="0,0 120,90 0,90" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+              <!-- Semicircle B (Left Vertical Leg) -->
+              <!-- Starts at 0,0 and ends at 0,90. Drawing to the left (Sweep 0) -->
+              <path d="M 0 0 A 45 45 0 0 0 0 90" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+              <text x="-25" y="50" text-anchor="middle" font-weight="bold">B</text>
+              <!-- Semicircle C (Bottom Horizontal Leg) -->
+              <!-- Starts at 0,90 and ends at 120,90. Drawing to the bottom (Sweep 0) -->
+              <path d="M 0 90 A 60 60 0 0 0 120 90" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+              <text x="60" y="135" text-anchor="middle" font-weight="bold">C</text>
+              <!-- Semicircle A (Hypotenuse) -->
+              <!-- Starts at 120,90 and ends at 0,0. Drawing to the top-right (Sweep 0) -->
+              <path d="M 120 90 A 75 75 0 0 0 0 0" fill="#bae6fd" stroke="#0369a1" stroke-width="2"/>
+              <text x="120" y="-5" text-anchor="middle" font-weight="bold">A</text>
+              <!-- Right angle at 0,90 -->
+              <polyline points="15,90 15,75 0,75" fill="none" stroke="#15803d" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> In the figure below, line AB is tangent to the circle at D, and line BC is tangent at C. A straight line is drawn from A passing through E, center O, and ending at C. Suppose $EC=3$ cm and $DA=2$ cm, find the length of BC in cm.<br /><br />
+              Garis AB menyinggung lingkaran di titik D, dan garis BC menyinggung di titik C. Sebuah garis lurus ditarik dari ujung A menembus titik E, pusat O, dan berakhir di C. Jika diketahui panjang $EC = 3$ cm dan $DA = 2$ cm, tentukan panjang $BC$!
+            </p>
+            <svg viewBox="-60 0 200 180" class="mx-auto h-48 w-full max-w-sm">
+              <!-- Bounding Outer Shape precisely calculated for right-triangles -->
+              <polygon points="-33.33,50 100,150 100,50" fill="#fecaca" stroke="#be185d" stroke-width="2"/>
+              
+              <!-- Perfect Circle touching the tangents seamlessly -->
+              <circle cx="50" cy="50" r="50" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+              <circle cx="50" cy="50" r="2" fill="black"/>
+              <text x="45" y="45" font-weight="bold">O</text>
+              
+              <!-- AC Line -->
+              <line x1="-33.33" y1="50" x2="100" y2="50" stroke="#be185d" stroke-width="2"/>
+              <!-- BC Tangent Line -->
+              <line x1="100" y1="50" x2="100" y2="150" stroke="#be185d" stroke-width="2"/>
+              <!-- AB Tangent Line -->
+              <line x1="-33.33" y1="50" x2="100" y2="150" stroke="#be185d" stroke-width="2"/>
+              
+              <!-- OD Radius precisely perpendicular to Tangent -->
+              <line x1="50" y1="50" x2="20" y2="90" stroke="#1d4ed8" stroke-dasharray="4,4" stroke-width="2"/>
+              
+              <!-- Labels aligned nicely -->
+              <text x="105" y="155" font-weight="bold">B</text>
+              <text x="105" y="45" font-weight="bold">C</text>
+              <text x="-45" y="55" font-weight="bold">A</text>
+              <text x="-10" y="45" font-weight="bold">E</text>
+              <text x="10" y="105" font-weight="bold">D</text>
+              
+              <text x="-20" y="80" font-weight="bold">2</text>
+              <!-- <text x="20" y="45" font-weight="bold">3</text> -->
+              
+              <!-- Right angles geometrically aligned -->
+              <polyline points="90,50 90,60 100,60" fill="none" stroke="black" stroke-width="1.5"/>
+              <polyline points="26,82 18,76 12,84" fill="none" stroke="black" stroke-width="1.5"/>
+            </svg>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> There are two concentric circles. A straight chord of the larger circle is tangent to the smaller circle and has a length of 16. Find the area of the ring-shaped region (annulus).<br /><br />
+              Terdapat dua lingkaran sepusat (konsentris). Sebuah tali busur lurus pada lingkaran besar menyinggung bibir lingkaran kecil dan panjangnya adalah 16. Carilah luas area berbentuk cincin donat (ruang di antara kedua lingkaran tersebut).
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> AB is the diameter of a circle with points C and D on the same side of the arc. If $\angle ABC = 75^\circ$ and $\angle DAC = 33^\circ$, find the measurement of $\angle DCA$.<br /><br />
+              AB adalah garis lurus yang membelah lingkaran menjadi dua (diameter). Titik C dan D berada di busur melengkung yang sama. Jika besar $\angle ABC = 75^\circ$ dan $\angle DAC = 33^\circ$, berapakah besar celah sudut $\angle DCA$?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> Two circles are externally tangent to each other. The radius of the first circle is 4 and the radius of the second is 9. What is the length of their common external tangent?<br /><br />
+              Dua lingkaran saling bersinggungan di luar. Jari-jari lingkaran pertama adalah 4 dan lingkaran kedua 9. Berapakah panjang garis lurus persinggungan persekutuan luarnya (garis pelurus yang menempel di atap kedua lingkaran)?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> An inscribed angle subtending an arc is $30^\circ$. What is the measure of the central angle subtending the same arc?<br /><br />
+              Sudut keliling (sudut di tepi bibir lingkaran) yang menatap menembus sebuah busur adalah $30^\circ$. Berapakah besar sudut pusat (sudut persis di tengah lingkaran) yang menghadap busur lengkung yang sama?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> Two straight chords AB and CD intersect at point E inside a circle. If segment $AE = 4$, $EB = 6$, and $CE = 3$, find the length of $ED$.<br /><br />
+              Dua tali busur lurus AB dan CD saling berpotongan menyilang membentuk huruf X di titik E tepat di dalam lingkaran. Jika $AE = 4$, bagian $EB = 6$, dan segmen $CE = 3$, berapakah panjang potongan sisa $ED$?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> A tangent is drawn from an external point P to point T on a circle centered at O. If the distance $OP = 13$ and the circle's radius is 5, what is the length of the tangent $PT$?<br /><br />
+              Sebuah garis lurus ditarik dari titik P (jauh di luar lingkaran) menyinggung lingkaran di titik T. Jika jarak lurus dari titik P ke pusat lingkaran O adalah $OP = 13$ dan jari-jarinya adalah 5, berapakah panjang tali singgung $PT$ tersebut?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> The angle formed between a chord AB and a tangent line touching the circle at point A is $40^\circ$. What is the measure of the inscribed angle subtending the chord AB in the alternate segment?<br /><br />
+              Terdapat sebuah tali busur AB. Sebuah garis lurus dari luar menyinggung lingkaran tepat di titik A. Sudut kemiringan antara garis singgung tersebut dan tali busur AB adalah $40^\circ$. Berapakah besar sudut keliling di seberang area yang menghadap sisi AB?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> The circumference of a circle is $10\pi$. What is its area?<br /><br />
+              Jarak keliling pinggiran lingkaran adalah $10\pi$. Berapa luas lantai dalamnya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> From an external point P, two tangents PA and PB are drawn to a circle centered at O. If the angle $\angle APB = 60^\circ$ and the circle's radius is 5, what is the length of the tangent PA?<br /><br />
+              Dari titik P jauh di luar lingkaran, dua garis lurus ditarik untuk menyinggung (PA dan PB). Ternyata ruang sudut ujung $\angle APB$ membuka sebesar $60^\circ$. Jika jari-jari lingkaran = 5, berapakah panjang murni garis lurus PA?
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Bagian Pembahasan -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions / Pembahasan Lengkap</h2>
+
+          <h3 class="topic-title">Solusi Topik 1: Teorema Pythagoras & Luas</h3>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 1:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Visualize the path using a map. Walking back East reduces the net distance traveled Westwards. Then, apply the Pythagorean theorem.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep (CPA):</strong> Bayangkan rute jalannya layaknya peta. Berjalan balik arah ke Timur akan mengurangi (membatalkan) sebagian jarak berjalan ke Barat sebelumnya. Lalu gunakan Teorema Pythagoras.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find the net horizontal and vertical distances.</span><br>
+                  <span class="lang-id">• Hitung jarak bersih mendatar dan vertikal.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Horizontal} &= 35 - 2 = 33 \text{ km} \\
+                  \text{Vertical} &= 56 \text{ km}
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Calculate the hypotenuse for the final distance.</span><br>
+                  <span class="lang-id">• Hitung sisi miring untuk jarak akhir.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Distance} &= \sqrt{33^2 + 56^2} \\
+                  &= \sqrt{1089 + 3136} \\
+                  &= \sqrt{4225} = 65
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 65 km</span> | <span class="lang-id">Jawaban: 65 km</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 2:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Use the algebraic identity for difference of squares, $(c^2 - a^2) = (c-a)(c+a)$, to break down large numbers into closest possible factors to minimize $c$.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Pada Pythagoras $c^2 - a^2 = b^2$, kita bisa menggunakan pemfaktoran aljabar selisih kuadrat untuk memecah angka raksasa menjadi faktor-faktor yang posisinya paling berdekatan agar nilai $c$ sekecil mungkin.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Setup equation and factorize $2023^2$.</span><br>
+                  <span class="lang-id">• Buat persamaan dan faktorkan $2023^2$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  c^2 - a^2 &= 2023^2 \\
+                  (c-a)(c+a) &= (7 \times 17^2)^2 \\
+                  &= 7^2 \times 17^4
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find two closest factors of $7^2 \times 17^4$ and add the resulting equations.</span><br>
+                  <span class="lang-id">• Cari dua faktor perkalian yang paling berdekatan dari $7^2 \times 17^4$ lalu jumlahkan persamaannya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Factor 1} &= 17^3 = 4913 \\
+                  \text{Factor 2} &= 7^2 \times 17 = 833 \\
+                  \\
+                  (c-a) + (c+a) &= 833 + 4913 \\
+                  2c &= 5746 \\
+                  c &= 2873
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 2873</span> | <span class="lang-id">Jawaban: 2873</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 3:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Since it's not a right-angled triangle, apply Heron's Formula.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Karena bukan segitiga siku-siku, kita harus menggunakan Rumus Heron: Luas $= \sqrt{s(s-a)(s-b)(s-c)}$ dengan $s$ sebagai setengah keliling.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find the semi-perimeter ($s$).</span><br>
+                  <span class="lang-id">• Cari Setengah Keliling ($s$).</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  s &= \frac{11 + 16 + 19}{2} \\
+                  &= 23
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Plug into Heron's formula and simplify the surd.</span><br>
+                  <span class="lang-id">• Masukkan ke Rumus Heron dan sederhanakan bentuk akarnya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \sqrt{23 \times (23-11) \times (23-16) \times (23-19)} \\
+                  &= \sqrt{23 \times 12 \times 7 \times 4} \\
+                  &= \sqrt{23 \times (4 \times 3) \times 7 \times 4} \\
+                  &= 4\sqrt{23 \times 3 \times 7} = 4\sqrt{483}
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $4\sqrt{483}$</span> | <span class="lang-id">Jawaban: $4\sqrt{483}$</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 4:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Simplify the numbers to check for a hidden Pythagorean Triple before doing complex calculations.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Sederhanakan angka terlebih dahulu untuk memeriksa keberadaan Tripel Pythagoras rahasia agar terhindar dari perkalian yang menyiksa.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Divide all sides by 4.</span><br>
+                  <span class="lang-id">• Bagi semua sisi dengan 4.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  28 \div 4 &= 7 \\
+                  100 \div 4 &= 25 \\
+                  96 \div 4 &= 24
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• 7-24-25 is a classic Pythagorean triple. The longest side (100) is the hypotenuse. Multiply the legs for the area.</span><br>
+                  <span class="lang-id">• 7-24-25 adalah Tripel Pythagoras. Sisi terpanjang (100) adalah sisi miring. Kalikan sisi penyikunya untuk luas.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \frac{1}{2} \times 28 \times 96 \\
+                  &= 14 \times 96 \\
+                  &= 1344
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 1344</span> | <span class="lang-id">Jawaban: 1344</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 5:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> To minimize the perimeter for a given area, the length and width must be as close to each other as possible (forming a shape closest to a square).</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Untuk memperoleh keliling minimum pada luasan tetap, bentuk persegi panjang harus dibuat semirip mungkin dengan wujud bujursangkar (selisih panjang dan lebar seminimal mungkin).</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• The area is 612. Find factor pairs closest to $\sqrt{612} \approx 24.7$.</span><br>
+                  <span class="lang-id">• Luasnya adalah 612. Cari pasangan faktor pengali yang paling dekat dengan $\sqrt{612} \approx 24.7$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Factors} &= 18 \times 34 = 612
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Calculate the perimeter using these factors.</span><br>
+                  <span class="lang-id">• Hitung keliling menggunakan faktor-faktor tersebut.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Perimeter} &= 2 \times (18 + 34) \\
+                  &= 2 \times 52 \\
+                  &= 104
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 104</span> | <span class="lang-id">Jawaban: 104</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 6:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The diagonals of a rhombus intersect perfectly at $90^\circ$ right angles, dividing the shape into 4 identical right-angled triangles.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Diagonal belah ketupat selalu memotong tepat di tengah-tengah membentuk sudut tegak lurus $90^\circ$ (terpecah menjadi 4 segitiga siku-siku identik).</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Identify the hypotenuse and leg of the small triangle.</span><br>
+                  <span class="lang-id">• Identifikasi sisi miring dan sisi tegak pada segitiga kecil.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Hypotenuse} &= 17 \\
+                  \text{Leg 1} &= 16 \div 2 = 8
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Use Pythagoras to find the other leg, then double it.</span><br>
+                  <span class="lang-id">• Gunakan Pythagoras untuk sisi tegak lainnya, lalu kalikan dua.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Leg 2} &= \sqrt{17^2 - 8^2} \\
+                  &= \sqrt{289 - 64} = 15 \\
+                  \text{Full Diagonal} &= 15 \times 2 = 30
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 30</span> | <span class="lang-id">Jawaban: 30</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 7:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Use dummy numbers to visualize. When joining two shapes, the overlapping edge "disappears" from the outer perimeter.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Gunakan permisalan angka untuk mempermudah. Saat potongan digabungkan, perhatikan "garis dinding" mana yang saling menempel dan menghilang dari keliling luar.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Set dummy values: Length = 200, Width = 130. Initial Perimeter = 660.</span><br>
+                  <span class="lang-id">• Misal Panjang = 200, Lebar = 130. Keliling Asli = 660.</span>
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Cut in half: two 100x130 pieces. When joined, the 100 edge is completely hidden/overlapped. The perimeter drops by 200 from the completely separated sum.</span><br>
+                  <span class="lang-id">• Dipotong dua: jadi balok ukuran 100x130. Saat ditempelkan sejajar, sisi dinding 100 tertutup rapat. Bagian keliling luar yang hangus adalah 2 kali 100.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Separated Sum} &= 2 \times (100+130+100+130) = 920 \\
+                  \text{New Perimeter} &= 920 - 200 = 720
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Calculate percentage increase.</span><br>
+                  <span class="lang-id">• Hitung persentase kenaikan.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \% \text{ Increase} &= \frac{720 - 660}{660} \times 100\% \\
+                  &= \frac{60}{660} \times 100\% \approx 9\%
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 9%</span> | <span class="lang-id">Jawaban: 9%</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 8:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Visual algebra. Assign variables for length and width. Don't guess the numbers; the variables will magically cancel each other out!</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Aljabar visual. Ganti panjang dengan variabel, jangan menebak angkanya. Variabel akan saling menghilangkan secara ajaib di akhir penyelesaian!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Let card length = $P$, width = $L$. The bottom width (48) holds one $P$ and two $L$'s.</span><br>
+                  <span class="lang-id">• Misal: Panjang kartu = $P$, Lebar kartu = $L$. Sisi mendatar (48) dipenuhi oleh 1 buah $P$ ditambah 2 tumpukan $L$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  P + 2L &= 48
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Express the perimeters of the two shaded areas in terms of P and L, then sum them up.</span><br>
+                  <span class="lang-id">• Tuliskan keliling dua kotak biru tersebut dalam $P$ dan $L$, lalu jumlahkan.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  K_1 (\text{Bottom-Left}) &= 2(P + 40 - 2L) \\
+                  &= 2P + 80 - 4L \\
+                  K_2 (\text{Top-Right}) &= 2(2L + 40 - P) \\
+                  &= 4L + 80 - 2P \\
+                  \text{Total} &= (2P + 80 - 4L) + (4L + 80 - 2P) \\
+                  &= 80 + 80 = 160
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 160 cm</span> | <span class="lang-id">Jawaban: 160 cm</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 9:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Form equations by reading the visual heights. The measured distance is the table's height PLUS the object on it, MINUS the object on the ground.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Susun persamaan dari visual. Jarak ukur murni sama dengan "Tinggi meja DITAMBAH kayu di atasnya, DIKURANGI kayu di lantai bawahnya".</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Variables: Table=$T$, Block Height=$H$, Block Width=$W$. Given: $H = 3W$.</span><br>
+                  <span class="lang-id">• Variabel: Meja=$T$, Tinggi tegak=$H$, Lebar tidur=$W$. Diketahui: $H = 3W$.</span>
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Create equations from the diagrams and eliminate $T$.</span><br>
+                  <span class="lang-id">• Buat persamaan dari gambar dan eliminasi/hilangkan $T$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Left} &\rightarrow T + H - 2W = 106 \\
+                  \text{Right} &\rightarrow T + 2W - H = 98 \\
+                  \text{Subtracting} &\rightarrow (T + H - 2W) - (T + 2W - H) = 106 - 98 \\
+                  2H - 4W &= 8 \implies H - 2W = 4
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Substitute $H = 3W$ to find the dimensions and the perimeter.</span><br>
+                  <span class="lang-id">• Substitusi $H = 3W$ untuk mencari dimensi dan kelilingnya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  3W - 2W &= 4 \implies W = 4 \\
+                  H &= 3(4) = 12 \\
+                  \text{Perimeter} &= 2 \times (12 + 4) = 32
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 32 cm</span> | <span class="lang-id">Jawaban: 32 cm</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 10:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Geometry of polygons. Find the adjacent angle using the quadrilateral sum, then use the 30°-60°-90° special "Golden" right triangle ratio.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Analisis susunan sudut. Cari sudut bersebelahan lalu pakai keajaiban "Segitiga Emas" 30°-60°-90° di mana sisi miring selalu 2x lipat sisi terpendek!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find $\angle C$ using the quadrilateral AECF ($360^\circ$ total). Then find $\angle B$ using parallelogram properties.</span><br>
+                  <span class="lang-id">• Cari $\angle C$ dari segiempat biru AECF (total $360^\circ$). Lalu cari $\angle B$ lewat sifat jajaran genjang.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \angle C &= 360^\circ - 90^\circ - 90^\circ - 60^\circ = 120^\circ \\
+                  \angle B &= 180^\circ - 120^\circ = 60^\circ
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Apply the 30-60-90 rule in $\triangle ABE$ to find AB. The opposite side CD is equal to AB.</span><br>
+                  <span class="lang-id">• Gunakan rasio 30-60-90 pada $\triangle ABE$ untuk mendapat AB. Sisi sejajar CD sama persis dengan AB.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  AB &= 2 \times \text{Base } (BE) \\
+                  &= 2 \times 2 = 4 \\
+                  CD &= AB = 4
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 4</span> | <span class="lang-id">Jawaban: 4</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 11:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The diagonal of a square perfectly splits it into two $45^\circ-45^\circ-90^\circ$ triangles. The formula is $\text{Diagonal} = \text{Side} \times \sqrt{2}$.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Diagonal persegi itu seperti jalan pintas siku-siku sama kaki. Rumus cepatnya: $\text{Diagonal} = \text{Sisi} \times \sqrt{2}$.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Calculate the side by rationalizing the denominator.</span><br>
+                  <span class="lang-id">• Hitung sisi dengan merasionalkan penyebut.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Side} \times \sqrt{2} &= 80 \\
+                  \text{Side} &= \frac{80}{\sqrt{2}} \\
+                  &= \frac{80\sqrt{2}}{2} = 40\sqrt{2}
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $40\sqrt{2}$ cm</span> | <span class="lang-id">Jawaban: $40\sqrt{2}$ cm</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 12:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The direct shortcut formula for the area of an Equilateral Triangle is $A = \frac{s^2\sqrt{3}}{4}$.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Rumus cepat luar biasa untuk Luas Segitiga Sama Sisi murni tanpa perlu mencari tingginya: $L = \frac{S^2\sqrt{3}}{4}$.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Equate and solve for $S^2$.</span><br>
+                  <span class="lang-id">• Samakan dengan luas, lalu cari nilai $S^2$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \frac{S^2 \sqrt{3}}{4} &= 25\sqrt{3} \quad \text{(Cancel the root 3)} \\
+                  \frac{S^2}{4} &= 25 \\
+                  S^2 &= 100 \implies S = 10
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 10</span> | <span class="lang-id">Jawaban: 10</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 13:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Geometric connection trick: $\text{Area} = \text{Inradius (r)} \times \text{Semi-perimeter (s)}$.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Koneksi maut geometri segitiga: $\text{Luas} = \text{Jari-jari Dalam (r)} \times \text{Setengah Keliling (s)}$.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find the semi-perimeter first, then double it.</span><br>
+                  <span class="lang-id">• Cari setengah keliling terlebih dahulu, lalu kalikan dua.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  350 &= 20 \times s \\
+                  s &= 17.5 \\
+                  \text{Perimeter} &= 17.5 \times 2 = 35
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 35</span> | <span class="lang-id">Jawaban: 35</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 14:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Basic arithmetic of areas. Total area is just the pure sum.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Aritmatika luasan dasar. Total area murni didapat dari penjumlahan tanpa trik.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Subtract the first square's area, then square root.</span><br>
+                  <span class="lang-id">• Kurangkan area kotak pertama, lalu akarkan sisanya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area}_1 &= 6^2 = 36 \\
+                  \text{Area}_2 &= 100 - 36 = 64 \\
+                  \text{Side}_2 &= \sqrt{64} = 8
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 8</span> | <span class="lang-id">Jawaban: 8</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 15:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> A Pythagorean triple forms a right-angled triangle, meaning the two shorter legs act perfectly as base and height. Heron's formula validates this universally.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Segitiga tripel Pythagoras pasti tegak lurus (siku-siku) di sisinya yang lebih pendek, membuktikan Rumus Heron tidak pernah salah!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Method 1: Regular Right Triangle Area</span><br>
+                  <span class="lang-id">• Metode 1: Siku-Siku Biasa</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \frac{1}{2} \times 7 \times 24 = 84
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Method 2: Heron's Formula (with $s = 28$)</span><br>
+                  <span class="lang-id">• Metode 2: Rumus Heron (dengan $s = 28$)</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \sqrt{28(28-7)(28-24)(28-25)} \\
+                  &= \sqrt{28 \times 21 \times 4 \times 3} \\
+                  &= \sqrt{7056} = 84
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: Valid and equal (84)</span> | <span class="lang-id">Jawaban: Terbukti Valid (84)</span>
+            </div>
+          </div>
+
+          <h3 class="topic-title">Solusi Topik 2: Lingkaran & Garis Singgung</h3>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 16:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The sector area shortcut formula exactly mirrors the triangle formula: $\frac{1}{2} \times r \times \text{Arc Length}$. Perimeter includes the arc AND the two straight radii sides.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Rumus pintas luas juring (sektor) ajaibnya sama persis dengan luas segitiga: $\frac{1}{2} \times r \times \text{Panjang busur}$. Ingat keliling penuh melibatkan busur DAN 2 sisi jari-jari.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Extract the arc length from the Area.</span><br>
+                  <span class="lang-id">• Ekstrak panjang busur dari nilai Luas.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  720 &= \frac{1}{2} \times 20 \times \text{Arc} \\
+                  720 &= 10 \times \text{Arc} \implies \text{Arc} = 72
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Sum all borders for the full perimeter.</span><br>
+                  <span class="lang-id">• Jumlahkan semua batasan untuk keliling penuh.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Perimeter} &= r + r + \text{Arc} \\
+                  &= 20 + 20 + 72 = 112
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 112</span> | <span class="lang-id">Jawaban: 112</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 17:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The "Diagonal Toll Road". The total square diagonal ($12\sqrt{2}$) slices perfectly through the centers of both tangent circles reaching the corners.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Bedah "Jalan Tol Diagonal". Diagonal bujur sangkar ($12\sqrt{2}$) adalah jalur lurus yang menembus titik pusat kedua lingkaran hingga ke ujung pojok.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Map the diagonal segments from corner to corner. (Corner to Big Center + Big Radius + Small Radius + Small Center to Corner). Given $R=2r$.</span><br>
+                  <span class="lang-id">• Petakan rute jalan tol diagonal dari pojok ke pojok (Pojok ke Pusat Besar + Jari Besar + Jari Kecil + Pusat Kecil ke Pojok). Diketahui $R=2r$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Total} &= R\sqrt{2} + R + r + r\sqrt{2} \\
+                  &= 2r\sqrt{2} + 2r + r + r\sqrt{2} \\
+                  &= 3r\sqrt{2} + 3r = 3r(\sqrt{2}+1)
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Equate to diagonal length to find $r$, then the area.</span><br>
+                  <span class="lang-id">• Samakan dengan diagonal asli untuk mencari $r$, lalu hitung luasnya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  3r(\sqrt{2}+1) &= 12\sqrt{2} \\
+                  r &= \frac{4\sqrt{2}}{\sqrt{2}+1} \times \frac{\sqrt{2}-1}{\sqrt{2}-1} = 8 - 4\sqrt{2} \\
+                  \text{Area} &= \pi (8-4\sqrt{2})^2 = (96 - 64\sqrt{2})\pi
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $(96 - 64\sqrt{2})\pi$</span> | <span class="lang-id">Jawaban: $(96 - 64\sqrt{2})\pi$</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 18:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The Cut-Out Strategy. Shaded area equals the total Semicircle Dome Area minus the hollowed-out Triangle Area.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Strategi Potong-Buang. Arsir sisa = Kubah Setengah Lingkaran total dikeruk/dikurangi oleh Luas Segitiga berongga di tengahnya.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Diameter is 12, so radius $r=6$. Calculate dome area.</span><br>
+                  <span class="lang-id">• Diameter 12, Jari-jari $r=6$. Hitung luas kubah.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Semicircle} &= \frac{1}{2} \times \pi \times 6^2 = 18\pi
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• The altitude of the isosceles right triangle exactly matches the circle's radius (6).</span><br>
+                  <span class="lang-id">• Ketinggian vertikal segitiga dari atap ke pusat murni sejajar panjang jari-jarinya (6).</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Triangle} &= \frac{1}{2} \times 12 \times 6 = 36 \\
+                  \text{Shaded} &= 18\pi - 36
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $18\pi - 36$</span> | <span class="lang-id">Jawaban: $18\pi - 36$</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 19:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The Rolling Coin paradox. The distance traveled by the center of a rolling coin around an external polygon equals the Polygon's Perimeter PLUS exactly one full Coin Circumference (due to pivoting at the corners).</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Paradoks Roda Menggelinding Luar. Roda menempuh jarak linear keliling poligon DITAMBAH ekstra berputar mandiri (+1 lingkaran keliling penuh) untuk sekadar berbelok melewati sudut-sudut tajamnya!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Calculate Total Distance and divide by the coin's circumference.</span><br>
+                  <span class="lang-id">• Hitung Total Jarak Tempuh Pusat lalu bagi dengan keliling koinnya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Total Distance} &= \text{Polygon} + \text{1 Coin Edge} \\
+                  &= 6 + 2 = 8 \text{ m} \\
+                  \text{Turns} &= 8 \div 2 = 4 \text{ full turns}
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 4 Turns</span> | <span class="lang-id">Jawaban: 4 Kali Putaran</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 20:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The Pythaogorean Extension. The magic formula $a^2+b^2=c^2$ applies to the AREAS of any similar 2D shapes mounted on its sides! (Area Leg 1 + Area Leg 2 = Area Hypotenuse).</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Perluasan Spektakuler Teorema Pythagoras. Rumus $a^2+b^2=c^2$ ternyata juga mutlak berlaku untuk LUAS geometri apa saja yang nempel di tepi segitiga tersebut! (Luas B + Luas C = Luas A).</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find the missing Area C and extract its radius.</span><br>
+                  <span class="lang-id">• Cari Luas C yang hilang lalu ekstrak nilai jari-jarinya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area C} &= \text{Area A} - \text{Area B} \\
+                  &= 50\pi - 18\pi = 32\pi \\
+                  \frac{1}{2} \pi r^2 &= 32\pi \implies r^2 = 64 \implies r = 8
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 8</span> | <span class="lang-id">Jawaban: 8</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 21:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Tangents drawn from a single external point (B) to a circle always have EXACTLY equal lengths ($BD = BC$). Furthermore, a tangent line is always strictly perpendicular to the radius at its touch point.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Garis Singgung yang ditarik dari satu titik jauh (B) dan mencekik lingkaran (ke D dan C) itu panjang lengannya PASTI persis sama (BD = BC). Garis singgung juga selalu menyiku tegak lurus dengan jari-jarinya!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• EC is the diameter (passing center O). So, radius $r = 3/2 = 1.5$. Triangle ADO gives the outer side AO.</span><br>
+                  <span class="lang-id">• EC adalah diameter (melewati pusat O). Jadi, jari-jari $r = 1,5$. Segitiga kecil ADO memberi panjang sisi luar AO.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  AO &= \sqrt{AD^2 + OD^2} = \sqrt{2^2 + 1.5^2} = 2.5 \\
+                  \text{Total Base AC} &= AO + OC = 2.5 + 1.5 = 4
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Let $BC = x$, so hypotenuse $AB = 2+x$. Apply Pythagoras on the giant triangle ABC.</span><br>
+                  <span class="lang-id">• Misalkan $BC = x$, maka sisi miring $AB = 2+x$. Sikat dengan Pythagoras di segitiga raksasa ABC.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  4^2 + x^2 &= (2+x)^2 \\
+                  16 + x^2 &= 4 + 4x + x^2 \quad \text{(Cancel } x^2 \text{)} \\
+                  12 &= 4x \implies x = 3
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 3 cm</span> | <span class="lang-id">Jawaban: 3 cm</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 22:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> The inner tangent radius cleanly bisects the large chord into two equal perpendicular segments. Thus, creating a hidden Pythagorean relation!</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Jari-jari lingkaran kecil akan bertabrakan tegak lurus sempurna di titik tengah, membelah dua tali busur besar. Dari situlah tersembunyi hubungan ajaib Pythagoras!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Half the chord is 8. Form the triangle relating small radius $r$ and big radius $R$.</span><br>
+                  <span class="lang-id">• Separo tali adalah 8. Bentuk segitiga yang menghubungkan jari-jari kecil $r$ dan besar $R$.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  r^2 + 8^2 &= R^2 \\
+                  R^2 - r^2 &= 64
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Area of the Annulus (Donut Ring) formula matches this directly.</span><br>
+                  <span class="lang-id">• Rumus Luas Cincin Donat beresonansi sempurna dengan persamaan ini.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \pi R^2 - \pi r^2 \\
+                  &= \pi (R^2 - r^2) \\
+                  &= 64\pi
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $64\pi$</span> | <span class="lang-id">Jawaban: $64\pi$</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 23:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Inscribed Angle rules. The angle sitting at the edge is always EXACTLY HALF of the curved arc boundary it is staring at on the opposite side.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Rahasia Sudut Keliling Tepi. Besar sudut yang nyender di pinggiran itu pasti SETENGAH murni dari panjang dinding busur yang ditatapnya dari kejauhan!</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Decode the arcs stared at by the known angles.</span><br>
+                  <span class="lang-id">• Terjemahkan ukuran busur yang ditatap oleh sudut yang sudah diketahui.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \angle ABC = 75^\circ &\implies \text{Arc AC} = 150^\circ \\
+                  \angle DAC = 33^\circ &\implies \text{Arc DC} = 66^\circ \\
+                  \text{Arc AD} &= \text{Arc AC} - \text{Arc DC} = 84^\circ
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Target angle $\angle DCA$ is directly looking at Arc AD.</span><br>
+                  <span class="lang-id">• Target sudut $\angle DCA$ mata panahnya langsung menatap lurus ke Busur AD.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \angle DCA &= 84^\circ \div 2 \\
+                  &= 42^\circ
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 42°</span> | <span class="lang-id">Jawaban: 42°</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 24:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> External Tangent Bridge. Construct a virtual right-triangle in the gap between the two kissing circles.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Jembatan Singgung Luar. Ini sepenuhnya tentang membangun imajinasi segitiga siku-siku murni di celah rongga antara dua roda.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Hypotenuse = Sum of radii. Vertical Leg = Difference of radii.</span><br>
+                  <span class="lang-id">• Sisi miring = Penggabungan jari-jari. Garis tegak = Selisih beda tinggi jari-jari.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Hypotenuse} &= 4 + 9 = 13 \\
+                  \text{Vertical} &= 9 - 4 = 5 \\
+                  \text{Tangent Line} &= \sqrt{13^2 - 5^2} = \sqrt{144} = 12
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 12</span> | <span class="lang-id">Jawaban: 12</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 25:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Central Angle Rule. The angle fired from the absolute center carries TWICE the magnitude compared to an angle fired from the edge looking at the exact same boundary.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Hukum Sudut Pusat. Sudut yang ditembakkan persis dari titik tengah membawa DUA KALI LIPAT tenaga/nilai dibandingkan dari ujung tepi untuk dinding busur yang sama.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Multiply the edge angle by 2.</span><br>
+                  <span class="lang-id">• Kalikan sudut tepi dengan angka 2.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Central Angle} &= 2 \times 30^\circ \\
+                  &= 60^\circ
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 60°</span> | <span class="lang-id">Jawaban: 60°</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 26:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Intersecting Chords Theorem. The product of the two cut segments of one solid chord always perfectly balances out with the other chord.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Teorema Silang Tali Berpotongan. Hasil kali ukuran serpihan-serpihan patahan dalam satu tali yang sama, nilainya akan selalu imbang dengan tali yang menabraknya.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Equate the products.</span><br>
+                  <span class="lang-id">• Samakan hasil perkalian serpihannya.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  AE \times EB &= CE \times ED \\
+                  4 \times 6 &= 3 \times ED \\
+                  24 &= 3 \times ED \\
+                  ED &= 8
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 8</span> | <span class="lang-id">Jawaban: 8</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 27:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> A tangent colliding into a radius at the contact point ALWAYS forcefully spawns a rigid $90^\circ$ right angle.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Membangun segitiga siku-siku gaib. Garis Singgung yang lari menabrak Jari-jari itu di titik T selalu mutlak memunculkan bentuk sudut kaku $90^\circ$.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• P-T-O is a right-angled triangle. Hypotenuse OP is 13. Radius OT is 5.</span><br>
+                  <span class="lang-id">• P-T-O adalah segitiga siku-siku. Sisi miring lemparan OP adalah 13. Sisi tegak OT adalah 5.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Tangent PT} &= \sqrt{13^2 - 5^2} \\
+                  &= \sqrt{169 - 25} \\
+                  &= 12
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 12</span> | <span class="lang-id">Jawaban: 12</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 28:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Alternate Segment Theorem. The sharp pinch angle formed externally completely mirrors into the inscribed angle resting on the opposite wall.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Teorema Pantulan Segmen (Alternate). Sudut jepitan kuncup yang tercipta dari luar, nilainya akan langsung menduplikasi/memantul ke dinding lingkaran di seberang sana secara sama persis.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Because of symmetric mirroring laws, the angles are identical.</span><br>
+                  <span class="lang-id">• Karena hukum pantul simetris mutlak ini, sudut murni besarnya ekuivalen.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Inscribed Angle} &= 40^\circ
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: 40°</span> | <span class="lang-id">Jawaban: 40°</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 29:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Find the master key first, which is the Radius, before attempting to unlock the Area formula.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Temukan kunci pintunya terlebih dahulu, yakni sang JARI-JARI, barulah kita bisa membuka rumah rumus Luasan.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Find $r$ from perimeter.</span><br>
+                  <span class="lang-id">• Ekstrak nilai $r$ dari keliling keliling.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  2\pi r &= 10\pi \\
+                  2r &= 10 \implies r = 5
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• Apply the Area formula.</span><br>
+                  <span class="lang-id">• Terapkan rumus Luas.</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \text{Area} &= \pi \times 5^2 \\
+                  &= 25\pi
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $25\pi$</span> | <span class="lang-id">Jawaban: $25\pi$</span>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p><strong>Solution / Pembahasan No 30:</strong></p>
+            <div class="concept">
+              <p>
+                <span class="lang-en"><strong>EN Concept:</strong> Symmetrical Trigonometry Split. A straight center line (PO) splits the giant $60^\circ$ kite into two mirrored $30^\circ-60^\circ-90^\circ$ right triangles.</span><br><br>
+                <span class="lang-id"><strong>ID Konsep:</strong> Belah Tengah Trigonometri. Garis tengah lurus dari titik P ke pusat (PO) akan selalu membelah simetris layang-layang raksasa $60^\circ$ menjadi dua segitiga siku-siku $30^\circ$ yang kembar identik.</span>
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <div class="solution-step">
+                <p>
+                  <span class="lang-en">• View from the bisected $30^\circ$ angle. The opposite side is radius $OA=5$. The adjacent side is the tangent line $PA$. Use Tan!</span><br>
+                  <span class="lang-id">• Pandang dari posisi sudut $30^\circ$ yang terbelah. Di depan kita adalah jari-jari $OA=5$. Pijakan di samping adalah Tangen $PA$. Pakai fungsi Tangen!</span>
+                </p>
+                <p class="math-block">
+                  $$
+                  \begin{aligned}
+                  \angle APO &= 30^\circ \\
+                  \tan(30^\circ) &= \frac{\text{Opposite/Depan (OA)}}{\text{Adjacent/Samping (PA)}} \\
+                  \frac{1}{\sqrt{3}} &= \frac{5}{PA} \\
+                  PA &= 5\sqrt{3}
+                  \end{aligned}
+                  $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">
+              <span class="lang-en">Answer: $5\sqrt{3}$</span> | <span class="lang-id">Jawaban: $5\sqrt{3}$</span>
+            </div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
