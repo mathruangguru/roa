@@ -1,0 +1,2445 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Combinatorics & Counting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow:
+          0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .image-desc {
+        background-color: #f9fafb; /* gray-50 */
+        border: 1px dashed #d1d5db; /* gray-300 */
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+        border-radius: 0.25rem;
+        font-style: italic;
+        color: #4b5563; /* gray-600 */
+        text-align: center;
+      }
+      /* Hanya bold langsung di bawah .solution-wrapper yang dibuat block (untuk judul 'Langkah Penyelesaian:') */
+      .solution-wrapper > strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        margin-top: 1rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+      }
+      .solution-step p {
+        margin: 0.2rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .svg-container {
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 7
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Grade 7 - 8 | Counting Rules, Permutations & Combinations
+        </p>
+      </header>
+
+      <main>
+        <!-- ========================================== -->
+        <!-- QUESTIONS SECTION                          -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Questions</h2>
+
+          <h3 class="topic-title">Part 1: Basic Counting Rules</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>1. EN:</strong> How many 4-digit odd integers can be
+              formed from the digits 0, 1, 4, 6, and 8 if no digit can be
+              repeated?<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan ganjil 4-angka yang
+              dapat dibentuk dari angka 0, 1, 4, 6, dan 8 jika tidak boleh ada
+              angka yang berulang?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>2. EN:</strong> How many four-digit whole numbers contain
+              the digit pair "17" without other intervening digits? (e.g., 2017
+              is included, but 2107 is not).<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan cacah empat angka yang
+              mengandung pasangan angka "17" secara berurutan tanpa dipisahkan
+              angka lain? (contoh: 2017 termasuk, tetapi 2107 tidak).
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>3. EN:</strong> Choose 4 digits, without repetition, from
+              $\{1, 2, 9, 8, 3\}$ to construct 4-digit numbers. How many of them
+              are divisible by 3?<br /><br />
+              <strong>ID:</strong> Pilih 4 angka tanpa pengulangan dari himpunan
+              $\{1, 2, 9, 8, 3\}$ untuk menyusun bilangan 4-angka. Berapa banyak
+              bilangan yang terbentuk yang habis dibagi 3?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>4. EN:</strong> A flight of stairs has 9 steps. Mary can
+              go up 1 step or 2 steps each time. The 5th step cannot be stepped
+              on as it is destroyed. How many ways are there for Mary to go up
+              the stairs?<br /><br />
+              <strong>ID:</strong> Sebuah tangga memiliki 9 anak tangga. Mary
+              dapat naik 1 atau 2 anak tangga setiap kali melangkah. Anak tangga
+              ke-5 hancur dan tidak dapat diinjak. Berapa banyak cara Mary dapat
+              menaiki tangga tersebut hingga ke puncak?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>5. EN:</strong> In the letter grid below, you can only
+              move down-left or down-right. How many ways are there to spell the
+              word "MATHS" starting from the top letter 'M'?<br /><br />
+              <strong>ID:</strong> Pada grid huruf di bawah, kamu hanya boleh
+              bergerak ke kiri-bawah atau kanan-bawah. Berapa banyak cara untuk
+              mengeja kata "MATHS" dimulai dari huruf 'M' di paling atas?
+            </p>
+            <div class="svg-container">
+              <svg width="360" height="200" viewBox="0 0 400 220">
+                <defs>
+                  <marker
+                    id="arrow"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                  </marker>
+                </defs>
+                <!-- M to A -->
+                <line
+                  x1="200"
+                  y1="35"
+                  x2="165"
+                  y2="55"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="200"
+                  y1="35"
+                  x2="235"
+                  y2="55"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <!-- A to T -->
+                <line
+                  x1="160"
+                  y1="75"
+                  x2="125"
+                  y2="95"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="160"
+                  y1="75"
+                  x2="195"
+                  y2="95"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="240"
+                  y1="75"
+                  x2="205"
+                  y2="95"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="240"
+                  y1="75"
+                  x2="275"
+                  y2="95"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <!-- T to H -->
+                <line
+                  x1="120"
+                  y1="115"
+                  x2="85"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="120"
+                  y1="115"
+                  x2="155"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="200"
+                  y1="115"
+                  x2="165"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="200"
+                  y1="115"
+                  x2="235"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="280"
+                  y1="115"
+                  x2="245"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="280"
+                  y1="115"
+                  x2="315"
+                  y2="135"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <!-- H to S -->
+                <line
+                  x1="80"
+                  y1="155"
+                  x2="45"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="80"
+                  y1="155"
+                  x2="115"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="160"
+                  y1="155"
+                  x2="125"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="160"
+                  y1="155"
+                  x2="195"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="240"
+                  y1="155"
+                  x2="205"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="240"
+                  y1="155"
+                  x2="275"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="320"
+                  y1="155"
+                  x2="285"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+                <line
+                  x1="320"
+                  y1="155"
+                  x2="355"
+                  y2="175"
+                  stroke="#94a3b8"
+                  stroke-width="2"
+                  marker-end="url(#arrow)"
+                />
+
+                <g
+                  font-family="monospace"
+                  font-size="22"
+                  font-weight="bold"
+                  fill="#3730a3"
+                  text-anchor="middle"
+                >
+                  <text x="200" y="30">M</text>
+                  <text x="160" y="70">A</text>
+                  <text x="240" y="70">A</text>
+                  <text x="120" y="110">T</text>
+                  <text x="200" y="110">T</text>
+                  <text x="280" y="110">T</text>
+                  <text x="80" y="150">H</text>
+                  <text x="160" y="150">H</text>
+                  <text x="240" y="150">H</text>
+                  <text x="320" y="150">H</text>
+                  <text x="40" y="190">S</text>
+                  <text x="120" y="190">S</text>
+                  <text x="200" y="190">S</text>
+                  <text x="280" y="190">S</text>
+                  <text x="360" y="190">S</text>
+                </g>
+              </svg>
+            </div>
+            <div class="image-desc">
+              Pola pergerakan mirip dengan konsep Segitiga Pascal. / Movement
+              pattern resembles Pascal's Triangle concept.
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6. EN:</strong> How many positive integer divisors does
+              the number $2^4 \times 3^3 \times 5^2$ have that are also
+              multiples of 10?<br /><br />
+              <strong>ID:</strong> Berapa banyak faktor bulat positif dari
+              bilangan $2^4 \times 3^3 \times 5^2$ yang juga merupakan kelipatan
+              dari 10?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7. EN:</strong> How many 3-digit numbers have the sum of
+              their digits equal to 6?<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan 3-angka yang jumlah
+              angka-angkanya sama dengan 6?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8. EN:</strong> A frog is at coordinate (0,0). At each
+              step, it can only jump 1 unit right or 1 unit up. How many paths
+              are there to reach (5,5) if it must NOT pass through the
+              coordinate (2,2)?<br /><br />
+              <strong>ID:</strong> Seekor katak berada di titik (0,0). Setiap
+              melangkah, ia hanya boleh melompat 1 satuan ke kanan atau 1 satuan
+              ke atas. Berapa banyak jalur untuk mencapai titik (5,5) jika katak
+              tersebut TIDAK BOLEH melewati titik (2,2)?
+            </p>
+            <div class="svg-container">
+              <svg width="280" height="280" viewBox="-30 -30 260 260">
+                <!-- Grid Lines -->
+                <g stroke="#cbd5e1" stroke-width="2">
+                  <!-- Verticals -->
+                  <line x1="0" y1="0" x2="0" y2="200" />
+                  <line x1="40" y1="0" x2="40" y2="200" />
+                  <line x1="80" y1="0" x2="80" y2="200" />
+                  <line x1="120" y1="0" x2="120" y2="200" />
+                  <line x1="160" y1="0" x2="160" y2="200" />
+                  <line x1="200" y1="0" x2="200" y2="200" />
+                  <!-- Horizontals -->
+                  <line x1="0" y1="0" x2="200" y2="0" />
+                  <line x1="0" y1="40" x2="200" y2="40" />
+                  <line x1="0" y1="80" x2="200" y2="80" />
+                  <line x1="0" y1="120" x2="200" y2="120" />
+                  <line x1="0" y1="160" x2="200" y2="160" />
+                  <line x1="0" y1="200" x2="200" y2="200" />
+                </g>
+                <!-- Origin (0,0) yang di grafik visual ditaruh di kiri bawah, SVG Y-axis turun, maka cy=200 -->
+                <circle cx="0" cy="200" r="7" fill="#3b82f6" />
+                <text
+                  x="-25"
+                  y="220"
+                  font-size="14"
+                  fill="#3b82f6"
+                  font-weight="bold"
+                >
+                  (0,0)
+                </text>
+
+                <!-- End (5,5) -->
+                <circle cx="200" cy="0" r="7" fill="#3b82f6" />
+                <text
+                  x="180"
+                  y="-12"
+                  font-size="14"
+                  fill="#3b82f6"
+                  font-weight="bold"
+                >
+                  (5,5)
+                </text>
+
+                <!-- Obstacle (2,2) -> cx=2*40=80, cy=200-(2*40)=120 -->
+                <circle cx="80" cy="120" r="10" fill="#ef4444" />
+                <!-- Cross on obstacle -->
+                <line
+                  x1="72"
+                  y1="112"
+                  x2="88"
+                  y2="128"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="88"
+                  y1="112"
+                  x2="72"
+                  y2="128"
+                  stroke="white"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <text
+                  x="95"
+                  y="135"
+                  font-size="13"
+                  fill="#ef4444"
+                  font-weight="bold"
+                >
+                  Hindari (2,2)
+                </text>
+              </svg>
+            </div>
+            <div class="image-desc">
+              Peta Titik Koordinat: Lompatan Katak / Coordinate Map: Frog Jump
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9. EN:</strong> Use the digits 1, 4, 6, 7, 8, 9 to form
+              5-digit numbers without repetition. The odd digits cannot be next
+              to each other. How many numbers can be formed?<br /><br />
+              <strong>ID:</strong> Gunakan angka 1, 4, 6, 7, 8, 9 untuk
+              membentuk bilangan 5-angka tanpa pengulangan. Angka-angka ganjil
+              tidak boleh bersebelahan. Berapa banyak bilangan yang dapat
+              dibentuk?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10. EN:</strong> How many subsets of the set $\{S, E, A,
+              M, O\}$ contain at least one vowel?<br /><br />
+              <strong>ID:</strong> Berapa banyak himpunan bagian dari himpunan
+              $\{S, E, A, M, O\}$ yang memuat setidaknya satu huruf vokal?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>11. EN:</strong> How many numbers from 1 to 500 are NOT
+              divisible by 2 or 3?<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan dari 1 hingga 500 yang
+              TIDAK habis dibagi 2 ataupun 3?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12. EN:</strong> How many 5-digit palindromes are there?
+              (A palindrome reads the same forwards and backwards, e.g.,
+              12321).<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan palindrom 5-angka yang
+              ada? (Bilangan palindrom dibaca sama dari depan dan belakang,
+              contoh: 12321).
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13. EN:</strong> How many 4-digit even numbers can be
+              formed using the digits 0-9 if all digits must be different?<br /><br />
+              <strong>ID:</strong> Berapa banyak bilangan genap 4-angka yang
+              dapat dibentuk dari angka 0-9 jika semua angkanya harus berbeda?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14. EN:</strong> How many rectangles can be found in a
+              grid made of 5 horizontal lines and 6 vertical lines?<br /><br />
+              <strong>ID:</strong> Berapa banyak persegi panjang yang dapat
+              ditemukan pada sebuah grid yang dibentuk oleh 5 garis horizontal
+              dan 6 garis vertikal?
+            </p>
+            <div class="svg-container">
+              <svg width="270" height="200" viewBox="-10 -10 270 190">
+                <g stroke="#475569" stroke-width="4" stroke-linecap="round">
+                  <!-- Horizontal (5 garis) -->
+                  <line x1="0" y1="0" x2="250" y2="0" />
+                  <line x1="0" y1="40" x2="250" y2="40" />
+                  <line x1="0" y1="80" x2="250" y2="80" />
+                  <line x1="0" y1="120" x2="250" y2="120" />
+                  <line x1="0" y1="160" x2="250" y2="160" />
+                  <!-- Vertical (6 garis) -->
+                  <line x1="0" y1="0" x2="0" y2="160" />
+                  <line x1="50" y1="0" x2="50" y2="160" />
+                  <line x1="100" y1="0" x2="100" y2="160" />
+                  <line x1="150" y1="0" x2="150" y2="160" />
+                  <line x1="200" y1="0" x2="200" y2="160" />
+                  <line x1="250" y1="0" x2="250" y2="160" />
+                </g>
+              </svg>
+            </div>
+            <div class="image-desc">
+              Grid 5 Garis Horizontal & 6 Garis Vertikal / Grid of 5 Horizontal
+              & 6 Vertical Lines
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15. EN:</strong> There are 8 points on the circumference
+              of a circle. How many different triangles can be formed using
+              these points as vertices?<br /><br />
+              <strong>ID:</strong> Terdapat 8 titik pada keliling sebuah
+              lingkaran. Berapa banyak segitiga berbeda yang dapat dibentuk
+              dengan menggunakan titik-titik tersebut sebagai titik sudutnya?
+            </p>
+          </div>
+
+          <h3 class="topic-title">Part 2: Advanced Combinations</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16. EN:</strong> 7 identical black books and 10 identical
+              white books are put on a shelf from left to right. How many
+              different permutations are there?<br /><br />
+              <strong>ID:</strong> 7 buku hitam identik dan 10 buku putih
+              identik diletakkan di rak dari kiri ke kanan. Ada berapa banyak
+              kemungkinan susunan (permutasi) berbeda yang bisa dilakukan?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17. EN:</strong> Given $(a,b,c,d,e)$ is a set of integers
+              and all of them are greater than 10. Find the number of solution
+              sets of $a+b+c+d+e=83$.<br /><br />
+              <strong>ID:</strong> Diketahui $(a,b,c,d,e)$ adalah himpunan
+              bilangan bulat dan semuanya lebih besar dari 10. Tentukan
+              banyaknya variasi himpunan penyelesaian untuk persamaan
+              $a+b+c+d+e=83$.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18. EN:</strong> In how many possible ways can 9 identical
+              flowers be distributed into 3 distinct vases such that there is at
+              least one flower in each vase?<br /><br />
+              <strong>ID:</strong> Dengan berapa cara berbeda 9 bunga identik
+              dapat dimasukkan ke dalam 3 vas yang berbeda coraknya, sedemikian
+              rupa sehingga setiap vas sekurang-kurangnya mendapat 1 bunga?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19. EN:</strong> Find the number of permutations for
+              arranging 6 identical bowls, 3 identical cups, and 2 identical
+              dishes in a single straight row.<br /><br />
+              <strong>ID:</strong> Carilah ada berapa banyak permutasi untuk
+              menyusun 6 mangkuk identik, 3 cangkir identik, dan 2 piring
+              identik dalam satu barisan lurus.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20. EN:</strong> How many unique necklaces can be made
+              using 7 equally spaced beads of 7 different colors?<br /><br />
+              <strong>ID:</strong> Berapa banyak kalung unik berbeda yang dapat
+              dibuat menggunakan 7 manik-manik berjarak sama dengan 7 warna yang
+              berbeda?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>21. EN:</strong> There are 14 points evenly spaced on a
+              circle. How many different nonagons (9-sided polygons) can we draw
+              with those points as its vertices?<br /><br />
+              <strong>ID:</strong> Ada 14 titik yang tersebar merata pada
+              keliling lingkaran. Berapa banyak segi-sembilan (nonagon) berbeda
+              yang dapat kita gambar dengan titik-titik tersebut sebagai titik
+              sudutnya?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22. EN:</strong> What is the number of unique 4-letter
+              words (anagrams) that can be formed using the letters from the
+              word "MATHS"?<br /><br />
+              <strong>ID:</strong> Berapa banyak kata 4-huruf unik (tidak perlu
+              bermakna kamus) yang dapat dibentuk menggunakan huruf-huruf dari
+              kata "MATHS"?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23. EN:</strong> 4 boys and 3 girls are to stand in a row.
+              How many ways can they be arranged if no two girls are allowed to
+              stand next to each other?<br /><br />
+              <strong>ID:</strong> 4 anak laki-laki dan 3 anak perempuan akan
+              berdiri sejajar dalam satu barisan. Berapa banyak cara menyusun
+              mereka jika tidak boleh ada dua perempuan yang berdiri
+              bersebelahan?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24. EN:</strong> 6 people sit around a circular table.
+              Person A and Person B are best friends and must sit together.
+              However, Person C and Person D had a fight and MUST NOT sit next
+              to each other. How many seating arrangements are possible?<br /><br />
+              <strong>ID:</strong> 6 orang duduk mengelilingi meja bundar. Si A
+              dan Si B adalah sahabat dan harus duduk bersebelahan. Namun, si C
+              dan si D sedang bertengkar dan TIDAK BOLEH duduk bersebelahan.
+              Berapa banyak susunan tempat duduk yang mungkin?
+            </p>
+            <div class="svg-container">
+              <svg width="260" height="260" viewBox="0 0 260 260">
+                <!-- Meja Bundar -->
+                <circle
+                  cx="130"
+                  cy="130"
+                  r="80"
+                  fill="#f8fafc"
+                  stroke="#94a3b8"
+                  stroke-width="5"
+                />
+
+                <!-- Area Ikatan A dan B -->
+                <rect
+                  x="80"
+                  y="10"
+                  width="100"
+                  height="50"
+                  rx="25"
+                  fill="#fef08a"
+                  stroke="#f59e0b"
+                  stroke-width="3"
+                  stroke-dasharray="6,4"
+                />
+                <circle cx="105" cy="35" r="16" fill="#3b82f6" />
+                <text
+                  x="105"
+                  y="41"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  A
+                </text>
+                <circle cx="155" cy="35" r="16" fill="#3b82f6" />
+                <text
+                  x="155"
+                  y="41"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  B
+                </text>
+                <text
+                  x="130"
+                  y="80"
+                  font-size="12"
+                  fill="#d97706"
+                  font-weight="bold"
+                  text-anchor="middle"
+                >
+                  TIED / IKAT
+                </text>
+
+                <!-- Orang C & D berseberangan dengan garis silang -->
+                <circle cx="50" cy="190" r="16" fill="#ef4444" />
+                <text
+                  x="50"
+                  y="196"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  C
+                </text>
+                <circle cx="210" cy="190" r="16" fill="#ef4444" />
+                <text
+                  x="210"
+                  y="196"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  D
+                </text>
+
+                <line
+                  x1="70"
+                  y1="185"
+                  x2="190"
+                  y2="185"
+                  stroke="#ef4444"
+                  stroke-width="2"
+                  stroke-dasharray="5,5"
+                />
+                <!-- Tanda Silang Larangan -->
+                <line
+                  x1="120"
+                  y1="175"
+                  x2="140"
+                  y2="195"
+                  stroke="#ef4444"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="140"
+                  y1="175"
+                  x2="120"
+                  y2="195"
+                  stroke="#ef4444"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <text
+                  x="130"
+                  y="210"
+                  font-size="12"
+                  fill="#ef4444"
+                  font-weight="bold"
+                  text-anchor="middle"
+                >
+                  FORBIDDEN / TERLARANG
+                </text>
+
+                <!-- Orang E & F netral -->
+                <circle cx="30" cy="110" r="16" fill="#10b981" />
+                <text
+                  x="30"
+                  y="116"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  E
+                </text>
+                <circle cx="230" cy="110" r="16" fill="#10b981" />
+                <text
+                  x="230"
+                  y="116"
+                  fill="white"
+                  font-weight="bold"
+                  font-size="16"
+                  text-anchor="middle"
+                >
+                  F
+                </text>
+              </svg>
+            </div>
+            <div class="image-desc">
+              Ilustrasi Formasi Meja Bundar / Circular Table Formation
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25. EN:</strong> There are 7 black, 5 white, and 4 orange
+              balls in a bag. Four balls are drawn randomly without replacement.
+              In how many ways can we draw the balls such that at least 3 balls
+              are white?<br /><br />
+              <strong>ID:</strong> Terdapat 7 bola hitam, 5 bola putih, dan 4
+              bola oranye di dalam tas. Empat bola diambil acak tanpa
+              pengembalian. Ada berapa banyak cara pengambilan sedemikian
+              sehingga kita mendapatkan setidaknya 3 bola putih?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>26. EN:</strong> There are 4 distinct letters and 4
+              distinct envelopes addressed to different people. In how many ways
+              can the letters be placed into the envelopes such that NO letter
+              is placed in its correct envelope? (Derangement).<br /><br />
+              <strong>ID:</strong> Ada 4 surat berbeda dan 4 amplop dengan
+              alamat berbeda. Dalam berapa cara surat dapat dimasukkan ke dalam
+              amplop sehingga TIDAK ADA SATUPUN surat masuk ke amplop yang
+              benar? (Kasus Kekacauan/Derangement).
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>27. EN:</strong> In how many ways can 10 identical candies
+              be divided among 4 children if each child can receive 0 or more
+              candies?<br /><br />
+              <strong>ID:</strong> Dengan berapa cara 10 permen identik dapat
+              dibagikan kepada 4 anak jika setiap anak boleh menerima 0 permen
+              atau lebih?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28. EN:</strong> A committee of 4 people is to be chosen
+              from a group of 5 men and 6 women. The committee must contain
+              exactly 2 women. How many different committees can be formed?<br /><br />
+              <strong>ID:</strong> Sebuah komite 4 orang akan dipilih dari
+              kelompok 5 pria dan 6 wanita. Komite tersebut harus memiliki tepat
+              2 wanita. Berapa banyak komite berbeda yang dapat dibentuk?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29. EN:</strong> How many anagrams of the word "SUCCESS"
+              have all three 'S's standing next to each other?<br /><br />
+              <strong>ID:</strong> Berapa banyak susunan huruf (anagram) dari
+              kata "SUCCESS" di mana ketiga huruf 'S' selalu saling berdampingan
+              satu sama lain?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>30. EN:</strong> 5 married couples (10 people total) are
+              seated in a row of cinema chairs. How many ways can they sit if
+              every couple must sit together?<br /><br />
+              <strong>ID:</strong> 5 pasangan suami istri (total 10 orang) duduk
+              di sebaris kursi bioskop. Berapa banyak cara mereka duduk jika
+              setiap pasangan suami istri wajib duduk berdampingan?
+            </p>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SOLUTIONS SECTION                          -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions & Discussions</h2>
+
+          <h3 class="topic-title">
+            Solutions for Part 1: Basic Counting Rules
+          </h3>
+
+          <!-- Solution 1 -->
+          <div class="item-container">
+            <p><strong>Solution 1:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Conditional multiplication rule.
+                Prioritize boxes with special conditions first (last digit odd,
+                first digit cannot be 0).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Aturan Perkalian bersyarat. Utamakan
+                kotak dengan syarat khusus terlebih dahulu (digit terakhir
+                ganjil, digit awal tidak boleh 0).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Unit digit (last) must be odd. From $\{0, 1, 4, 6, 8\}$,
+                  only 1 choice: <strong>1</strong>.
+                </p>
+                <p>
+                  • Thousands digit (first) cannot be 0, and 1 is used.
+                  Remaining $\{4,6,8\}$ (3 choices).
+                </p>
+                <p>
+                  • Hundreds digit: Remaining from 5 unused digits (3 choices).
+                </p>
+                <p>• Tens digit: Remaining unused digits (2 choices).</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Digit satuan (terakhir) harus ganjil. Dari himpunan angka
+                  $\{0, 1, 4, 6, 8\}$, hanya ada 1 pilihan yaitu angka
+                  <strong>1</strong>.
+                </p>
+                <p>
+                  • Digit ribuan (awal) tidak boleh 0, dan angka 1 sudah
+                  dipakai. Sisa pilihan $\{4,6,8\}$ (3 pilihan).
+                </p>
+                <p>
+                  • Digit ratusan: Sisa dari 5 angka yang belum dipakai (3
+                  pilihan).
+                </p>
+                <p>
+                  • Digit puluhan: Sisa angka yang belum dipakai (2 pilihan).
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total} &= 3 \times 3 \times 2 \times 1 \\
+              &= 18 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 18 numbers.<br />
+              <strong>ID:</strong> 18 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 2 -->
+          <div class="item-container">
+            <p><strong>Solution 2:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Principle of Inclusion-Exclusion
+                (PIE). Calculate all possible positions for the "17" block, then
+                subtract the double-counted intersection.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Prinsip Inklusi-Eksklusi (PIE).
+                Hitung semua kemungkinan posisi blok "17", lalu kurangi irisan
+                yang terhitung ganda.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • "17" at A &amp; B (<strong>1 7</strong> _ _): Remaining
+                  boxes free 0-9. $10 \times 10 = 100$ ways.
+                </p>
+                <p>
+                  • "17" at B &amp; C (_ <strong>1 7</strong> _): $A \neq 0$ (9
+                  choices). D free (10 choices). $9 \times 10 = 90$ ways.
+                </p>
+                <p>
+                  • "17" at C &amp; D (_ _ <strong>1 7</strong>): $A \neq 0$ (9
+                  choices). B free (10 choices). $9 \times 10 = 90$ ways.
+                </p>
+                <p>
+                  • Intersection: 1 number is counted twice (at A&amp;B and
+                  C&amp;D), which is <strong>1717</strong>.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Posisi "17" di A &amp; B (<strong>1 7</strong> _ _): Kotak
+                  sisanya bebas 0-9. $10 \times 10 = 100$ cara.
+                </p>
+                <p>
+                  • Posisi "17" di B &amp; C (_ <strong>1 7</strong> _): $A \neq
+                  0$ (9 pilihan). D bebas (10 pilihan). $9 \times 10 = 90$ cara.
+                </p>
+                <p>
+                  • Posisi "17" di C &amp; D (_ _ <strong>1 7</strong>): $A \neq
+                  0$ (9 pilihan). B bebas (10 pilihan). $9 \times 10 = 90$ cara.
+                </p>
+                <p>
+                  • Irisan: Ada 1 bilangan yang terhitung ganda (di posisi
+                  A&amp;B dan C&amp;D), yaitu bilangan <strong>1717</strong>.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total} &= \text{Case}_{1} +
+              \text{Case}_{2} + \text{Case}_{3} - \text{Intersection} \\ &= 100
+              + 90 + 90 - 1 \\ &= 279 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 279 numbers.<br />
+              <strong>ID:</strong> 279 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 3 -->
+          <div class="item-container">
+            <p><strong>Solution 3:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> A number is divisible by 3 if the
+                <em>sum of all its digits is divisible by 3</em>. Find 1 digit
+                to discard so the remaining sum is divisible by 3.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Syarat bilangan habis dibagi 3
+                adalah <em>jumlah seluruh digitnya habis dibagi 3</em>. Cari 1
+                angka yang harus dibuang agar sisanya habis dibagi 3.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Total sum of all digits = $1+2+9+8+3 = 23$.</p>
+                <p>
+                  • Discard 2 $\rightarrow$ Remaining sum = 21 (Divisible by 3).
+                  The 4 remaining digits $\{1,3,8,9\}$ can be arranged in $4! =
+                  24$ ways.
+                </p>
+                <p>
+                  • Discard 8 $\rightarrow$ Remaining sum = 15 (Divisible by 3).
+                  The 4 remaining digits $\{1,2,3,9\}$ can be arranged in $4! =
+                  24$ ways.
+                </p>
+                <p>
+                  • Discarding any other digit does not result in a sum
+                  divisible by 3.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Total nilai semua angka = $1+2+9+8+3 = 23$.</p>
+                <p>
+                  • Jika buang angka 2 $\rightarrow$ Total sisa = 21 (Habis
+                  dibagi 3). Sisa 4 angka $\{1,3,8,9\}$ disusun $4! = 24$ cara.
+                </p>
+                <p>
+                  • Jika buang angka 8 $\rightarrow$ Total sisa = 15 (Habis
+                  dibagi 3). Sisa 4 angka $\{1,2,3,9\}$ disusun $4! = 24$ cara.
+                </p>
+                <p>
+                  • Angka lain yang dibuang tidak menghasilkan total yang habis
+                  dibagi 3.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total} &= 24 + 24 \\ &= 48 \end{aligned}
+              $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 48 numbers.<br />
+              <strong>ID:</strong> 48 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 4 -->
+          <div class="item-container">
+            <p><strong>Solution 4:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Staircase patterns with 1 or 2
+                steps form a Fibonacci sequence. With an obstacle, multiply the
+                partial paths before and after the obstacle.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Pola tangga dengan lompatan 1 atau 2
+                adalah barisan Fibonacci. Jika ada rintangan, kita gunakan
+                tahapan parsial sebelum dan sesudah rintangan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Find the pattern of ways to step-n ($F(n)$): $F(1)=1,
+                  F(2)=2, F(3)=3, F(4)=5$.
+                </p>
+                <p>
+                  • Step 5 is destroyed. Mary <strong>must</strong> take a
+                  double step from step 4 directly to step 6 (this is 1 fixed
+                  move, no variations).
+                </p>
+                <p>
+                  • From step 6 to step 9, the remaining distance is 3 steps.
+                  Ways to climb 3 steps = $F(3) = 3$ ways.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Cari pola cara ke tangga-n ($F(n)$): $F(1)=1, F(2)=2,
+                  F(3)=3, F(4)=5$.
+                </p>
+                <p>
+                  • Tangga 5 hancur. Mary <strong>wajib</strong> melompat ganda
+                  dari tangga 4 langsung ke tangga 6 (ini 1 langkah pasti, tidak
+                  ada variasi).
+                </p>
+                <p>
+                  • Dari tangga 6 menuju tangga 9, sisa jarak adalah 3 anak
+                  tangga. Cara naik 3 tangga = $F(3) = 3$ cara.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Routes} &= \text{Ways}(4) \times
+              \text{Jump to 6} \times \text{Ways}(3 \text{ steps}) \\ &= 5
+              \times 1 \times 3 \\ &= 15 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 15 ways.<br />
+              <strong>ID:</strong> 15 cara.
+            </div>
+          </div>
+
+          <!-- Solution 5 -->
+          <div class="item-container">
+            <p><strong>Solution 5:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> This spelling route model is
+                identical to the value distribution in Pascal's Triangle. The
+                number on each letter is the sum of routes from above it.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Model rute mengeja ini identik
+                dengan distribusi nilai pada Segitiga Pascal. Angka pada setiap
+                huruf adalah penjumlahan rute dari atasnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Row M: 1 route</p>
+                <p>• Row A: 1, 1 route</p>
+                <p>• Row T: 1, 2, 1 route</p>
+                <p>• Row H: 1, 3, 3, 1 route</p>
+                <p>• Row S (End): 1, 4, 6, 4, 1 route</p>
+                <p>
+                  <em
+                    >(Note: Quick formula for the sum of the n-th row of
+                    Pascal's triangle is $2^{n-1}$. For 5 letters: $2^4 =
+                    16$).</em
+                  >
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Baris M: 1 rute</p>
+                <p>• Baris A: 1, 1 rute</p>
+                <p>• Baris T: 1, 2, 1 rute</p>
+                <p>• Baris H: 1, 3, 3, 1 rute</p>
+                <p>• Baris S (Akhir): 1, 4, 6, 4, 1 rute</p>
+                <p>
+                  <em
+                    >(Catatan: Rumus cepat jumlah baris n Pascal adalah
+                    $2^{n-1}$. Untuk 5 huruf: $2^4 = 16$).</em
+                  >
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Routes} &= 1 + 4 + 6 + 4 + 1 \\ &=
+              16 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 16 ways.<br />
+              <strong>ID:</strong> 16 cara.
+            </div>
+          </div>
+
+          <!-- Solution 6 -->
+          <div class="item-container">
+            <p><strong>Solution 6:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> A factor that is a multiple of 10
+                must have a base of at least $2^1$ and $5^1$. Combine the powers
+                that satisfy the conditions.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Faktor yang kelipatan 10 harus
+                memiliki basis minimal $2^1$ dan $5^1$. Kombinasikan
+                pangkat-pangkat yang memenuhi syarat.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Factor format: $2^a \times 3^b \times 5^c$.</p>
+                <p>
+                  • Power $a$ choices: from $\{1, 2, 3, 4\} \rightarrow$ 4
+                  choices.
+                </p>
+                <p>
+                  • Power $b$ choices: free from $\{0, 1, 2, 3\} \rightarrow$ 4
+                  choices.
+                </p>
+                <p>
+                  • Power $c$ choices: from $\{1, 2\} \rightarrow$ 2 choices.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Bentuk faktor: $2^a \times 3^b \times 5^c$.</p>
+                <p>
+                  • Pilihan pangkat $a$: dari $\{1, 2, 3, 4\} \rightarrow$ 4
+                  pilihan.
+                </p>
+                <p>
+                  • Pilihan pangkat $b$: bebas dari $\{0, 1, 2, 3\} \rightarrow$
+                  4 pilihan.
+                </p>
+                <p>
+                  • Pilihan pangkat $c$: dari $\{1, 2\} \rightarrow$ 2 pilihan.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Factors} &= 4 \times 4 \times 2 \\
+              &= 32 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 32 factors.<br />
+              <strong>ID:</strong> 32 faktor.
+            </div>
+          </div>
+
+          <!-- Solution 7 -->
+          <div class="item-container">
+            <p><strong>Solution 7:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Stars and Bars. Find solutions to
+                $A+B+C = 6$ with conditions $A \ge 1$ (first digit/hundreds
+                cannot be 0), and $B, C \ge 0$.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Stars and Bars. Mencari solusi
+                $A+B+C = 6$ dengan syarat $A \ge 1$ (karena digit
+                pertama/ratusan tidak boleh 0), dan $B, C \ge 0$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Give a "base" value of 1 to A so it is never zero. Remaining
+                  value (stars) = $6 - 1 = 5$.
+                </p>
+                <p>
+                  • We will distribute 5 stars ($\star\star\star\star\star$)
+                  into 3 spaces using 2 dividers ($|$).
+                </p>
+                <p>
+                  • Total abstract object positions = 5 stars + 2 dividers = 7
+                  spots.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Berikan nilai "modal" 1 kepada A agar tidak pernah nol. Sisa
+                  nilai (bintang) = $6 - 1 = 5$.
+                </p>
+                <p>
+                  • Kita akan membagi 5 bintang ($\star\star\star\star\star$)
+                  kepada 3 ruang menggunakan 2 batang pemisah ($|$).
+                </p>
+                <p>
+                  • Total posisi objek abstrak = 5 bintang + 2 batang = 7
+                  tempat.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Combinations} &= C(\text{Total Spots},
+              \text{Dividers}) \\ &= C(7, 2) \\ &= \frac{7 \times 6}{2 \times 1}
+              \\ &= 21 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 21 numbers.<br />
+              <strong>ID:</strong> 21 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 8 -->
+          <div class="item-container">
+            <p><strong>Solution 8:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Combinatorial Routes (Grid). Find
+                the total free routes, then subtract the routes that pass
+                through the forbidden point.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Rute Kombinasi (Grid). Cari rute
+                bebas hambatan, lalu kurangi dengan rute yang sengaja melewati
+                titik terlarang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total Free Routes to (5,5): 5 Right, 5 Up $\rightarrow
+                  C(10,5) = 252$ routes.
+                </p>
+                <p>
+                  • Routes to point (2,2): 2 Right, 2 Up $\rightarrow C(4,2) =
+                  6$ routes.
+                </p>
+                <p>
+                  • Routes from (2,2) to (5,5): 3 Right, 3 Up $\rightarrow
+                  C(6,3) = 20$ routes.
+                </p>
+                <p>• Forbidden Routes = $6 \times 20 = 120$ routes.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total Rute Bebas ke (5,5): 5 Kanan, 5 Atas $\rightarrow
+                  C(10,5) = 252$ rute.
+                </p>
+                <p>
+                  • Rute ke titik (2,2): 2 Kanan, 2 Atas $\rightarrow C(4,2) =
+                  6$ rute.
+                </p>
+                <p>
+                  • Rute dari (2,2) ke (5,5): 3 Kanan, 3 Atas $\rightarrow
+                  C(6,3) = 20$ rute.
+                </p>
+                <p>• Rute Terlarang = $6 \times 20 = 120$ rute.</p>
+              </div>
+              $$ \begin{aligned} \text{Valid Routes} &= \text{Free Routes} -
+              \text{Forbidden Routes} \\ &= 252 - 120 \\ &= 132 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 132 routes.<br />
+              <strong>ID:</strong> 132 rute.
+            </div>
+          </div>
+
+          <!-- Solution 9 -->
+          <div class="item-container">
+            <p><strong>Solution 9:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Permutations with the Slotting
+                Method to keep specific groups separated, combined with case
+                division since 1 digit must be discarded.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi dengan Metode Celah
+                (<em>Slotting</em>) agar kelompok tertentu tidak berdampingan,
+                dipadu dengan membagi kasus karena ada 1 angka yang harus
+                dibuang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Even digits (E) = $\{4,6,8\}$ (3 digits). Odd digits (O) =
+                  $\{1,7,9\}$ (3 digits). We need 5 digits.
+                </p>
+                <p>
+                  • <strong>Case A (Discard 1 Odd):</strong> Remaining 3E, 2O.
+                  Arrange 3E: <code>_ E _ E _ E _</code> ($3! = 6$ ways). Choose
+                  2 slots out of 4 to insert odds ($P(4,2) = 12$ ways). 3
+                  variations to discard an odd $\rightarrow 6 \times 12 \times 3
+                  = 216$.
+                </p>
+                <p>
+                  • <strong>Case B (Discard 1 Even):</strong> Remaining 2E, 3O.
+                  Arrange 2E: <code>_ E _ E _</code> ($2! = 2$ ways). Must fill
+                  all three slots with odds ($3! = 6$ ways). 3 variations to
+                  discard an even $\rightarrow 2 \times 6 \times 3 = 36$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Angka Genap (E) = $\{4,6,8\}$ (3 buah). Angka Ganjil (O) =
+                  $\{1,7,9\}$ (3 buah). Kita butuh 5 digit.
+                </p>
+                <p>
+                  • <strong>Kasus A (Buang 1 Ganjil):</strong> Sisa 3E, 2O.
+                  Susun 3E: <code>_ E _ E _ E _</code> ($3! = 6$ cara). Pilih 2
+                  celah dari 4 untuk menyisipkan ganjil ($P(4,2) = 12$ cara).
+                  Ada 3 variasi membuang ganjil $\rightarrow 6 \times 12 \times
+                  3 = 216$.
+                </p>
+                <p>
+                  • <strong>Kasus B (Buang 1 Genap):</strong> Sisa 2E, 3O. Susun
+                  2E: <code>_ E _ E _</code> ($2! = 2$ cara). Harus mengisi
+                  ketiga celah dengan ganjil ($3! = 6$ cara). Ada 3 variasi
+                  membuang genap $\rightarrow 2 \times 6 \times 3 = 36$.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total} &= \text{Case A} + \text{Case B}
+              \\ &= 216 + 36 \\ &= 252 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 252 numbers.<br />
+              <strong>ID:</strong> 252 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 10 -->
+          <div class="item-container">
+            <p><strong>Solution 10:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Subsets with an "At least 1"
+                condition are fastest solved using the Complement method (Total
+                Subsets - Subsets with No Vowels).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Himpunan Bagian dengan syarat
+                "Minimal 1" paling cepat dikerjakan menggunakan Komplemen (Total
+                Himpunan - Himpunan Kosong Vokal).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total combinations of subsets from 5 letters = $2^5 = 32$.
+                </p>
+                <p>
+                  • Subsets with <strong>No Vowels</strong> are only formed from
+                  the 2 consonants $\{S, M\}$, so the total = $2^2 = 4$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Total semua kombinasi himpunan bagian dari 5 huruf = $2^5 =
+                  32$.
+                </p>
+                <p>
+                  • Himpunan bagian yang
+                  <strong>Tidak Memiliki Vokal</strong> hanya dibentuk dari 2
+                  huruf konsonan $\{S, M\}$, maka totalnya = $2^2 = 4$.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{At Least 1 Vowel} &= \text{Total} -
+              \text{No Vowels} \\ &= 32 - 4 \\ &= 28 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 28 subsets.<br />
+              <strong>ID:</strong> 28 himpunan.
+            </div>
+          </div>
+
+          <!-- Solution 11 -->
+          <div class="item-container">
+            <p><strong>Solution 11:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Principle of Inclusion-Exclusion
+                (Venn Diagram). Calculate the intersection of numbers divisible
+                by both 2 and 3 first.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Prinsip Inklusi-Eksklusi (Diagram
+                Venn). Hitung irisan yang habis dibagi 2 dan 3 terlebih dahulu.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Divisible by 2: $\lfloor 500 / 2 \rfloor = 250$</p>
+                <p>• Divisible by 3: $\lfloor 500 / 3 \rfloor = 166$</p>
+                <p>
+                  • Divisible by both (LCM 6): $\lfloor 500 / 6 \rfloor = 83$
+                </p>
+                <p>
+                  • Union of numbers divisible by 2 OR 3: $250 + 166 - 83 = 333$
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Habis dibagi 2: $\lfloor 500 / 2 \rfloor = 250$</p>
+                <p>• Habis dibagi 3: $\lfloor 500 / 3 \rfloor = 166$</p>
+                <p>
+                  • Habis dibagi keduanya (KPK 6): $\lfloor 500 / 6 \rfloor =
+                  83$
+                </p>
+                <p>
+                  • Gabungan yang habis dibagi 2 ATAU 3: $250 + 166 - 83 = 333$
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Not Divisible by Both} &= 500 - 333 \\ &=
+              167 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 167 numbers.<br />
+              <strong>ID:</strong> 167 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 12 -->
+          <div class="item-container">
+            <p><strong>Solution 12:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Palindromes act like mirrors. Just
+                determine the first half of the digits, the rest will follow
+                automatically.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Palindrom bertindak sebagai cermin.
+                Cukup tentukan setengah digit depannya, sisanya otomatis
+                mengikuti.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Number format: [A] [B] [C] [B] [A]</p>
+                <p>• Position A (Thousands): 9 choices (1-9, no zero).</p>
+                <p>• Position B (Hundreds): 10 choices (0-9).</p>
+                <p>• Position C (Middle): 10 choices (0-9).</p>
+                <p>
+                  • The remaining positions only have 1 choice as they must
+                  mirror the front.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Format angka: [A] [B] [C] [B] [A]</p>
+                <p>• Posisi A (Ribuan): 9 pilihan (1-9, dilarang nol).</p>
+                <p>• Posisi B (Ratusan): 10 pilihan (0-9).</p>
+                <p>• Posisi C (Tengah): 10 pilihan (0-9).</p>
+                <p>
+                  • Posisi sisa hanya punya 1 pilihan wajib mengikuti depannya.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Palindromes} &= 9 \times 10 \times
+              10 \times 1 \times 1 \\ &= 900 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 900 numbers.<br />
+              <strong>ID:</strong> 900 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 13 -->
+          <div class="item-container">
+            <p><strong>Solution 13:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Even number conditions without
+                repetition require us to split into cases because 0 has two
+                restrictions (as an even number at the end, and restricted at
+                the front position).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Syarat Angka Genap tanpa pengulangan
+                menuntut kita memecah kasus karena angka 0 memiliki dua batasan
+                (sebagai genap di belakang, dan larangan di posisi depan).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • <strong>Case 1: Ends in 0.</strong> Units: 1 choice. Since 0
+                  is locked, the 3 boxes in front are free to use the remaining
+                  9 digits $\rightarrow 9 \times 8 \times 7 = 504$.
+                </p>
+                <p>
+                  • <strong>Case 2: Ends in even $\{2,4,6,8\}$.</strong> Units:
+                  4 choices. Thousands: cannot be 0 and cannot be the same as
+                  units (8 choices left). Hundreds: 0 can enter (8 choices
+                  left). Tens: 7 left. $\rightarrow 8 \times 8 \times 7 \times 4
+                  = 1792$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • <strong>Kasus 1: Berakhir angka 0.</strong> Satuan: 1
+                  pilihan. Karena 0 sudah dikunci, 3 kotak di depannya bebas
+                  menggunakan 9 angka tersisa $\rightarrow 9 \times 8 \times 7 =
+                  504$.
+                </p>
+                <p>
+                  •
+                  <strong>Kasus 2: Berakhir genap $\{2,4,6,8\}$.</strong>
+                  Satuan: 4 pilihan. Ribuan: tidak boleh 0 dan tidak boleh sama
+                  dengan satuan (sisa 8 pilihan). Ratusan: 0 boleh masuk (sisa 8
+                  pilihan). Puluhan: sisa 7. $\rightarrow 8 \times 8 \times 7
+                  \times 4 = 1792$.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total} &= 504 + 1792 \\ &= 2296
+              \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 2296 numbers.<br />
+              <strong>ID:</strong> 2296 bilangan.
+            </div>
+          </div>
+
+          <!-- Solution 14 -->
+          <div class="item-container">
+            <p><strong>Solution 14:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> A rectangle is formed by the
+                intersection of 2 horizontal lines and 2 vertical lines. Use
+                Combinations.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Persegi panjang dibentuk oleh irisan
+                2 garis horizontal dan 2 garis vertikal. Gunakan Kombinasi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Choose 2 lines from 5 horizontal lines: $C(5,2) = 10$.</p>
+                <p>• Choose 2 lines from 6 vertical lines: $C(6,2) = 15$.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Pilih 2 garis dari 5 garis horizontal: $C(5,2) = 10$.</p>
+                <p>• Pilih 2 garis dari 6 garis vertikal: $C(6,2) = 15$.</p>
+              </div>
+              $$ \begin{aligned} \text{Total Rectangles} &= 10 \times 15 \\ &=
+              150 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 150 rectangles.<br />
+              <strong>ID:</strong> 150 persegi panjang.
+            </div>
+          </div>
+
+          <!-- Solution 15 -->
+          <div class="item-container">
+            <p><strong>Solution 15:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Forming polygons from points on a
+                circle means no lines are collinear (overlapping straight
+                lines). We just need to select 3 random points (Combination).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Membentuk poligon dari titik-titik
+                melingkar berarti tidak ada garis yang saling kolinier (lurus
+                berhimpit). Kita hanya perlu memilih 3 titik acak (Kombinasi).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Choose 3 random points from 8 points.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Pilih 3 titik acak dari 8 titik.</p>
+              </div>
+              $$ \begin{aligned} C(8,3) &= \frac{8 \times 7 \times 6}{3 \times 2
+              \times 1} \\ &= 56 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 56 triangles.<br />
+              <strong>ID:</strong> 56 segitiga.
+            </div>
+          </div>
+
+          <!-- ============================== TOPIC 2 ============================== -->
+          <h3 class="topic-title">
+            Solutions for Part 2: Advanced Combinations
+          </h3>
+
+          <!-- Solution 16 -->
+          <div class="item-container">
+            <p><strong>Solution 16:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Permutations with Identical Items.
+                The total order of objects is divided by the factorial of the
+                identical groups to avoid double counting.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi Unsur Sama. Urutan total
+                objek dibagi dengan faktorial dari kelompok objek yang
+                kembar/identik agar tidak terjadi penghitungan ganda.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Total books = 7 black + 10 white = 17 books.</p>
+                <p>
+                  • Divide by the factorials of identical books ($7!$ and
+                  $10!$).
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Total buku = 7 hitam + 10 putih = 17 buku.</p>
+                <p>• Bagi dengan faktorial buku kembar ($7!$ dan $10!$).</p>
+              </div>
+              $$ \begin{aligned} \text{Total Arrangements} &= \frac{17!}{7!
+              \times 10!} \\ &= C(17,7) \\ &= 19,448 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 19,448 arrangements.<br />
+              <strong>ID:</strong> 19.448 susunan.
+            </div>
+          </div>
+
+          <!-- Solution 17 -->
+          <div class="item-container">
+            <p><strong>Solution 17:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Stars and Bars with preconditions.
+                Each variable must be given a minimum limit first before
+                distributing the remaining value.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Stars and Bars dengan pra-kondisi.
+                Setiap variabel harus diberi batas minimum terlebih dahulu
+                sebelum mendistribusikan sisa angkanya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • The condition $>10$ for integers means the minimum limit is
+                  $11$.
+                </p>
+                <p>
+                  • Give a base value of 11 to each of the 5 variables: $83 - (5
+                  \times 11) = 28$. The remaining 28 "stars" are freely
+                  distributed into 5 spaces (requires 4 dividers/bars).
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Syarat $>10$ untuk bilangan bulat artinya batas minimum
+                  adalah $11$.
+                </p>
+                <p>
+                  • Beri modal nilai 11 ke masing-masing 5 variabel: $83 - (5
+                  \times 11) = 28$. Sisa 28 "bintang" yang bebas dibagikan ke 5
+                  ruang (butuh 4 batas/batang).
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Combinations} &= C(\text{Stars} +
+              \text{Bars}, \text{Bars}) \\ &= C(28+4, 4) \\ &= C(32, 4) \\ &=
+              35,960 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 35,960 sets.<br />
+              <strong>ID:</strong> 35.960 himpunan.
+            </div>
+          </div>
+
+          <!-- Solution 18 -->
+          <div class="item-container">
+            <p><strong>Solution 18:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Classic Stars and Bars (Minimum 1
+                condition). Insert dividers exactly in the gaps between objects
+                (stars) so no vase is empty.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Stars and Bars Tipe Klasik (Syarat
+                Minimal 1). Sisipkan batang/batas tepat di celah di antara objek
+                (bintang) agar tidak ada vas yang kosong.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • There are 9 aligned flowers which have $9 - 1 = 8$
+                  separating gaps.
+                </p>
+                <p>
+                  • To divide them into 3 groups, insert $3 - 1 = 2$ dividers
+                  into those 8 gaps.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Ada 9 bunga berjajar yang memiliki $9 - 1 = 8$ celah
+                  pemisah.
+                </p>
+                <p>
+                  • Untuk membaginya menjadi 3 kelompok, sisipkan $3 - 1 = 2$
+                  batang pemisah ke dalam 8 celah tersebut.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Ways} &= C(8, 2) \\ &= \frac{8 \times
+              7}{2 \times 1} \\ &= 28 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 28 ways.<br />
+              <strong>ID:</strong> 28 cara.
+            </div>
+          </div>
+
+          <!-- Solution 19 -->
+          <div class="item-container">
+            <p><strong>Solution 19:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Permutations with Identical Items
+                (Multinomial). Similar to arranging words with many identical
+                letters.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi Unsur Sama (Multinomial).
+                Serupa dengan merangkai kata dengan banyak huruf kembar.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Total items = $6 + 3 + 2 = 11$.</p>
+                <p>
+                  • Divide the total factorial by the factorials of identical
+                  items.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Total benda = $6 + 3 + 2 = 11$.</p>
+                <p>
+                  • Bagi faktorial total dengan faktorial dari masing-masing
+                  kelompok kembar.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Permutations} &= \frac{11!}{6!
+              \times 3! \times 2!} \\ &= \frac{11 \times 10 \times 9 \times 8
+              \times 7}{6 \times 2} \\ &= 4,620 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 4,620 arrangements.<br />
+              <strong>ID:</strong> 4.620 susunan.
+            </div>
+          </div>
+
+          <!-- Solution 20 -->
+          <div class="item-container">
+            <p><strong>Solution 20:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Cyclic Permutations for 3D objects
+                (Necklaces). A necklace can be flipped in the air (left becomes
+                right), so the number of circular permutations must be divided
+                by 2.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi Siklis untuk objek 3D
+                (Kalung). Kalung bisa dibalik/diputar di udara (kiri jadi
+                kanan), sehingga jumlah permutasi melingkarnya harus dibagi 2.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Necklace formula: $\frac{(n-1)!}{2}$.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Rumus kalung: $\frac{(n-1)!}{2}$.</p>
+              </div>
+              $$ \begin{aligned} \text{Unique Necklaces} &= \frac{(7-1)!}{2} \\
+              &= \frac{720}{2} \\ &= 360 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 360 necklaces.<br />
+              <strong>ID:</strong> 360 kalung.
+            </div>
+          </div>
+
+          <!-- Solution 21 -->
+          <div class="item-container">
+            <p><strong>Solution 21:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Selecting multiple points from a
+                circle automatically forms an n-sided polygon. Order does not
+                matter, use regular Combinations.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Memilih banyak titik dari lingkaran
+                otomatis membentuk bangun segi-n. Urutan tidak penting, gunakan
+                Kombinasi biasa.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Select 9 points from the available 14.</p>
+                <p>
+                  • Note: Calculating $C(14,9)$ is practically the same as
+                  calculating $C(14,5)$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Pilih 9 titik dari 14 ketersediaan.</p>
+                <p>
+                  • Catatan: Menghitung $C(14,9)$ sama praktisnya dengan
+                  menghitung $C(14,5)$.
+                </p>
+              </div>
+              $$ \begin{aligned} C(14,5) &= \frac{14 \times 13 \times 12 \times
+              11 \times 10}{5 \times 4 \times 3 \times 2 \times 1} \\ &= 2,002
+              \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 2,002 nonagons.<br />
+              <strong>ID:</strong> 2.002 nonagon.
+            </div>
+          </div>
+
+          <!-- Solution 22 -->
+          <div class="item-container">
+            <p><strong>Solution 22:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Permutations of completely distinct
+                objects. Arranging a word means the order of letters is crucial.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi dari objek yang berbeda
+                sepenuhnya. Menyusun kata berarti urutan huruf amat krusial.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • The word "MATHS" has 5 unique letters. Choose 4 to arrange.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Kata "MATHS" memiliki 5 huruf unik. Pilih 4 untuk disusun.
+                </p>
+              </div>
+              $$ \begin{aligned} P(5,4) &= \frac{5!}{(5-4)!} \\ &= 5 \times 4
+              \times 3 \times 2 \\ &= 120 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 120 words.<br />
+              <strong>ID:</strong> 120 kata.
+            </div>
+          </div>
+
+          <!-- Solution 23 -->
+          <div class="item-container">
+            <p><strong>Solution 23:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Slotting Method. Entities that
+                cannot be adjacent must be inserted between passive/fence
+                entities.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Metode Celah (<em
+                  >Slotting Method</em
+                >). Entitas yang tidak boleh bersebelahan harus diselipkan di
+                antara entitas pasif/pagar.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Arrange the Boys (L) as a protective fence:
+                  <code>_ L _ L _ L _ L _</code> ($4! = 24$ ways).
+                </p>
+                <p>
+                  • There are 5 available slots. Insert the 3 Girls into those 5
+                  slots ($P(5,3) = 60$ ways).
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Susun Laki-laki (L) sebagai pagar pelindung:
+                  <code>_ L _ L _ L _ L _</code> ($4! = 24$ cara).
+                </p>
+                <p>
+                  • Ada 5 celah tersedia. Selipkan ke-3 Perempuan ke 5 celah itu
+                  ($P(5,3) = 60$ cara).
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Ways} &= 24 \times 60 \\ &= 1,440
+              \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 1,440 arrangements.<br />
+              <strong>ID:</strong> 1.440 susunan.
+            </div>
+          </div>
+
+          <!-- Solution 24 -->
+          <div class="item-container">
+            <p><strong>Solution 24:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Modified Complement. Find the total
+                where (A &amp; B are united), then subtract the formations where
+                both (A &amp; B are united) AND (C &amp; D are united).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Modifikasi Komplemen. Cari total
+                semua di mana (A&amp;B bersatu), lalu kurangi dengan formasi di
+                mana (A&amp;B bersatu) sekaligus (C&amp;D bersatu).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Tie (AB) as 1. Total entities = 5. Cyclic arrangement:
+                  $(5-1)! = 24$. AB positions can be swapped $2! = 2$. Total =
+                  $24 \times 2 = 48$.
+                </p>
+                <p>
+                  • Forbidden scenario: (AB) tied and (CD) tied. Total entities
+                  = 4. Cyclic arrangement: $(4-1)! = 6$. Internal swap for (AB)
+                  and (CD) = $2 \times 2 = 4$. Total forbidden = $6 \times 4 =
+                  24$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Ikat (AB) jadi 1. Total entitas = 5. Susunan siklis: $(5-1)!
+                  = 24$. Posisi AB dapat ditukar $2! = 2$. Total = $24 \times 2
+                  = 48$.
+                </p>
+                <p>
+                  • Skenario terlarang: (AB) terikat dan (CD) terikat. Total
+                  entitas = 4. Susunan siklis: $(4-1)! = 6$. Swap internal (AB)
+                  dan (CD) = $2 \times 2 = 4$. Total terlarang = $6 \times 4 =
+                  24$.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Valid Arrangements} &= \text{All (AB)
+              tied} - \text{Forbidden} \\ &= 48 - 24 \\ &= 24 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 24 arrangements.<br />
+              <strong>ID:</strong> 24 susunan.
+            </div>
+          </div>
+
+          <!-- Solution 25 -->
+          <div class="item-container">
+            <p><strong>Solution 25:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Cases with "At least/Minimum" are
+                solved by adding up every possible scenario upwards.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Kasus dengan kalimat
+                "Setidaknya/Minimal" diselesaikan dengan menjumlahkan setiap
+                variasi skenario yang mungkin ke atas.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • <strong>Scenario 1 (3 White, 1 Other):</strong> Take 3 from
+                  5 White ($C(5,3) = 10$). Take 1 from 11 remaining other colors
+                  ($C(11,1) = 11$). Subtotal = $10 \times 11 = 110$.
+                </p>
+                <p>
+                  • <strong>Scenario 2 (4 White, 0 Other):</strong> Take 4 from
+                  5 White ($C(5,4) = 5$).
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • <strong>Skenario 1 (3 Putih, 1 Lain):</strong> Ambil 3 dari
+                  5 Putih ($C(5,3) = 10$). Ambil 1 dari 11 sisa warna lain
+                  ($C(11,1) = 11$). Subtotal = $10 \times 11 = 110$.
+                </p>
+                <p>
+                  • <strong>Skenario 2 (4 Putih, 0 Lain):</strong> Ambil 4 dari
+                  5 Putih ($C(5,4) = 5$).
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Ways} &= 110 + 5 \\ &= 115
+              \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 115 ways.<br />
+              <strong>ID:</strong> 115 cara.
+            </div>
+          </div>
+
+          <!-- Solution 26 -->
+          <div class="item-container">
+            <p><strong>Solution 26:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Absolute Chaos (Derangement). A
+                probability condition where absolutely no object occupies its
+                original location (Symbol $!n$ or $D_n$). The general formula
+                is:
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Kekacauan Mutlak
+                (<em>Derangement</em>). Kondisi probabilitas di mana sama sekali
+                tidak ada satupun objek yang menempati lokasi aslinya (Simbol
+                $!n$ atau $D_n$). Rumus umumnya adalah:
+              </p>
+              <div class="mt-4 mb-2 overflow-x-auto text-center">
+                $$ !n = n! \sum_{i=0}^n \frac{(-1)^i}{i!} \text{ atau } !n = n!
+                \left( 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \dots +
+                \frac{(-1)^n}{n!} \right) $$
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>• Use the derangement formula for 4 objects.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Gunakan rumus derangement untuk 4 objek.</p>
+              </div>
+              $$ \begin{aligned} D_4 &= 4! \left( \frac{1}{2!} - \frac{1}{3!} +
+              \frac{1}{4!} \right) \\ &= 24 \left( \frac{1}{2} - \frac{1}{6} +
+              \frac{1}{24} \right) \\ &= 12 - 4 + 1 \\ &= 9 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 9 ways.<br />
+              <strong>ID:</strong> 9 cara.
+            </div>
+          </div>
+
+          <!-- Solution 27 -->
+          <div class="item-container">
+            <p><strong>Solution 27:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Stars and Bars Type 2 (0 / Empty
+                allowed). The abstract star objects (candies) and bar dividers
+                will share the linear space completely randomly.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Stars and Bars Tipe 2 (Diizinkan 0 /
+                Kosong). Objek abstrak bintang (permen) dan batang pemisah akan
+                berbagi tempat di ruang linier sepenuhnya secara acak.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • 10 candies (stars). To divide among 4 children, we need $4-1
+                  = 3$ dividers.
+                </p>
+                <p>
+                  • Total abstract space = 10 stars + 3 dividers = 13 positions.
+                </p>
+                <p>• Choose 3 spaces to place the dividers.</p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • 10 permen (bintang). Untuk membagi ke 4 anak, butuh $4-1 =
+                  3$ batang pemisah.
+                </p>
+                <p>
+                  • Total ruang abstrak = 10 bintang + 3 batang = 13 posisi.
+                </p>
+                <p>• Pilih 3 ruang untuk diletakkan batang pemisah.</p>
+              </div>
+              $$ \begin{aligned} C(13,3) &= \frac{13 \times 12 \times 11}{3
+              \times 2 \times 1} \\ &= 286 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 286 variations.<br />
+              <strong>ID:</strong> 286 variasi.
+            </div>
+          </div>
+
+          <!-- Solution 28 -->
+          <div class="item-container">
+            <p><strong>Solution 28:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Since the female quota is locked
+                with the word "exactly", the sub-group identity is fixed, namely
+                (2 Women) and the rest automatically (2 Men).
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Karena kuota wanita dikunci dengan
+                kata "tepat", maka identitas sub-kelompok sudah pasti, yaitu (2
+                Wanita) dan sisanya otomatis (2 Pria).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Combination of choosing 2 Women from a total of 6: $C(6,2) =
+                  15$.
+                </p>
+                <p>
+                  • Combination of choosing 2 Men from a total of 5: $C(5,2) =
+                  10$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Kombinasi memilih 2 Wanita dari total 6: $C(6,2) = 15$.</p>
+                <p>• Kombinasi memilih 2 Pria dari total 5: $C(5,2) = 10$.</p>
+              </div>
+              $$ \begin{aligned} \text{Total Committees} &= 15 \times 10 \\ &=
+              150 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 150 committees.<br />
+              <strong>ID:</strong> 150 komite.
+            </div>
+          </div>
+
+          <!-- Solution 29 -->
+          <div class="item-container">
+            <p><strong>Solution 29:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Block Tying. Make the objects
+                required to always be together into 1 single entity, then use
+                permutations with identical items for the rest.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Ikatan Blok. Jadikan objek yang
+                disyaratkan selalu berkumpul menjadi 1 entitas tunggal, lalu
+                gunakan permutasi unsur sama untuk sisanya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Encapsulate the three 'S's into one super entity: (SSS).
+                </p>
+                <p>
+                  • Remaining letters to arrange: (SSS), U, C, C, E
+                  $\rightarrow$ Total 5 entities.
+                </p>
+                <p>
+                  • Since among those remaining letters 'C' is duplicated 2x, we
+                  must divide by it (the internal rotation of the SSS block is
+                  not counted because S-S-S looks exactly the same).
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>• Kapsulkan ketiga 'S' menjadi satu super entitas: (SSS).</p>
+                <p>
+                  • Huruf yang tersisa untuk disusun: (SSS), U, C, C, E
+                  $\rightarrow$ Total 5 entitas.
+                </p>
+                <p>
+                  • Karena di antara sisa huruf itu ada 'C' yang ganda 2x, kita
+                  harus membaginya (rotasi internal blok SSS tidak dihitung
+                  karena bentuknya sama persis S-S-S).
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Arrangements} &= \frac{5!}{2!} \\ &=
+              \frac{120}{2} \\ &= 60 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 60 arrangements.<br />
+              <strong>ID:</strong> 60 susunan.
+            </div>
+          </div>
+
+          <!-- Solution 30 -->
+          <div class="item-container">
+            <p><strong>Solution 30:</strong></p>
+            <div class="concept">
+              <p class="mb-2">
+                <strong>EN Concept:</strong> Linear Permutations with Multiple
+                Ties. Each couple is boxed/tied, but each couple is free to swap
+                their internal sitting positions left and right.
+              </p>
+              <p>
+                <strong>ID Konsep:</strong> Permutasi Barisan dengan
+                Multi-Ikatan. Setiap pasangan dikurung/diikat, tetapi
+                masing-masing pasangan bebas menukar posisi duduk internal kiri
+                dan kanan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN Steps:</strong>
+              <div class="solution-step">
+                <p>
+                  • Arrange 5 blocks/couples in a row of seats: $5! = 120$
+                  formations.
+                </p>
+                <p>
+                  • Each couple can sit back-and-forth (Husband-Wife or
+                  Wife-Husband). Since there are 5 couples, the internal
+                  rotation scales exponentially: $2^5 = 32$.
+                </p>
+              </div>
+              <strong>ID Langkah Penyelesaian:</strong>
+              <div class="solution-step">
+                <p>
+                  • Susun 5 blok/pasangan di kursi berjejer: $5! = 120$ formasi.
+                </p>
+                <p>
+                  • Tiap pasutri dapat duduk bolak-balik (Suami-Istri atau
+                  Istri-Suami). Karena ada 5 pasangan, rotasi internalnya
+                  berjalan pangkat: $2^5 = 32$.
+                </p>
+              </div>
+              $$ \begin{aligned} \text{Total Arrangements} &= 120 \times 32 \\
+              &= 3,840 \end{aligned} $$
+            </div>
+            <div class="final-answer">
+              <strong>EN:</strong> 3,840 ways.<br />
+              <strong>ID:</strong> 3.840 cara.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
