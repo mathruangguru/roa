@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Pigeonhole Principle & Probability</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .concept {
+        background-color: #eef2ff; /* indigo-50 */
+        border-left: 4px solid #4f46e5; /* indigo-600 */
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.25rem;
+      }
+      .solution-wrapper {
+        margin-top: 1.25rem;
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .solution-step p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding-left: 1rem;
+        position: relative;
+      }
+      .solution-step p::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
+      }
+      .math-block {
+          padding-left: 1.5rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 8
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Grade 7 - 8 | Pigeonhole Principle & Probability
+        </p>
+      </header>
+
+      <main>
+        <!-- ========================================== -->
+        <!-- BAGIAN SOAL / QUESTIONS SECTION            -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Competition Problems</h2>
+
+          <h3 class="topic-title">Part 1: Pigeonhole Principle (PHP)</h3>
+          
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> There are 10 black socks and 12 blue socks in a drawer. What is the minimum number of socks you must take out in the dark to guarantee you have a matching pair?<br /><br />
+              Terdapat 10 kaus kaki hitam dan 12 kaus kaki biru di dalam laci. Berapa jumlah minimum kaus kaki yang harus kamu ambil dalam gelap untuk memastikan kamu mendapatkan sepasang kaus kaki dengan warna yang sama?
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> A box contains 150 coloured balls: 40 blue, 40 red, 50 green and 20 yellow. Sherry takes some balls without looking. What is the least number of balls she must take so that she has 30 balls with the same colour?<br /><br />
+              Sebuah kotak berisi 150 bola berwarna: 40 biru, 40 merah, 50 hijau dan 20 kuning. Sherry mengambil bola tanpa melihat. Berapa setidaknya jumlah bola yang harus dia ambil agar dia mempunyai 30 bola dengan warna yang sama?
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> There are 22 white chopsticks, 18 yellow chopsticks and 39 blue chopsticks. If you want to get 2 pairs of blue chopsticks and 2 pairs of non-blue chopsticks in the dark, at least how many must be taken?<br /><br />
+              Terdapat 22 sumpit putih, 18 kuning dan 39 biru. Jika dalam gelap kamu ingin mendapatkan 2 pasang sumpit biru dan 2 pasang sumpit bukan biru, setidaknya berapa sumpit yang harus diambil?
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> There are 45 red socks, 45 white socks and 40 blue socks in a box. If you want to get 3 pairs of socks that are not white and 2 pairs of socks that are not red, at least how many pieces are needed to be drawn?<br /><br />
+              Ada 45 kaus kaki merah, 45 putih dan 40 biru. Jika kamu ingin mendapat 3 pasang kaus kaki bukan putih dan 2 pasang bukan merah, setidaknya berapa yang harus diambil?
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> Numbers are drawn from the 105 integers from 55 to 159 at random without repetition. At least how many numbers need to be drawn to ensure that there are two numbers whose sum is 244?<br /><br />
+              Bilangan diambil dari 105 bilangan bulat mulai 55 sampai 159 secara acak tanpa pengulangan. Berapa banyak bilangan yang harus diambil agar ada dua bilangan yang jumlahnya 244?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> 3506 gaming chips are distributed among 35 players such that every player receives at least 6 chips and each of them has a different number of chips. What is the largest possible difference in the number of chips between the player with the most and the least chips?<br /><br />
+              3506 chip permainan dibagikan kepada 35 pemain sehingga setiap pemain menerima minimal 6 chip dan masing-masing memiliki jumlah yang berbeda. Berapa kemungkinan terbesar selisih chip antara pemain terbanyak dan paling sedikit?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> Prove that among any 4 integers, there are always two whose difference is divisible by 3.<br /><br />
+              Buktikan bahwa dari 4 bilangan bulat apa pun yang dipilih secara acak, pasti ada dua bilangan yang selisihnya habis dibagi 3.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> There are 14 problems in a competition. Correct answer = +2, wrong = -1, blank = 0. Find the minimum candidates to ensure 4 candidates have the same score.<br /><br />
+              Ada 14 soal dalam kompetisi. Jawaban benar = +2, salah = -1, kosong = 0. Temukan jumlah minimum peserta untuk memastikan 4 peserta memiliki skor yang sama.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> Given 5 points chosen inside a square of side length 2. Prove that there must be two points whose distance is at most $\sqrt{2}$.<br /><br />
+              Diberikan 5 titik yang diletakkan di dalam sebuah persegi dengan panjang sisi 2. Buktikan bahwa pasti ada dua titik yang jaraknya paling jauh $\sqrt{2}$.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> Choose any 6 numbers from the set $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Prove that there will always be two numbers whose sum is 11.<br /><br />
+              Pilih 6 bilangan mana saja dari himpunan $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Buktikan bahwa pasti ada dua bilangan yang jumlahnya 11.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> In a group of 6 people, prove that there are either 3 people who all know each other, or 3 people who are complete strangers to each other.<br /><br />
+              Dalam sebuah kelompok berisi 6 orang, buktikan bahwa selalu ada 3 orang yang saling kenal satu sama lain, atau 3 orang yang sama sekali tidak saling kenal.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> 5 points with integer coordinates $(x,y)$ are drawn on a Cartesian plane. Prove that the midpoint of the line segment joining at least one pair of these points also has integer coordinates.<br /><br />
+              5 titik dengan koordinat bilangan bulat $(x,y)$ digambar pada bidang Cartesius. Buktikan bahwa titik tengah dari garis yang menghubungkan setidaknya satu pasang titik pasti memiliki koordinat bilangan bulat.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> Choose any $n+1$ positive integers. Prove that there must be two integers whose difference is a multiple of $n$.<br /><br />
+              Pilih $n+1$ bilangan bulat positif apa saja. Buktikan bahwa pasti ada dua bilangan yang selisihnya merupakan kelipatan dari $n$.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> Prove that in any group of people who shake hands, there are always two people who shook hands the exact same number of times.<br /><br />
+              Buktikan bahwa dalam kelompok mana pun di mana orang saling berjabat tangan, selalu ada dua orang yang berjabat tangan dengan jumlah yang sama persis.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> Select 101 integers from the set $\{1, 2, \dots, 200\}$. Prove that at least one of the selected integers divides another one without a remainder.<br /><br />
+              Pilih 101 bilangan bulat dari himpunan $\{1, 2, \dots, 200\}$. Buktikan bahwa setidaknya ada satu bilangan yang habis membagi bilangan yang lain.
+            </p>
+          </div>
+
+          <!-- PART 2: PROBABILITY -->
+          <h3 class="topic-title">Part 2: Probability</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> Two fair 6-sided dice are rolled. Find the probability that the sum of the outcomes is a prime number.<br /><br />
+              Dua dadu bersisi 6 yang adil dilempar. Carilah peluang bahwa jumlah angka yang keluar adalah bilangan prima.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> 40 cards are marked from 1 to 40 then 2 are drawn at random (without replacement). Find the probability that two cards drawn are both multiples of 3 or 7.<br /><br />
+              40 kartu ditandai dari 1 sampai 40, lalu 2 kartu diambil secara acak (tanpa pengembalian). Carilah peluang dua kartu yang diambil KEDUANYA adalah kelipatan 3 atau 7.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> A spinner is divided into 5 equal parts numbered 1 to 5. Spin once. If it lands on a perfect square number, flip a fair coin once. If it lands on a prime number, do not flip. What is the probability that you flipped a coin AND it landed heads up?<br /><br />
+              Sebuah spinner dibagi 5 bagian dari angka 1 sampai 5. Putar 1x. Jika menunjuk kuadrat sempurna, lempar koin 1x. Jika prima, jangan lempar. Berapa peluang kamu melempar koin DAN muncul Angka (Heads)?
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> A coin is tossed 4 times. Find the probability that 'Heads' appears exactly twice.<br /><br />
+              Sebuah koin dilempar 4 kali. Tentukan peluang 'Angka' muncul tepat dua kali.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> 35 cards are marked from 11 to 45 and 2 are drawn at random. Find the probability that two cards drawn are both multiples of 3.<br /><br />
+              35 kartu ditandai dari 11 hingga 45 dan 2 kartu diambil secara acak. Carilah peluang bahwa dua kartu yang diambil keduanya kelipatan 3.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> An integer is chosen from the set $\{1, 2, \dots, 500\}$. The probability that this integer is divisible by 9 or 11 is $\frac{m}{n}$ in its lowest terms. Find $m+n$.<br /><br />
+              Sebuah bilangan bulat dipilih dari himpunan $\{1, 2, \dots, 500\}$. Peluang bilangan ini habis dibagi 9 atau 11 adalah $\frac{m}{n}$ dalam pecahan paling sederhana. Tentukan nilai $m+n$.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> There are some blue, white and orange socks in a drawer. A sock is chosen at random. The probability that the sock is blue or white is 4/7. The probability that it is white is 9/28. Find the probability that the sock is blue or orange.<br /><br />
+              Ada kaus kaki biru, putih, dan oranye di dalam laci. Sehelai diambil acak. Peluang warna biru atau putih adalah 4/7. Peluang putih adalah 9/28. Cari peluang warna biru atau oranye.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> 30 cards are marked from 1 to 30 and 2 are drawn at random. Find the probability that two cards are drawn such that the sum of them is a multiple of 3.<br /><br />
+              30 kartu diberi tanda dari 1 sampai 30 dan 2 di antaranya diambil secara acak. Tentukan peluang terambilnya dua kartu yang jumlahnya kelipatan 3.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> A fair 6-faced die is thrown 3 times. Find the probability that the product of numbers obtained is a multiple of 5.<br /><br />
+              Sebuah dadu 6 sisi dilempar sebanyak 3 kali. Tentukan peluang bahwa hasil kali bilangannya merupakan kelipatan 5.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> Alice draws 4 balls randomly from a bag with 5 black balls, 9 white balls and 3 red balls. Find the probability that at least 2 black balls and 1 red ball are drawn.<br /><br />
+              Alice mengambil 4 bola acak dari kantong dengan 5 bola hitam, 9 putih dan 3 merah. Carilah peluang setidaknya 2 bola hitam dan 1 bola merah terambil.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> Three fair six-sided dice are thrown. Find the probability that the product of the outcomes is a 3-digit number.<br /><br />
+              Tiga dadu 6 sisi dilempar. Carilah peluang bahwa hasil kalinya adalah bilangan 3 angka.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> There are 7 black, 5 white, and 4 orange balls in a bag. Four balls are drawn without replacement. Find the probability that at least 3 balls are white.<br /><br />
+              Terdapat 7 bola hitam, 5 putih, dan 4 oranye dalam kantong. Empat bola diambil tanpa pengembalian. Tentukan peluang bahwa minimal 3 bola berwarna putih.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> 80 cards are marked from 156 to 235 and 2 of these cards are drawn at random. Find the probability that numbers of the cards drawn are both multiples of 3 AND 7.<br /><br />
+              80 kartu ditandai 156 sampai 235 dan 2 di antaranya diambil secara acak. Cari peluang bilangan pada kartu yang diambil keduanya adalah kelipatan 3 DAN 7.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> Two archers shoot at a target. The probability that archer A hits the target is 0.6 and archer B hits is 0.8. If they shoot simultaneously, find the probability that EXACTLY ONE of them hits the target.<br /><br />
+              Dua pemanah menembak target. Peluang A kena adalah 0.6 dan peluang B kena adalah 0.8. Jika menembak bersama, cari peluang TEPAT SATU pemanah mengenai target.
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> There are 6 balls in a box: 3 black, 3 white. Also, 1 black ball is added every 5 seconds starting at 0:04 (0:04, 0:09, 0:14... up to 0:59). At 0:29, 1 white ball is added. If you can make multiple draws but must wait 20s between draws, find the maximum probability to draw at least one white ball within 1 min.<br /><br />
+              Ada 6 bola: 3 hitam, 3 putih. 1 bola hitam ditambah setiap 5 detik mulai 0:04 (0:04, 0:09... 0:59). Pada detik ke-29, ditambah 1 putih. Jika boleh mengambil bola (diikuti pengembalian/meleset) namun harus jeda 20 detik antar pengambilan, cari peluang MAKSIMAL terambil setidaknya 1 putih dalam 1 menit.
+            </p>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BAGIAN PEMBAHASAN / SOLUTIONS SECTION      -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Solutions & Explanations</h2>
+
+          <h3 class="topic-title">Solutions for Part 1: Pigeonhole Principle</h3>
+
+          <!-- SOLUTION 1 -->
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept (Singapore Math Logic):</strong> To master the Pigeonhole Principle, always model the <em>Worst-Case Scenario</em>. Imagine you are extremely unlucky and try to delay success for as long as mathematically possible. The variables are Pigeons (items taken) and Holes (categories).<br /><br />
+                <strong>Konsep:</strong> Untuk menguasai Prinsip Sangkar Merpati, selalu modelkan <em>Skenario Terburuk</em>. Bayangkan Anda sangat tidak beruntung dan cobalah menunda keberhasilan selama mungkin secara matematis. Variabel utamanya adalah Merpati (benda yang diambil) dan Sangkar (kategori).
+              </p>
+            </div>
+            
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Identify the 'Holes': We have 2 color categories (Black and Blue). Therefore, Holes = 2.</p>
+                <p>Identify the 'Pigeons': The socks we are drawing out.</p>
+                <p>Model the Worst-Case Scenario: You want a matching pair, so the universe forces you to pick different colors continuously.</p>
+                <p>Draw 1: You get a Black sock.</p>
+                <p>Draw 2: You get a Blue sock. You now have 2 socks, but no pair is formed.</p>
+                <p>Since all holes (colors) are now occupied by exactly 1 pigeon, the 3rd draw <strong>must</strong> match one of the colors already in your hand, forming a pair.</p>
+              </div>
+            </div>
+            
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan 'Sangkar': Kita memiliki 2 kategori warna (Hitam dan Biru). Jadi, Sangkar = 2.</p>
+                <p>Tentukan 'Merpati': Kaus kaki yang akan ditarik keluar.</p>
+                <p>Modelkan Skenario Terburuk: Kita ingin sepasang warna sama, jadi alam semesta 'memaksa' kita selalu mengambil warna yang berbeda secara berurutan.</p>
+                <p>Pengambilan ke-1: Dapat 1 Hitam.</p>
+                <p>Pengambilan ke-2: Dapat 1 Biru. Sekarang kita punya 2 kaus kaki, tapi belum ada yang sepasang.</p>
+                <p>Karena semua sangkar (warna) sudah terisi tepat 1 merpati, pengambilan ke-3 <strong>pasti</strong> akan sama dengan salah satu warna di tangan kita. Pasangan terbentuk!</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 3 socks. / Jawaban: 3 kaus kaki.</div>
+          </div>
+
+          <!-- SOLUTION 2 -->
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Maximize the number of drawn items while strictly avoiding the target condition (30 balls of an identical color).<br /><br />
+                <strong>Konsep:</strong> Maksimalkan jumlah benda yang diambil sambil dengan ketat menghindari tercapainya target (30 bola berwarna sama).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Target: Collect exactly 30 balls of ANY one color.</p>
+                <p>Worst-Case Strategy: Draw as many balls as possible for each color without ever hitting the number 30.</p>
+                <p>For Blue (40 available): We safely draw 29 balls (stopping right before 30).</p>
+                <p>For Red (40 available): We draw 29 balls.</p>
+                <p>For Green (50 available): We draw 29 balls.</p>
+                <p>For Yellow (20 available): Since 20 is already less than 30, we can draw <em>all</em> of them and it will never trigger the success condition.</p>
+                <p>Calculate the total balls in hand during this worst-case state:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total} &= 29 (\text{Blue}) + 29 (\text{Red}) + 29 (\text{Green}) + 20 (\text{Yellow}) \\
+                &= 107 \text{ balls}
+                \end{aligned}
+                $$
+                </div>
+                <p>At this exact breaking point (107 balls), the very next ball you pull (108th) MUST be Blue, Red, or Green, immediately pushing that color's count to 30.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Target: Mengumpulkan tepat 30 bola dari warna APA SAJA.</p>
+                <p>Strategi Skenario Terburuk: Tarik bola sebanyak-banyaknya untuk tiap warna tanpa pernah menyentuh angka 30.</p>
+                <p>Untuk Biru (ada 40): Kita tarik 29 bola (berhenti persis sebelum 30).</p>
+                <p>Untuk Merah (ada 40): Kita tarik 29 bola.</p>
+                <p>Untuk Hijau (ada 50): Kita tarik 29 bola.</p>
+                <p>Untuk Kuning (ada 20): Karena jumlah awalnya kurang dari 30, kita bisa mengambil <em>semuanya</em> tanpa memicu kondisi sukses.</p>
+                <p>Hitung total bola di tangan saat kondisi terburuk ini terjadi:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total} &= 29 (\text{Biru}) + 29 (\text{Merah}) + 29 (\text{Hijau}) + 20 (\text{Kuning}) \\
+                &= 107 \text{ bola}
+                \end{aligned}
+                $$
+                </div>
+                <p>Pada titik puncak ini (107 bola), bola ke-108 yang ditarik PASTI berwarna Biru, Merah, atau Hijau, yang langsung melengkapi warna tersebut menjadi 30 bola.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 108 balls. / Jawaban: 108 bola.</div>
+          </div>
+
+          <!-- SOLUTION 3 -->
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> When an "AND" condition exists between two distinct targets, evaluate the failure threshold independently for BOTH targets. The answer must overcome the maximum of all failure limits.<br /><br />
+                <strong>Konsep:</strong> Saat terdapat syarat "DAN" pada dua target berbeda, hitung batas kegagalan secara terpisah untuk KEDUA target. Jawaban akhir harus mampu menembus angka maksimal dari semua batas gagal tersebut.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Analyze Target A: We need 2 pairs of Blue (which equals 4 individual Blue chopsticks).</p>
+                <p>Analyze Target B: We need 2 pairs of Non-blue. "Non-blue" comes from White (22) and Yellow (18). To guarantee 2 valid pairs from this mix, what is the maximum we can draw while FAILING? Drawing 3 White and 1 Yellow yields 4 chopsticks but only 1 pair! Thus, we need <strong>5 Non-blue</strong> to firmly guarantee 2 pairs.</p>
+                <p>Worst-Case Scenario 1 (Depriving Blue): The universe hides the Blue chopsticks. We draw all Non-blue first ($22 + 18 = 40$). Then we draw the 4 required Blue ones. Total = $40 + 4 = 44$.</p>
+                <p>Worst-Case Scenario 2 (Depriving Non-blue): The universe hides the Non-blue chopsticks. We draw all Blue first ($39$). Then we draw the 5 required Non-blue ones. Total = $39 + 5 = 44$.</p>
+                <p>Since both failure paths peak at 44, the 44th draw definitively satisfies both targets.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Analisis Target A: Kita butuh 2 pasang Biru (yaitu 4 batang sumpit Biru).</p>
+                <p>Analisis Target B: Kita butuh 2 pasang Bukan-biru. "Bukan-biru" berasal dari Putih (22) dan Kuning (18). Untuk memastikan 2 pasang valid, berapa batas maksimal kita mengambil tapi GAGAL? Jika kita ambil 3 Putih + 1 Kuning, kita punya 4 sumpit tapi cuma 1 pasang! Jadi, kita butuh <strong>5 sumpit Bukan-biru</strong> agar jaminan 2 pasang terpenuhi.</p>
+                <p>Skenario Terburuk 1 (Dipersulit mendapat Biru): Sumpit Biru bersembunyi. Kita terambil semua Bukan-biru lebih dulu ($22 + 18 = 40$). Baru setelah itu kita mengambil 4 Biru yang dibutuhkan. Total = $40 + 4 = 44$.</p>
+                <p>Skenario Terburuk 2 (Dipersulit mendapat Bukan-biru): Sumpit Bukan-biru bersembunyi. Kita terambil semua Biru lebih dulu ($39$). Baru setelah itu mengambil 5 Bukan-biru yang dibutuhkan. Total = $39 + 5 = 44$.</p>
+                <p>Karena kedua jalur kegagalan ini memuncak di angka 44, tarikan ke-44 menjamin kedua target terpenuhi tanpa celah.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 44 chopsticks. / Jawaban: 44 sumpit.</div>
+          </div>
+
+          <!-- SOLUTION 4 -->
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Similar to the previous problem, identify the strict limit of failing to form identical pairs from a mixed set, then add 1 to secure success.<br /><br />
+                <strong>Konsep:</strong> Serupa dengan soal sebelumnya, identifikasi batas ketat gagalnya membentuk pasangan identik dari himpunan campuran, lalu tambah 1 untuk mengunci kesuksesan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Target A (3 pairs of non-white): This pool relies on Red and Blue socks. What is the max items to draw WITHOUT getting 3 identical pairs? If we draw 5 Red and 1 Blue (Total 6), we only have 2 Red pairs. Therefore, 6 is the fail limit. We need <strong>7 non-white socks</strong> to guarantee 3 pairs.</p>
+                <p>Evaluate Worst-Case for A: Draw all White socks (45) + 6 failing Red/Blue socks = 51 draws. The 52nd draw achieves Target A.</p>
+                <p>Target B (2 pairs of non-red): This pool relies on White and Blue socks. Fail limit: Draw 3 White and 1 Blue = 4 items (only 1 pair). We need <strong>5 non-red socks</strong> to guarantee 2 pairs.</p>
+                <p>Evaluate Worst-Case for B: Draw all Red socks (45) + 4 failing White/Blue socks = 49 draws. The 50th draw achieves Target B.</p>
+                <p>To guarantee BOTH conditions simultaneously, we must overcome the largest constraint, which is 52.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Target A (3 pasang bukan putih): Kumpulan ini mengandalkan kaus kaki Merah dan Biru. Berapa maksimal menarik item TANPA mendapat 3 pasang? Jika kita tarik 5 Merah dan 1 Biru (Total 6 item), kita cuma punya 2 pasang Merah. Jadi, 6 adalah batas gagal. Kita butuh <strong>7 kaus kaki bukan putih</strong> untuk jaminan 3 pasang.</p>
+                <p>Evaluasi Terburuk Target A: Terambil semua kaus kaki Putih (45) + 6 kaus kaki Merah/Biru yang gagal = 51 tarikan. Tarikan ke-52 menjamin Target A.</p>
+                <p>Target B (2 pasang bukan merah): Mengandalkan Putih dan Biru. Batas gagal: Tarik 3 Putih dan 1 Biru = 4 item (cuma 1 pasang). Kita butuh <strong>5 kaus kaki bukan merah</strong>.</p>
+                <p>Evaluasi Terburuk Target B: Terambil semua Merah (45) + 4 kaus kaki Putih/Biru yang gagal = 49 tarikan. Tarikan ke-50 menjamin Target B.</p>
+                <p>Agar KEDUA target pasti tercapai, kita harus melewati angka rintangan tertinggi, yaitu 52.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 52 socks. / Jawaban: 52 kaus kaki.</div>
+          </div>
+
+          <!-- SOLUTION 5 -->
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Map numerical relationships into pairs (Pigeonholes). Numbers that cannot form a valid pair must be separated as "unpaired elements".<br /><br />
+                <strong>Konsep:</strong> Petakan relasi numerik menjadi pasangan-pasangan (Sangkar). Angka yang tidak bisa membentuk pasangan valid harus dipisahkan sebagai "elemen jomblo/tidak berpasangan".
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Determine valid pairs summing to 244 from the range [55, 159]. The pairs start from the extremes: (159, 85), (158, 86), counting down until they meet closely at (123, 121).</p>
+                <p>Count these paired groups: From 85 to 121, there are $121 - 85 + 1 = 37$ distinct pairs. This utilizes 74 numbers.</p>
+                <p>Identify "unpaired" numbers: Numbers from 55 up to 84 (30 numbers) lack a partner because their required matching half is $>159$. Also, the number 122 requires another 122, but repetition isn't allowed. Total unpaired = $30 + 1 = 31$ numbers.</p>
+                <p>Worst-Case Strategy: Draw ALL 31 unpaired numbers (useless for sums), AND draw exactly one half from each of the 37 available valid pairs (still no sum to 244!).</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total holding} &= 31 (\text{unpaired}) + 37 (\text{half-pairs}) \\
+                &= 68 \text{ numbers}
+                \end{aligned}
+                $$
+                </div>
+                <p>The 69th draw must forcibly be the missing half to one of the 37 half-pairs in your hand.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan pasangan yang jumlahnya 244 dari rentang [55, 159]. Pasangan dimulai dari ujung: (159, 85), (158, 86), terus mengecil hingga bertemu di (123, 121).</p>
+                <p>Hitung kelompok berpasangan ini: Dari 85 sampai 121, terdapat $121 - 85 + 1 = 37$ pasangan berbeda. Ini menghabiskan 74 angka.</p>
+                <p>Identifikasi angka "jomblo": Angka 55 s.d 84 (30 angka) tidak punya pasangan karena belahannya bernilai $>159$. Begitu pula angka 122 (butuh 122 lagi, tak boleh berulang). Total jomblo = $30 + 1 = 31$ angka.</p>
+                <p>Strategi Skenario Terburuk: Terambil SEMUA 31 angka jomblo (tidak bisa dijumlahkan), DAN terambil tepat satu belahan angka dari 37 pasangan yang ada (masih belum ada yang berjumlah 244!).</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total di tangan} &= 31 (\text{jomblo}) + 37 (\text{setengah-pasangan}) \\
+                &= 68 \text{ angka}
+                \end{aligned}
+                $$
+                </div>
+                <p>Tarikan ke-69 secara otomatis akan menjadi belahan yang melengkapi salah satu dari 37 angka yang sudah ditangan.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 69 numbers. / Jawaban: 69 bilangan.</div>
+          </div>
+
+          <!-- SOLUTION 6 -->
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> To maximize a single entity in a constrained sum, you must aggressively minimize all other entities using an Arithmetic Progression logic.<br /><br />
+                <strong>Konsep:</strong> Untuk memaksimalkan nilai satu entitas dalam sebuah total tertentu, Anda harus menekan nilai entitas lain sekecil mungkin menggunakan logika Deret Aritmatika.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Goal: Maximize the gap between the richest and poorest player.</p>
+                <p>Constraint: Every player gets a minimum of 6 chips, and all 35 players must have strictly distinct amounts.</p>
+                <p>Stingy Distribution Model: Force the first 34 players to take the absolute bare minimum sequence starting from 6.</p>
+                <p>Sequence: 6, 7, 8, ... up to the 34th player, whose value is $6 + (34 - 1) = 39$.</p>
+                <p>Calculate the total chips locked up by these 34 poorest players using the sum of arithmetic progression formula:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Sum} &= \frac{n}{2} \times (\text{First} + \text{Last}) \\
+                &= \frac{34}{2} \times (6 + 39) \\
+                &= 17 \times 45 = 765 \text{ chips}
+                \end{aligned}
+                $$
+                </div>
+                <p>The 35th player takes the massive remainder: $3506 - 765 = 2741$ chips.</p>
+                <p>The maximum difference is Richest (2741) minus Poorest (6) = 2735.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tujuan: Memaksimalkan jarak nilai antara pemain terkaya dan termiskin.</p>
+                <p>Syarat: Setiap pemain menerima minimal 6 chip, dan ke-35 pemain harus memiliki jumlah yang pasti berbeda.</p>
+                <p>Model Distribusi Pelit: Paksa 34 pemain pertama mengambil jumlah paling minimal secara berurutan, dimulai dari 6.</p>
+                <p>Barisan: 6, 7, 8, ... sampai pemain ke-34, yang nilainya adalah $6 + (34 - 1) = 39$.</p>
+                <p>Hitung total chip yang dihabiskan 34 pemain termiskin ini menggunakan rumus jumlah deret aritmatika:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Jumlah} &= \frac{n}{2} \times (\text{Awal} + \text{Akhir}) \\
+                &= \frac{34}{2} \times (6 + 39) \\
+                &= 17 \times 45 = 765 \text{ chip}
+                \end{aligned}
+                $$
+                </div>
+                <p>Pemain ke-35 memboyong sisa raksasanya: $3506 - 765 = 2741$ chip.</p>
+                <p>Selisih maksimal adalah si Terkaya (2741) dikurangi si Termiskin (6) = 2735.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 2735 chips. / Jawaban: 2735 chip.</div>
+          </div>
+
+          <!-- SOLUTION 7 -->
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Modulo (Remainders) mathematically map perfectly to Pigeonholes. If two numbers share the same remainder when divided by $k$, their difference is purely divisible by $k$.<br /><br />
+                <strong>Konsep:</strong> Modulo (Sisa bagi) secara matematis memetakan dengan sempurna ke Konsep Sangkar. Jika dua angka memiliki sisa bagi yang sama ketika dibagi $k$, selisih keduanya murni habis dibagi $k$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Define the Holes: When any integer is divided by 3, there are only 3 possible remainders it can leave: 0, 1, or 2. These represent our 3 Holes.</p>
+                <p>Define the Pigeons: We are arbitrarily selecting 4 integers.</p>
+                <p>Applying PHP: Since we are placing 4 integers (Pigeons) into 3 remainders (Holes), the principle guarantees that at least 2 integers must share the exact same remainder.</p>
+                <p>Algebraic Proof: Suppose integer $A$ and integer $B$ both leave a remainder of $R$ when divided by 3. We can write them as $A = 3x + R$ and $B = 3y + R$.</p>
+                <p>When subtracted: $(A - B) = (3x + R) - (3y + R) = 3(x - y)$. The remainders cancel out perfectly, proving the difference is divisible by 3.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan Sangkar: Jika bilangan bulat dibagi 3, kemungkinan sisa baginya hanya ada 3: 0, 1, atau 2. Ini mewakili 3 Sangkar kita.</p>
+                <p>Tentukan Merpati: Kita memilih 4 bilangan bulat secara acak.</p>
+                <p>Menerapkan PHP: Karena kita memasukkan 4 bilangan (Merpati) ke dalam 3 kemungkinan sisa (Sangkar), prinsip ini menjamin minimal 2 bilangan pasti masuk ke sangkar sisa yang sama.</p>
+                <p>Pembuktian Aljabar: Misalkan bilangan $A$ dan $B$ sama-sama memiliki sisa $R$ jika dibagi 3. Format angkanya adalah $A = 3x + R$ dan $B = 3y + R$.</p>
+                <p>Jika dikurangkan: $(A - B) = (3x + R) - (3y + R) = 3(x - y)$. Sisa $R$ saling meniadakan menjadi nol, membuktikan selisihnya habis dibagi 3.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven logically. / Jawaban: Terbukti logis.</div>
+          </div>
+
+          <!-- SOLUTION 8 -->
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Discover all logically achievable score outcomes to define the exact number of 'Holes', then distribute candidates evenly.<br /><br />
+                <strong>Konsep:</strong> Temukan semua hasil skor yang secara logis bisa diraih untuk menentukan jumlah pasti dari 'Sangkar', kemudian distribusikan peserta secara merata.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Establish the scoring formula: $\text{Score} = 2(\text{Correct}) - 1(\text{Wrong})$. (Blanks contribute 0).</p>
+                <p>Determine the absolute extremes: Maximum is 14 correct ($28$). Minimum is 14 wrong ($-14$).</p>
+                <p>The raw mathematical span from -14 to 28 implies $28 - (-14) + 1 = 43$ possible values.</p>
+                <p>Olympiad Check (Is every value reachable?): Let's test the score 27. To get an odd score like 27 close to the max, you'd need the formula $2C - W = 27$. If $C=14$ (max), $W$ must be 1. But $14+1=15$ problems, which exceeds the 14 problems available! If $C=13$, the max score is 26. Thus, a score of **27 is statistically impossible**.</p>
+                <p>Valid Holes: All other 42 scores are structurally possible to achieve.</p>
+                <p>Worst-Case Distribution: We want 4 candidates grouped. We simulate bad luck by placing exactly 3 candidates into every single one of the 42 score holes.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total distributed} &= 42 \times 3 \\
+                &= 126 \text{ candidates}
+                \end{aligned}
+                $$
+                </div>
+                <p>The 127th candidate graded will inevitably fall into an occupied score bracket, bringing its total to 4.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Buat rumus skor: $\text{Skor} = 2(\text{Benar}) - 1(\text{Salah})$. (Soal kosong = 0).</p>
+                <p>Tentukan titik ekstrem: Poin maksimal adalah 14 benar ($28$). Poin minimal 14 salah ($-14$).</p>
+                <p>Rentang mentah matematika dari -14 hingga 28 berarti ada $28 - (-14) + 1 = 43$ kemungkinan nilai.</p>
+                <p>Cek Kompetisi (Apakah semua bisa diraih?): Uji skor 27. Agar dapat 27, rumus $2B - S_a = 27$. Jika $B=14$ (maks), maka $S_a$ harus 1. Tapi $14+1=15$ soal, melewati kuota 14 soal! Jika $B=13$, poin maksimalnya cuma 26. Jadi, skor **27 adalah hal yang mustahil**.</p>
+                <p>Sangkar Valid: Ke-42 skor lainnya secara struktural dapat diraih.</p>
+                <p>Distribusi Terburuk: Kita ingin cari 4 orang berskor sama. Simulasikan kesialan dengan menaruh tepat 3 peserta secara merata di masing-masing 42 lubang skor.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total terdistribusi} &= 42 \times 3 \\
+                &= 126 \text{ peserta}
+                \end{aligned}
+                $$
+                </div>
+                <p>Kertas ujian peserta ke-127 pasti akan masuk ke salah satu kotak skor yang sudah terisi, menjadikannya 4 orang.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 127 candidates. / Jawaban: 127 peserta.</div>
+          </div>
+
+          <!-- SOLUTION 9 -->
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Geometric Mapping. Break down the physical space into bounded zones (Holes) whose internal distances are strictly calculable.<br /><br />
+                <strong>Konsep:</strong> Pemetaan Geometri. Pecah ruang fisik menjadi zona-zona terbatas (Sangkar) yang jarak internalnya bisa dikalkulasi secara pasti.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Create the Holes: Divide the large $2 \times 2$ square evenly into four smaller $1 \times 1$ squares (like a window pane).</p>
+                <p>Map the Pigeons: We are dropping 5 points into this area.</p>
+                <p>Apply PHP: Since 5 points are landing in 4 small squares, at least 1 small square must receive $\ge 2$ points.</p>
+                <p>Geometric Limit: Inside any bounded square, the farthest two points can be is diagonally opposite corners. For a $1 \times 1$ square, apply Pythagoras:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Max Distance} &= \sqrt{1^2 + 1^2} \\
+                &= \sqrt{2}
+                \end{aligned}
+                $$
+                </div>
+                <p>Since the two points reside in the same small square, their distance is logically capped at a maximum of $\sqrt{2}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Buat Sangkar: Belah persegi besar $2 \times 2$ secara merata menjadi empat persegi kecil berukuran $1 \times 1$ (seperti bentuk jendela).</p>
+                <p>Petakan Merpati: Kita akan menjatuhkan 5 titik ke area ini.</p>
+                <p>Terapkan PHP: Karena 5 titik dilempar ke 4 kotak kecil, sedikitnya 1 kotak kecil akan kejatuhan $\ge 2$ titik.</p>
+                <p>Batas Geometri: Di dalam sebuah persegi, jarak terjauh yang bisa ditempuh dua titik adalah memanjang di sudut diagonalnya. Untuk persegi $1 \times 1$, terapkan Pythagoras:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Jarak Maksimal} &= \sqrt{1^2 + 1^2} \\
+                &= \sqrt{2}
+                \end{aligned}
+                $$
+                </div>
+                <p>Karena dua titik tadi berada di dalam kotak kecil yang sama, jarak antar keduanya secara logis tidak akan pernah melewati batas maksimal $\sqrt{2}$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by geometric division. / Jawaban: Terbukti via pembagian geometri.</div>
+          </div>
+
+          <!-- SOLUTION 10 -->
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Pre-group elements into subsets that implicitly contain the success condition. Forcing selection within these subsets guarantees the condition is triggered.<br /><br />
+                <strong>Konsep:</strong> Pra-kelompokkan elemen ke dalam himpunan bagian yang secara otomatis memuat syarat keberhasilan. Memaksa seleksi di dalam himpunan ini menjamin syarat terpicu.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Establish the Holes: Pair off the given set of numbers $\{1 \dots 10\}$ such that each pair sums perfectly to 11. The pairs are $\{1,10\}, \{2,9\}, \{3,8\}, \{4,7\}, \{5,6\}$. These act as 5 distinct Holes.</p>
+                <p>Identify Pigeons: The 6 numbers we are required to choose.</p>
+                <p>Apply PHP: We are sorting 6 numbers into 5 paired holes. It is impossible to draw 1 number from each hole and stop. At least one hole must receive its 2nd number.</p>
+                <p>Conclusion: Because both numbers within that specific hole have been selected, their sum is intrinsically 11.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Bangun Sangkar: Pasangkan himpunan angka $\{1 \dots 10\}$ sedemikian rupa sehingga setiap pasang berjumlah pas 11. Pasangannya adalah $\{1,10\}, \{2,9\}, \{3,8\}, \{4,7\}, \{5,6\}$. Ini bertindak sebagai 5 Sangkar spesifik.</p>
+                <p>Identifikasi Merpati: 6 angka yang harus kita ambil.</p>
+                <p>Terapkan PHP: Kita menyortir 6 angka ke dalam 5 sangkar. Mustahil hanya mengambil 1 angka dari masing-masing sangkar. Pasti ada minimal satu sangkar yang kedua isinya (kedua angkanya) terambil utuh.</p>
+                <p>Kesimpulan: Karena kedua angka dalam sangkar tersebut ditarik, penjumlahannya secara hakiki pasti bernilai 11.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by subset pairing. / Jawaban: Terbukti via pemetaan pasangan.</div>
+          </div>
+
+          <!-- SOLUTION 11 -->
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> This is a simplified proof of Ramsey's Theorem for $R(3,3)=6$. Use PHP to anchor the perspective of one person to force a localized condition.<br /><br />
+                <strong>Konsep:</strong> Ini adalah bukti sederhana dari Teori Ramsey untuk $R(3,3)=6$. Gunakan PHP untuk mengunci sudut pandang satu orang demi memaksa sebuah kondisi lokal terjadi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Focus on a single observer, Person A. In a room of 6, Person A interacts with 5 others.</p>
+                <p>Define Holes: Every relationship boils down to 2 mutually exclusive traits: "Know" or "Complete Stranger".</p>
+                <p>Apply localized PHP: Distributing 5 people into 2 trait holes guarantees A shares the identical trait with at least 3 people. Let's assume A "Knows" B, C, and D.</p>
+                <p>Analyze the localized group {B, C, D}:</p>
+                <p>If even a <em>single pair</em> within {B, C, D} happens to know each other (e.g., B knows C), then A, B, and C instantly form a <strong>Trio of mutual acquaintances</strong> (Since A knows B, A knows C, B knows C). Success condition met.</p>
+                <p>If <em>absolutely no one</em> within {B, C, D} knows each other, then B, C, and D automatically default into forming a <strong>Trio of complete strangers</strong>. Success condition met.</p>
+                <p>The logic mirrors perfectly if the initial assumption was A being a "Stranger" to 3 people.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Fokus pada satu pengamat, Si A. Di ruangan berisi 6 orang, Si A berinteraksi dengan 5 orang lainnya.</p>
+                <p>Tentukan Sangkar: Setiap interaksi memicu 2 sifat yang tidak bisa campur: "Kenal" atau "Asing Sama Sekali".</p>
+                <p>Terapkan PHP lokal: Mendistribusikan 5 orang ke 2 sifat menjamin A membagi sifat yang identik dengan minimal 3 orang. Mari asumsikan A "Kenal" dengan B, C, dan D.</p>
+                <p>Analisis kelompok lokal {B, C, D}:</p>
+                <p>Jika ada <em>satu pasang saja</em> di dalam {B, C, D} yang kebetulan saling kenal (misal B kenal C), maka A, B, dan C serta merta membentuk <strong>Trio Saling Kenal</strong> (Karena A kenal B, A kenal C, B kenal C). Syarat sukses terpenuhi.</p>
+                <p>Jika <em>tidak ada satupun</em> di antara {B, C, D} yang kenal, maka B, C, dan D secara otomatis mewujud menjadi <strong>Trio Sama Sekali Asing</strong>. Syarat sukses juga terpenuhi.</p>
+                <p>Logika ini berlaku sama persis layaknya cermin jika asumsi awal kita adalah Si A "Asing" dengan 3 orang.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by graph deduction. / Jawaban: Terbukti dengan deduksi graf.</div>
+          </div>
+
+          <!-- SOLUTION 12 -->
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Mathematical Parity (Even/Odd properties). A midpoint yields an integer only if the added elements sum to an Even number, necessitating matching parity.<br /><br />
+                <strong>Konsep:</strong> Paritas Matematika (Sifat Ganjil/Genap). Titik tengah akan menghasilkan angka bulat hanya jika elemen yang ditambahkan bernilai Genap, yang mengharuskan paritasnya cocok.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>The coordinate midpoint formula is $(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2})$. For this to result in integers, both $(x_1+x_2)$ and $(y_1+y_2)$ strictly must be Even numbers.</p>
+                <p>Addition Parity Rule: A sum is Even only if the parts are identical in nature (Even + Even = Even, Odd + Odd = Even).</p>
+                <p>Define the Holes: For any coordinate pair $(x,y)$, there are exactly 4 existential parity states: (Even, Even), (Even, Odd), (Odd, Even), and (Odd, Odd).</p>
+                <p>Define Pigeons: 5 given coordinate points.</p>
+                <p>Apply PHP: By pushing 5 points into 4 parity states, at least 2 points are forced to have the <em>exact same parity combination</em>.</p>
+                <p>Because their $x$-parities match, their sum is Even (divisible by 2). Because their $y$-parities match, their sum is Even (divisible by 2). Integer midpoint guaranteed.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Rumus titik tengah koordinat adalah $(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2})$. Agar hasilnya berupa bilangan bulat, baik $(x_1+x_2)$ maupun $(y_1+y_2)$ wajib bernilai Genap.</p>
+                <p>Aturan Paritas Penjumlahan: Jumlah bernilai Genap hanya jika bagian-bagian penyusunnya identik sifatnya (Genap + Genap = Genap, Ganjil + Ganjil = Genap).</p>
+                <p>Tentukan Sangkar: Untuk koordinat manapun $(x,y)$, hanya ada 4 status eksistensial paritas: (Genap, Genap), (Genap, Ganjil), (Ganjil, Genap), dan (Ganjil, Ganjil).</p>
+                <p>Tentukan Merpati: 5 titik koordinat yang diberikan.</p>
+                <p>Terapkan PHP: Memasukkan 5 titik ke 4 status paritas memaksa setidaknya 2 titik memiliki <em>kombinasi paritas yang persis sama</em>.</p>
+                <p>Karena paritas-$x$ mereka cocok, jumlahnya Genap (bisa dibagi 2). Karena paritas-$y$ mereka cocok, jumlahnya Genap (bisa dibagi 2). Titik tengah bulat pasti terjamin.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by parity collision. / Jawaban: Terbukti via tabrakan paritas.</div>
+          </div>
+
+          <!-- SOLUTION 13 -->
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Modulo categorization. The core behavior of division remainders maps elegantly to combinatorial constraints.<br /><br />
+                <strong>Konsep:</strong> Kategorisasi Modulo. Perilaku inti dari sisa bagi memetakan secara elegan ke dalam kendala kombinatorik.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Define Holes: When dividing any number by $n$, the mathematical universe restricts the possible remainders to exactly $n$ distinct values: $\{0, 1, 2, \dots, n-1\}$.</p>
+                <p>Define Pigeons: You are given $n+1$ distinct integers.</p>
+                <p>Apply PHP: Allocating $n+1$ integers into $n$ remainder holes guarantees that at least 2 integers generate the precise same remainder.</p>
+                <p>Calculation: Let's assume larger number $X = an + R$ and smaller number $Y = bn + R$ (where R is the identical remainder).</p>
+                <p>Subtracting them gives $(X - Y) = (an + R) - (bn + R) = n(a - b)$. The difference is a pure, unadulterated multiple of $n$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan Sangkar: Saat membagi angka dengan $n$, ruang matematika membatasi sisa baginya hanya menjadi tepat $n$ nilai berbeda: $\{0, 1, 2, \dots, n-1\}$.</p>
+                <p>Tentukan Merpati: Anda diberikan $n+1$ bilangan bulat.</p>
+                <p>Terapkan PHP: Mengalokasikan $n+1$ bilangan ke dalam $n$ sangkar sisa memastikan bahwa minimal 2 bilangan menghasilkan sisa yang persis sama.</p>
+                <p>Kalkulasi: Anggap angka besar $X = an + R$ dan angka kecil $Y = bn + R$ (di mana R adalah sisa yang identik).</p>
+                <p>Mengurangkan mereka menghasilkan $(X - Y) = (an + R) - (bn + R) = n(a - b)$. Selisihnya adalah kelipatan $n$ murni tanpa cela.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven algebraically. / Jawaban: Terbukti secara aljabar.</div>
+          </div>
+
+          <!-- SOLUTION 14 -->
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> State Exclusion logic. Before applying PHP, analyze if the boundaries of the 'Holes' can logically co-exist in reality.<br /><br />
+                <strong>Konsep:</strong> Logika Eksklusi Status. Sebelum menerapkan PHP, cermati apakah batas-batas dari 'Sangkar' secara logis bisa eksis berdampingan di dunia nyata.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Consider a room with $N$ people. The theoretical spectrum of handshakes a person can make spans from $0$ to $N-1$ (which totals $N$ states).</p>
+                <p>Detect the paradox: In reality, State "0" (shaking nobody's hand) and State "$N-1$" (shaking EVERYBODY'S hand) cannot exist simultaneously in the same group. If Alice shakes hands with everyone, Bob cannot have 0 handshakes.</p>
+                <p>Redefining Holes: Because of this paradox, the maximum number of "Active States" available at any given moment is inherently locked at $N-1$ holes.</p>
+                <p>Apply PHP: We have $N$ people (Pigeons) forced into $N-1$ active states (Holes). Two people are mathematically destined to fall into the same handshake count.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Misalkan ruangan berisi $N$ orang. Spektrum teoritis jabat tangan seseorang terentang dari $0$ hingga $N-1$ (yang berjumlah $N$ status potensial).</p>
+                <p>Deteksi paradoks: Di dunia nyata, Status "0" (tidak bersalaman dengan siapapun) dan Status "$N-1$" (salaman dengan SEMUA orang) tidak bisa hadir bersamaan di satu grup. Jika Alice bersalaman dengan semua, Bob tidak mungkin berjumlah 0 salaman.</p>
+                <p>Mendefinisikan Ulang Sangkar: Akibat paradoks ini, jumlah maksimal "Status Aktif" yang tersedia di satu waktu pada grup tersebut terkunci di $N-1$ sangkar.</p>
+                <p>Terapkan PHP: Kita punya $N$ orang (Merpati) yang dipaksa masuk ke $N-1$ status aktif (Sangkar). Dua orang secara matematis ditakdirkan punya jumlah salaman yang sama.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by paradox exclusion. / Jawaban: Terbukti via eksklusi paradoks.</div>
+          </div>
+
+          <!-- SOLUTION 15 -->
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Number Theory Factoring. Strip away complexities by focusing on the immutable "Odd Core" underlying every integer.<br /><br />
+                <strong>Konsep:</strong> Pemfaktoran Teori Bilangan. Kuras kompleksitas dengan berfokus pada "Intisari Ganjil" tak terbantahkan yang mendasari setiap bilangan.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Factorization premise: Every integer can be compressed and written perfectly as $2^k \times M$, where $k \ge 0$ and $M$ is an indispensable odd number (the "Odd Core").</p>
+                <p>Map the Holes: In a pool of numbers ranging from 1 to 200, the available 'Odd Cores' ($M$) are strictly the odd numbers situated between 1 and 199. Counting them gives us exactly 100 Odd Cores (Holes).</p>
+                <p>Set Pigeons: The problem demands drawing 101 numbers.</p>
+                <p>Apply PHP: Forcing 101 numbers into 100 Odd Core identities confirms that at least 2 numbers must be forged from the identical core $M$.</p>
+                <p>Resolution: Let the numbers be $X = 2^a \times M$ and $Y = 2^b \times M$. If we divide them, the identical $M$ cancels out cleanly. The variable with the lower power of 2 flawlessly divides the one with the higher power.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Premis Pemfaktoran: Setiap bilangan bulat dapat dikompresi dan ditulis utuh sebagai $2^k \times M$, di mana $k \ge 0$ dan $M$ adalah bilangan ganjil murni ("Intisari Ganjil").</p>
+                <p>Petakan Sangkar: Dalam kumpulan angka 1 hingga 200, 'Intisari Ganjil' ($M$) yang tersedia hanyalah angka-angka ganjil dari 1 sampai 199. Menghitungnya memberi kita persis 100 Intisari Ganjil (Sangkar).</p>
+                <p>Set Merpati: Soal menuntut kita mengambil 101 angka.</p>
+                <p>Terapkan PHP: Memaksa 101 angka masuk ke 100 identitas Intisari Ganjil menegaskan bahwa minimal 2 angka tercipta dari Intisari $M$ yang identik.</p>
+                <p>Resolusi: Misal angka itu $X = 2^a \times M$ dan $Y = 2^b \times M$. Jika kita membaginya, $M$ yang identik akan tercoret bersih. Variabel dengan pangkat 2 lebih kecil terbukti secara sempurna membagi habis angka berpangkat lebih besar.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Proven by factoring. / Jawaban: Terbukti dengan pemfaktoran.</div>
+          </div>
+
+          <!-- PROBABILITY SOLUTIONS 16-30 -->
+          <h3 class="topic-title">Solutions for Part 2: Probability</h3>
+
+          <!-- SOLUTION 16 -->
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Calculate the Total Sample Space first, then meticulously list out the target combinations using a mental tally.<br /><br />
+                <strong>Konsep:</strong> Hitung Total Ruang Sampel dulu, lalu rincikan kombinasi target secara teliti memakai perhitungan manual terpola.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Define Sample Space: Rolling two 6-sided dice yields $6 \times 6 = 36$ distinct combinations.</p>
+                <p>Identify Goal bounds: The lowest sum is 2 (1+1), highest is 12 (6+6). Prime numbers in this bounds are {2, 3, 5, 7, 11}.</p>
+                <p>Execute mental listing of successful combinations:</p>
+                <p>Sum = 2: Only (1,1) $\rightarrow$ 1 way.</p>
+                <p>Sum = 3: (1,2), (2,1) $\rightarrow$ 2 ways.</p>
+                <p>Sum = 5: (1,4), (2,3), (3,2), (4,1) $\rightarrow$ 4 ways.</p>
+                <p>Sum = 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) $\rightarrow$ 6 ways.</p>
+                <p>Sum = 11: (5,6), (6,5) $\rightarrow$ 2 ways.</p>
+                <p>Calculate Probability:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Successes} &= 1 + 2 + 4 + 6 + 2 = 15 \\
+                \text{Probability} &= \frac{15}{36} \\
+                &= \frac{5}{12}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan Ruang Sampel: Melempar dua dadu 6 sisi memberikan $6 \times 6 = 36$ kombinasi berbeda.</p>
+                <p>Kenali Batas Tujuan: Jumlah terendah 2 (1+1), tertinggi 12 (6+6). Angka prima di batas ini: {2, 3, 5, 7, 11}.</p>
+                <p>Lakukan pendaftaran kombinasi sukses secara rinci:</p>
+                <p>Jumlah 2: Hanya (1,1) $\rightarrow$ 1 cara.</p>
+                <p>Jumlah 3: (1,2), (2,1) $\rightarrow$ 2 cara.</p>
+                <p>Jumlah 5: (1,4), (2,3), (3,2), (4,1) $\rightarrow$ 4 cara.</p>
+                <p>Jumlah 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) $\rightarrow$ 6 cara.</p>
+                <p>Jumlah 11: (5,6), (6,5) $\rightarrow$ 2 cara.</p>
+                <p>Kalkulasi Probabilitas:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Sukses} &= 1 + 2 + 4 + 6 + 2 = 15 \\
+                \text{Probabilitas} &= \frac{15}{36} \\
+                &= \frac{5}{12}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 5/12. / Jawaban: 5/12.</div>
+          </div>
+
+          <!-- SOLUTION 17 -->
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Determine all functionally valid target elements first utilizing the Principle of Inclusion-Exclusion, followed by dependent probability calculation.<br /><br />
+                <strong>Konsep:</strong> Tentukan semua elemen target yang valid secara fungsi terlebih dahulu menggunakan Prinsip Inklusi-Eksklusi, dilanjutkan perhitungan probabilitas bersyarat.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Filter Target Group: We want multiples of 3 OR 7 from numbers 1-40.</p>
+                <p>Multiples of 3: $\lfloor 40/3 \rfloor = 13$ cards.</p>
+                <p>Multiples of 7: $\lfloor 40/7 \rfloor = 5$ cards.</p>
+                <p>Intersection (Multiple of $3 \times 7 = 21$): $\lfloor 40/21 \rfloor = 1$ card. (This was double-counted).</p>
+                <p>Valid Target Pool: $13 + 5 - 1 = 17$ distinct winning cards.</p>
+                <p>Evaluate sequential draw (without replacement): The first card must be from the 17 targets out of 40. The second card must be from the remaining 16 targets out of the remaining 39 cards.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Probability} &= \frac{17}{40} \times \frac{16}{39} \\
+                &= \frac{17}{5} \times \frac{2}{39} \\
+                &= \frac{34}{195}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Saring Grup Target: Kita ingin kelipatan 3 ATAU 7 dari angka 1-40.</p>
+                <p>Kelipatan 3: $\lfloor 40/3 \rfloor = 13$ kartu.</p>
+                <p>Kelipatan 7: $\lfloor 40/7 \rfloor = 5$ kartu.</p>
+                <p>Irisan (Kelipatan KPK $3 \times 7 = 21$): $\lfloor 40/21 \rfloor = 1$ kartu. (Angka 21 ini sempat terhitung ganda).</p>
+                <p>Kumpulan Target Valid: $13 + 5 - 1 = 17$ kartu kemenangan unik.</p>
+                <p>Evaluasi tarikan beruntun (tanpa kembalian): Kartu pertama harus dari 17 target berbanding 40. Kartu kedua dari sisa 16 target berbanding sisa 39 kartu.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Probabilitas} &= \frac{17}{40} \times \frac{16}{39} \\
+                &= \frac{17}{5} \times \frac{2}{39} \\
+                &= \frac{34}{195}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 34/195. / Jawaban: 34/195.</div>
+          </div>
+
+          <!-- SOLUTION 18 -->
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Chained conditional probability. The final event solely exists if the gateway condition is successfully met.<br /><br />
+                <strong>Konsep:</strong> Probabilitas bersyarat berantai. Kejadian akhir hanya eksis bila gerbang syarat sukses berhasil dilewati.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Map the Gateway Condition (Stage 1): The spinner must land on a Perfect Square to trigger the coin toss. From numbers 1 to 5, the perfect squares are $\{1, 4\}$. This means 2 winning segments out of 5.</p>
+                <p>Probability of passing Stage 1: $2/5$.</p>
+                <p>Map Final Event (Stage 2): If triggered, the fair coin toss has a standard $1/2$ chance of landing Heads.</p>
+                <p>Calculate chained events by multiplying:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Probability} &= \frac{2}{5} \times \frac{1}{2} \\
+                &= \frac{2}{10} = \frac{1}{5}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Petakan Syarat Gerbang (Tahap 1): Spinner wajib mendarat di Kuadrat Sempurna agar koin bisa dilempar. Dari angka 1-5, kuadrat sempurnanya adalah $\{1, 4\}$. Artinya ada 2 segmen sukses dari 5 pilihan.</p>
+                <p>Probabilitas tembus Tahap 1: $2/5$.</p>
+                <p>Petakan Kejadian Akhir (Tahap 2): Jika terpicu, lemparan koin jujur punya kans standar $1/2$ muncul Angka (Heads).</p>
+                <p>Kalkulasi rentetan kejadian dengan mengalikannya:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Probabilitas} &= \frac{2}{5} \times \frac{1}{2} \\
+                &= \frac{2}{10} = \frac{1}{5}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 1/5. / Jawaban: 1/5.</div>
+          </div>
+
+          <!-- SOLUTION 19 -->
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Combinatorial approach to Binomial distributions. Envision placing specific items into slots.<br /><br />
+                <strong>Konsep:</strong> Pendekatan Kombinatorik terhadap distribusi Binomial. Bayangkan menaruh benda spesifik ke dalam slot-slot tersedia.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Determine Sample Space: Tossing a coin 4 times opens up $2 \times 2 \times 2 \times 2 = 16$ possible pathway branches (e.g., HHHH, HTTH, etc.).</p>
+                <p>Determine Success Target: We strictly need 2 Heads (H) and 2 Tails (T).</p>
+                <p>Logic model: Imagine 4 empty slots. We need to choose exactly 2 slots to place our 'H's. The remaining slots default to 'T'. Using the combination formula $C(n,r)$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                C(4,2) &= \frac{4 \times 3}{2 \times 1} \\
+                &= 6 \text{ successful arrangements}
+                \end{aligned}
+                $$
+                </div>
+                <p>(Explicit list: HHTT, HTHT, HTTH, THHT, THTH, TTHH)</p>
+                <p>Calculate final ratio:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Probability} &= \frac{\text{Successes}}{\text{Sample Space}} \\
+                &= \frac{6}{16} = \frac{3}{8}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tentukan Ruang Sampel: Melempar koin 4 kali membuka $2 \times 2 \times 2 \times 2 = 16$ cabang jalur probabilitas (misal AAAA, AGGA, dll).</p>
+                <p>Tentukan Target Sukses: Kita mutlak butuh 2 Angka (A) dan 2 Gambar (G).</p>
+                <p>Model Logika: Bayangkan 4 slot kosong. Kita harus memilih persis 2 slot untuk dititipkan kemunculan 'A'. Sisa slot otomatis jadi 'G'. Memakai rumus kombinasi $C(n,r)$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                C(4,2) &= \frac{4 \times 3}{2 \times 1} \\
+                &= 6 \text{ susunan sukses}
+                \end{aligned}
+                $$
+                </div>
+                <p>(Daftar gamblangnya: AAGG, AGAG, AGGA, GAAG, GAGA, GGAA)</p>
+                <p>Hitung rasio akhir probabilitas:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Probabilitas} &= \frac{\text{Sukses}}{\text{Ruang Sampel}} \\
+                &= \frac{6}{16} = \frac{3}{8}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 3/8. / Jawaban: 3/8.</div>
+          </div>
+
+          <!-- SOLUTION 20 -->
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Identify the scope of valid items using an Arithmetic Sequence, followed by $C(n,r)$ logic to extract simultaneously.<br /><br />
+                <strong>Konsep:</strong> Kenali cangkupan item valid memakai Deret Aritmatika, diikuti logika $C(n,r)$ untuk penarikan serentak.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Establish Total Universe: 35 cards. Selecting any 2 creates the sample space: $C(35,2) = 595$ combinations.</p>
+                <p>Locate Target Variables: We need multiples of 3 within the 11 to 45 bracket. The sequence begins at 12 and ends at 45. To count them swiftly, use $\frac{\text{Last} - \text{First}}{\text{Gap}} + 1$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Target Count} &= \frac{45 - 12}{3} + 1 \\
+                &= 11 + 1 = 12 \text{ valid cards}
+                \end{aligned}
+                $$
+                </div>
+                <p>Find Success Cases: Both drawn cards MUST be extracted uniquely from this 12-card VIP pool.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Success Ways} &= C(12,2) = \frac{12 \times 11}{2} = 66 \\
+                \text{Probability} &= \frac{66}{595}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Bangun Semesta Total: 35 kartu. Memilih 2 dari total tersebut akan membentuk ruang sampel: $C(35,2) = 595$ kombinasi.</p>
+                <p>Lacak Variabel Target: Kita butuh kelipatan 3 di rentang 11 ke 45. Deretnya mulai 12 dan tutup di 45. Untuk hitung cepat, gunakan $\frac{\text{Akhir} - \text{Awal}}{\text{Beda}} + 1$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Jumlah Target} &= \frac{45 - 12}{3} + 1 \\
+                &= 11 + 1 = 12 \text{ kartu valid}
+                \end{aligned}
+                $$
+                </div>
+                <p>Cari Kasus Sukses: KEDUA kartu ditarik HARUS murni berasal dari kolam VIP 12 kartu ini.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Cara Sukses} &= C(12,2) = \frac{12 \times 11}{2} = 66 \\
+                \text{Probabilitas} &= \frac{66}{595}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 66/595. / Jawaban: 66/595.</div>
+          </div>
+
+          <!-- SOLUTION 21 -->
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "Or" signals overlapping sets (Union). Always rectify double-counting using the Principle of Inclusion-Exclusion.<br /><br />
+                <strong>Konsep:</strong> Frasa "Atau" menandakan tumpang tindih himpunan (Gabungan). Selalu koreksi penghitungan ganda memakai Prinsip Inklusi-Eksklusi.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Divide interval bounds by specific targets. The floor function $\lfloor x \rfloor$ captures the solid integer multiples.</p>
+                <p>Group 9 (Divisible by 9): $\lfloor 500/9 \rfloor = 55$ numbers.</p>
+                <p>Group 11 (Divisible by 11): $\lfloor 500/11 \rfloor = 45$ numbers.</p>
+                <p>Intersection (The overlap, Divisible by LCM $9 \times 11 = 99$): $\lfloor 500/99 \rfloor = 5$ numbers.</p>
+                <p>Apply Inclusion-Exclusion formula for Union: Total = Group 9 + Group 11 - Intersection.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Valid items} &= 55 + 45 - 5 = 95 \\
+                \text{Probability} &= \frac{95}{500} \\
+                \text{Simplify (div 5)} &= \frac{19}{100}
+                \end{aligned}
+                $$
+                </div>
+                <p>Match formats: Since $19/100$ equals $m/n$, then $m=19$ and $n=100$. The question asks for $m+n = 119$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Bagi batas rentang dengan angka target. Fungsi lantai $\lfloor x \rfloor$ merangkum kuantitas kelipatan utuhnya.</p>
+                <p>Grup 9 (Kelipatan 9): $\lfloor 500/9 \rfloor = 55$ angka.</p>
+                <p>Grup 11 (Kelipatan 11): $\lfloor 500/11 \rfloor = 45$ angka.</p>
+                <p>Irisan (Tumpang tindih, Kelipatan KPK $9 \times 11 = 99$): $\lfloor 500/99 \rfloor = 5$ angka.</p>
+                <p>Terapkan rumus Inklusi-Eksklusi untuk Gabungan: Total = Grup 9 + Grup 11 - Irisan.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Item Valid} &= 55 + 45 - 5 = 95 \\
+                \text{Probabilitas} &= \frac{95}{500} \\
+                \text{Sederhanakan (bagi 5)} &= \frac{19}{100}
+                \end{aligned}
+                $$
+                </div>
+                <p>Cocokkan format: Karena $19/100$ merepresentasikan pecahan $\frac{m}{n}$, maka $m=19$ dan $n=100$. Soal meminta $m+n = 119$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 119. / Jawaban: 119.</div>
+          </div>
+
+          <!-- SOLUTION 22 -->
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Axiom of Probability: The sum of all mutually exclusive occurrences in a closed system strictly equals 1.<br /><br />
+                <strong>Konsep:</strong> Aksioma Probabilitas: Jumlah semua kejadian saling lepas dalam sistem tertutup mutlak sama dengan 1.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Translate "Or" to addition for distinct items: $P(\text{Blue}) + P(\text{White}) = 4/7$. To make math smooth, equalize the denominator to 28: $16/28$.</p>
+                <p>We are explicitly given $P(\text{White}) = 9/28$. Using simple deduction:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Blue}) &= \frac{16}{28} - \frac{9}{28} = \frac{7}{28}
+                \end{aligned}
+                $$
+                </div>
+                <p>The entire universe of the drawer totals 1 (or $28/28$). Since only Blue, White, and Orange exist, the remainder belongs to Orange:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Orange}) &= 1 - (P(\text{Blue}) + P(\text{White})) \\
+                &= \frac{28}{28} - \frac{16}{28} = \frac{12}{28}
+                \end{aligned}
+                $$
+                </div>
+                <p>The question seeks $P(\text{Blue or Orange})$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Blue}) + P(\text{Orange}) &= \frac{7}{28} + \frac{12}{28} \\
+                &= \frac{19}{28}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Terjemahkan "Atau" jadi jumlahan buat item terpisah: $P(\text{Biru}) + P(\text{Putih}) = 4/7$. Biar mulus dihitung, samakan penyebut jadi 28: $16/28$.</p>
+                <p>Diberikan info spesifik $P(\text{Putih}) = 9/28$. Pakai deduksi sederhana:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Biru}) &= \frac{16}{28} - \frac{9}{28} = \frac{7}{28}
+                \end{aligned}
+                $$
+                </div>
+                <p>Seluruh semesta laci jumlah probabilitasnya 1 (atau $28/28$). Karena cuma ada Biru, Putih, Oranye, sisanya mutlak hak milik Oranye:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Oranye}) &= 1 - (P(\text{Biru}) + P(\text{Putih})) \\
+                &= \frac{28}{28} - \frac{16}{28} = \frac{12}{28}
+                \end{aligned}
+                $$
+                </div>
+                <p>Pertanyaan mencari $P(\text{Biru atau Oranye})$:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Biru}) + P(\text{Oranye}) &= \frac{7}{28} + \frac{12}{28} \\
+                &= \frac{19}{28}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 19/28. / Jawaban: 19/28.</div>
+          </div>
+
+          <!-- SOLUTION 23 -->
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Modulo categorization for addition. Summing multiples heavily relies on bucketing numbers by their division remainders.<br /><br />
+                <strong>Konsep:</strong> Kategorisasi Modulo untuk penjumlahan. Menjumlahkan kelipatan sangat bertumpu pada mengelompokkan angka berdasar sisa baginya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Sort the numbers 1 to 30 into three Modulo Buckets based on division by 3:</p>
+                <p>Bucket 0 (Multiples of 3): $\{3, 6, \dots 30\} \rightarrow$ Exactly 10 cards.</p>
+                <p>Bucket 1 (Rem 1): $\{1, 4, \dots 28\} \rightarrow$ Exactly 10 cards.</p>
+                <p>Bucket 2 (Rem 2): $\{2, 5, \dots 29\} \rightarrow$ Exactly 10 cards.</p>
+                <p>To mathematically force a sum to be a multiple of 3 (Remainder 0), you have 2 architectural formulas:</p>
+                <p><strong>Combo A:</strong> Draw two cards from Bucket 0. Sum: $0+0=0$. Ways to pick: $C(10,2) = 45$.</p>
+                <p><strong>Combo B:</strong> Draw one from Bucket 1 and one from Bucket 2. Sum: $1+2=3$ (resets remainder to 0). Ways: $10 \times 10 = 100$.</p>
+                <p>Aggregate the successes and divide by the unconstrained Sample Space ($C(30,2)$):</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Success} &= 45 + 100 = 145 \\
+                \text{Sample Space} &= C(30,2) = \frac{30 \times 29}{2} = 435 \\
+                \text{Probability} &= \frac{145}{435} = \frac{1}{3}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Sortir angka 1 ke 30 jadi tiga Keranjang Modulo berbasis pembagian 3:</p>
+                <p>Keranjang 0 (Kelipatan 3): $\{3, 6, \dots 30\} \rightarrow$ Tepat 10 kartu.</p>
+                <p>Keranjang 1 (Sisa 1): $\{1, 4, \dots 28\} \rightarrow$ Tepat 10 kartu.</p>
+                <p>Keranjang 2 (Sisa 2): $\{2, 5, \dots 29\} \rightarrow$ Tepat 10 kartu.</p>
+                <p>Untuk memaksa jumlahan jadi kelipatan 3 (Sisa 0) matematis, ada 2 resep:</p>
+                <p><strong>Kombo A:</strong> Ambil dua kartu dari Keranjang 0. Jumlah: $0+0=0$. Cara cabut: $C(10,2) = 45$.</p>
+                <p><strong>Kombo B:</strong> Ambil satu dari Keranjang 1 dan satu dari Keranjang 2. Jumlah: $1+2=3$ (mereset sisa kembali 0). Cara tarik: $10 \times 10 = 100$.</p>
+                <p>Agregat kesuksesan lalu bagi dengan Ruang Sampel tanpa batas ($C(30,2)$):</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Sukses} &= 45 + 100 = 145 \\
+                \text{Ruang Sampel} &= C(30,2) = \frac{30 \times 29}{2} = 435 \\
+                \text{Probabilitas} &= \frac{145}{435} = \frac{1}{3}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 1/3. / Jawaban: 1/3.</div>
+          </div>
+
+          <!-- SOLUTION 24 -->
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "At least one" scenarios are computationally exhausting. Pivot immediately to the Complementary Probability viewpoint: $P(\text{Target}) = 1 - P(\text{Complete Miss})$.<br /><br />
+                <strong>Konsep:</strong> Skenario "Setidaknya satu" melelahkan dihitung langsung. Segera putar ke sudut pandang Probabilitas Komplemen: $P(\text{Target}) = 1 - P(\text{Meleset Total})$.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Success criteria: The multiplication product becomes a multiple of 5 strictly if at least one of the three dice displays a '5'.</p>
+                <p>Establish the Complement: What is the probability of failing miserably? It means NO dice display a '5'.</p>
+                <p>For a standard 6-faced die, 5 out of 6 faces are "failure" faces (1, 2, 3, 4, 6).</p>
+                <p>Calculate consecutive failure over 3 throws:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Complete Miss}) &= \frac{5}{6} \times \frac{5}{6} \times \frac{5}{6} \\
+                &= \frac{125}{216}
+                \end{aligned}
+                $$
+                </div>
+                <p>Flip the script to find the target success:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Target}) &= 1 - \frac{125}{216} \\
+                &= \frac{91}{216}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Kriteria Sukses: Hasil kali menjadi kelipatan 5 JIKA DAN HANYA JIKA minimal salah satu dadu menunjukkan angka '5'.</p>
+                <p>Bangun Komplemen: Apa peluang gagal total? Artinya TIDAK ADA satupun dadu berangka '5'.</p>
+                <p>Buat dadu standar 6 sisi, ada 5 sisi gagal (1, 2, 3, 4, 6).</p>
+                <p>Kalkulasi gagal beruntun dalam 3 lemparan:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Meleset Total}) &= \frac{5}{6} \times \frac{5}{6} \times \frac{5}{6} \\
+                &= \frac{125}{216}
+                \end{aligned}
+                $$
+                </div>
+                <p>Balikkan naskah untuk dapati sukses target:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Target}) &= 1 - \frac{125}{216} \\
+                &= \frac{91}{216}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 91/216. / Jawaban: 91/216.</div>
+          </div>
+
+          <!-- SOLUTION 25 -->
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Systematic breakdown of combinatorial variations. When "at least" conditions intersect, detail the precise configurations explicitly.<br /><br />
+                <strong>Konsep:</strong> Perincian sistematis variasi kombinatorik. Saat kondisi "minimal" saling bersilangan, jabarkan presisi konfigurasinya secara gamblang.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Total pool: $5\text{ Black (B)} + 9\text{ White (W)} + 3\text{ Red (R)} = 17\text{ balls}$. Drawing 4 creates the main framework:</p>
+                <p>Sample Space = $C(17,4) = 2380$ total paths.</p>
+                <p>Condition to win: The drawn 4 MUST contain $\ge 2\text{B}$ and $\ge 1\text{R}$. Let's unroll the exact successful setups:</p>
+                <p>Setup 1: Draw exactly 2B, 1R. The remaining 1 slot must be filled by W.</p>
+                <div class="math-block">
+                $$
+                C(5,2) \times C(3,1) \times C(9,1) = 10 \times 3 \times 9 = 270 \text{ ways.}
+                $$
+                </div>
+                <p>Setup 2: Elevate B to exactly 3B, keeping 1R. No room left for W.</p>
+                <div class="math-block">
+                $$
+                C(5,3) \times C(3,1) \times C(9,0) = 10 \times 3 \times 1 = 30 \text{ ways.}
+                $$
+                </div>
+                <p>Setup 3: Keep exactly 2B, elevate R to 2R. No room left for W.</p>
+                <div class="math-block">
+                $$
+                C(5,2) \times C(3,2) \times C(9,0) = 10 \times 3 \times 1 = 30 \text{ ways.}
+                $$
+                </div>
+                <p>Because the draw is restricted to 4 balls, these 3 are the only legal paths. Add them up and reduce:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Success} &= 270 + 30 + 30 = 330 \\
+                \text{Probability} &= \frac{330}{2380} = \frac{33}{238}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Kolam total: $5\text{ Hitam (B)} + 9\text{ Putih (W)} + 3\text{ Merah (R)} = 17\text{ bola}$. Menarik 4 bola menciptakan kerangka inti:</p>
+                <p>Ruang Sampel = $C(17,4) = 2380$ cabang jalur total.</p>
+                <p>Syarat menang: Tarikan 4 bola WAJIB simpan $\ge 2\text{B}$ dan $\ge 1\text{R}$. Mari bongkar susunan presisi suksesnya:</p>
+                <p>Susunan 1: Tarik tepat 2B, 1R. Sisa 1 slot wajib diisi W.</p>
+                <div class="math-block">
+                $$
+                C(5,2) \times C(3,1) \times C(9,1) = 10 \times 3 \times 9 = 270 \text{ cara.}
+                $$
+                </div>
+                <p>Susunan 2: Tingkatkan B menjadi 3B, pertahankan 1R. Tak ada sisa slot buat W.</p>
+                <div class="math-block">
+                $$
+                C(5,3) \times C(3,1) \times C(9,0) = 10 \times 3 \times 1 = 30 \text{ cara.}
+                $$
+                </div>
+                <p>Susunan 3: Pertahankan di 2B, tingkatkan R menjadi 2R. Tak ada sisa slot buat W.</p>
+                <div class="math-block">
+                $$
+                C(5,2) \times C(3,2) \times C(9,0) = 10 \times 3 \times 1 = 30 \text{ cara.}
+                $$
+                </div>
+                <p>Karena tarikan dibatasi 4 bola, hanya ini 3 jalur legal yang ada. Jumlahkan dan rampingkan:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Sukses} &= 270 + 30 + 30 = 330 \\
+                \text{Probabilitas} &= \frac{330}{2380} = \frac{33}{238}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 33/238. / Jawaban: 33/238.</div>
+          </div>
+
+          <!-- SOLUTION 26 -->
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Determine critical limit bounds through substitution. Create combination sets and calculate internal permutations.<br /><br />
+                <strong>Konsep:</strong> Tentukan batas kritis melalui substitusi percobaan. Buat set kombinasi dan hitung permutasi internalnya.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Sample Space: 3 dice tossed means $6^3 = 216$ states.</p>
+                <p>Investigate the boundary: We want the product $\ge 100$. If the lowest die rolls a 2, the absolute max product is $2 \times 6 \times 6 = 72$. This fails to hit 100. Conclusion: <strong>Every single die must roll a 3 or higher.</strong> The active pool is merely $\{3,4,5,6\}$.</p>
+                <p>Even then, (3,4,6) = 72 (fails). Let's list only sets breaking 100 and evaluate their permutation shifts:</p>
+                <p>Using 3: (3,6,6)$\rightarrow 108$. Shifts: $3!/2! = 3$.</p>
+                <p>Using 4: (4,5,5)$\rightarrow 100$, (4,6,6)$\rightarrow 144$ (3 shifts each). (4,5,6)$\rightarrow 120$ (6 shifts).</p>
+                <p>Using 5: (5,5,5)$\rightarrow 125$ (1 shift). (5,5,6)$\rightarrow 150$, (5,6,6)$\rightarrow 180$ (3 shifts each).</p>
+                <p>Using 6: (6,6,6)$\rightarrow 216$ (1 shift).</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Successful states} &= 3+3+6+3+1+3+3+1 = 23 \\
+                \text{Probability} &= \frac{23}{216}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Ruang Sampel: 3 dadu dilempar berarti $6^3 = 216$ kemungkinan hasil.</p>
+                <p>Investigasi batas: Kita ingin hasil kali $\ge 100$. Kalau dadu terendah muncul angka 2, nilai mutlak paling tingginya cuma $2 \times 6 \times 6 = 72$. Gagal menembus 100. Kesimpulan: <strong>Tiap-tiap dadu wajib menunjukkan minimal angka 3.</strong> Kolam aktifnya cuma $\{3,4,5,6\}$.</p>
+                <p>Meskipun begitu, (3,4,6) = 72 (gagal). Mari daftar murni himpunan penebus 100 dan evaluasi acakan permutasinya:</p>
+                <p>Memakai 3: (3,6,6)$\rightarrow 108$. Acakan: $3!/2! = 3$.</p>
+                <p>Memakai 4: (4,5,5)$\rightarrow 100$, (4,6,6)$\rightarrow 144$ (Masing-masing 3 acakan). (4,5,6)$\rightarrow 120$ (6 acakan).</p>
+                <p>Memakai 5: (5,5,5)$\rightarrow 125$ (1 acakan). (5,5,6)$\rightarrow 150$, (5,6,6)$\rightarrow 180$ (Masing-masing 3 acakan).</p>
+                <p>Memakai 6: (6,6,6)$\rightarrow 216$ (1 acakan).</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Status Sukses} &= 3+3+6+3+1+3+3+1 = 23 \\
+                \text{Probabilitas} &= \frac{23}{216}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 23/216. / Jawaban: 23/216.</div>
+          </div>
+
+          <!-- SOLUTION 27 -->
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> "At least" is structurally an algebraic addition logic of explicitly computed targeted states.<br /><br />
+                <strong>Konsep:</strong> "Minimal" secara struktural merupakan logika penjumlahan aljabar dari status target yang dikalkulasi eksplisit.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Overall environment: Bag packs $7\text{B} + 5\text{W} + 4\text{O} = 16$ items. Hauling 4 sets the base.</p>
+                <p>Sample Space: $C(16,4) = 1820$ possibilities.</p>
+                <p>Target "At least 3 White" diverges into two explicit mathematical conditions:</p>
+                <p>Condition 1 (Draw EXACTLY 3 White): 3 from the White pool, and strictly 1 from the "Non-White" pool (7B+4O = 11 non-white).</p>
+                <div class="math-block">
+                $$
+                C(5,3) \times C(11,1) = 10 \times 11 = 110 \text{ possibilities.}
+                $$
+                </div>
+                <p>Condition 2 (Draw EXACTLY 4 White): 4 from the White pool natively.</p>
+                <div class="math-block">
+                $$
+                C(5,4) = 5 \text{ possibilities.}
+                $$
+                </div>
+                <p>Merge conditions and generate ratio:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Successes} &= 110 + 5 = 115 \\
+                \text{Probability} &= \frac{115}{1820} \\
+                \text{Simplify (div 5)} &= \frac{23}{364}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Lingkungan utuh: Kantong kemas $7\text{B} + 5\text{W} + 4\text{O} = 16$ item. Menarik 4 mengatur basis utama.</p>
+                <p>Ruang Sampel: $C(16,4) = 1820$ kemungkinan.</p>
+                <p>Target "Minimal 3 Putih" terpecah jadi dua kondisi matematis nyata:</p>
+                <p>Kondisi 1 (Tarik TEPAT 3 Putih): 3 dari kolam Putih, dan mutlak 1 dari kolam "Bukan Putih" (7B+4O = 11 bukan-putih).</p>
+                <div class="math-block">
+                $$
+                C(5,3) \times C(11,1) = 10 \times 11 = 110 \text{ kemungkinan.}
+                $$
+                </div>
+                <p>Kondisi 2 (Tarik TEPAT 4 Putih): Tarik bawaan 4 dari kolam Putih.</p>
+                <div class="math-block">
+                $$
+                C(5,4) = 5 \text{ kemungkinan.}
+                $$
+                </div>
+                <p>Gabungkan kondisi lalu rumuskan rasio:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total Sukses} &= 110 + 5 = 115 \\
+                \text{Probabilitas} &= \frac{115}{1820} \\
+                \text{Rampingkan (bagi 5)} &= \frac{23}{364}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 23/364. / Jawaban: 23/364.</div>
+          </div>
+
+          <!-- SOLUTION 28 -->
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Cross-property requirement ("AND") forces finding intersection constraints via Least Common Multiple (LCM).<br /><br />
+                <strong>Konsep:</strong> Keharusan lintas-sifat ("DAN") memaksa pencarian restriksi irisan via Kelipatan Persekutuan Terkecil (KPK).
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Deconstruct "Multiple of 3 AND 7": It commands numbers to be flawless multiples of their LCM, which is 21.</p>
+                <p>Hunt these rare targets in the $156 \le X \le 235$ bounds:</p>
+                <p>Floor boundary check: $156 / 21 \approx 7.42$. The first true multiple is scale 8: $21 \times 8 = 168$.</p>
+                <p>Ceil boundary check: $235 / 21 \approx 11.19$. The last true multiple is scale 11: $21 \times 11 = 231$.</p>
+                <p>The target list: $\{168, 189, 210, 231\}$. Out of 80 arbitrary cards, exactly 4 cards possess this elite status.</p>
+                <p>Probability mapping (dependent draws): Both cards pulled MUST belong to this squad of 4.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Draw 1 Prob} &= \frac{4}{80} \\
+                \text{Draw 2 Prob} &= \frac{3}{79} \\
+                \text{Linked Probability} &= \frac{4}{80} \times \frac{3}{79} = \frac{1}{20} \times \frac{3}{79} = \frac{3}{1580}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Bongkar "Kelipatan 3 DAN 7": Ia menuntut angka jadi kelipatan tanpa cacat dari KPK mereka, yakni 21.</p>
+                <p>Buru target langka ini di limit $156 \le X \le 235$:</p>
+                <p>Cek lantai limit: $156 / 21 \approx 7.42$. Kelipatan murni pertamanya ada di skala 8: $21 \times 8 = 168$.</p>
+                <p>Cek plafon limit: $235 / 21 \approx 11.19$. Kelipatan murni terakhirnya di skala 11: $21 \times 11 = 231$.</p>
+                <p>Daftar target: $\{168, 189, 210, 231\}$. Dari 80 kartu acak acak, cuma pas 4 kartu ini yang memegang status elit.</p>
+                <p>Pemetaan probabilitas (tarikan bergantung): KEDUA cabutan HARUS berasal dari skuat 4 ini.</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Prob Cabut 1} &= \frac{4}{80} \\
+                \text{Prob Cabut 2} &= \frac{3}{79} \\
+                \text{Prob Terangkai} &= \frac{4}{80} \times \frac{3}{79} = \frac{1}{20} \times \frac{3}{79} = \frac{3}{1580}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 3/1580. / Jawaban: 3/1580.</div>
+          </div>
+
+          <!-- SOLUTION 29 -->
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Parallel logic for independent entities. "Exactly one" acts as a switch gate that adds contrasting permutations.<br /><br />
+                <strong>Konsep:</strong> Logika paralel buat entitas independen. "Tepat satu" bekerja ibarat gerbang saklar yang menjumlahkan permutasi terbalik.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>Build capability profiles: Hit(A)=0.6, Hit(B)=0.8. Generate their counterpart Miss profiles via $1 - \text{Hit}$:</p>
+                <p>Miss(A) = 0.4. Miss(B) = 0.2.</p>
+                <p>Construct the "Exactly One Hit" condition. This forks into two parallel pathways that are intrinsically separate events:</p>
+                <p>Path 1 (A shines, B blunders): $\text{Hit(A)} \times \text{Miss(B)} = 0.6 \times 0.2 = 0.12$.</p>
+                <p>Path 2 (A blunders, B shines): $\text{Miss(A)} \times \text{Hit(B)} = 0.4 \times 0.8 = 0.32$.</p>
+                <p>Combine the parallel paths linearly:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total} &= 0.12 + 0.32 \\
+                &= 0.44 \text{ (or } \frac{11}{25})
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Buat profil peluang kena: Kena(A)=0.6, Kena(B)=0.8. Buat profil Meleset tandingannya pakai $1 - \text{Kena}$:</p>
+                <p>Meleset(A) = 0.4. Meleset(B) = 0.2.</p>
+                <p>Konstruksi kondisi "Tepat Satu Kena". Ini mencabang ke dua jalur paralel yang secara hakiki saling lepas:</p>
+                <p>Jalur 1 (A tepat sasaran, B meleset): $\text{Kena(A)} \times \text{Meleset(B)} = 0.6 \times 0.2 = 0.12$.</p>
+                <p>Jalur 2 (A meleset, B tepat sasaran): $\text{Meleset(A)} \times \text{Kena(B)} = 0.4 \times 0.8 = 0.32$.</p>
+                <p>Gabung kedua jalur paralel itu secara linear:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                \text{Total} &= 0.12 + 0.32 \\
+                &= 0.44 \text{ (atau } \frac{11}{25})
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 11/25. / Jawaban: 11/25.</div>
+          </div>
+
+          <!-- SOLUTION 30 -->
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="concept">
+              <p>
+                <strong>Concept:</strong> Dynamic Probability Timeline. When elements aggressively flood a sample space over time, optimizing chances demands front-loading early draws before the denominator inflates.<br /><br />
+                <strong>Konsep:</strong> Garis Waktu Probabilitas Dinamis. Kala bermacam unsur agresif membanjiri ruang sampel seiring waktu, mengoptimasi peluang mewajibkan tarikan diawalkan sebelum penyebut membengkak tajam.
+              </p>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Solution (English):</strong>
+              <div class="solution-step">
+                <p>The goal is to pull at least 1 White ball. Because Black balls are constantly injected every 5 seconds, the White proportion aggressively shrinks over time. Strategy: Exploit draws strictly at 0s, 20s, and 40s.</p>
+                <p>We use Complement Probability (calculating the chance of horribly missing White / drawing strictly Black repeatedly) to bypass convoluted combinations.</p>
+                <p>Timeline Snapshot 1 (0 seconds): 3 Black (B), 3 White (W) in box. Draw chances:</p>
+                <div class="math-block">
+                $$
+                P(\text{Draw Black}) = \frac{3}{6} = \frac{1}{2}
+                $$
+                </div>
+                <p>Timeline Snapshot 2 (20 seconds): From 0s to 20s, exactly 4 Black balls sneak in (at timestamps 4, 9, 14, 19). Box inflates to 7B, 3W.</p>
+                <div class="math-block">
+                $$
+                P(\text{Draw Black}) = \frac{7}{10}
+                $$
+                </div>
+                <p>Timeline Snapshot 3 (40 seconds): From 20s to 40s, 4 more Black balls slide in (at 24, 29, 34, 39). But crucially, 1 White ball also drops in at 29s. Box balloons to 11B, 4W.</p>
+                <div class="math-block">
+                $$
+                P(\text{Draw Black}) = \frac{11}{15}
+                $$
+                </div>
+                <p>Multiply the linked chain of sheer failure:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Chain Failure}) &= \frac{1}{2} \times \frac{7}{10} \times \frac{11}{15} \\
+                &= \frac{77}{300}
+                \end{aligned}
+                $$
+                </div>
+                <p>Revert via Complementary logic to find optimal success:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{At least 1 White}) &= 1 - \frac{77}{300} \\
+                &= \frac{223}{300}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>Langkah Penyelesaian (Indonesia):</strong>
+              <div class="solution-step">
+                <p>Tujuannya adalah minimal cabut 1 Putih. Berhubung bola Hitam terus mengalir masuk tiap 5 detik, proporsi bobot bola Putih terkikis agresif seiring waktu. Strategi: Fokuskan tarikan di awal waktu pada detik 0s, 20s, dan 40s.</p>
+                <p>Kita tunggangi Probabilitas Komplemen (menghitung kans kesialan murni / menarik mutlak Hitam terus-menerus) guna melewati perhitungan kombinasi yang memusingkan.</p>
+                <p>Potret Garis Waktu 1 (0 detik): Ada 3 Hitam (H), 3 Putih (P) di kotak. Kans tarikan:</p>
+                <div class="math-block">
+                $$
+                P(\text{Tarik Hitam}) = \frac{3}{6} = \frac{1}{2}
+                $$
+                </div>
+                <p>Potret Garis Waktu 2 (20 detik): Dari 0s ke 20s, tepat 4 Hitam menyusup (di detak waktu 4, 9, 14, 19). Isi kotak bertambah jadi 7H, 3P.</p>
+                <div class="math-block">
+                $$
+                P(\text{Tarik Hitam}) = \frac{7}{10}
+                $$
+                </div>
+                <p>Potret Garis Waktu 3 (40 detik): Dari 20s ke 40s, susup lagi 4 Hitam (di 24, 29, 34, 39). Tapi soroti, 1 Putih ikut masuk di 29s. Isi kotak membengkak jadi 11H, 4P.</p>
+                <div class="math-block">
+                $$
+                P(\text{Tarik Hitam}) = \frac{11}{15}
+                $$
+                </div>
+                <p>Kalikan rantai kegagalan total itu:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Gagal Rantai}) &= \frac{1}{2} \times \frac{7}{10} \times \frac{11}{15} \\
+                &= \frac{77}{300}
+                \end{aligned}
+                $$
+                </div>
+                <p>Putar balik lewat logika Komplemen tuk mendapatkan hasil sukses yang optimal:</p>
+                <div class="math-block">
+                $$
+                \begin{aligned}
+                P(\text{Minimal 1 Putih}) &= 1 - \frac{77}{300} \\
+                &= \frac{223}{300}
+                \end{aligned}
+                $$
+                </div>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 223/300. / Jawaban: 223/300.</div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
