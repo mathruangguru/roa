@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Inequalities & Coordinate Geometry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .solution-wrapper {
+        margin-top: 1.25rem;
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .solution-step p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding-left: 1rem;
+        position: relative;
+      }
+      .solution-step p::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
+      }
+      .math-block {
+          padding-left: 1.5rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          Olympiad Math Practice Worksheet 9
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Grade 7 - 8 | Inequalities, AM-GM & Basic Coordinate Geometry
+        </p>
+      </header>
+
+      <main>
+        <!-- ========================================== -->
+        <!-- BAGIAN SOAL / QUESTIONS SECTION            -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Competition Problems</h2>
+
+          <h3 class="topic-title">Bagian 1: Pertidaksamaan dan Ketaksamaan AM-GM</h3>
+          
+          <div class="item-container">
+            <p>
+              <strong>1.</strong> Jika $a, b,$ dan $c$ adalah bilangan riil dengan $a > b$ dan $c < 0$, manakah dari pernyataan berikut yang selalu benar: $ac < bc$, $a+c < b+c$, atau $\frac{a}{c} > \frac{b}{c}$?<br />
+              <em>If $a, b,$ and $c$ are real numbers with $a > b$ and $c < 0$, which of the following statements is always true: $ac < bc$, $a+c < b+c$, or $\frac{a}{c} > \frac{b}{c}$?</em>
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>2.</strong> Tentukan himpunan penyelesaian bilangan bulat $x$ yang memenuhi ketaksamaan $3x - 5 \le 7x + 3 < 5x + 13$.<br />
+              <em>Find the set of integer solutions $x$ that satisfy the inequality $3x - 5 \le 7x + 3 < 5x + 13$.</em>
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>3.</strong> Tentukan nilai minimum dari $x + \frac{25}{x}$ untuk $x > 0$.<br />
+              <em>Find the minimum value of $x + \frac{25}{x}$ for $x > 0$.</em>
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>4.</strong> Diberikan bilangan riil positif $a$ dan $b$. Tentukan nilai minimum dari $\left(a + \frac{1}{b}\right)\left(b + \frac{1}{a}\right)$.<br />
+              <em>Given positive real numbers $a$ and $b$. Find the minimum value of $\left(a + \frac{1}{b}\right)\left(b + \frac{1}{a}\right)$.</em>
+            </p>
+          </div>
+          
+          <div class="item-container">
+            <p>
+              <strong>5.</strong> Jika $x > 2$, tentukan nilai minimum dari $x + \frac{16}{x-2}$.<br />
+              <em>If $x > 2$, find the minimum value of $x + \frac{16}{x-2}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6.</strong> Tentukan nilai maksimum dari fungsi $f(x) = x(12 - x)$ pada interval $0 < x < 12$.<br />
+              <em>Find the maximum value of the function $f(x) = x(12 - x)$ on the interval $0 < x < 12$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7.</strong> Diberikan $a, b, c > 0$ dan $abc = 27$. Tentukan nilai minimum dari $a + b + c$.<br />
+              <em>Given $a, b, c > 0$ and $abc = 27$. Find the minimum value of $a + b + c$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8.</strong> Tentukan jumlah semua bilangan bulat $n$ yang memenuhi $\frac{2n - 3}{n + 1} \le 1$.<br />
+              <em>Find the sum of all integers $n$ that satisfy $\frac{2n - 3}{n + 1} \le 1$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9.</strong> Jika $x$ dan $y$ adalah bilangan riil positif sedemikian sehingga $x^2 + y^2 = 32$, berapakah nilai maksimum dari $xy$?<br />
+              <em>If $x$ and $y$ are positive real numbers such that $x^2 + y^2 = 32$, what is the maximum value of $xy$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10.</strong> Tentukan nilai minimum dari ekspresi $\frac{x^2 + 4x + 13}{x+2}$ untuk $x > -2$.<br />
+              <em>Find the minimum value of the expression $\frac{x^2 + 4x + 13}{x+2}$ for $x > -2$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>11.</strong> Diberikan bilangan riil positif $x, y, z$. Tentukan nilai minimum dari $\frac{x}{y} + \frac{y}{z} + \frac{z}{x}$.<br />
+              <em>Given positive real numbers $x, y, z$. Find the minimum value of $\frac{x}{y} + \frac{y}{z} + \frac{z}{x}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12.</strong> Berapakah banyak bilangan bulat $x$ yang memenuhi pertidaksamaan $|2x - 7| < 5$?<br />
+              <em>How many integers $x$ satisfy the inequality $|2x - 7| < 5$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13.</strong> Diketahui keliling sebuah persegi panjang adalah $40$ cm. Gunakan ketaksamaan AM-GM untuk menentukan luas maksimum persegi panjang tersebut.<br />
+              <em>The perimeter of a rectangle is $40$ cm. Use the AM-GM inequality to determine the maximum area of the rectangle.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14.</strong> Tentukan nilai minimum dari $4a^2 + \frac{1}{a^2}$ untuk $a \neq 0$.<br />
+              <em>Find the minimum value of $4a^2 + \frac{1}{a^2}$ for $a \neq 0$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15.</strong> Jika $x$ dan $y$ adalah bilangan riil positif dengan $x+y=10$, berapakah nilai maksimum dari $x^2 y^2$?<br />
+              <em>If $x$ and $y$ are positive real numbers with $x+y=10$, what is the maximum value of $x^2 y^2$?</em>
+            </p>
+          </div>
+
+          <!-- PART 2: BASIC COORDINATE GEOMETRY -->
+          <h3 class="topic-title">Bagian 2: Geometri Koordinat Dasar</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16.</strong> Tentukan jarak antara titik $A(-3, 4)$ dan titik $B(5, -2)$ pada bidang Kartesius.<br />
+              <em>Find the distance between point $A(-3, 4)$ and point $B(5, -2)$ on the Cartesian plane.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17.</strong> Sebuah garis melewati titik $(2, k)$ dan $(5, 11)$. Jika gradien garis tersebut adalah $3$, berapakah nilai $k$?<br />
+              <em>A line passes through the points $(2, k)$ and $(5, 11)$. If the slope of the line is $3$, what is the value of $k$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18.</strong> Tentukan persamaan garis yang sejajar dengan $2x - 3y = 6$ dan melalui titik $(1, 4)$.<br />
+              <em>Find the equation of the line that is parallel to $2x - 3y = 6$ and passes through the point $(1, 4)$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19.</strong> Titik $P(1, 1)$, $Q(4, 5)$, dan $R(a, 13)$ terletak pada satu garis lurus (kolinier). Tentukan nilai $a$.<br />
+              <em>Points $P(1, 1)$, $Q(4, 5)$, and $R(a, 13)$ lie on the same straight line (collinear). Find the value of $a$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20.</strong> Diberikan titik-titik sudut sebuah segitiga $A(0, 0)$, $B(6, 0)$, dan $C(3, 8)$. Tentukan luas segitiga $ABC$.<br />
+              <em>Given the vertices of a triangle $A(0, 0)$, $B(6, 0)$, and $C(3, 8)$. Find the area of triangle $ABC$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>21.</strong> Ruas garis yang menghubungkan titik $M(-2, 5)$ dan $N(8, y)$ memiliki titik tengah di $T(x, 1)$. Tentukan nilai $x + y$.<br />
+              <em>The line segment connecting points $M(-2, 5)$ and $N(8, y)$ has its midpoint at $T(x, 1)$. Find the value of $x + y$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22.</strong> Garis $l_1$ memiliki persamaan $4x + 5y = 20$. Garis $l_2$ tegak lurus terhadap $l_1$ dan melalui titik pangkal $(0,0)$. Tentukan persamaan garis $l_2$.<br />
+              <em>Line $l_1$ has the equation $4x + 5y = 20$. Line $l_2$ is perpendicular to $l_1$ and passes through the origin $(0,0)$. Find the equation of line $l_2$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23.</strong> Dua garis $3x + y = 10$ dan $x - 2y = 1$ berpotongan di titik $P$. Tentukan koordinat titik $P$.<br />
+              <em>The two lines $3x + y = 10$ and $x - 2y = 1$ intersect at point $P$. Find the coordinates of point $P$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24.</strong> Tentukan luas segiempat dengan titik sudut $(1, 2)$, $(4, 1)$, $(5, 5)$, dan $(2, 6)$.<br />
+              <em>Find the area of the quadrilateral with vertices $(1, 2)$, $(4, 1)$, $(5, 5)$, and $(2, 6)$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25.</strong> Sebuah lingkaran memiliki pusat di $(3, 4)$ dan menyinggung sumbu-x. Berapakah luas lingkaran tersebut?<br />
+              <em>A circle has its center at $(3, 4)$ and is tangent to the x-axis. What is the area of the circle?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>26.</strong> Titik $A$ terletak pada sumbu-x positif dan titik $B$ terletak pada sumbu-y positif sedemikian sehingga persamaan garis $AB$ adalah $3x + 4y = 24$. Tentukan jarak dari titik asal $(0,0)$ ke titik tengah $AB$.<br />
+              <em>Point $A$ lies on the positive x-axis and point $B$ lies on the positive y-axis such that the equation of line $AB$ is $3x + 4y = 24$. Find the distance from the origin $(0,0)$ to the midpoint of $AB$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>27.</strong> Perhatikan gambar garis pada bidang koordinat di bawah ini. Garis tersebut memotong sumbu-x di $(-4, 0)$ dan sumbu-y di $(0, 3)$. Tentukan jarak terpendek dari titik asal $(0,0)$ ke garis tersebut.<br />
+              <em>Observe the line graph on the coordinate plane below. The line intersects the x-axis at $(-4, 0)$ and the y-axis at $(0, 3)$. Find the shortest distance from the origin $(0,0)$ to the line.</em>
+            </p>
+            <div class="mt-4 flex justify-center">
+              <svg viewBox="0 0 250 200" class="w-full max-w-sm" style="background: white; border-radius: 8px; border: 1px solid #e5e7eb;">
+                <!-- grid / axes -->
+                <line x1="20" y1="140" x2="230" y2="140" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="120" y1="180" x2="120" y2="20" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <text x="235" y="145" font-family="sans-serif" font-style="italic" font-size="12">x</text>
+                <text x="105" y="15" font-family="sans-serif" font-style="italic" font-size="12">y</text>
+                <!-- Line y = 0.75x + 3. Origin at (120, 140). Scale = 20px per unit -->
+                <!-- (-4, 0) = x: 120 - 80 = 40, y: 140 -->
+                <!-- (0, 3) = x: 120, y: 140 - 60 = 80 -->
+                <line x1="10" y1="162.5" x2="180" y2="35" stroke="blue" stroke-width="2"/>
+                <!-- Points -->
+                <circle cx="40" cy="140" r="3" fill="black"/>
+                <text x="40" y="158" font-family="sans-serif" font-size="12" text-anchor="middle">(-4, 0)</text>
+                <circle cx="120" cy="80" r="3" fill="black"/>
+                <text x="128" y="80" font-family="sans-serif" font-size="12">(0, 3)</text>
+                <text x="105" y="155" font-family="sans-serif" font-size="12">O</text>
+                <!-- Right angle marker -->
+                <polyline points="120,132 128,132 128,140" fill="none" stroke="black" stroke-width="1"/>
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                    <path d="M 0 0 L 10 5 L 0 10 z" />
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28.</strong> Bayangan titik $K(-5, 2)$ setelah direfleksikan terhadap garis $y = -x$ adalah $K'(p, q)$. Tentukan nilai $p - q$.<br />
+              <em>The image of point $K(-5, 2)$ after reflection across the line $y = -x$ is $K'(p, q)$. Find the value of $p - q$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29.</strong> Segitiga $DEF$ memiliki titik sudut $D(-1, -1)$, $E(5, -1)$, dan $F(2, 3)$. Apakah jenis segitiga $DEF$ jika ditinjau dari panjang sisi-sisinya?<br />
+              <em>Triangle $DEF$ has vertices $D(-1, -1)$, $E(5, -1)$, and $F(2, 3)$. What type of triangle is $DEF$ based on its side lengths?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>30.</strong> Garis $y = mx + c$ sejajar dengan garis $y = 2x - 5$ dan membagi dua luasan jajargenjang dengan titik sudut $(0,0)$, $(4,0)$, $(6,3)$, dan $(2,3)$ menjadi dua bagian yang sama besar. Tentukan nilai $c$.<br />
+              <em>Line $y = mx + c$ is parallel to the line $y = 2x - 5$ and bisects the area of a parallelogram with vertices $(0,0)$, $(4,0)$, $(6,3)$, and $(2,3)$ into two equal parts. Find the value of $c$.</em>
+            </p>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BAGIAN PEMBAHASAN / SOLUTIONS SECTION      -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Pembahasan Lengkap (Detailed Step-by-Step Solutions)</h2>
+
+          <h3 class="topic-title">Bagian 1: Pertidaksamaan dan Ketaksamaan AM-GM</h3>
+
+          <!-- SOLUTION 1 -->
+          <div class="item-container">
+            <p><strong>Solution Number 1:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan sifat dasar pertidaksamaan, apabila kedua ruas suatu pertidaksamaan dikalikan atau dibagi dengan bilangan <strong>negatif</strong>, maka tanda ketaksamaan <strong>harus dibalik</strong> posisinya. Mengingat $c$ adalah bilangan real negatif ($c < 0$), maka ketika kita mengalikan kedua ruas $a > b$ dengan $c$, tanda ketaksamaan berbalik menjadi $ac < bc$. Pernyataan lainnya tidak selalu terbukti benar.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>According to the fundamental properties of inequalities, if both sides of an inequality are multiplied or divided by a <strong>negative</strong> number, the inequality sign <strong>must be reversed</strong>. Given that $c$ is a negative real number ($c < 0$), multiplying both sides of $a > b$ by $c$ reverses the sign, resulting in $ac < bc$. The other statements are not universally true.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $ac < bc$</div>
+          </div>
+
+          <!-- SOLUTION 2 -->
+          <div class="item-container">
+            <p><strong>Solution Number 2:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pertidaksamaan ganda tersebut dapat diselesaikan dengan membaginya menjadi dua sistem pertidaksamaan terpisah.</p>
+                <p>1) Ruas Kiri & Tengah: $3x - 5 \le 7x + 3 \Rightarrow -8 \le 4x \Rightarrow -2 \le x$.</p>
+                <p>2) Ruas Tengah & Kanan: $7x + 3 < 5x + 13 \Rightarrow 2x < 10 \Rightarrow x < 5$.</p>
+                <p>Himpunan penyelesaian akhirnya adalah irisan dari kedua sistem tersebut, yaitu $-2 \le x < 5$. Nilai bilangan bulat $x$ yang memenuhi adalah $\{-2, -1, 0, 1, 2, 3, 4\}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The compound inequality can be solved by separating it into two distinct inequality systems. 1) Left & Middle sections: $3x - 5 \le 7x + 3 \Rightarrow -8 \le 4x \Rightarrow -2 \le x$. 2) Middle & Right sections: $7x + 3 < 5x + 13 \Rightarrow 2x < 10 \Rightarrow x < 5$. The final solution is the intersection of both systems: $-2 \le x < 5$. The integer values satisfying this are $\{-2, -1, 0, 1, 2, 3, 4\}$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $\{-2, -1, 0, 1, 2, 3, 4\}$</div>
+          </div>
+
+          <!-- SOLUTION 3 -->
+          <div class="item-container">
+            <p><strong>Solution Number 3:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan <strong>Ketaksamaan AM-GM</strong> (Rata-rata Aritmetika $\ge$ Rata-rata Geometrik) untuk dua bilangan real positif $A$ dan $B$, berlaku $A + B \ge 2\sqrt{A \times B}$. Substitusikan $A = x$ dan $B = \frac{25}{x}$.</p>
+                <p>Maka diperoleh: $x + \frac{25}{x} \ge 2\sqrt{x \times \frac{25}{x}}$. Perhatikan bahwa variabel $x$ saling meniadakan, sehingga menyisakan $2\sqrt{25} = 2 \times 5 = 10$. Dengan demikian, nilai minimum dari ekspresi tersebut adalah $10$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on the <strong>AM-GM Inequality</strong> (Arithmetic Mean $\ge$ Geometric Mean) for two positive real numbers $A$ and $B$, $A + B \ge 2\sqrt{A \times B}$ applies. Let $A = x$ and $B = \frac{25}{x}$. Consequently: $x + \frac{25}{x} \ge 2\sqrt{x \times \frac{25}{x}}$. The variable $x$ cancels out, leaving $2\sqrt{25} = 2 \times 5 = 10$. Thus, the minimum value of the expression is $10$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $10$</div>
+          </div>
+
+          <!-- SOLUTION 4 -->
+          <div class="item-container">
+            <p><strong>Solution Number 4:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Lakukan penjabaran perkalian aljabar (distributif) pada ekspresi tersebut: $(a)(b) + (a)(\frac{1}{a}) + (\frac{1}{b})(b) + (\frac{1}{b})(\frac{1}{a})$. Hasilnya adalah $ab + 1 + 1 + \frac{1}{ab}$, yang dapat disederhanakan menjadi $ab + \frac{1}{ab} + 2$. Terapkan ketaksamaan AM-GM pada dua suku pertama: $ab + \frac{1}{ab} \ge 2\sqrt{ab \times \frac{1}{ab}} = 2\sqrt{1} = 2$. Jumlahkan nilai minimum tersebut dengan konstanta $2$, sehingga diperoleh total nilai minimum $2 + 2 = 4$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Apply algebraic expansion (distributive property) to the expression: $(a)(b) + (a)(\frac{1}{a}) + (\frac{1}{b})(b) + (\frac{1}{b})(\frac{1}{a})$. The result is $ab + 1 + 1 + \frac{1}{ab}$, simplifying to $ab + \frac{1}{ab} + 2$. Apply the AM-GM inequality to the first two terms: $ab + \frac{1}{ab} \ge 2\sqrt{ab \times \frac{1}{ab}} = 2\sqrt{1} = 2$. Add this minimum value to the constant $2$, yielding a total minimum value of $2 + 2 = 4$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $4$</div>
+          </div>
+
+          <!-- SOLUTION 5 -->
+          <div class="item-container">
+            <p><strong>Solution Number 5:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Untuk menerapkan ketaksamaan AM-GM, bentuk aljabar perlu dimanipulasi agar variabel pada pembilang dan penyebut ekuivalen. Ubah bentuk $x$ menjadi $(x - 2) + 2$. Ekspresi tersebut kini menjadi: $(x - 2) + \frac{16}{x - 2} + 2$. Terapkan ketaksamaan AM-GM pada dua suku pertama: $2\sqrt{(x-2) \times \frac{16}{x-2}} = 2\sqrt{16} = 2 \times 4 = 8$. Tambahkan konstanta $2$ pada akhir perhitungan, sehingga diperoleh $8 + 2 = 10$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>To apply the AM-GM inequality, the algebraic expression must be manipulated so the variables in the numerator and denominator are equivalent. Rewrite $x$ as $(x - 2) + 2$. The expression becomes: $(x - 2) + \frac{16}{x - 2} + 2$. Apply AM-GM to the first two terms: $2\sqrt{(x-2) \times \frac{16}{x-2}} = 2\sqrt{16} = 2 \times 4 = 8$. Add the constant $2$ at the end, yielding $8 + 2 = 10$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $10$</div>
+          </div>
+
+          <!-- SOLUTION 6 -->
+          <div class="item-container">
+            <p><strong>Solution Number 6:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Persoalan ini menuntut maksimisasi hasil kali dua komponen: $x$ dan $(12-x)$. Diketahui bahwa jumlah kedua komponen tersebut adalah konstan ($x + 12 - x = 12$). Berdasarkan prinsip AM-GM, hasil kali dari variabel yang berjumlah konstan akan mencapai nilai maksimum apabila komponen-komponen tersebut bernilai setara. Oleh karena itu, $x = 12 - x$, yang berimplikasi pada $x = 6$. Nilai maksimum dari fungsi tersebut adalah $6 \times (12 - 6) = 36$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>This problem requires maximizing the product of two components: $x$ and $(12-x)$. The sum of these components is a constant ($x + 12 - x = 12$). According to the AM-GM principle, the product of variables with a constant sum reaches its maximum when the components are strictly equal. Therefore, $x = 12 - x$, implying $x = 6$. The maximum value of the function is $6 \times (12 - 6) = 36$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $36$</div>
+          </div>
+
+          <!-- SOLUTION 7 -->
+          <div class="item-container">
+            <p><strong>Solution Number 7:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Gunakan perluasan ketaksamaan AM-GM untuk tiga bilangan real positif: $A + B + C \ge 3\sqrt[3]{A \times B \times C}$. Substitusikan nilai parameter yang diketahui ($abc = 27$): $a+b+c \ge 3\sqrt[3]{27}$. Mengingat akar pangkat tiga dari $27$ adalah $3$, maka diperoleh nilai minimum $3 \times 3 = 9$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Utilize the AM-GM inequality extension for three positive real numbers: $A + B + C \ge 3\sqrt[3]{A \times B \times C}$. Substitute the known parameter value ($abc = 27$): $a+b+c \ge 3\sqrt[3]{27}$. Given that the cube root of $27$ is $3$, the minimum value obtained is $3 \times 3 = 9$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $9$</div>
+          </div>
+
+          <!-- SOLUTION 8 -->
+          <div class="item-container">
+            <p><strong>Solution Number 8:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pindahkan ruas kanan ke ruas kiri sedemikian hingga pertidaksamaan membandingkan suatu fungsi rasional dengan nol: $\frac{2n-3}{n+1} - 1 \le 0$. Lakukan penyamaan penyebut: $\frac{2n-3 - (n+1)}{n+1} \le 0 \Rightarrow \frac{n-4}{n+1} \le 0$. Agar fungsi bernilai negatif atau nol, pembilang dan penyebut harus memiliki tanda matematis yang berlawanan. Titik kritis fungsi adalah $n=4$ (pembuat nol pembilang) dan $n=-1$ (pembuat nol penyebut). Menggunakan garis bilangan, interval penyelesaiannya adalah $-1 < n \le 4$. Nilai bilangan bulat yang memenuhi adalah $0, 1, 2, 3, 4$. Jumlah keseluruhan nilai tersebut adalah $10$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Move the right side to the left so the inequality compares a rational function to zero: $\frac{2n-3}{n+1} - 1 \le 0$. Form a common denominator: $\frac{2n-3 - (n+1)}{n+1} \le 0 \Rightarrow \frac{n-4}{n+1} \le 0$. For the function to be non-positive, the numerator and denominator must have opposite signs. The critical points are $n=4$ (numerator root) and $n=-1$ (denominator root). Using a number line, the valid interval is $-1 < n \le 4$. The satisfying integers are $0, 1, 2, 3, 4$. Their cumulative sum is $10$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $10$</div>
+          </div>
+
+          <!-- SOLUTION 9 -->
+          <div class="item-container">
+            <p><strong>Solution Number 9:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Terapkan ketaksamaan AM-GM pada variabel $x^2$ dan $y^2$: $x^2 + y^2 \ge 2\sqrt{x^2 \times y^2}$, yang berimplikasi pada $32 \ge 2xy$. Melalui pembagian kedua ruas dengan angka $2$, diperoleh $16 \ge xy$. Dengan demikian, batas atas (nilai maksimum) dari $xy$ adalah $16$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Apply the AM-GM inequality to the variables $x^2$ and $y^2$: $x^2 + y^2 \ge 2\sqrt{x^2 \times y^2}$, which implies $32 \ge 2xy$. Dividing both sides by $2$ yields $16 \ge xy$. Consequently, the upper bound (maximum value) of $xy$ is $16$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $16$</div>
+          </div>
+
+          <!-- SOLUTION 10 -->
+          <div class="item-container">
+            <p><strong>Solution Number 10:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Lakukan manipulasi aljabar pada pembilang agar memuat bentuk penjabaran dari penyebut $(x+2)$. Mengacu pada identitas kuadrat $(x+2)^2 = x^2 + 4x + 4$, pembilang $x^2 + 4x + 13$ dapat diekspresikan ulang sebagai $(x^2 + 4x + 4) + 9$, atau $(x+2)^2 + 9$. Bagi ekspresi ini dengan penyebut: $\frac{(x+2)^2 + 9}{x+2} = (x+2) + \frac{9}{x+2}$. Terapkan ketaksamaan AM-GM: Nilai minimum $= 2\sqrt{(x+2) \times \frac{9}{x+2}} = 2\sqrt{9} = 2 \times 3 = 6$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Perform algebraic manipulation on the numerator to include the expansion of the denominator $(x+2)$. Referring to the quadratic identity $(x+2)^2 = x^2 + 4x + 4$, the numerator $x^2 + 4x + 13$ can be rewritten as $(x^2 + 4x + 4) + 9$, or $(x+2)^2 + 9$. Divide this by the denominator: $\frac{(x+2)^2 + 9}{x+2} = (x+2) + \frac{9}{x+2}$. Apply the AM-GM inequality: Minimum value $= 2\sqrt{(x+2) \times \frac{9}{x+2}} = 2\sqrt{9} = 2 \times 3 = 6$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $6$</div>
+          </div>
+
+          <!-- SOLUTION 11 -->
+          <div class="item-container">
+            <p><strong>Solution Number 11:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Terapkan perluasan ketaksamaan AM-GM untuk tiga suku. Pada perkalian ketiga suku tersebut, seluruh variabel akan tereduksi menjadi bernilai 1: $\frac{x}{y} \times \frac{y}{z} \times \frac{z}{x} = 1$. Berdasarkan teorema: Jumlah Suku $\ge 3\sqrt[3]{\text{Hasil Kali}}$. Maka Jumlah $\ge 3\sqrt[3]{1} = 3 \times 1 = 3$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Apply the AM-GM inequality extension for three terms. When these three terms are multiplied, all variables cancel out to $1$: $\frac{x}{y} \times \frac{y}{z} \times \frac{z}{x} = 1$. Based on the theorem: Sum of Terms $\ge 3\sqrt[3]{\text{Product}}$. Thus, the Sum $\ge 3\sqrt[3]{1} = 3 \times 1 = 3$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $3$</div>
+          </div>
+
+          <!-- SOLUTION 12 -->
+          <div class="item-container">
+            <p><strong>Solution Number 12:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Simbol $| |$ merepresentasikan fungsi nilai mutlak, yang mendefinisikan jarak absolut. Definisi formal dari pertidaksamaan nilai mutlak $|A| < B$ adalah $-B < A < B$. Terapkan definisi tersebut: $-5 < 2x - 7 < 5$. Tambahkan semua ruas dengan konstanta $7$: $2 < 2x < 12$. Bagi seluruh ruas dengan $2$: $1 < x < 6$. Bilangan bulat yang berada dalam rentang interval tersebut adalah $2, 3, 4$, dan $5$. Total terdapat $4$ buah bilangan bulat.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The $| |$ symbol represents the absolute value function, defining absolute distance. The formal definition of the absolute inequality $|A| < B$ is $-B < A < B$. Apply this definition: $-5 < 2x - 7 < 5$. Add the constant $7$ to all parts: $2 < 2x < 12$. Divide all parts by $2$: $1 < x < 6$. The integers falling within this interval range are $2, 3, 4$, and $5$. There is a total of $4$ integers.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $4$</div>
+          </div>
+
+          <!-- SOLUTION 13 -->
+          <div class="item-container">
+            <p><strong>Solution Number 13:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan rumus parameter keliling persegi panjang: $2 \times (p + l) = 40 \Rightarrow p + l = 20$. Ketaksamaan AM-GM menetapkan bahwa jumlahan variabel $\ge$ dua kali akar hasil kali (Luas area). Maka $20 \ge 2\sqrt{\text{Luas}} \Rightarrow 10 \ge \sqrt{\text{Luas}}$. Lakukan kuadrat pada kedua ruas: $100 \ge \text{Luas}$. Luas area maksimum yang mungkin dicapai adalah $100$ cm$^2$ (kondisi ini terpenuhi saat bangun ruang berupa persegi dengan panjang sisi $10$).</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on the rectangle perimeter formula: $2 \times (l + w) = 40 \Rightarrow l + w = 20$. The AM-GM inequality states that the sum of variables $\ge 2 \times$ the square root of their product (Area). Thus $20 \ge 2\sqrt{\text{Area}} \Rightarrow 10 \ge \sqrt{\text{Area}}$. Square both sides: $100 \ge \text{Area}$. The maximum possible area is $100$ cm$^2$ (this condition is met when the shape is a square with side lengths of $10$).</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $100$ cm$^2$</div>
+          </div>
+
+          <!-- SOLUTION 14 -->
+          <div class="item-container">
+            <p><strong>Solution Number 14:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Terapkan ketaksamaan AM-GM secara langsung pada kedua suku tersebut: Nilai Minimum $= 2\sqrt{4a^2 \times \frac{1}{a^2}}$. Variabel $a^2$ akan tereliminasi secara aljabar, menyisakan $2\sqrt{4} = 2 \times 2 = 4$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Apply the AM-GM inequality directly to these two terms: Minimum Value $= 2\sqrt{4a^2 \times \frac{1}{a^2}}$. The variable $a^2$ is algebraically eliminated, leaving $2\sqrt{4} = 2 \times 2 = 4$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $4$</div>
+          </div>
+
+          <!-- SOLUTION 15 -->
+          <div class="item-container">
+            <p><strong>Solution Number 15:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan ketaksamaan AM-GM: $x+y \ge 2\sqrt{xy}$. Substitusikan nilai parameter yang diketahui: $10 \ge 2\sqrt{xy} \Rightarrow 5 \ge \sqrt{xy}$. Lakukan penguadratan pada kedua ruas: $25 \ge xy$. Karena persoalan meminta nilai maksimum dari $x^2 y^2$ (yang ekuivalen secara identitas aljabar dengan $(xy)^2$), maka hasil sebelumnya harus dikuadratkan kembali. Hasil akhirnya adalah $25^2 = 625$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on the AM-GM inequality: $x+y \ge 2\sqrt{xy}$. Substitute the known parameter value: $10 \ge 2\sqrt{xy} \Rightarrow 5 \ge \sqrt{xy}$. Square both sides: $25 \ge xy$. Because the problem asks for the maximum value of $x^2 y^2$ (which is algebraically identical to $(xy)^2$), the previous result must be squared again. The final result is $25^2 = 625$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $625$</div>
+          </div>
+
+          <!-- SOLUTIONS 16-30 -->
+          <h3 class="topic-title">Bagian 2: Geometri Koordinat Dasar</h3>
+
+          <!-- SOLUTION 16 -->
+          <div class="item-container">
+            <p><strong>Solution Number 16:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Gunakan formula jarak antara dua titik pada bidang koordinat yang diturunkan secara geometris dari Teorema Pythagoras: $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$.</p>
+                <p>Selisih basis absis ($x$): $5 - (-3) = 8$. (Hasil kuadrat = $64$).</p>
+                <p>Selisih basis ordinat ($y$): $-2 - 4 = -6$. (Hasil kuadrat = $36$).</p>
+                <p>Jarak linear $= \sqrt{64 + 36} = \sqrt{100} = 10$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Use the distance formula between two points on a coordinate plane, geometrically derived from the Pythagorean Theorem: $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. Abscissa ($x$) difference: $5 - (-3) = 8$ (Squared = $64$). Ordinate ($y$) difference: $-2 - 4 = -6$ (Squared = $36$). Linear distance $= \sqrt{64 + 36} = \sqrt{100} = 10$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $10$</div>
+          </div>
+
+          <!-- SOLUTION 17 -->
+          <div class="item-container">
+            <p><strong>Solution Number 17:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Formula umum gradien (kemiringan garis) yang melalui dua koordinat titik adalah laju perubahan koordinat y terhadap perubahan koordinat x ($m = \frac{y_2 - y_1}{x_2 - x_1}$).</p>
+                <p>Substitusikan parameter-parameter yang diketahui: $3 = \frac{11 - k}{5 - 2} \Rightarrow 3 = \frac{11 - k}{3}$.</p>
+                <p>Lakukan perkalian silang: $3 \times 3 = 11 - k \Rightarrow 9 = 11 - k \Rightarrow k = 2$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The general formula for the slope of a line passing through two coordinate points is the rate of change of the y-coordinate with respect to the x-coordinate ($m = \frac{y_2 - y_1}{x_2 - x_1}$). Substitute the known parameters: $3 = \frac{11 - k}{5 - 2} \Rightarrow 3 = \frac{11 - k}{3}$. Cross-multiply: $3 \times 3 = 11 - k \Rightarrow 9 = 11 - k \Rightarrow k = 2$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $k = 2$</div>
+          </div>
+
+          <!-- SOLUTION 18 -->
+          <div class="item-container">
+            <p><strong>Solution Number 18:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Secara definitif, dua garis yang posisinya sejajar secara persis harus memiliki nilai gradien yang identik ($m_1 = m_2$). Pertama, tentukan gradien referensi dari garis awal. Ubah persamaan $2x - 3y = 6$ menjadi bentuk intersep-kemiringan ($y = mx + c$): $3y = 2x - 6 \Rightarrow y = \frac{2}{3}x - 2$. Diperoleh gradien garis tersebut bernilai $\frac{2}{3}$.</p>
+                <p>Gunakan formula persamaan garis lurus yang memiliki gradien $m$ dan melalui titik $(x_1, y_1)$: $y - y_1 = m(x - x_1)$. Substitusikan parameter yang relevan: $y - 4 = \frac{2}{3}(x - 1)$.</p>
+                <p>Hilangkan bentuk pecahan dengan mengalikan persamaan terhadap faktor $3$: $3y - 12 = 2(x - 1) \Rightarrow 3y - 12 = 2x - 2 \Rightarrow 2x - 3y + 10 = 0$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>By definition, two strictly parallel lines must have identical slope values ($m_1 = m_2$). First, determine the reference slope of the initial line. Convert the equation $2x - 3y = 6$ into slope-intercept form ($y = mx + c$): $3y = 2x - 6 \Rightarrow y = \frac{2}{3}x - 2$. The derived slope is $\frac{2}{3}$. Use the formula for a linear equation with slope $m$ passing through point $(x_1, y_1)$: $y - y_1 = m(x - x_1)$. Substitute the relevant parameters: $y - 4 = \frac{2}{3}(x - 1)$. Eliminate fractions by multiplying the equation by a factor of $3$: $3y - 12 = 2(x - 1) \Rightarrow 3y - 12 = 2x - 2 \Rightarrow 2x - 3y + 10 = 0$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $2x - 3y + 10 = 0$ <em>(atau $y = \frac{2}{3}x + \frac{10}{3}$)</em></div>
+          </div>
+
+          <!-- SOLUTION 19 -->
+          <div class="item-container">
+            <p><strong>Solution Number 19:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Titik-titik direpresentasikan sebagai kolinier (segaris) apabila kemiringan ruas garis yang menghubungkan titik-titik tersebut bernilai ekuivalen.</p>
+                <p>Gradien $PQ = \frac{5 - 1}{4 - 1} = \frac{4}{3}$.</p>
+                <p>Gradien $QR = \frac{13 - 5}{a - 4} = \frac{8}{a - 4}$.</p>
+                <p>Karena kolinier, kedua gradien ekuivalen: $\frac{4}{3} = \frac{8}{a - 4}$. Dengan melakukan penyetaraan proporsi (pembilang dikalikan konstan $2$), maka bagian penyebut ($3$) juga harus mengikuti perbandingan tersebut menjadi $6$. Dengan demikian, $a - 4 = 6 \Rightarrow a = 10$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Points are designated as collinear if the slope of the line segments connecting them are equivalent. Slope of $PQ = \frac{5 - 1}{4 - 1} = \frac{4}{3}$. Slope of $QR = \frac{13 - 5}{a - 4} = \frac{8}{a - 4}$. Due to collinearity, both slopes are equated: $\frac{4}{3} = \frac{8}{a - 4}$. By matching proportions (the numerator is scaled by a factor of $2$), the denominator ($3$) must correspondingly become $6$. Therefore, $a - 4 = 6 \Rightarrow a = 10$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $a = 10$</div>
+          </div>
+
+          <!-- SOLUTION 20 -->
+          <div class="item-container">
+            <p><strong>Solution Number 20:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Tinjau posisi titik-titik tersebut pada bidang koordinat Kartesius. Jarak spasial horizontal dari titik referensi $A(0,0)$ ke titik mendatar $B(6,0)$ merepresentasikan ukuran basis (alas) segitiga, dengan panjang ekuivalen $6$. Titik vertek teratas $C(3,8)$ memproyeksikan tinggi vertikal absolut sebesar ordinatnya (nilai y), yaitu $8$. Luas segitiga $= \frac{1}{2} \times \text{alas} \times \text{tinggi} = \frac{1}{2} \times 6 \times 8 = 24$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Examine the positional coordinates on the Cartesian plane. The horizontal spatial distance from the reference origin $A(0,0)$ to point $B(6,0)$ represents the base dimension of the triangle, with an equivalent length of $6$. The apex vertex $C(3,8)$ projects an absolute vertical height corresponding to its ordinate (y-value), which is $8$. Triangle Area $= \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 6 \times 8 = 24$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $24$</div>
+          </div>
+
+          <!-- SOLUTION 21 -->
+          <div class="item-container">
+            <p><strong>Solution Number 21:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Secara matematis, koordinat titik tengah dari suatu ruas garis linear diperoleh melalui kalkulasi rata-rata (titik ekuilibrium) dari koordinat kedua titik penampang ujungnya.</p>
+                <p>Evaluasi parameter basis absis ($x$): $\frac{-2 + 8}{2} = x \Rightarrow \frac{6}{2} = x \Rightarrow x = 3$.</p>
+                <p>Evaluasi parameter basis ordinat ($y$): $\frac{5 + y}{2} = 1 \Rightarrow 5 + y = 2 \Rightarrow y = -3$.</p>
+                <p>Hasil komputasi parameter gabungan adalah $x + y = 3 + (-3) = 0$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Mathematically, the midpoint coordinates of a linear line segment are computed by averaging the coordinates of its terminal endpoints. Evaluate the abscissa ($x$) parameter: $\frac{-2 + 8}{2} = x \Rightarrow \frac{6}{2} = x \Rightarrow x = 3$. Evaluate the ordinate ($y$) parameter: $\frac{5 + y}{2} = 1 \Rightarrow 5 + y = 2 \Rightarrow y = -3$. The computed value of the combined parameters is $x + y = 3 + (-3) = 0$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $0$</div>
+          </div>
+
+          <!-- SOLUTION 22 -->
+          <div class="item-container">
+            <p><strong>Solution Number 22:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan persamaan linear $l_1$ ($4x + 5y = 20 \Rightarrow 5y = -4x + 20$), nilai gradien dasarnya adalah $m_1 = -\frac{4}{5}$. Syarat tegak lurus ortogonal menuntut hasil kali silang antar gradien menghasilkan konstanta negatif satu ($m_1 \times m_2 = -1$). Maka gradien proyeksi saling invers dan berlawanan tanda, sehingga $m_2 = \frac{5}{4}$. Karena melalui intersep pusat $(0,0)$, maka persamaan strukturnya mematuhi format absolut $y = mx$. Dengan demikian persamaannya adalah $y = \frac{5}{4}x \Rightarrow 5x - 4y = 0$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on the linear equation $l_1$ ($4x + 5y = 20 \Rightarrow 5y = -4x + 20$), its base slope value is $m_1 = -\frac{4}{5}$. The condition for orthogonal perpendicularity necessitates that the product of the slopes yields negative one ($m_1 \times m_2 = -1$). Hence, the projected slope is the negative reciprocal, establishing $m_2 = \frac{5}{4}$. Passing through the origin intercept $(0,0)$, the structural equation assumes the absolute form $y = mx$. Thus, the resulting equation is $y = \frac{5}{4}x \Rightarrow 5x - 4y = 0$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $5x - 4y = 0$ <em>(atau $y = \frac{5}{4}x$)</em></div>
+          </div>
+
+          <!-- SOLUTION 23 -->
+          <div class="item-container">
+            <p><strong>Solution Number 23:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Titik perpotongan spasial (interseksi) antargaris dapat diselesaikan melalui sistem persamaan linear dua variabel menggunakan metode substitusi matriks aljabar. Substitusikan bentuk relasional persamaan kedua ($x - 2y = 1 \Rightarrow x = 2y + 1$) ke dalam persamaan fungsi linear pertama:</p>
+                <p>$3(2y + 1) + y = 10 \Rightarrow 6y + 3 + y = 10 \Rightarrow 7y = 7 \Rightarrow y = 1$.</p>
+                <p>Substitusi parameter kembali untuk mendapatkan basis x: $x = 2(1) + 1 = 3$. Titik perpotongan koordinat berada di $(3, 1)$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The spatial intersection point between lines is solvable via a two-variable linear equation system employing algebraic substitution methods. Substitute the relational form of the second equation ($x - 2y = 1 \Rightarrow x = 2y + 1$) into the first linear function: $3(2y + 1) + y = 10 \Rightarrow 6y + 3 + y = 10 \Rightarrow 7y = 7 \Rightarrow y = 1$. Substitute the parameter back to obtain the x-basis: $x = 2(1) + 1 = 3$. The coordinate intersection point lies at $(3, 1)$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $P(3, 1)$</div>
+          </div>
+
+          <!-- SOLUTION 24 -->
+          <div class="item-container">
+            <p><strong>Solution Number 24:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Luas poligon tertutup tidak beraturan dapat dikalkulasi secara empiris memakai Formula Tali Sepatu (<em>Shoelace Formula</em>). Transkripsikan setiap verteks koordinat secara siklik dan iterasi simpul awalan pada bagian dasar perumusan matriks:</p>
+                <p>Komponen X: $1, 4, 5, 2, 1$</p>
+                <p>Komponen Y: $2, 1, 5, 6, 2$</p>
+                <p>Evaluasi komponen jumlahan diagonal turunan pertama: $(1\times1)+(4\times5)+(5\times6)+(2\times2) = 1+20+30+4 = 55$.</p>
+                <p>Evaluasi komponen jumlahan diagonal turunan kedua: $(2\times4)+(1\times5)+(5\times2)+(6\times1) = 8+5+10+6 = 29$.</p>
+                <p>Total Luas Geometri $= \frac{1}{2} \times | \text{Nilai Turunan Pertama} - \text{Nilai Turunan Kedua} | = \frac{1}{2} \times |55 - 29| = \frac{1}{2} \times 26 = 13$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The area of an irregular closed polygon can be empirically calculated using the Shoelace Formula. Transcribe each coordinate vertex cyclically and iterate the initial vertex at the base of the matrix formulation: Component X: $1, 4, 5, 2, 1$. Component Y: $2, 1, 5, 6, 2$. Evaluate the first downward diagonal sum component: $(1\times1)+(4\times5)+(5\times6)+(2\times2) = 55$. Evaluate the second upward diagonal sum component: $(2\times4)+(1\times5)+(5\times2)+(6\times1) = 29$. Total Geometric Area $= \frac{1}{2} \times | \text{First Component} - \text{Second Component} | = \frac{1}{2} \times |55 - 29| = \frac{1}{2} \times 26 = 13$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $13$</div>
+          </div>
+
+          <!-- SOLUTION 25 -->
+          <div class="item-container">
+            <p><strong>Solution Number 25:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan prinsip topologi lingkaran, geometri memusat pada titik $(3,4)$ dan terposisikan menyinggung basis lintasan horizontal (sumbu-x). Panjang modulus ekuator radius (jari-jari) sejajar mutlak dengan amplitudo jarak ortogonal sentral menuju sumbu yang bersangkutan, identik dengan besaran ordinat y. Maka radius fungsional tercatat sebesar $r = 4$. Luas komputasi lingkaran kalkulus $= \pi \times r^2 = \pi \times 4^2 = 16\pi$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on circular topology principles, the geometry is centered at $(3,4)$ and is positioned tangent to the horizontal baseline (x-axis). The modulus length of the equatorial radius is absolutely parallel to the amplitude of the central orthogonal distance to the pertinent axis, identical to the y-ordinate magnitude. Thus, the functional radius is recorded as $r = 4$. Computed calculus area of the circle $= \pi \times r^2 = \pi \times 4^2 = 16\pi$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $16\pi$</div>
+          </div>
+
+          <!-- SOLUTION 26 -->
+          <div class="item-container">
+            <p><strong>Solution Number 26:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Evaluasi terlebih dahulu parameter-parameter titik penampang (intersep) sistem linear ekuivalen $3x + 4y = 24$. Pada titik persimpangan di ekuator absis sumbu-x berlaku postulat nilai evaluasi $y = 0$, dengan implikasi penyelesaian konstan $3x = 24 \Rightarrow x=8$. Diperoleh formasi titik $A(8,0)$. Sejalan dengan hal tersebut, potong sumbu-y mereduksi nilai $x = 0$, menghasilkan $4y = 24 \Rightarrow y=6$, memberikan titik $B(0,6)$.</p>
+                <p>Perumusan metrik pemusatan (titik tengah parameter AB) menetapkan rentang kalkulatif $x = \frac{8+0}{2} = 4$, $y = \frac{0+6}{2} = 3$. Titik tengah fiksasi adalah $M(4,3)$. Jarak dari basis referensi asal mula $(0,0)$ mengaplikasikan Pythagoras fungsional $\sqrt{4^2 + 3^2} = \sqrt{16+9} = \sqrt{25} = 5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>First evaluate the intercept parameters of the equivalent linear system $3x + 4y = 24$. At the intersection on the x-axis abscissa equator, the evaluation postulate $y = 0$ applies, resulting in the constant solution $3x = 24 \Rightarrow x=8$. The point formation $A(8,0)$ is derived. Correspondingly, the y-axis intercept reduces $x = 0$, yielding $4y = 24 \Rightarrow y=6$, giving point $B(0,6)$. The metric formulation for centralization (AB midpoint) determines the calculative range $x = \frac{8+0}{2} = 4$, $y = \frac{0+6}{2} = 3$. The fixed midpoint is $M(4,3)$. The distance from the origin reference base $(0,0)$ applies functional Pythagoras $\sqrt{4^2 + 3^2} = \sqrt{16+9} = \sqrt{25} = 5$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $5$</div>
+          </div>
+
+          <!-- SOLUTION 27 -->
+          <div class="item-container">
+            <p><strong>Solution Number 27:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Berdasarkan struktur pembentukan grafik koordinat linear dua dimensi tertutup, bangun tersebut menyusun geometri segitiga siku-siku di ranah kuadran koordinat persimpangan asimtot. Mengandung alas rasional $4$ unit ukur (panjang asimtotik linear) serta ordinat puncak terkalibrasi sebesar $3$ unit ukur. Penjabaran teorema Pythagoras pada perbandingan metrik diagonal sisi miring merumuskan identitas $\sqrt{3^2 + 4^2} = 5$.</p>
+                <p>Konsep jarak terpendek vertikal linear ke asal mengimplikasikan kedudukan tegak lurus 'garis tinggi' menuju ke diagonal miring. Penggunaan teorema kelestarian luas sebanding menjabarkan komparasi rasio: $\text{Faktor Alas} \times \text{Faktor Tinggi} = \text{Diagonal Miring} \times \text{Faktor Jarak Absolut}$.</p>
+                <p>Didapatkan relasi komputatif: $4 \times 3 = 5 \times Jarak \Rightarrow 12 = 5 \times Jarak \Rightarrow Jarak = \frac{12}{5} = 2.4$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Based on the formation structure of a closed two-dimensional linear coordinate graph, the shape forms a right-angled triangle geometry in the coordinate quadrant of asymptotic intersections. It holds a rational base of $4$ measuring units (linear asymptotic length) and a calibrated apex ordinate of $3$ measuring units. Applying the Pythagorean theorem to the diagonal metric ratio of the hypotenuse formulates the identity $\sqrt{3^2 + 4^2} = 5$. The concept of the shortest linear vertical distance to the origin implies a perpendicular altitude relation to the diagonal hypotenuse. Utilizing the comparative area conservation theorem establishes the ratio: $\text{Base Factor} \times \text{Height Factor} = \text{Hypotenuse Diagonal} \times \text{Absolute Distance Factor}$. The commutative relation derived is: $4 \times 3 = 5 \times Distance \Rightarrow 12 = 5 \times Distance \Rightarrow Distance = \frac{12}{5} = 2.4$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $2.4$ <em>(atau $\frac{12}{5}$)</em></div>
+          </div>
+
+          <!-- SOLUTION 28 -->
+          <div class="item-container">
+            <p><strong>Solution Number 28:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pemetaan linear reflektif (pencerminan matriks transformasi) dalam topologi 2D terhadap garis $y = -x$ menjabarkan rumus fungsional rotasi inversi ganda, memformulasikan operasi translasi interkomutatif beserta pertukaran sifat muatan operatornya: representasi analitik koordinat $(x, y)$ bermutasi ke relasi fungsi bayangan analitik di titik $(-y, -x)$.</p>
+                <p>Maka titik $K(-5, 2)$ melalui proses transposisi dan mutasi kutub matematis beralih rupa menjadi interaksi titik $(-2, 5)$.</p>
+                <p>Berdasarkan perumusan tersebut terdefinisi parameter turunan $p = -2, q = 5$. Kalkulasi ekuasi diferensial akhir $p - q = -2 - 5 = -7$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Reflective linear mapping (transformation matrix mirroring) in 2D topology over the line $y = -x$ dictates a functional formula of double inversion rotation, formulating inter-commutative translational operations along with an exchange of their operator charge properties: the analytical coordinate representation $(x, y)$ mutates to an analytical shadow function relation at the point $(-y, -x)$. Thus, the point $K(-5, 2)$ undergoes pole transposition and mathematical mutation to become the interaction point $(-2, 5)$. From this formulation, derivative parameters $p = -2, q = 5$ are defined. The final differential equation calculation yields $p - q = -2 - 5 = -7$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $-7$</div>
+          </div>
+
+          <!-- SOLUTION 29 -->
+          <div class="item-container">
+            <p><strong>Solution Number 29:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Metodologi determinasi kongruensi geometri bangun datar dilakukan melalui rekam kuantifikasi jarak masing-masing relasi simpul (verteks) menggunakan formula jarak dua dimensi (analitik spasial euclidean).</p>
+                <p>Faktor metrik Sisi DE: Konvergensi titik relasi membagi nilai ordinat identik, maka representasi linier absolut bertumpu horizontal absolut sejauh perbandingan mutlak dari titik koordinat rentang $-1$ menuju rentang $5 \Rightarrow$ diferensiasi mutlak menghasilkan komputasi jarak 6.</p>
+                <p>Faktor metrik Sisi EF: Formulasi Euclidean $d = \sqrt{(5-2)^2 + (-1-3)^2} = \sqrt{3^2 + (-4)^2} = \sqrt{9+16} = 5$.</p>
+                <p>Faktor metrik Sisi FD: Formulasi Euclidean $d = \sqrt{(2 - (-1))^2 + (3 - (-1))^2} = \sqrt{3^2 + 4^2} = 5$.</p>
+                <p>Analisis sifat matematis menetapkan hadirnya komponen relasi dengan besaran dimensi jarak homogen sepasang sisi seukuran unit (yakni sisi EF saling setara dengan besaran FD di ranah nominal ekuilibrium 5), menjustifikasi klasifikasinya di tatanan <strong>Segitiga Sama Kaki</strong>.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The methodology of determining geometric congruence of flat shapes is conducted via quantifying distances of respective vertex relations using the 2D spatial analytic Euclidean distance formula. Metric factor Side DE: Node relation convergence shares identical ordinates, meaning the absolute linear representation rests on absolute horizontal spans of point coordinate ranges from $-1$ to $5 \Rightarrow$ absolute differentiation yields a distance computation of 6. Metric factor Side EF: Euclidean formulation $d = \sqrt{(5-2)^2 + (-1-3)^2} = \sqrt{3^2 + (-4)^2} = 5$. Metric factor Side FD: Euclidean formulation $d = \sqrt{(2 - (-1))^2 + (3 - (-1))^2} = \sqrt{3^2 + 4^2} = 5$. Mathematical property analysis determines the presence of relational components with pairs of identical homogeneous length unit dimensions (specifically, side EF equals FD at a nominal equilibrium value of 5), justifying its classification under the <strong>Isosceles Triangle</strong> order.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: Segitiga Sama Kaki <em>(Isosceles Triangle)</em></div>
+          </div>
+
+          <!-- SOLUTION 30 -->
+          <div class="item-container">
+            <p><strong>Solution Number 30:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Aksioma geometri ruang bangun mempostulasikan kondisi definitif belah tengah irisan bangun (Biseksi Bangun Jajargenjang): "Proporsi irisan linear ekuivalen pada ruang dua dimensi dapat tercapai mutlak secara teoretis <strong>APABILA DAN HANYA JIKA</strong> penetrasi lintasan geometris tersebut melewati fiksasi pusat ekuilibrium tatanan asimetris (Sentral Koordinat/Titik Tengah Geometrik)".</p>
+                <p>Substitusi rumusan mencari sentral pemusatan (interseksi persilangan diagonal absolut), merata-ratakan rentang ekstrem persimpangan matriks $(0,0)$ pada rentang relasi menuju fiksasi matriks ekuivalen $(6,3)$. Titik kalkulatif geometri mendefinisikan ordinat asimtot $(\frac{0+6}{2}, \frac{0+3}{2}) = (3, 1.5)$.</p>
+                <p>Mengingat syarat presisi asimtot ortogonal lintasan asimtot $y = mx + c$ yang direferensikan pada model basis kemiringan fungsional paralel asimtot linear terdefinisi $y = 2x - 5$, diturunkan relasi absolut kemiringan gradien eksponensial identik terproyeksi senilai parameter mutlak $(m) = 2$. Mengonstruksi struktur ekuasi diferensial intersep model basis matematis di ranah koordinat linear komputasional yang tervalidasi menempati representasi model persamaan rasional $y = 2x + c$.</p>
+                <p>Tuntutan mutlak postulat di ranah komputasional menegaskan keharusan pemenuhan validasi titik referensi matematis titik ekuilibrium koordinat $(3, 1.5)$. Substitusikan basis rumusan ke ranah fungsional terkomputasi model persamaan $1.5 = 2(3) + c \Rightarrow 1.5 = 6 + c \Rightarrow c = 1.5 - 6 = -4.5$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Spatial geometric axioms postulate the definitive condition for bisecting intersections (Parallelogram Bisection): "Equivalent linear bisection proportions in a two-dimensional space can be theoretically achieved absolutely <strong>IF AND ONLY IF</strong> the geometric traversal penetration passes through the equilibrium center fixation of the asymmetric order (Central Coordinate/Geometric Midpoint)". Substitution in formulation to find centralization (intersection of absolute diagonal crossings), averaging the extreme ranges of matrix intersection $(0,0)$ towards relational ranges of equivalent matrix fixations $(6,3)$. The calculative geometric point defines the asymptotic ordinate $(\frac{0+6}{2}, \frac{0+3}{2}) = (3, 1.5)$. Considering the precision conditions of orthogonal asymptotes where the $y = mx + c$ asymptote traversal references the functional tilt base model of the defined parallel linear asymptote $y = 2x - 5$, it derives an identical absolute projected exponential gradient slope relation at the absolute parameter value $(m) = 2$. Constructing the differential equation structure of the base mathematical intercept model in validated computational linear coordinate realms occupies the rational equation model representation $y = 2x + c$. The absolute postulate demand in the computational realm affirms the strict fulfillment necessity of the mathematical coordinate reference point $(3, 1.5)$. Substitute the base formulation into the computed functional model equation $1.5 = 2(3) + c \Rightarrow 1.5 = 6 + c \Rightarrow c = 1.5 - 6 = -4.5$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: $c = -4.5$ <em>(atau $-\frac{9}{2}$)</em></div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
