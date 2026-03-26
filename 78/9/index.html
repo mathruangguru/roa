@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Sequences & Diophantine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .solution-wrapper {
+        margin-top: 1.25rem;
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .solution-step p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding-left: 1rem;
+        position: relative;
+      }
+      .solution-step p::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
+      }
+      .math-block {
+          padding-left: 1.5rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <p class="text-xl font-bold text-indigo-500 mb-2 tracking-wide uppercase">Worksheet 10</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          30 Math Olympiad Problems (Grade 7-8)
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Topics: Sequences, Series & Linear Diophantine Equations
+        </p>
+      </header>
+
+      <main>
+        <!-- ========================================== -->
+        <!-- BAGIAN SOAL / QUESTIONS SECTION            -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Bagian 1: Kumpulan Soal / Problems</h2>
+
+          <h3 class="topic-title">Topic 1: Sequences and Series / Barisan dan Deret</h3>
+          
+          <div class="item-container">
+            <p>
+              <strong>1. (EN)</strong> Let $a_1, a_2, a_3, \dots$ be an arithmetic sequence. If $a_4 + a_7 + a_{10} = 51$, find the sum of the first 13 terms of this sequence.<br />
+              <strong>(ID)</strong> <em>Misalkan $a_1, a_2, a_3, \dots$ adalah suatu barisan aritmetika. Jika $a_4 + a_7 + a_{10} = 51$, berapakah jumlah 13 suku pertama dari barisan tersebut?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>2. (EN)</strong> Find the 50th term of the sequence: $2, 5, 10, 17, 26, 37, \dots$<br />
+              <strong>(ID)</strong> <em>Tentukan suku ke-50 dari barisan berikut: $2, 5, 10, 17, 26, 37, \dots$</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>3. (EN)</strong> Calculate the exact value of the following sum:<br />
+              <strong>(ID)</strong> <em>Hitunglah nilai pasti dari penjumlahan berikut:</em><br />
+              $$\frac{1}{1 \times 3} + \frac{1}{3 \times 5} + \frac{1}{5 \times 7} + \dots + \frac{1}{49 \times 51}$$
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>4. (EN)</strong> Evaluate the product:<br />
+              <strong>(ID)</strong> <em>Hitunglah nilai perkalian berikut:</em><br />
+              $$\left(1 - \frac{1}{2^2}\right) \left(1 - \frac{1}{3^2}\right) \left(1 - \frac{1}{4^2}\right) \dots \left(1 - \frac{1}{20^2}\right)$$
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>5. (EN)</strong> A sequence of numbers is generated in groups as follows: $1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \dots$ What is the 100th term of this sequence?<br />
+              <strong>(ID)</strong> <em>Sebuah barisan angka dibentuk secara berkelompok sebagai berikut: $1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \dots$ Angka berapakah yang menempati urutan ke-100 pada barisan tersebut?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6. (EN)</strong> Calculate the value of:<br />
+              <strong>(ID)</strong> <em>Hitunglah nilai dari:</em><br />
+              $$1^2 - 2^2 + 3^2 - 4^2 + 5^2 - 6^2 + \dots + 99^2 - 100^2$$
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7. (EN)</strong> The pages of a book are numbered starting from 1. If a total of 2025 digits were printed to number all the pages, how many pages does the book have?<br />
+              <strong>(ID)</strong> <em>Halaman sebuah buku diberi nomor mulai dari 1. Jika total ada 2025 digit angka yang dicetak untuk menomori seluruh halaman, berapa banyak halaman yang dimiliki buku tersebut?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8. (EN)</strong> Find the sum of all fractions with a denominator of 5 that are strictly between 10 and 20, but are not integers.<br />
+              <strong>(ID)</strong> <em>Tentukan jumlah semua pecahan berpenyebut 5 yang nilainya berada tepat di antara 10 dan 20, tetapi bukan merupakan bilangan bulat.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9. (EN)</strong> Three numbers $x, y, z$ form an arithmetic sequence with a non-zero common difference $d$. The numbers $x, z, y$ (in that order) form a geometric sequence. Find the common ratio of this geometric sequence.<br />
+              <strong>(ID)</strong> <em>Tiga buah bilangan $x, y, z$ membentuk barisan aritmetika dengan beda $d$ yang tidak sama dengan nol. Bilangan $x, z, y$ (berurutan) membentuk barisan geometri. Tentukan rasio dari barisan geometri tersebut.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10. (EN)</strong> A sequence is defined by $a_1 = 1$ and $a_{n+1} = \frac{a_n}{1 + 2a_n}$ for $n \ge 1$. Find the value of $a_{50}$.<br />
+              <strong>(ID)</strong> <em>Sebuah barisan didefinisikan dengan $a_1 = 1$ dan $a_{n+1} = \frac{a_n}{1 + 2a_n}$ untuk $n \ge 1$. Tentukan nilai dari $a_{50}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>11. (EN)</strong> Numbers are arranged in a triangular grid as shown below. Find the sum of all the numbers in the 20th row.<br />
+              <strong>(ID)</strong> <em>Angka-angka disusun dalam pola segitiga seperti di bawah ini. Tentukan jumlah semua angka pada baris ke-20.</em>
+            </p>
+            <div class="text-center mt-4 mb-4">
+              <div style="display: inline-block; text-align: left; font-family: monospace; font-size: 1.1rem;">
+                Row 1: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+                Row 2: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3<br>
+                Row 3: &nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;6<br>
+                Row 4: &nbsp;7&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;10<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;
+              </div>
+            </div>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12. (EN)</strong> Three positive numbers $a, b, c$ form a geometric sequence with a sum of 26. If we add 1 to $a$, 6 to $b$, and 3 to $c$, the new numbers form an arithmetic sequence. Find the numbers $a, b, c$.<br />
+              <strong>(ID)</strong> <em>Tiga bilangan positif $a, b, c$ membentuk barisan geometri dengan jumlah 26. Jika kita menambahkan 1 pada $a$, 6 pada $b$, dan 3 pada $c$, ketiga bilangan baru tersebut membentuk barisan aritmetika. Tentukan nilai $a, b, c$ tersebut.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13. (EN)</strong> Find the value of $x$ if: $x + \frac{x}{3} + \frac{x}{9} + \frac{x}{27} + \dots = 60$.<br />
+              <strong>(ID)</strong> <em>Tentukan nilai $x$ jika diketahui: $x + \frac{x}{3} + \frac{x}{9} + \frac{x}{27} + \dots = 60$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14. (EN)</strong> What is the last digit of $3^{2026} + 7^{2026}$?<br />
+              <strong>(ID)</strong> <em>Angka satuan (digit terakhir) dari hasil perhitungan $3^{2026} + 7^{2026}$ adalah?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15. (EN)</strong> Sequence A is an arithmetic sequence starting with 3 and a common difference of 5. Sequence B is an arithmetic sequence starting with 2 and a common difference of 7. What is the smallest common term of both sequences that is greater than 100?<br />
+              <strong>(ID)</strong> <em>Barisan A adalah barisan aritmetika yang diawali angka 3 dengan beda 5. Barisan B adalah barisan aritmetika yang diawali angka 2 dengan beda 7. Berapakah angka sama (suku persekutuan) terkecil dari kedua barisan tersebut yang nilainya lebih dari 100?</em>
+            </p>
+          </div>
+
+          <!-- TOPIC 2 -->
+          <h3 class="topic-title">Topic 2: Linear Diophantine Equations / Persamaan Diophantine Linear</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>16. (EN)</strong> How many pairs of positive integers $(x, y)$ satisfy the equation $7x + 11y = 2026$?<br />
+              <strong>(ID)</strong> <em>Ada berapa banyak pasangan bilangan bulat positif $(x, y)$ yang memenuhi persamaan $7x + 11y = 2026$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17. (EN)</strong> A farmer spends exactly \$100 to buy exactly 100 animals. Roosters cost \$5 each, hens cost \$3 each, and chicks cost \$1/3 each (3 chicks for \$1). If he buys at least one of each, find all possible combinations of animals he could have bought.<br />
+              <strong>(ID)</strong> <em>Seorang peternak menghabiskan tepat \$100 untuk membeli tepat 100 ekor hewan. Ayam jantan harganya \$5/ekor, ayam betina \$3/ekor, dan anak ayam \$1/3 per ekor (3 ekor anak ayam seharga \$1). Jika ia membeli setidaknya satu ekor untuk setiap jenis, temukan semua kemungkinan kombinasi hewan yang ia beli.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18. (EN)</strong> Find the minimum value of $x + y$ if $x$ and $y$ are positive integers satisfying $31x - 29y = 3$.<br />
+              <strong>(ID)</strong> <em>Tentukan nilai minimum dari $x + y$ jika $x$ dan $y$ adalah bilangan bulat positif yang memenuhi $31x - 29y = 3$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19. (EN)</strong> How many pairs of positive integers $(x, y)$ are solutions to the equation $\frac{1}{x} + \frac{1}{y} = \frac{1}{14}$?<br />
+              <strong>(ID)</strong> <em>Berapa banyak pasangan bilangan bulat positif $(x, y)$ yang menjadi solusi dari persamaan $\frac{1}{x} + \frac{1}{y} = \frac{1}{14}$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20. (EN)</strong> Find the number of solutions $(x, y, z)$ in positive integers for the system of equations: $x + y + z = 20$ and $3x + 2y + z = 45$.<br />
+              <strong>(ID)</strong> <em>Tentukan banyaknya solusi $(x, y, z)$ dalam bilangan bulat positif untuk sistem persamaan: $x + y + z = 20$ dan $3x + 2y + z = 45$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>21. (EN)</strong> Find all pairs of positive integers $(x, y)$ such that $xy + 3x - 5y = 28$.<br />
+              <strong>(ID)</strong> <em>Tentukan semua pasangan bilangan bulat positif $(x, y)$ sedemikian rupa sehingga $xy + 3x - 5y = 28$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>22. (EN)</strong> Find the smallest integer $N$ greater than 100 such that $N$ leaves a remainder of 4 when divided by 7, and a remainder of 6 when divided by 11.<br />
+              <strong>(ID)</strong> <em>Tentukan bilangan bulat terkecil $N$ yang lebih besar dari 100 sedemikian rupa sehingga $N$ bersisa 4 jika dibagi 7, dan bersisa 6 jika dibagi 11.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>23. (EN)</strong> How many pairs of positive integers $(x, y)$ satisfy $x^2 - y^2 = 2024$?<br />
+              <strong>(ID)</strong> <em>Berapa banyak pasangan bilangan bulat positif $(x, y)$ yang memenuhi $x^2 - y^2 = 2024$?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>24. (EN)</strong> Let $x$ and $y$ be positive integers such that $5x + 7y = 1000$. Find the maximum possible value of the product $xy$.<br />
+              <strong>(ID)</strong> <em>Misalkan $x$ dan $y$ adalah bilangan bulat positif sedemikian sehingga $5x + 7y = 1000$. Tentukan nilai maksimum yang mungkin dari perkalian $xy$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>25. (EN)</strong> A rectangle has integer side lengths. Its area is numerically equal to three times its perimeter. Find all possible dimensions of this rectangle.<br />
+              <strong>(ID)</strong> <em>Sebuah persegi panjang memiliki panjang sisi berupa bilangan bulat. Luasnya secara numerik sama dengan tiga kali kelilingnya. Tentukan semua kemungkinan ukuran (dimensi) persegi panjang tersebut.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>26. (EN)</strong> A man says, "My age this year is a multiple of 7. Next year, it will be a multiple of 5." If he is less than 100 years old, what is his maximum possible age today?<br />
+              <strong>(ID)</strong> <em>Seorang pria berkata, "Umurku tahun ini adalah kelipatan 7. Tahun depan, umurku akan menjadi kelipatan 5." Jika umurnya di bawah 100 tahun, berapakah umur maksimumnya saat ini yang mungkin?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>27. (EN)</strong> In a certain game, points can only be scored in increments of 13 or 17. What is the largest integer score that cannot be attained?<br />
+              <strong>(ID)</strong> <em>Dalam suatu permainan, poin hanya bisa didapatkan dalam kelipatan 13 atau 17. Berapakah skor bilangan bulat terbesar yang tidak mungkin bisa didapatkan?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>28. (EN)</strong> Let $x, y$ be positive integers satisfying $20x + 26y = 2026$. Find the maximum possible value of $x - y$.<br />
+              <strong>(ID)</strong> <em>Misalkan $x, y$ adalah bilangan bulat positif yang memenuhi $20x + 26y = 2026$. Tentukan nilai maksimum yang mungkin dari $x - y$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>29. (EN)</strong> A man buys exactly two types of stamps: 18-cent stamps and 25-cent stamps. If he spent exactly \$5.00 (which is 500 cents), how many 18-cent stamps did he buy?<br />
+              <strong>(ID)</strong> <em>Seorang pria membeli tepat dua jenis prangko: prangko 18-sen dan prangko 25-sen. Jika ia menghabiskan tepat \$5.00 (yaitu 500 sen), berapa banyak prangko 18-sen yang ia beli?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>30. (EN)</strong> Find the sum of all possible values of $x$ in positive integer solutions of $2x + 5y = 100$.<br />
+              <strong>(ID)</strong> <em>Tentukan jumlah dari semua nilai $x$ yang mungkin pada solusi bilangan bulat positif dari $2x + 5y = 100$.</em>
+            </p>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BAGIAN PEMBAHASAN / SOLUTIONS SECTION      -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Bagian 2: Pembahasan / Solutions</h2>
+          <p class="mb-6 text-gray-700"><em>Let's discuss these problems very slowly and in detail. We will start from the most basic concepts as if you have never seen this material before!</em></p>
+
+          <h3 class="topic-title">Topic 1 Solutions</h3>
+          
+          <!-- SOLUTION 1 -->
+          <div class="item-container">
+            <p><strong>Solution 1:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Barisan aritmetika itu deretan angka yang selalu nambah atau kurang dengan jumlah yang sama. Angka pertama kita sebut $a$, dan penambahannya kita sebut beda ($b$). Suku ke-$n$ ($a_n$) rumusnya $a_n = a + (n-1)b$.</p>
+                <p>1. Masukkan rumus ini ke persamaan $a_4 + a_7 + a_{10} = 51$, jadinya $(a + 3b) + (a + 6b) + (a + 9b) = 51$.</p>
+                <p>2. Gabungkan yang hurufnya sama: $3a + 18b = 51$.</p>
+                <p>3. Bagi semuanya dengan 3 biar gampang: $a + 6b = 17$.</p>
+                <p>4. Rumus jumlah 13 angka pertama itu $S_{13} = \frac{13}{2} \times (2a + 12b)$.</p>
+                <p>5. Keluarkan angka 2 dari kurung: $S_{13} = \frac{13}{2} \times 2 \times (a + 6b) = 13 \times (a + 6b)$.</p>
+                <p>6. Masukkan angka dari langkah 3: $S_{13} = 13 \times 17 = 221$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>An arithmetic sequence is a line of numbers that always increases or decreases by the same amount. We call the first number $a$, and the difference $b$. The $n$-th term formula is $a_n = a + (n-1)b$.</em></p>
+                <p><em>1. Put this formula into $a_4 + a_7 + a_{10} = 51$, so it becomes $(a + 3b) + (a + 6b) + (a + 9b) = 51$.</em></p>
+                <p><em>2. Group the same letters: $3a + 18b = 51$.</em></p>
+                <p><em>3. Divide everything by 3 to make it simple: $a + 6b = 17$.</em></p>
+                <p><em>4. The formula for the sum of the first 13 numbers is $S_{13} = \frac{13}{2} \times (2a + 12b)$.</em></p>
+                <p><em>5. Take out the number 2 from the brackets: $S_{13} = \frac{13}{2} \times 2 \times (a + 6b) = 13 \times (a + 6b)$.</em></p>
+                <p><em>6. Use the number from step 3: $S_{13} = 13 \times 17 = 221$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 221</div>
+          </div>
+
+          <!-- SOLUTION 2 -->
+          <div class="item-container">
+            <p><strong>Solution 2:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Coba perhatikan polanya: $2, 5, 10, 17, 26, 37$. Jarak antar angkanya makin besar: $+3, +5, +7, +9$. Ini berarti ada hubungannya dengan pangkat dua (kuadrat).</p>
+                <p>Bandingkan angka kuadrat ($1, 4, 9, 16$) dengan barisan kita ($2, 5, 10, 17$). Wah, ternyata angka kita nilainya cuma ditambah 1 dari angka kuadrat!</p>
+                <p>Suku pertama: $1^2 + 1 = 2$. Suku kedua: $2^2 + 1 = 5$.</p>
+                <p>Jadi, pola rumusnya adalah $n^2 + 1$. Untuk mencari suku ke-50, kita tinggal pangkatkan 50 dengan 2, lalu tambah 1.</p>
+                <p>Hasilnya: $50^2 = 2500$. Ditambah 1 jadi $2501$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Let's look at the pattern: $2, 5, 10, 17, 26, 37$. The gap between numbers gets bigger: $+3, +5, +7, +9$. This means it's related to squares.</em></p>
+                <p><em>Compare the perfect squares ($1, 4, 9, 16$) with our sequence ($2, 5, 10, 17$). Wow, our numbers are exactly 1 more than the squares!</em></p>
+                <p><em>First term: $1^2 + 1 = 2$. Second term: $2^2 + 1 = 5$.</em></p>
+                <p><em>So, the pattern rule is $n^2 + 1$. To find the 50th term, we just square 50 and add 1.</em></p>
+                <p><em>Result: $50^2 = 2500$. Adding 1 makes it $2501$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 2501</div>
+          </div>
+
+          <!-- SOLUTION 3 -->
+          <div class="item-container">
+            <p><strong>Solution 3:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Kita bisa pakai trik "Deret Teleskopik". Pecahan bentuk $\frac{1}{A \times B}$ bisa dipecah pakai rumus: $\frac{1}{A \times B} = \frac{1}{B - A} \times (\frac{1}{A} - \frac{1}{B})$.</p>
+                <p>1. Ubah semua pecahan di soal: $\frac{1}{2}(\frac{1}{1} - \frac{1}{3}) + \frac{1}{2}(\frac{1}{3} - \frac{1}{5}) + \dots + \frac{1}{2}(\frac{1}{49} - \frac{1}{51})$.</p>
+                <p>2. Tarik angka $\frac{1}{2}$ ke depan kurung: $\frac{1}{2} \times [ (\frac{1}{1} - \frac{1}{3}) + (\frac{1}{3} - \frac{1}{5}) + \dots + (\frac{1}{49} - \frac{1}{51}) ]$.</p>
+                <p>3. Lihat bagian dalamnya! Hampir semua angka akan saling mencoret sampai habis (jadi 0). Yang tersisa cuma angka paling depan dan paling belakang: $\frac{1}{2} \times (\frac{1}{1} - \frac{1}{51})$.</p>
+                <p>4. Hitung sisanya: $\frac{1}{2} \times \frac{50}{51} = \frac{25}{51}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>We can use the "Telescoping Series" trick. Fractions like $\frac{1}{A \times B}$ can be split using this rule: $\frac{1}{A \times B} = \frac{1}{B - A} \times (\frac{1}{A} - \frac{1}{B})$.</em></p>
+                <p><em>1. Change all fractions in the problem: $\frac{1}{2}(\frac{1}{1} - \frac{1}{3}) + \frac{1}{2}(\frac{1}{3} - \frac{1}{5}) + \dots + \frac{1}{2}(\frac{1}{49} - \frac{1}{51})$.</em></p>
+                <p><em>2. Pull the $\frac{1}{2}$ to the front: $\frac{1}{2} \times [ (\frac{1}{1} - \frac{1}{3}) + (\frac{1}{3} - \frac{1}{5}) + \dots + (\frac{1}{49} - \frac{1}{51}) ]$.</em></p>
+                <p><em>3. Look inside! Almost all numbers will cancel each other out (become 0). Only the very first and very last numbers survive: $\frac{1}{2} \times (\frac{1}{1} - \frac{1}{51})$.</em></p>
+                <p><em>4. Calculate the rest: $\frac{1}{2} \times \frac{50}{51} = \frac{25}{51}$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 25/51</div>
+          </div>
+
+          <!-- SOLUTION 4 -->
+          <div class="item-container">
+            <p><strong>Solution 4:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Kalau disamakan penyebutnya, bentuk $(1 - \frac{1}{n^2})$ berubah jadi $\frac{n^2 - 1}{n^2}$. Ingat pelajaran aljabar, $n^2 - 1$ itu sama dengan $(n-1)(n+1)$. Jadi bentuknya bisa ditulis $\frac{(n-1) \times (n+1)}{n \times n}$.</p>
+                <p>1. Pakai rumus ini ke setiap angka: Untuk $n=2$ jadi $\frac{1 \times 3}{2 \times 2}$. Untuk $n=3$ jadi $\frac{2 \times 4}{3 \times 3}$. Dan seterusnya sampai $n=20$ jadi $\frac{19 \times 21}{20 \times 20}$.</p>
+                <p>2. Kalau kita kalikan semuanya berjejer, angka atas dan bawah di tengah-tengah akan saling coret.</p>
+                <p>3. Yang selamat dari coretan cuma angka paling kecil di depan ($1$ di atas, $2$ di bawah) dikali angka paling besar di belakang ($21$ di atas, $20$ di bawah).</p>
+                <p>4. Hasil akhirnya: $\frac{1}{2} \times \frac{21}{20} = \frac{21}{40}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>If we find a common denominator, $(1 - \frac{1}{n^2})$ becomes $\frac{n^2 - 1}{n^2}$. Remember algebra, $n^2 - 1$ is the same as $(n-1)(n+1)$. So we can write it as $\frac{(n-1) \times (n+1)}{n \times n}$.</em></p>
+                <p><em>1. Apply this to each number: For $n=2$ it becomes $\frac{1 \times 3}{2 \times 2}$. For $n=3$ it becomes $\frac{2 \times 4}{3 \times 3}$. And so on until $n=20$ which becomes $\frac{19 \times 21}{20 \times 20}$.</em></p>
+                <p><em>2. If we multiply them all in a row, the top and bottom numbers in the middle will cancel out.</em></p>
+                <p><em>3. The only survivors are the smallest numbers at the front ($1$ on top, $2$ on bottom) multiplied by the biggest numbers at the back ($21$ on top, $20$ on bottom).</em></p>
+                <p><em>4. The final result: $\frac{1}{2} \times \frac{21}{20} = \frac{21}{40}$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 21/40</div>
+          </div>
+
+          <!-- SOLUTION 5 -->
+          <div class="item-container">
+            <p><strong>Solution 5:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Angka-angka ini seperti orang yang antre bikin kelompok. Kelompok 1 (angka 1) butuh 1 kursi. Kelompok 2 (angka 2) butuh 2 kursi, dan seterusnya. Untuk tahu kursi terakhir buat Kelompok $n$, kita tinggal tambahkan saja: $1+2+3+\dots+n = \frac{n \times (n+1)}{2}$.</p>
+                <p>1. Kita cari tahu Kelompok $n$ mana yang jumlah kursinya mendekati 100.</p>
+                <p>2. Coba kita cek $n=13$: $\frac{13 \times 14}{2} = 91$. Artinya, angka "13" yang paling belakang itu duduk di kursi ke-91.</p>
+                <p>3. Nah, kursi selanjutnya pasti diisi sama Kelompok 14 (rombongan angka "14"). Karena ada 14 orang, mereka bakal duduk di kursi nomor 92 sampai 105.</p>
+                <p>4. Karena kursi nomor 100 ada di rentang itu, berarti yang duduk di situ adalah angka 14.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>These numbers are like people lining up in groups. Group 1 (number 1) takes 1 seat. Group 2 (number 2) takes 2 seats, and so on. To find the last seat for Group $n$, we just add them up: $1+2+3+\dots+n = \frac{n \times (n+1)}{2}$.</em></p>
+                <p><em>1. We want to find which Group $n$ has a seat count close to 100.</em></p>
+                <p><em>2. Let's check $n=13$: $\frac{13 \times 14}{2} = 91$. This means the last "13" sits on the 91st seat.</em></p>
+                <p><em>3. Now, the next seats will definitely be filled by Group 14 (the group of "14"s). Since there are 14 of them, they will sit on seats 92 to 105.</em></p>
+                <p><em>4. Because seat number 100 is in that range, the one sitting there is the number 14.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 14</div>
+          </div>
+
+          <!-- SOLUTION 6 -->
+          <div class="item-container">
+            <p><strong>Solution 6:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Coba pasangkan angkanya dua-dua kayak gini: $(1^2 - 2^2) + (3^2 - 4^2) + \dots + (99^2 - 100^2)$.</p>
+                <p>Ingat rumus pemfaktoran $a^2 - b^2 = (a-b)(a+b)$. Pasangan pertama: $(1-2) \times (1+2) = -1 \times 3 = -3$. Pasangan kedua: $(3-4) \times (3+4) = -1 \times 7 = -7$.</p>
+                <p>Wah, ternyata setiap pasangan itu hasilnya cuma versi negatif dari angka aslinya ditambahin! Jadi soal panjang ini bisa disederhanakan jadi: $-(1+2) - (3+4) - \dots - (99+100)$.</p>
+                <p>Tarik tanda minusnya ke luar kurung: $-(1 + 2 + 3 + \dots + 100)$. Rumus cepat untuk menjumlahkan 1 sampai 100 adalah $\frac{100 \times 101}{2} = 5050$. Karena ada tanda minus di depan, jawabannya $-5050$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Let's pair the numbers up like this: $(1^2 - 2^2) + (3^2 - 4^2) + \dots + (99^2 - 100^2)$.</em></p>
+                <p><em>Remember the factoring rule $a^2 - b^2 = (a-b)(a+b)$. First pair: $(1-2) \times (1+2) = -1 \times 3 = -3$. Second pair: $(3-4) \times (3+4) = -1 \times 7 = -7$.</em></p>
+                <p><em>Wow, every pair simply results in the negative sum of its base numbers! So this long problem can be simplified to: $-(1+2) - (3+4) - \dots - (99+100)$.</em></p>
+                <p><em>Pull the minus sign outside: $-(1 + 2 + 3 + \dots + 100)$. The quick formula to add 1 to 100 is $\frac{100 \times 101}{2} = 5050$. Because of the minus sign, the answer is $-5050$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: -5050</div>
+          </div>
+
+          <!-- SOLUTION 7 -->
+          <div class="item-container">
+            <p><strong>Solution 7:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Halaman 1 sampai 9 itu butuh 9 digit (angka). Halaman 10 sampai 99 (total ada 90 halaman) butuh $90 \times 2 = 180$ digit.</p>
+                <p>Nah, sampai halaman 99 saja, kita udah pakai $9 + 180 = 189$ digit. Dari total 2025 digit, sisa yang belum dipakai: $2025 - 189 = 1836$ digit.</p>
+                <p>Sisa angka ini pasti dipakai buat halaman ratusan yang masing-masing butuh 3 digit. Berapa halaman ratusannya? Tinggal bagi aja: $1836 \div 3 = 612$ halaman.</p>
+                <p>Jadi, total halaman bukunya adalah: 99 halaman (yang 1 dan 2 digit) ditambah 612 halaman (yang 3 digit) = 711 halaman.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Pages 1 to 9 need 9 digits. Pages 10 to 99 (there are 90 pages in total) need $90 \times 2 = 180$ digits.</em></p>
+                <p><em>So, up to page 99, we've used $9 + 180 = 189$ digits. Out of 2025 digits, the leftover digits are: $2025 - 189 = 1836$ digits.</em></p>
+                <p><em>These remaining numbers must be used for the hundreds pages, which need 3 digits each. How many hundreds pages are there? Just divide: $1836 \div 3 = 612$ pages.</em></p>
+                <p><em>So, the total pages of the book are: 99 pages (1 and 2 digits) plus 612 pages (3 digits) = 711 pages.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 711</div>
+          </div>
+
+          <!-- SOLUTION 8 -->
+          <div class="item-container">
+            <p><strong>Solution 8:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Angka 10 itu sama kayak pecahan $\frac{50}{5}$, dan angka 20 itu $\frac{100}{5}$. Karena soal bilang "di antara", berarti pecahannya mulai dari $\frac{51}{5}$ sampai $\frac{99}{5}$.</p>
+                <p>1. Kita hitung dulu total semua pecahan ini. Ada 49 pecahan berderet. Rumus jumlahnya = $\frac{49}{2} \times (\frac{51}{5} + \frac{99}{5}) = \frac{49}{2} \times \frac{150}{5} = \frac{49}{2} \times 30 = 735$.</p>
+                <p>2. Tapi ingat, soalnya gak mau ada angka bulat! Angka bulat antara 10 dan 20 adalah 11, 12, sampai 19. Kita jumlahkan mereka: $\frac{9}{2} \times (11 + 19) = 135$.</p>
+                <p>3. Terakhir, kita kurangi total pecahan dengan total angka bulat tadi: $735 - 135 = 600$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The number 10 is like the fraction $\frac{50}{5}$, and 20 is $\frac{100}{5}$. Because it says "strictly between", the fractions start from $\frac{51}{5}$ up to $\frac{99}{5}$.</em></p>
+                <p><em>1. Let's sum all these fractions first. There are 49 fractions in a row. The sum formula = $\frac{49}{2} \times (\frac{51}{5} + \frac{99}{5}) = \frac{49}{2} \times \frac{150}{5} = \frac{49}{2} \times 30 = 735$.</em></p>
+                <p><em>2. But remember, the problem doesn't want whole numbers (integers)! The integers between 10 and 20 are 11, 12, up to 19. Let's add them up: $\frac{9}{2} \times (11 + 19) = 135$.</em></p>
+                <p><em>3. Finally, we subtract the total integers from the total fractions: $735 - 135 = 600$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 600</div>
+          </div>
+
+          <!-- SOLUTION 9 -->
+          <div class="item-container">
+            <p><strong>Solution 9:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Di barisan aritmetika, rumusnya itu tambah-tambah: $y = x+d$ dan $z = x+2d$. Di barisan geometri ($x, z, y$), sifatnya itu angka tengah dikuadratkan sama dengan ujung kali ujung: $z^2 = x \times y$.</p>
+                <p>Masukkan huruf-huruf tadi: $(x + 2d)^2 = x(x + d)$. Kalau dibuka kurungnya jadi: $x^2 + 4dx + 4d^2 = x^2 + dx$.</p>
+                <p>Coret $x^2$ di kiri dan kanan, lalu kumpulkan huruf $x$: $3dx = -4d^2 \implies x = \frac{-4d}{3}$.</p>
+                <p>Angka pertama geometri adalah $x$. Angka kedua geometri adalah $z = x + 2d = \frac{-4d}{3} + \frac{6d}{3} = \frac{2d}{3}$.</p>
+                <p>Rasio (pengali) dari barisannya tinggal bagi aja suku kedua dengan suku pertama: $z \div x = \frac{2d}{3} \div \frac{-4d}{3} = -\frac{1}{2}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>In an arithmetic sequence, it's about adding: $y = x+d$ and $z = x+2d$. In a geometric sequence ($x, z, y$), the rule is the middle squared equals the ends multiplied: $z^2 = x \times y$.</em></p>
+                <p><em>Plug the letters in: $(x + 2d)^2 = x(x + d)$. Opening the brackets gives: $x^2 + 4dx + 4d^2 = x^2 + dx$.</em></p>
+                <p><em>Cancel $x^2$ on both sides, then gather the $x$'s: $3dx = -4d^2 \implies x = \frac{-4d}{3}$.</em></p>
+                <p><em>The first geometric number is $x$. The second is $z = x + 2d = \frac{-4d}{3} + \frac{6d}{3} = \frac{2d}{3}$.</em></p>
+                <p><em>The ratio (multiplier) is just the second term divided by the first: $z \div x = \frac{2d}{3} \div \frac{-4d}{3} = -\frac{1}{2}$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: -1/2</div>
+          </div>
+
+          <!-- SOLUTION 10 -->
+          <div class="item-container">
+            <p><strong>Solution 10:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pecahannya kelihatan ribet, tapi ada triknya: balik posisinya (atas jadi bawah, bawah jadi atas)! $\frac{1}{a_{n+1}} = \frac{1 + 2a_n}{a_n}$.</p>
+                <p>Kalau dipisah, bentuknya jadi: $\frac{1}{a_{n+1}} = \frac{1}{a_n} + 2$. Nah, ini kan cuma barisan aritmetika biasa yang bedanya (penambahnya) selalu 2!</p>
+                <p>Angka pertamanya adalah $\frac{1}{a_1} = \frac{1}{1} = 1$.</p>
+                <p>Kita cari suku ke-50 dari barisan baru ini pakai rumus $a + 49b$: $1 + (49 \times 2) = 99$.</p>
+                <p>Karena ini tadi barisan yang "terbalik", $\frac{1}{a_{50}} = 99$, maka jawaban aslinya kita balik lagi jadi $a_{50} = \frac{1}{99}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The fraction looks messy, but there's a trick: flip it upside down! $\frac{1}{a_{n+1}} = \frac{1 + 2a_n}{a_n}$.</em></p>
+                <p><em>If we split it, it becomes: $\frac{1}{a_{n+1}} = \frac{1}{a_n} + 2$. See, this is just a normal arithmetic sequence where the difference (addition) is always 2!</em></p>
+                <p><em>The first number is $\frac{1}{a_1} = \frac{1}{1} = 1$.</em></p>
+                <p><em>Let's find the 50th term of this new sequence using the formula $a + 49b$: $1 + (49 \times 2) = 99$.</em></p>
+                <p><em>Since this was the "flipped" sequence, $\frac{1}{a_{50}} = 99$, so we flip the final answer back to get $a_{50} = \frac{1}{99}$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 1/99</div>
+          </div>
+
+          <!-- SOLUTION 11 -->
+          <div class="item-container">
+            <p><strong>Solution 11:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Coba lihat angka paling ujung di setiap baris (1, 3, 6, 10, ...). Ini namanya bilangan segitiga, yang gampang dihitung pakai rumus: $\frac{n \times (n+1)}{2}$.</p>
+                <p>Berarti, Baris ke-19 pasti ditutup oleh angka $\frac{19 \times 20}{2} = 190$. Nah, Baris ke-20 pasti dimulai dengan angka setelahnya, yaitu 191.</p>
+                <p>Baris ke-20 itu isinya ada 20 angka berurutan (dari 191 sampai 210).</p>
+                <p>Kita tinggal pakai rumus jumlah deret biasa: $S_{20} = \frac{\text{banyak angka}}{2} \times (\text{awal} + \text{akhir}) = \frac{20}{2} \times (191 + 210) = 10 \times 401 = 4010$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Look at the very last number of each row (1, 3, 6, 10, ...). These are called triangular numbers, easily calculated with: $\frac{n \times (n+1)}{2}$.</em></p>
+                <p><em>This means Row 19 must end with the number $\frac{19 \times 20}{2} = 190$. So, Row 20 definitely starts with the next number, 191.</em></p>
+                <p><em>Row 20 has exactly 20 consecutive numbers (from 191 to 210).</em></p>
+                <p><em>We just use the regular sum formula: $S_{20} = \frac{\text{count}}{2} \times (\text{first} + \text{last}) = \frac{20}{2} \times (191 + 210) = 10 \times 401 = 4010$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 4010</div>
+          </div>
+
+          <!-- SOLUTION 12 -->
+          <div class="item-container">
+            <p><strong>Solution 12:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Anggap aja tiga bilangan geometri itu $a, ar,$ dan $ar^2$. Kata soal, jumlah mereka $a + ar + ar^2 = 26$.</p>
+                <p>Nah, kalau barisan aritmetika, ada sifat unik: $2 \times \text{angka tengah} = \text{kiri} + \text{kanan}$. Masukkan angka barunya: $2(ar + 6) = (a + 1) + (ar^2 + 3)$.</p>
+                <p>Rapikan jadi $2ar + 12 = a + ar^2 + 4$. Dari persamaan pertama tadi, kita tahu kalau $a + ar^2 = 26 - ar$.</p>
+                <p>Tinggal ganti deh: $2ar + 12 = 26 - ar + 4 \implies 3ar = 18 \implies ar = 6$. Karena angka tengah ($b$) itu $ar$, berarti $b = 6$.</p>
+                <p>Kembali ke jumlah 26 tadi, karena $b=6$, berarti $a + c = 20$. Dari sifat geometri, ujung kali ujung itu sama dengan tengah dikuadratkan ($ac = 6^2 = 36$). Cari dua angka yang ditambah jadi 20 dan dikali jadi 36. Angka itu adalah 2 dan 18. Jadi bilangannya 2, 6, 18.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Let's assume the three geometric numbers are $a, ar,$ and $ar^2$. The problem says their sum is $a + ar + ar^2 = 26$.</em></p>
+                <p><em>For an arithmetic sequence, there's a unique rule: $2 \times \text{middle} = \text{left} + \text{right}$. Plug in the new numbers: $2(ar + 6) = (a + 1) + (ar^2 + 3)$.</em></p>
+                <p><em>Tidy it up: $2ar + 12 = a + ar^2 + 4$. From the first equation, we know $a + ar^2 = 26 - ar$.</em></p>
+                <p><em>Just swap it in: $2ar + 12 = 26 - ar + 4 \implies 3ar = 18 \implies ar = 6$. Since the middle number ($b$) is $ar$, $b = 6$.</em></p>
+                <p><em>Back to the sum of 26, since $b=6$, then $a + c = 20$. From geometric rules, ends multiplied equal the middle squared ($ac = 6^2 = 36$). Find two numbers that add to 20 and multiply to 36. Those are 2 and 18. So the numbers are 2, 6, 18.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 2, 6, 18</div>
+          </div>
+
+          <!-- SOLUTION 13 -->
+          <div class="item-container">
+            <p><strong>Solution 13:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Ini bentuk Deret Geometri Tak Hingga (karena ada titik-titik sampai gak habis). Angka awalnya $a=x$ dan pengalinya (rasio) $r = 1/3$.</p>
+                <p>Rumus menjumlahkan deret panjang ini gampang banget: $S = \frac{\text{Awal}}{1 - \text{Rasio}}$.</p>
+                <p>Masukkan ke rumus: $\frac{x}{1 - 1/3} = 60 \implies \frac{x}{2/3} = 60$.</p>
+                <p>Pindahkan $\frac{2}{3}$ ke kanan buat dikalikan: $x = 60 \times \frac{2}{3} = 40$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>This is an Infinite Geometric Series (because it has dots going on forever). The first number is $a=x$ and the multiplier (ratio) is $r = 1/3$.</em></p>
+                <p><em>The formula to sum this long series is super easy: $S = \frac{\text{First}}{1 - \text{Ratio}}$.</em></p>
+                <p><em>Put it in the formula: $\frac{x}{1 - 1/3} = 60 \implies \frac{x}{2/3} = 60$.</em></p>
+                <p><em>Move the $\frac{2}{3}$ to the right to multiply: $x = 60 \times \frac{2}{3} = 40$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 40</div>
+          </div>
+
+          <!-- SOLUTION 14 -->
+          <div class="item-container">
+            <p><strong>Solution 14:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Untuk cari digit paling belakang, kita gak perlu ngitung semuanya. Pangkat itu punya pola berulang tiap 4 kali!</p>
+                <p>Pola angka belakang dari 3 berpangkat: 3, 9, 7, 1. Kita bagi pangkatnya: $2026 \div 4 = 506$ dengan sisa 2. Karena sisa 2, kita ambil angka urutan kedua dari polanya, yaitu 9.</p>
+                <p>Pola 7 berpangkat: 7, 9, 3, 1. Sama, $2026 \div 4$ sisanya 2. Angka urutan keduanya juga 9.</p>
+                <p>Terakhir, kita jumlahkan kedua digit belakang itu: $9 + 9 = 18$. Angka paling belakangnya adalah 8.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>To find the last digit, we don't need to calculate the whole thing. Powers have a repeating pattern every 4 times!</em></p>
+                <p><em>The last digit pattern for powers of 3: 3, 9, 7, 1. Let's divide the power: $2026 \div 4 = 506$ with a remainder of 2. Since the remainder is 2, we take the second number from the pattern, which is 9.</em></p>
+                <p><em>The pattern for powers of 7: 7, 9, 3, 1. Likewise, $2026 \div 4$ leaves a remainder of 2. The second number is also 9.</em></p>
+                <p><em>Finally, add these two last digits: $9 + 9 = 18$. The very last digit is 8.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 8</div>
+          </div>
+
+          <!-- SOLUTION 15 -->
+          <div class="item-container">
+            <p><strong>Solution 15:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Mari kita jabarkan barisannya. Barisan A (tambah 5): 3, 8, 13, 18, 23... Barisan B (tambah 7): 2, 9, 16, 23... Yeay, angka kembar pertamanya adalah 23!</p>
+                <p>Kapan angka kembar ini muncul lagi? Jarak kemunculannya bisa dicari pakai KPK (Kelipatan Persekutuan Terkecil) dari penambah kedua barisan tadi, yaitu $5 \times 7 = 35$.</p>
+                <p>Angka kembar ini akan terus bertambah 35: 23, 58, 93, 128... Angka pertama yang nilainya lewat dari 100 adalah 128.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Let's list the sequences. Sequence A (adds 5): 3, 8, 13, 18, 23... Sequence B (adds 7): 2, 9, 16, 23... Yay, the first matching number is 23!</em></p>
+                <p><em>When will a match appear again? The gap between matches is found using the LCM (Least Common Multiple) of their adders, which is $5 \times 7 = 35$.</em></p>
+                <p><em>These matching numbers will keep increasing by 35: 23, 58, 93, 128... The first number that goes over 100 is 128.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 128</div>
+          </div>
+
+          <h3 class="topic-title">Topic 2 Solutions</h3>
+
+          <!-- SOLUTION 16 -->
+          <div class="item-container">
+            <p><strong>Solution 16:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Persamaan $7x + 11y = 2026$ bisa disederhanakan pakai "Trik Sisa Bagi" (modulo) angka 7. $7x$ habis dibagi 7. $11y$ dibagi 7 sisanya tinggal $4y$. Dan $2026$ dibagi 7 bersisa 3. Jadi persamaannya menyusut lucu jadi: $4y$ bersisa $3$ kalau dibagi 7.</p>
+                <p>Coba tebak nilai $y$ mulai dari 1. Wah, pas $y=6$, $24 \div 7$ itu sisanya 3. Ketemu deh! Masukkan $y=6$ ke persamaan awal: $7x + 11(6) = 2026 \implies 7x = 1960 \implies x = 280$.</p>
+                <p>Nah, ada trik unik lagi: pasangan ini bakal bergerak "jungkat-jungkit". Angka $x$ akan turun 11 langkah, dan $y$ naik 7 langkah. Syaratnya kan positif, jadi $x = 280 - 11k > 0 \implies k < 25.4$. Karena $k$ (langkah) bisa diisi dari 0 sampai 25, total ada 26 pasang solusi yang mungkin.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The equation $7x + 11y = 2026$ can be simplified using the "Remainder Trick" (modulo) with the number 7. $7x$ is perfectly divisible by 7. $11y$ divided by 7 leaves $4y$. And $2026$ divided by 7 leaves a remainder of 3. So the equation shrinks nicely to: $4y$ leaves a remainder of $3$ when divided by 7.</em></p>
+                <p><em>Let's guess $y$ starting from 1. Ah, when $y=6$, $24 \div 7$ gives a remainder of 3. Found it! Plug $y=6$ into the first equation: $7x + 11(6) = 2026 \implies 7x = 1960 \implies x = 280$.</em></p>
+                <p><em>Now, there's another neat trick: these pairs move like a "seesaw". The $x$ will drop by 11 steps, and $y$ goes up by 7 steps. They must be positive, so $x = 280 - 11k > 0 \implies k < 25.4$. Because $k$ (steps) can be from 0 to 25, there are 26 possible solution pairs in total.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 26</div>
+          </div>
+
+          <!-- SOLUTION 17 -->
+          <div class="item-container">
+            <p><strong>Solution 17:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Kita buat kalimat matematikanya. Jumlah hewan: $J + B + A = 100$. Jumlah harga: $5J + 3B + A/3 = 100$. Biar pecahannya hilang, kita kalikan persamaan harga dengan 3: $15J + 9B + A = 300$.</p>
+                <p>Sekarang kita kurangi persamaan yang baru dengan persamaan jumlah hewan (agar huruf A hilang): $(15J+9B+A) - (J+B+A) = 300 - 100 \implies 14J + 8B = 200$. Bagi 2 biar angkanya lebih kecil: $7J + 4B = 100$.</p>
+                <p>Lihat deh, 100 dan $4B$ itu sama-sama kelipatan 4. Biar imbang, $7J$ juga wajib kelipatan 4. Berarti jumlah Jantan (J) harus angka kelipatan 4! Mari kita coba:</p>
+                <p>Kalau $J=4$ (Ayam Jantan 4, Betina 18, Anak 78). Kalau $J=8$ (Jantan 8, Betina 11, Anak 81). Kalau $J=12$ (Jantan 12, Betina 4, Anak 84).</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Let's write the math sentences. Total animals: $J + B + A = 100$. Total price: $5J + 3B + A/3 = 100$. To remove the fraction, multiply the price equation by 3: $15J + 9B + A = 300$.</em></p>
+                <p><em>Now subtract the animal equation from this new one (to eliminate letter A): $(15J+9B+A) - (J+B+A) = 300 - 100 \implies 14J + 8B = 200$. Divide by 2 to make numbers smaller: $7J + 4B = 100$.</em></p>
+                <p><em>Look, 100 and $4B$ are both multiples of 4. To balance it, $7J$ must also be a multiple of 4. This means the Roosters (J) must be a multiple of 4! Let's test it:</em></p>
+                <p><em>If $J=4$ (Roosters 4, Hens 18, Chicks 78). If $J=8$ (Roosters 8, Hens 11, Chicks 81). If $J=12$ (Roosters 12, Hens 4, Chicks 84).</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: (4, 18, 78), (8, 11, 81), (12, 4, 84)</div>
+          </div>
+
+          <!-- SOLUTION 18 -->
+          <div class="item-container">
+            <p><strong>Solution 18:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Kita pakai lagi "Trik Sisa Bagi" dengan angka 29. $31x$ dibagi 29 sisanya $2x$. Persamaannya jadi gampang: $2x$ bersisa $3$ kalau dibagi 29.</p>
+                <p>Nah, karena 3 itu ganjil dan susah dibagi 2, kita boleh tambahkan pembaginya (29) ke 3, biar jadi genap: $3 + 29 = 32$. Sekarang persamaannya jadi $2x = 32 \implies x = 16$.</p>
+                <p>Masukkan $x=16$ ke persamaan awal: $31(16) - 29y = 3 \implies 496 - 3 = 29y \implies y = 17$. Jumlah paling kecilnya adalah $x+y = 16+17 = 33$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>We use the "Remainder Trick" again with the number 29. $31x$ divided by 29 leaves $2x$. The equation becomes easy: $2x$ leaves a remainder of $3$ when divided by 29.</em></p>
+                <p><em>Because 3 is odd and hard to divide by 2, we can add the divisor (29) to 3 to make it even: $3 + 29 = 32$. Now the equation is $2x = 32 \implies x = 16$.</em></p>
+                <p><em>Plug $x=16$ into the original equation: $31(16) - 29y = 3 \implies 496 - 3 = 29y \implies y = 17$. The smallest sum is $x+y = 16+17 = 33$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 33</div>
+          </div>
+
+          <!-- SOLUTION 19 -->
+          <div class="item-container">
+            <p><strong>Solution 19:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pertama, samakan penyebut dan kalikan menyilang: $14x + 14y = xy \implies xy - 14x - 14y = 0$.</p>
+                <p>Kita pakai "Trik Pemfaktoran Simon". Kalikan angka di depan x dan y ($-14 \times -14 = 196$). Tambahkan angka 196 ini ke sisi kiri dan kanan: $xy - 14x - 14y + 196 = 196$. Ajaibnya, sisi kiri bisa dibungkus kurung jadi $(x-14)(y-14) = 196$.</p>
+                <p>Sekarang tinggal cari perkalian berapa yang hasilnya 196. Ada 9 pasang perkalian yang mungkin (termasuk kalau posisinya dibalik). Jadi, ada 9 jawaban pasangan $(x,y)$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>First, find a common denominator and cross-multiply: $14x + 14y = xy \implies xy - 14x - 14y = 0$.</em></p>
+                <p><em>We use "Simon's Factoring Trick". Multiply the numbers in front of x and y ($-14 \times -14 = 196$). Add this 196 to both left and right sides: $xy - 14x - 14y + 196 = 196$. Magically, the left side can be bracketed into $(x-14)(y-14) = 196$.</em></p>
+                <p><em>Now just find what multiplied together gives 196. There are 9 possible multiplication pairs (including flipped positions). So, there are 9 solution pairs of $(x,y)$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 9</div>
+          </div>
+
+          <!-- SOLUTION 20 -->
+          <div class="item-container">
+            <p><strong>Solution 20:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Dari persamaan pertama, kita bisa pindah posisi jadi $z = 20 - x - y$. Masukkan (ganti huruf z) ke persamaan kedua: $3x + 2y + (20 - x - y) = 45 \implies 2x + y = 25$.</p>
+                <p>Karena soal bilang "bilangan positif", nilai $y$ paling kecil itu 1. Berarti $25 - 2x \ge 1 \implies x$ maksimalnya 12.</p>
+                <p>Sekarang kita cek nilai z: $z = 20 - x - (25 - 2x) = x - 5$. Nilai $z$ juga minimal 1, berarti $x$ minimal harus 6.</p>
+                <p>Kesimpulannya, nilai $x$ itu berkisar dari 6 sampai 12. Total ada 7 angka, yang berarti ada 7 solusi.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>From the first equation, we can shift things around to get $z = 20 - x - y$. Plug it (replace letter z) into the second equation: $3x + 2y + (20 - x - y) = 45 \implies 2x + y = 25$.</em></p>
+                <p><em>Because it says "positive numbers", the smallest $y$ is 1. This means $25 - 2x \ge 1 \implies x$ max is 12.</em></p>
+                <p><em>Now let's check z: $z = 20 - x - (25 - 2x) = x - 5$. The value of $z$ is also at least 1, meaning $x$ must be at least 6.</em></p>
+                <p><em>In conclusion, $x$ ranges from 6 to 12. There are 7 numbers in total, meaning there are 7 solutions.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7</div>
+          </div>
+
+          <!-- SOLUTION 21 -->
+          <div class="item-container">
+            <p><strong>Solution 21:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Pakai Trik Simon lagi! Tarik huruf $x$ ke luar: $x(y+3) - 5y = 28$. Kita butuh $(y+3)$ lagi buat nangkring di sebelah $-5$. Kalau kita tulis $-5(y+3)$, sama aja kita nambahin "utang" $-15$.</p>
+                <p>Biar adil, kurangi juga sisi kanannya dengan 15: $(x-5)(y+3) = 28 - 15 = 13$.</p>
+                <p>Angka 13 itu prima, jadi cuma bisa dibentuk dari $1 \times 13$. Pasangkan: $x-5 = 1 \implies x=6$, dan pasangannya $y+3=13 \implies y=10$. Dapat deh jawabannya!</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Use Simon's Trick again! Pull out the letter $x$: $x(y+3) - 5y = 28$. We need another $(y+3)$ to sit next to the $-5$. If we write $-5(y+3)$, it's like adding a "debt" of $-15$.</em></p>
+                <p><em>To be fair, subtract 15 from the right side too: $(x-5)(y+3) = 28 - 15 = 13$.</em></p>
+                <p><em>The number 13 is prime, so it can only be made from $1 \times 13$. Pair them up: $x-5 = 1 \implies x=6$, and its partner $y+3=13 \implies y=10$. We got the answer!</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: x=6, y=10</div>
+          </div>
+
+          <!-- SOLUTION 22 -->
+          <div class="item-container">
+            <p><strong>Solution 22:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Kita bisa ubah petunjuknya jadi persamaan matematika: $N = 7x + 4$ dan $N = 11y + 6$. Samakan keduanya: $7x - 11y = 2$.</p>
+                <p>Karena angkanya kecil, kita bisa tebak-tebak berhadiah! Coba nilai y berurutan. Pas kita coba $y=3 \implies 11(3) = 33$. Pindah ruas: $7x = 35 \implies x=5$. Angka $N$ versi awal kita dapatkan: $N = 7(5)+4 = 39$.</p>
+                <p>Sifat kelipatan bersisa ini bakal berulang tiap kelipatan KPK pembaginya (yaitu $7 \times 11 = 77$). Jadi angka misterius berikutnya tinggal ditambah 77: $39 + 77 = 116$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>We can turn the clues into math equations: $N = 7x + 4$ and $N = 11y + 6$. Equate them: $7x - 11y = 2$.</em></p>
+                <p><em>Because the numbers are small, we can make an educated guess! Try y values in order. When we try $y=3 \implies 11(3) = 33$. Move it over: $7x = 35 \implies x=5$. We get our starting $N$ number: $N = 7(5)+4 = 39$.</em></p>
+                <p><em>This remainder property repeats every multiple of its divisors' LCM (which is $7 \times 11 = 77$). So the next mystery number is just adding 77: $39 + 77 = 116$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 116</div>
+          </div>
+
+          <!-- SOLUTION 23 -->
+          <div class="item-container">
+            <p><strong>Solution 23:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Ingat rumus $x^2 - y^2$ bisa dipecah jadi $(x-y)(x+y) = 2024$. Karena $x$ dan $y$-nya dari huruf yang sama, hasil tambah dan kurangnya bakal sama-sama genap.</p>
+                <p>Kita "pinjam" angka 2 dari masing-masing kurung: $\frac{x-y}{2} \times \frac{x+y}{2} = 506$. Sekarang kita cari pembagi dari 506. 506 itu terbentuk dari $2 \times 11 \times 23$. Total ada 8 cara mengalikan angkanya.</p>
+                <p>Tapi, karena $(x+y)$ pasti lebih besar nilainya dari $(x-y)$, kita cuma ambil separuh kemungkinan yang masuk akal: $8 \div 2 = 4$ solusi.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Remember the formula $x^2 - y^2$ splits into $(x-y)(x+y) = 2024$. Because $x$ and $y$ are the same letters, their sum and difference will both be even.</em></p>
+                <p><em>We "borrow" a 2 from each bracket: $\frac{x-y}{2} \times \frac{x+y}{2} = 506$. Now we find the divisors of 506. 506 is made of $2 \times 11 \times 23$. There are 8 ways to multiply its factors.</em></p>
+                <p><em>But, since $(x+y)$ is definitely bigger than $(x-y)$, we only take half of the possibilities that make sense: $8 \div 2 = 4$ solutions.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 4</div>
+          </div>
+
+          <!-- SOLUTION 24 -->
+          <div class="item-container">
+            <p><strong>Solution 24:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Tebakan paling simpel (anggap $y=0$): $5x = 1000 \implies x = 200$. Dari sini, rumusnya bisa naik-turun jadi: $x = 200 - 7k$ dan $y = 5k$.</p>
+                <p>Biar hasil perkaliannya paling maksimal, kedua sisi ($5x$ dan $7y$) harus imbang, kira-kira separuhnya dari 1000 (yaitu 500). Kapan $5x \approx 500$ dan $7y \approx 500$? Itu terjadi waktu $y$ sekitar 71. Karena $y = 5k$, berarti $k$ nilainya sekitar 14.</p>
+                <p>Mari kita tes pakai $k=14$: $x = 200 - 7(14) = 102$, dan $y = 5(14) = 70$. Hasil kalinya adalah $102 \times 70 = 7140$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The simplest guess (assume $y=0$): $5x = 1000 \implies x = 200$. From here, the formula can slide up and down: $x = 200 - 7k$ and $y = 5k$.</em></p>
+                <p><em>To get the maximum product, both sides ($5x$ and $7y$) should be balanced, roughly half of 1000 (which is 500). When is $5x \approx 500$ and $7y \approx 500$? That happens when $y$ is around 71. Since $y = 5k$, $k$ is around 14.</em></p>
+                <p><em>Let's test with $k=14$: $x = 200 - 7(14) = 102$, and $y = 5(14) = 70$. Their product is $102 \times 70 = 7140$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7140</div>
+          </div>
+
+          <!-- SOLUTION 25 -->
+          <div class="item-container">
+            <p><strong>Solution 25:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Luas = 3 $\times$ Keliling, jadinya $xy = 3(2x + 2y) \implies xy - 6x - 6y = 0$.</p>
+                <p>Kita pakai Trik Simon lagi. Tambahkan $36$ (dari $-6 \times -6$) ke kiri dan kanan biar bisa dikurung: $(x-6)(y-6) = 36$.</p>
+                <p>Cari perkalian berapa yang hasilnya 36: $1 \times 36$, $2 \times 18$, $3 \times 12$, $4 \times 9$, dan $6 \times 6$. Biar dapat ukuran aslinya, tinggal tambahkan 6 ke setiap angka tersebut. Dapat deh 5 ukuran persegi panjang: 7x42, 8x24, 9x18, 10x15, dan 12x12.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Area = 3 $\times$ Perimeter, making it $xy = 3(2x + 2y) \implies xy - 6x - 6y = 0$.</em></p>
+                <p><em>We use Simon's Trick again. Add $36$ (from $-6 \times -6$) to the left and right so we can bracket it: $(x-6)(y-6) = 36$.</em></p>
+                <p><em>Find what multiplies to 36: $1 \times 36$, $2 \times 18$, $3 \times 12$, $4 \times 9$, and $6 \times 6$. To get the original sizes, just add 6 to each of those numbers. We get 5 rectangle sizes: 7x42, 8x24, 9x18, 10x15, and 12x12.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7x42, 8x24, 9x18, 10x15, 12x12</div>
+          </div>
+
+          <!-- SOLUTION 26 -->
+          <div class="item-container">
+            <p><strong>Solution 26:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Umurnya kelipatan 7, tapi kalau ditambah setahun jadi kelipatan 5 (angka belakangnya jadi 5 atau 0). Berarti umur aslinya pasti berakhiran angka 4 atau 9!</p>
+                <p>Kelipatan 7 terkecil yang berakhiran 4 adalah 14. Terus, umur yang pas ini bakal berulang tiap kelipatan KPK dari 7 dan 5 (yaitu 35). Daftarnya jadi: $14, 49, 84, 119$.</p>
+                <p>Karena umurnya belum sampai 100 tahun, umur tertuanya yang mungkin adalah 84 tahun.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>His age is a multiple of 7, but adding one year makes it a multiple of 5 (ending in 5 or 0). This means his actual age must end in 4 or 9!</em></p>
+                <p><em>The smallest multiple of 7 ending in 4 is 14. Then, this fitting age will repeat every LCM of 7 and 5 (which is 35). The list becomes: $14, 49, 84, 119$.</em></p>
+                <p><em>Since he is under 100 years old, the oldest he could be is 84 years old.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 84</div>
+          </div>
+
+          <!-- SOLUTION 27 -->
+          <div class="item-container">
+            <p><strong>Solution 27:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Soal tebak-tebakan koin seperti ini disebut Teorema Chicken McNugget. Rumus cepat untuk mencari angka terbesar yang <em>mustahil</em> didapatkan dari kombinasi dua angka $A$ dan $B$ adalah: $(A \times B) - A - B$.</p>
+                <p>Langsung aja kita masukkan angkanya: $(13 \times 17) - 13 - 17 = 221 - 30 = 191$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Coin-guessing problems like this are called the Chicken McNugget Theorem. The quick formula to find the largest <em>impossible</em> number from a combination of two numbers $A$ and $B$ is: $(A \times B) - A - B$.</em></p>
+                <p><em>Let's just plug the numbers in: $(13 \times 17) - 13 - 17 = 221 - 30 = 191$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 191</div>
+          </div>
+
+          <!-- SOLUTION 28 -->
+          <div class="item-container">
+            <p><strong>Solution 28:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Bagi dua dulu biar enteng: $10x + 13y = 1013$. Biar hasil $x - y$ paling maksimal, kita harus bikin $x$-nya besar dan $y$-nya sekecil mungkin.</p>
+                <p>Angka $10x$ belakangnya pasti 0, biar jumlahnya 1013 (belakangnya 3), $13y$ ini wajib nyumbang akhiran angka 3. Kita tes dari angka kecil: $y=1 \implies 13(1)=13$. Wah, langsung ketemu!</p>
+                <p>Kalau $y=1$, berarti $10x + 13 = 1013 \implies 10x = 1000 \implies x=100$. Selisih terbesarnya adalah $x-y = 100 - 1 = 99$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Divide by two to make it lighter: $10x + 13y = 1013$. For the result of $x - y$ to be maximum, we must make $x$ large and $y$ as small as possible.</em></p>
+                <p><em>The number $10x$ definitely ends in 0, so to make the sum 1013 (ends in 3), $13y$ must contribute an ending digit of 3. We test from small numbers: $y=1 \implies 13(1)=13$. Wow, got it instantly!</em></p>
+                <p><em>If $y=1$, then $10x + 13 = 1013 \implies 10x = 1000 \implies x=100$. The biggest difference is $x-y = 100 - 1 = 99$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 99</div>
+          </div>
+
+          <!-- SOLUTION 29 -->
+          <div class="item-container">
+            <p><strong>Solution 29:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Jadikan satuan uangnya ke sen: $18x + 25y = 500$. Angka 500 dan $25y$ itu sama-sama kelipatan 25, otomatis sisi satunya ($18x$) juga wajib kelipatan 25.</p>
+                <p>Karena angka 18 bukan kelipatan 25, ya terpaksa huruf $x$-nya yang harus kelipatan 25. Kita coba tebak nilai $x=25 \implies 18(25) = 450$ sen. Sisa uangnya 50 sen. Uang segini pas banget buat beli 2 prangko 25-sen ($y=2$). Jadi jawabannya 25 prangko.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>Change the currency to cents: $18x + 25y = 500$. The numbers 500 and $25y$ are both multiples of 25, automatically the other side ($18x$) must also be a multiple of 25.</em></p>
+                <p><em>Because 18 is not a multiple of 25, forcedly the letter $x$ has to be the multiple of 25. Let's guess the value $x=25 \implies 18(25) = 450$ cents. The remaining money is 50 cents. This is the exact amount to buy 2 stamps of 25-cents ($y=2$). So the answer is 25 stamps.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 25</div>
+          </div>
+
+          <!-- SOLUTION 30 -->
+          <div class="item-container">
+            <p><strong>Solution 30:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p>Persamaannya: $2x + 5y = 100$. Pakai aturan kelipatan seperti nomor sebelumnya, $x$ wajib angka kelipatan 5. Karena $y$ itu minimal 1, nilai $2x$ gak boleh nabrak 100: $2x < 100 \implies x < 50$.</p>
+                <p>Barisan kelipatan 5 di bawah 50 adalah: $5, 10, 15, \dots, 45$. Totalnya ada 9 angka.</p>
+                <p>Kalau dijumlahkan semua: $\frac{9}{2} \times (5 + 45) = \frac{9}{2} \times 50 = 225$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><em>The equation: $2x + 5y = 100$. Using the multiple rule like the previous number, $x$ must be a multiple of 5. Since $y$ is at least 1, the value of $2x$ cannot hit 100: $2x < 100 \implies x < 50$.</em></p>
+                <p><em>The sequence of multiples of 5 under 50 is: $5, 10, 15, \dots, 45$. There are 9 numbers in total.</em></p>
+                <p><em>If we sum them all: $\frac{9}{2} \times (5 + 45) = \frac{9}{2} \times 50 = 225$.</em></p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 225</div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
