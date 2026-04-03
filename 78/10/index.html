@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Olympiad Practice - Algebra & Number Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Konfigurasi MathJax untuk render LaTeX -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script>
+    <script
+      id="Math-Jax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
+      .content-card {
+        background-color: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+      .section-title {
+        font-size: 1.875rem; /* 30px */
+        font-weight: 700;
+        color: #3730a3; /* indigo-800 */
+        border-bottom: 3px solid #6366f1; /* indigo-500 */
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .topic-title {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600;
+        color: #4338ca; /* indigo-700 */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #a5b4fc; /* indigo-300 */
+      }
+      .item-container {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .item-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+      .final-answer {
+        font-weight: 700;
+        color: #166534; /* green-800 */
+        background-color: #dcfce7; /* green-100 */
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .solution-wrapper {
+        margin-top: 1.25rem;
+      }
+      .solution-wrapper strong {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: #1f2937; /* gray-800 */
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .solution-step {
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .solution-step p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        padding-left: 1rem;
+        position: relative;
+        margin-bottom: 0.5rem;
+      }
+      .solution-step p::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #6366f1;
+        font-weight: bold;
+      }
+      .math-block {
+          padding-left: 1.5rem;
+          margin-top: 0.5rem;
+          margin-bottom: 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4 md:p-8">
+      <header class="text-center mb-10">
+        <p class="text-xl font-bold text-indigo-500 mb-2 tracking-wide uppercase">Worksheet 11</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700">
+          20 Math Olympiad Problems (Grade 7-8)
+        </h1>
+        <p class="text-gray-600 mt-2 text-lg">
+          Topics: Algebra & Number Theory
+        </p>
+      </header>
+
+      <main>
+        <!-- ========================================== -->
+        <!-- BAGIAN SOAL / QUESTIONS SECTION            -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Bagian 1: Kumpulan Soal / Problems</h2>
+
+          <h3 class="topic-title">Topic 1: Algebra / Aljabar</h3>
+          
+          <div class="item-container">
+            <p>
+              <strong>1. (EN)</strong> Given that $x+y=5$ and $x^2+y^2=13$, find the value of $x^3+y^3$.<br />
+              <strong>(ID)</strong> <em>Diketahui $x+y=5$ dan $x^2+y^2=13$, tentukan nilai dari $x^3+y^3$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>2. (EN)</strong> Let $a$ and $b$ be the roots of the quadratic equation $x^2 - 7x + 10 = 0$. Find the value of $\frac{1}{a} + \frac{1}{b}$.<br />
+              <strong>(ID)</strong> <em>Misalkan $a$ dan $b$ adalah akar-akar dari persamaan kuadrat $x^2 - 7x + 10 = 0$. Tentukan nilai dari $\frac{1}{a} + \frac{1}{b}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>3. (EN)</strong> Evaluate the sum: $\frac{1}{1 \times 2} + \frac{1}{2 \times 3} + \frac{1}{3 \times 4} + \dots + \frac{1}{99 \times 100}$.<br />
+              <strong>(ID)</strong> <em>Hitunglah hasil penjumlahan berikut: $\frac{1}{1 \times 2} + \frac{1}{2 \times 3} + \frac{1}{3 \times 4} + \dots + \frac{1}{99 \times 100}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>4. (EN)</strong> Find the value of $x$ that satisfies the equation: $4^x - 3 \cdot 2^x + 2 = 0$.<br />
+              <strong>(ID)</strong> <em>Tentukan nilai $x$ yang memenuhi persamaan: $4^x - 3 \cdot 2^x + 2 = 0$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>5. (EN)</strong> If $x$ is a positive real number ($x > 0$), find the minimum value of $x + \frac{9}{x}$.<br />
+              <strong>(ID)</strong> <em>Jika $x$ adalah bilangan real positif ($x > 0$), tentukan nilai minimum (terkecil) dari $x + \frac{9}{x}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>6. (EN)</strong> A function is defined as $f(x) = \frac{x}{x-1}$. Find the exact value of $f(f(f(3)))$.<br />
+              <strong>(ID)</strong> <em>Sebuah fungsi didefinisikan sebagai $f(x) = \frac{x}{x-1}$. Tentukan nilai pasti dari $f(f(f(3)))$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>7. (EN)</strong> If $\frac{a}{b} = \frac{2}{3}$ and $\frac{b}{c} = \frac{4}{5}$, find the value of the ratio $\frac{a+b}{b+c}$.<br />
+              <strong>(ID)</strong> <em>Jika $\frac{a}{b} = \frac{2}{3}$ dan $\frac{b}{c} = \frac{4}{5}$, tentukan nilai rasio $\frac{a+b}{b+c}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>8. (EN)</strong> Simplify the expression: $\frac{1}{\sqrt{2}+1} + \frac{1}{\sqrt{3}+\sqrt{2}} + \dots + \frac{1}{\sqrt{100}+\sqrt{99}}$.<br />
+              <strong>(ID)</strong> <em>Sederhanakan bentuk berikut: $\frac{1}{\sqrt{2}+1} + \frac{1}{\sqrt{3}+\sqrt{2}} + \dots + \frac{1}{\sqrt{100}+\sqrt{99}}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>9. (EN)</strong> Find the sum of all values of $x$ that satisfy the equation: $|x-2| + |x-5| = 7$.<br />
+              <strong>(ID)</strong> <em>Tentukan jumlah dari semua nilai $x$ yang memenuhi persamaan: $|x-2| + |x-5| = 7$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>10. (EN)</strong> Observe the dot pattern below. How many dots will be in the 10th figure?<br />
+              <strong>(ID)</strong> <em>Perhatikan pola titik di bawah ini. Berapakah jumlah titik pada gambar ke-10?</em>
+            </p>
+            <div class="flex justify-center items-end gap-6 md:gap-10 mt-6 mb-4">
+                <div class="flex flex-col items-center">
+                    <div class="text-indigo-600 text-3xl leading-none">●</div>
+                    <span class="text-sm mt-3 font-semibold text-gray-600">Fig 1</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-indigo-600 text-3xl leading-tight text-center">
+                        ●<br>● ●
+                    </div>
+                    <span class="text-sm mt-3 font-semibold text-gray-600">Fig 2</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-indigo-600 text-3xl leading-tight text-center">
+                        ●<br>● ●<br>● ● ●
+                    </div>
+                    <span class="text-sm mt-3 font-semibold text-gray-600">Fig 3</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-indigo-600 text-3xl leading-tight text-center">
+                        ●<br>● ●<br>● ● ●<br>● ● ● ●
+                    </div>
+                    <span class="text-sm mt-3 font-semibold text-gray-600">Fig 4</span>
+                </div>
+            </div>
+          </div>
+
+          <!-- TOPIC 2 -->
+          <h3 class="topic-title">Topic 2: Number Theory / Teori Bilangan</h3>
+
+          <div class="item-container">
+            <p>
+              <strong>11. (EN)</strong> Find the last digit of the number $3^{2026}$.<br />
+              <strong>(ID)</strong> <em>Tentukan angka terakhir (angka satuan) dari hasil perhitungan $3^{2026}$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>12. (EN)</strong> Find all pairs of prime numbers $p$ and $q$ such that $p + q = 31$.<br />
+              <strong>(ID)</strong> <em>Tentukan semua pasangan bilangan prima $p$ dan $q$ yang memenuhi $p + q = 31$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>13. (EN)</strong> What is the remainder when $2^{50}$ is divided by 7?<br />
+              <strong>(ID)</strong> <em>Berapakah sisa bagi jika $2^{50}$ dibagi dengan 7?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>14. (EN)</strong> A 5-digit number is represented as $4A5B2$, where $A$ and $B$ are single digits. If the number is divisible by 36, find the maximum possible value of $A+B$.<br />
+              <strong>(ID)</strong> <em>Sebuah bilangan 5-digit ditulis sebagai $4A5B2$, di mana $A$ dan $B$ adalah angka tunggal (0-9). Jika bilangan tersebut habis dibagi 36, tentukan nilai maksimal yang mungkin untuk $A+B$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>15. (EN)</strong> The product of two positive integers is 864 and their Greatest Common Divisor (GCD) is 6. Find all possible pairs of these two integers.<br />
+              <strong>(ID)</strong> <em>Hasil kali dari dua buah bilangan bulat positif adalah 864 dan Faktor Persekutuan Terbesar (FPB) mereka adalah 6. Tentukan semua pasangan bilangan tersebut yang mungkin.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>16. (EN)</strong> How many trailing zeros are there at the end of the number $100!$ ?<br />
+              <strong>(ID)</strong> <em>Berapa banyak angka nol yang terletak di akhir (trailing zeros) pada hasil perhitungan bilangan $100!$ (100 faktorial)?</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>17. (EN)</strong> Find the smallest positive integer $n$ such that $120n$ is a perfect cube.<br />
+              <strong>(ID)</strong> <em>Tentukan bilangan bulat positif terkecil $n$ sehingga hasil kali $120n$ menghasilkan bilangan pangkat tiga (kubik) sempurna.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>18. (EN)</strong> Let $S(x)$ denote the sum of the digits of a positive integer $x$. Find the value of $S(S(S(10^{2026}-2026)))$.<br />
+              <strong>(ID)</strong> <em>Misalkan $S(x)$ menyatakan jumlah dari semua digit yang menyusun bilangan positif $x$. Tentukan nilai dari perhitungan $S(S(S(10^{2026}-2026)))$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>19. (EN)</strong> The number 111 in base 10 is written as $303$ in base $x$. Find the value of $x$.<br />
+              <strong>(ID)</strong> <em>Bilangan 111 dalam basis 10 (desimal) dituliskan sebagai bilangan $303$ dalam basis $x$. Tentukan nilai dari $x$.</em>
+            </p>
+          </div>
+
+          <div class="item-container">
+            <p>
+              <strong>20. (EN)</strong> A farmer has a basket of eggs. If he groups them by 2, 3, 4, 5, or 6, there is always exactly 1 egg left over. But if he groups them by 7, there are 0 eggs left over. What is the smallest possible number of eggs in the basket?<br />
+              <strong>(ID)</strong> <em>Seorang petani memiliki sekeranjang telur. Jika telur itu dikelompokkan dua-dua, tiga-tiga, empat-empat, lima-lima, atau enam-enam, akan selalu tersisa persis 1 telur. Tetapi jika dikelompokkan tujuh-tujuh, tidak ada telur yang tersisa. Berapa jumlah telur paling sedikit yang mungkin ada di dalam keranjang tersebut?</em>
+            </p>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BAGIAN PEMBAHASAN / SOLUTIONS SECTION      -->
+        <!-- ========================================== -->
+        <section class="content-card">
+          <h2 class="section-title">Bagian 2: Pembahasan / Solutions</h2>
+          <p class="mb-6 text-gray-700"><em>Let's discuss these problems very slowly and in detail. We will start from the most basic concepts as if you have never seen this material before!</em></p>
+
+          <h3 class="topic-title">Topic 1 Solutions (Algebra)</h3>
+          
+          <!-- SOLUTION 1 -->
+          <div class="item-container">
+            <p><strong>Solution 1:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Untuk mencari nilai $x^3+y^3$, kita tidak perlu mencari nilai $x$ dan $y$ satu per satu. Kita bisa menggunakan rumus identitas aljabar. Ada dua rumus penting yang perlu kita ingat:<br>
+                1. $(x+y)^2 = x^2 + 2xy + y^2$ (Rumus kuadrat)<br>
+                2. $x^3+y^3 = (x+y)(x^2 - xy + y^2)$ (Rumus pemfaktoran pangkat tiga)</p>
+                <p><strong>Langkah 1: Mencari nilai $xy$.</strong> Dari rumus pertama, mari kita masukkan angka yang sudah kita ketahui dari soal: $x+y=5$ dan $x^2+y^2=13$.
+                $$\begin{aligned} (x+y)^2 &= (x^2+y^2) + 2xy \\ (5)^2 &= 13 + 2xy \\ 25 &= 13 + 2xy \end{aligned}$$
+                Pindahkan 13 ke ruas kiri (menjadi pengurangan): $25 - 13 = 2xy \implies 12 = 2xy \implies xy = 6$.</p>
+                <p><strong>Langkah 2: Menghitung $x^3+y^3$.</strong> Gunakan rumus kedua dan masukkan semua angka yang kita punya:
+                $$\begin{aligned} x^3+y^3 &= (x+y) \times (x^2 + y^2 - xy) \\ x^3+y^3 &= 5 \times (13 - 6) \\ x^3+y^3 &= 5 \times 7 = 35 \end{aligned}$$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> To find the value of $x^3+y^3$, we do not need to find the exact values of $x$ and $y$ individually. We can use algebraic identities. There are two important formulas to remember:<br>
+                1. $(x+y)^2 = x^2 + 2xy + y^2$ (Perfect square formula)<br>
+                2. $x^3+y^3 = (x+y)(x^2 - xy + y^2)$ (Sum of cubes factorization)</p>
+                <p><strong>Step 1: Find the value of $xy$.</strong> From the first formula, let's plug in the numbers we know: $x+y=5$ and $x^2+y^2=13$.
+                $$\begin{aligned} (x+y)^2 &= (x^2+y^2) + 2xy \\ (5)^2 &= 13 + 2xy \\ 25 &= 13 + 2xy \end{aligned}$$
+                Move 13 to the left side (it becomes subtraction): $25 - 13 = 2xy \implies 12 = 2xy \implies xy = 6$.</p>
+                <p><strong>Step 2: Calculate $x^3+y^3$.</strong> Use the second formula and insert all the numbers we have:
+                $$\begin{aligned} x^3+y^3 &= (x+y) \times (x^2 + y^2 - xy) \\ x^3+y^3 &= 5 \times (13 - 6) \\ x^3+y^3 &= 5 \times 7 = 35 \end{aligned}$$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 35</div>
+          </div>
+
+          <!-- SOLUTION 2 -->
+          <div class="item-container">
+            <p><strong>Solution 2:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Bentuk umum persamaan kuadrat adalah $Ax^2 + Bx + C = 0$. Menurut Teorema Vieta, jika persamaan kuadrat memiliki akar-akar $a$ dan $b$, maka berlaku hubungan berikut: Jumlah akar-akar $a + b = -\frac{B}{A}$ dan Hasil kali akar-akar $a \times b = \frac{C}{A}$.</p>
+                <p><strong>Langkah 1: Menemukan $A, B$, dan $C$.</strong> Dari persamaan $x^2 - 7x + 10 = 0$, didapat: $A = 1$, $B = -7$, dan $C = 10$.</p>
+                <p><strong>Langkah 2: Mencari $a+b$ dan $ab$.</strong> Menggunakan Teorema Vieta:<br>
+                • $a + b = -\frac{(-7)}{1} = 7$<br>
+                • $a \times b = \frac{10}{1} = 10$</p>
+                <p><strong>Langkah 3: Menjawab Pertanyaan.</strong> Pertanyaannya meminta nilai dari $\frac{1}{a} + \frac{1}{b}$. Samakan penyebutnya menjadi $ab$:
+                $$ \frac{1}{a} + \frac{1}{b} = \frac{b}{ab} + \frac{a}{ab} = \frac{a+b}{ab} $$
+                Langsung masukkan angkanya: $\frac{a+b}{ab} = \frac{7}{10}$.
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> The general form of a quadratic equation is $Ax^2 + Bx + C = 0$. According to Vieta's Formulas, if a quadratic equation has roots $a$ and $b$, the following relationships apply: Sum of roots $a + b = -\frac{B}{A}$ and Product of roots $a \times b = \frac{C}{A}$.</p>
+                <p><strong>Step 1: Identify $A, B$, and $C$.</strong> From the equation $x^2 - 7x + 10 = 0$, $A = 1$, $B = -7$, and $C = 10$.</p>
+                <p><strong>Step 2: Find $a+b$ and $ab$.</strong> Using Vieta's formulas:<br>
+                • $a + b = -\frac{(-7)}{1} = 7$<br>
+                • $a \times b = \frac{10}{1} = 10$</p>
+                <p><strong>Step 3: Answer the Question.</strong> The question asks for $\frac{1}{a} + \frac{1}{b}$. To add fractions, we need a common denominator ($ab$):
+                $$ \frac{1}{a} + \frac{1}{b} = \frac{b}{ab} + \frac{a}{ab} = \frac{a+b}{ab} $$
+                Since we know $a+b = 7$ and $ab = 10$, we simply substitute the numbers: $\frac{a+b}{ab} = \frac{7}{10}$.
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7/10 (or 0.7)</div>
+          </div>
+
+          <!-- SOLUTION 3 -->
+          <div class="item-container">
+            <p><strong>Solution 3:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Menyamakan penyebut sampai 100 sangat mustahil. Namun, ada trik aljabar khusus yang disebut pecahan parsial (deret teleskopik). Perhatikan pola ini: $\frac{1}{2 \times 3} \text{ sama saja dengan } \frac{1}{2} - \frac{1}{3}$. Secara umum, rumusnya adalah: $\frac{1}{n \times (n+1)} = \frac{1}{n} - \frac{1}{n+1}$</p>
+                <p><strong>Langkah Penyelesaian:</strong> Kita ubah setiap suku di dalam soal menggunakan trik di atas. Mari kita jumlahkan semuanya memanjang ke samping:
+                $$ \left( \frac{1}{1} - \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{1}{3} \right) + \dots + \left( \frac{1}{99} - \frac{1}{100} \right) $$</p>
+                <p>Perhatikan keajaibannya! Terdapat angka pengurang $-1/2$ yang langsung bertemu dengan penambah $+1/2$. Mereka saling menghilangkan. Ini terjadi terus-menerus! Yang tersisa hanyalah angka paling depan dan angka paling belakang:
+                $$ \frac{1}{1} - \frac{1}{100} = 1 - 0.01 = \frac{100}{100} - \frac{1}{100} = \frac{99}{100} $$
+                </p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Adding so many fractions manually is impossible. However, there is a special algebraic trick called partial fractions (or telescoping series). Notice this pattern: $\frac{1}{2 \times 3} \text{ is exactly the same as } \frac{1}{2} - \frac{1}{3}$. In general, the formula is: $\frac{1}{n \times (n+1)} = \frac{1}{n} - \frac{1}{n+1}$</p>
+                <p><strong>Step-by-step Solution:</strong> We change every single term in the question using the trick above. Now, let's add everything horizontally:
+                $$ \left( \frac{1}{1} - \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{1}{3} \right) + \dots + \left( \frac{1}{99} - \frac{1}{100} \right) $$</p>
+                <p>Notice the magic! The subtracted $-1/2$ meets the added $+1/2$ and they cancel each other out to zero. This domino effect happens continuously up to $1/99$. The only numbers left are the very first and the very last:
+                $$ \frac{1}{1} - \frac{1}{100} = 1 - 0.01 = \frac{100}{100} - \frac{1}{100} = \frac{99}{100} $$
+                </p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 99/100</div>
+          </div>
+
+          <!-- SOLUTION 4 -->
+          <div class="item-container">
+            <p><strong>Solution 4:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Persamaan ini terlihat rumit karena pangkatnya. Trik rahasianya adalah "Permisalan" (Substitusi). Ingat sifat pangkat: $4^x = (2^2)^x = 2^{2x} = (2^x)^2$.</p>
+                <p><strong>Langkah 1: Melakukan Permisalan.</strong> Ubah persamaan awal menjadi: $(2^x)^2 - 3(2^x) + 2 = 0$. Misalkan $y = 2^x$. Maka persamaannya berubah menjadi persamaan kuadrat biasa: $y^2 - 3y + 2 = 0$.</p>
+                <p><strong>Langkah 2: Memfaktorkan Persamaan.</strong> Kita cari dua angka yang jika dikalikan hasilnya $+2$ dan jika ditambahkan hasilnya $-3$. Yaitu $-1$ dan $-2$. Maka bentuk pemfaktorannya $(y - 1)(y - 2) = 0$. Solusinya adalah $y = 1$ atau $y = 2$.</p>
+                <p><strong>Langkah 3: Mengembalikan Permisalan.</strong> Kembalikan $y$ menjadi $2^x$.<br>
+                • Kasus 1: $y = 1 \implies 2^x = 1$. Angka dipangkatkan $0$ hasilnya adalah $1$. Jadi, $x = 0$.<br>
+                • Kasus 2: $y = 2 \implies 2^x = 2$. Dua pangkat $1$ hasilnya dua. Jadi, $x = 1$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> This equation looks complicated because of the power $x$. The secret trick is "Substitution". Remember exponent rules: $4^x = (2^2)^x = 2^{2x} = (2^x)^2$. So, we can change the number 4 into a power of 2.</p>
+                <p><strong>Step 1: Make a Substitution.</strong> Change the equation to: $(2^x)^2 - 3(2^x) + 2 = 0$. To make it easier to read, let's replace $2^x$ with $y$. So let: $y = 2^x$. The equation becomes a standard quadratic equation: $y^2 - 3y + 2 = 0$.</p>
+                <p><strong>Step 2: Factor the Equation.</strong> We look for two numbers that multiply to $+2$ and add up to $-3$. Those numbers are $-1$ and $-2$. Thus, $(y - 1)(y - 2) = 0$. The solutions for $y$ are $y = 1$ or $y = 2$.</p>
+                <p><strong>Step 3: Revert the Substitution.</strong> Remember, we need $x$, not $y$. Revert $y$ back to $2^x$.<br>
+                • Case 1: $y = 1 \implies 2^x = 1$. Any non-zero number to the power of 0 is 1. Thus, $x = 0$.<br>
+                • Case 2: $y = 2 \implies 2^x = 2$. Two to the power of 1 is 2. Thus, $x = 1$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: x = 0 or x = 1</div>
+          </div>
+
+          <!-- SOLUTION 5 -->
+          <div class="item-container">
+            <p><strong>Solution 5:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Mencari nilai minimum tanpa kalkulus biasanya menggunakan Ketaksamaan AM-GM (Rata-rata Aritmetika $\ge$ Rata-rata Geometri). Rumusnya: $\frac{A + B}{2} \geq \sqrt{A \times B}$.</p>
+                <p><strong>Langkah 1: Menentukan $A$ dan $B$.</strong> Anggap bilangan pertama $A = x$, dan bilangan kedua $B = \frac{9}{x}$.</p>
+                <p><strong>Langkah 2: Memasukkan ke rumus AM-GM.</strong>
+                $$ \frac{x + \frac{9}{x}}{2} \geq \sqrt{x \times \frac{9}{x}} $$
+                Di dalam akar, huruf $x$ bisa dicoret: $x \times \frac{9}{x} = 9$.
+                $$ \frac{x + \frac{9}{x}}{2} \geq \sqrt{9} \implies \frac{x + \frac{9}{x}}{2} \geq 3 $$</p>
+                <p><strong>Langkah 3: Menemukan nilai minimum.</strong> Pindahkan angka 2 dari bawah ke kanan (dikali):
+                $$ x + \frac{9}{x} \geq 3 \times 2 \implies x + \frac{9}{x} \geq 6 $$
+                Artinya hasil penjumlahan tersebut tidak akan pernah kurang dari 6.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> In math olympiads, finding minimum values without calculus usually involves the AM-GM Inequality (Arithmetic Mean - Geometric Mean). The theorem states: For two positive numbers $A$ and $B$, their arithmetic mean is always greater than or equal to their geometric mean. Formula: $\frac{A + B}{2} \geq \sqrt{A \times B}$.</p>
+                <p><strong>Step 1: Set $A$ and $B$.</strong> Let the first term $A = x$, and the second term $B = \frac{9}{x}$.</p>
+                <p><strong>Step 2: Apply the AM-GM formula.</strong>
+                $$ \frac{x + \frac{9}{x}}{2} \geq \sqrt{x \times \frac{9}{x}} $$
+                Look inside the square root! The $x$ cancels out: $x \times \frac{9}{x} = 9$.
+                $$ \frac{x + \frac{9}{x}}{2} \geq \sqrt{9} \implies \frac{x + \frac{9}{x}}{2} \geq 3 $$</p>
+                <p><strong>Step 3: Find the minimum value.</strong> Move the 2 to the right side (multiply):
+                $$ x + \frac{9}{x} \geq 3 \times 2 \implies x + \frac{9}{x} \geq 6 $$
+                This means the calculation will never be less than 6. The minimum possible value is exactly 6.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 6</div>
+          </div>
+
+          <!-- SOLUTION 6 -->
+          <div class="item-container">
+            <p><strong>Solution 6:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Notasi fungsi bertumpuk $f(f(3))$ artinya kita mencari nilai $f(3)$ dulu, setelah dapat angkanya, hasil angka tersebut kita masukkan kembali ke rumus $f(x)$.</p>
+                <p><strong>Langkah 1: Menghitung fungsi terdalam $f(3)$.</strong> Kita ganti $x$ dengan 3:
+                $$ f(3) = \frac{3}{3 - 1} = \frac{3}{2} $$
+                Pertanyaan $f(f(f(3)))$ sekarang menyusut menjadi $f(f(\frac{3}{2}))$.</p>
+                <p><strong>Langkah 2: Menghitung lapis kedua $f(\frac{3}{2})$.</strong> Ganti $x$ dengan pecahan $\frac{3}{2}$:
+                $$ f\left(\frac{3}{2}\right) = \frac{\frac{3}{2}}{\frac{3}{2} - 1} $$
+                Selesaikan bawahnya: $\frac{3}{2} - 1 = \frac{1}{2}$.
+                $$ f\left(\frac{3}{2}\right) = \frac{\frac{3}{2}}{\frac{1}{2}} = 3 $$
+                Jadi, $f(f(3)) = 3$. Fungsinya ternyata berbalik kembali ke angka awal!</p>
+                <p><strong>Langkah 3: Menghitung lapis ketiga $f(3)$ ulang.</strong> Karena $f(f(3)) = 3$, maka pencarian lapis ketiga adalah menghitung ulang $f(3)$. Seperti Langkah 1, hasilnya adalah $\frac{3}{2}$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Function notation like $f(3)$ means we replace every $x$ in the formula with the number $3$. For nested functions like $f(f(3))$, we evaluate from the inside out. Find $f(3)$ first, then put that result back into the function.</p>
+                <p><strong>Step 1: Calculate the innermost function $f(3)$.</strong> Substitute $x$ with 3:
+                $$ f(3) = \frac{3}{3 - 1} = \frac{3}{2} $$
+                The problem $f(f(f(3)))$ now shrinks down to $f(f(\frac{3}{2}))$.</p>
+                <p><strong>Step 2: Calculate the second layer $f(f(3))$ which is $f(\frac{3}{2})$.</strong> Substitute $x$ with the fraction $\frac{3}{2}$:
+                $$ f\left(\frac{3}{2}\right) = \frac{\frac{3}{2}}{\frac{3}{2} - 1} $$
+                Solve the denominator first: $\frac{3}{2} - 1 = \frac{1}{2}$.
+                $$ f\left(\frac{3}{2}\right) = \frac{\frac{3}{2}}{\frac{1}{2}} = \frac{3}{1} = 3 $$
+                So, $f(f(3)) = 3$. The function returns to the original starting number!</p>
+                <p><strong>Step 3: Calculate the third layer $f(f(f(3)))$ which is $f(3)$.</strong> Since $f(f(3)) = 3$, the third layer is simply calculating $f(3)$ again. As we found in Step 1: $f(3) = \frac{3}{2}$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 3/2</div>
+          </div>
+
+          <!-- SOLUTION 7 -->
+          <div class="item-container">
+            <p><strong>Solution 7:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Tantangan di soal perbandingan ini adalah: Huruf $b$ ada di kedua perbandingan, tetapi perwakilannya berbeda (angka 3 dan 4). Kita harus "menyamakan" nilai $b$ tersebut agar ketiganya bisa digabung.</p>
+                <p><strong>Langkah 1: Menyamakan nilai $b$.</strong> Carilah KPK dari angka perbandingan $b$ (3 dan 4), yaitu 12.<br>
+                • Pecahan pertama: $\frac{a}{b} = \frac{2}{3}$. Kalikan atas-bawah dengan 4. Hasilnya $\frac{a}{b} = \frac{8}{12}$.<br>
+                • Pecahan kedua: $\frac{b}{c} = \frac{4}{5}$. Kalikan atas-bawah dengan 3. Hasilnya $\frac{b}{c} = \frac{12}{15}$.</p>
+                <p><strong>Langkah 2: Menggabungkan Rasio.</strong> Sekarang nilai $b$ sudah sama (yaitu 12). Kita gabungkan rasio ketiganya: $a : b : c = 8 : 12 : 15$. Anggap nilai sebenarnya adalah $a=8k$, $b=12k$, dan $c=15k$.</p>
+                <p><strong>Langkah 3: Menjawab soal.</strong> Masukkan nilai tersebut ke pertanyaan $\frac{a+b}{b+c}$:
+                $$ \frac{8k + 12k}{12k + 15k} = \frac{20k}{27k} = \frac{20}{27} $$</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Ratios don't mean $a$ is exactly 2 and $b$ is exactly 3. The challenge here is the letter $b$ appears in both ratios but has different representative numbers (3 and 4). We must "unify" the value of $b$ to link $a, b, c$ together.</p>
+                <p><strong>Step 1: Unify the value of $b$.</strong> Find the Least Common Multiple (LCM) for the $b$ numbers: 3 and 4. The LCM is 12.<br>
+                • First fraction: $\frac{a}{b} = \frac{2}{3}$. Multiply top and bottom by 4 to get $b=12$. So, $\frac{a}{b} = \frac{8}{12}$.<br>
+                • Second fraction: $\frac{b}{c} = \frac{4}{5}$. Multiply top and bottom by 3 to get $b=12$. So, $\frac{b}{c} = \frac{12}{15}$.</p>
+                <p><strong>Step 2: Combine the Ratio.</strong> Now $b$ is 12 in both ratios. We can combine them: $a : b : c = 8 : 12 : 15$. We can assume their actual values are $a=8k, b=12k, c=15k$.</p>
+                <p><strong>Step 3: Answer the Question.</strong> Substitute into $\frac{a+b}{b+c}$:
+                $$ \frac{8k + 12k}{12k + 15k} = \frac{20k}{27k} = \frac{20}{27} $$</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 20/27</div>
+          </div>
+
+          <!-- SOLUTION 8 -->
+          <div class="item-container">
+            <p><strong>Solution 8:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Pecahan dengan akar di bagian penyebut harus dirasionalkan dengan cara mengalikan sekawannya. Ingat rumus aljabar: $(A + B)(A - B) = A^2 - B^2$.</p>
+                <p><strong>Langkah 1: Merasionalkan satu suku sebagai contoh.</strong> Suku $\frac{1}{\sqrt{3}+\sqrt{2}}$ kita kalikan dengan sekawannya yaitu $\sqrt{3}-\sqrt{2}$:
+                $$ \frac{1}{\sqrt{3}+\sqrt{2}} \times \frac{\sqrt{3}-\sqrt{2}}{\sqrt{3}-\sqrt{2}} = \frac{\sqrt{3}-\sqrt{2}}{3 - 2} = \sqrt{3} - \sqrt{2} $$
+                Sifat ajaib ini berlaku persis untuk semua pecahannya! Menjadi deret:
+                $(\sqrt{2} - 1) + (\sqrt{3} - \sqrt{2}) + \dots + (\sqrt{100} - \sqrt{99})$.</p>
+                <p><strong>Langkah 2: Menjumlahkan semuanya.</strong> Perhatikan ada efek domino saling coret. Terdapat $+\sqrt{2}$ yang bertemu $-\sqrt{2}$ sehingga saling menghilangkan. Ini berlanjut terus. Hampir semua angka tercoret, <strong>kecuali</strong> angka negatif terkecil di depan ($-1$) dan angka positif terbesar di akhir ($+\sqrt{100}$).</p>
+                <p><strong>Langkah 3: Hitung sisa akhir.</strong> Sisa hitungannya adalah: $\sqrt{100} - 1 = 10 - 1 = 9$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Having square roots in the denominator is considered "unsimplified". We fix this by "Rationalizing the Denominator" (multiplying by the conjugate). The conjugate of a plus is a minus. Rule: $(A+B)(A-B) = A^2-B^2$.</p>
+                <p><strong>Step 1: Rationalize one term as an example.</strong> Take the second term: $\frac{1}{\sqrt{3}+\sqrt{2}}$. Multiply by its conjugate $\sqrt{3}-\sqrt{2}$.
+                $$ \frac{1}{\sqrt{3}+\sqrt{2}} \times \frac{\sqrt{3}-\sqrt{2}}{\sqrt{3}-\sqrt{2}} = \frac{\sqrt{3}-\sqrt{2}}{(\sqrt{3})^2 - (\sqrt{2})^2} = \sqrt{3} - \sqrt{2} $$
+                This magic happens to all terms! Generating the series: $(\sqrt{2} - 1) + (\sqrt{3} - \sqrt{2}) + \dots + (\sqrt{100} - \sqrt{99})$.</p>
+                <p><strong>Step 2: Add them all together.</strong> Notice the domino effect. The $+\sqrt{2}$ and $-\sqrt{2}$ cancel out to zero. So does $\sqrt{3}$, and so on. The only survivors are the smallest negative number at the front ($-1$) and the largest positive number at the end ($+\sqrt{100}$).</p>
+                <p><strong>Step 3: Final Calculation.</strong> $\sqrt{100} - 1 = 10 - 1 = 9$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 9</div>
+          </div>
+
+          <!-- SOLUTION 9 -->
+          <div class="item-container">
+            <p><strong>Solution 9:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Secara geometri, tanda nilai mutlak $|x - A|$ memiliki arti: "Jarak dari titik $x$ ke titik $A$ pada garis bilangan". Persamaan $|x-2| + |x-5| = 7$ bisa dibaca layaknya sebuah cerita: <em>"Saya berdiri di sebuah titik $x$. Jarak saya ke tiang angka 2, DITAMBAH jarak saya ke tiang angka 5, totalnya harus persis 7 langkah."</em></p>
+                <p><strong>Langkah 1: Analisis posisi $x$ di garis bilangan.</strong> Bayangkan Anda berdiri di 3 zona yang berbeda:<br>
+                • <strong>Zona Tengah (berdiri di antara 2 dan 5):</strong> Jarak dari 2 ke 5 adalah 3 langkah. Di mana pun Anda berdiri di antara mereka, total jarak Anda ke kedua tiang PASTI persis 3. Soal meminta 7 langkah. Jadi titik $x$ tidak mungkin ada di sini.<br>
+                • <strong>Zona Kanan (berdiri di sebelah kanan 5):</strong> Misalkan Anda berdiri di $x$ ($x > 5$). Jarak ke 5 adalah $(x - 5)$. Jarak ke 2 adalah $(x - 2)$. Total: $(x - 5) + (x - 2) = 7 \implies 2x - 7 = 7 \implies 2x = 14 \implies x = 7$. (Jika berdiri di 7, jarak ke 5 adalah 2, jarak ke 2 adalah 5. Total 7. Benar!).<br>
+                • <strong>Zona Kiri (berdiri di sebelah kiri 2):</strong> Misalkan Anda berdiri di $x$ ($x < 2$). Jarak ke 2 adalah $(2 - x)$. Jarak ke 5 adalah $(5 - x)$. Total: $(2 - x) + (5 - x) = 7 \implies 7 - 2x = 7 \implies 2x = 0 \implies x = 0$. (Jika berdiri di 0, jarak ke 2 adalah 2, jarak ke 5 adalah 5. Total 7. Benar!).</p>
+                <p><strong>Langkah 2: Menjawab Soal.</strong> Kita menemukan dua nilai $x$ yang valid: $x=7$ dan $x=0$. Pertanyaan meminta kita menghitung jumlah dari semua nilai $x$ tersebut. Jumlah = $7 + 0 = 7$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> The absolute value $|x - A|$ means geometrically: "The distance from point $x$ to point $A$ on the number line". So, the equation $|x-2| + |x-5| = 7$ can be read as a story: <em>"I am standing at a mystery point $x$. My distance to post number 2, PLUS my distance to post number 5, must equal exactly 7 steps."</em></p>
+                <p><strong>Step 1: Analyze $x$'s position on the number line.</strong> Imagine standing in three different zones:<br>
+                • <strong>Middle Zone (between 2 and 5):</strong> The distance between post 2 and 5 is exactly 3 steps. If you stand anywhere between them, your total combined distance to both posts will ALWAYS be exactly 3. Since the question demands 7 steps, $x$ cannot be in this zone.<br>
+                • <strong>Right Zone (to the right of 5):</strong> Let's say you stand at $x$ ($x > 5$). Your distance to 5 is $(x - 5)$. Your distance to 2 is $(x - 2)$. Total distance: $(x - 5) + (x - 2) = 7 \implies 2x - 7 = 7 \implies 2x = 14 \implies x = 7$. (Let's verify: at 7, distance to 5 is 2 steps, to 2 is 5 steps. Total 7. Correct!).<br>
+                • <strong>Left Zone (to the left of 2):</strong> Let's say you stand at $x$ ($x < 2$). Your distance to 2 is $(2 - x)$. Your distance to 5 is $(5 - x)$. Total distance: $(2 - x) + (5 - x) = 7 \implies 7 - 2x = 7 \implies 2x = 0 \implies x = 0$. (Let's verify: at 0, distance to 2 is 2 steps, to 5 is 5 steps. Total 7. Correct!).</p>
+                <p><strong>Step 2: Answer the Question.</strong> We found two valid points for $x$: $x=7$ and $x=0$. The question asks for the sum of all possible values of $x$. Sum = $7 + 0 = 7$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 7</div>
+          </div>
+
+          <!-- SOLUTION 10 -->
+          <div class="item-container">
+            <p><strong>Solution 10:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Dalam soal deret bergambar, langkah pertama adalah menghitung jumlah titik secara manual untuk merumuskan pola matematikanya.<br>
+                • Gambar 1 ada 1 titik.<br>
+                • Gambar 2 ada 3 titik (karena $1+2=3$).<br>
+                • Gambar 3 ada 6 titik (karena $1+2+3=6$).<br>
+                • Gambar 4 ada 10 titik (karena $1+2+3+4=10$).<br>
+                Terlihat polanya? Untuk mencari jumlah titik pada gambar ke-$n$, kita tinggal menjumlahkan angka secara berurutan dari 1 sampai $n$. Barisan ini sangat terkenal dengan sebutan <strong>Bilangan Segitiga</strong>.</p>
+                <p><strong>Langkah 1: Menghitung Gambar ke-10.</strong> Sesuai pola di atas, jumlah titik pada Gambar ke-10 adalah: $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$.</p>
+                <p>Agar bisa dihitung dengan sangat cepat di luar kepala, gunakan trik pasangan ilmuwan Gauss. Pasangkan angka ujung kiri dengan ujung kanan:<br>
+                $1 + 10 = 11$<br>
+                $2 + 9 = 11$<br>
+                $3 + 8 = 11$<br>
+                $4 + 7 = 11$<br>
+                $5 + 6 = 11$<br>
+                Terdapat persis 5 buah pasangan, dan masing-masing pasangan berjumlah 11. Maka total seluruhnya adalah $5 \times 11 = 55$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> For visual pattern problems, count the dots step-by-step to find the mathematical rule.<br>
+                • Figure 1 has 1 dot.<br>
+                • Figure 2 has 3 dots ($1+2$).<br>
+                • Figure 3 has 6 dots ($1+2+3$).<br>
+                • Figure 4 has 10 dots ($1+2+3+4$).<br>
+                Notice the pattern? To find the number of dots in the $n$-th figure, we simply add all consecutive numbers from $1$ up to $n$. This famous sequence is known as the <strong>Triangular Numbers</strong>.</p>
+                <p><strong>Step 1: Calculate for the 10th figure.</strong> Following the pattern, the 10th figure requires us to sum: $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$.</p>
+                <p>To do this quickly without a calculator, we use Gauss's trick of pairing numbers from the outside in:<br>
+                $1 + 10 = 11$<br>
+                $2 + 9 = 11$<br>
+                $3 + 8 = 11$<br>
+                $4 + 7 = 11$<br>
+                $5 + 6 = 11$<br>
+                We have exactly 5 pairs, and each pair sums up to exactly 11. Therefore, the total sum is $5 \times 11 = 55$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 55</div>
+          </div>
+
+          <h3 class="topic-title mt-10">Topic 2 Solutions (Number Theory)</h3>
+
+          <!-- SOLUTION 11 -->
+          <div class="item-container">
+            <p><strong>Solution 11:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Menghitung $3^{2026}$ (3 dikali 3 terus-menerus sampai 2026 kali) secara manual sangat mustahil. Tapi ingat, pertanyaannya hanya meminta "angka terakhir". Keajaiban perkalian adalah, angka terakhir HANYA dipengaruhi oleh angka terakhir dari pengalinya. Kita akan mencari "Pola Berulang" (Siklus).</p>
+                <p><strong>Langkah 1: Mencari pola.</strong> Mari kita hitung pangkat-pangkat kecil dari 3 dan amati angka ekornya: $3^1=3$, $3^2=9$, $3^3=27$ (belakang 7), $3^4=81$ (belakang 1), $3^5=243$ (kembali ke 3!). Ternyata polanya selalu berulang: <strong>3, 9, 7, 1</strong>. Panjang siklus putarannya adalah 4 langkah.</p>
+                <p><strong>Langkah 2: Terapkan pada pangkat besar.</strong> Karena polanya berulang tiap 4 kali, kita bagi pangkat raksasa tersebut dengan 4 dan kita lihat sisa baginya. $2026 \div 4 = 506$ dengan sisa bagi 2.</p>
+                <p><strong>Langkah 3: Menentukan jawaban.</strong> Sisa bagi 2 memiliki arti: pola berputar penuh 506 kali, lalu berhenti persis di langkah ke-2 pada putaran baru. Lihat daftar urutan kita: Langkah 1 adalah 3, Langkah 2 adalah 9. Maka angka terakhirnya jatuh pada angka 9.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Calculating $3^{2026}$ by multiplying 3 by itself 2026 times is impossible. However, the question only asks for the "last digit". The magic of multiplication is that the last digit is ONLY determined by the last digits of the numbers being multiplied. Let's look for a repeating pattern (cyclicity).</p>
+                <p><strong>Step 1: Find the repeating pattern.</strong> Let's calculate the first few powers of 3 and observe the last digit: $3^1=3$, $3^2=9$, $3^3=27$ (ends in 7), $3^4=81$ (ends in 1), $3^5=243$ (ends in 3 again!). The pattern of the last digits is <strong>3, 9, 7, 1</strong>, and then it repeats. The pattern length (cycle) is exactly 4 steps.</p>
+                <p><strong>Step 2: Apply the pattern to the large power.</strong> We need to know where the 2026th step will land. Let's divide 2026 by our cycle length of 4 to find the remainder. $2026 \div 4 = 506$ with a remainder of 2.</p>
+                <p><strong>Step 3: Determine the final digit.</strong> A remainder of 2 means the cycle completes 506 full rotations, and then takes exactly 2 more steps into the next cycle. Looking at our pattern sequence: Step 1 is 3, Step 2 is 9. The last digit lands precisely on 9.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 9</div>
+          </div>
+
+          <!-- SOLUTION 12 -->
+          <div class="item-container">
+            <p><strong>Solution 12:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Bilangan Prima adalah bilangan yang hanya bisa dibagi oleh 1 dan dirinya sendiri. Perhatikan bahwa hampir semua bilangan prima adalah bilangan ganjil. <strong>Angka 2 adalah SATU-SATUNYA bilangan prima genap di dunia.</strong> Ingat kembali aturan penjumlahan ganjil-genap: Genap + Genap = Genap, Ganjil + Ganjil = Genap, dan <strong>Genap + Ganjil = Ganjil</strong>.</p>
+                <p><strong>Langkah 1: Menganalisa hasil penjumlahan.</strong> Soal menyatakan $p + q = 31$. Angka 31 adalah bilangan <strong>Ganjil</strong>. Berdasarkan aturan di atas, satu-satunya cara untuk menghasilkan nilai Ganjil adalah dengan menjumlahkan satu bilangan Genap dan satu bilangan Ganjil. Anda tidak mungkin mendapat hasil ganjil jika menjumlahkan dua bilangan prima yang sama-sama ganjil!</p>
+                <p><strong>Langkah 2: Menemukan bilangan primanya.</strong> Karena $p$ dan $q$ wajib prima, dan salah satu dari mereka WAJIB berupa bilangan genap, maka angka genap tersebut tidak ada pilihan lain selain angka 2! Misalkan $p = 2$.
+                $$ 2 + q = 31 \implies q = 31 - 2 = 29 $$
+                Mari kita uji: Apakah 29 bilangan prima? Ya, 29 hanya bisa dibagi 1 dan 29. Jadi pasangan primanya adalah 2 dan 29.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Prime numbers are numbers that can only be divided by 1 and themselves. Notice that almost all prime numbers are odd. <strong>The number 2 is the ONLY even prime number in the world.</strong> Let's review the rules of adding parity: Even + Even = Even, Odd + Odd = Even, and <strong>Even + Odd = Odd</strong>.</p>
+                <p><strong>Step 1: Analyze the given sum.</strong> The question states $p + q = 31$. The number 31 is an <strong>Odd</strong> number. Based on our parity rules above, the ONLY way to get an Odd sum is by adding one Even number and one Odd number. You cannot get an odd result by adding two odd primes!</p>
+                <p><strong>Step 2: Deduce the prime numbers.</strong> Since $p$ and $q$ must both be primes, and one of them MUST be an even number, that even number has no other choice but to be the number 2! Let's assume $p = 2$.
+                $$ 2 + q = 31 \implies q = 31 - 2 = 29 $$
+                Let's verify: Is 29 a valid prime? Yes, it cannot be divided by anything other than 1 and 29. Therefore, the pair of primes is 2 and 29.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: (2, 29) and (29, 2)</div>
+          </div>
+
+          <!-- SOLUTION 13 -->
+          <div class="item-container">
+            <p><strong>Solution 13:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Ilmu yang digunakan di sini disebut Aritmetika Modular, yang merupakan bahasa matematika untuk "sisa bagi". Notasi penulisannya adalah $2^{50} \pmod 7$. Sama persis dengan mencari angka terakhir, sisa bagi dari suatu pangkat juga selalu membentuk pola berulang!</p>
+                <p><strong>Langkah 1: Mencari pola sisa bagi.</strong> Mari kita pangkatkan angka 2 dan hitung sisa baginya jika dibagi 7:<br>
+                • $2^1 = 2$. Dibagi 7, tidak cukup, sisanya tetap 2.<br>
+                • $2^2 = 4$. Dibagi 7, sisanya tetap 4.<br>
+                • $2^3 = 8$. $8 \div 7 = 1$ dengan sisa 1.<br>
+                • $2^4 = 16$. $16 \div 7 = 2$ dengan sisa 2 (Polanya mulai mengulang!).<br>
+                Pola sisa baginya adalah: <strong>2, 4, 1</strong>. Panjang siklusnya adalah 3 langkah.</p>
+                <p><strong>Langkah 2: Menerapkan pada pangkat besar.</strong> Kita ingin tahu pangkat ke-50 akan mendarat di mana. Bagi pangkat 50 dengan panjang siklus 3. $50 \div 3 = 16$ bersisa 2 (karena $3 \times 16 = 48$, butuh 2 lagi untuk 50).</p>
+                <p><strong>Langkah 3: Menentukan jawaban.</strong> Sisa 2 berarti siklus berputar 16 kali secara penuh, lalu berhenti persis di urutan ke-2 pada pola tersebut. Karena urutan ke-2 adalah angka 4, maka sisa baginya adalah 4.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> This is a Modular Arithmetic problem, which is a mathematical way of saying "finding the remainder". We write this notation as $2^{50} \pmod 7$. Just like finding the last digit, remainders of powers also strictly follow a repeating pattern!</p>
+                <p><strong>Step 1: Find the remainder pattern.</strong> Let's calculate the remainders for small powers of 2 when divided by 7:<br>
+                • $2^1 = 2$. $2 \div 7 = 0$ with a remainder of 2.<br>
+                • $2^2 = 4$. $4 \div 7 = 0$ with a remainder of 4.<br>
+                • $2^3 = 8$. $8 \div 7 = 1$ with a remainder of 1.<br>
+                • $2^4 = 16$. $16 \div 7 = 2$ with a remainder of 2 (The pattern restarts!).<br>
+                The repeating pattern of the remainders is <strong>2, 4, 1</strong>. The length of this cycle is exactly 3 steps.</p>
+                <p><strong>Step 2: Apply to the large power.</strong> We need to find out where the 50th power lands in this cycle. Divide the power (50) by the cycle length (3): $50 \div 3 = 16$ with a remainder of 2 (because $3 \times 16 = 48$, leaving 2 to reach 50).</p>
+                <p><strong>Step 3: Determine the answer.</strong> A remainder of 2 means the cycle repeats perfectly 16 times, and we stop exactly at the 2nd position of our pattern sequence. Since position 2 is 4, the remainder is 4.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 4</div>
+          </div>
+
+          <!-- SOLUTION 14 -->
+          <div class="item-container">
+            <p><strong>Solution 14:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Tidak ada rumus tunggal untuk "Aturan 36". Tapi kita bisa memecah 36 menjadi dua bilangan yang saling prima (tidak punya pembagi persekutuan yang sama): $36 = 4 \times 9$. Artinya, agar suatu bilangan habis dibagi 36, bilangan tersebut WAJIB lolos DUA ujian sekaligus: (1) Ujian habis dibagi 4: Dua digit paling belakangnya membentuk angka yang habis dibagi 4. (2) Ujian dibagi 9: Total hasil penjumlahan semua digit-digitnya harus kelipatan 9.</p>
+                <p><strong>Langkah 1: Syarat Habis Dibagi 4.</strong> Dua digit ekornya adalah "$B2$". Coba masukkan angka 0-9 untuk $B$: Jika $B=1 \to 12$ (Lolos, $12 \div 4 = 3$). Jika $B=2 \to 22$ (Gagal). Jika $B=3 \to 32$ (Lolos). Pola yang valid adalah angka ganjil: <strong>1, 3, 5, 7, 9</strong>. Karena soal meminta nilai <em>maksimal</em> $A+B$, mari kita ambil nilai $B$ terbesar, yaitu <strong>9</strong>.</p>
+                <p><strong>Langkah 2: Syarat Habis Dibagi 9.</strong> Gunakan $B=9$, bilangannya menjadi $4A592$. Jumlah seluruh digitnya adalah = $4 + A + 5 + 9 + 2 = 20 + A$. Agar lolos ujian kelipatan 9, nilai ($20 + A$) harus sama dengan kelipatan 9 terdekat, yaitu 27. Maka: $20 + A = 27 \implies A = 7$.</p>
+                <p><strong>Langkah 3: Hitung total maksimal.</strong> Kita menemukan pasangan terbaik $A = 7$ dan $B = 9$. Maka nilai maksimal $A+B = 7+9 = 16$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> There is no single "Rule of 36". However, we can break 36 down into two <em>co-prime</em> factors (numbers that share no common divisors other than 1): $36 = 4 \times 9$. Therefore, for any number to be divisible by 36, it MUST pass two separate tests simultaneously: (1) Divisible by 4: The last two digits form a number that can be divided by 4. (2) Divisible by 9: The sum of all individual digits must be a multiple of 9.</p>
+                <p><strong>Step 1: Test Divisibility by 4.</strong> The last two digits are "$B2$". Let's test single digits (0-9) for $B$: If $B=1 \to 12$ (Valid, $12 \div 4 = 3$). If $B=2 \to 22$ (Invalid). If $B=3 \to 32$ (Valid). We can see a pattern. The valid numbers for $B$ are odd digits: <strong>1, 3, 5, 7, 9</strong>. Since we want the <em>maximum</em> possible value of $A+B$, let's pick the largest possible $B$, which is <strong>9</strong>.</p>
+                <p><strong>Step 2: Test Divisibility by 9.</strong> Let's use $B=9$. The number becomes $4A592$. The sum of its digits is: $4 + A + 5 + 9 + 2 = 20 + A$. For the number to be divisible by 9, this sum ($20 + A$) must be a multiple of 9. The closest multiple of 9 above 20 is 27. Thus: $20 + A = 27 \implies A = 7$.</p>
+                <p><strong>Step 3: Calculate the maximum sum.</strong> We found the perfect pair $A = 7$ and $B = 9$. The sum $A+B = 7+9 = 16$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 16</div>
+          </div>
+
+          <!-- SOLUTION 15 -->
+          <div class="item-container">
+            <p><strong>Solution 15:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> FPB adalah pembagi persekutuan terbesar. Jika FPB dari bilangan $X$ dan $Y$ adalah 6, artinya kedua bilangan tersebut BISA dibagi 6. Kita bisa menuliskannya sebagai: $X = 6 \times a$ dan $Y = 6 \times b$.<br>
+                <strong>Aturan Krusial:</strong> Angka $a$ dan $b$ harus <strong>saling prima</strong> (FPB mereka harus 1). Kalau $a$ dan $b$ masih bisa dibagi angka yang sama (misal sama-sama bisa dibagi 2), maka total FPB $X$ dan $Y$ akan membesar menjadi $6 \times 2 = 12$, menyalahi aturan soal!</p>
+                <p><strong>Langkah 1: Membuat Persamaan.</strong> Soal menyatakan $X \times Y = 864$. Masukkan permisalan kita: $(6a) \times (6b) = 864 \implies 36ab = 864$. Bagi kedua ruas dengan 36, didapat $ab = 24$.</p>
+                <p><strong>Langkah 2: Mencari pasangan $a$ dan $b$.</strong> Cari dua angka yang hasil kalinya 24. Lalu kita saring dengan Aturan Krusial di atas:<br>
+                • Pasangan (1, 24): FPB-nya 1. <strong>SAH!</strong><br>
+                • Pasangan (2, 12): Keduanya bisa dibagi 2. GAGAL.<br>
+                • Pasangan (3, 8): FPB-nya 1. <strong>SAH!</strong><br>
+                • Pasangan (4, 6): Keduanya bisa dibagi 2. GAGAL.</p>
+                <p><strong>Langkah 3: Mengembalikan ke $X$ dan $Y$.</strong> Kalikan pasangan $a$ dan $b$ yang sah dengan angka 6.<br>
+                • Untuk (1, 24): $X = 6 \times 1 = 6$, dan $Y = 6 \times 24 = 144$.<br>
+                • Untuk (3, 8): $X = 6 \times 3 = 18$, dan $Y = 6 \times 8 = 48$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> The Greatest Common Divisor (GCD) of two numbers $X$ and $Y$ is the largest number that divides both perfectly. Since their GCD is 6, we know both numbers are definitely multiples of 6. We can express them as: $X = 6 \times a$ and $Y = 6 \times b$.<br>
+                <strong>Crucial Rule:</strong> The components $a$ and $b$ MUST be <strong>co-prime</strong> (their GCD must be 1). Why? Because if $a$ and $b$ could still be divided by another common number (let's say 2), the overall GCD of $X$ and $Y$ would grow to $6 \times 2 = 12$, which breaks the rule of the question!</p>
+                <p><strong>Step 1: Create an Equation.</strong> The question states $X \times Y = 864$. Substitute our expressions: $(6a) \times (6b) = 864 \implies 36ab = 864$. Divide both sides by 36: $ab = 24$.</p>
+                <p><strong>Step 2: Find valid pairs for $a$ and $b$.</strong> We need two numbers that multiply to 24. Let's list the pairs and apply our Crucial Rule:<br>
+                • Pair (1, 24): GCD is 1. <strong>Valid!</strong><br>
+                • Pair (2, 12): Both divide by 2. Invalid.<br>
+                • Pair (3, 8): GCD is 1. <strong>Valid!</strong><br>
+                • Pair (4, 6): Both divide by 2. Invalid.</p>
+                <p><strong>Step 3: Revert to find $X$ and $Y$.</strong> Now multiply the valid pairs back by 6 to get the original numbers.<br>
+                • For (1, 24): $X = 6(1) = 6$, and $Y = 6(24) = 144$.<br>
+                • For (3, 8): $X = 6(3) = 18$, and $Y = 6(8) = 48$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: (6, 144) and (18, 48)</div>
+          </div>
+
+          <!-- SOLUTION 16 -->
+          <div class="item-container">
+            <p><strong>Solution 16:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> $100!$ adalah perkalian $100 \times 99 \times \dots \times 1$. Dari mana datangnya angka nol di bagian ekor hasil perkalian? Angka nol selalu tercipta setiap kali ada perkalian angka 10. Dan angka 10 itu sendiri tercipta dari pasangan <strong>2 dan 5</strong>. Dalam deretan panjang 1 sampai 100, angka genap (yang mengandung unsur 2) sangatlah melimpah ruah, tetapi angka yang mengandung unsur 5 jauh lebih langka. Jadi, jumlah angka 5 bertindak sebagai "batas maksimal" (bottleneck). Jika kita menghitung persis ada berapa banyak angka 5 yang tersembunyi, kita akan tahu berapa banyak angka nol yang terbentuk. Kita gunakan <strong>Rumus Legendre</strong>.</p>
+                <p><strong>Langkah 1: Menghitung faktor 5 lapisan pertama.</strong> Bagi angka 100 dengan kelipatan 5. $100 \div 5 = 20$. Ada 20 angka penyumbang faktor 5.</p>
+                <p><strong>Langkah 2: Menghitung faktor 5 ekstra.</strong> Angka seperti 25, 50, 75, dan 100 memiliki <em>dua lapis</em> angka 5 di dalamnya ($25 = 5 \times 5$). Lapis pertamanya sudah kita hitung di Langkah 1. Sekarang mari hitung lapis keduanya dengan membaginya dengan $5^2$ (25). $100 \div 25 = 4$. Ada tambahan 4 faktor angka 5 ekstra. (Jika dilanjut ke $5^3$ yaitu 125, angkanya sudah melebihi 100, jadi kita berhenti).</p>
+                <p><strong>Langkah 3: Menjumlahkan semuanya.</strong> Total faktor angka 5 adalah $20 + 4 = 24$. Karena ada persis 24 buah angka 5, mereka akan berpasangan dengan kelimpahan angka 2 untuk membentuk 24 buah angka sepuluh. Artinya akan ada 24 angka nol berjejer di bagian akhir!</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> The notation $100!$ (100 factorial) means multiplying all numbers from 100 down to 1. Where do trailing zeros come from? A zero is created every time we multiply by 10. And a 10 is created by multiplying <strong>2 and 5</strong>. In a sequence from 1 to 100, even numbers (multiples of 2) are abundant, but multiples of 5 are much rarer. Therefore, the number of 5s acts as a "bottleneck". If we count exactly how many 5s exist in the prime factorization, we will know exactly how many zeros can be formed. We use <strong>Legendre's Formula</strong> for this.</p>
+                <p><strong>Step 1: Count the primary multiples of 5.</strong> $100 \div 5 = 20$. There are 20 numbers between 1 and 100 that provide at least one factor of 5.</p>
+                <p><strong>Step 2: Count the extra 5s.</strong> Numbers like 25, 50, 75, and 100 have <em>two</em> layers of 5s because they are multiples of $25$ ($5 \times 5$). We already counted their first layer in Step 1, so let's count the second layer by dividing by $5^2$ (25). $100 \div 25 = 4$. There are 4 extra factors of 5. (If we divide by the next power, 125, it's bigger than 100, so we stop here).</p>
+                <p><strong>Step 3: Sum them up.</strong> Total number of 5s = $20 + 4 = 24$. Since there are exactly 24 factors of 5, they will pair up with 24 abundant 2s to create exactly 24 tens (zeros) at the end of the giant number!</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 24</div>
+          </div>
+
+          <!-- SOLUTION 17 -->
+          <div class="item-container">
+            <p><strong>Solution 17:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Bilangan Kubik Sempurna adalah angka hasil pangkat tiga (seperti $2^3 = 8$, $5^3 = 125$). Sifat terpentingnya: jika sebuah bilangan kubik dibedah menjadi <strong>Pohon Faktor Prima</strong>, maka pangkat dari semua bilangan primanya <strong>HARUS kelipatan 3</strong> (seperti pangkat 3, pangkat 6, pangkat 9, dst).</p>
+                <p><strong>Langkah 1: Pohon Faktor dari 120.</strong> <br>
+                $120 = 12 \times 10$<br>
+                $120 = (4 \times 3) \times (2 \times 5)$<br>
+                $120 = (2^2 \times 3) \times (2 \times 5)$<br>
+                Gabungkan angka basis 2-nya: $120 = 2^3 \times 3^1 \times 5^1$.</p>
+                <p><strong>Langkah 2: Analisa Kekurangan Pangkat.</strong> Kita ingin mengalikan 120 dengan bahan tambahan ($n$) agar semua pangkat primanya menjadi kelipatan 3. Mari periksa apa yang kita punya:<br>
+                • Angka 2 sudah berpangkat 3 ($2^3$). Sudah sempurna! Tidak perlu ditambah 2 lagi.<br>
+                • Angka 3 baru berpangkat 1 ($3^1$). Agar menjadi pangkat 3, dia kurang dua buah angka 3 lagi. Jadi butuh dikali $3^2$.<br>
+                • Angka 5 baru berpangkat 1 ($5^1$). Agar menjadi pangkat 3, dia kurang dua buah angka 5 lagi. Jadi butuh dikali $5^2$.</p>
+                <p><strong>Langkah 3: Menemukan $n$.</strong> Nilai $n$ adalah bahan-bahan kekurangan yang harus kita kalikan tersebut. $n = 3^2 \times 5^2 \implies n = 9 \times 25 = 225$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> A Perfect Cube is a number resulting from an integer multiplied by itself three times (e.g., $2^3 = 8$, $5^3 = 125$). The most important mathematical property of a perfect cube is that when you break it down into a <strong>Prime Factorization</strong> tree, the exponents (powers) of all its prime numbers <strong>MUST be multiples of 3</strong> (like power of 3, 6, 9, etc.).</p>
+                <p><strong>Step 1: Prime factorize 120.</strong> <br>
+                $120 = 12 \times 10$<br>
+                $120 = (4 \times 3) \times (2 \times 5)$<br>
+                $120 = (2^2 \times 3) \times (2 \times 5)$<br>
+                Combine the bases: $120 = 2^3 \times 3^1 \times 5^1$.</p>
+                <p><strong>Step 2: Analyze missing exponents.</strong> We want to multiply 120 by a mystery number $n$ so that every exponent becomes a multiple of 3. Let's look at what we currently have:<br>
+                • Base 2 has an exponent of 3 ($2^3$). This is already a multiple of 3. Perfect! We need zero extra 2s.<br>
+                • Base 3 has an exponent of 1 ($3^1$). To reach the next multiple of 3, we are missing two 3s. We need to multiply by $3^2$.<br>
+                • Base 5 has an exponent of 1 ($5^1$). To reach the next multiple of 3, we are missing two 5s. We need to multiply by $5^2$.</p>
+                <p><strong>Step 3: Find the value of $n$.</strong> The value of $n$ is simply the "missing ingredients" we just found. $n = 3^2 \times 5^2 \implies n = 9 \times 25 = 225$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 225</div>
+          </div>
+
+          <!-- SOLUTION 18 -->
+          <div class="item-container">
+            <p><strong>Solution 18:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Angka $10^{2026}$ adalah bilangan raksasa: angka 1 yang diikuti oleh 2026 buah angka 0. Jika angka berakhiran nol dikurangi, sifat pengurangan bersusun (meminjam) akan mengubah angka-angka 0 di belakangnya menjadi barisan panjang angka 9 (bayangkan $1.000.000 - 2 = 999.998$).</p>
+                <p><strong>Langkah 1: Melihat wujud utuh dari $10^{2026}-2026$.</strong> Mari kita coba dengan angka kecil agar polanya terlihat. Berapa $10^5 - 2026$? Hasilnya $100.000 - 2026 = 97.974$. Perhatikan! Dari 5 buah angka nol awal, 4 digit terbawahnya "rusak" menjadi "7974". Sisa angka nol di sebelah kirinya meminjam dari depan dan berubah menjadi angka 9. Sekarang terapkan ke soal asli: $10^{2026}$ memiliki 2026 buah angka nol. Empat angka terbawah akan menjadi "7974". Sisa angka nol di atasnya (sebanyak $2026 - 4 = 2022$ buah) semuanya akan berubah menjadi angka 9. Wujud bilangannya adalah: $\underbrace{999\dots99}_{2022 \text{ buah}} 7974$.</p>
+                <p><strong>Langkah 2: Menggunakan Fungsi $S$ Tahap Pertama.</strong> $S(x)$ artinya kita menjumlahkan semua digitnya satu per satu. Jumlah $= (2022 \times 9) + 7 + 9 + 7 + 4 = 18198 + 27 = 18225$.</p>
+                <p><strong>Langkah 3: Menggunakan Fungsi $S$ Tahap Kedua dan Ketiga.</strong> Bertumpuk tiga $S(S(S(\dots)))$ artinya hasil penjumlahannya kita jumlahkan digitnya lagi secara berulang.<br>
+                • Lapis kedua: $S(18225) = 1 + 8 + 2 + 2 + 5 = 18$.<br>
+                • Lapis ketiga: $S(18) = 1 + 8 = 9$.</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> The number $10^{2026}$ is a giant number: a 1 followed by exactly 2026 zeros. Subtracting a small number from it will cause a cascading "borrowing" effect, turning the trailing zeros into a very long chain of 9s. (Think of how $1,000,000 - 2 = 999,998$).</p>
+                <p><strong>Step 1: Evaluate the shape of $10^{2026}-2026$.</strong> Let's try a smaller example to see the pattern. What is $10^5 - 2026$? $100,000 - 2026 = 97,974$. Notice that $10^5$ started with 5 zeros. The subtraction modified the last 4 digits into "7974". The remaining 1 zero borrowed from the front and became a "9". Applying this logic to $10^{2026}$: It has 2026 zeros. The last 4 digits will become "7974". The remaining zeros on the left ($2026 - 4 = 2022$ zeros) will all turn into 9s. The number looks exactly like this: $\underbrace{999\dots99}_{2022 \text{ times}} 7974$.</p>
+                <p><strong>Step 2: Apply the first $S$ function.</strong> $S(x)$ means adding all the individual digits together. Let's sum our giant number: Sum $= (2022 \times 9) + 7 + 9 + 7 + 4 = 18198 + 27 = 18225$.</p>
+                <p><strong>Step 3: Apply the second and third $S$ functions.</strong> The question asks for $S(S(S(\dots)))$, which means we keep summing the digits of the new result.<br>
+                • Second layer: $S(18225) = 1 + 8 + 2 + 2 + 5 = 18$.<br>
+                • Third layer: $S(18) = 1 + 8 = 9$.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 9</div>
+          </div>
+
+          <!-- SOLUTION 19 -->
+          <div class="item-container">
+            <p><strong>Solution 19:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Basis 10 adalah sistem hitungan normal kita sehari-hari, menggunakan tempat satuan, puluhan ($10^1$), ratusan ($10^2$), dll. Dalam sebuah basis bilangan baru "$x$", nilai tempatnya berubah menjadi satuan ($x^0$), x-an ($x^1$), x-kuadrat-an ($x^2$), dari kanan ke kiri. Cara mengubah sebuah bilangan dalam basis $x$ kembali menjadi basis 10 (normal) adalah dengan mengalikan setiap digit angkanya dengan pangkat dari basisnya.</p>
+                <p><strong>Langkah 1: Menjabarkan nilai "303 basis $x$".</strong> Kata "303" terdiri dari tiga posisi digit (dihitung dari kanan):<br>
+                • Digit paling kanan = $3$. Nilai tempatnya satuan ($x^0 = 1$). Nilainya $3 \times 1 = 3$.<br>
+                • Digit tengah = $0$. Nilai tempatnya ($x^1 = x$). Nilainya $0 \times x = 0$.<br>
+                • Digit paling kiri = $3$. Nilai tempatnya ($x^2$). Nilainya $3 \times x^2 = 3x^2$.<br>
+                Total nilai seluruhnya adalah penjumlahan ketiga bagian tersebut: $3x^2 + 3$.</p>
+                <p><strong>Langkah 2: Menyamakan dengan bilangan normal.</strong> Soal mengatakan bahwa nilai $303$ basis $x$ ini setara dengan $111$ bilangan biasa. Maka persamaannya: $3x^2 + 3 = 111$.</p>
+                <p><strong>Langkah 3: Menyelesaikan Persamaan.</strong> Pindahkan $+3$ ke ruas kanan: $3x^2 = 108$. Bagi kedua ruas dengan angka 3: $x^2 = 36$. Maka, nilai $x$ adalah akar kuadrat dari 36. $x = 6$ (Kita hanya mengambil nilai positif karena basis bilangan tidak mungkin negatif).</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> Base 10 is our normal counting system using ones, tens ($10^1$), hundreds ($10^2$), etc. In a different number base "$x$", the place values change to ones ($x^0$), $x$-es ($x^1$), $x$-squareds ($x^2$), and so on from right to left. To convert a number from base $x$ into a normal base 10 number, we simply multiply each digit by its place value.</p>
+                <p><strong>Step 1: Expand the value of "303 in base $x$".</strong> Let's calculate the value from right to left:<br>
+                • The rightmost digit is $3$. Its place value is units ($x^0 = 1$). Value $= 3 \times 1 = 3$.<br>
+                • The middle digit is $0$. Its place value is ($x^1 = x$). Value $= 0 \times x = 0$.<br>
+                • The leftmost digit is $3$. Its place value is ($x^2$). Value $= 3 \times x^2 = 3x^2$.<br>
+                Adding them all together, the total value polynomial is: $3x^2 + 3$.</p>
+                <p><strong>Step 2: Set up the equation.</strong> The problem tells us this value is perfectly equal to 111 in our normal base 10 system: $3x^2 + 3 = 111$.</p>
+                <p><strong>Step 3: Solve for $x$.</strong> Subtract 3 from both sides: $3x^2 = 108$. Divide by 3: $x^2 = 36$. Taking the square root gives us $x = 6$ (we only use positive numbers for counting bases).</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 6</div>
+          </div>
+
+          <!-- SOLUTION 20 -->
+          <div class="item-container">
+            <p><strong>Solution 20:</strong></p>
+            <div class="solution-wrapper">
+              <strong>ID:</strong>
+              <div class="solution-step">
+                <p><strong>Konsep yang harus diketahui:</strong> Kata "dikelompokkan dengan X menyisakan Y" adalah bahasa sehari-hari untuk Teorema Sisa Cina (atau logika KPK / Kelipatan Persekutuan Terkecil). Misalkan jumlah telur adalah $N$.<br>
+                Kondisi pertama: $N$ dibagi 2, 3, 4, 5, 6 selalu menyisakan 1.<br>
+                Bayangkan jika kita "membuang" 1 telur dari keranjang tersebut. Jumlahnya sekarang menjadi $(N-1)$. Karena tadinya ada sisa 1, dan 1 itu sudah kita buang, maka sisa telurnya sekarang PASTI bisa dibagi rata (habis dibagi) oleh 2, 3, 4, 5, maupun 6!</p>
+                <p><strong>Langkah 1: Mencari angka yang habis dibagi 2,3,4,5,6.</strong> Angka terkecil yang bisa dibagi semua angka tersebut adalah nilai KPK-nya. Kita ambil pangkat terbesar dari faktor prima pembentuknya: KPK $= 2^2 \times 3 \times 5 = 4 \times 3 \times 5 = 60$. Artinya, $(N-1)$ haruslah kelipatan 60 (misal: 60, 120, 180, dst). Maka rumus aslinya adalah: $N = 60k + 1$ (di mana $k$ adalah kelipatan putaran).</p>
+                <p><strong>Langkah 2: Uji syarat kelipatan 7.</strong> Kondisi kedua soal mengatakan: Jika dibagi 7 menyisakan 0 (artinya $N$ harus kelipatan 7). Mari kita uji rumus kita satu per satu:<br>
+                • Coba $k = 1 \implies N = 60(1) + 1 = 61$. Apakah 61 kelipatan 7? Tidak.<br>
+                • Coba $k = 2 \implies N = 60(2) + 1 = 121$. Dibagi 7? Tidak pas.<br>
+                • Coba $k = 3 \implies N = 60(3) + 1 = 181$. Dibagi 7? Tidak pas.<br>
+                • Coba $k = 4 \implies N = 60(4) + 1 = 241$. Dibagi 7? Tidak pas.<br>
+                • Coba $k = 5 \implies N = 60(5) + 1 = 301$. Dibagi 7? Mari bagi: $301 = 7 \times 43$. PAS!</p>
+              </div>
+            </div>
+            <div class="solution-wrapper">
+              <strong>EN:</strong>
+              <div class="solution-step">
+                <p><strong>Concepts to know:</strong> This is a classic problem involving the Chinese Remainder Theorem, but we can solve it simply using LCM (Least Common Multiple) logic. Let the total number of eggs in the basket be $N$. The problem says dividing $N$ by 2, 3, 4, 5, or 6 always leaves a remainder of exactly 1.<br>
+                Imagine if we take exactly 1 egg out of the basket. The number of eggs is now $(N-1)$. Since we removed the "leftover" egg, this new amount $(N-1)$ MUST be perfectly divisible by 2, 3, 4, 5, and 6 without any remainder!</p>
+                <p><strong>Step 1: Find the number perfectly divisible by 2, 3, 4, 5, and 6.</strong> To find the smallest number that can be divided by all of them, we find their LCM. We take the highest power of each prime factor present: LCM $= 2^2 \times 3 \times 5 = 60$. So, the number of eggs after removing one $(N-1)$ must be a multiple of 60 (like 60, 120, 180...). This means the actual number of eggs $N$ must be a multiple of 60, plus 1. Formula: $N = 60k + 1$.</p>
+                <p><strong>Step 2: Test the final condition (Divisible by 7).</strong> The problem states that if grouped by 7, there are 0 leftovers. This means $N$ must be perfectly divisible by 7. Let's test values of $k$:<br>
+                • Test $k=1 \implies N = 60(1) + 1 = 61$. Is 61 divisible by 7? No.<br>
+                • Test $k=2 \implies N = 60(2) + 1 = 121$. Divisible by 7? No.<br>
+                • Test $k=3 \implies N = 60(3) + 1 = 181$. Divisible by 7? No.<br>
+                • Test $k=4 \implies N = 60(4) + 1 = 241$. Divisible by 7? No.<br>
+                • Test $k=5 \implies N = 60(5) + 1 = 301$. Divisible by 7? Let's check: $301 = 7 \times 43$. YES! It divides perfectly.</p>
+              </div>
+            </div>
+            <div class="final-answer">Answer: 301 eggs</div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
