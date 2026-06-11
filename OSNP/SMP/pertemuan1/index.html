@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Mengajar Matematika OSNP SMP - Teori Bilangan</title>
+    
+    <!-- Google Fonts: Noto Sans (sesuai dokumen LaTeX) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#143c6e',    // Darker blue for SMP level
+                        secondary: '#f0f4f8',  // Light background
+                        accent: '#dc3545',     // Red accent
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- MathJax untuk render persamaan matematika -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* Custom Styles for better typography */
+        body { background-color: #e2e8f0; }
+        .document-container { max-width: 900px; margin: 2rem auto; }
+        .list-disc li { margin-bottom: 0.25rem; }
+        .math-block { overflow-x: auto; margin: 1rem 0; }
+        hr.thick { border-top: 3px solid #143c6e; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased p-4 md:p-8">
+
+    <div class="document-container bg-white shadow-xl rounded-lg p-8 md:p-12">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/jpeg_xzejvp_9871.jpeg" alt="Ruangguru Olympiad Academy" class="h-20 mx-auto mb-4 object-contain">
+            <h1 class="text-primary text-2xl md:text-3xl font-bold uppercase tracking-wide">Panduan Mengajar Matematika OSNP SMP</h1>
+            <div class="mt-2 mb-4 text-primary">
+                <h2 class="text-xl md:text-2xl font-bold">Modul: Teori Bilangan Tingkat Lanjut</h2>
+                <h3 class="text-lg md:text-xl italic mt-1">Siklus Satuan, Basis Bilangan, & Fungsi Digit Spesifik</h3>
+            </div>
+            <hr class="thick my-4">
+        </div>
+
+        <!-- Box: Tujuan Pembelajaran -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8 shadow-sm">
+            <div class="bg-secondary px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Tujuan Pembelajaran & Rencana Aktivitas (120 Menit)</h3>
+            </div>
+            <div class="p-5 bg-secondary/30">
+                <p class="mb-3">Modul ini didesain untuk pelatda OSNP SMP. Siswa difokuskan pada penalaran aljabar pada digit bilangan dan manipulasi persamaan Diophantine dasar.</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><strong>30 Menit (Sesi A):</strong> Analisis Siklus Angka Satuan pada Perpangkatan (Aritmetika Modular).</li>
+                    <li><strong>40 Menit (Sesi B):</strong> Persamaan Nilai Tempat & Sistem Basis Non-Desimal.</li>
+                    <li><strong>40 Menit (Sesi C):</strong> Pemodelan Aljabar Fungsi Penjumlahan Digit $f(n)$ dan Sifat Spesifik.</li>
+                    <li><strong>10 Menit (Sesi D):</strong> Latihan Mandiri Terbimbing (Mini Battle).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section A -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">A. Analisis Siklus Angka Satuan (30 Menit)</h2>
+        <p class="mb-4">Siswa OSN harus hafal di luar kepala pola siklus angka satuan dari perpangkatan $a^n$. Konsep ini adalah gerbang menuju pemahaman <em>Aritmetika Modular</em> (Modulo 10).</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
+            <div>
+                <p class="font-bold mb-2">Panjang Siklus Berdasarkan Angka Satuan:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Siklus 1 (Tetap):</strong> 0, 1, 5, 6</li>
+                    <li><strong>Siklus 2 (Bolak-balik):</strong> 
+                        <ul class="list-[circle] pl-6 mt-1">
+                            <li>$4^n \rightarrow 4, 6, 4, 6, \dots$</li>
+                            <li>$9^n \rightarrow 9, 1, 9, 1, \dots$</li>
+                        </ul>
+                    </li>
+                    <li><strong>Siklus 4 (Berputar):</strong>
+                        <ul class="list-[circle] pl-6 mt-1">
+                            <li>$2^n \rightarrow 2, 4, 8, 6$</li>
+                            <li>$3^n \rightarrow 3, 9, 7, 1$</li>
+                            <li>$7^n \rightarrow 7, 9, 3, 1$</li>
+                            <li>$8^n \rightarrow 8, 4, 2, 6$</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- SVG Diagram for Cycle -->
+            <div class="text-center">
+                <svg class="mx-auto w-48 h-48 md:w-56 md:h-56" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#143c6e"/>
+                        </marker>
+                    </defs>
+                    <!-- Arrows -->
+                    <line x1="112" y1="42" x2="158" y2="88" stroke="#143c6e" stroke-width="2" marker-end="url(#arrow)" />
+                    <line x1="158" y1="112" x2="112" y2="158" stroke="#143c6e" stroke-width="2" marker-end="url(#arrow)" />
+                    <line x1="88" y1="158" x2="42" y2="112" stroke="#143c6e" stroke-width="2" marker-end="url(#arrow)" />
+                    <line x1="42" y1="88" x2="88" y2="42" stroke="#143c6e" stroke-width="2" marker-end="url(#arrow)" />
+                    
+                    <!-- Text Labels for Arrows -->
+                    <text x="148" y="58" font-size="12" fill="#143c6e" text-anchor="middle">× 3</text>
+                    <text x="148" y="150" font-size="12" fill="#143c6e" text-anchor="middle">× 3</text>
+                    <text x="52" y="150" font-size="12" fill="#143c6e" text-anchor="middle">× 3</text>
+                    <text x="52" y="58" font-size="12" fill="#143c6e" text-anchor="middle">× 3</text>
+                    
+                    <!-- Nodes -->
+                    <circle cx="100" cy="30" r="16" fill="#f0f4f8" stroke="#143c6e" stroke-width="2" />
+                    <text x="100" y="35" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">3</text>
+
+                    <circle cx="170" cy="100" r="16" fill="#f0f4f8" stroke="#143c6e" stroke-width="2" />
+                    <text x="170" y="105" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">9</text>
+
+                    <circle cx="100" cy="170" r="16" fill="#f0f4f8" stroke="#143c6e" stroke-width="2" />
+                    <text x="100" y="175" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">7</text>
+
+                    <circle cx="30" cy="100" r="16" fill="#f0f4f8" stroke="#143c6e" stroke-width="2" />
+                    <text x="30" y="105" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">1</text>
+                </svg>
+                <p class="text-sm italic mt-2 text-gray-600">Ilustrasi Siklus $3^n$ (Mod 10)</p>
+            </div>
+        </div>
+
+        <!-- Bedah Soal 1 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8">
+            <div class="bg-white px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Bedah Soal: OSP 23 No. 1</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4"><strong>Soal:</strong> Diketahui angka satuan dari $p^x$ adalah 9 dan angka satuan $q^y$ adalah 8. Jika $p$ ganjil, $q$ genap, serta $x, y$ bilangan bulat, berapa banyaknya angka satuan yang mungkin dari $x+y$?</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-2">Logika Analisis Guru:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Analisis $p^x$ (Satuan 9, $p$ ganjil):</strong><br>
+                        Digit satuan $p$ ganjil yang mungkin adalah $1, 3, 5, 7, 9$.
+                        <ul class="list-[circle] pl-6 mt-1">
+                            <li>Jika satuan $p=3$ atau $p=7$, agar $p^x$ bersatuan 9, pangkat $x$ harus pada urutan ke-2 dalam siklus 4. Maka $x$ berbentuk $4k+2$ (sehingga satuan $x$ bisa berupa bilangan genap: 0, 2, 4, 6, 8).</li>
+                            <li>Jika satuan $p=9$, agar bersatuan 9, $x$ harus ganjil (sehingga satuan $x$ bisa berupa: 1, 3, 5, 7, 9).</li>
+                            <li>Kesimpulan: Angka satuan $x$ <strong>bisa berupa angka berapapun</strong> dari 0 hingga 9.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Analisis $q^y$ (Satuan 8, $q$ genap):</strong><br>
+                        Digit satuan $q$ genap yang mungkin adalah $2, 4, 6, 8$.
+                        <ul class="list-[circle] pl-6 mt-1">
+                            <li>$4$ dan $6$ tidak akan pernah menghasilkan satuan 8 dari perpangkatannya.</li>
+                            <li>Jika $q=2$, agar $q^y$ bersatuan 8, $y$ harus pada urutan ke-3 siklus ($y=4m+3$, ganjil).</li>
+                            <li>Jika $q=8$, agar $q^y$ bersatuan 8, $y$ harus pada urutan ke-1 siklus ($y=4m+1$, ganjil).</li>
+                            <li>Kesimpulan: $y$ pasti bilangan <strong>ganjil</strong> (satuannya 1, 3, 5, 7, 9).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sintesis:</strong> Karena satuan $x$ mencakup seluruh <em>digit</em> $\{0..9\}$ (bebas) dan satuan $y$ merupakan bilangan ganjil, hasil $x+y$ tetap akan berotasi menutupi seluruh variasi digit satuan dari 0 hingga 9.</li>
+                    <li><strong>Jawaban:</strong> Ada <strong>10</strong> kemungkinan angka satuan.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section B -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">B. Persamaan Nilai Tempat & Sistem Basis (40 Menit)</h2>
+        <p class="mb-6">Siswa OSNP sering diuji kemampuannya memahami bahwa basis bilangan bukan sekadar biner/oktal, melainkan representasi polinomial murni: $(a_n \dots a_1 a_0)_m = a_n \cdot m^n + \dots + a_1 \cdot m^1 + a_0 \cdot m^0$.</p>
+
+        <!-- Bedah Soal 2 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-6">
+            <div class="bg-white px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Bedah Soal: OSP 25 No. 3</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4"><strong>Soal:</strong> Jika $(1P3)_m = (2Q4)_{m-2}$ dan $m < 8$, tentukan nilai dari $m + P + Q$.</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-2">Logika Analisis Guru:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li><strong>Syarat Mutlak Basis:</strong> Ingatkan siswa bahwa dalam basis $k$, <em>digit maksimum yang diizinkan adalah $k-1$</em>.</li>
+                    <li>Pada ruas kiri $(1P3)_m$, digit terbesar yang terlihat adalah 3, maka $m > 3$.</li>
+                    <li>Pada ruas kanan $(2Q4)_{m-2}$, digit terbesar yang terlihat adalah 4, maka $m - 2 > 4 \implies m > 6$.</li>
+                    <li>Karena $m > 6$ dan di soal $m < 8$, nilai $m$ bulat satu-satunya adalah $\mathbf{m = 7}$.</li>
+                    <li><strong>Ekspansi Polinomial:</strong> Substitusi $m=7$, sehingga $(1P3)_7 = (2Q4)_5$.
+                        <div class="math-block overflow-x-auto text-center my-3">
+                            $$1 \cdot 7^2 + P \cdot 7^1 + 3 = 2 \cdot 5^2 + Q \cdot 5^1 + 4$$
+                            $$49 + 7P + 3 = 50 + 5Q + 4 \implies 52 + 7P = 54 + 5Q \implies \mathbf{7P - 5Q = 2}$$
+                        </div>
+                    </li>
+                    <li><strong>Diophantine Bounded:</strong> Karena $P$ digit basis 7 dan $Q$ digit basis 5, maka $P < 7$ dan $Q < 5$. <br>
+                        Substitusi nilai $Q \in \{0,1,2,3,4\}$ yang membuat $7P$ bersisa 2 jika ditambah $5Q$.<br>
+                        Saat $Q = 1$, maka $7P - 5 = 2 \implies 7P = 7 \implies P = 1$. Memenuhi!</li>
+                    <li><strong>Jawaban:</strong> $m + P + Q = 7 + 1 + 1 = \mathbf{9}$.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Bedah Soal 3 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8">
+            <div class="bg-white px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Eksplorasi Basis Tersembunyi: OSP 25 No. 2</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4"><strong>Soal:</strong> Tiga skor permainan adalah $A, B$, dan $C$ yang ketiganya berbentuk $2^k$. Jika $A + B + C = 6208$, berapa jumlah pangkatnya?</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-2">Logika Analisis Guru:</p>
+                <p class="mb-2">Ini adalah soal <strong>konversi ke basis 2 (Biner)</strong> yang disamarkan. Setiap bilangan bulat dapat dinyatakan secara unik sebagai jumlahan pangkat 2. Minta siswa melakukan dekomposisi "Greedy": carilah pangkat 2 terbesar yang kurang dari atau sama dengan nilai yang tersisa.</p>
+                <ul class="list-disc pl-6 space-y-1 mb-3">
+                    <li>Pangkat 2 terbesar di bawah 6208 adalah $2^{12} = 4096$. Sisa: $6208 - 4096 = 2112$.</li>
+                    <li>Pangkat 2 terbesar di bawah 2112 adalah $2^{11} = 2048$. Sisa: $2112 - 2048 = 64$.</li>
+                    <li>64 tepat sama dengan $2^6$.</li>
+                </ul>
+                <p>Maka, representasinya adalah $A+B+C = 2^{12} + 2^{11} + 2^6$. <br>
+                Jumlah pangkat $= 12 + 11 + 6 = \mathbf{29}$.</p>
+            </div>
+        </div>
+
+        <!-- Section C -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">C. Fungsi Penjumlahan Digit $f(n)$ (40 Menit)</h2>
+        <p class="mb-6">Fungsi $f(n)$ yang melambangkan jumlahan digit sangat sering muncul pada soal OSN. Strategi utamanya selalu memisalkan $n$ dalam bentuk nilai tempat, misal $n = 100x + 10y + z$.</p>
+
+        <!-- Bedah Soal 4 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-6">
+            <div class="bg-white px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Bedah Soal (Aljabar Dasar): OSP 24 No. 2</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4"><strong>Soal:</strong> Misal $n$ adalah bilangan 3 digit. $f(n)$ adalah jumlah $n$ dan semua digitnya. Jika $f(a)=204$ dan $f(b)=535$, tentukan nilai terkecil $a+b$.</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-2">Logika Analisis Guru:</p>
+                <p class="mb-2">Pemodelan: Misal $n = \overline{xyz} = 100x+10y+z$.</p>
+                <div class="math-block text-center my-3">
+                    $$f(n) = (100x+10y+z) + (x+y+z) = \mathbf{101x + 11y + 2z}$$
+                </div>
+                
+                <p class="font-bold mt-4 mb-1">Mencari himpunan solusi $a$ ($f(a)=204$):</p>
+                <p class="mb-2">Karena koefisien $x$ sangat dominan (101), taksir batas nilai $x$.</p>
+                <ul class="list-disc pl-6 space-y-1 mb-4">
+                    <li>Jika $x=1 \implies 101 + 11y + 2z = 204 \implies 11y + 2z = 103$. <br>
+                        Karena digit maksimal adalah 9, uji $y=9 \implies 99+2z = 103 \implies 2z=4 \implies z=2$. Kita dapatkan bilangan $a_1=192$.</li>
+                    <li>Jika $x=2 \implies 202 + 11y + 2z = 204 \implies 11y + 2z = 2 \implies y=0, z=1$. Kita dapatkan bilangan $a_2=201$.</li>
+                </ul>
+                <p class="mb-4">Untuk mendapatkan jumlah terkecil, kita pilih $a = 192$.</p>
+
+                <p class="font-bold mb-1">Mencari himpunan solusi $b$ ($f(b)=535$):</p>
+                <p class="mb-2">Estimasi pembagian $535/101 \approx 5$. Coba masukkan $x=5$:</p>
+                <div class="math-block text-center my-3">
+                    $$505 + 11y + 2z = 535 \implies 11y + 2z = 30$$
+                </div>
+                <p class="mb-4">Uji kemungkinan $y$: Jika $y=2 \implies 22+2z=30 \implies 2z=8 \implies z=4$. Kita dapatkan bilangan $b=524$. (Ini adalah solusi unik, $x=4$ tidak akan memenuhi rentang).</p>
+                <p><strong>Jawaban:</strong> Nilai terkecil $a+b = 192+524 = \mathbf{716}$.</p>
+            </div>
+        </div>
+
+        <!-- Bedah Soal 5 HOTS (Accent Box) -->
+        <div class="border-2 border-accent rounded-lg overflow-hidden mb-8 shadow-md">
+            <div class="bg-white px-5 py-3 border-b-2 border-accent">
+                <h3 class="font-bold text-accent text-lg">Bedah Soal Kasus Sulit (HOTS): OSP 24 No. 3 (Bilangan Kaset)</h3>
+            </div>
+            <div class="p-5 bg-red-50/30">
+                <p class="mb-4"><strong>Soal:</strong> Bilangan kaset adalah bilangan bulat positif yang seluruh digitnya prima dan <strong>hasil perkalian</strong> seluruh digitnya sama dengan 10 kali <strong>hasil penjumlahan</strong> seluruh digitnya. Banyaknya bilangan kaset adalah...</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-2">Logika Analisis Guru (Deep Thinking):</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Digit prima hanya terdiri dari himpunan $\{2, 3, 5, 7\}$.</li>
+                    <li>Bentuk Persamaan: $P = 10 \cdot S$ (di mana $P$ = <em>Product</em>, $S$ = <em>Sum</em>).</li>
+                    <li>Karena $P$ adalah kelipatan 10, maka $P$ wajib memiliki setidaknya satu faktor 2 dan satu faktor 5. Artinya, <strong>harus ada minimal satu digit 2 dan satu digit 5</strong> pada bilangan tersebut.</li>
+                    <li>Misalkan bilangan tersebut tersusun dari digit $2, 5$, dan sisa digit lainnya $x_1, x_2, \dots$<br>
+                        Maka persamaannya menjadi: $2 \cdot 5 \cdot (x_1 \cdot x_2 \dots) = 10 \cdot (2 + 5 + x_1 + x_2 \dots)$
+                        <div class="math-block text-center my-2">
+                            $$10 \cdot (x_1 \cdot x_2 \dots) = 10 \cdot (7 + x_1 + x_2 \dots)$$
+                        </div>
+                        Maka disederhanakan menjadi, <strong>Perkalian sisa digit = 7 + Jumlahan sisa digit</strong>.
+                    </li>
+                    <li>Mari kita uji banyaknya sisa digit yang mungkin:
+                        <ul class="list-[circle] pl-6 mt-1 space-y-2">
+                            <li>Jika 1 digit tambahan ($x$): $x = 7 + x \implies 0=7$ (Mustahil).</li>
+                            <li>Jika 2 digit tambahan ($x, y$): $xy = 7 + x + y \implies xy - x - y = 7$<br>
+                                Gunakan teknik pemfaktoran <em>Simon's Favorite Factoring Trick</em> dengan menambahkan 1 di kedua ruas:
+                                <div class="math-block text-center my-2">
+                                    $$xy - x - y + 1 = 8 \implies (x-1)(y-1) = 8$$
+                                </div>
+                                Faktor positif dari 8 adalah $1 \times 8$ dan $2 \times 4$.<br>
+                                &bull; Untuk $1 \times 8 \implies (x-1)=1, (y-1)=8 \implies x=2, y=9$ (9 bukan prima).<br>
+                                &bull; Untuk $2 \times 4 \implies (x-1)=2, (y-1)=4 \implies x=3, y=5$ (Dua-duanya prima!).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Jadi, kombinasi digit yang membentuk bilangan kaset tersebut adalah $\{2, 5, 3, 5\}$.</li>
+                    <li><em>Catatan Ekstra:</em> Apakah ada kemungkinan 3 digit tambahan? Pemodelan menjadi $(2y-1)(2z-1) = 19$, karena 19 prima, tidak menghasilkan digit prima. Secara logis, makin banyak digit ditambahkan, hasil kali akan membesar eksponensial jauh melampaui penjumlahannya.</li>
+                    <li>Banyaknya susunan bilangan yang bisa dibentuk dari digit $\{2, 3, 5, 5\}$ menggunakan permutasi unsur kembar:
+                        <div class="math-block text-center my-2">
+                            $$\frac{4!}{2!} = \frac{24}{2} = \mathbf{12} \text{ bilangan.}$$
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section D -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">D. Latihan Mandiri Terbimbing (10 Menit)</h2>
+        <p class="mb-4">Berikan soal ini untuk dikerjakan mandiri sebagai <em>Mini Battle</em>. Guru hanya memberi arahan pendamping jika siswa buntu lebih dari 3 menit.</p>
+
+        <div class="bg-gray-100 p-5 rounded-lg border border-gray-300 mb-6">
+            <p class="mb-3"><strong>Latihan (OSP 23 No. 4):</strong><br>
+            Didefinisikan $f(n)$ sebagai jumlah semua digit pada bilangan bulat $n$. Banyaknya bilangan bulat $n$ dengan $100 \le n \le 999$ dan $9 \le f(n) \le 12$ adalah ...</p>
+            
+            <p class="font-bold mt-4 mb-2 text-primary">Arahan (Scaffolding) Guru:</p>
+            <p class="mb-2">Arahkan siswa memodelkan bilangan menjadi bentuk 3 digit $n = \overline{xyz}$.<br>
+            Maka diperoleh persamaan $x+y+z = k$ di mana $k \in \{9, 10, 11, 12\}$.</p>
+            <p class="mb-2">Perhatikan batasan: $x$ adalah ratusan, maka $1 \le x \le 9$. Sedangkan $0 \le y \le 9$ dan $0 \le z \le 9$.</p>
+            <p>Biarkan siswa mengeksplorasi perhitungan kombinasinya (mengingatkan pada teknik <em>Stars and Bars</em> modifikasi) atau mendaftar kasus secara manual bertahap untuk melatih kesabaran algoritmik.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
