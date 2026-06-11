@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul Pelatihan Intensif OSN Matematika SD - Teori Bilangan Lanjut</title>
+    
+    <!-- Google Fonts: Noto Sans (sesuai dokumen LaTeX) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS untuk Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#143c6e',    // Darker blue for Header/Borders
+                        secondary: '#f0f4f8',  // Light background
+                        accent: '#dc3545',     // Red accent
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- MathJax untuk render persamaan matematika -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* Custom Styles for better typography */
+        body { background-color: #e2e8f0; }
+        .document-container { max-width: 900px; margin: 2rem auto; }
+        .list-disc li { margin-bottom: 0.25rem; }
+        .math-block { overflow-x: auto; margin: 1rem 0; }
+        hr.thick { border-top: 3px solid #143c6e; }
+        .kunci-box { border-left: 4px solid #143c6e; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased p-4 md:p-8">
+
+    <div class="document-container bg-white shadow-xl rounded-lg p-8 md:p-12">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-8">
+            <img src="https://imgix3.ruangguru.com/assets/miscellaneous/jpeg_xzejvp_9871.jpeg" alt="Ruangguru Olympiad Academy" class="h-20 mx-auto mb-4 object-contain">
+            <h1 class="text-primary text-2xl md:text-3xl font-bold uppercase tracking-wide">MODUL PELATIHAN INTENSIF OSN MATEMATIKA SD</h1>
+            <div class="mt-2 mb-4 text-primary">
+                <h2 class="text-xl md:text-2xl font-bold">Fase Provinsi (OSNP) | Topik: Teori Bilangan Lanjut</h2>
+                <h3 class="text-lg md:text-xl italic mt-1">Fokus: Sifat Keterbagian, Analisis Faktor, dan Himpunan Bilangan</h3>
+            </div>
+            <hr class="thick my-4">
+        </div>
+
+        <!-- Box: Informasi Kurikulum -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8 shadow-sm">
+            <div class="bg-secondary px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Informasi Kurikulum Pelatihan</h3>
+            </div>
+            <div class="p-5 bg-secondary/30">
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><strong>Target Level:</strong> OSN Tingkat Provinsi (OSNP) / Nasional</li>
+                    <li><strong>Durasi Total:</strong> 90 Menit</li>
+                    <li><strong>Pendekatan Utama:</strong> Kurikulum Merdeka (Bernalar Kritis) dengan <em>Singapore Math</em> (Concrete-Pictorial-Abstract).</li>
+                    <li><strong>Prasyarat Siswa:</strong> Menguasai FPB, KPK dasar, dan operasi hitung campuran.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sesi 1: Pendalaman Teori Dasar -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">Sesi 1: Pendalaman Teori Dasar (20 Menit)</h2>
+        <p class="mb-6"><strong>Tujuan:</strong> Memberikan landasan teori yang kuat untuk menyelesaikan soal bilangan dengan angka besar.</p>
+
+        <h3 class="text-lg font-bold text-primary mb-2 mt-4">A. Ciri Keterbagian Lanjutan</h3>
+        <p class="mb-3">Selain aturan bilangan yang habis dibagi 2, 3, 4, 5, dan 9, siswa OSNP perlu memahami:</p>
+        <ul class="list-disc pl-6 space-y-3 mb-6">
+            <li><strong>Keterbagian 11:</strong> Selisih antara jumlah angka pada posisi ganjil dan posisi genap adalah 0 atau kelipatan 11.<br>
+                <em>(Contoh: $72.589 \rightarrow (7+5+9) - (2+8) = 21 - 10 = 11$. Habis dibagi 11).</em>
+            </li>
+            <li><strong>Keterbagian Berantai (Komposit):</strong> Bilangan $N$ habis dibagi $a \times b$ jika $N$ habis dibagi $a$ dan $b$, dengan syarat <strong>FPB(a, b) = 1</strong>.<br>
+                <em>(Contoh: Habis dibagi 72 berarti harus diuji dengan pembagian 8 dan 9. Habis dibagi 36 diuji dengan pembagian 4 dan 9).</em>
+            </li>
+            <li><strong>Aturan Blok 3-Angka (Keterbagian 7, 11, 13):</strong> Selisih antara blok 3-angka dari kanan ke kiri mematuhi aturan kelipatan pembaginya.<br>
+                <em>(Contoh: Apakah $3.155.672$ habis dibagi 13? Pisahkan dari kanan: $672, 155, 3$. Hitung selang-seling: $672 - 155 + 3 = 520$. Karena $520 \div 13 = 40$ (habis), maka $3.155.672$ habis dibagi 13).</em>
+            </li>
+        </ul>
+
+        <h3 class="text-lg font-bold text-primary mb-2 mt-6">B. Analisis Faktor dan Teorema Dasar Aritmatika</h3>
+        <p class="mb-4">Setiap bilangan bulat yang lebih dari 1 dapat dinyatakan sebagai perkalian bilangan prima.</p>
+
+        <!-- Tree Diagram SVG -->
+        <div class="text-center mb-6">
+            <svg class="mx-auto w-64 h-48 md:w-80 md:h-56" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Lines -->
+                <line x1="150" y1="30" x2="80" y2="80" stroke="#143c6e" stroke-width="2"/>
+                <line x1="150" y1="30" x2="220" y2="80" stroke="#143c6e" stroke-width="2"/>
+                
+                <line x1="80" y1="100" x2="40" y2="150" stroke="#143c6e" stroke-width="2"/>
+                <line x1="80" y1="100" x2="120" y2="150" stroke="#143c6e" stroke-width="2"/>
+                
+                <line x1="220" y1="100" x2="180" y2="150" stroke="#143c6e" stroke-width="2"/>
+                <line x1="220" y1="100" x2="260" y2="150" stroke="#143c6e" stroke-width="2"/>
+
+                <!-- Nodes -->
+                <rect x="100" y="10" width="100" height="30" rx="5" fill="#f0f4f8" stroke="#143c6e" stroke-width="2"/>
+                <text x="150" y="30" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">Contoh: 360</text>
+
+                <rect x="60" y="80" width="40" height="30" rx="5" fill="#f0f4f8" stroke="#143c6e" stroke-width="2"/>
+                <text x="80" y="100" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">36</text>
+
+                <rect x="200" y="80" width="40" height="30" rx="5" fill="#f0f4f8" stroke="#143c6e" stroke-width="2"/>
+                <text x="220" y="100" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">10</text>
+
+                <!-- Leaves -->
+                <text x="40" y="165" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">4 &rarr; 2²</text>
+                <text x="120" y="165" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">9 &rarr; 3²</text>
+                <text x="180" y="165" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">2 &rarr; 2¹</text>
+                <text x="260" y="165" font-weight="bold" font-size="14" fill="#143c6e" text-anchor="middle">5 &rarr; 5¹</text>
+            </svg>
+            <p class="font-bold text-lg text-primary">$\mathbf{360 = 2^3 \times 3^2 \times 5^1}$</p>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded-lg mb-8">
+            <p class="font-bold text-primary mb-2">Aturan Menghitung Banyak Faktor Positif:</p>
+            <p class="mb-2">Jika sebuah bilangan $N$ memiliki faktorisasi prima $N = p^a \times q^b \times r^c$, maka:</p>
+            <div class="math-block text-center my-3 text-lg">
+                $$ \text{Banyak Faktor Positif} = (a+1) \times (b+1) \times (c+1) $$
+            </div>
+            <p class="italic text-sm text-gray-700">Penjelasan Visual: Mengapa ditambah 1? Karena kita memperhitungkan pangkat $0$ (yang bernilai 1) sebagai bagian dari kemungkinan pengali faktor tersebut.</p>
+        </div>
+
+        <!-- Sesi 2: Pembahasan Soal -->
+        <h2 class="text-2xl font-bold text-primary mb-4 border-b pb-2">Sesi 2: Pembahasan Soal OSN Tingkat Provinsi (30 Menit)</h2>
+
+        <!-- Soal 1 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8 shadow-sm">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Kasus 1: Keterbagian dan Himpunan (OSNP 2023 - No. 6)</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4">Banyak bilangan tiga digit yang habis dibagi 4 dan habis dibagi 6 tetapi tidak habis dibagi 30 adalah ...</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-3 text-primary">Langkah Penyelesaian (Metode CPA):</p>
+                <ol class="list-decimal pl-6 space-y-4">
+                    <li><strong>Abstraksi Syarat:</strong><br>
+                        Habis dibagi 4 dan 6 berarti habis dibagi nilai $\text{KPK}(4, 6) = 12$.<br>
+                        Syarat pengecualian: <strong>Tidak</strong> habis dibagi 30.<br>
+                        Oleh karena itu, bilangan yang harus dikurangkan adalah kelipatan 12 yang juga merupakan kelipatan 30, yaitu $\text{KPK}(12, 30) = 60$.
+                    </li>
+                    <li><strong>Visualisasi (Diagram Venn):</strong><br>
+                        Gambarkan himpunan agar siswa terhindar dari perhitungan ganda. Area yang dicari adalah area berwarna biru di sebelah kiri (kelipatan 12 yang tidak beririsan dengan kelipatan 30).
+                        
+                        <!-- Venn Diagram SVG -->
+                        <div class="text-center my-4">
+                            <svg class="mx-auto w-64 h-40 md:w-80 md:h-48" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Blue Circle (Kelipatan 12) -->
+                                <circle cx="120" cy="100" r="80" fill="#dbeafe" stroke="#143c6e" stroke-width="2"/>
+                                <!-- Red Circle (Kelipatan 30) -->
+                                <circle cx="230" cy="100" r="80" fill="#fee2e2" stroke="#143c6e" stroke-width="2"/>
+                                <!-- Intersection (KPK 60) -->
+                                <clipPath id="circle-clip">
+                                    <circle cx="120" cy="100" r="80"/>
+                                </clipPath>
+                                <circle cx="230" cy="100" r="80" fill="#e9d5ff" clip-path="url(#circle-clip)"/>
+                                
+                                <!-- Labels -->
+                                <text x="70" y="50" font-weight="bold" font-size="12" fill="#143c6e" text-anchor="middle">Kelipatan 12</text>
+                                <text x="280" y="50" font-weight="bold" font-size="12" fill="#143c6e" text-anchor="middle">Kelipatan 30</text>
+                                
+                                <text x="175" y="95" font-weight="bold" font-size="12" fill="#143c6e" text-anchor="middle">KPK 60</text>
+                                <text x="175" y="110" font-size="10" fill="#143c6e" text-anchor="middle">(Dikurangi)</text>
+
+                                <!-- Arrow to Area -->
+                                <path d="M 40 180 Q 50 140 80 120" fill="transparent" stroke="#143c6e" stroke-width="1.5" marker-end="url(#arrow)"/>
+                                <text x="40" y="195" font-style="italic" font-size="12" fill="#143c6e" text-anchor="middle">Area Dihitung</text>
+                                
+                                <defs>
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#143c6e"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </li>
+                    <li><strong>Langkah Perhitungan:</strong>
+                        <ul class="list-disc pl-6 space-y-1 mt-2">
+                            <li>Jangkauan: Bilangan 3 angka ($100$ sampai $999$).</li>
+                            <li>Total Kelipatan 12: $\lfloor \frac{999}{12} \rfloor - \lfloor \frac{99}{12} \rfloor = 83 - 8 = 75$ bilangan.</li>
+                            <li>Total Kelipatan 60 (Irisan): $\lfloor \frac{999}{60} \rfloor - \lfloor \frac{99}{60} \rfloor = 16 - 1 = 15$ bilangan.</li>
+                            <li><strong>Jawaban Akhir:</strong> $75 - 15 = \mathbf{60}$ bilangan.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8 shadow-sm">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Kasus 2: Analisis Faktor Positif (OSNP 2023 - No. 7)</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4">Misalkan $a = 2^5 \times 3^3$ dan $b = 3^4 \times 5^2$. Banyak faktor positif dari $a \times b$ yang habis dibagi 6 adalah ...</p>
+                <hr class="my-4 border-gray-200">
+                <p class="font-bold mb-3 text-primary">Langkah Penyelesaian (Visualisasi Pengelompokan Faktor):</p>
+                <ol class="list-decimal pl-6 space-y-4">
+                    <li><strong>Dekomposisi Awal:</strong><br>
+                        $a \times b = (2^5 \times 3^3) \times (3^4 \times 5^2) = 2^5 \times 3^7 \times 5^2$
+                    </li>
+                    <li><strong>Visualisasi Pengelompokan Syarat:</strong><br>
+                        Syarat wajib adalah faktor tersebut harus "habis dibagi 6". Angka 6 dibentuk dari perkalian prima $2^1 \times 3^1$. <br>
+                        Kita perlu memisahkan kelompok nilai 6 ini dari total faktorisasi.
+                        
+                        <!-- Faktorisasi Box -->
+                        <div class="border-2 border-dashed border-gray-400 p-4 rounded-lg bg-gray-50 my-5 relative text-center max-w-xl mx-auto">
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gray-50 px-3 text-sm font-bold text-gray-600 whitespace-nowrap">
+                                Total Faktorisasi $a \times b = 2^5 \times 3^7 \times 5^2$
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-4 items-center justify-center mt-3">
+                                 <div class="bg-blue-100 border-2 border-blue-400 rounded-lg p-3 w-40">
+                                     <p class="font-bold text-blue-900 leading-tight">Wajib Ada<br>(Nilai 6)</p>
+                                     <p class="mt-2 text-blue-800">$2^1 \times 3^1$</p>
+                                 </div>
+                                 <div class="text-2xl text-gray-500 font-bold">&rarr;</div>
+                                 <div class="bg-green-100 border-2 border-green-400 rounded-lg p-3 w-48">
+                                     <p class="font-bold text-green-900 leading-tight">Kombinasi Sisa</p>
+                                     <p class="text-sm text-green-800 mt-1">$2^{(5-1)} \times 3^{(7-1)} \times 5^2$</p>
+                                     <p class="font-bold text-green-900 mt-1">$\mathbf{2^4 \times 3^6 \times 5^2}$</p>
+                                 </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><strong>Menghitung Kombinasi Sisa:</strong><br>
+                        Kita hitung jumlah kemungkinan dari "Kombinasi Sisa" ($2^4 \times 3^6 \times 5^2$) menggunakan Aturan Banyak Faktor (Nilai pangkat ditambah 1):<br>
+                        $(4 + 1) \times (6 + 1) \times (2 + 1) = 5 \times 7 \times 3 = \mathbf{105}$.<br>
+                        <strong>Jawaban Akhir:</strong> Terdapat 105 faktor positif yang memenuhi syarat.
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Sesi 3: Latihan Mandiri -->
+        <h2 class="text-2xl font-bold text-primary mb-2 border-b pb-2 mt-12">Sesi 3: Latihan Mandiri (20 Menit)</h2>
+        <p class="mb-6"><strong>Instruksi:</strong> Siswa mengerjakan soal berikut. Guru berkeliling memberikan arahan atau bantuan bertahap (<em>scaffolding</em>).</p>
+
+        <!-- Latihan 1 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-6">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Latihan 1: Keterbagian Variabel Angka (OSN Prov 2024 - No. 4)</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p>Jika bilangan lima digit $a679b$ habis dibagi 72, maka bilangan tersebut adalah ...</p>
+                
+                <div class="mt-5 bg-gray-50 kunci-box p-4 rounded-r-lg text-sm">
+                    <p class="font-bold text-primary mb-2">Kunci Jawaban dan Panduan Guru:</p>
+                    <p>1. Syarat habis dibagi 72 berarti bilangan tersebut harus habis dibagi 8 dan 9.</p>
+                    <p>2. Uji pembagian 8: Ambil 3 angka terakhir ($79b$). Kelipatan 8 terdekat dalam ratusan adalah 800, maka $800 - 8 = 792$. Didapatkan $\mathbf{b = 2}$.</p>
+                    <p>3. Uji pembagian 9: Jumlahkan semua angka $a + 6 + 7 + 9 + 2 = a + 24$. Kelipatan 9 terdekat setelah 24 adalah 27. Maka $a + 24 = 27 \implies \mathbf{a = 3}$.</p>
+                    <p class="mt-2"><strong>Jawaban Akhir:</strong> Bilangan tersebut adalah <strong>36792</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan 2 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-6">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Latihan 2: Analisis Nilai FPB (OSN Prov 2024 - No. 2)</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p>Diketahui Faktor Persekutuan Terbesar (FPB) dari $a$ dan 2024, serta $a$ dan 2025 terletak antara 10 dan 20. Nilai $a$ terkecil yang mungkin adalah ...</p>
+                
+                <div class="mt-5 bg-gray-50 kunci-box p-4 rounded-r-lg text-sm">
+                    <p class="font-bold text-primary mb-2">Kunci Jawaban dan Panduan Guru:</p>
+                    <p class="font-semibold mb-1">Panduan Logika Dekomposisi:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Faktorisasi $2024 = 8 \times 253 = 2^3 \times 11 \times 23$. Faktor yang terletak antara 10 dan 20 hanyalah <strong>11</strong>. Jadi nilai FPB($a$, 2024) harus bernilai 11.</li>
+                        <li>Faktorisasi $2025 = 25 \times 81 = 5^2 \times 3^4$. Faktor yang terletak antara 10 dan 20 hanyalah <strong>15</strong>. Jadi nilai FPB($a$, 2025) harus bernilai 15.</li>
+                        <li>Agar bilangan $a$ memiliki kedua faktor tersebut dengan nilai yang paling kecil, kita tentukan nilai KPK dari kedua FPB tersebut. $a = \text{KPK}(11, 15) = 11 \times 15 = \mathbf{165}$.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan 3 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Latihan 3: Keterbagian Pengelompokan Angka</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p>Sebuah bilangan 6 angka $x4y738$ habis dibagi 99. Tentukan nilai maksimum dari hasil perkalian $x \times y$!</p>
+                
+                <div class="mt-5 bg-gray-50 kunci-box p-4 rounded-r-lg text-sm">
+                    <p class="font-bold text-primary mb-2">Kunci Jawaban dan Panduan Guru:</p>
+                    <p class="font-semibold mb-1">Panduan Penyelesaian Praktis:</p>
+                    <p>Syarat keterbagian 99 dapat diselesaikan dengan menjumlahkan kelompok 2 angka dari kanan, dan hasilnya harus kelipatan 99.</p>
+                    <p class="my-1 font-mono bg-gray-200 inline-block px-2 rounded">$x4y738 \rightarrow (x4) + (y7) + (38) = (10x + 4) + (10y + 7) + 38 = 10(x+y) + 49$</p>
+                    <p>Agar menjadi kelipatan 99, nilai $10(x+y) + 49$ haruslah 99 (nilai 198 tidak mungkin karena $x+y$ maksimal adalah 18).</p>
+                    <p>$10(x+y) = 99 - 49 \implies 10(x+y) = 50 \implies \mathbf{x+y = 5}$.</p>
+                    <p>Pasangan $(x,y)$ dengan $x$ tidak bernilai 0 adalah $(5,0), (4,1), (3,2), (2,3), (1,4)$.</p>
+                    <p>Perkalian maksimal dicapai pada pasangan $(3,2)$ atau $(2,3)$ yaitu $3 \times 2 = \mathbf{6}$.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sesi 4: Latihan Evaluasi Analitis -->
+        <h2 class="text-2xl font-bold text-primary mb-2 border-b pb-2 mt-12">Sesi 4: Latihan Evaluasi Analitis (20 Menit)</h2>
+        <p class="mb-6"><strong>Tujuan:</strong> Melatih kemampuan bernalar kritis siswa dalam menghadapi format soal evaluasi bertingkat (seperti Asesmen Nasional).</p>
+
+        <!-- Soal 4 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-6">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Soal 4: Pernyataan Majemuk</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-3">Diberikan bilangan $X = 2^3 \times 3^2 \times 5$. Manakah pernyataan di bawah ini yang memuat kebenaran secara matematis? (Pilih semua pernyataan yang tepat)</p>
+                <ol type="A" class="list-[upper-alpha] pl-6 space-y-2 mb-4 font-medium">
+                    <li>Bilangan $X$ memiliki tepat 24 faktor positif.</li>
+                    <li>Bilangan $X$ akan habis dibagi oleh angka 15.</li>
+                    <li>Bilangan $X$ bukanlah kelipatan dari angka 8.</li>
+                    <li>Terdapat tepat 6 faktor positif dari $X$ yang merupakan bilangan ganjil.</li>
+                </ol>
+                
+                <div class="bg-gray-50 kunci-box p-4 rounded-r-lg text-sm mt-4">
+                    <p class="font-bold text-primary mb-2">Kunci Jawaban dan Panduan Guru (Pembahasan Evaluasi):</p>
+                    <ul class="space-y-2">
+                        <li><span class="text-green-600 font-bold">A (BENAR):</span> Menggunakan aturan banyak faktor: $(3+1)(2+1)(1+1) = 4 \times 3 \times 2 = 24$.</li>
+                        <li><span class="text-green-600 font-bold">B (BENAR):</span> Nilai $15 = 3 \times 5$. Faktor ini sudah terkandung secara utuh di dalam faktorisasi $X$.</li>
+                        <li><span class="text-red-600 font-bold">C (SALAH):</span> Bilangan $X$ mengandung basis prima $2^3 = 8$, sehingga sudah pasti kelipatan 8.</li>
+                        <li><span class="text-green-600 font-bold">D (BENAR):</span> Faktor ganjil tidak boleh memuat angka genap (mengabaikan basis 2). Kita hanya perlu meninjau $3^2 \times 5^1 \implies (2+1)(1+1) = 3 \times 2 = 6$.</li>
+                    </ul>
+                    <p class="mt-3"><strong>Kunci Jawaban Akhir:</strong> Pernyataan A, B, dan D.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="border-2 border-primary rounded-lg overflow-hidden mb-8">
+            <div class="bg-[#ebf8ff] px-5 py-3 border-b-2 border-primary">
+                <h3 class="font-bold text-primary text-lg">Soal 5: Analisis Tabel Kebenaran</h3>
+            </div>
+            <div class="p-5 bg-white">
+                <p class="mb-4">Diketahui sebuah bilangan 4 angka genap $3a2b$ habis dibagi 36. Tentukan nilai kebenaran dari pernyataan-pernyataan di dalam tabel berikut!</p>
+                
+                <div class="overflow-x-auto mb-4">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b-2 border-gray-400 bg-gray-50">
+                                <th class="p-3 text-center w-12">No</th>
+                                <th class="p-3">Pernyataan</th>
+                                <th class="p-3 text-center w-20">Benar</th>
+                                <th class="p-3 text-center w-20">Salah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3 text-center font-semibold">1</td>
+                                <td class="p-3">Nilai $a$ terkecil yang mungkin terjadi adalah 0.</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 bg-gray-50/50">
+                                <td class="p-3 text-center font-semibold">2</td>
+                                <td class="p-3">Terdapat tepat 3 kemungkinan pasangan angka $(a,b)$ yang memenuhi.</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3 text-center font-semibold">3</td>
+                                <td class="p-3">Selisih antara bilangan terbesar dan terkecil yang terbentuk adalah 900.</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                                <td class="p-3 text-center text-xl">&#9711;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="bg-gray-50 kunci-box p-4 rounded-r-lg text-sm">
+                    <p class="font-bold text-primary mb-2">Kunci Jawaban dan Panduan Guru:</p>
+                    <p class="font-semibold mb-1">Analisis Logika:</p>
+                    <p>Syarat bilangan habis dibagi 36 adalah memenuhi syarat keterbagian 4 dan 9 sekaligus.</p>
+                    <p>- Uji pembagian 4 (Dua angka terakhir $2b$ habis dibagi 4): Mengingat $b$ genap, maka $b$ bisa bernilai $\mathbf{0, 4, \text{atau } 8}$.</p>
+                    
+                    <p class="italic mt-2 mb-1">Pemeriksaan masing-masing nilai (Uji 9):</p>
+                    <ul class="list-disc pl-5 space-y-1 mb-3">
+                        <li>Jika $b = 0 \rightarrow 3a20 \rightarrow 3+a+2+0 = 5+a \implies a = 4$. Bilangan: <strong>3420</strong>.</li>
+                        <li>Jika $b = 4 \rightarrow 3a24 \rightarrow 3+a+2+4 = 9+a \implies a = 0 \text{ atau } 9$. Bilangan: <strong>3024</strong> dan <strong>3924</strong>.</li>
+                        <li>Jika $b = 8 \rightarrow 3a28 \rightarrow 3+a+2+8 = 13+a \implies a = 5$. Bilangan: <strong>3528</strong>.</li>
+                    </ul>
+                    
+                    <p class="font-semibold mb-1">Penyelesaian Tabel:</p>
+                    <ol class="list-decimal pl-5 space-y-1">
+                        <li><strong>BENAR.</strong> Nilai $a$ terkecil adalah 0 (terjadi saat $b=4$).</li>
+                        <li><strong>SALAH.</strong> Terdapat 4 pasangan $(a,b)$, yaitu $(4,0), (0,4), (9,4)$, dan $(5,8)$.</li>
+                        <li><strong>BENAR.</strong> Bilangan terbesar $3924$, bilangan terkecil $3024$. Selisihnya adalah $3924 - 3024 = 900$.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
